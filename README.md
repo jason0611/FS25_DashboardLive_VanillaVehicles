@@ -1,0 +1,2 @@
+# FS25_DashboardLive_VanillaVehicles
+Vanilla Integration for DashboardLIve
