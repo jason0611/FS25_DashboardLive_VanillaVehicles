@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="96">
 	<author>Glowins Modschmiede</author>
-	<version>0.1.0.0</version>
+	<version>0.1.1.0</version>
 	<contributors>SbSh, mister_mojo_AT, AgrarPlay und LUWZ, Farming Duds</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
@@ -34,8 +34,4 @@ Mais ideias ou solicitações são bem-vindas em <a href="https://github.com/jas
  	</description>	
     <multiplayer supported="true"/>
 	<iconFilename>icon_DashboardLive.dds</iconFilename>
-	<extraSourceFiles>
-    	<sourceFile filename="utils/DashboardUtils.lua" />
-    </extraSourceFiles>
- 	
 </modDesc>
