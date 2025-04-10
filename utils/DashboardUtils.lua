@@ -3,81 +3,14 @@ DashboardUtils = {}
 DashboardUtils.MOD_NAME = g_currentModName
 DashboardUtils.MOD_PATH = g_currentModDirectory
 
---[[
--- Vanilla Integration POC --
-function DashboardUtils:loadVehicleFromXML(superfunc, xmlFile, key, defaultItemsToSPFarm, resetVehicles, keepPosition)
-	print("VehicleSystem:loadVehicleFromXML:")
-	print("key: "..tostring(key))
-	
-	local filename = xmlFile:getValue(key.."#filename")
-	print("filename: "..tostring(filename))
-	print("filename decoded: "..NetworkUtil.convertFromNetworkFilename(filename))
-		
-	if filename == "data/vehicles/claas/xerion12/xerion12.xml" then
-		filename = DashboardLive.MOD_PATH.."data/vehicles/claas/xerion12/xerion12.xml"
-		xmlFile:setValue(key.."#filename", filename)
-		print("filename replaced: "..tostring(filename))
-	end
-	return superfunc(self, xmlFile, key, defaultItemsToSPFarm, resetVehicles, keepPosition)
-end
---VehicleSystem.loadVehicleFromXML = Utils.overwrittenFunction(VehicleSystem.loadVehicleFromXML, DashboardUtils.loadVehicleFromXML)
-
-function DashboardUtils:saveVehicleToXML(superfunc, vehicle, xmlFile, index, i, usedModNames)
-	print("DashboardUtils:saveVehicleToXML:")
-	print("environment: "..tostring(vehicle.customEnvironment))
-	
-	if vehicle.customEnvironment == DashboardUtils.MOD_NAME then
-		vehicle.customEnvironment = nil
-	end
-
-	local fileName = HTMLUtil.encodeToHTML(NetworkUtil.convertToNetworkFilename(vehicle.configFileName))
-	print("fileName: "..fileName)
-	print("found? "..tostring(string.find(fileName, "$moddir$"..DashboardUtils.MOD_NAME)))
-	if string.find(fileName, "$moddir$"..DashboardUtils.MOD_NAME) then
-		print("vehicle.configFileName 1 :"..tostring(vehicle.configFileName))
-		vehicle.configFileName = string.sub(fileName, string.len("$moddir$"..DashboardUtils.MOD_NAME)+2)
-		print("vehicle.configFileName 2 :"..tostring(vehicle.configFileName))
-	end
-
-	print("configFileName: "..tostring(vehicle.configFileName))
-	return superfunc(self, vehicle, xmlFile, index, i, usedModNames)
-end
---VehicleSystem.saveVehicleToXML = Utils.overwrittenFunction(VehicleSystem.saveVehicleToXML, DashboardUtils.saveVehicleToXML)
-
-function DashboardUtils:loadVehicle(superfunc, vehicleLoadingData)
-	print("Vehicle:load ****")
-	print(self.configFileName)
-	
-	if self.configFileName == "data/vehicles/claas/xerion12/xerion12.xml" then
-		local item = g_storeManager:getItemByXMLFilename(self.configFileName)
-		
-		local lowerConfigName = string.lower(self.configFileName)
-		--g_storeManager.xmlFilenameToItem[lowerConfigName] = nil
-		
-		self.configFileName = DashboardLive.MOD_PATH..self.configFileName
-
-		vehicleLoadingData.xmlFilenameLower = string.lower(self.configFileName)
-		vehicleLoadingData.rawXMLFilename = self.configFileName
-		vehicleLoadingData.xmlFilename = self.configFileName
-
-		item.xmlFilenameLower = string.lower(self.configFileName)
-		item.rawXMLFilename = self.configFileName
-		item.xmlFilename = self.configFileName
-		
-		g_storeManager.xmlFilenameToItem[vehicleLoadingData.xmlFilenameLower] = item
-		
-		print("replaced!")
-	end
-	return superfunc(self, vehicleLoadingData)
-end
---Vehicle.load = Utils.overwrittenFunction(Vehicle.load, DashboardUtils.loadVehicle)
---]]
+DashboardUtils.DBL_NAME = FS25_DashboardLive.DashboardLive.MOD_NAME
+DashboardUtils.DBL_PATH = FS25_DashboardLive.DashboardLive.MOD_PATH
 
 -- ** Vehicle Dashboards **
 
 -- look for alternative i3d-file for vehicle and load it if existing
 function DashboardUtils:loadSharedI3DFileAsync(superfunc, filename, callOnCreate, addToPhysics, asyncCallbackFunction, asyncCallbackObject, asyncCallbackArguments)
-	local filenameDBL = DashboardLive.MOD_PATH..filename
+	local filenameDBL = DashboardUtils.MOD_PATH..filename
 	local isMod = string.find(filename, "/mods/") ~= nil
 	
 	if fileExists(filenameDBL) and not isMod then
@@ -93,7 +26,7 @@ I3DManager.loadSharedI3DFileAsync = Utils.overwrittenFunction(I3DManager.loadSha
 -- look for alternative xml-file for vehicle and use it for loading i3dMappings 
 function DashboardUtils.loadI3DMapping(xmlFile, superfunc, vehicleType, rootLevelNodes, i3dMappings, realNumComponents)
 	local filename = xmlFile.filename
-	local filenameDBL = DashboardLive.MOD_PATH..filename
+	local filenameDBL = DashboardUtils.MOD_PATH..filename
 	local isMod = string.find(filename, "/mods/") ~= nil
 	local replaceI3dMappings = false
 	local returnValue
@@ -119,7 +52,7 @@ I3DUtil.loadI3DMapping = Utils.overwrittenFunction(I3DUtil.loadI3DMapping, Dashb
 function DashboardUtils:loadDashboardGroupsFromXML(savegame)
 	local spec = self.spec_dashboard
 	local filename = self.xmlFile.filename
-	local filenameDBL = DashboardLive.MOD_PATH..filename
+	local filenameDBL = DashboardUtils.MOD_PATH..filename
 	local isMod = self.baseDirectory ~= ""
 		
 	if fileExists(filenameDBL) and not isMod then
@@ -149,7 +82,7 @@ Dashboard.onLoad = Utils.appendedFunction(Dashboard.onLoad, DashboardUtils.loadD
 -- look for alternative xml-file for vehicle and use it for loading additional dashboard entries
 function DashboardUtils:loadDashboardsFromXML(superfunc, xmlFile, key, dashboardValueType, components, i3dMappings, parentNode)
 	local filename = xmlFile.filename
-	local filenameDBL = DashboardLive.MOD_PATH..filename
+	local filenameDBL = DashboardUtils.MOD_PATH..filename
 	local isMod = self.baseDirectory ~= ""
 	
 	local returnValue = superfunc(self, xmlFile, key, dashboardValueType, components, i3dMappings, parentNode)
@@ -166,7 +99,7 @@ Dashboard.loadDashboardsFromXML = Utils.overwrittenFunction(Dashboard.loadDashbo
 -- look for alternative xml-file for vehicle and use it for loading additional animations 
 function DashboardUtils:loadAnimations(superfunc, savegame)	
 	local filename = self.xmlFile.filename
-	local filenameDBL = DashboardLive.MOD_PATH..filename
+	local filenameDBL = DashboardUtils.MOD_PATH..filename
 	local isMod = self.baseDirectory ~= ""
 	
 	-- load animations from vanilla xml
@@ -201,19 +134,19 @@ function DashboardUtils:loadDashboardCompoundFromXML(superfunc, xmlFile, key, co
 	local spec = self.spec_dashboard
 	local fileName = xmlFile:getValue(key .. "#filename")
 	local fileNameNew = string.sub(fileName, 2) -- rip $ off the path
-	local dblReplacementExists = XMLFile.loadIfExists("DBL Replacement", DashboardLive.MOD_PATH..fileNameNew, xmlFile.schema) ~= nil --and self.baseDirectory == ""
+	local dblReplacementExists = XMLFile.loadIfExists("DBL Replacement", DashboardUtils.MOD_PATH..fileNameNew, xmlFile.schema) ~= nil --and self.baseDirectory == ""
 	local baseDirectoryChanged = false
 	
 	dbgprint("loadDashboardCompoundFromXML :: self.baseDirectory: "..tostring(self.baseDirectory), 2)
 	dbgprint("loadDashboardCompoundFromXML :: fileName    = "..tostring(fileName), 2)
-	dbgprint("loadDashboardCompoundFromXML :: fileNameNew = "..DashboardLive.MOD_PATH..fileNameNew, 2)
+	dbgprint("loadDashboardCompoundFromXML :: fileNameNew = "..DashboardUtils.MOD_PATH..fileNameNew, 2)
 	dbgprint("loadDashboardCompoundFromXML :: dblReplacementExists = "..tostring(dblReplacementExists), 2)
 	
 	if dblReplacementExists then
 		xmlFile:setValue(key .. "#filename", fileNameNew)
 		dbgprint("loadDashboardCompoundFromXML :: fileName replaced", 2)
 		self.baseDirectoryBackup = self.baseDirectory
-		self.baseDirectory = DashboardLive.MOD_PATH
+		self.baseDirectory = DashboardUtils.MOD_PATH
 		baseDirectoryChanged = true
 		dbgprint("loadDashboardCompoundFromXML :: baseDirectory temporarily changed", 2)
 	end	
@@ -261,6 +194,7 @@ function DashboardUtils:onDashboardCompoundLoaded(i3dNode, failedReason, args)
 		end
 		DashboardLive.createDashboardPages(self)
 	end
+	
 --[[ Deactivated because of engine restrictions:
 -- compound extension: dashboard animations	
 	if not spec.compoundAnimationsLoaded then
@@ -318,7 +252,7 @@ function DashboardUtils.createVanillaNodes(vehicle, xmlVanillaFile, xmlModFile)
 	if vehicle.xmlFile == nil then return false end
 	local xmlPath = vehicle.xmlFile.filename
 	
-	local i3dLibPath = DashboardLive.MOD_PATH.."utils/DBL_MeshLibary"
+	local i3dLibPath = DashboardUtils.MOD_PATH.."utils/DBL_MeshLibary"
 	local i3dLibFile = "DBL_MeshLibary.i3d"
 	local i3dMinimapFile = "DBL_minimap_plane.i3d"
 	
@@ -432,7 +366,7 @@ end
 function DashboardUtils.createEditorNode(vehicle, node, symbolIndex, createMinimap)
 	local spec = vehicle.spec_DashboardLive
 	
-	local i3dLibPath = DashboardLive.MOD_PATH.."utils/DBL_MeshLibary"
+	local i3dLibPath = DashboardUtils.MOD_PATH.."utils/DBL_MeshLibary"
 	local i3dLibFile
 	local index
 	if createMinimap == true then
