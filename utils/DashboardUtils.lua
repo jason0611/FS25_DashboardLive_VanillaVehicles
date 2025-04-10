@@ -6,6 +6,11 @@ DashboardUtils.MOD_PATH = g_currentModDirectory
 DashboardUtils.DBL_NAME = FS25_DashboardLive.DashboardLive.MOD_NAME
 DashboardUtils.DBL_PATH = FS25_DashboardLive.DashboardLive.MOD_PATH
 
+source(DashboardLive.MOD_PATH.."tools/gmsDebug.lua")
+
+GMSDebug:init(DashboardUtils.MOD_NAME, true, 2)
+--GMSDebug:enableConsoleCommands("dblDebug")
+
 -- ** Vehicle Dashboards **
 
 -- look for alternative i3d-file for vehicle and load it if existing
