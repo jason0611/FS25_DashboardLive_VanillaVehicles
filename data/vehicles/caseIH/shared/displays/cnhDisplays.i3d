@@ -15,6 +15,7 @@
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
     <File fileId="2" filename="$data/shared/default_normal.dds"/>
     <File fileId="6" filename="$data/shared/default_specular.png"/>
+    <File fileId="3" filename="$data/shared/default_vmask.dds"/>
     <File fileId="7" filename="$data/vehicles/caseIH/shared/displays/displays_diffuse.png"/>
   </Files>
 
