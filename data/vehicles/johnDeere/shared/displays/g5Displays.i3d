@@ -21,7 +21,8 @@
     <File fileId="23" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
     <File fileId="24" filename="textures/johnDeereG5DisplayHarvestingBasic_diffuse.png"/>
     <File fileId="13" filename="textures/johnDeereTractorG5Display_diffuse.png"/>
-    <File fileId="12" filename="../../../../../shader/minimap.xml"/>
+    <!--File fileId="12" filename="../../../../../shader/minimap.xml"/-->
+    <File fileId="12" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="9" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
     <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
   </Files>

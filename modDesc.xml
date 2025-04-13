@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="96">
 	<author>Glowins Modschmiede</author>
-	<version>0.1.1.0</version>
+	<version>0.2.0.0</version>
 	<contributors>SbSh, mister_mojo_AT, AgrarPlay und LUWZ, Farming Duds</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
 	</dependencies>
+	<extraSourceFiles>
+    	<sourceFile filename="setPath.lua" />
+    </extraSourceFiles>
 	<title>
 		<en>Dashboard Live Vanilla Vehicles</en>
     </title>
