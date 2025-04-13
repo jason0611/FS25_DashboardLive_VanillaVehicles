@@ -44,7 +44,7 @@
         <dashboard displayType="TEXT" valueType="motorized.speed" node="iMonitor_dblSpeedNumbers01P1_SC" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="00.0" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
         <dashboard displayType="TEXT" valueType="motorized.rpm" node="iMonitor_dblRpmNumbers00P1_SC" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.0035" textMask="0000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
         <dashboard displayType="TEXT" valueType="motorized.rpm" node="iMonitor_dblRpmNumbers01P1_SC" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="0000" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
-        <dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="iMonitor_dblTempNumbersP1_SC" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="0000" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+        <dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="iMonitor_dblTempNumbersP1_SC" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
 		<!-- drivable -->
 		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="iMonitor_dblCruiseControl00P1_SC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGESC1"/>
 		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="iMonitor_dblCruiseControlNumbers00P1_SC" textColor="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="00.0" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGESC1"/>
@@ -112,7 +112,7 @@
 		<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="iMonitor_dblHlmHeadlandP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="iMonitor_dblNaviMapP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="iMonitor_dblNaviMapPositionP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		
 		<!-- Real Clock -->
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="iMonitor_dblClockNumbersP1_SC" textMask="ssssssss" textColor="1 1 1 1" textSize="0.003" fontThickness="1" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
 		<!-- weather -->

@@ -1,0 +1,1314 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="selfPropelledMower" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>BiG M 450</name>
+        <specs>
+            <power>449</power>
+            <maxSpeed>40</maxSpeed>
+            <workingWidth>9.95</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_mower</function>
+        </functions>
+        <image>$data/vehicles/krone/bigM450/store_bigM450.png</image>
+        <price>468000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>KRONE</brand>
+        <category>mowers</category>
+        <shopTranslationOffset>0 -0.134 0</shopTranslationOffset>
+        <shopRotationOffset>-0.099 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>5229568</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>1864192</indexBufferMemoryUsage>
+        <textureMemoryUsage>1769472</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>425288</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_mower</typeDesc>
+        <filename>$data/vehicles/krone/bigM450/bigM450.i3d</filename>
+        <sounds filename="$data/vehicles/krone/bigM450/sounds/bigM450.xml" volumeFactor="0.87"/>
+        <size width="3.35" length="8.6" height="4.4"/>
+        <speedLimit value="25" />
+        <components>
+            <component centerOfMass="0 1 -0.5" solverIterationCount="30" mass="7325" />
+            <component centerOfMass="0 0 0" solverIterationCount="20" mass="3400" />
+            <component centerOfMass="0 0 0" solverIterationCount="20" mass="600" />
+            <component centerOfMass="0 0 0" solverIterationCount="20" mass="600" />
+            <component centerOfMass="0 0 0" solverIterationCount="20" mass="2000" />
+            <joint component1="1" component2="2" node="backAxisJoint" rotLimit="0 0 10" rotLimitSpring="0 0 4000" rotLimitDamping="0 0 75" maxRotDriveForce="0 0 30" rotDriveRotation="0 0 0" rotDriveSpring="0 0 30" rotDriveDamping="0 0 30" breakable="false"/>
+            <joint component1="1" component2="3" node="leftArmJoint" rotLimit="0 0 0" transLimit="0 0 0"/>
+            <joint component1="1" component2="4" node="rightArmJoint" rotLimit="0 0 0" transLimit="0 0 0"/>
+            <joint component1="1" component2="5" node="frontArmJoint" rotLimit="0 0 0" transLimit="0 0 0"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="VEHICLE" />
+        <mapHotspot type="TRACTOR" />
+    </base>
+
+    <wheels>
+        <wheelConfigurations tireCategories="HARVESTER TRACTOR">
+            <tireCombination brand="TRELLEBORG" names="TM2000 TM800"/>
+            <tireCombination brand="MICHELIN" names="megaXbib machXbib"/>
+            <tireCombination brand="VREDESTEIN" names="traxionHarvest"/>
+
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" saveId="DEFAULT" numDynamicConfigurations="1">
+                <wheels autoRotateBackSpeed="2">
+                    <wheel dimensions="800_65R32" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="4.8" repr="wheelFrontLeft"  forcePointRatio="0.3" initialCompression="40" suspTravel="0.12" spring="90" damper="45" yOffset="0.015"/>
+                    </wheel>
+                    <wheel dimensions="800_65R32" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="4.8" repr="wheelFrontRight" forcePointRatio="0.3" initialCompression="40" suspTravel="0.12" spring="90" damper="45" yOffset="0.015"/>
+                    </wheel>
+                    <wheel dimensions="600_65R28" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="3.2" repr="axisBackLeft"  driveNode="wheelBackLeft"  forcePointRatio="0.3" initialCompression="40" suspTravel="0.12" spring="61" frictionScale="2.2" damper="30" yOffset="0.035"/>
+                        <steering node="steeringBar" nodeMinTransX="0.18" nodeMaxTransX="-0.18" />
+                    </wheel>
+                    <wheel dimensions="600_65R28" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="3.2" repr="axisBackRight" driveNode="wheelBackRight" forcePointRatio="0.3" initialCompression="40" suspTravel="0.12" spring="61" frictionScale="2.2" damper="30" yOffset="0.035"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <ackermannSteeringConfigurations>
+            <ackermannSteering rotSpeed="45" rotMax="53" rotCenterWheel1="1" rotCenterWheel2="2" />
+        </ackermannSteeringConfigurations>
+
+        <hubs>
+            <hub linkNode="wheelFrontLeft"  filename="$data/shared/wheels/hubs/hub_n12_6.xml"  isLeft="true"  scale="0.4 0.4 0.4" />
+            <hub linkNode="wheelFrontRight" filename="$data/shared/wheels/hubs/hub_n12_6.xml"  isLeft="false" scale="0.4 0.4 0.4" />
+            <hub linkNode="wheelBackLeft"   filename="$data/shared/wheels/hubs/hub_n10_12.xml" isLeft="true"  scale="0.3 0.33 0.33" />
+            <hub linkNode="wheelBackRight"  filename="$data/shared/wheels/hubs/hub_n10_12.xml" isLeft="false" scale="0.3 0.33 0.33" />
+        </hubs>
+    </wheels>
+
+    <powerConsumer ptoRpm="410" neededMaxPtoPower="100"/>
+
+    <lights>
+        <sharedLight linkNode="yellowRound_03_reflectorYellowRound_0301" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml" />
+        <sharedLight linkNode="yellowRound_03_reflectorYellowRound_0302" filename="$data/shared/assets/reflectors/lizard/yellowRound_01.xml" />
+        <sharedLight linkNode="yellowRectangle_01_yellowRectangle_0101" filename="$data/shared/assets/reflectors/lizard/yellowRectangle_01.xml" />
+        <sharedLight linkNode="yellowRectangle_01_yellowRectangle_0102" filename="$data/shared/assets/reflectors/lizard/yellowRectangle_01.xml" />
+        <sharedLight linkNode="redRound_03_redRound_0301" filename="$data/shared/assets/reflectors/lizard/redRound_01.xml" />
+        <sharedLight linkNode="redRound_03_redRound_0302" filename="$data/shared/assets/reflectors/lizard/redRound_01.xml" />
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0201" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-15 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0202" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-15 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0203" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-15 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0204" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-15 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0205" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-15 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0206" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-15 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0207" lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="25 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0208" lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="25 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0209" lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-45 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0210" lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight01.xml" >
+            <rotationNode name="rotationNode1" rotation="-45 0 0" />
+        </sharedLight>
+        <sharedLight linkNode="workingLightCircle_02_workingLightCircle_0211" lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight01.xml" />
+        <sharedLight linkNode="plateNumberLight02_01" lightTypes="0" filename="$data/shared/assets/lights/lizard/plateNumberLight02.xml" />
+        <sharedLight linkNode="plateNumberLight02_02" lightTypes="0" filename="$data/shared/assets/lights/lizard/plateNumberLight02.xml" />
+
+        <states>
+            <state lightTypes="0" />
+            <state lightTypes="0 1" />
+            <state lightTypes="0 1 2" />
+        </states>
+
+        <realLights>
+            <low>
+                <light node="frontLightLow"         lightTypes="0" excludedLightTypes="2 3" />
+                <light node="workLightBackLow"      lightTypes="1"/>
+                <light node="workLightFrontLow"     lightTypes="2"/>
+                <light node="highBeamLow"           lightTypes="3" />
+            </low>
+            <high>
+                <light node="frontLightHigh"        lightTypes="0" excludedLightTypes="2 3" />
+                <light node="backLightsHigh1"       lightTypes="0"/>
+                <light node="licensePlateLightHigh" lightTypes="0"/>
+                <light node="workLightBackHigh1"    lightTypes="1"/>
+                <light node="workLightFrontHigh1"   lightTypes="2"/>
+                <light node="highBeamHigh"          lightTypes="3"/>
+                <brakeLight node="backLightsHigh1" />
+                <turnLightLeft node="turnLightLeftFront" />
+                <turnLightRight node="turnLightRightFront" />
+                <interiorLight node="interiorScreenLight"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="bigM450Lights01_static" intensity="15"/>
+                <node node="bigM450Lights01Glass_static" intensity="1"/>
+                <node node="bigM450Lights02_static" intensity="15"/>
+                <node node="bigM450Lights02Glass_static" intensity="1"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+
+        <beaconLights>
+            <beaconLight node="beaconLight01" filename="$data/shared/assets/beaconLights/lizard/beaconLight02.xml" />
+            <beaconLight node="beaconLight02" filename="$data/shared/assets/beaconLights/lizard/beaconLight02.xml" />
+        </beaconLights>
+
+        <dashboards>
+            <dashboard displayType="EMITTER" valueType="lightState" node="bigM450Decal15"  baseColor="GREY" emitColor="GREY" intensity="0.1" lightTypes="0 1 2 3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="bigM450Decal14"  baseColor="GREY" emitColor="GREY" intensity="0.1" lightTypes="0 1 2 3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="seatDecalLightup"  baseColor="GREY" emitColor="GREY" intensity="0.2" lightTypes="0 1 2 3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="joystickDecalLightup"  baseColor="GREY" emitColor="GREY" intensity="0.2" lightTypes="0 1 2 3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="cabinDecalsLightup"  baseColor="GREY" emitColor="GREY" intensity="0.2" lightTypes="0 1 2 3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="radioDecalsLightup"  baseColor="GREY" emitColor="GREY" intensity="0.2" lightTypes="0 1 2 3" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="light01Decal"  baseColor="GREY" emitColor="GREY" intensity="0.8" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="light02Decal"  baseColor="GREY" emitColor="GREY" intensity="0.8" lightTypes="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightLeft" node="turnLeftDecal"  baseColor="GREY" emitColor="GREEN" intensity="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightRight" node="turnRightDecal"  baseColor="GREY" emitColor="GREEN" intensity="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="frontLightIndicatorDecal" baseColor="BLACK" emitColor="GREY" intensity="0.5" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="workLightBackIndicatorDecal" baseColor="BLACK" emitColor="GREY" intensity="0.5" lightTypes="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="workLightFrontIndicatorDecal" baseColor="BLACK" emitColor="GREY" intensity="0.5" lightTypes="2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="beaconLight" node="beaconLightIndicatorDecal" baseColor="BLACK" emitColor="GREY" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </lights>
+
+    <licensePlates>
+        <licensePlate node="licensePlateFront" position="FRONT" preferedType="ELONGATED" placementArea="0.15 0.3 0.12 0.3"/>
+        <licensePlate node="licensePlateBack"  position="BACK"  preferedType="ELONGATED" placementArea="0.11 0.28 0.12 0.28"/>
+    </licensePlates>
+
+    <attacherJoints>
+        <attacherJoint node="trailerAttacherJointBack" jointType="trailer" lowerRotLimit="25 70 50" allowsJointLimitMovement="false" comboTime="1" canTurnOnImplement="false">
+            <schema position="1 0" rotation="0" invertX="false" />
+        </attacherJoint>
+    </attacherJoints>
+
+    <connectionHoses>
+        <target attacherJointIndices="1 2" type="electric" node="electricBack" socket="electric"/>
+    </connectionHoses>
+
+    <enterable isTabbable="true" >
+        <enterReferenceNode node="exitPoint" />
+        <exitPoint node="exitPoint" />
+
+        <cameras>
+            <camera node="outdoorCamera1" rotatable="true" rotateNode="outdoorCameraTarget" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="6" transMax="40" translation="0 0 8" rotation="-24 180 0" >
+                <raycastNode node="cameraRaycastNode1"/>
+                <raycastNode node="cameraRaycastNode2"/>
+            </camera>
+            <camera node="indoorCamera1" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" shadowFocusBox="shadowFocusBox" suspensionNodeIndex="1"/>
+        </cameras>
+
+        <characterNode node="playerSkin" cameraMinDistance="0.5" >
+            <target ikChain="rightFoot" targetNode="playerRightFoot" />
+            <target ikChain="leftFoot"  targetNode="playerLeftFoot" />
+            <target ikChain="rightArm"  targetNode="playerRightHand" poseId="wideFingers"/>
+            <target ikChain="leftArm"   targetNode="playerLeftHand" />
+        </characterNode>
+
+        <characterTargetNodeModifier node="playerRightFoot" transitionTime="0.1" >
+            <state node="playerRightFootTargetBrake" referenceNode="pedalBrake" />
+        </characterTargetNodeModifier>
+
+        <mirrors>
+            <mirror node="mirrorDecal01" prio="1" />
+            <mirror node="mirrorDecal02" prio="1" />
+            <mirror node="mirrorDecal03" prio="2" />
+            <mirror node="mirrorDecal04" prio="2" />
+        </mirrors>
+
+        <dashboards>
+			<dashboard displayType="TEXT" valueType="outsideTemperature" node="bigM_dblOutsideTempAO" textColor="1 1 1 1" emissiveScale="0.4" textMask="00.0" textSize="0.0035" font="GENERIC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="operatingTime" node="bigM_dblOperatingTimeNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </enterable>
+
+    <motorized>
+        <consumerConfigurations>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="1" usage="224" fillType="diesel" />  <!-- usage is per hour at max load and max rpm -->
+                <consumer fillUnitIndex="2" usage="11.4" fillType="def" />  <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+        </consumerConfigurations>
+
+        <differentialConfigurations>
+            <differentialConfiguration>
+                <differentials>
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.9" wheelIndex1="1" wheelIndex2="2" /> <!-- front left-right -->
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.5" wheelIndex1="3" wheelIndex2="4" /> <!-- back left-right -->
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.6" differentialIndex1="1" differentialIndex2="2" /> <!-- front-back -->
+                </differentials>
+            </differentialConfiguration>
+        </differentialConfigurations>
+
+        <motorConfigurations>
+            <motorConfiguration hp="449" price="0">
+                <motor torqueScale="2.527" minRpm="850" maxRpm="1650" maxForwardSpeed="43" maxBackwardSpeed="22" brakeForce="13.5" lowBrakeForceScale="0.1" dampingRateScale="3.9">
+                    <torque normRpm="0.45" torque="0.9"/>
+                    <torque normRpm="0.5" torque="0.97"/>
+                    <torque normRpm="0.59" torque="1"/>
+                    <torque normRpm="0.72" torque="1"/>
+                    <torque normRpm="0.86" torque="0.88"/>
+                    <torque normRpm="1" torque="0.72"/>
+                </motor>
+                <transmission minForwardGearRatio="12.4" maxForwardGearRatio="320" minBackwardGearRatio="24.4" maxBackwardGearRatio="320" name="$l10n_info_transmission_cvt"/>
+            </motorConfiguration>
+        </motorConfigurations>
+
+        <exhaustEffects>
+            <exhaustEffect node="exhaustParticle" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.05" maxRpmScale="0.5" />
+        </exhaustEffects>
+
+        <motorStartDuration>3400</motorStartDuration>
+
+        <dashboards>
+            <dashboard displayType="MULTI_STATE" valueType="ignitionState" node="ignitionKey" doInterpolation="true" groups="MOTOR_ACTIVE">
+                <state value="0" rotation="0 0 0"/>
+                <state value="1" rotation="0 0 -90"/>
+                <state value="2" rotation="0 0 -30"/>
+            </dashboard>
+			<!-- DBL Page1 -->
+			<dashboard displayType="ANIMATION" valueType="rpm" animName="rpmNeedleAnim" minValueAnim="800" maxValueAnim="2200" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ANIMATION" valueType="speed" animName="speedNeedleAnim" minValueAnim="0" maxValueAnim="50" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="ANIMATION" valueType="motorTemperature" animName="temperatureNeedleAnim" minValueAnim="20" maxValueAnim="120" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="rpm" node="bigM_dblRpmNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.007" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="speed" node="bigM_dblSpeedNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.007" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorTemperature" node="bigM_dblEngineTempNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fuelUsage" node="bigM_dblFuelUsageNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000.00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </motorized>
+
+    <drivable>
+        <steeringWheel node="steeringWheel" indoorRotation="540" outdoorRotation="30" />
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="ac_decelerationAxis" node="joystick"   minRot="-7 0 0" maxRot="7 0 0"  doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="decelerationAxis"    node="pedalBrake" minRot="0 0 0"  maxRot="30 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="cruiseControlActive" node="bigM_dblCruiseControlP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="0.6" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="cruiseControl" node="bigM_dblCruiseControlNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </drivable>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="bigm450_leftArm_component3"  threshold="0.65" onlyActiveWhenLowered="false" />
+        <groundReferenceNode node="bigm450_frontArm_component5" threshold="0.65" onlyActiveWhenLowered="false" />
+        <groundReferenceNode node="bigm450_rightArm_component4" threshold="0.65" onlyActiveWhenLowered="false" />
+    </groundReferenceNodes>
+
+    <workAreas>
+        <!-- mower areas -->
+        <workArea type="mower" functionName="processMowerArea" disableBackwards="true" >
+            <area startNode="leftWorkAreaStart" widthNode="leftWorkAreaWidth" heightNode="leftWorkAreaHeight" />
+            <groundReferenceNode index="1" />
+            <folding minLimit="0" maxLimit="0.21" />
+            <mower dropWindrow="true" dropAreaIndex="4" />
+        </workArea>
+        <workArea type="mower" functionName="processMowerArea" disableBackwards="true" >
+            <area startNode="frontWorkAreaStart" widthNode="frontWorkAreaWidth" heightNode="frontWorkAreaHeight" />
+            <groundReferenceNode index="2" />
+            <folding minLimit="0" maxLimit="0.21" />
+            <mower dropWindrow="true" dropAreaIndex="5" />
+        </workArea>
+        <workArea type="mower" functionName="processMowerArea" disableBackwards="true" >
+            <area startNode="rightWorkAreaStart" widthNode="rightWorkAreaWidth" heightNode="rightWorkAreaHeight" />
+            <groundReferenceNode index="3" />
+            <folding minLimit="0" maxLimit="0.21" />
+            <mower dropWindrow="true" dropAreaIndex="6" />
+        </workArea>
+
+        <!-- dropAreas -->
+        <workArea type="auxiliary" >
+            <area startNode="leftDropAreaStart" widthNode="leftDropAreaWidth" heightNode="leftDropAreaHeight" />
+        </workArea>
+        <workArea type="auxiliary" >
+            <area startNode="frontDropAreaStart" widthNode="frontDropAreaWidth" heightNode="frontDropAreaHeight" />
+        </workArea>
+        <workArea type="auxiliary" >
+            <area startNode="rightDropAreaStart" widthNode="rightDropAreaWidth" heightNode="rightDropAreaHeight" />
+        </workArea>
+
+        <!-- swath area -->
+        <workArea type="auxiliary" >
+            <area startNode="swathDropAreaStart" widthNode="swathDropAreaWidth" heightNode="swathDropAreaHeight" />
+        </workArea>
+    </workAreas>
+
+    <workModes foldMinLimit="0" foldMaxLimit="0.2">
+        <workMode name="$l10n_action_workMode_broad">
+            <animation name="foldFlapLeft" speed="-1" stopTime="0" repeatAfterUnfolding="true"/>
+            <animation name="foldFlapRight" speed="-1" stopTime="0" repeatAfterUnfolding="true"/>
+            <workAreas>
+                <workArea workAreaIndex="1" dropAreaIndex="4"/>
+                <workArea workAreaIndex="2" dropAreaIndex="5"/>
+                <workArea workAreaIndex="3" dropAreaIndex="6"/>
+            </workAreas>
+        </workMode>
+        <workMode name="$l10n_action_workMode_swath" inputBindingName="WORKMODE_MIDDLE">
+            <animation name="foldFlapLeft" speed="1" stopTime="1" repeatAfterUnfolding="true"/>
+            <animation name="foldFlapRight" speed="1" stopTime="1" repeatAfterUnfolding="true"/>
+            <workAreas>
+                <workArea workAreaIndex="1" dropAreaIndex="7"/>
+                <workArea workAreaIndex="2" dropAreaIndex="5"/>
+                <workArea workAreaIndex="3" dropAreaIndex="7"/>
+            </workAreas>
+        </workMode>
+        <workMode name="$l10n_action_workMode_leftSwath" inputBindingName="WORKMODE_LEFT">
+            <animation name="foldFlapLeft" speed="1" stopTime="1" repeatAfterUnfolding="true"/>
+            <animation name="foldFlapRight" speed="-1" stopTime="0" repeatAfterUnfolding="true"/>
+            <workAreas>
+                <workArea workAreaIndex="1" dropAreaIndex="7"/>
+                <workArea workAreaIndex="2" dropAreaIndex="5"/>
+                <workArea workAreaIndex="3" dropAreaIndex="6"/>
+            </workAreas>
+        </workMode>
+        <workMode name="$l10n_action_workMode_rightSwath" inputBindingName="WORKMODE_RIGHT">
+            <animation name="foldFlapLeft" speed="-1" stopTime="0" repeatAfterUnfolding="true"/>
+            <animation name="foldFlapRight" speed="1" stopTime="1" repeatAfterUnfolding="true"/>
+            <workAreas>
+                <workArea workAreaIndex="1" dropAreaIndex="4"/>
+                <workArea workAreaIndex="2" dropAreaIndex="5"/>
+                <workArea workAreaIndex="3" dropAreaIndex="7"/>
+            </workAreas>
+        </workMode>
+    </workModes>
+
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="1" foldMiddleAnimTime="0.1" turnOnFoldMaxLimit="0.2" turnOnFoldMinLimit="0" >
+                    <foldingPart animationName="foldingFront" speedScale="0.6" />
+                    <foldingPart animationName="foldingLeft"  speedScale="0.6" delayDistance="4.35" previousDuration="0.5" loweringDuration="0.5"/>
+                    <foldingPart animationName="foldingRight" speedScale="0.6" delayDistance="4.35" previousDuration="0.5" loweringDuration="0.5"/>
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <animations>
+		<!-- DBL Page1 -->
+        <animation name="speedNeedleAnim" isKeyframe="true">
+            <part node="bigM_dblSpeedNeedleP1_SC" startTime="0" endTime="1" startRot="0 9 0" endRot="0 -189 0" />
+        </animation>
+        <animation name="rpmNeedleAnim" isKeyframe="true">
+            <part node="bigM_dblRpmNeedleP1_SC" startTime="0" endTime="1" startRot="0 9 0" endRot="0 -189 0" />
+        </animation>
+        <animation name="fuelNeedleAnim" isKeyframe="true">
+            <part node="bigM_dblFuelNeedleP1_SC" startTime="0" endTime="1" startRot="0 58 0" endRot="0 -58 0" />
+        </animation>
+        <animation name="defNeedleAnim" isKeyframe="true">
+            <part node="bigM_dblAdBlueNeedleP1_SC" startTime="0" endTime="1" startRot="0 58 0" endRot="0 -58 0" />
+        </animation>
+        <animation name="temperatureNeedleAnim" isKeyframe="true">
+            <part node="bigM_dblEngineTempNeedleP1_SC" startTime="0" endTime="1" startRot="0 58 0" endRot="0 -58 0" />
+        </animation>
+
+        <animation name="wiperFrontAnimation" isKeyframe="true">
+            <part node="wiperArm01"  startTime="0.0" endTime="0.35" startRot="0 0 0" endRot="-4 4 40" />
+            <part node="wiperArm01"  startTime="0.35" endTime="0.7" startRot="-4 4 40" endRot="0 0 80" />
+            <part node="wiper"       startTime="0.0" endTime="0.35" startRot="0 0 0" endRot="5.5 0 -40" />
+            <part node="wiper"       startTime="0.35" endTime="0.7" startRot="5.5 0 -40" endRot="0 0 -80" />
+            <part node="wiperArm02"  startTime="0.0" endTime="0.35" startRot="0 0 0" endRot="-4 4 40" />
+            <part node="wiperArm02"  startTime="0.35" endTime="0.7" startRot="-4 4 40" endRot="0 0 80" />
+
+            <sound template="wiper1" startTime="0" endTime="0.7" direction="1" volumeScale="1.0"  pitchScale="0.8"/>
+            <sound template="wiper2" startTime="0" endTime="0.7" direction="-1" volumeScale="1.0"  pitchScale="0.8"/>
+        </animation>
+        <animation name="wiperSideAnimation" isKeyframe="true">
+            <part node="wiperRight"  startTime="0.0" endTime="0.75" startRot="0 0 0" endRot="0 0 -70" />
+            <part node="wiperLeft"   startTime="0.0" endTime="0.75" startRot="0 1 0" endRot="0 1 93" />
+
+            <sound template="wiper1" startTime="0" endTime="0.7" direction="1" volumeScale="0.7"  pitchScale="1.0" linkNode="wiperRight"/>
+            <sound template="wiper2" startTime="0" endTime="0.7" direction="-1" volumeScale="0.7"  pitchScale="1.1" linkNode="wiperLeft"/>
+        </animation>
+
+        <animation name="foldingLeft">
+            <part                                    direction="1" startTime="1" endTime="2" dependentAnimation="startStopAnim" dependentAnimationStartTime="1"   dependentAnimationEndTime="0"/>
+            <part node="leftArmComponentJointRot"    startTime="1.0" endTime="5.0" startRot="-20 90 0" endRot="-100 90 0" />
+            <part node="leftArmMower"                startTime="4.0" endTime="5.0" startRot="0 0 0" endRot="10 0 0" />
+            <part node="leftArmPart02"               startTime="1.0" endTime="5.0" startRot="0 0 0" endRot="-85 0 0" />
+            <part node="curtainsSideLeftBoneAnim"    startTime="1.0" endTime="5.0"  startTrans="0.075 -0.363 0.478" endTrans="0.075 -0.205 0.235" startRot="-3.477 -88.046 0.0" endRot="64.334 -85.493 -67.883" />
+
+            <part node="leftArmComponentJointRot"    startTime="0"   endTime="0.5" startRot="0 90 0" endRot="-20 90 0" />
+            <part componentJointIndex="2"            startTime="0"   endTime="0.5" startTransLimit="0 0.4 0" endTransLimit="0 0 0" />
+            <part componentJointIndex="2"            startTime="0"   endTime="1"   startRotLimit="0 0 15" endRotLimit="0 0 0" />
+
+            <part direction="1" startTime="1" endTime="2" dependentAnimation="foldFlapLeft"  dependentAnimationStartTime="0"   dependentAnimationEndTime="1"/>
+
+            <sound template="hydraulicOpen06"       startTime="0.2"  endTime="4.99" direction="-1"    volumeScale="0.8" startPitchScale="0.5" endPitchScale="0.7" fadeIn="0.1" fadeOut="0.1" linkNode="leftArmMower"/>
+            <sound template="hydraulicOpen05"       startTime="0.2"  endTime="4.99" direction="-1"    volumeScale="1.8" startPitchScale="1.5" endPitchScale="1.7" fadeIn="0.1" fadeOut="0.1" linkNode="leftArmMower"/>
+            <sound template="hydraulicClose01"      startTime="0.2"  endTime="4.99" direction="1"     volumeScale="5.4" pitchScale="0.5" fadeIn="0.1" fadeOut="0.1" linkNode="leftArmMower"/>
+            <sound template="hydraulicOpen02"       startTime="0.2"  endTime="4.99" direction="1"     volumeScale="0.7" pitchScale="1.7" fadeIn="0.1" fadeOut="0.1" linkNode="leftArmMower"/>
+            <sound template="foldStartMed02"        startTime="1"    direction="0"  volumeScale="4"   pitchScale="0.7" />
+            <sound template="trailerCloseImpact_01" startTime="1"    direction="0"  volumeScale="0.7" pitchScale="0.7" />
+            <sound template="vibratingImp"          startTime="1"    direction="0"  volumeScale="1.3" pitchScale="0.9" />
+            <sound template="cylinderPunch"         startTime="1"    direction="0"  volumeScale="0.6" pitchScale="1.3" />
+            <sound template="vibratingImp"          startTime="0.51" direction="-1" volumeScale="1.1" pitchScale="1.0" />
+            <sound template="trailerCloseImpact_02" startTime="0.51" direction="-1" volumeScale="1.1" pitchScale="1.0" />
+            <sound template="hingeImp"              startTime="0.6"  direction="-1" volumeScale="0.8" pitchScale="0.8" />
+            <sound template="foldStartMed02"        startTime="4.99" direction="1"  volumeScale="5"   pitchScale="0.8"/>
+            <sound template="vibratingImp"          startTime="4.99" direction="1"  volumeScale="1.6" pitchScale="0.8"/>
+            <sound template="metalImpHigh01"        startTime="4.99" direction="1"  volumeScale="1.0" pitchScale="0.8"/>
+            <sound template="hingeImp"              startTime="4.9"  direction="1"  volumeScale="1.0" pitchScale="0.6"/>
+            <sound template="cylinderPunch"         startTime="4.99" direction="1"  volumeScale="0.6" pitchScale="1.6"/>
+            <sound template="metalImpLow"           startTime="4.99" direction="1"  volumeScale="0.9" pitchScale="1.2"/>
+            <sound template="metalImpLow"           startTime="0.2"  direction="-1" volumeScale="1.2" pitchScale="1" />
+            <sound template="foldStartMed02"        startTime="0.2"  direction="-1" volumeScale="5.2" pitchScale="0.7" />
+            <sound template="metalImpHigh01"        startTime="0.2"  direction="-1" volumeScale="1.2" pitchScale="0.7" />
+            <sound template="vibratingImp"          startTime="0.2"  direction="-1" volumeScale="1.5" pitchScale="0.9" />
+            <sound template="trailerCloseImpact_01" startTime="0.2"  direction="-1" volumeScale="1.5" pitchScale="0.6" />
+            <sound template="clackVar4"             startTime="0.49" direction="1"  volumeScale="4"   pitchScale="0.6" />
+            <sound template="trailerCloseImpact_02" startTime="0.49" direction="1"  volumeScale="2"   pitchScale="0.6" />
+            <sound template="vibratingImp"          startTime="0.49" direction="1"  volumeScale="1"   pitchScale="1.2" />
+        </animation>
+        <animation name="foldingRight">
+            <part node="rightArmComponentJointRot"   startTime="1.0" endTime="5.0" startRot="-20 -90 0" endRot="-100 -90 0" />
+            <part node="rightArmMower"               startTime="4.0" endTime="5.0" startRot="0 0 0" endRot="10 0 0" />
+            <part node="rightArmPart02"              startTime="1.0" endTime="5.0" startRot="0 0 0" endRot="-85 0 0" />
+            <part node="curtainsSideRightBoneAnim"   startTime="1.0" endTime="5.0" startTrans="-0.075 -0.363 0.479" endTrans="-0.075 -0.216 0.204" startRot="-3.477 88.046 0.0" endRot="64.334 85.493 67.883" />
+
+            <part node="rightArmComponentJointRot"   startTime="0" endTime="0.5" startRot="0 -90 0" endRot="-20 -90 0" />
+            <part componentJointIndex="3"            startTime="0" endTime="0.5" startTransLimit="0 0.4 0" endTransLimit="0 0 0" />
+            <part componentJointIndex="3"            startTime="0" endTime="1.0" startRotLimit="0 0 15" endRotLimit="0 0 0" />
+
+            <part direction="1" startTime="1" endTime="2" dependentAnimation="foldFlapRight" dependentAnimationStartTime="0"   dependentAnimationEndTime="1"/>
+
+            <sound template="hydraulicOpen06"  startTime="0.2" endTime="4.99" direction="-1" volumeScale="0.6" startPitchScale="0.7" endPitchScale="0.9" fadeIn="0.1" fadeOut="0.1" linkNode="rightArmMower"/>
+            <sound template="hydraulicOpen05"  startTime="0.2" endTime="4.99" direction="-1" volumeScale="1.6" startPitchScale="1.7" endPitchScale="1.9" fadeIn="0.1" fadeOut="0.1" linkNode="rightArmMower"/>
+            <sound template="hydraulicClose01" startTime="0.2" endTime="4.99" direction="1"  volumeScale="5.1" pitchScale="0.7" fadeIn="0.1" fadeOut="0.1" linkNode="rightArmMower"/>
+            <sound template="hydraulicOpen02"  startTime="0.2" endTime="4.99" direction="1"  volumeScale="0.7" pitchScale="1.4" fadeIn="0.1" fadeOut="0.1" linkNode="rightArmMower"/>
+
+        </animation>
+        <animation name="foldingFront" soundVolumeFactor="0.6">
+            <part node="frontArmMowerLeftFlap"       startTime="4.0" endTime="5.0" startRot="0 0 0" endRot="0 0 85" />
+            <part node="curtainsFrontLeftBoneJoint"  startTime="4.0" endTime="5.0" startTrans="0.457 -0.31 -0.088" endTrans="0.215 -0.2 -0.088" startRot="0.0 0.0 0.0" endRot="0.0 0.0 -10.0" />
+            <part node="frontArmMowerRightFlap"      startTime="3.8" endTime="4.8" startRot="0 0 0" endRot="0 0 -85" />
+            <part node="curtainsFrontRightBoneJoint" startTime="3.8" endTime="4.8" startTrans="-0.457 -0.31 -0.088" endTrans="-0.215 -0.2 -0.088" startRot="0.0 0.0 0.0" endRot="0.0 0.0 10.0" />
+
+            <part node="frontArmJoint"               startTime="0.0" endTime="0.5" startTrans="0 0.4 0.988" endTrans="0 0.8 0.988" />
+            <part componentJointIndex="4"            startTime="0.0" endTime="0.5" startTransLimit="0 0.6 0" endTransLimit="0 0 0" />
+            <part componentJointIndex="4"            startTime="0.0" endTime="0.5" startRotLimit="0 0 5" endRotLimit="0 0 0" />
+
+            <sound template="hydraulicClose01" startTime="3.8"  endTime="4.8"  direction="0"     volumeScale="1.1" pitchScale="1.6" fadeIn="0.1" fadeOut="0.1" linkNode="frontArmMowerRightFlap"/>
+            <sound template="hydraulicClose01" startTime="4.0"  endTime="4.99" direction="0"     volumeScale="1.1" pitchScale="1.4" fadeIn="0.1" fadeOut="0.1" linkNode="frontArmMowerLeftFlap"/>
+            <sound template="vibratingImp"     startTime="3.8"  direction="-1" volumeScale="1.3" pitchScale="1.3"  linkNode="frontArmMowerRightFlap"/>
+            <sound template="cylinderPunch"    startTime="3.8"  direction="-1" volumeScale="0.4" pitchScale="2.0"  linkNode="frontArmMowerRightFlap"/>
+            <sound template="vibratingImp"     startTime="4.0"  direction="-1" volumeScale="1.2" pitchScale="1.6"  linkNode="frontArmMowerLeftFlap"/>
+            <sound template="cylinderPunch"    startTime="4.0"  direction="-1" volumeScale="0.4" pitchScale="1.7"  linkNode="frontArmMowerLeftFlap"/>
+            <sound template="vibratingImp"     startTime="4.8"  direction="1"  volumeScale="1.1" pitchScale="1.6"  linkNode="frontArmMowerRightFlap"/>
+            <sound template="vibratingImp"     startTime="4.99" direction="1"  volumeScale="1.1" pitchScale="1.8"  linkNode="frontArmMowerLeftFlap"/>
+            <sound template="hydraulicClose02" startTime="0.1"  endTime="0.49" direction="0"     volumeScale="5.5" pitchScale="1.8" linkNode="frontArmMower" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="metalImpLow"      startTime="0.1"  direction="-1" volumeScale="1.3" pitchScale="1"    linkNode="frontArmMower"/>
+            <sound template="foldStartMed02"   startTime="0.1"  direction="-1" volumeScale="4.3" pitchScale="0.8"  linkNode="frontArmMower"/>
+            <sound template="vibratingImp"     startTime="0.1"  direction="-1" volumeScale="1.5" pitchScale="1.0"  linkNode="frontArmMower"/>
+            <sound template="hingeImp"         startTime="0.4"  direction="1"  volumeScale="1.3" pitchScale="0.8"  linkNode="frontArmMower"/>
+            <sound template="foldStartMed02"   startTime="0.49" direction="1"  volumeScale="3.6" pitchScale="1.2"  linkNode="frontArmMower"/>
+            <sound template="vibratingImp"     startTime="0.49" direction="1"  volumeScale="1.5" pitchScale="1.0"  linkNode="frontArmMower"/>
+        </animation>
+
+        <animation name="startStopAnim">
+            <part node="axisFront"                   startTime="0" endTime="1" startRot="0 0 0" endRot="-20 0 0" />
+            <part node="axisBack"                    startTime="0" endTime="1" startTrans="0 -0.0445 0" endTrans="0 -0.22 0" />
+        </animation>
+
+        <animation name="foldFlapRight">
+            <part node="rightArmFlap"                startTime="0" endTime="1" startRot="0 0 25" endRot="0 0 0" />
+
+            <sound template="hydraulicClose03" startTime="0.01" endTime="0.99" volumeScale="1.6" pitchScale="1.6" linkNode="rightArmFlap" fadeIn="0.1" fadeOut="0.1" />
+            <sound template="vibratingImp"     startTime="0.01" direction="-1" volumeScale="0.6" pitchScale="1.2" linkNode="rightArmFlap"/>
+            <sound template="vibratingImp"     startTime="0.99" direction="1"  volumeScale="0.6" pitchScale="1.2" linkNode="rightArmFlap"/>
+            <sound template="hingeImp"         startTime="0.1"  direction="-1" volumeScale="0.4" pitchScale="0.9" linkNode="rightArmFlap"/>
+        </animation>
+        <animation name="foldFlapLeft">
+            <part node="leftArmFlap"                 startTime="0" endTime="1" startRot="0 0 -25" endRot="0 0 0" />
+
+            <sound template="hydraulicClose03" startTime="0.01" endTime="0.99" volumeScale="1.6" pitchScale="1.9" linkNode="leftArmFlap" fadeIn="0.1" fadeOut="0.1" />
+            <sound template="vibratingImp"     startTime="0.01" direction="-1" volumeScale="0.6" pitchScale="1.4" linkNode="leftArmFlap"/>
+            <sound template="vibratingImp"     startTime="0.99" direction="1"  volumeScale="0.6" pitchScale="1.4" linkNode="leftArmFlap"/>
+            <sound template="hingeImp"         startTime="0.1"  direction="-1" volumeScale="0.4" pitchScale="1.2" linkNode="leftArmFlap"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="frontArmJoint" playSound="true">
+                <componentJoint index="4" anchorActor="0" />
+            </movingTool>
+            <movingTool node="leftArmComponentJointRot" playSound="true">
+                <componentJoint index="2" anchorActor="0" />
+            </movingTool>
+            <movingTool node="rightArmComponentJointRot" playSound="true">
+                <componentJoint index="3" anchorActor="0" />
+            </movingTool>
+            <movingTool node="leftArmFlap" playSound="true">
+                <dependentPart node="leftArmFlapHydraulic" />
+            </movingTool>
+            <movingTool node="rightArmFlap" playSound="true">
+                <dependentPart node="rightArmFlapHydraulic" />
+            </movingTool>
+            <movingTool node="axisFront" wheelIndices="1 2">
+                <dependentPart node="axisFrontHydraulic" />
+            </movingTool>
+            <movingTool node="axisBack" wheelIndices="3 4"/>
+            <movingTool node="leftArm">
+                <dependentPart node="leftArmHydraulic" />
+                <dependentPart node="leftArmPto" />
+            </movingTool>
+            <movingTool node="rightArm">
+                <dependentPart node="rightArmHydraulic" />
+                <dependentPart node="rightArmPto" />
+            </movingTool>
+            <movingTool node="frontArmMowerLeftFlap">
+                <dependentPart node="frontArmMowerLeftFlapHydraulic" />
+                <dependentPart node="frontArmMowerLeftFlapPart02" />
+            </movingTool>
+            <movingTool node="frontArmMowerRightFlap">
+                <dependentPart node="frontArmMowerRightFlapHydraulic" />
+                <dependentPart node="frontArmMowerRightFlapPart02" />
+            </movingTool>
+            <movingTool node="wiperArm01">
+                <dependentPart node="wiperArm02" />
+                <dependentPart node="wiper" />
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <!-- front arm -->
+            <movingPart node="frontArmHydraulic" referencePoint="frontArmHydraulicRef" referenceFrame="frontArmHydraulicRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="frontArmHydraulicPunch" />
+            </movingPart>
+            <movingPart node="frontTopArmHydraulic" referencePoint="frontTopArmHydraulicRef" referenceFrame="frontTopArmHydraulicRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="frontTopArmHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="frontArmMowerLeftFlapPart02" referencePoint="frontArmMowerLeftFlapPart02Ref" localReferencePoint="frontArmMowerLeftFlapPart01" referenceFrame="frontArmMowerLeftFlapPart02RefFrame" >
+                <dependentPart node="frontArmMowerLeftFlapPart01" />
+            </movingPart>
+            <movingPart node="frontArmMowerLeftFlapPart01" referencePoint="frontArmMowerLeftFlapPart02Ref" referenceFrame="frontArmMowerLeftFlapPart02Ref" />
+            <movingPart node="frontArmMowerLeftFlapHydraulic" referencePoint="frontArmMowerLeftFlapHydraulicRef" referenceFrame="frontArmMowerLeftFlapHydraulicRef">
+                <translatingPart node="frontArmMowerLeftFlapHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="frontArm" referencePoint="frontArmRef" referenceFrame="frontArmRef" isActiveDirty="true" maxUpdateDistance="300"/>
+            <movingPart node="frontArmMower" referencePoint="frontArmMowerRef" referenceFrame="frontArmMowerRef" isActiveDirty="true" maxUpdateDistance="300"/>
+            <movingPart node="frontArmPto" referencePoint="frontArmPtoRef" referenceFrame="frontArmPtoRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="frontArmPtoTrans" />
+            </movingPart>
+
+            <movingPart node="frontArmMowerRightFlapPart02" referencePoint="frontArmMowerRightFlapPart02Ref" localReferencePoint="frontArmMowerRightFlapPart01" referenceFrame="frontArmMowerRightFlapPart02RefFrame" >
+                <dependentPart node="frontArmMowerRightFlapPart01" />
+            </movingPart>
+            <movingPart node="frontArmMowerRightFlapPart01" referencePoint="frontArmMowerRightFlapPart02Ref" referenceFrame="frontArmMowerRightFlapPart02Ref" />
+            <movingPart node="frontArmMowerRightFlapHydraulic" referencePoint="frontArmMowerRightFlapHydraulicRef" referenceFrame="frontArmMowerRightFlapHydraulicRef">
+                <translatingPart node="frontArmMowerRightFlapHydraulicPunch" />
+            </movingPart>
+
+            <!-- left arm -->
+            <movingPart node="leftArmHydraulic" referencePoint="leftArmHydraulicRef" referenceFrame="leftArmHydraulicRef" >
+                <translatingPart node="leftArmHydraulicPunch" />
+            </movingPart>
+            <movingPart node="leftArmPto" referencePoint="leftArmPtoRef" referenceFrame="leftArmPtoRef" >
+                <translatingPart node="leftArmPtoPunch" />
+            </movingPart>
+            <movingPart node="leftArmPartHydraulic" referencePoint="leftArmPartHydraulicRef" referenceFrame="leftArmPartHydraulicRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="leftArmPartHydraulicPunch" />
+            </movingPart>
+            <movingPart node="leftArmPartHydraulic02" referencePoint="leftArmPartHydraulicRef02" referenceFrame="leftArmPartHydraulicRef02" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="leftArmPartHydraulicPunch02" />
+            </movingPart>
+            <movingPart node="leftArmPartArm" referencePoint="leftArmPartArmRef" referenceFrame="leftArmPartArmRef" isActiveDirty="true" maxUpdateDistance="300"/>
+            <movingPart node="leftArmFlapHydraulic" referencePoint="leftArmFlapHydraulicRef" referenceFrame="leftArmFlapHydraulicRef" >
+                <translatingPart node="leftArmFlapHydraulicPunch" />
+            </movingPart>
+            <movingPart node="leftArm" referencePoint="leftArmRef" referenceFrame="leftArmRef" isActiveDirty="true" maxUpdateDistance="300">
+                <dependentPart node="leftArmHydraulic" />
+                <dependentPart node="leftArmPto" />
+            </movingPart>
+            <movingPart node="leftArmMowerRot" referencePoint="leftArmMowerRef" referenceFrame="leftArmMowerRef" isActiveDirty="true" maxUpdateDistance="300"/>
+
+            <!-- right arm -->
+            <movingPart node="rightArm" referencePoint="rightArmRef" referenceFrame="rightArmRef" isActiveDirty="true" maxUpdateDistance="300">
+                <dependentPart node="rightArmHydraulic" />
+                <dependentPart node="rightArmPto" />
+            </movingPart>
+            <movingPart node="rightArmHydraulic" referencePoint="rightArmHydraulicRef" referenceFrame="rightArmHydraulicRef" >
+                <translatingPart node="rightArmHydraulicPunch" />
+            </movingPart>
+            <movingPart node="rightArmPto" referencePoint="rightArmPtoRef" referenceFrame="rightArmPtoRef" >
+                <translatingPart node="rightArmPtoPunch" />
+            </movingPart>
+            <movingPart node="rightArmPartHydraulic02" referencePoint="rightArmPartHydraulic02Ref" referenceFrame="rightArmPartHydraulic02Ref" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="rightArmPartHydraulicPunch02" />
+            </movingPart>
+            <movingPart node="rightArmPartArm" referencePoint="rightArmPartArmRef" referenceFrame="rightArmPartArmRef" isActiveDirty="true" maxUpdateDistance="300"/>
+            <movingPart node="rightArmPartHydraulic" referencePoint="rightArmPartHydraulicRef" referenceFrame="rightArmPartHydraulicRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="rightArmPartHydraulicPunch" />
+            </movingPart>
+            <movingPart node="rightArmFlapHydraulic" referencePoint="rightArmFlapHydraulicRef" referenceFrame="rightArmFlapHydraulicRef" maxUpdateDistance="300">
+                <translatingPart node="rightArmFlapHydraulicPunch" />
+            </movingPart>
+            <movingPart node="rightArmMowerRot" referencePoint="rightArmMowerRef" referenceFrame="rightArmMowerRef" isActiveDirty="true" maxUpdateDistance="300"/>
+
+            <!-- axis -->
+            <movingPart node="axisFrontHydraulic" referencePoint="axisFrontHydraulicRef" referenceFrame="axisFrontHydraulicRef" >
+                <translatingPart node="axisFrontHydraulicPunch" />
+            </movingPart>
+            <movingPart node="steeringBarLeft" referencePoint="steeringBarLeftRef" referenceFrame="steeringBarLeftRef" isActiveDirty="true" scaleZ="true" maxUpdateDistance="300"/>
+            <movingPart node="steeringBarRight" referencePoint="steeringBarRightRef" referenceFrame="steeringBarRightRef" isActiveDirty="true" scaleZ="true" maxUpdateDistance="300"/>
+            <movingPart node="axisBackPart" referencePoint="axisBackPartRef" referenceFrame="axisBackPartRef" isActiveDirty="true" limitedAxis="1" maxUpdateDistance="300"/>
+            <movingPart node="axisBackLeftHydraulic" referencePoint="axisBackLeftHydraulicRef" referenceFrame="axisBackLeftHydraulicRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="axisBackLeftHydraulicPunch" />
+            </movingPart>
+            <movingPart node="axisBackRightHydraulic" referencePoint="axisBackRightHydraulicRef" referenceFrame="axisBackRightHydraulicRef" isActiveDirty="true" maxUpdateDistance="300">
+                <translatingPart node="axisBackRightHydraulicPunch" />
+            </movingPart>
+        </movingParts>
+    </cylindered>
+
+    <mower fruitTypeConverter="MOWER">
+        <animationNodes>
+            <animationNode node="zetter_front"      rotSpeed="-2500" rotAxis="1" turnOnFadeTime="3" turnOffFadeTime="5"/>
+            <animationNode node="zetter_left"       rotSpeed="1500" rotAxis="3" turnOnFadeTime="3" turnOffFadeTime="5"/>
+            <animationNode node="zetter_right"      rotSpeed="-1500" rotAxis="3" turnOnFadeTime="3" turnOffFadeTime="5"/>
+            <animationNode node="leftArmDrum"       rotSpeed="2500" rotAxis="3" turnOnFadeTime="3" turnOffFadeTime="5"/>
+            <animationNode node="rightArmDrum"      rotSpeed="-2500" rotAxis="3" turnOnFadeTime="3" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife01" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife02" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife03" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife04" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife05" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife06" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="frontMowerKnife07" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+
+            <animationNode node="leftMowerKnife01"  rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife02"  rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife03"  rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife04"  rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife05"  rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife06"  rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife07"  rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="leftMowerKnife08"  rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+
+            <animationNode node="rightMowerKnife01" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife02" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife03" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife04" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife05" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife06" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife07" rotSpeed="2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <animationNode node="rightMowerKnife08" rotSpeed="-2500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        </animationNodes>
+
+        <dropEffects>
+            <dropEffect workAreaIndex="2" dropAreaIndex="5">
+                <effectNode effectClass="TypedMotionPathEffect" effectType="MOWER" linkNode="mowerEffectFrontDropNode">
+                    <motionPathEffect textureFilename="$data/vehicles/krone/bigM450/mowerEffectFrontDropArray.dds" numRows="11" rowLength="18" minFade="0.15" speedScale="1.2" maxShapeScale="2.3"/>
+                </effectNode>
+                <effectNode effectNode="smokeEmitterFront" effectClass="ParticleEffect" particleType="smoke" materialType="smokeParticle" worldSpace="false" emitCountScale="0.25"/>
+            </dropEffect>
+
+            <dropEffect workAreaIndex="1" dropAreaIndex="4">
+                <effectNode effectClass="TypedMotionPathEffect" effectType="MOWER" linkNode="mowerEffectLeftDropNode">
+                    <motionPathEffect textureFilename="$data/vehicles/krone/bigM450/mowerEffectLeftDropArray.dds" numRows="21" rowLength="18" minFade="0.15" speedScale="1.2" maxShapeScale="2.3"/>
+                </effectNode>
+                <effectNode effectNode="smokeEmitterLeft" effectClass="ParticleEffect" particleType="smoke" materialType="smokeParticle" worldSpace="false" emitCountScale="0.25"/>
+            </dropEffect>
+            <dropEffect workAreaIndex="1" dropAreaIndex="7">
+                <effectNode effectClass="TypedMotionPathEffect" effectType="MOWER" linkNode="mowerEffectLeftSwathNode">
+                    <motionPathEffect textureFilename="$data/vehicles/krone/bigM450/mowerEffectLeftSwathArray.dds" numRows="11" rowLength="18" minFade="0.15" speedScale="1" maxShapeScale="1.5"/>
+                </effectNode>
+                <effectNode effectNode="smokeEmitterLeft" effectClass="ParticleEffect" particleType="smoke" materialType="smokeParticle" worldSpace="false" emitCountScale="0.25"/>
+            </dropEffect>
+
+            <dropEffect workAreaIndex="3" dropAreaIndex="6">
+                <effectNode effectClass="TypedMotionPathEffect" effectType="MOWER" linkNode="mowerEffectRightDropNode">
+                    <motionPathEffect textureFilename="$data/vehicles/krone/bigM450/mowerEffectRightDropArray.dds" numRows="21" rowLength="18" minFade="0.15" speedScale="1.2" maxShapeScale="2.3"/>
+                </effectNode>
+                <effectNode effectNode="smokeEmitterRight" effectClass="ParticleEffect" particleType="smoke" materialType="smokeParticle" worldSpace="false" emitCountScale="0.25"/>
+            </dropEffect>
+            <dropEffect workAreaIndex="3" dropAreaIndex="7">
+                <effectNode effectClass="TypedMotionPathEffect" effectType="MOWER" linkNode="mowerEffectRightSwathNode">
+                    <motionPathEffect textureFilename="$data/vehicles/krone/bigM450/mowerEffectRightSwathArray.dds" numRows="11" rowLength="18" minFade="0.15" speedScale="1" maxShapeScale="1.5"/>
+                </effectNode>
+                <effectNode effectNode="smokeEmitterRight" effectClass="ParticleEffect" particleType="smoke" materialType="smokeParticle" worldSpace="false" emitCountScale="0.25"/>
+            </dropEffect>
+        </dropEffects>
+        <sounds>
+            <cut template="mowerToolWork_01" linkNode="leftArmMower"  volumeScale="0.55"/>
+            <cut template="mowerToolWork_01" linkNode="rightArmMower" volumeScale="0.55" pitchScale="1.1"/>
+            <cut template="mowerToolWork_01" linkNode="frontArmMower" volumeScale="0.7" pitchScale="0.9"/>
+        </sounds>
+    </mower>
+
+    <windBending>
+        <windBendingNodes>
+            <windBendingNode node="windBendFront"  decalNode="windBendFrontDecal" maxBending="0.15" maxBendingSpeed="20" speedReferenceNode="frontArmMower"/>
+            <windBendingNode node="curtainsFront"                                 maxBending="0.15" maxBendingSpeed="20" speedReferenceNode="frontArmMower"/>
+
+            <windBendingNode node="windBendLeft"  decalNode="windBendLeftDecal"  maxBending="0.04" maxBendingSpeed="20" speedReferenceNode="leftArmMower"/>
+            <windBendingNode node="windBendRight" decalNode="windBendRightDecal" maxBending="0.04" maxBendingSpeed="20" speedReferenceNode="rightArmMower"/>
+
+            <windBendingNode node="windBendCurtainsLeft"  maxBending="0.04" maxBendingSpeed="20" speedReferenceNode="leftArmPart02"/>
+            <windBendingNode node="windBendCurtainsRight" maxBending="0.04" maxBendingSpeed="20" speedReferenceNode="rightArmPart02"/>
+        </windBendingNodes>
+    </windBending>
+
+    <turnOnVehicle turnOffIfNotAllowed="true">
+        <turnedAnimation name="startStopAnim" turnOffSpeedScale="0"/>
+        <sounds>
+            <start template="mowerToolStart_01" linkNode="leftArmMower" volumeScale="1.4"/>
+            <stop  template="mowerToolStop_01"  linkNode="leftArmMower" volumeScale="1.4"/>
+            <work  template="mowerToolLoop_01"  linkNode="leftArmMower" volumeScale="1.4"/>
+
+            <start template="mowerToolStart_01" linkNode="rightArmMower" pitchScale="1.1" volumeScale="1.4"/>
+            <stop  template="mowerToolStop_01"  linkNode="rightArmMower" pitchScale="1.1" volumeScale="1.4"/>
+            <work  template="mowerToolLoop_01"  linkNode="rightArmMower" pitchScale="1.1" volumeScale="1.4"/>
+
+            <start template="mowerToolStart_01" linkNode="frontArmMower" pitchScale="0.9" volumeScale="1.4"/>
+            <stop  template="mowerToolStop_01"  linkNode="frontArmMower" pitchScale="0.9" volumeScale="1.4"/>
+            <work  template="mowerToolLoop_01"  linkNode="frontArmMower" pitchScale="0.9" volumeScale="1.4"/>
+
+        </sounds>
+    </turnOnVehicle>
+
+    <wipers>
+        <wiper animName="wiperFrontAnimation" >
+            <state animSpeed="0.75" animPause="2.0" />
+            <state animSpeed="0.75" animPause="0.0" />
+            <state animSpeed="1.10" animPause="0.0" />
+        </wiper>
+        <wiper animName="wiperSideAnimation" >
+            <state animSpeed="1.0" animPause="2.0" />
+        </wiper>
+    </wipers>
+
+    <suspensions>
+        <suspension node="seat"              weight="150" minTranslation="-0.05 -0.15 0.0" maxTranslation="0.05 0.15 0.0" suspensionParametersX="20 4" suspensionParametersY="5 1" suspensionParametersZ="20 4" />
+        <suspension useCharacterTorso="true" weight="90"  minRotation="0 -5 -5" maxRotation="0 5 5" suspensionParametersY="7 1" suspensionParametersZ="7 1" />
+    </suspensions>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="780" >
+                        <exactFillRootNode node="exactFillRootNodeFuel"/>
+						<dashboard displayType="ANIMATION" valueType="fillLevel" animName="fuelNeedleAnim" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="bigM_dblFuelDecalP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.8" warningThresholdMax="20" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="TEXT" valueType="fillLevelPct" node="bigM_dblFuelLevelPercentNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" showOnInfoHud="false" fillTypes="def" capacity="80" >
+						<dashboard displayType="ANIMATION" valueType="fillLevel" animName="defNeedleAnim" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="bigM_dblAdBlueDecalP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="ALBUTT_BLUE1" intensity="0.8" warningThresholdMax="20" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="TEXT" valueType="fillLevelPct" node="bigM_dblAdBlueLevelPercentNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <dashboard>
+        <groups>
+			<group name="MOTOR_STARTING" electronicsStarting="true"/>
+            <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+			<!-- Display Mode -->
+			<group name="DARKMODE" dbl="darkmode"/>
+			<group name="LIGHTMODE" dbl="lightmode"/>
+			<!-- Guidance Steering -->
+			<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
+        </groups>
+
+        <default>	
+		<!-- always on -->
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherSunAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherCloudAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherRainAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherHailAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherSnowAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherTwisterAO" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" node="anyDecal" baseColor="BLACK" emitColor="RED" intensity="0.2" groups="MOTOR_STARTING"/>
+			<dashboard displayType="EMITTER" node="bigM_dblBasicDisplay_Decal" intensity="0.2" groups="MOTOR_ACTIVE LIGHTMODE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblBasicDisplay_DecalDM" intensity="0.2" groups="MOTOR_ACTIVE DARKMODE"/>
+            <dashboard displayType="VISIBILITY" node="bigM_dblBasicDisplay_Decal" groups="MOTOR_ACTIVE LIGHTMODE"/>
+            <dashboard displayType="VISIBILITY" node="bigM_dblBasicDisplay_DecalDM" groups="MOTOR_ACTIVE DARKMODE"/>
+			
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmNeedleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblSpeedNeedleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblAdBlueDecalP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblAdBlueNeedleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblFuelDecalP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblFuelNeedleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblEngineTempDecalP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblEngineTempNeedleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblCruiseControlP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblParkBreakOnP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblGPSsatellitP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblGPSactiveP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblHLMonP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblMowerSwathMiddleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmSliderMowerLeftP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmSliderMowerMiddleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmSliderMowerRightP1_SC" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" node="bigM_dblParkBreakOnP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblParkBreakOffP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblMowerSwathLeftP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblMowerSwathMiddleP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblMowerSwathRightP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+        </default>
+		
+		<dashboardLive>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="bigM_dblRealClockNumbersAO" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- CVT -->
+			<dashboard displayType="EMITTER" valueType="cvt" cmd="motorcoldlamp" node="bigM_dblEngineTempDecalP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="CARUELLENICOLAS_BLUE1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="1 2 3 4" node="bigM_dblCVTDriveLevel00P1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="2 3 4" node="bigM_dblCVTDriveLevel01P1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="3 4" node="bigM_dblCVTDriveLevel02P1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="4" node="bigM_dblCVTDriveLevel03P1_SC" groups="MOTOR_ACTIVE"/>
+			<!-- VCA -->
+			<dashboard displayType="VISIBILITY" valueType="vca" cmd="park" node="bigM_dblParkBreakOffP1_SC" intensity="0.2" idleValue="-1" groups="MOTOR_ACTIVE DBL_PARK"/>
+			<!-- HLM -->
+			<dashboard valueType="hlm" option="headland" displayType="VISIBILITY" node="bigM_dblHLMheadlandP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="hlm" option="field" 	 displayType="VISIBILITY" node="bigM_dblHLMfieldP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="hlm" option="" 		 displayType="EMITTER" node="bigM_dblHLMonP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" emissiveScale="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="hlm" option="field" 	 displayType="EMITTER" node="bigM_dblHLMfieldP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="hlm" option="headland" displayType="EMITTER" node="bigM_dblHLMheadlandP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+			<!-- Compass -->
+			<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="bigM_dblGPScompassP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="heading" node="bigM_dblGPScompassNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Mower Swath -->
+			<dashboard valueType="base" cmd="swath" stateText="2" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathLeftP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="base" cmd="swath" stateText="2" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathRightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="base" cmd="swath" stateText="3" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathLeftP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="base" cmd="swath" stateText="4" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathRightP1_SC" groups="MOTOR_ACTIVE"/>
+			<!-- Mower PTO -->
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" node="bigM_dblRpmMowerLeftNumbersP1_SC" factor="0.46" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" node="bigM_dblRpmMowerMiddleNumbersP1_SC" factor="0.61" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" node="bigM_dblRpmMowerRightNumbersP1_SC" factor="0.46" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" node="bigM_dblRpmSliderMowerLeftP1_SC" factor="0.46" minValueSlider="0" maxValueSlider="1000" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" node="bigM_dblRpmSliderMowerMiddleP1_SC" factor="0.61" minValueSlider="0" maxValueSlider="1000" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" node="bigM_dblRpmSliderMowerRightP1_SC" factor="0.46" minValueSlider="0" maxValueSlider="1000" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<!-- Mower Lift State -->
+			<dashboard displayType="TEXT" valueType="base" cmd="unfoldingState" joints="0" node="bigM_dblHeaderLiftStateNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- <dashboard displayType="TEXT" valueType="base" cmd="unfoldingState" joints="0" node="bigM_dblHeaderFoldingStateNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/> -->
+			<!-- Mower cut height -->
+			<!-- <dashboard displayType="TEXT" valueType="combine" cmd="cutHeight" node="bigM_dblMowerCutHeightLeftNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="combine" cmd="cutHeight" node="bigM_dblMowerCutHeightMiddleNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="combine" cmd="cutHeight" node="bigM_dblMowerCutHeightRightNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/> -->
+			
+		</dashboardLive>
+    </dashboard>
+
+    <ai>
+        <agent frontWheelNodes="wheelBackLeft wheelBackRight"/>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack"/>
+        <sizeMarkers leftNode="aiSizeMarkerLeft" rightNode="aiSizeMarkerRight" backNode="aiSizeMarkerBack"/>
+        <hasNoFullCoverageArea value="true"/>
+        <collisionTrigger node="aiCollisionNode" width="10.5" height="4.2" length="8"/>
+		<automaticSteering>
+			<dashboards>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="bigM_dblGPSsatellitP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="bigM_dblGPSactiveP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+			</dashboards>
+		</automaticSteering>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-1.6" maxX="1.6" minZ="-4.2" maxZ="2.5" yOffset="0.6" />
+        <bendingNode minX="-1.8" maxX="1.8" minZ="-1.1" maxZ="1" yOffset="0" node="bigm450_frontArm_component5"/>
+        <bendingNode minX="-1.9" maxX="2.15" minZ="-1.2" maxZ="1.1" yOffset="-0.2" node="bigm450_leftArm_component3"/>
+        <bendingNode minX="-2.15" maxX="1.9" minZ="-1.2" maxZ="1.1" yOffset="-0.2" node="bigm450_rightArm_component4"/>
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="bigm450_main_component1" node="0>" />
+        <i3dMapping id="axisFront" node="0>0|0|0" />
+        <i3dMapping id="wheelFrontLeftRot" node="0>0|0|0|0" />
+        <i3dMapping id="wheelFrontLeft" node="0>0|0|0|0|0" />
+        <i3dMapping id="wheelFrontRightRot" node="0>0|0|0|1" />
+        <i3dMapping id="wheelFrontRight" node="0>0|0|0|1|0" />
+        <i3dMapping id="axisFrontHydraulicRef" node="0>0|0|0|2" />
+        <i3dMapping id="outdoorCameraTarget" node="0>0|1|0" />
+        <i3dMapping id="outdoorCamera1" node="0>0|1|0|0" />
+        <i3dMapping id="indoorCamera1" node="0>0|1|1" />
+        <i3dMapping id="cameraRaycastNode1" node="0>0|1|2" />
+        <i3dMapping id="cameraRaycastNode2" node="0>0|1|3" />
+        <i3dMapping id="shadowFocusBox" node="0>0|1|4" />
+        <i3dMapping id="yellowRectangle_01_yellowRectangle_0102" node="0>0|2|0|0" />
+        <i3dMapping id="yellowRectangle_01_yellowRectangle_0101" node="0>0|2|0|1" />
+        <i3dMapping id="redRound_03_redRound_0302" node="0>0|2|0|2" />
+        <i3dMapping id="redRound_03_redRound_0301" node="0>0|2|0|3" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0211" node="0>0|2|0|4" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0210" node="0>0|2|0|5" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0209" node="0>0|2|0|6" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0208" node="0>0|2|0|7" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0207" node="0>0|2|0|8" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0206" node="0>0|2|0|9" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0205" node="0>0|2|0|10" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0204" node="0>0|2|0|11" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0203" node="0>0|2|0|12" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0202" node="0>0|2|0|13" />
+        <i3dMapping id="workingLightCircle_02_workingLightCircle_0201" node="0>0|2|0|14" />
+        <i3dMapping id="beaconLight01" node="0>0|2|0|15" />
+        <i3dMapping id="beaconLight02" node="0>0|2|0|16" />
+        <i3dMapping id="plateNumberLight02_01" node="0>0|2|0|17" />
+        <i3dMapping id="plateNumberLight02_02" node="0>0|2|0|18" />
+        <i3dMapping id="bigM450Lights01_static" node="0>0|2|1|0" />
+        <i3dMapping id="bigM450Lights01Glass_static" node="0>0|2|1|1" />
+        <i3dMapping id="bigM450Lights02_static" node="0>0|2|1|2" />
+        <i3dMapping id="bigM450Lights02Glass_static" node="0>0|2|1|3" />
+        <i3dMapping id="frontLightLow" node="0>0|2|2|0" />
+        <i3dMapping id="highBeamLow" node="0>0|2|2|1" />
+        <i3dMapping id="frontLightHigh" node="0>0|2|2|2" />
+        <i3dMapping id="highBeamHigh" node="0>0|2|2|3" />
+        <i3dMapping id="licensePlateLightHigh" node="0>0|2|2|4" />
+        <i3dMapping id="workLightFrontLow" node="0>0|2|3|0" />
+        <i3dMapping id="workLightBackLow" node="0>0|2|3|1" />
+        <i3dMapping id="workLightFrontHigh1" node="0>0|2|3|2" />
+        <i3dMapping id="workLightBackHigh1" node="0>0|2|3|3" />
+        <i3dMapping id="backLightsHigh1" node="0>0|2|4|0" />
+        <i3dMapping id="turnLightLeftFront" node="0>0|2|5|0" />
+        <i3dMapping id="turnLightRightFront" node="0>0|2|5|1" />
+        <i3dMapping id="exitPoint" node="0>0|3" />
+        <i3dMapping id="licensePlateFront" node="0>0|4" />
+        <i3dMapping id="licensePlateBack" node="0>0|5" />
+        <i3dMapping id="steeringWheel" node="0>0|6|0|0|0|0|0" />
+        <i3dMapping id="playerLeftHand" node="0>0|6|0|0|0|0|0|0" />
+        <i3dMapping id="anyDecal" node="0>0|6|0|0|0|1|0" />
+        <i3dMapping id="turnRightDecal" node="0>0|6|0|0|0|1|1" />
+        <i3dMapping id="turnLeftDecal" node="0>0|6|0|0|0|1|2" />
+        <i3dMapping id="light01Decal" node="0>0|6|0|0|0|1|3" />
+        <i3dMapping id="light02Decal" node="0>0|6|0|0|0|1|4" />
+        <i3dMapping id="trailerAttacherJointBack" node="0>0|7|0" />
+        <i3dMapping id="electricBack" node="0>0|7|1" />
+        <i3dMapping id="playerRightFoot" node="0>0|8|0" />
+        <i3dMapping id="playerLeftFoot" node="0>0|8|1" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|9|0|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|9|0|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|9|0|2" />
+        <i3dMapping id="aiSizeMarkerLeft" node="0>0|9|1|0" />
+        <i3dMapping id="aiSizeMarkerRight" node="0>0|9|1|1" />
+        <i3dMapping id="aiSizeMarkerBack" node="0>0|9|1|2" />
+        <i3dMapping id="aiCollisionNode" node="0>0|9|2" />
+        <i3dMapping id="exhaustParticle" node="0>0|10|0" />
+        <i3dMapping id="frontArm" node="0>0|11|0" />
+        <i3dMapping id="frontArmMower" node="0>0|11|0|0" />
+        <i3dMapping id="frontArmMowerLeftFlap" node="0>0|11|0|0|0|0" />
+        <i3dMapping id="frontArmMowerLeftFlapPart02Ref" node="0>0|11|0|0|0|0|0" />
+        <i3dMapping id="frontArmMowerLeftFlapPart02RefFrame" node="0>0|11|0|0|0|0|1" />
+        <i3dMapping id="curtainsFrontLeftBoneJoint" node="0>0|11|0|0|0|0|2|0" />
+        <i3dMapping id="frontArmMowerLeftFlap_lod" node="0>0|11|0|0|0|0|5" />
+        <i3dMapping id="frontArmMowerLeftFlapHydraulic" node="0>0|11|0|0|1" />
+        <i3dMapping id="frontArmMowerLeftFlapHydraulicPunch" node="0>0|11|0|0|1|0" />
+        <i3dMapping id="frontArmMowerLeftFlapPart02" node="0>0|11|0|0|2" />
+        <i3dMapping id="frontArmMowerLeftFlapPart01" node="0>0|11|0|0|2|0" />
+        <i3dMapping id="frontArmMowerLeftFlapHydraulicRef" node="0>0|11|0|0|2|1" />
+        <i3dMapping id="frontArmMowerRightFlap" node="0>0|11|0|0|3|0" />
+        <i3dMapping id="frontArmMowerRightFlapPart02Ref" node="0>0|11|0|0|3|0|0" />
+        <i3dMapping id="frontArmMowerRightFlapPart02RefFrame" node="0>0|11|0|0|3|0|1" />
+        <i3dMapping id="curtainsFrontRightBoneJoint" node="0>0|11|0|0|3|0|2|0" />
+        <i3dMapping id="frontArmMowerRightFlap_lod" node="0>0|11|0|0|3|0|5" />
+        <i3dMapping id="frontArmMowerRightFlapHydraulic" node="0>0|11|0|0|4" />
+        <i3dMapping id="frontArmMowerRightFlapHydraulicPunch" node="0>0|11|0|0|4|0" />
+        <i3dMapping id="frontArmMowerRightFlapPart02" node="0>0|11|0|0|5" />
+        <i3dMapping id="frontArmMowerRightFlapPart01" node="0>0|11|0|0|5|0" />
+        <i3dMapping id="frontArmMowerRightFlapHydraulicRef" node="0>0|11|0|0|5|1" />
+        <i3dMapping id="zetter_front" node="0>0|11|0|0|6" />
+        <i3dMapping id="frontMowerKnife01" node="0>0|11|0|0|7|0" />
+        <i3dMapping id="frontMowerKnife02" node="0>0|11|0|0|7|1" />
+        <i3dMapping id="frontMowerKnife03" node="0>0|11|0|0|7|2" />
+        <i3dMapping id="frontMowerKnife04" node="0>0|11|0|0|7|3" />
+        <i3dMapping id="frontMowerKnife05" node="0>0|11|0|0|7|4" />
+        <i3dMapping id="frontMowerKnife06" node="0>0|11|0|0|7|5" />
+        <i3dMapping id="frontMowerKnife07" node="0>0|11|0|0|7|6" />
+        <i3dMapping id="frontArmPtoRef" node="0>0|11|0|0|8" />
+        <i3dMapping id="frontTopArmHydraulicRef" node="0>0|11|0|0|9" />
+        <i3dMapping id="windBendFront" node="0>0|11|0|0|10|0" />
+        <i3dMapping id="windBendFrontDecal" node="0>0|11|0|0|10|0|0" />
+        <i3dMapping id="mowerEffectFrontDropNode" node="0>0|11|0|0|11|0" />
+        <i3dMapping id="smokeEmitterFront" node="0>0|11|0|0|11|1" />
+        <i3dMapping id="platesFront" node="0>0|11|0|0|12|4" />
+        <i3dMapping id="frontArmMower_lod" node="0>0|11|0|0|14" />
+        <i3dMapping id="frontArmHydraulicRef" node="0>0|11|0|1" />
+        <i3dMapping id="frontArm_lod" node="0>0|11|0|4" />
+        <i3dMapping id="leftArm" node="0>0|11|1" />
+        <i3dMapping id="leftArmMowerRot" node="0>0|11|1|0" />
+        <i3dMapping id="leftArmMower" node="0>0|11|1|0|0" />
+        <i3dMapping id="zetter_left" node="0>0|11|1|0|0|0|0" />
+        <i3dMapping id="leftArmDrum" node="0>0|11|1|0|0|1|0" />
+        <i3dMapping id="leftArmFlap" node="0>0|11|1|0|0|2|0" />
+        <i3dMapping id="leftArmFlapHydraulicRef" node="0>0|11|1|0|0|2|0|0" />
+        <i3dMapping id="leftArmFlapHydraulic" node="0>0|11|1|0|0|3" />
+        <i3dMapping id="leftArmFlapHydraulicPunch" node="0>0|11|1|0|0|3|0" />
+        <i3dMapping id="leftArmPartHydraulicRef" node="0>0|11|1|0|0|4" />
+        <i3dMapping id="leftArmPartHydraulicRef02" node="0>0|11|1|0|0|5" />
+        <i3dMapping id="leftArmPartArmRef" node="0>0|11|1|0|0|6" />
+        <i3dMapping id="leftArmPart02" node="0>0|11|1|0|0|7|0" />
+        <i3dMapping id="curtainsSideLeftBoneAnim" node="0>0|11|1|0|0|7|0|0" />
+        <i3dMapping id="curtainsSideLeftBoneJoint" node="0>0|11|1|0|0|7|0|0|0" />
+        <i3dMapping id="leftArmPto" node="0>0|11|1|0|0|8" />
+        <i3dMapping id="leftArmPtoPunch" node="0>0|11|1|0|0|8|0" />
+        <i3dMapping id="leftMowerKnife01" node="0>0|11|1|0|0|9|0" />
+        <i3dMapping id="leftMowerKnife02" node="0>0|11|1|0|0|9|1" />
+        <i3dMapping id="leftMowerKnife03" node="0>0|11|1|0|0|9|2" />
+        <i3dMapping id="leftMowerKnife04" node="0>0|11|1|0|0|9|3" />
+        <i3dMapping id="leftMowerKnife05" node="0>0|11|1|0|0|9|4" />
+        <i3dMapping id="leftMowerKnife06" node="0>0|11|1|0|0|9|5" />
+        <i3dMapping id="leftMowerKnife07" node="0>0|11|1|0|0|9|6" />
+        <i3dMapping id="leftMowerKnife08" node="0>0|11|1|0|0|9|7" />
+        <i3dMapping id="windBendLeft" node="0>0|11|1|0|0|10|0" />
+        <i3dMapping id="windBendLeftDecal" node="0>0|11|1|0|0|10|0|0" />
+        <i3dMapping id="mowerEffectLeftDropNode" node="0>0|11|1|0|0|11|0" />
+        <i3dMapping id="mowerEffectLeftSwathNode" node="0>0|11|1|0|0|11|1" />
+        <i3dMapping id="smokeEmitterLeft" node="0>0|11|1|0|0|11|2" />
+        <i3dMapping id="yellowRound_03_reflectorYellowRound_0301" node="0>0|11|1|0|0|13" />
+        <i3dMapping id="leftArmPartHydraulic" node="0>0|11|1|1" />
+        <i3dMapping id="leftArmPartHydraulicPunch" node="0>0|11|1|1|0" />
+        <i3dMapping id="leftArmPartHydraulic02" node="0>0|11|1|2" />
+        <i3dMapping id="leftArmPartHydraulicPunch02" node="0>0|11|1|2|0" />
+        <i3dMapping id="leftArmPartArm" node="0>0|11|1|3" />
+        <i3dMapping id="leftArmHydraulicRef" node="0>0|11|1|4" />
+        <i3dMapping id="rightArm" node="0>0|11|2" />
+        <i3dMapping id="rightArmMowerRot" node="0>0|11|2|0" />
+        <i3dMapping id="rightArmMower" node="0>0|11|2|0|0" />
+        <i3dMapping id="rightArmFlap" node="0>0|11|2|0|0|0|0" />
+        <i3dMapping id="rightArmFlapHydraulicRef" node="0>0|11|2|0|0|0|0|0" />
+        <i3dMapping id="rightArmFlapHydraulic" node="0>0|11|2|0|0|1" />
+        <i3dMapping id="rightArmFlapHydraulicPunch" node="0>0|11|2|0|0|1|0" />
+        <i3dMapping id="rightArmPto" node="0>0|11|2|0|0|2" />
+        <i3dMapping id="rightArmPtoPunch" node="0>0|11|2|0|0|2|0" />
+        <i3dMapping id="rightArmPart02" node="0>0|11|2|0|0|3|0" />
+        <i3dMapping id="curtainsSideRightBoneAnim" node="0>0|11|2|0|0|3|0|0" />
+        <i3dMapping id="curtainsSideRightBoneJoint" node="0>0|11|2|0|0|3|0|0|0" />
+        <i3dMapping id="zetter_right" node="0>0|11|2|0|0|4|0" />
+        <i3dMapping id="rightArmDrum" node="0>0|11|2|0|0|5|0" />
+        <i3dMapping id="rightMowerKnife01" node="0>0|11|2|0|0|6|0" />
+        <i3dMapping id="rightMowerKnife02" node="0>0|11|2|0|0|6|1" />
+        <i3dMapping id="rightMowerKnife03" node="0>0|11|2|0|0|6|2" />
+        <i3dMapping id="rightMowerKnife04" node="0>0|11|2|0|0|6|3" />
+        <i3dMapping id="rightMowerKnife05" node="0>0|11|2|0|0|6|4" />
+        <i3dMapping id="rightMowerKnife06" node="0>0|11|2|0|0|6|5" />
+        <i3dMapping id="rightMowerKnife07" node="0>0|11|2|0|0|6|6" />
+        <i3dMapping id="rightMowerKnife08" node="0>0|11|2|0|0|6|7" />
+        <i3dMapping id="rightArmPartHydraulic02Ref" node="0>0|11|2|0|0|7" />
+        <i3dMapping id="rightArmPartArmRef" node="0>0|11|2|0|0|8" />
+        <i3dMapping id="rightArmPartHydraulicRef" node="0>0|11|2|0|0|9" />
+        <i3dMapping id="windBendRight" node="0>0|11|2|0|0|10|0" />
+        <i3dMapping id="windBendRightDecal" node="0>0|11|2|0|0|10|0|0" />
+        <i3dMapping id="mowerEffectRightDropNode" node="0>0|11|2|0|0|11|0" />
+        <i3dMapping id="mowerEffectRightSwathNode" node="0>0|11|2|0|0|11|1" />
+        <i3dMapping id="smokeEmitterRight" node="0>0|11|2|0|0|11|2" />
+        <i3dMapping id="yellowRound_03_reflectorYellowRound_0302" node="0>0|11|2|0|0|13" />
+        <i3dMapping id="rightArmPartHydraulic02" node="0>0|11|2|1" />
+        <i3dMapping id="rightArmPartHydraulicPunch02" node="0>0|11|2|1|0" />
+        <i3dMapping id="rightArmPartArm" node="0>0|11|2|2" />
+        <i3dMapping id="rightArmPartHydraulic" node="0>0|11|2|3" />
+        <i3dMapping id="rightArmPartHydraulicPunch" node="0>0|11|2|3|0" />
+        <i3dMapping id="rightArmHydraulicRef" node="0>0|11|2|4" />
+        <i3dMapping id="frontArmComponentJointRot" node="0>0|11|3" />
+        <i3dMapping id="frontArmJoint" node="0>0|11|3|0" />
+        <i3dMapping id="leftArmComponentJointRot" node="0>0|11|4" />
+        <i3dMapping id="leftArmJoint" node="0>0|11|4|0" />
+        <i3dMapping id="rightArmComponentJointRot" node="0>0|11|5" />
+        <i3dMapping id="rightArmJoint" node="0>0|11|5|0" />
+        <i3dMapping id="axisBackPart" node="0>0|11|6|0" />
+        <i3dMapping id="axisBackPart_lod" node="0>0|11|6|0|2" />
+        <i3dMapping id="airFilterCleaner" node="0>0|11|7|0" />
+        <i3dMapping id="wiperArm01" node="0>0|11|8|0" />
+        <i3dMapping id="wiper" node="0>0|11|8|0|0" />
+        <i3dMapping id="wiperLeft" node="0>0|11|8|1|0" />
+        <i3dMapping id="wiperRight" node="0>0|11|8|2|0" />
+        <i3dMapping id="wiperArm02" node="0>0|11|8|3" />
+        <i3dMapping id="axisFrontHydraulic" node="0>0|12|0" />
+        <i3dMapping id="axisFrontHydraulicPunch" node="0>0|12|0|0" />
+        <i3dMapping id="axisFrontHydraulicPunch_lod" node="0>0|12|0|0|0" />
+        <i3dMapping id="axisFrontHydraulic_lod" node="0>0|12|0|1" />
+        <i3dMapping id="leftArmHydraulic" node="0>0|12|1" />
+        <i3dMapping id="leftArmHydraulicPunch" node="0>0|12|1|0" />
+        <i3dMapping id="rightArmHydraulic" node="0>0|12|2" />
+        <i3dMapping id="rightArmHydraulicPunch" node="0>0|12|2|0" />
+        <i3dMapping id="axisBackLeftHydraulic" node="0>0|12|3" />
+        <i3dMapping id="axisBackLeftHydraulicPunch" node="0>0|12|3|0" />
+        <i3dMapping id="axisBackLeftHydraulicPunch_lod" node="0>0|12|3|0|0" />
+        <i3dMapping id="axisBackLeftHydraulic_lod" node="0>0|12|3|2" />
+        <i3dMapping id="axisBackRightHydraulic" node="0>0|12|4" />
+        <i3dMapping id="axisBackRightHydraulicPunch" node="0>0|12|4|0" />
+        <i3dMapping id="axisBackRightHydraulicPunch_lod" node="0>0|12|4|0|0" />
+        <i3dMapping id="axisBackRightHydraulic_lod" node="0>0|12|4|2" />
+        <i3dMapping id="frontArmHydraulic" node="0>0|12|5" />
+        <i3dMapping id="frontArmHydraulicPunch" node="0>0|12|5|0" />
+        <i3dMapping id="frontArmHydraulicPunch_lod" node="0>0|12|5|0|0" />
+        <i3dMapping id="frontArmHydraulic_lod" node="0>0|12|5|2" />
+        <i3dMapping id="frontTopArmHydraulic" node="0>0|12|6" />
+        <i3dMapping id="frontTopArmHydraulicPunch" node="0>0|12|6|0" />
+        <i3dMapping id="frontTopArmHydraulicPunch_lod" node="0>0|12|6|0|0" />
+        <i3dMapping id="frontTopArmHydraulic_lod" node="0>0|12|6|2" />
+        <i3dMapping id="leftArmPtoRef" node="0>0|12|7" />
+        <i3dMapping id="rightArmPtoRef" node="0>0|12|8" />
+        <i3dMapping id="backAxisJoint" node="0>0|12|9" />
+        <i3dMapping id="frontArmPto" node="0>0|12|10" />
+        <i3dMapping id="frontArmPtoTrans" node="0>0|12|10|0" />
+        <i3dMapping id="frontArmPtoTrans_lod" node="0>0|12|10|0|0" />
+        <i3dMapping id="frontArmPto_lod" node="0>0|12|10|2" />
+        <i3dMapping id="seat" node="0>0|13" />
+        <i3dMapping id="playerSkin" node="0>0|13|0" />
+        <i3dMapping id="joystick" node="0>0|13|1" />
+        <i3dMapping id="playerRightHand" node="0>0|13|1|0" />
+        <i3dMapping id="joystickDecalLightup" node="0>0|13|1|1" />
+        <i3dMapping id="seatDecalLightup" node="0>0|13|4" />
+		
+		<i3dMapping id="bigM_dblRealClockNumbersAO" node="0>0|13|8|0|0|0"/>
+		<i3dMapping id="bigM_dblSystemWarningAO" node="0>0|13|8|0|0|1"/>
+		<i3dMapping id="bigM_dblOutsideTempAO" node="0>0|13|8|0|0|2"/>
+		<i3dMapping id="bigM_dblWeatherSunAO" node="0>0|13|8|0|0|3"/>
+		<i3dMapping id="bigM_dblWeatherCloudAO" node="0>0|13|8|0|0|4"/>
+		<i3dMapping id="bigM_dblWeatherRainAO" node="0>0|13|8|0|0|5"/>
+		<i3dMapping id="bigM_dblWeatherHailAO" node="0>0|13|8|0|0|6"/>
+		<i3dMapping id="bigM_dblWeatherSnowAO" node="0>0|13|8|0|0|7"/>
+		<i3dMapping id="bigM_dblWeatherTwisterAO" node="0>0|13|8|0|0|8"/>
+		
+		<i3dMapping id="bigM_dblRpmNeedleP1_SC" node="0>0|13|8|0|1|0"/>
+		<i3dMapping id="bigM_dblRpmNumbersP1_SC" node="0>0|13|8|0|1|1"/>
+		<i3dMapping id="bigM_dblSpeedNeedleP1_SC" node="0>0|13|8|0|1|2"/>
+		<i3dMapping id="bigM_dblSpeedNumbersP1_SC" node="0>0|13|8|0|1|3"/>
+		<i3dMapping id="bigM_dblEngineTempNeedleP1_SC" node="0>0|13|8|0|1|4"/>
+		<i3dMapping id="bigM_dblEngineTempDecalP1_SC" node="0>0|13|8|0|1|5"/>
+		<i3dMapping id="bigM_dblEngineTempNumbersP1_SC" node="0>0|13|8|0|1|6"/>
+		<i3dMapping id="bigM_dblFuelNeedleP1_SC" node="0>0|13|8|0|1|7"/>
+		<i3dMapping id="bigM_dblFuelDecalP1_SC" node="0>0|13|8|0|1|8"/>
+		<i3dMapping id="bigM_dblFuelLevelPercentNumbersP1_SC" node="0>0|13|8|0|1|9"/>
+		<i3dMapping id="bigM_dblAdBlueNeedleP1_SC" node="0>0|13|8|0|1|10"/>
+		<i3dMapping id="bigM_dblAdBlueDecalP1_SC" node="0>0|13|8|0|1|11"/>
+		<i3dMapping id="bigM_dblAdBlueLevelPercentNumbersP1_SC" node="0>0|13|8|0|1|12"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel00P1_SC" node="0>0|13|8|0|1|13"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel01P1_SC" node="0>0|13|8|0|1|14"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel02P1_SC" node="0>0|13|8|0|1|15"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel03P1_SC" node="0>0|13|8|0|1|16"/>
+		<i3dMapping id="bigM_dblParkBreakOnP1_SC" node="0>0|13|8|0|1|17"/>
+		<i3dMapping id="bigM_dblParkBreakOffP1_SC" node="0>0|13|8|0|1|18"/>
+		<i3dMapping id="bigM_dblCruiseControlP1_SC" node="0>0|13|8|0|1|19"/>
+		<i3dMapping id="bigM_dblCruiseControlNumbersP1_SC" node="0>0|13|8|0|1|20"/>
+		<i3dMapping id="bigM_dblMowerSwathLeftP1_SC" node="0>0|13|8|0|1|21"/>
+		<i3dMapping id="bigM_dblRpmSliderMowerLeftP1_SC" node="0>0|13|8|0|1|22"/>
+		<i3dMapping id="bigM_dblRpmMowerLeftNumbersP1_SC" node="0>0|13|8|0|1|23"/>
+		<i3dMapping id="bigM_dblMowerSwathMiddleP1_SC" node="0>0|13|8|0|1|24"/>
+		<i3dMapping id="bigM_dblRpmSliderMowerMiddleP1_SC" node="0>0|13|8|0|1|25"/>
+		<i3dMapping id="bigM_dblRpmMowerMiddleNumbersP1_SC" node="0>0|13|8|0|1|26"/>
+		<i3dMapping id="bigM_dblMowerSwathRightP1_SC" node="0>0|13|8|0|1|27"/>
+		<i3dMapping id="bigM_dblRpmSliderMowerRightP1_SC" node="0>0|13|8|0|1|28"/>
+		<i3dMapping id="bigM_dblRpmMowerRightNumbersP1_SC" node="0>0|13|8|0|1|29"/>
+		<i3dMapping id="bigM_dblFuelUsageNumbersP1_SC" node="0>0|13|8|0|1|30"/>
+		<i3dMapping id="bigM_dblHeaderLiftStateNumbersP1_SC" node="0>0|13|8|0|1|31"/>
+		<i3dMapping id="bigM_dblHeaderFoldingStateNumbersP1_SC" node="0>0|13|8|0|1|32"/>
+		<i3dMapping id="bigM_dblOperatingTimeNumbersP1_SC" node="0>0|13|8|0|1|33"/>
+		<i3dMapping id="bigM_dblVehicleLiftStateNumbersP1_SC" node="0>0|13|8|0|1|34"/>
+		<i3dMapping id="bigM_dblMowerLeftLiftStateNumbersP1_SC" node="0>0|13|8|0|1|35"/>
+		<i3dMapping id="bigM_dblMowerMiddleLiftStateNumbersP1_SC" node="0>0|13|8|0|1|36"/>
+		<i3dMapping id="bigM_dblMowerRightLiftStateNumbersP1_SC" node="0>0|13|8|0|1|37"/>
+		<i3dMapping id="bigM_dblMowerCutHeightLeftNumbersP1_SC" node="0>0|13|8|0|1|38"/>
+		<i3dMapping id="bigM_dblMowerCutHeightMiddleNumbersP1_SC" node="0>0|13|8|0|1|39"/>
+		<i3dMapping id="bigM_dblMowerCutHeightRightNumbersP1_SC" node="0>0|13|8|0|1|40"/>
+		<i3dMapping id="bigM_dblHLMonP1_SC" node="0>0|13|8|0|1|41"/>
+		<i3dMapping id="bigM_dblHLMfieldP1_SC" node="0>0|13|8|0|1|42"/>
+		<i3dMapping id="bigM_dblHLMheadlandP1_SC" node="0>0|13|8|0|1|43"/>
+		<i3dMapping id="bigM_dblGPSsatellitP1_SC" node="0>0|13|8|0|1|44"/>
+		<i3dMapping id="bigM_dblGPSactiveP1_SC" node="0>0|13|8|0|1|45"/>
+		<i3dMapping id="bigM_dblGPScompassP1_SC" node="0>0|13|8|0|1|46"/>
+		<i3dMapping id="bigM_dblGPScompassNumbersP1_SC" node="0>0|13|8|0|1|47"/>
+		
+		<i3dMapping id="bigM_dblBasicDisplay_Decal" node="0>0|13|8|0|2|0"/>
+		<i3dMapping id="bigM_dblBasicDisplay_DecalDM" node="0>0|13|8|0|2|1"/>
+        
+        <i3dMapping id="interiorScreenLight" node="0>0|13|12" />
+        <i3dMapping id="pedalBrake" node="0>0|14|0" />
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|14|0|0" />
+        <i3dMapping id="radioDecalsLightup" node="0>0|14|1" />
+        <i3dMapping id="cabinDecalsLightup" node="0>0|14|2" />
+        <i3dMapping id="bigM450Decal15" node="0>0|14|3" />
+        <i3dMapping id="bigM450Decal14" node="0>0|14|4" />
+        <i3dMapping id="frontLightIndicatorDecal" node="0>0|14|5" />
+        <i3dMapping id="workLightFrontIndicatorDecal" node="0>0|14|6" />
+        <i3dMapping id="workLightBackIndicatorDecal" node="0>0|14|7" />
+        <i3dMapping id="beaconLightIndicatorDecal" node="0>0|14|8" />
+        <i3dMapping id="swathDropAreaStart" node="0>0|15|0" />
+        <i3dMapping id="swathDropAreaWidth" node="0>0|15|1" />
+        <i3dMapping id="swathDropAreaHeight" node="0>0|15|2" />
+        <i3dMapping id="mirrorDecal01" node="0>0|16|0" />
+        <i3dMapping id="mirrorDecal02" node="0>0|16|1" />
+        <i3dMapping id="mirrorDecal03" node="0>0|16|2" />
+        <i3dMapping id="mirrorDecal04" node="0>0|16|3" />
+        <i3dMapping id="ignitionKey" node="0>0|17|0" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>0|18|0" />
+        <i3dMapping id="bigM450_vis_lod0" node="0>0|19|11|0" />
+        <i3dMapping id="bigM450Wings_vis_lod0" node="0>0|19|13|0" />
+        <i3dMapping id="ptoProtection" node="0>2|2" />
+        <i3dMapping id="curtainsFront" node="0>2|4" />
+        <i3dMapping id="windBendCurtainsLeft" node="0>2|5" />
+        <i3dMapping id="windBendCurtainsRight" node="0>2|6" />
+        <i3dMapping id="bigm450_axis_component2" node="1>" />
+        <i3dMapping id="axisBack" node="1>0" />
+        <i3dMapping id="axisBackLeft" node="1>0|1|0" />
+        <i3dMapping id="wheelBackLeft" node="1>0|1|0|0|0" />
+        <i3dMapping id="steeringBarLeft" node="1>0|1|0|1" />
+        <i3dMapping id="axisBackLeft_lod" node="1>0|1|0|3" />
+        <i3dMapping id="axisBackRight" node="1>0|2|0" />
+        <i3dMapping id="wheelBackRight" node="1>0|2|0|0|0" />
+        <i3dMapping id="steeringBarRight" node="1>0|2|0|1" />
+        <i3dMapping id="axisBackRight_lod" node="1>0|2|0|3" />
+        <i3dMapping id="steeringBar" node="1>0|3" />
+        <i3dMapping id="steeringBarLeftRef" node="1>0|3|0" />
+        <i3dMapping id="steeringBarRightRef" node="1>0|3|1" />
+        <i3dMapping id="axisBackPartRef" node="1>0|4" />
+        <i3dMapping id="axisBackLeftHydraulicRef" node="1>0|5" />
+        <i3dMapping id="axisBackRightHydraulicRef" node="1>0|6" />
+        <i3dMapping id="axisBack_lod" node="1>0|7" />
+        <i3dMapping id="bigm450_leftArm_component3" node="2>" />
+        <i3dMapping id="leftArmRef" node="2>0" />
+        <i3dMapping id="leftArmMowerRef" node="2>1" />
+        <i3dMapping id="leftWorkAreaStart" node="2>2|0" />
+        <i3dMapping id="leftWorkAreaWidth" node="2>2|1" />
+        <i3dMapping id="leftWorkAreaHeight" node="2>2|2" />
+        <i3dMapping id="leftDropAreaStart" node="2>2|3" />
+        <i3dMapping id="leftDropAreaWidth" node="2>2|4" />
+        <i3dMapping id="leftDropAreaHeight" node="2>2|5" />
+        <i3dMapping id="bigm450_rightArm_component4" node="3>" />
+        <i3dMapping id="rightArmRef" node="3>0" />
+        <i3dMapping id="rightArmMowerRef" node="3>1" />
+        <i3dMapping id="rightWorkAreaStart" node="3>2|0" />
+        <i3dMapping id="rightWorkAreaWidth" node="3>2|1" />
+        <i3dMapping id="rightWorkAreaHeight" node="3>2|2" />
+        <i3dMapping id="rightDropAreaStart" node="3>2|3" />
+        <i3dMapping id="rightDropAreaWidth" node="3>2|4" />
+        <i3dMapping id="rightDropAreaHeight" node="3>2|5" />
+        <i3dMapping id="bigm450_frontArm_component5" node="4>" />
+        <i3dMapping id="frontArmRef" node="4>0" />
+        <i3dMapping id="frontArmMowerRef" node="4>1" />
+        <i3dMapping id="frontWorkAreaStart" node="4>2|0" />
+        <i3dMapping id="frontWorkAreaWidth" node="4>2|1" />
+        <i3dMapping id="frontWorkAreaHeight" node="4>2|2" />
+        <i3dMapping id="frontDropAreaStart" node="4>2|3" />
+        <i3dMapping id="frontDropAreaWidth" node="4>2|4" />
+        <i3dMapping id="frontDropAreaHeight" node="4>2|5" />
+    </i3dMappings>
+</vehicle>

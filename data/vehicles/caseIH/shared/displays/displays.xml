@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/dashboardCompounds.xsd">
+    
+<!-- Pages SC -->
+	<group name="PAGESC1" dbl="page" group="1" page="1"/>
+	<group name="PAGESC2" dbl="page" group="1" page="2"/>
+	<group name="PAGESC3" dbl="page" group="1" page="3"/>
+	<group name="PAGESC4" dbl="page" group="1" page="4"/>
+<!-- Pages CC -->
+	<group name="PAGECC1" dbl="page" group="2" page="1"/>
+	<group name="PAGECC2" dbl="page" group="2" page="2"/>
+<!-- Headland Management -->
+	<group name="DBL_HLM_ON" op="and" dbl="hlm_on"/>
+	<group name="DBL_HLM_FIELD" op="and" dbl="hlm_active_field"/>
+	<group name="DBL_HLM_HEADLAND" op="and" dbl="hlm_active_headland"/>	
+	
+	
+<!-- GENERAL -->
+    <dashboardCompound name="CNH_MAIN_SCREEN" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="mainScreenCNH">
+		
+		<dashboard displayType="VISIBILITY" node="cnh_dblGPSsatellitAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblCruiseControlAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblGPSreadyAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblHLMturnDecalAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblForwardArrowAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackwardArrowAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="cnh_dblHLMsteeringWheelAO_SC" emitColor="0.2 0.2 0.2 1" intensity="0.12" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="cnh_dblCruiseControlSliderAO_SC" intensity="0.2" groups="MOTOR_RUNNING"/>
+		
+	<!-- always on start -->
+		<!-- gps -->
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="cnh_dblGPSactiveAO_SC" idleValue="-1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringState" node="cnh_dblGPSreadyAO_SC" groups="MOTOR_RUNNING" >
+			<state value="0" visibility="false"/>
+			<state value="1" visibility="true"/>
+			<state value="2" visibility="false"/>
+		</dashboard>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="cnh_dblGPSsatellitAO_SC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="cnh_dblFieldNumbersAO_SC" textColor="0.05 0.05 0.05 1" textSize="0.0022" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+		
+		<!-- real clock -->
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="cnh_dblRealClockNumbersAO_SC" textMask="ssssssss" textColor="1 1 1 1" textSize="0.005" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+		<!-- drivable -->
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="cnh_dblCruiseControlAO_SC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="cnh_dblCruiseControlNumbers00AO_SC" textColor="0.05 0.05 0.05 1" textSize="0.005" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="SLIDER" valueType="drivable.cruiseControl" node="cnh_dblCruiseControlSliderAO_SC" minValueSlider="0" maxValueSlider="53" groups="MOTOR_RUNNING"/>
+		<!-- outsideTemp -->
+		<dashboard displayType="VISIBILITY" valueType="enterable.outsideTemperature" maxActiveValue="4" node="cnh_dblGlazedIceAO_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="cnh_dblGlazedIceAO_SC" emitColor="0.9 0.25 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="enterable.outsideTemperature" node="cnh_dblOutsideTempNumbersAO_SC" textColor="1 1 1 1" textSize="0.004" textMask="00" font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+		<!-- fuelUsage -->
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cnh_dblFuelUsageNumbersAO_SC" textColor="0.05 0.05 0.05 1" textSize="0.0045" textMask="000,0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<!-- slip -->
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="cnh_dblSlipPercentNumbersAO_SC" factor="100" textColor="0.05 0.05 0.05 1" textSize="0.0045" doInterpolation="true" interpolationSpeed="0.15" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<!-- motorized -->
+		<dashboard displayType="EMITTER" valueType="motorized.directionForward" node="cnh_dblForwardArrowAO_SC" idleValue="0" intensity="0.5" baseColor="0.09 0.09 0.09" emitColor="0.0040 0.1022 0.2502" groups="MOTOR_RUNNING" />
+        <dashboard displayType="EMITTER" valueType="motorized.directionBackward" node="cnh_dblBackwardArrowAO_SC" idleValue="0" intensity="0.5" baseColor="0.09 0.09 0.09" emitColor="0.0040 0.1022 0.2502" groups="MOTOR_RUNNING" />
+		<dashboard displayType="TEXT" valueType="motorized.speed" node="cnh_dblSpeedNumbersAO_SC" textColor="0.0040 0.1022 0.2502" textSize="0.0065" textMask="00.00" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING"/>
+		<!-- weather -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherSunAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherCloudAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherRainAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherHailAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherSnowAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherTwisterAO_SC" groups="MOTOR_RUNNING"/>
+		<!-- hlm -->
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMoffAO_SC" option="" cond="not" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMonAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMsandTimeDecalAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMptoAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMpLifterAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMsteeringWheelAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMsteeringWheelActiveTurnAO_SC" groups="MOTOR_RUNNING DBL_HLM_HEADLAND"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMcruiseControlAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMturnActiveAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="1" node="cnh_dblHLMptoAO_SC" baseColor="0.2 0.2 0.2 1" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="lowered" joints="1" node="cnh_dblHLMpLifterAO_SC" baseColor="0.2 0.2 0.2 1" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="cnh_dblHLMsteeringWheelActiveTurnAO_SC" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="cnh_dblHLMturnActiveAO_SC" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="cnh_dblHLMcruiseControlAO_SC" baseColor="0.2 0.2 0.2 1" emitColor="BIGBUD_GREEN1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<!-- Cruise Control -->
+		<!-- <dashboard displayType="EMITTER" valueType="cc" cmd="active" node="cnh_dblCruiseControlAO_SC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING"/> -->
+		<dashboard displayType="TEXT" valueType="cc" cmd="speed" state="1" node="cnh_dblCruiseControlNumbers01AO_SC" textColor="0.05 0.05 0.05 1" textSize="0.005" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="cc" cmd="speed" state="2" node="cnh_dblCruiseControlNumbers02AO_SC" textColor="0.05 0.05 0.05 1" textSize="0.005" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+	<!-- always on end -->
+	
+	<!-- Main Displays Star Screen Configs -->
+        <configuration id="STEYR_STARTSCREEN">
+            <dashboard displayType="EMITTER" node="mainScreenSteyr_startScreenDecal_SC" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING"/>
+            <objectChange node="mainScreenSteyr_startScreenDecal_SC" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+        <configuration id="CASE_STARTSCREEN">
+            <dashboard displayType="EMITTER" node="mainScreenCase_startScreenDecal_SC" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING"/>
+            <objectChange node="mainScreenCase_startScreenDecal_SC" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+        <configuration id="NH_STARTSCREEN">
+			<dashboard displayType="EMITTER" node="mainScreenNH_startScreenDecal_SC" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING" />
+            <objectChange node="mainScreenNH_startScreenDecal_SC" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+		
+	<!-- Page1 -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblFrontPTOactiveP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblFrontPTOsliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblFrontPTOpercentDecalP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackPTOactiveP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackPTOsliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackPTOpercentDecalP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblEngineTempP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblEngineTempSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblEngineTempDecalP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackLifterSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackLifterPercentDecalP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" node="cnh_dblFrontPTOsliderP1_SC" intensity="0.2" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" node="cnh_dblBackPTOsliderP1_SC" intensity="0.2" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" node="cnh_dblEngineTempSliderP1_SC" intensity="0.2" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" node="cnh_dblBackLifterSliderP1_SC" intensity="0.2" groups="MOTOR_RUNNING PAGESC1"/>
+		
+	<!-- Page1 Display -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblMainScreen_decal_SC" groups="MOTOR_RUNNING PAGESC1"/>
+        <dashboard displayType="EMITTER" node="cnh_dblMainScreen_decal_SC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGESC1"/>
+	
+	<!-- Page1 -->
+		<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.rpm" node="cnh_dblRPMnumbersP1_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="motorized.load" node="cnh_dblEnginePercentNumbersP1_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="cnh_dblEngineTempNumbersP1_SC" textColor="0.05 0.05 0.05 1" textSize="0.0035" textMask="000" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="cnh_dblEngineTempSliderP1_SC" minValueSlider="0" maxValueSlider="120" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Front PTO -->
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" jointSide="front" joints="2 5" node="cnh_dblFrontPTOactiveP1_SC" baseColor="0.05 0.05 0.05 1" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" jointSide="back" joints="1 3 4" node="cnh_dblBackPTOactiveP1_SC" baseColor="0.05 0.05 0.05 1" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Muss noch schauen wie SLIDER und TEXT genau einstellen kann -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="ptoRpm" jointSide="front" joints="2 5" node="cnh_dblFrontPTOsliderP1_SC" interpolationSpeed="0.22" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="cnh_dblBackPTOsliderP1_SC" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" option="percent" jointSide="front" joints="2 5" node="cnh_dblFrontPTOpercentNumbersP1_SC" interpolationSpeed="0.22" textColor="0.05 0.05 0.05 1" textSize="0.0035" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" option="percent" jointSide="back" joints="1 3 4" node="cnh_dblBackPTOpercentNumbersP1_SC" textColor="0.05 0.05 0.05 1" textSize="0.0035" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- CVT -->
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="motorcoldlamp" node="cnh_dblEngineTempP1_SC" baseColor="0.05 0.05 0.05 1" emitColor="AGRIO_BLUE" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Lifter State -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="front" joints="1" node="cnh_dblBackLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" option="percent" jointSide="front" joints="1" node="cnh_dblBackLifterPercentNumbersP1_SC" factor="100" default="0" textColor="0.05 0.05 0.05 1" textSize="0.0035" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+	<!-- Page2 -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblCompassNeedleP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" node="cnh_dblNaviPosP2_SC" emitColor="RED" intensity="0.12" groups="MOTOR_RUNNING PAGESC2"/>
+	<!-- Page2 Display -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblGpsScreen_decal_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblNaviMap_decal_SC" groups="MOTOR_RUNNING PAGESC2"/>
+        <dashboard displayType="EMITTER" node="cnh_dblGpsScreen_decal_SC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGESC2"/>
+        <dashboard displayType="EMITTER" node="cnh_dblNaviMap_decal_SC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGESC2"/>
+	<!-- Page2 -->
+		<dashboard displayType="ROT" valueType="ai.automaticSteering.heading" node="cnh_dblCompassNeedleP2_SC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="cnh_dblCompassNumbersP2_SC" textColor="1 1 1 1" textSize="0.0025" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="cnh_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="cnh_dblNaviPosP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+	<!-- Page3 Display -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblSystemScreen_decal_SC" groups="MOTOR_RUNNING PAGESC3"/>
+        <dashboard displayType="EMITTER" node="cnh_dblSystemScreen_decal_SC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGESC3"/>
+		
+		<dashboard displayType="TEXT" valueType="motorized.load" node="cnh_dblEnginePowerPercentNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="fillLevel" fillType="AIR" node="cnh_dblEngineOilPressurNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="cnh_dblEngineCoolantTempNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="motorized.battery" node="cnh_dblSystemVoltageNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="00,0" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cnh_dblFuelRateNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000,00" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" option="percent" jointSide="front" joints="1" node="cnh_dblRearHitchPositionNumbersP3_SC" factor="100" default="0" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000%" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="cnh_dblSlipNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="cnh_dblRearPTOspeedNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="operatingTime" node="cnh_dblEngineHoursNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000,00" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="fillLevel" fillType="DIESEL" node="cnh_dblFuelLevelNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="fillLevel" fillType="DEF" node="cnh_dblDefLevelNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGESC3"/>
+		
+	<!-- Page4 Display -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblISOBusScreen_decal_SC" groups="MOTOR_RUNNING PAGESC4"/>
+        <dashboard displayType="EMITTER" node="cnh_dblISOBusScreen_decal_SC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGESC4"/>	
+    </dashboardCompound>
+
+    <dashboardCompound name="CNH_GPS_SCREEN" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="gpsScreenCNH">
+        
+		<dashboard displayType="VISIBILITY" node="cnh_dblGPSsatellitAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblCruiseControlAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblGPSreadyAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblHLMturnDecalAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblForwardArrowAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblBackwardArrowAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="cnh_dblHLMsteeringWheelAO_CC" emitColor="0.2 0.2 0.2 1" intensity="0.12" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="cnh_dblCruiseControlSliderAO_CC" intensity="0.2" groups="MOTOR_RUNNING"/>
+		
+	<!-- always on start -->
+		<!-- gps -->
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="cnh_dblGPSactiveAO_CC" idleValue="-1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringState" node="cnh_dblGPSreadyAO_CC" groups="MOTOR_RUNNING" >
+			<state value="0" visibility="false"/>
+			<state value="1" visibility="true"/>
+			<state value="2" visibility="false"/>
+		</dashboard>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="cnh_dblGPSsatellitAO_CC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="cnh_dblFieldNumbersAO_CC" textColor="0.05 0.05 0.05 1" textSize="0.0022" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+		
+		<!-- real clock -->
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="cnh_dblRealClockNumbersAO_CC" textMask="ssssssss" textColor="1 1 1 1" textSize="0.005" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+		<!-- drivable -->
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="cnh_dblCruiseControlAO_CC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="cnh_dblCruiseControlNumbers00AO_CC" textColor="0.05 0.05 0.05 1" textSize="0.005" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="SLIDER" valueType="drivable.cruiseControl" node="cnh_dblCruiseControlSliderAO_CC" minValueSlider="0" maxValueSlider="53" groups="MOTOR_RUNNING"/>
+		<!-- outsideTemp -->
+		<dashboard displayType="VISIBILITY" valueType="enterable.outsideTemperature" maxActiveValue="4" node="cnh_dblGlazedIceAO_CC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="cnh_dblGlazedIceAO_CC" emitColor="0.9 0.25 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="enterable.outsideTemperature" node="cnh_dblOutsideTempNumbersAO_CC" textColor="1 1 1 1" textSize="0.004" textMask="00" font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+		<!-- fuelUsage -->
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cnh_dblFuelUsageNumbersAO_CC" textColor="0.05 0.05 0.05 1" textSize="0.0045" textMask="000,0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<!-- slip -->
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="cnh_dblSlipPercentNumbersAO_CC" factor="100" textColor="0.05 0.05 0.05 1" textSize="0.0045" doInterpolation="true" interpolationSpeed="0.15" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<!-- motorized -->
+		<dashboard displayType="EMITTER" valueType="motorized.directionForward" node="cnh_dblForwardArrowAO_CC" idleValue="0" intensity="0.5" baseColor="0.09 0.09 0.09" emitColor="0.0040 0.1022 0.2502" groups="MOTOR_RUNNING" />
+        <dashboard displayType="EMITTER" valueType="motorized.directionBackward" node="cnh_dblBackwardArrowAO_CC" idleValue="0" intensity="0.5" baseColor="0.09 0.09 0.09" emitColor="0.0040 0.1022 0.2502" groups="MOTOR_RUNNING" />
+		<dashboard displayType="TEXT" valueType="motorized.speed" node="cnh_dblSpeedNumbersAO_CC" textColor="0.0040 0.1022 0.2502" textSize="0.0065" textMask="00.00" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING"/>
+		<!-- weather -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherSunAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherCloudAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherRainAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherHailAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherSnowAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblWeatherTwisterAO_CC" groups="MOTOR_RUNNING"/>
+		<!-- hlm -->
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMoffAO_CC" option="" cond="not" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMonAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMsandTimeDecalAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMptoAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMpLifterAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMsteeringWheelAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMsteeringWheelActiveTurnAO_CC" groups="MOTOR_RUNNING DBL_HLM_HEADLAND"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMcruiseControlAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="hlm" node="cnh_dblHLMturnActiveAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="1" node="cnh_dblHLMptoAO_CC" baseColor="0.2 0.2 0.2 1" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="lowered" joints="1" node="cnh_dblHLMpLifterAO_CC" baseColor="0.2 0.2 0.2 1" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="cnh_dblHLMsteeringWheelActiveTurnAO_CC" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="cnh_dblHLMturnActiveAO_CC" emitColor="AMAZONE_ORANGE1" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="cnh_dblHLMcruiseControlAO_CC" baseColor="0.2 0.2 0.2 1" emitColor="BIGBUD_GREEN1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<!-- Cruise Control -->
+		<!-- <dashboard displayType="EMITTER" valueType="cc" cmd="active" node="cnh_dblCruiseControlAO_SC" baseColor="1 1 1 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING"/> -->
+		<dashboard displayType="TEXT" valueType="cc" cmd="speed" state="1" node="cnh_dblCruiseControlNumbers01AO_CC" textColor="0.05 0.05 0.05 1" textSize="0.005" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="cc" cmd="speed" state="2" node="cnh_dblCruiseControlNumbers02AO_CC" textColor="0.05 0.05 0.05 1" textSize="0.005" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+	<!-- always on end -->
+	
+	<!-- Main Displays Star Screen Configs -->
+        <configuration id="CASE_STARTSCREEN">
+            <dashboard displayType="EMITTER" node="mainScreenCase_startScreenDecal_CC" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING"/>
+            <objectChange node="mainScreenCase_startScreenDecal_CC" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+        <configuration id="NH_STARTSCREEN">
+			<dashboard displayType="EMITTER" node="mainScreenNH_startScreenDecal_CC" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING" />
+            <objectChange node="mainScreenNH_startScreenDecal_CC" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+		
+	<!-- Page1 -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblCompassNeedleP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+		<dashboard displayType="EMITTER" node="cnh_dblNaviPosP1_CC" emitColor="RED" intensity="0.12" groups="MOTOR_RUNNING PAGECC1"/>
+	<!-- Page1 Display -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblGpsScreen_decal_CC" groups="MOTOR_RUNNING PAGECC1"/>
+		<dashboard displayType="VISIBILITY" node="cnh_dblNaviMap_decal_CC" groups="MOTOR_RUNNING PAGECC1"/>
+        <dashboard displayType="EMITTER" node="cnh_dblGpsScreen_decal_CC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGECC1"/>
+        <dashboard displayType="EMITTER" node="cnh_dblNaviMap_decal_CC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGECC1"/>
+	<!-- Page1 -->
+		<dashboard displayType="ROT" valueType="ai.automaticSteering.heading" node="cnh_dblCompassNeedleP1_CC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="0.3" groups="MOTOR_RUNNING PAGECC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="cnh_dblCompassNumbersP1_CC" textColor="1 1 1 1" textSize="0.0025" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC1"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="cnh_dblNaviMapP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="cnh_dblNaviPosP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+		
+	<!-- Page2 Display -->
+		<dashboard displayType="VISIBILITY" node="cnh_dblSystemScreen_decal_CC" groups="MOTOR_RUNNING PAGECC2"/>
+        <dashboard displayType="EMITTER" node="cnh_dblSystemScreen_decal_CC" idleValue="-1" hideInactiveChildren="true" intensity="0.2" groups="MOTOR_RUNNING PAGECC2"/>
+		
+		<dashboard displayType="TEXT" valueType="motorized.load" node="cnh_dblEnginePowerPercentNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="fillLevel" fillType="AIR" node="cnh_dblEngineOilPressurNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="cnh_dblEngineCoolantTempNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="motorized.battery" node="cnh_dblSystemVoltageNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="00,0" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cnh_dblFuelRateNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000,00" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" option="percent" jointSide="front" joints="1" node="cnh_dblRearHitchPositionNumbersP2_CC" factor="100" default="0" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000%" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="cnh_dblSlipNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="cnh_dblRearPTOspeedNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="operatingTime" node="cnh_dblEngineHoursNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000,00" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="fillLevel" fillType="DIESEL" node="cnh_dblFuelLevelNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="fillLevel" fillType="DEF" node="cnh_dblDefLevelNumbersP2_CC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING PAGECC2"/>
+	
+    </dashboardCompound>
+
+    <dashboardCompound name="CNH_COMBINE_SCREEN" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="combineScreenCNH">
+        <!-- numbers -->
+        <dashboard displayType="TEXT" valueType="enterable.time" node="combineScreenCNH_numbersTime" textColor="1 1 1 1" textSize="0.006" textMask="00:00" font="GENERIC" textAlignment="CENTER" emissiveScale="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="combineScreenCNH_numbersSpeed" textColor="NEWHOLLAND_BLUE1" textSize="0.006" textScaleX="0.9" textMask="000.0" font="GENERIC_BOLD" fontThickness="0.65" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.load" node="combineScreenCNH_numbersLoad" textColor="NEWHOLLAND_BLUE1" textSize="0.005" textScaleX="0.9" textMask="000%" textAlignment="LEFT" font="GENERIC_BOLD" fontThickness="0.65" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="combineScreenCNH_numbersFillLevel" fillUnitIndex="1" textColor="0 0 0 1" textSize="0.003" textScaleX="0.9" textMask="000%" font="GENERIC_BOLD" textAlignment="CENTER" fontThickness="0.65" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.rpm" node="combineScreenCNH_numbersRPM" textColor="0 0 0 1" textSize="0.004" textMask="0000" font="GENERIC_BOLD" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="combineScreenCNH_numbersCruiseControl" textColor="0 0 0 1" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING"/>
+
+        <!-- sliders -->
+        <dashboard displayType="SLIDER" valueType="motorized.load" node="combineScreenCNH_sliderLoad_decal" intensity="0.3" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" node="combineScreenCNH_sliderGrain_decal" fillUnitIndex="1" intensity="0.2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="combineScreenCNH_sliderFuel_decal" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="combineScreenCNH_sliderDef_decal" groups="MOTOR_RUNNING"/>
+
+        <!-- display -->
+        <dashboard displayType="EMITTER" node="combineScreenCNH_iconSlider_decal" baseColor="0.57 0.57 0.57" emitColor="0.57 0.57 0.57" intensity="0" hideInactive="true" groups="MOTOR_RUNNING" />
+        <dashboard displayType="EMITTER" node="combineScreenCNH_decal" idleValue="-1" intensity="0.2" hideInactiveChildren="true" groups="MOTOR_RUNNING" />
+
+        <!-- icons -->
+        <dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringState" node="combineScreenCNH_iconGPSState_decal" groups="MOTOR_RUNNING">
+            <state value="0" intensity="0.2" emitColor="0.5000 0.5000 0.5000"/>
+            <state value="1" intensity="0.2" emitColor="0.0244 0.3368 0.6795"/>
+            <state value="2" intensity="0.2" emitColor="0.0500 0.4000 0.0500"/>
+        </dashboard>
+
+        <configuration id="CASE_STARTSCREEN">
+            <dashboard displayType="EMITTER" node="combineScreenCase_startScreenDecal" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING"/>
+
+            <objectChange node="combineScreenCase_startScreenDecal" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+        <configuration id="NH_STARTSCREEN">
+            <dashboard displayType="EMITTER" node="combineScreenNH_startScreenDecal" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING" />
+
+            <objectChange node="combineScreenNH_startScreenDecal" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+
+        <configuration id="CR11">
+            <dashboard displayType="EMITTER" node="combineScreenCNH_iconCR11_decal" hideInactive="true" intensity="0.3" groups="MOTOR_RUNNING" />
+
+            <objectChange node="combineScreenCNH_iconCR11_decal" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+        <configuration id="AF11">
+            <dashboard displayType="EMITTER" node="combineScreenCNH_iconAF11_decal" hideInactive="true" intensity="0.3" groups="MOTOR_RUNNING" />
+
+            <objectChange node="combineScreenCNH_iconAF11_decal" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+    </dashboardCompound>
+
+    <!-- CASE IH -->
+    <dashboardCompound name="CASE_A_PILLAR_DISPLAY" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="aPillarScreenCaseIH">
+        
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderFuelArrowDecal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderDefArrowDecal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderAirArrowDecal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderTempArrowDecal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoBack01Decal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoBack03Decal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoFront01Decal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoFront03Decal" groups="MOTOR_ACTIVE"/>
+		
+		<!-- general -->
+        <dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliders" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_icons" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <!-- numbers -->
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="aPillarScreenCaseIH_speed" textColor="1 1 1" textSize="0.010" textMask="0.00" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_ACTIVE" maxActiveValue="9.99"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="aPillarScreenCaseIH_speed" textColor="1 1 1" textSize="0.010" textMask="00.0" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_ACTIVE" minActiveValue="10"/>
+        <dashboard displayType="TEXT" valueType="motorized.rpm" node="aPillarScreenCaseIH_rpm" textColor="1 1 1" textSize="0.01" textMask="0000" font="GENERIC_BOLD" fontThickness="1" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+        <!-- icons -->
+        <dashboard displayType="EMITTER" node="aPillarScreenCaseIH_startingDecals" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_STARTING" />
+        <dashboard displayType="EMITTER" valueType="motorized.directionForward" node="aPillarScreenCaseIH_iconForwardDecal" idleValue="0" intensity="0.5" baseColor="0.06 0.06 0.06" emitColor="0.1095 0.2832 0.9473" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="motorized.directionBackward" node="aPillarScreenCaseIH_iconBackwardDecal" idleValue="0" intensity="0.5" baseColor="0.06 0.06 0.06" emitColor="0.1095 0.2832 0.9473" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarScreenCaseIH_iconLightDecal" lightTypes="0" baseColor="0.02 0.02 0.02" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarScreenCaseIH_iconHighbeamDecal" lightTypes="3" baseColor="0.02 0.02 0.02" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="aPillarScreenCaseIH_iconTurnLeftDecal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="aPillarScreenCaseIH_iconTurnRightDecal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <!-- sliders -->
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="aPillarScreenCaseIH_sliderFuelDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TRANS" valueType="fillLevel" fillType="DIESEL" node="aPillarScreenCaseIH_sliderFuelArrowDecal" minTrans="0 0 0" maxTrans="0 0 0.02333" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="aPillarScreenCaseIH_sliderDefDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TRANS" valueType="fillLevel" fillType="DEF" node="aPillarScreenCaseIH_sliderDefArrowDecal" minTrans="0 0 0" maxTrans="0 0 0.02333" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="AIR" node="aPillarScreenCaseIH_sliderAirDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TRANS" valueType="fillLevel" fillType="AIR" node="aPillarScreenCaseIH_sliderAirArrowDecal" minTrans="0 0 0" maxTrans="0 0 0.02333" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="aPillarScreenCaseIH_sliderTempDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TRANS" valueType="motorized.motorTemperature" node="aPillarScreenCaseIH_sliderTempArrowDecal" minTrans="0 0 0" maxTrans="0 0 0.02333" groups="MOTOR_ACTIVE"/>
+
+        <configuration id="PowerDrive">
+            <dashboard displayType="EMITTER" node="aPillarScreenCaseIHPowerDrive_decal" idleValue="-1" intensity="0.2" hideInactiveChildren="true" groups="MOTOR_ACTIVE" />
+            <dashboard displayType="TEXT" valueType="motorized.gear" node="aPillarScreenCaseIHPowerDrive_gear" textColor="0.1095 0.2832 0.9473" textSize="0.01" textMask="000" font="GENERIC_BOLD" fontThickness="0.6" textScaleX="0.7" textScaleY="0.85" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+
+            <objectChange node="aPillarScreenCaseIHPowerDrive_decal" visibilityActive="true" visibilityInactive="false" />
+        </configuration>
+        <configuration id="CVXDrive">
+            <dashboard displayType="EMITTER" node="aPillarScreenCaseIHCVXDrive_decal" idleValue="-1" intensity="0.2" hideInactiveChildren="true" groups="MOTOR_ACTIVE" />
+            <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="aPillarScreenCaseIHCVXDrive_cruiseControl" textColor="1 1 1" textSize="0.007" textMask="00.0" font="GENERIC_BOLD" textAlignment="CENTER" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="SLIDER" valueType="motorized.load" node="aPillarScreenCaseIHCVXDrive_sliderMotorLoadDecal" groups="MOTOR_ACTIVE"/>
+
+            <objectChange node="aPillarScreenCaseIHCVXDrive_decal" visibilityActive="true" visibilityInactive="false" />
+        </configuration>
+
+        <configuration id="PTO_FRONT_BACK">
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront02Decal" intensity="0.5" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront03Decal" intensity="0.5" powerTakeOffIndex="2" inverted="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack02Decal" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack03Decal" intensity="0.5" powerTakeOffIndex="1" inverted="true" groups="MOTOR_ACTIVE"/>
+
+            <objectChange node="aPillarScreenCaseIH_iconPtosFront" visibilityActive="true" visibilityInactive="false"/>
+       </configuration>
+        <configuration id="PTO_BACK_ONLY">
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack02Decal" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+        </configuration>
+
+        <configuration id="ATTACHMENT_BACK">
+            <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarScreenCaseIH_iconTurnTrailer1Decal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE BACK_ATTACHMENT" />
+            <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarScreenCaseIH_iconTurnTrailer2Decal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE BACK_ATTACHMENT" />
+
+            <objectChange node="aPillarScreenCaseIH_iconTurnTrailer1Decal" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="aPillarScreenCaseIH_iconTurnTrailer2Decal" visibilityActive="true" visibilityInactive="false"/>
+        </configuration>
+    </dashboardCompound>
+
+    <!-- STEYR -->
+    <dashboardCompound name="STEYR_A_PILLAR_DISPLAY" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="aPillarScreenSteyr_decal">
+        <!-- display -->
+        <dashboard displayType="EMITTER" node="aPillarScreenSteyr_decal" idleValue="-1" intensity="0.2" hideInactiveChildren="true" groups="MOTOR_ACTIVE" />
+
+        <!-- numbers -->
+        <dashboard displayType="TEXT" valueType="enterable.time" node="aPillarScreenSteyr_numbersTime" textColor="0 0 0" textSize="0.004" textMask="00:00" textAlignment="CENTER" font="GENERIC_BOLD" fontThickness="1" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="TEXT" valueType="motorized.rpm" node="aPillarScreenSteyr_numbersRPM" textColor="0 0 0" textSize="0.006" textMask="0000" textAlignment="RIGHT" font="GENERIC_BOLD" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="motorized.battery" node="aPillarScreenSteyr_numbersVoltage" textColor="0 0 0" textSize="0.004" textMask="00.0" font="GENERIC_BOLD" fontThickness="1" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="aPillarScreenSteyr_numbersSpeed" textColor="0 0 0" textSize="0.006" textMask="0.00" textAlignment="LEFT" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_ACTIVE" maxActiveValue="9.99"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="aPillarScreenSteyr_numbersSpeed" textColor="0 0 0" textSize="0.006" textMask="00.0" textAlignment="LEFT" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_ACTIVE" minActiveValue="10"/>
+
+        <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="aPillarScreenSteyr_numbersCruiseControl" textColor="0.5529 0.0118 0.0078" textSize="0.0055" textMask="00.0" font="GENERIC_BOLD" fontThickness="1" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+
+        <!-- icons -->
+        <dashboard displayType="EMITTER" node="aPillarScreenSteyr_iconStartingDecals" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_STARTING" />
+        <dashboard displayType="EMITTER" node="aPillarScreenSteyr_iconAlwaysActiveDecal" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="VISIBILITY" node="aPillarScreenSteyr_sliderAlwaysActiveDecal" intensity="0.5" groups="MOTOR_ACTIVE" />
+
+        <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoFront02Decal" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoBack02Decal" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoFront01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="VISIBILITY" valueType="motorized.directionForwardExclusive" node="aPillarScreenSteyr_iconForwardDecal" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="VISIBILITY" valueType="motorized.directionBackward" node="aPillarScreenSteyr_iconBackwardDecal" groups="MOTOR_ACTIVE" />
+
+        <dashboard displayType="EMITTER" valueType="motorized.directionForward" node="aPillarScreenSteyr_iconForwardDecal" intensity="0.5" emitColor="0.5529 0.0118 0.0078" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="motorized.directionBackward" node="aPillarScreenSteyr_iconBackwardDecal" intensity="0.5" emitColor="0.5529 0.0118 0.0078" groups="MOTOR_ACTIVE" />
+
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarScreenSteyr_iconLightDecal" lightTypes="0" baseColor="0.02 0.02 0.02" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarScreenSteyr_iconHighbeamDecal" lightTypes="3" baseColor="0.02 0.02 0.02" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="aPillarScreenSteyr_iconTurnLeftDecal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="aPillarScreenSteyr_iconTurnRightDecal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarScreenSteyr_iconTurnTrailer1Decal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE BACK_ATTACHMENT" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarScreenSteyr_iconTurnTrailer2Decal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE BACK_ATTACHMENT" />
+
+        <!-- sliders -->
+        <dashboard displayType="SLIDER" valueType="motorized.rpm" node="aPillarScreenSteyr_sliderRpmDecal" minValueSlider="0" maxValueSlider="3500" intensity="0.3" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="motorized.speed" node="aPillarScreenSteyr_sliderSpeed01Decal" minValueSlider="0" maxValueSlider="65" intensity="0.3" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="drivable.cruiseControl" node="aPillarScreenSteyr_sliderCrusieControlDecal" minValueSlider="0" maxValueSlider="65" intensity="0.3" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="aPillarScreenSteyr_sliderFuelDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="aPillarScreenSteyr_sliderDefDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="AIR" node="aPillarScreenSteyr_sliderAirDecal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="aPillarScreenSteyr_sliderTempDecal" groups="MOTOR_ACTIVE"/>
+    </dashboardCompound>
+
+    <!-- NEW HOLLAND -->
+    <dashboardCompound name="NH_STEERINGWHEEL_SCREEN" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="steeringWheelNH">
+        <!-- display -->
+        <dashboard displayType="EMITTER" node="steeringWheelScreenNH_decal" idleValue="-1" intensity="0.3" hideInactiveChildren="true" groups="MOTOR_RUNNING" />
+        <dashboard displayType="EMITTER" node="steeringWheelScreenNH_startScreenDecal" hideInactive="true" intensity="0.3" groups="MOTOR_STARTING" />
+
+        <!-- numbers -->
+        <dashboard displayType="TEXT" valueType="enterable.time" node="steeringWheelScreenNH_numbersTime" textColor="1 1 1" textSize="0.0045" textMask="00:00" font="GENERIC" textAlignment="CENTER" emissiveScale="0.4" textScaleX="0.9" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.rpm" node="steeringWheelScreenNH_numbersRPM" textColor="1 1 1" textSize="0.006" textScaleX="0.9" textMask="0000" font="GENERIC_BOLD" textAlignment="CENTER" fontThickness="0.65" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="steeringWheelScreenNH_numbersSpeed" textColor="1 1 1" textSize="0.006" textMask="0.00" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_RUNNING" maxActiveValue="10"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="steeringWheelScreenNH_numbersSpeed" textColor="1 1 1" textSize="0.006" textMask="00.0" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_RUNNING" minActiveValue="10"/>
+        <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="steeringWheelScreenNH_numbersCruiseControl" textColor="1 1 1" textSize="0.0055" textMask="00.0" font="GENERIC" textAlignment="CENTER" fontThickness="0.8" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="ROT" valueType="motorized.rpm" node="needleSpeed_decal" minRot="0 0 0" maxRot="0 -240 0" groups="MOTOR_RUNNING"/>
+
+        <!-- sliders -->
+        <dashboard displayType="SLIDER" valueType="motorized.load" node="steeringWheelScreenNH_sliderMotorLoadDecal" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="steeringWheelScreenNH_sliderFuelDecal" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="steeringWheelScreenNH_sliderDefDecal" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="AIR" node="steeringWheelScreenNH_sliderAirDecal" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="steeringWheelScreenNH_sliderTempDecal" groups="MOTOR_RUNNING"/>
+    </dashboardCompound>
+
+    <dashboardCompound name="NH_A_PILLAR_DISPLAY" filename="data/vehicles/caseIH/shared/displays/cnhDisplays.i3d" node="aPillarScreenNH_decal">
+        <!-- display -->
+        <dashboard displayType="EMITTER" node="aPillarScreenNH_decal" intensity="0.2" hideInactiveChildren="true" groups="MOTOR_ACTIVE" />
+
+        <!-- icons -->
+        <dashboard displayType="EMITTER" node="aPillarScreenNH_iconStartingDecals" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_STARTING" />
+        <dashboard displayType="EMITTER" node="aPillarScreenNH_iconAlwaysActiveDecal" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_ACTIVE" />
+
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarScreenNH_iconDefaultLightDecal" lightTypes="0" baseColor="0.02 0.02 0.02" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarScreenNH_iconHighbeamDecal" lightTypes="3" baseColor="0.02 0.02 0.02" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="aPillarScreenNH_iconTurnLightLeftDecal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="aPillarScreenNH_iconTurnLightRightDecal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarScreenNH_iconTurnLightTrailer01Decal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE BACK_ATTACHMENT" />
+        <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarScreenNH_iconTurnLightTrailer02Decal" idleValue="0" baseColor="0.02 0.02 0.02" intensity="0.5" groups="MOTOR_ACTIVE BACK_ATTACHMENT" />
+    </dashboardCompound>
+
+    <i3dMappings>
+		<!-- Page1 SC -->
+        <i3dMapping id="mainScreenCNH" node="0>0"/>
+		<i3dMapping id="cnh_dblGPSsatellitAO_SC" node="0>0|0|0|0"/>
+		<i3dMapping id="cnh_dblFieldNumbersAO_SC" node="0>0|0|0|1"/>
+		<i3dMapping id="cnh_dblRealClockNumbersAO_SC" node="0>0|0|0|2"/>
+		<i3dMapping id="cnh_dblCruiseControlAO_SC" node="0>0|0|0|3"/>
+		<i3dMapping id="cnh_dblOutsideTempNumbersAO_SC" node="0>0|0|0|4"/>
+		<i3dMapping id="cnh_dblWeatherSunAO_SC" node="0>0|0|0|5"/>
+		<i3dMapping id="cnh_dblWeatherCloudAO_SC" node="0>0|0|0|6"/>
+		<i3dMapping id="cnh_dblWeatherRainAO_SC" node="0>0|0|0|7"/>
+		<i3dMapping id="cnh_dblWeatherHailAO_SC" node="0>0|0|0|8"/>
+		<i3dMapping id="cnh_dblWeatherSnowAO_SC" node="0>0|0|0|9"/>
+		<i3dMapping id="cnh_dblWeatherTwisterAO_SC" node="0>0|0|0|10"/>
+		<i3dMapping id="cnh_dblGPSreadyAO_SC" node="0>0|0|0|11"/>
+		<i3dMapping id="cnh_dblGPSactiveAO_SC" node="0>0|0|0|12"/>
+		<i3dMapping id="cnh_dblHLMoffAO_SC" node="0>0|0|0|13"/>
+		<i3dMapping id="cnh_dblHLMonAO_SC" node="0>0|0|0|14"/>
+		<i3dMapping id="cnh_dblHLMsandTimeDecalAO_SC" node="0>0|0|0|15"/>
+		<i3dMapping id="cnh_dblHLMptoAO_SC" node="0>0|0|0|16"/>
+		<i3dMapping id="cnh_dblHLMpLifterAO_SC" node="0>0|0|0|17"/>
+		<i3dMapping id="cnh_dblHLMsteeringWheelAO_SC" node="0>0|0|0|18"/>
+		<i3dMapping id="cnh_dblHLMsteeringWheelActiveTurnAO_SC" node="0>0|0|0|19"/>
+		<i3dMapping id="cnh_dblHLMcruiseControlAO_SC" node="0>0|0|0|20"/>
+		<i3dMapping id="cnh_dblHLMturnDecalAO_SC" node="0>0|0|0|21"/>
+		<i3dMapping id="cnh_dblHLMturnActiveAO_SC" node="0>0|0|0|22"/>
+		<i3dMapping id="cnh_dblFuelUsageNumbersAO_SC" node="0>0|0|0|23"/>
+		<i3dMapping id="cnh_dblSlipPercentNumbersAO_SC" node="0>0|0|0|24"/>
+		<i3dMapping id="cnh_dblForwardArrowAO_SC" node="0>0|0|0|25"/>
+		<i3dMapping id="cnh_dblBackwardArrowAO_SC" node="0>0|0|0|26"/>
+		<i3dMapping id="cnh_dblCruiseControlNumbers00AO_SC" node="0>0|0|0|27"/>
+		<i3dMapping id="cnh_dblCruiseControlNumbers01AO_SC" node="0>0|0|0|28"/>
+		<i3dMapping id="cnh_dblCruiseControlNumbers02AO_SC" node="0>0|0|0|29"/>
+		<i3dMapping id="cnh_dblCruiseControlSliderAO_SC" node="0>0|0|0|30"/>
+		<i3dMapping id="cnh_dblSpeedNumbersAO_SC" node="0>0|0|0|31"/>
+		<i3dMapping id="cnh_dblGlazedIceAO_SC" node="0>0|0|0|32"/>		
+		<i3dMapping id="cnh_dblRPMnumbersP1_SC" node="0>0|0|1|0"/>
+		<i3dMapping id="cnh_dblEnginePercentNumbersP1_SC" node="0>0|0|1|1"/>
+		<i3dMapping id="cnh_dblFrontPTOactiveP1_SC" node="0>0|0|1|2"/>
+		<i3dMapping id="cnh_dblFrontPTOsliderP1_SC" node="0>0|0|1|3"/>
+		<i3dMapping id="cnh_dblFrontPTOpercentDecalP1_SC" node="0>0|0|1|4"/>
+		<i3dMapping id="cnh_dblFrontPTOpercentNumbersP1_SC" node="0>0|0|1|5"/>
+		<i3dMapping id="cnh_dblBackPTOactiveP1_SC" node="0>0|0|1|6"/>
+		<i3dMapping id="cnh_dblBackPTOsliderP1_SC" node="0>0|0|1|7"/>
+		<i3dMapping id="cnh_dblBackPTOpercentDecalP1_SC" node="0>0|0|1|8"/>
+		<i3dMapping id="cnh_dblBackPTOpercentNumbersP1_SC" node="0>0|0|1|9"/>
+		<i3dMapping id="cnh_dblEngineTempP1_SC" node="0>0|0|1|10"/>
+		<i3dMapping id="cnh_dblEngineTempSliderP1_SC" node="0>0|0|1|11"/>
+		<i3dMapping id="cnh_dblEngineTempDecalP1_SC" node="0>0|0|1|12"/>
+		<i3dMapping id="cnh_dblEngineTempNumbersP1_SC" node="0>0|0|1|13"/>
+		<i3dMapping id="cnh_dblBackLifterSliderP1_SC" node="0>0|0|1|14"/>
+		<i3dMapping id="cnh_dblBackLifterPercentDecalP1_SC" node="0>0|0|1|15"/>
+		<i3dMapping id="cnh_dblBackLifterPercentNumbersP1_SC" node="0>0|0|1|16"/>
+		<i3dMapping id="cnh_dblMainScreen_decal_SC" node="0>0|0|2|0"/>
+		<i3dMapping id="mainScreenSteyr_startScreenDecal_SC" node="0>0|0|3|0"/>
+		<i3dMapping id="mainScreenCase_startScreenDecal_SC" node="0>0|0|3|1"/>
+		<i3dMapping id="mainScreenNH_startScreenDecal_SC" node="0>0|0|3|2"/>
+		<!-- Page2 SC -->
+		<i3dMapping id="cnh_dblCompassNeedleP2_SC" node="0>0|1|0|0"/>
+		<i3dMapping id="cnh_dblCompassNumbersP2_SC" node="0>0|1|0|1"/>
+		<i3dMapping id="cnh_dblNaviMapP2_SC" node="0>0|1|1|0"/>
+		<i3dMapping id="cnh_dblNaviPosP2_SC" node="0>0|1|1|0|0"/>
+		<i3dMapping id="cnh_dblGpsScreen_decal_SC" node="0>0|1|2|0"/>
+		<i3dMapping id="cnh_dblNaviMap_decal_SC" node="0>0|1|2|1"/>
+		<i3dMapping id="cnh_dblNaviPosSteyrAbsolutP2_SC" node="0>0|1|3|0"/>
+		<i3dMapping id="cnh_dblNaviPosNHT8P2_SC" node="0>0|1|3|1"/>
+		<i3dMapping id="cnh_dblNaviPosNHT7P2_SC" node="0>0|1|3|2"/>
+		<i3dMapping id="cnh_dblNaviPosCIHQuadtracP2_SC" node="0>0|1|3|3"/>
+		<i3dMapping id="cnh_dblNaviPosCIHPumaP2_SC" node="0>0|1|3|4"/>
+		<i3dMapping id="cnh_dblNaviPosCIHMagnumP2_SC" node="0>0|1|3|5"/>
+		<!-- Page3 SC -->
+		<i3dMapping id="cnh_dblEnginePowerPercentNumbersP3_SC" node="0>0|2|0|0"/>
+		<i3dMapping id="cnh_dblEngineOilPressurNumbersP3_SC" node="0>0|2|0|1"/>
+		<i3dMapping id="cnh_dblSlipNumbersP3_SC" node="0>0|2|0|10"/>
+		<i3dMapping id="cnh_dblRearPTOspeedNumbersP3_SC" node="0>0|2|0|11"/>
+		<i3dMapping id="cnh_dblEngineHoursNumbersP3_SC" node="0>0|2|0|12"/>
+		<i3dMapping id="cnh_dblFuelLevelNumbersP3_SC" node="0>0|2|0|13"/>
+		<i3dMapping id="cnh_dblDefLevelNumbersP3_SC" node="0>0|2|0|14"/>
+		<i3dMapping id="cnh_dblDefTempNumbersP3_SC" node="0>0|2|0|15"/>
+		<i3dMapping id="cnh_dblTransLubePressureNumbersP3_SC" node="0>0|2|0|16"/>
+		<i3dMapping id="cnh_dblEngineIntakeTempNumbersP3_SC" node="0>0|2|0|17"/>
+		<i3dMapping id="cnh_dblEngineCoolantTempNumbersP3_SC" node="0>0|2|0|2"/>
+		<i3dMapping id="cnh_dblTransOilTempNumbersP3_SC" node="0>0|2|0|3"/>
+		<i3dMapping id="cnh_dblTransOilPressurNumbersP3_SC" node="0>0|2|0|4"/>
+		<i3dMapping id="cnh_dblSystemVoltageNumbersP3_SC" node="0>0|2|0|5"/>
+		<i3dMapping id="cnh_dbl24VSystemVoltageNumbersP3_SC" node="0>0|2|0|6"/>
+		<i3dMapping id="cnh_dblFuelRateNumbersP3_SC" node="0>0|2|0|7"/>
+		<i3dMapping id="cnh_dblRearHitchPositionNumbersP3_SC" node="0>0|2|0|8"/>
+		<i3dMapping id="cnh_dblTargetSpeedNumbersP3_SC" node="0>0|2|0|9"/>
+		<i3dMapping id="cnh_dblSystemScreen_decal_SC" node="0>0|2|1|0"/>
+		<!-- Page4 SC -->
+		<i3dMapping id="isoBusJointNode_SC" node="0>0|3|0"/>
+		<i3dMapping id="cnh_dblISOBusScreen_decal_SC" node="0>0|3|1|0"/>
+		<!-- Always on CC -->
+		<i3dMapping id="cnh_dblGPSsatellitAO_CC" node="0>1|0|0"/>
+		<i3dMapping id="cnh_dblFieldNumbersAO_CC" node="0>1|0|1"/>
+		<i3dMapping id="cnh_dblCruiseControlAO_CC" node="0>1|0|3"/>
+		<i3dMapping id="cnh_dblOutsideTempNumbersAO_CC" node="0>1|0|4"/>
+		<i3dMapping id="cnh_dblWeatherSunAO_CC" node="0>1|0|5"/>
+		<i3dMapping id="cnh_dblWeatherCloudAO_CC" node="0>1|0|6"/>
+		<i3dMapping id="cnh_dblWeatherRainAO_CC" node="0>1|0|7"/>
+		<i3dMapping id="cnh_dblWeatherHailAO_CC" node="0>1|0|8"/>
+		<i3dMapping id="cnh_dblWeatherSnowAO_CC" node="0>1|0|9"/>
+		<i3dMapping id="cnh_dblWeatherTwisterAO_CC" node="0>1|0|10"/>
+		<i3dMapping id="cnh_dblGPSreadyAO_CC" node="0>1|0|11"/>
+		<i3dMapping id="cnh_dblGPSactiveAO_CC" node="0>1|0|12"/>
+		<i3dMapping id="cnh_dblHLMoffAO_CC" node="0>1|0|13"/>
+		<i3dMapping id="cnh_dblHLMonAO_CC" node="0>1|0|14"/>
+		<i3dMapping id="cnh_dblHLMsandTimeDecalAO_CC" node="0>1|0|15"/>
+		<i3dMapping id="cnh_dblHLMptoAO_CC" node="0>1|0|16"/>
+		<i3dMapping id="cnh_dblHLMpLifterAO_CC" node="0>1|0|17"/>
+		<i3dMapping id="cnh_dblHLMsteeringWheelAO_CC" node="0>1|0|18"/>
+		<i3dMapping id="cnh_dblHLMsteeringWheelActiveTurnAO_CC" node="0>1|0|19"/>
+		<i3dMapping id="cnh_dblRealClockNumbersAO_CC" node="0>1|0|2"/>
+		<i3dMapping id="cnh_dblHLMcruiseControlAO_CC" node="0>1|0|20"/>
+		<i3dMapping id="cnh_dblHLMturnDecalAO_CC" node="0>1|0|21"/>
+		<i3dMapping id="cnh_dblHLMturnActiveAO_CC" node="0>1|0|22"/>
+		<i3dMapping id="cnh_dblFuelUsageNumbersAO_CC" node="0>1|0|23"/>
+		<i3dMapping id="cnh_dblSlipPercentNumbersAO_CC" node="0>1|0|24"/>
+		<i3dMapping id="cnh_dblForwardArrowAO_CC" node="0>1|0|25"/>
+		<i3dMapping id="cnh_dblBackwardArrowAO_CC" node="0>1|0|26"/>
+		<i3dMapping id="cnh_dblCruiseControlNumbers00AO_CC" node="0>1|0|27"/>
+		<i3dMapping id="cnh_dblCruiseControlNumbers01AO_CC" node="0>1|0|28"/>
+		<i3dMapping id="cnh_dblCruiseControlNumbers02AO_CC" node="0>1|0|29"/>
+		<i3dMapping id="cnh_dblCruiseControlSliderAO_CC" node="0>1|0|30"/>
+		<i3dMapping id="cnh_dblSpeedNumbersAO_CC" node="0>1|0|31"/>
+		<i3dMapping id="cnh_dblGlazedIceAO_CC" node="0>1|0|32"/>
+		<i3dMapping id="mainScreenSteyr_startScreenDecal_CC" node="0>1|1|0"/>
+		<i3dMapping id="mainScreenCase_startScreenDecal_CC" node="0>1|1|1"/>
+		<i3dMapping id="mainScreenNH_startScreenDecal_CC" node="0>1|1|2"/>
+		<!-- Page1 CC -->
+		<i3dMapping id="gpsScreenCNH" node="0>1"/>
+		<i3dMapping id="cnh_dblCompassNeedleP1_CC" node="0>1|2|0|0"/>
+		<i3dMapping id="cnh_dblCompassNumbersP1_CC" node="0>1|2|0|1"/>
+		<i3dMapping id="cnh_dblNaviMapP1_CC" node="0>1|2|1|0"/>
+		<i3dMapping id="cnh_dblNaviPosP1_CC" node="0>1|2|1|0|0"/>
+		<i3dMapping id="cnh_dblGpsScreen_decal_CC" node="0>1|2|2|0"/>
+		<i3dMapping id="cnh_dblNaviMap_decal_CC" node="0>1|2|2|1"/>
+		<i3dMapping id="cnh_dblNaviPosSteyrAbsolutP1_CC" node="0>1|2|3|0"/>
+		<i3dMapping id="cnh_dblNaviPosNHT8P1_CC" node="0>1|2|3|1"/>
+		<i3dMapping id="cnh_dblNaviPosNHT7P1_CC" node="0>1|2|3|2"/>
+		<i3dMapping id="cnh_dblNaviPosCIHQuadtracP1_CC" node="0>1|2|3|3"/>
+		<i3dMapping id="cnh_dblNaviPosCIHPumaP1_CC" node="0>1|2|3|4"/>
+		<i3dMapping id="cnh_dblNaviPosCIHMagnumP1_CC" node="0>1|2|3|5"/>
+		<!-- Page2 CC -->
+		<i3dMapping id="cnh_dblEnginePowerPercentNumbersP2_CC" node="0>1|3|0|0"/>
+		<i3dMapping id="cnh_dblEngineOilPressurNumbersP2_CC" node="0>1|3|0|1"/>
+		<i3dMapping id="cnh_dblEngineCoolantTempNumbersP2_CC" node="0>1|3|0|2"/>
+		<i3dMapping id="cnh_dblTransOilTempNumbersP2_CC" node="0>1|3|0|3"/>
+		<i3dMapping id="cnh_dblTransOilPressurNumbersP2_CC" node="0>1|3|0|4"/>
+		<i3dMapping id="cnh_dblSystemVoltageNumbersP2_CC" node="0>1|3|0|5"/>
+		<i3dMapping id="cnh_dbl24VSystemVoltageNumbersP2_CC" node="0>1|3|0|6"/>
+		<i3dMapping id="cnh_dblFuelRateNumbersP2_CC" node="0>1|3|0|7"/>
+		<i3dMapping id="cnh_dblRearHitchPositionNumbersP2_CC" node="0>1|3|0|8"/>
+		<i3dMapping id="cnh_dblTargetSpeedNumbersP2_CC" node="0>1|3|0|9"/>
+		<i3dMapping id="cnh_dblSlipNumbersP2_CC" node="0>1|3|0|10"/>
+		<i3dMapping id="cnh_dblRearPTOspeedNumbersP2_CC" node="0>1|3|0|11"/>
+		<i3dMapping id="cnh_dblEngineHoursNumbersP2_CC" node="0>1|3|0|12"/>
+		<i3dMapping id="cnh_dblFuelLevelNumbersP2_CC" node="0>1|3|0|13"/>
+		<i3dMapping id="cnh_dblDefLevelNumbersP2_CC" node="0>1|3|0|14"/>
+		<i3dMapping id="cnh_dblDefTempNumbersP2_CC" node="0>1|3|0|15"/>
+		<i3dMapping id="cnh_dblTransLubePressureNumbersP2_CC" node="0>1|3|0|16"/>
+		<i3dMapping id="cnh_dblEngineIntakeTempNumbersP2_CC" node="0>1|3|0|17"/>
+		<i3dMapping id="cnh_dblSystemScreen_decal_CC" node="0>1|3|1|0"/>
+		<!-- Combine -->
+		<i3dMapping id="combineScreenCNH" node="0>2|0"/>
+		<i3dMapping id="combineScreenCNH_decal" node="0>2|0|0"/>
+		<i3dMapping id="combineScreenCNH_numbersSpeed" node="0>2|0|0|0|0"/>
+		<i3dMapping id="combineScreenCNH_numbersTime" node="0>2|0|0|0|1"/>
+		<i3dMapping id="combineScreenCNH_numbersLoad" node="0>2|0|0|0|2"/>
+		<i3dMapping id="combineScreenCNH_numbersFillLevel" node="0>2|0|0|0|3"/>
+		<i3dMapping id="combineScreenCNH_numbersCruiseControl" node="0>2|0|0|0|4"/>
+		<i3dMapping id="combineScreenCNH_numbersRPM" node="0>2|0|0|0|5"/>
+		<i3dMapping id="combineScreenCNH_iconGPS_decal" node="0>2|0|0|1|0"/>
+		<i3dMapping id="combineScreenCNH_iconGPSState_decal" node="0>2|0|0|1|1"/>
+		<i3dMapping id="combineScreenCNH_iconSlider_decal" node="0>2|0|0|1|2"/>
+		<i3dMapping id="combineScreenCNH_sliderDef_decal" node="0>2|0|0|2|0"/>
+		<i3dMapping id="combineScreenCNH_sliderFuel_decal" node="0>2|0|0|2|1"/>
+		<i3dMapping id="combineScreenCNH_sliderLoad_decal" node="0>2|0|0|2|2"/>
+		<i3dMapping id="combineScreenCNH_sliderGrain_decal" node="0>2|0|0|2|3"/>
+		<i3dMapping id="combineScreenCase_startScreenDecal" node="0>2|0|1|0"/>
+		<i3dMapping id="combineScreenNH_startScreenDecal" node="0>2|0|1|1"/>
+		<i3dMapping id="combineScreenCNH_iconCR11_decal" node="0>2|0|1|2"/>
+		<i3dMapping id="combineScreenCNH_iconAF11_decal" node="0>2|0|1|3"/>
+		<!-- aPillar Case IH -->
+		<i3dMapping id="aPillarScreenCaseIH" node="1>0"/>
+		<i3dMapping id="aPillarScreenCaseIH_speed" node="1>0|0|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_rpm" node="1>0|0|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderFuelDecal" node="1>0|1|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderFuelArrowDecal" node="1>0|1|0|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderDefDecal" node="1>0|1|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderDefArrowDecal" node="1>0|1|1|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderTempDecal" node="1>0|1|2"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderTempArrowDecal" node="1>0|1|2|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderAirDecal" node="1>0|1|3"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliderAirArrowDecal" node="1>0|1|3|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_startingDecals" node="1>0|2|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconForwardDecal" node="1>0|2|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconBackwardDecal" node="1>0|2|2"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconLightDecal" node="1>0|2|3"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconHighbeamDecal" node="1>0|2|4"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconTurnLeftDecal" node="1>0|2|5"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconTurnRightDecal" node="1>0|2|6"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconTurnTrailer1Decal" node="1>0|2|7"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconTurnTrailer2Decal" node="1>0|2|8"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack01Decal" node="1>0|2|9"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack02Decal" node="1>0|2|10"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack03Decal" node="1>0|2|11"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtosFront" node="1>0|2|12"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront01Decal" node="1>0|2|12|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront02Decal" node="1>0|2|12|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront03Decal" node="1>0|2|12|2"/>
+		<i3dMapping id="aPillarScreenCaseIHPowerDrive_decal" node="1>0|3|0"/>
+		<i3dMapping id="aPillarScreenCaseIHPowerDrive_gear" node="1>0|3|0|0"/>
+		<i3dMapping id="aPillarScreenCaseIHCVXDrive_decal" node="1>0|3|1"/>
+		<i3dMapping id="aPillarScreenCaseIHCVXDrive_cruiseControl" node="1>0|3|1|0"/>
+		<i3dMapping id="aPillarScreenCaseIHCVXDrive_sliderMotorLoadDecal" node="1>0|3|1|1"/>
+		
+		<!-- aPillar Steyr -->
+		<i3dMapping id="aPillarScreenSteyr" node="2>0"/>
+		<i3dMapping id="aPillarScreenSteyr_decal" node="2>0|0"/>
+		
+		<i3dMapping id="aPillarScreenSteyr_iconStartingDecals" node="2>0|0|1|0"/>
+		<i3dMapping id="aPillarScreenSteyr_iconForwardDecal" node="2>0|0|1|1"/>
+		<i3dMapping id="aPillarScreenSteyr_iconBackwardDecal" node="2>0|0|1|2"/>
+		<i3dMapping id="aPillarScreenSteyr_iconLightDecal" node="2>0|0|1|3"/>
+		<i3dMapping id="aPillarScreenSteyr_iconHighbeamDecal" node="2>0|0|1|4"/>
+		<i3dMapping id="aPillarScreenSteyr_iconTurnLeftDecal" node="2>0|0|1|5"/>
+		<i3dMapping id="aPillarScreenSteyr_iconTurnRightDecal" node="2>0|0|1|6"/>
+		<i3dMapping id="aPillarScreenSteyr_iconTurnTrailer1Decal" node="2>0|0|1|7"/>
+		<i3dMapping id="aPillarScreenSteyr_iconTurnTrailer2Decal" node="2>0|0|1|8"/>
+		<i3dMapping id="aPillarScreenSteyr_iconPtoFront01Decal" node="2>0|0|1|9"/>
+		<i3dMapping id="aPillarScreenSteyr_iconPtoBack01Decal" node="2>0|0|1|10"/>
+		<i3dMapping id="aPillarScreenSteyr_iconPtoFront02Decal" node="2>0|0|1|11"/>
+		<i3dMapping id="aPillarScreenSteyr_iconPtoBack02Decal" node="2>0|0|1|12"/>
+		<i3dMapping id="aPillarScreenSteyr_iconAlwaysActiveDecal" node="2>0|0|1|13"/>
+		
+		<i3dMapping id="aPillarScreenSteyr_sliderFuelDecal" node="2>0|0|2|0"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderDefDecal" node="2>0|0|2|1"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderAirDecal" node="2>0|0|2|2"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderTempDecal" node="2>0|0|2|3"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderSpeed01Decal" node="2>0|0|2|4"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderSpeed01Trans" node="2>0|0|2|4|0"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderRpmDecal" node="2>0|0|2|5"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderCrusieControlDecal" node="2>0|0|2|6"/>
+		<i3dMapping id="aPillarScreenSteyr_sliderAlwaysActiveDecal" node="2>0|0|2|7"/>
+		
+		<i3dMapping id="startScreenSteyr_decal" node="2>1|0"/>
+		
+		<!-- aPillar New Holland -->
+		<i3dMapping id="steeringWheelNH" node="3>0"/>
+		<i3dMapping id="steeringWheelScreenNH_decal" node="3>0|0"/>
+		
+		<i3dMapping id="steeringWheelScreenNH_numbersRPM" node="3>0|0|0|0"/>
+		<i3dMapping id="steeringWheelScreenNH_numbersCruiseControl" node="3>0|0|0|1"/>
+		<i3dMapping id="steeringWheelScreenNH_numbersSpeed" node="3>0|0|0|2"/>
+		<i3dMapping id="steeringWheelScreenNH_numbersTime" node="3>0|0|0|3"/>
+		
+		<i3dMapping id="steeringWheelScreenNH_sliderAirDecal" node="3>0|0|1|0"/>
+		<i3dMapping id="steeringWheelScreenNH_sliderTempDecal" node="3>0|0|1|1"/>
+		<i3dMapping id="steeringWheelScreenNH_sliderFuelDecal" node="3>0|0|1|2"/>
+		<i3dMapping id="steeringWheelScreenNH_sliderDefDecal" node="3>0|0|1|3"/>
+		<i3dMapping id="steeringWheelScreenNH_sliderMotorLoadDecal" node="3>0|0|1|4"/>
+		
+		<i3dMapping id="needleSpeed_decal" node="3>0|0|2|0"/>
+		<i3dMapping id="steeringWheelScreenNH_startScreenDecal" node="3>0|0|3"/>
+		
+		<i3dMapping id="aPillarScreenNH_decal" node="3>1|0"/>
+		<i3dMapping id="aPillarScreenNH_iconStartingDecals" node="3>1|0|0|0"/>
+		<i3dMapping id="aPillarScreenNH_iconHighbeamDecal" node="3>1|0|0|1"/>
+		<i3dMapping id="aPillarScreenNH_iconDefaultLightDecal" node="3>1|0|0|2"/>
+		<i3dMapping id="aPillarScreenNH_iconAlwaysActiveDecal" node="3>1|0|0|3"/>
+		<i3dMapping id="aPillarScreenNH_iconTurnLightLeftDecal" node="3>1|0|0|4"/>
+		<i3dMapping id="aPillarScreenNH_iconTurnLightRightDecal" node="3>1|0|0|5"/>
+		<i3dMapping id="aPillarScreenNH_iconTurnLightTrailer01Decal" node="3>1|0|0|6"/>
+		<i3dMapping id="aPillarScreenNH_iconTurnLightTrailer02Decal" node="3>1|0|0|7"/>
+		
+		<i3dMapping id="startScreenNH_decal" node="3>2|0"/>
+		
+    </i3dMappings>
+</dashboardCompounds>

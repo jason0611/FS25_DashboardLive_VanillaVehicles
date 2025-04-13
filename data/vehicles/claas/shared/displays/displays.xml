@@ -237,6 +237,9 @@
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblAdBlueP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblFuelP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblSwathOutputP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader1380mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader1080mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader620mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		
 		<dashboard displayType="EMITTER" node="cebisLexion_dblNeutralGearP1_SC" emitColor="0.027 0.027 0.027 1" emitColorDarkMode="1 1 1 1" intensity="0.5" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="EMITTER" node="cebisLexion_dblGPSSatellitP1_SC" emitColor="0.027 0.027 0.027 1" emitColorDarkMode="1 1 1 1" intensity="0.5" groups="MOTOR_ACTIVE"/>
@@ -308,16 +311,19 @@
 		<dashboard displayType="EMITTER" valueType="dbl.vca" cmd="diff_back" node="cebisLexion_dblBackDiffP1_SC" baseColor="BERGMANN_GREY02" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
 		
 		<configuration id="HEADER_1380m">
+			<!-- <dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader1380mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/> -->
             <dashboard displayType="EMITTER" node="cebisLexion_dblHeader1380mP1_SC" emitColor="BRIRI_BLACK1" intensity="1" groups="MOTOR_RUNNING"/>
 
             <objectChange node="cebisLexion_dblHeader1380mP1_SC" visibilityActive="true" visibilityInactive="false"/>
         </configuration>
         <configuration id="HEADER_1080m">
+			<!-- <dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader1080mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/> -->
             <dashboard displayType="EMITTER" node="cebisLexion_dblHeader1080mP1_SC" emitColor="BRIRI_BLACK1" intensity="1" groups="MOTOR_RUNNING"/>
 
             <objectChange node="cebisLexion_dblHeader1080mP1_SC" visibilityActive="true" visibilityInactive="false"/>
         </configuration>
         <configuration id="HEADER_620m">
+			<!-- <dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader620mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/> -->
             <dashboard displayType="EMITTER" node="cebisLexion_dblHeader620mP1_SC" emitColor="BRIRI_BLACK1" intensity="1" groups="MOTOR_RUNNING"/>
 
             <objectChange node="cebisLexion_dblHeader620mP1_SC" visibilityActive="true" visibilityInactive="false"/>
