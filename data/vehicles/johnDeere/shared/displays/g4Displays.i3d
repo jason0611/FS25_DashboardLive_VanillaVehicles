@@ -20,7 +20,7 @@
     <File fileId="10" filename="textures/johnDeereDisplayDecal_diffuse.dds"/>
     <File fileId="9" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
     <File fileId="11" filename="textures/johnDeereG4DisplayGPS_diffuse.png"/>
-    <File fileId="22" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="22" filename="../../../../../shader/minimap.xml"/>
     <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
     <File fileId="7" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
   </Files>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/dashboardCompounds.xsd">
+
+	<!-- Pages SC -->
+		<group name="PAGESC1" dbl="page" group="1" page="1"/>
+		<group name="PAGESC2" dbl="page" group="1" page="2"/>
+		<group name="PAGESC3" dbl="page" group="1" page="3"/>
+		<group name="PAGESC4" dbl="page" group="1" page="4"/>
+	<!-- Pages CC -->
+		<group name="PAGECC1" dbl="page" group="2" page="1"/>
+		<group name="PAGECC2" dbl="page" group="2" page="2"/>
+		<group name="PAGECC3" dbl="page" group="2" page="3"/>
+		<group name="PAGECC4" dbl="page" group="2" page="4"/>
+
+    <dashboardCompound name="VALTRA_APILLAR" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="valtraAPillarDisplayDirect_decal">
+    <!-- lights -->
+        <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="valtraAPillarDisplayDirect_iconTurnLightLeft_decal" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="valtraAPillarDisplayDirect_iconTurnLightRight_decal" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="valtraAPillarDisplayDirect_iconTurnLightTrailer_decal" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE FRONT_ATTACHMENT BACK_ATTACHMENT"/>
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="valtraAPillarDisplayDirect_iconDefaultLight_decal" intensity="0.2" lightTypes="0" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="valtraAPillarDisplayDirect_iconHighBeam_decal" intensity="0.2" lightTypes="3" baseColor="SHARED_BLACK4" emitColor="BLUE" groups="MOTOR_ACTIVE"/>
+    <!-- enterable -->
+        <dashboard displayType="TEXT" valueType="time" node="valtraAPillarDisplayDirect_numbersTime" textColor="1 1 1 1" textSize="0.01" textMask="00:00" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="outsideTemperature" node="valtraAPillarDisplayDirect_numbersOutsideTemperature" textColor="1 1 1 1" textSize="0.01" textMask="00" textAlignment="RIGHT" font="DIGIT" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="VISIBILITY" valueType="motorized.directionForwardExclusive" node="valtraAPillarDisplayDirect_iconArrowForwards_decal" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="VISIBILITY" valueType="motorized.directionBackward" node="valtraAPillarDisplayDirect_iconArrowBackwards_decal" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="TEXT" valueType="motorized.speed" node="valtraAPillarDisplayDirect_numbersSpeed" textColor="1 1 1 1" textSize="0.013" textMask="00.0" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="valtraAPillarDisplayDirect_numbersFuelUsage" textColor="SHARED_YELLOW2" textSize="0.008" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="motorized.rpm" node="valtraAPillarDisplayDirect_sliderRpm_decal" minValueSlider="0" maxValueSlider="2600" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="valtraAPillarDisplayDirect_sliderTemperature_decal" minValueSlider="0" maxValueSlider="150" groups="MOTOR_ACTIVE"/>
+    <!-- drivable -->
+        <dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="valtraAPillarDisplayDirect_iconCruiseControlActive01_decal" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="cruiseControl" node="valtraAPillarDisplayDirect_numbersCruiseControl" textColor="1 1 1 1" textSize="0.006" textMask="00.0" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+    <!-- PTO -->
+        <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="valtraAPillarDisplayDirect_iconPtoFront_decal" baseColor="SHARED_BLACK4" emitColor="SHARED_YELLOW2" intensity="0.3" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="valtraAPillarDisplayDirect_iconPtoBack_decal" baseColor="SHARED_BLACK4" emitColor="SHARED_YELLOW2" intensity="0.3" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+    <!-- fillUnit -->
+        <dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="valtraAPillarDisplayDirect_iconFuelWarning_decal" fillType="DIESEL" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.3" warningThresholdMax="30" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="valtraAPillarDisplayDirect_iconDefWarning_decal" fillType="DEF" baseColor="SHARED_BLACK4" emitColor="ORANGE" intensity="0.3" warningThresholdMax="6" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" fillType="DEF" node="valtraAPillarDisplayDirect_sliderDef_decal" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" fillType="DIESEL" node="valtraAPillarDisplayDirect_sliderFuel_decal" groups="MOTOR_ACTIVE"/>
+    <!-- dashboards -->
+        <dashboard displayType="EMITTER" node="valtraAPillarDisplayDirect_iconGlowYellow_decal" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="SHARED_YELLOW2" groups="MOTOR_STARTING" />
+        <dashboard displayType="EMITTER" node="valtraAPillarDisplayDirect_iconGlowRed_decals" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="RED" groups="MOTOR_STARTING" />
+        <dashboard displayType="EMITTER" node="valtraAPillarDisplayDirect_iconGlowGreen_decal" intensity="0.2" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" node="valtraAPillarDisplayDirect_iconIdleState_decals" intensity="0.0" baseColor="SHARED_BLACK4" emitColor="SHARED_BLACK4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" node="valtraAPillarDisplayDirect_iconGlow_decals" idleValue="-1" intensity="0.2" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" node="valtraAPillarDisplayDirect_decal" idleValue="-1" intensity="0.2" groups="MOTOR_ACTIVE"/>
+
+        <configuration id="TRANSMISSION_ACTIVE">
+            <dashboard displayType="TEXT" valueType="gearGroup" node="valtraAPillarDisplayDirect_numbersGears01_active" textColor="1 1 1 1" textSize="0.018" textMask="0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="gear"      node="valtraAPillarDisplayDirect_numbersGears02_active" textColor="1 1 1 1" textSize="0.018" textMask="0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_ACTIVE"/>
+        </configuration>
+        <configuration id="TRANSMISSION_DIRECT">
+            <dashboard displayType="TEXT" valueType="motorized.gear" node="valtraAPillarDisplayDirect_numbersGears_direct" textColor="1 1 1 1" textSize="0.02"  textMask="0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_ACTIVE"/>
+        </configuration>
+    </dashboardCompound>
+
+    <dashboardCompound name="VALTRA_SMARTTOUCH_SCREEN01" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="valtraSmarttouchDisplays">
+	<!-- Page 1 -->
+	<!-- dashboards -->
+        <dashboard displayType="VISIBILITY" node="valtraSmartTouchStartScreenP1_SC" idleValue="0" groups="MOTOR_STARTING"/>
+		<dashboard displayType="VISIBILITY" node="valtraSmartTouchMainScreenP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+        <dashboard displayType="EMITTER" node="valtraSmartTouchMainScreenP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+	<!-- always on -->
+        <dashboard displayType="TEXT" valueType="outsideTemperature" node="valtraST_dblOutsideTempAO_SC" textColor="ORANGE" textSize="0.004" textMask="00" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="valtraST_dblRealClockAO_SC" textMask="ssssssss" textColor="1 1 1 1" textSize="0.005" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+	<!-- weather -->
+		<dashboard displayType="VISIBILITY" node="valtraST_dblWeatherSunAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblWeatherCloudAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblWeatherRainAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblWeatherHailAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblWeatherSnowAO_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblWeatherTwisterAO_SC" groups="MOTOR_RUNNING"/>
+	
+	<!-- Page 2 -->
+	<!-- dashboards -->
+		<dashboard displayType="VISIBILITY" node="valtraSmartTouchGPSScreenP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblGPSdecalsP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+        <dashboard displayType="EMITTER" node="valtraSmartTouchGPSScreenP2_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+        <dashboard displayType="EMITTER" node="valtraST_dblGPSdecalsP2_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+		
+		<dashboard displayType="VISIBILITY" node="valtraST_dblGPScompassNeedleP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+	<!-- gps -->
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="valtraST_dblGPSactiveP2_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="valtraST_dblGPSsatellitP2_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+		
+		<dashboard displayType="TEXT" valueType="gpsWidth" node="valtraST_dblWorkWidthNumbersP2_SC" textColor="1 1 1 1" textSize="0.0045" textMask="00,00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingText2" node="valtraST_dblGPScompassP2_SC" textColor="1 1 1 1" textSize="0.0035" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="valtraST_dblGPScompassNumbersP2_SC" textColor="1 1 1 1" textSize="0.0035" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="valtraST_dblGPSfieldNumbersP2_SC" textColor="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="ROT" valueType="ai.automaticSteering.heading" node="valtraST_dblGPScompassNeedleP2_SC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+	<!-- MiniMap -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="valtraST_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="valtraST_dblNaviMapPositionP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+	<!-- Page 3 -->
+	<!-- dashboards -->
+		<dashboard displayType="VISIBILITY" node="valtraSmartTouchSystemScreenP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+        <dashboard displayType="EMITTER" node="valtraSmartTouchSystemScreenP3_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC3"/>
+		
+		<dashboard displayType="EMITTER" node="valtraST_dblFuelSliderP3_SC" intensity="0.1" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" node="valtraST_dblAdBlueSliderP3_SC" intensity="0.1" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" node="valtraST_dbl3PFrontSliderP3_SC" intensity="0.1" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" node="valtraST_dbl3PBackSliderP3_SC" intensity="0.1" groups="MOTOR_RUNNING PAGESC3"/>
+		
+		<dashboard displayType="VISIBILITY" node="valtraST_dblCruiseControlP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblFuelSliderP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblAdBlueSliderP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dbl3PFrontSliderP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dbl3PBackSliderP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblFrontAttacherP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblBackAttacherP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblPTOfrontP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraST_dblPTObackP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+	<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.speed" node="valtraST_dblSpeedNumbersP3_SC" textColor="ORANGE" textSize="0.01" textMask="00.0" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="valtraST_dblFuelUsageNumbersP3_SC" textColor="ORANGE" textSize="0.0042" textMask="00.00" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGESC3"/>
+	<!-- drivable -->
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="valtraST_dblCruiseControlNumbersP3_SC" textColor="ORANGE" textSize="0.005" textMask="00" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="valtraST_dblCruiseControlP3_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" groups="MOTOR_RUNNING PAGESC3"/>
+	<!-- fillUnit -->
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" fillType="DIESEL" node="valtraST_dblFuelSliderP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" fillType="DEF" node="valtraST_dblAdBlueSliderP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+	<!-- Lifter State -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" node="valtraST_dbl3PFrontSliderP3_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.7" groups="MOTOR_RUNNING PAGESC3" />
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" node="valtraST_dbl3PBackSliderP3_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.7" groups="MOTOR_RUNNING PAGESC3" />
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" joints="2" option="percent" node="valtraST_dbl3PFrontLifterPercentP3_SC" factor="100" default="0" textColor="ORANGE" textSize="0.006" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" joints="1" option="percent" node="valtraST_dbl3PBackLifterPercentP3_SC" factor="100" default="0" textColor="ORANGE" textSize="0.006" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>	
+	<!-- PTO -->
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="2 5" node="valtraST_dblPTOfrontP3_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="1 3 4" node="valtraST_dblPTObackP3_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="2 5"  node="valtraST_dblFrontPTOrpmNumbersP3_SC" factor="0.2875" doInterpolation="true" interpolationSpeed="0.2" options="any" max="542" textColor="ORANGE" textSize="0.0055" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="1 3 4" node="valtraST_dblBackPTOrpmNumbersP3_SC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="ORANGE" textSize="0.0055" textMask="0000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+	<!-- Connect -->
+		<dashboard valueType="dbl.base" cmd="connected" joints="2 5" displayType="EMITTER" node="valtraST_dblFrontAttacherP3_SC" baseColor="1 1 1 1" emitColor="LEMKEN_BLUE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC3" />
+		<dashboard valueType="dbl.base" cmd="connected" joints="1 3 4" displayType="EMITTER" node="valtraST_dblBackAttacherP3_SC" baseColor="1 1 1 1" emitColor="LEMKEN_BLUE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC3"/>
+	
+	<!-- Page 4 -->
+	<!-- dashboards -->
+		<dashboard displayType="VISIBILITY" node="valtraSmartTouchISOBusScreenP4_SC" groups="MOTOR_RUNNING PAGESC4"/>
+        <dashboard displayType="EMITTER" node="valtraSmartTouchISOBusScreenP4_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC4"/>
+    </dashboardCompound>
+
+    <dashboardCompound name="VALTRA_TECHNOLOGYPRO_SCREEN01" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="valtraTechnologyProDisplays">
+	<!-- Page 1 -->
+	<!-- dashboards -->
+        <dashboard displayType="VISIBILITY" node="valtraTechnologyProStartScreenP1_CC" idleValue="0" groups="MOTOR_STARTING"/>
+		<dashboard displayType="VISIBILITY" node="valtraTechnologyProMainScreenP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+        <dashboard displayType="EMITTER" node="valtraTechnologyProMainScreenP1_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC1"/>
+	<!-- always on -->
+        <dashboard displayType="TEXT" valueType="outsideTemperature" node="valtraTP_dblOutsideTempAO_CC" textColor="ORANGE" textSize="0.004" textMask="00" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="valtraTP_dblRealClockAO_CC" textMask="ssssssss" textColor="1 1 1 1" textSize="0.005" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+	<!-- weather -->
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblWeatherSunAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblWeatherCloudAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblWeatherRainAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblWeatherHailAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblWeatherSnowAO_CC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblWeatherTwisterAO_CC" groups="MOTOR_RUNNING"/>
+		
+	<!-- Page 2 -->
+	<!-- dashboards -->
+		<dashboard displayType="VISIBILITY" node="valtraTechnologyProGPSScreenP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblGPSdecalsP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+        <dashboard displayType="EMITTER" node="valtraTechnologyProGPSScreenP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+        <dashboard displayType="EMITTER" node="valtraTP_dblGPSdecalsP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+		
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblGPScompassNeedleP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+	<!-- gps -->
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="valtraTP_dblGPSactiveP2_CC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="valtraTP_dblGPSsatellitP2_CC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+		
+		<dashboard displayType="TEXT" valueType="gpsWidth" node="valtraTP_dblWorkWidthNumbersP2_CC" textColor="1 1 1 1" textSize="0.0045" textMask="00,00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingText2" node="valtraTP_dblGPScompassP2_CC" textColor="1 1 1 1" textSize="0.0035" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="valtraTP_dblGPScompassNumbersP2_CC" textColor="1 1 1 1" textSize="0.0035" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="valtraTP_dblGPSfieldNumbersP2_CC" textColor="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard displayType="ROT" valueType="ai.automaticSteering.heading" node="valtraTP_dblGPScompassNeedleP2_CC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+	<!-- MiniMap -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="valtraTP_dblNaviMapP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="valtraTP_dblNaviMapPositionP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+		
+	<!-- Page 3 -->
+	<!-- dashboards -->
+		<dashboard displayType="VISIBILITY" node="valtraTechnologyProSystemScreenP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+        <dashboard displayType="EMITTER" node="valtraTechnologyProSystemScreenP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+		
+		<dashboard displayType="EMITTER" node="valtraTP_dblFuelSliderP3_CC" intensity="0.1" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="EMITTER" node="valtraTP_dblAdBlueSliderP3_CC" intensity="0.1" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="EMITTER" node="valtraTP_dbl3PFrontSliderP3_CC" intensity="0.1" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="EMITTER" node="valtraTP_dbl3PBackSliderP3_CC" intensity="0.1" groups="MOTOR_RUNNING PAGECC3"/>
+		
+		<dashboard displayType="VISIBILITY" node="valtraST_dblCruiseControlP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblFuelSliderP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblAdBlueSliderP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dbl3PFrontSliderP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dbl3PBackSliderP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblFrontAttacherP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblBackAttacherP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblPTOfrontP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="VISIBILITY" node="valtraTP_dblPTObackP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+	<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.speed" node="valtraTP_dblSpeedNumbersP3_CC" textColor="ORANGE" textSize="0.01" textMask="00.0" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="valtraTP_dblFuelUsageNumbersP3_CC" textColor="ORANGE" textSize="0.0042" textMask="00.00" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGECC3"/>
+	<!-- drivable -->
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="valtraTP_dblCruiseControlNumbersP3_CC" textColor="ORANGE" textSize="0.005" textMask="00" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="valtraST_dblCruiseControlP3_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" groups="MOTOR_RUNNING PAGECC3"/>
+	<!-- fillUnit -->
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" fillType="DIESEL" node="valtraTP_dblFuelSliderP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" fillType="DEF" node="valtraTP_dblAdBlueSliderP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+	<!-- Lifter State -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" node="valtraTP_dbl3PFrontSliderP3_CC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.7" groups="MOTOR_RUNNING PAGECC3" />
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" node="valtraTP_dbl3PBackSliderP3_CC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.7" groups="MOTOR_RUNNING PAGECC3" />
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" joints="2" option="percent" node="valtraTP_dbl3PFrontLifterPercentP3_CC" factor="100" default="0" textColor="ORANGE" textSize="0.006" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" joints="1" option="percent" node="valtraTP_dbl3PBackLifterPercentP3_CC" factor="100" default="0" textColor="ORANGE" textSize="0.006" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC3"/>	
+	<!-- PTO -->
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="2 5" node="valtraTP_dblPTOfrontP3_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="1 3 4" node="valtraTP_dblPTObackP3_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="2 5"  node="valtraTP_dblFrontPTOrpmNumbersP3_CC" factor="0.2875" doInterpolation="true" interpolationSpeed="0.2" options="any" max="542" textColor="ORANGE" textSize="0.0055" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC3"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="1 3 4" node="valtraTP_dblBackPTOrpmNumbersP3_CC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="ORANGE" textSize="0.0055" textMask="0000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC3"/>
+	<!-- Connect -->
+		<dashboard valueType="dbl.base" cmd="connected" joints="2 5" displayType="EMITTER" node="valtraTP_dblFrontAttacherP3_CC" baseColor="1 1 1 1" emitColor="LEMKEN_BLUE1" intensity="0.6" groups="MOTOR_RUNNING PAGECC3" />
+		<dashboard valueType="dbl.base" cmd="connected" joints="1 3 4" displayType="EMITTER" node="valtraTP_dblBackAttacherP3_CC" baseColor="1 1 1 1" emitColor="LEMKEN_BLUE1" intensity="0.6" groups="MOTOR_RUNNING PAGECC3"/>
+	
+	<!-- Page 4 -->
+	<!-- dashboards -->
+		<dashboard displayType="VISIBILITY" node="valtraTechnologyProISOBusScreenP4_CC" groups="MOTOR_RUNNING PAGECC4"/>
+        <dashboard displayType="EMITTER" node="valtraTechnologyProISOBusScreenP4_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC4"/>
+    </dashboardCompound>
+
+    <dashboardCompound name="VALTRA_REVERSEDRIVING_SCREEN01" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="reverseDrivingDisplay_decal">
+    <!-- enterable -->
+        <dashboard displayType="TEXT" valueType="outsideTemperature" node="reverseDrivingDisplay_numbersOutsideTemperature" textColor="0 0 0 0" textSize="0.011" textMask="00" textAlignment="RIGHT" font="DIGIT" groups="MOTOR_ACTIVE REVERSE_DRIVING"/>
+    <!-- dashboards -->
+        <dashboard displayType="EMITTER" node="reverseDrivingDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE REVERSE_DRIVING"/>
+
+        <configuration id="TRANSMISSION_ACTIVE">
+            <dashboard displayType="TEXT" valueType="gearGroup" node="reverseDrivingDisplay_numbersReverseGears01_active" textColor="0 0 0 1" textSize="0.018" textMask="0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_ACTIVE REVERSE_DRIVING"/>
+            <dashboard displayType="TEXT" valueType="gear"      node="reverseDrivingDisplay_numbersReverseGears02_active" textColor="0 0 0 1" textSize="0.018" textMask="0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_ACTIVE REVERSE_DRIVING"/>
+        </configuration>
+        <configuration id="TRANSMISSION_DIRECT">
+            <dashboard displayType="TEXT" valueType="motorized.gear" node="reverseDrivingDisplay_numbersReverseGears_direct" textColor="0 0 0 0" textSize="0.02"  textMask="0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_ACTIVE REVERSE_DRIVING"/>
+        </configuration>
+    </dashboardCompound>
+
+    <i3dMappings>
+        <i3dMapping id="valtraAPillarDisplayDirect_decal" node="0>"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersSpeed" node="0>0|0"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersFuelUsage" node="0>0|1"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersCruiseControl" node="0>0|2"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersOutsideTemperature" node="0>0|3"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersGears_direct" node="0>0|4"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersGears01_active" node="0>0|5"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersGears02_active" node="0>0|6"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_numbersTime" node="0>0|7"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_sliderRpm_decal" node="0>1|0"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_sliderFuel_decal" node="0>1|1"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_sliderTemperature_decal" node="0>1|2"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_sliderDef_decal" node="0>1|3"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconTurnLightLeft_decal" node="0>2|0"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconTurnLightRight_decal" node="0>2|1"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconTurnLightTrailer_decal" node="0>2|2"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconDefaultLight_decal" node="0>2|3"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconHighBeam_decal" node="0>2|4"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconIdleState_decals" node="0>2|5"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconPtoFront_decal" node="0>2|6"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconPtoBack_decal" node="0>2|7"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconFuelWarning_decal" node="0>2|8"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconDefWarning_decal" node="0>2|9"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconCruiseControlActive01_decal" node="0>2|10"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconGlow_decals" node="0>2|11"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconGlowGreen_decal" node="0>2|12"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconGlowRed_decals" node="0>2|13"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconGlowYellow_decal" node="0>2|14"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconArrowForwards_decal" node="0>2|15"/>
+		<i3dMapping id="valtraAPillarDisplayDirect_iconArrowBackwards_decal" node="0>2|16"/>
+		
+		<i3dMapping id="valtraSmarttouchDisplays" node="1>"/>
+		
+		<i3dMapping id="valtraSmartTouchStartScreenP1_SC" node="1>0|0|0"/>
+		
+		<i3dMapping id="valtraST_dblRealClockAO_SC" node="1>0|1|0"/>
+		<i3dMapping id="valtraST_dblOutsideTempAO_SC" node="1>0|1|1"/>
+		<i3dMapping id="valtraST_dblWeatherSunAO_SC" node="1>0|1|2"/>
+		<i3dMapping id="valtraST_dblWeatherCloudAO_SC" node="1>0|1|3"/>
+		<i3dMapping id="valtraST_dblWeatherRainAO_SC" node="1>0|1|4"/>
+		<i3dMapping id="valtraST_dblWeatherHailAO_SC" node="1>0|1|5"/>
+		<i3dMapping id="valtraST_dblWeatherSnowAO_SC" node="1>0|1|6"/>
+		<i3dMapping id="valtraST_dblWeatherTwisterAO_SC" node="1>0|1|7"/>
+		
+		<i3dMapping id="valtraSmartTouchMainScreenP1_SC" node="1>0|2|0"/>
+		
+		<i3dMapping id="valtraST_dblGPSactiveP2_SC" node="1>1|0|0"/>
+		<i3dMapping id="valtraST_dblGPSarrowRightP2_SC" node="1>1|0|1"/>
+		<i3dMapping id="valtraST_dblWorkWidthNumbersP2_SC" node="1>1|0|2"/>
+		<i3dMapping id="valtraST_dblGPSarrowLeftP2_SC" node="1>1|0|3"/>
+		<i3dMapping id="valtraST_dblGPScompassP2_SC" node="1>1|0|4"/>
+		<i3dMapping id="valtraST_dblGPScompassNumbersP2_SC" node="1>1|0|5"/>
+		<i3dMapping id="valtraST_dblGPSsatellitP2_SC" node="1>1|0|6"/>
+		<i3dMapping id="valtraST_dblGPSfieldNumbersP2_SC" node="1>1|0|7"/>
+		<i3dMapping id="valtraST_dblGPScompassNeedleP2_SC" node="1>1|0|8"/>
+		
+		<i3dMapping id="valtraST_dblNaviMapP2_SC" node="1>1|1|0"/>
+		<i3dMapping id="valtraST_dblNaviMapPositionP2_SC" node="1>1|1|0|0"/>
+		
+		<i3dMapping id="valtraSmartTouchGPSScreenP2_SC" node="1>1|2|0"/>
+		<i3dMapping id="valtraST_dblGPSdecalsP2_SC" node="1>1|2|1"/>
+		
+		<i3dMapping id="valtraST_dblSpeedNumbersP3_SC" node="1>2|0|0"/>
+		<i3dMapping id="valtraST_dblCruiseControlNumbersP3_SC" node="1>2|0|1"/>
+		<i3dMapping id="valtraST_dblCruiseControlP3_SC" node="1>2|0|2"/>
+		<i3dMapping id="valtraST_dblFuelSliderP3_SC" node="1>2|0|3"/>
+		<i3dMapping id="valtraST_dblAdBlueSliderP3_SC" node="1>2|0|4"/>
+		<i3dMapping id="valtraST_dblFuelUsageNumbersP3_SC" node="1>2|0|5"/>
+		<i3dMapping id="valtraST_dbl3PBackSliderP3_SC" node="1>2|0|6"/>
+		<i3dMapping id="valtraST_dblBackPTOrpmNumbersP3_SC" node="1>2|0|7"/>
+		<i3dMapping id="valtraST_dbl3PBackLifterPercentP3_SC" node="1>2|0|8"/>
+		<i3dMapping id="valtraST_dbl3PFrontSliderP3_SC" node="1>2|0|9"/>
+		<i3dMapping id="valtraST_dblFrontPTOrpmNumbersP3_SC" node="1>2|0|10"/>
+		<i3dMapping id="valtraST_dbl3PFrontLifterPercentP3_SC" node="1>2|0|11"/>
+		<i3dMapping id="valtraST_dblFrontAttacherP3_SC" node="1>2|0|12"/>
+		<i3dMapping id="valtraST_dblBackAttacherP3_SC" node="1>2|0|13"/>
+		<i3dMapping id="valtraST_dblPTOfrontP3_SC" node="1>2|0|14"/>
+		<i3dMapping id="valtraST_dblPTObackP3_SC" node="1>2|0|15"/>
+		
+		<i3dMapping id="valtraSmartTouchSystemScreenP3_SC" node="1>2|1|0"/>
+		
+		<i3dMapping id="isobusJointP4_SC" node="1>3|0"/>
+		
+		<i3dMapping id="valtraSmartTouchISOBusScreenP4_SC" node="1>3|1|0"/>
+		
+		
+		
+		<i3dMapping id="valtraTechnologyProDisplays" node="2>"/>
+		
+		<i3dMapping id="valtraTechnologyProStartScreenP1_CC" node="2>0|0|0"/>
+		
+		<i3dMapping id="valtraTP_dblRealClockAO_CC" node="2>0|1|0"/>
+		<i3dMapping id="valtraTP_dblOutsideTempAO_CC" node="2>0|1|1"/>
+		<i3dMapping id="valtraTP_dblWeatherSunAO_CC" node="2>0|1|2"/>
+		<i3dMapping id="valtraTP_dblWeatherCloudAO_CC" node="2>0|1|3"/>
+		<i3dMapping id="valtraTP_dblWeatherRainAO_CC" node="2>0|1|4"/>
+		<i3dMapping id="valtraTP_dblWeatherHailAO_CC" node="2>0|1|5"/>
+		<i3dMapping id="valtraTP_dblWeatherSnowAO_CC" node="2>0|1|6"/>
+		<i3dMapping id="valtraTP_dblWeatherTwisterAO_CC" node="2>0|1|7"/>
+		
+		<i3dMapping id="valtraTechnologyProMainScreenP1_CC" node="2>0|2|0"/>
+		
+		<i3dMapping id="valtraTP_dblGPSactiveP2_CC" node="2>1|0|0"/>
+		<i3dMapping id="valtraTP_dblGPSarrowRightP2_CC" node="2>1|0|1"/>
+		<i3dMapping id="valtraTP_dblWorkWidthNumbersP2_CC" node="2>1|0|2"/>
+		<i3dMapping id="valtraTP_dblGPSarrowLeftP2_CC" node="2>1|0|3"/>
+		<i3dMapping id="valtraTP_dblGPScompassP2_CC" node="2>1|0|4"/>
+		<i3dMapping id="valtraTP_dblGPScompassNumbersP2_CC" node="2>1|0|5"/>
+		<i3dMapping id="valtraTP_dblGPSsatellitP2_CC" node="2>1|0|6"/>
+		<i3dMapping id="valtraTP_dblGPSfieldNumbersP2_CC" node="2>1|0|7"/>
+		<i3dMapping id="valtraTP_dblGPScompassNeedleP2_CC" node="2>1|0|8"/>
+		
+		<i3dMapping id="valtraTP_dblNaviMapP2_CC" node="2>1|1|0"/>
+		<i3dMapping id="valtraTP_dblNaviMapPositionP2_CC" node="2>1|1|0|0"/>
+		
+		<i3dMapping id="valtraTechnologyProGPSScreenP2_CC" node="2>1|2|0"/>
+		<i3dMapping id="valtraTP_dblGPSdecalsP2_CC" node="2>1|2|1"/>
+		
+		<i3dMapping id="valtraTP_dblSpeedNumbersP3_CC" node="2>2|0|0"/>
+		<i3dMapping id="valtraTP_dblCruiseControlNumbersP3_CC" node="2>2|0|1"/>
+		<i3dMapping id="valtraST_dblCruiseControlP3_CC" node="2>2|0|2"/>
+		<i3dMapping id="valtraTP_dblFuelSliderP3_CC" node="2>2|0|3"/>
+		<i3dMapping id="valtraTP_dblAdBlueSliderP3_CC" node="2>2|0|4"/>
+		<i3dMapping id="valtraTP_dblFuelUsageNumbersP3_CC" node="2>2|0|5"/>
+		<i3dMapping id="valtraTP_dbl3PBackSliderP3_CC" node="2>2|0|6"/>
+		<i3dMapping id="valtraTP_dblBackPTOrpmNumbersP3_CC" node="2>2|0|7"/>
+		<i3dMapping id="valtraTP_dbl3PBackLifterPercentP3_CC" node="2>2|0|8"/>
+		<i3dMapping id="valtraTP_dbl3PFrontSliderP3_CC" node="2>2|0|9"/>
+		<i3dMapping id="valtraTP_dblFrontPTOrpmNumbersP3_CC" node="2>2|0|10"/>
+		<i3dMapping id="valtraTP_dbl3PFrontLifterPercentP3_CC" node="2>2|0|11"/>
+		<i3dMapping id="valtraTP_dblFrontAttacherP3_CC" node="2>2|0|12"/>
+		<i3dMapping id="valtraTP_dblBackAttacherP3_CC" node="2>2|0|13"/>
+		<i3dMapping id="valtraTP_dblPTOfrontP3_CC" node="2>2|0|14"/>
+		<i3dMapping id="valtraTP_dblPTObackP3_CC" node="2>2|0|15"/>
+		
+		<i3dMapping id="valtraTechnologyProSystemScreenP3_CC" node="2>2|1|0"/>
+		
+		<i3dMapping id="isobusJointP4_CC" node="2>3|0"/>
+		
+		<i3dMapping id="valtraTechnologyProISOBusScreenP4_CC" node="2>3|1|0"/>
+		
+		
+		
+		<i3dMapping id="reverseDrivingDisplay_decal" node="3>"/>
+		<i3dMapping id="reverseDrivingDisplay_numbersOutsideTemperature" node="3>0|0"/>
+		<i3dMapping id="reverseDrivingDisplay_numbersReverseGears_direct" node="3>0|1"/>
+		<i3dMapping id="reverseDrivingDisplay_numbersReverseGears01_active" node="3>0|2"/>
+		<i3dMapping id="reverseDrivingDisplay_numbersReverseGears02_active" node="3>0|3"/>
+		<i3dMapping id="reverseDrivingDisplay_sliderDef_decal" node="3>1|0"/>
+    </i3dMappings>
+</dashboardCompounds>

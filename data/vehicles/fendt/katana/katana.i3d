@@ -12,7 +12,7 @@
     <File fileId="75" filename="textures/fendtKatanaVariotronicChopperScreen1_diffuse.png"/>
     <File fileId="76" filename="textures/fendtKatanaVariotronicGPSScreen_diffuse.png"/>
     <File fileId="64" filename="textures/fendtKatanaVariotronicMainScreen_diffuse.png"/>
-    <File fileId="73" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="73" filename="../../../../shader/minimap.xml"/>
     <File fileId="65" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="52" filename="$data/shaders/glowShader.xml"/>
     <File fileId="54" filename="$data/shaders/mirrorShader.xml"/>

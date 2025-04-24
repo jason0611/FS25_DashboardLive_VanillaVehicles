@@ -8,7 +8,7 @@
   <Files>
     <File fileId="5" filename="textures/iMonitorBasicDisplay_diffuse.png"/>
     <File fileId="11" filename="textures/iMonitorGPSDisplay_diffuse.png"/>
-    <File fileId="10" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="10" filename="../../../../../shader/minimap.xml"/>
     <File fileId="7" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="6" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.dds"/>
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
