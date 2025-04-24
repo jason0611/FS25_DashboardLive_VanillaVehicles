@@ -10,7 +10,7 @@
     <File fileId="9" filename="textures/cnhGPSScreen_diffuse.png"/>
     <File fileId="13" filename="textures/cnhISOBusScreen_diffuse.png"/>
     <File fileId="12" filename="textures/cnhSystemScreen_diffuse.png"/>
-    <File fileId="11" filename="../../../../../shader/minimap.xml"/>
+    <File fileId="11" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
     <File fileId="2" filename="$data/shared/default_normal.dds"/>

@@ -8,7 +8,7 @@
   <Files>
     <File fileId="45" filename="textures/mfIsoBusDisplay.dds"/>
     <File fileId="51" filename="textures/mfMainDisplay.dds"/>
-    <File fileId="53" filename="../../../../shader/minimap.xml"/>
+    <File fileId="53" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="49" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="52" filename="../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
     <File fileId="48" filename="$data/shaders/glowShader.xml"/>
