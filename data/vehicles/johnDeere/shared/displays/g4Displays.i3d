@@ -16,11 +16,11 @@
     <File fileId="14" filename="$data/shared/detailLibrary/mixed/carbonPattern01_specular.dds"/>
     <File fileId="12" filename="$data/shared/windowDark_diffuse.dds"/>
     <File fileId="1" filename="$data/vehicles/johnDeere/shared/displays/g4Displays_diffuse.png"/>
+    <File fileId="22" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="23" filename="g4Displays_diffuse.dds"/>
     <File fileId="10" filename="textures/johnDeereDisplayDecal_diffuse.dds"/>
     <File fileId="9" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
     <File fileId="11" filename="textures/johnDeereG4DisplayGPS_diffuse.png"/>
-    <File fileId="22" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
     <File fileId="7" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
   </Files>
@@ -352,7 +352,7 @@
             <Shape name="g4Display_dblHlmBlinkP1_SC" rotation="-180 -3.23297e-05 180" scale="3 1 2.5" shapeId="64" clipDistance="20" nodeId="285" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="21"/>
           </TransformGroup>
           <Shape name="g4Display_dblHlmConourActiveRotBlinkP1_SC" translation="0.0527968 0.001 -0.0680247" rotation="1e-06 -0 3e-06" scale="1.9 1 1.9" shapeId="77" clipDistance="20" nodeId="286" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="20"/>
-          <Shape name="g4Display_dblHLMActive00P1_SC" translation="-0.0323331 0.001 -0.0782323" scale="1 1 0.9" shapeId="32" clipDistance="50" nodeId="287" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="g4Display_dblHLMActiveSecondP1_SC" translation="-0.0323331 0.001 -0.0782323" scale="1 1 0.9" shapeId="32" clipDistance="50" nodeId="287" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
           <Shape name="g4Display_dblCultivatorDephP1_SC" translation="0.0783526 9.29263e-12 -0.067876" rotation="1e-06 -0 6e-06" scale="1.6 1 1.6" shapeId="54" clipDistance="20" nodeId="288" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="21" weatherPreventMask="0x0"/>
         </TransformGroup>
         <TransformGroup name="configurations" clipDistance="50" nodeId="289">
@@ -378,7 +378,7 @@
           <Shape name="g4Display_dblGPSSatellitP12_GPS" translation="-0.042408 0.0009 0.074087" rotation="-180 -1.86693e-05 -180" scale="1.8 1 1.8" shapeId="35" clipDistance="20" nodeId="304" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="18"/>
           <Shape name="g4Display_dblGPSActiveP12_GPS" translation="-0.051827 0.001 0.074087" shapeId="86" clipDistance="50" nodeId="305" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="10"/>
           <TransformGroup name="Numbers_gps" translation="0 -0.000353177 0" rotation="90 -4.35775e-05 180" nodeId="306">
-            <TransformGroup name="g4Display_dblFieldNumbersP1_GPS" translation="-0.0722765 0.05 5.92868e-16" rotation="0 1.45667e-13 -3.25689e-12" nodeId="307"/>
+            <TransformGroup name="g4Display_dblFieldNumbersP1_GPS" translation="-0.0779357 0.05 5.61496e-16" rotation="0 1.45667e-13 -3.25689e-12" nodeId="307"/>
             <TransformGroup name="g4Display_dblDayTimeNumbersP1_GPS" translation="0.03714 0.0718256 8.3219e-08" rotation="0 -4.35775e-05 0" nodeId="308"/>
             <TransformGroup name="g4Display_dblVoltageNumbersP1_GPS" translation="-0.0816059 0.00697737 -7.09564e-09" rotation="0 -4.35775e-05 0" nodeId="309"/>
             <TransformGroup name="g4Display_dblSpeedNumbersP1_GPS" translation="-0.0839965 0.0260743 -8.91386e-09" rotation="0 -4.35775e-05 0" nodeId="310"/>
@@ -425,7 +425,7 @@
             <Shape name="g4Display_dblHlmIconP1_GPS" rotation="-180 -3.23297e-05 180" scale="3 1 2.5" shapeId="76" clipDistance="20" nodeId="348" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="21"/>
             <Shape name="g4Display_dblHlmBlinkP1_GPS" rotation="-180 -3.23297e-05 180" scale="3 1 2.5" shapeId="64" clipDistance="20" nodeId="349" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="21"/>
           </TransformGroup>
-          <Shape name="g4Display_dblHLMActive00P1_GPS" translation="-0.0318463 0.001 -0.078462" scale="1 1 0.9" shapeId="32" clipDistance="50" nodeId="350" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="g4Display_dblHLMActiveThirdP1_GPS" translation="-0.0318463 0.001 -0.078462" scale="1 1 0.9" shapeId="32" clipDistance="50" nodeId="350" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
           <Shape name="g4Display_dblHlmConourActiveRotBlinkP1_GPS" translation="0.0534077 -5.7031e-12 -0.0674385" rotation="1e-06 -0 3e-06" scale="1.9 1 1.9" shapeId="77" clipDistance="20" nodeId="351" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="20"/>
           <Shape name="g4Display_dblCultivatorDephP1_GPS" translation="0.0793483 1.09214e-10 -0.0676266" rotation="1e-06 -0 6e-06" scale="1.6 1 1.6" shapeId="54" clipDistance="20" nodeId="352" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="21" weatherPreventMask="0x0"/>
         </TransformGroup>
@@ -545,7 +545,7 @@
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
-    <Camera name="persp" translation="-0.400053 0.202361 -0.0142256" rotation="93.8415 -0.778914 180" nodeId="438" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
+    <Camera name="persp" translation="-0.308509 0.144189 0.04164" rotation="97.6239 2.83072 -180" nodeId="438" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
   </Scene>
 
   <UserAttributes>

@@ -401,7 +401,7 @@
 
 		<!-- HLM -->
 		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHlmActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHlmActive00P1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHLMActiveSecondP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="hlm" option="headland" displayType="VISIBILITY" node="g4Display_dblHlmIconP1_SC"  groups="MOTOR_RUNNING"/>
 		<dashboard 									 displayType="VISIBILITY" node="g4Display_dblHlmBlinkP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="hlm" option="contour"  displayType="VISIBILITY" node="g4Display_dblHlmConourActiveRotBlinkP1_SC" groups="MOTOR_RUNNING"/>
@@ -409,7 +409,7 @@
 		<dashboard valueType="hlm" option="field" 	 displayType="EMITTER"    node="g4Display_dblHlmBlinkP1_SC" 	baseColor="0.05 0.05 0.04 1" emitColor="GREEN" intensity="0.2" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="hlm" option="headland" displayType="EMITTER"    node="g4Display_dblHlmIconP1_SC" 								 emitColor="JOHNDEERE_ORANGE1" intensity="0.4" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="hlm" option="contour"  displayType="EMITTER"    node="g4Display_dblHlmConourActiveRotBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.9 0.04 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="hlm" option=""		 displayType="EMITTER"    node="g4Display_dblHlmActive00P1_SC" intensity="0.5" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="hlm" option=""		 displayType="EMITTER"    node="g4Display_dblHLMActiveSecondP1_SC" baseColor="0 0 0" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
 
     </dashboardCompound>
 
@@ -563,14 +563,14 @@
 		
 		<!-- HLM -->
 		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHlmActiveP1_GPS" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHlmActive00P1_GPS" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHLMActiveThirdP1_GPS" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="hlm" option="headland" displayType="VISIBILITY" node="g4Display_dblHlmIconP1_GPS"  groups="MOTOR_RUNNING"/>
 		<dashboard 									 displayType="VISIBILITY" node="g4Display_dblHlmBlinkP1_GPS" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="hlm" option="contour"  displayType="VISIBILITY" node="g4Display_dblHlmConourActiveRotBlinkP1_GPS" groups="MOTOR_RUNNING"/>
 
 		<dashboard valueType="hlm" option="field" 	 displayType="EMITTER"    node="g4Display_dblHlmBlinkP1_GPS" 	baseColor="0.05 0.05 0.04 1" emitColor="GREEN" intensity="0.2" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="hlm" option="headland" displayType="EMITTER"    node="g4Display_dblHlmIconP1_GPS" 								 emitColor="JOHNDEERE_ORANGE1" intensity="0.4" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="hlm" option="" 		 displayType="EMITTER"    node="g4Display_dblHlmActive00P1_GPS" 								 intensity="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="hlm" option="" 		 displayType="EMITTER"    node="g4Display_dblHLMActiveThirdP1_GPS" baseColor="0 0 0" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="hlm" option="contour"  displayType="EMITTER"    node="g4Display_dblHlmConourActiveRotBlinkP1_GPS" baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.5 0.04 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
 
 		<!-- MiniMap -->
@@ -789,7 +789,8 @@
 		<i3dMapping id="g4Display_dblHlmIconP1_SC" node="0>1|1|69|0"/>
 		<i3dMapping id="g4Display_dblHlmBlinkP1_SC" node="0>1|1|69|1"/>
 		<i3dMapping id="g4Display_dblHlmConourActiveRotBlinkP1_SC" node="0>1|1|70"/>
-		<i3dMapping id="g4Display_dblHLMActive00P1_SC" node="0>1|1|71"/>
+		<!-- <i3dMapping id="g4Display_dblHLMActive00P1_SC" node="0>1|1|71"/> -->
+		<i3dMapping id="g4Display_dblHLMActiveSecondP1_SC" node="0>1|1|71"/>
 
 		<!-- configs -->
 		<i3dMapping id="g4Display_tileHydraulicControlXIV_decal" node="0>1|2|0"/>
@@ -894,7 +895,7 @@
 		<i3dMapping id="g4Display_dblHlmActiveP1_GPS" node="0>2|1|10"/>
 		<i3dMapping id="g4Display_dblHlmIconP1_GPS" node="0>2|1|10|0"/>
 		<i3dMapping id="g4Display_dblHlmBlinkP1_GPS" node="0>2|1|10|1"/>
-		<i3dMapping id="g4Display_dblHLMActive00P1_GPS" node="0>2|1|11"/>
+		<i3dMapping id="g4Display_dblHLMActiveThirdP1_GPS" node="0>2|1|11"/>
 		<i3dMapping id="g4Display_dblHlmConourActiveRotBlinkP1_GPS" node="0>2|1|12"/>
 		
 		<i3dMapping id="gpsNaviMapLargeP2" node="0>2|4"/>
