@@ -637,6 +637,14 @@
         <dashboards>
             <dashboard displayType="TEXT" valueType="operatingTime" node="numbersOperatingTime" textColor="1 1 1 1" intensity="1" textSize="0.003" textMask="000000.0" font="DIGIT" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="TEXT" valueType="outsideTemperature" node="numbersOutsideTemp" textColor="0 0 0 1" emissiveScale="0.4" textMask="00.0" textSize="0.003" font="DIGIT" groups="MOTOR_ACTIVE"/>
+			<!-- SeatConsole Page1 -->
+			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP1_SC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- CabConsole Page1 -->
+			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP1_CC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGECC1"/>
+			<!-- CabConsole Page2 -->
+			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP2_CC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- CabConsole Page3 -->
+			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP3_CC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGECC3"/>
         </dashboards>
     </enterable>
 
@@ -744,6 +752,19 @@
             <dashboard displayType="EMITTER"     valueType="directionForward"    node="iconForward_decals"       baseColor="BLACK" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="EMITTER"     valueType="directionBackward"   node="iconBackwards_decals"     baseColor="BLACK" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="TEXT" valueType="gear"  node="numbersGear"  textColor="1 1 1 1" textMask="0" textSize="0.012" font="DIGIT" groups="MOTOR_ACTIVE"/>
+			
+		<!-- SeatConsole Page1 --> 
+			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP1_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP1_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- SeatConsole Page3 --> 
+			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP3_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP3_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- CabConsole Page2 --> 
+			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP2_CC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP2_CC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+		<!-- CabConsole Page3 --> 
+			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP3_CC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP3_CC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC3"/>
         </dashboards>
     </motorized>
 
@@ -888,8 +909,21 @@
         <groups>
             <group name="MOTOR_STARTING" electronicsStarting="true"/>
             <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+			<group name="MOTOR_RUNNING" electronicsRunning="true"/>
             <group name="BACK_ATTACHMENT"  attacherJointIndices="1 3 4"/>
             <group name="FRONT_ATTACHMENT" attacherJointIndices="2 5"/>
+			
+		<!-- Pages SC -->
+			<group name="PAGESC1" dbl="page" group="1" page="1"/>
+			<group name="PAGESC2" dbl="page" group="1" page="2"/>
+		<!-- Pages CC -->
+			<group name="PAGECC1" dbl="page" group="2" page="1"/>
+			<group name="PAGECC2" dbl="page" group="2" page="2"/>
+			<group name="PAGECC3" dbl="page" group="2" page="3"/>
+		<!-- Headland Management -->
+			<group name="DBL_HLM_ON" op="and" dbl="hlm_on"/>
+			<group name="DBL_HLM_FIELD" op="and" dbl="hlm_active_field"/>
+			<group name="DBL_HLM_HEADLAND" op="and" dbl="hlm_active_headland"/>
         </groups>
 
         <default>
@@ -908,12 +942,221 @@
             <dashboard displayType="EMITTER" node="cabinDecalsLight01" idleValue="0" groups="MOTOR_ACTIVE" intensity="0.2"/>
             <dashboard displayType="EMITTER" node="cabinDecalsLight10" idleValue="0" groups="MOTOR_ACTIVE" intensity="0.2"/>
             <dashboard displayType="EMITTER" node="cabinDecalsLight04" idleValue="0" groups="MOTOR_ACTIVE" intensity="0.2"/>
+			
+			<dashboard displayType="VISIBILITY" node="mfD5_startScreen_SC" idleValue="0" groups="MOTOR_STARTING"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_basicScreenP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" node="mfD5_basicScreenP1_SC" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- SeatConsole Page1 -->
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PBackLifterP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMBackPtoP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PFrontLifterP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMFrontPtoP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMonP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSsatellitP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PFrontLifterP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PFrontLifterSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PBackLifterP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PBackLifterSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblPtoFrontP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblPtoBackP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			
+			<dashboard displayType="EMITTER" node="mfD5_dblGPSactiveP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherSunP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherCloudP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherRainP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherHailP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherSnowP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherTwisterP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- SeatConsole Page2 -->
+			<dashboard displayType="EMITTER" node="mfD5_gpsScreenP2_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_gpsScreenP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSarrowLeftP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSarrowRightP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSsatellitP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			
+			<dashboard displayType="EMITTER" node="mfD5_dblGPSactiveP2_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+			
+		<!-- CabConsole Page1 -->
+			<dashboard displayType="VISIBILITY" node="mfD5_startScreen_CC" idleValue="0" groups="MOTOR_STARTING"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_gpsScreenP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="EMITTER" node="mfD5_gpsScreenP1_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC1"/>
+			
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSarrowLeftP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSarrowRightP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSsatellitP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSactiveP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+			
+			<dashboard displayType="EMITTER" node="mfD5_dblGPSactiveP1_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC1"/>
+		<!-- CabConsole Page2 -->
+			<dashboard displayType="EMITTER" node="mfD5_basicScreenP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_basicScreenP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+		
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PBackLifterP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMBackPtoP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PFrontLifterP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMFrontPtoP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMonP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSsatellitP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PFrontLifterP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PFrontLifterSliderP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PBackLifterP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dbl3PBackLifterSliderP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblPtoFrontP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblPtoBackP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			
+			<dashboard displayType="EMITTER" node="mfD5_dblGPSactiveP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherSunP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherCloudP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherRainP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherHailP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherSnowP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherTwisterP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+		<!-- CabConsole Page3 -->
+			<dashboard displayType="EMITTER" node="mfD5_isoBusScreenP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_isoBusScreenP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PBackLifterP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMBackPtoP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PFrontLifterP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMFrontPtoP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMonP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblGPSsatellitP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			
+			<dashboard displayType="EMITTER" node="mfD5_dblGPSactiveP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherSunP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherCloudP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherRainP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherHailP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherSnowP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_dblWeatherTwisterP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
         </default>
+		
+		<dashboardLive>
+		<!-- SeatConsole Page1 -->
+			<!-- Player Name -->
+			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP1_SC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP1_SC" textColor="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- HLM -->
+			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMfieldP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMheadlandP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="headland" node="mfD5_dblHLMheadlandP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="field" node="mfD5_dblHLMfieldP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="" node="mfD5_dblHLMonP1_SC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" emissiveScale="0.8" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="field" node="mfD5_dblHLMfieldP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="mfD5_dblHLMheadlandP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- Lifter State -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="1" jointSide="back" jointType="implement" node="mfD5_dblHLM3PBackLifterP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="2" jointSide="front" jointType="implement" node="mfD5_dblHLM3PFrontLifterP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="front" jointType="implement" node="mfD5_dbl3PFrontLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1" />
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="back" jointType="implement" node="mfD5_dbl3PBackLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1" />
+			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="2" jointSide="front" jointType="implement" option="percent" node="mfD5_dbl3PFrontLifterPercentP1_SC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="1" jointSide="back" jointType="implement" option="percent" node="mfD5_dbl3PBackLifterPercentP1_SC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- PTO -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="pto" joints="2 5" node="mfD5_dblHLMFrontPtoP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="pto" joints="1 3 4" node="mfD5_dblHLMBackPtoP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="2 5"  node="mfD5_dblFrontPtoRpmP1_SC" factor="0.2875" doInterpolation="true" interpolationSpeed="0.2" options="any" max="542" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="1 3 4" node="mfD5_dblBackPtoRpmP1_SC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" valueType="base" cmd="pto" joints="2 5" node="mfD5_dblPtoFrontP1_SC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="1" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" valueType="base" cmd="pto" joints="1 3 4" node="mfD5_dblPtoBackP1_SC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="1" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- Connect -->
+			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="2 5" node="mfD5_dbl3PFrontLifterP1_SC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" groups="MOTOR_RUNNING PAGESC1" />
+			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="1 3 4" node="mfD5_dbl3PBackLifterP1_SC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- SeatConsole Page2 -->
+			<!-- Fieldnumber -->
+			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="mfD5_dblFieldNumbersP2_SC" textColor="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- GPS -->
+			<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="mfD5_dblCompassP2_SC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="heading" node="mfD5_dblCompassNumbersP2_SC" textColor="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="gpsWidth" node="mfD5_dblGPSwidthP2_SC" textColor="1 1 1 1" textSize="0.003" textMask="00.00m" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="mfD5_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="mfD5_dblNaviMapPositionP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- CabConsole Page1 -->
+			<!-- Fieldnumber -->
+			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="mfD5_dblFieldNumbersP1_CC" textColor="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGECC1"/>
+			<!-- GPS -->
+			<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="mfD5_dblCompassP1_CC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="heading" node="mfD5_dblCompassNumbersP1_CC" textColor="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="TEXT" valueType="gpsWidth" node="mfD5_dblGPSwidthP1_CC" textColor="1 1 1 1" textSize="0.003" textMask="00.00m" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGECC1"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="mfD5_dblNaviMapP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="mfD5_dblNaviMapPositionP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+		<!-- CabConsole Page2 -->
+			<!-- Player Name -->
+			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP2_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP2_CC" textColor="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- HLM -->
+			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMfieldP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMheadlandP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="headland" node="mfD5_dblHLMheadlandP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="field" node="mfD5_dblHLMfieldP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="" node="mfD5_dblHLMonP2_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" emissiveScale="0.8" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="field" node="mfD5_dblHLMfieldP2_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="mfD5_dblHLMheadlandP2_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- Lifter State -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="1" jointSide="back" jointType="implement" node="mfD5_dblHLM3PBackLifterP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="2" jointSide="front" jointType="implement" node="mfD5_dblHLM3PFrontLifterP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="front" jointType="implement" node="mfD5_dbl3PFrontLifterSliderP2_CC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGECC2" />
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="back" jointType="implement" node="mfD5_dbl3PBackLifterSliderP2_CC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGECC2" />
+			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="2" jointSide="front" jointType="implement" option="percent" node="mfD5_dbl3PFrontLifterPercentP2_CC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="1" jointSide="back" jointType="implement" option="percent" node="mfD5_dbl3PBackLifterPercentP2_CC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- PTO -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="pto" joints="2 5" node="mfD5_dblHLMFrontPtoP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="pto" joints="1 3 4" node="mfD5_dblHLMBackPtoP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="2 5"  node="mfD5_dblFrontPtoRpmP2_CC" factor="0.2875" doInterpolation="true" interpolationSpeed="0.2" options="any" max="542" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="1 3 4" node="mfD5_dblBackPtoRpmP2_CC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="EMITTER" valueType="base" cmd="pto" joints="2 5" node="mfD5_dblPtoFrontP2_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="1" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="EMITTER" valueType="base" cmd="pto" joints="1 3 4" node="mfD5_dblPtoBackP2_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="1" groups="MOTOR_RUNNING PAGECC2"/>
+			<!-- Connect -->
+			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="2 5" node="mfD5_dbl3PFrontLifterP2_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" groups="MOTOR_RUNNING PAGECC2" />
+			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="1 3 4" node="mfD5_dbl3PBackLifterP2_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" groups="MOTOR_RUNNING PAGECC2"/>	
+		<!-- SeatConsole Page3 -->
+			<!-- Player Name -->
+			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP3_SC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC3"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP3_SC" textColor="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC3"/>
+			<!-- HLM -->
+			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMfieldP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMheadlandP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="headland" node="mfD5_dblHLMheadlandP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="field" node="mfD5_dblHLMfieldP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="" node="mfD5_dblHLMonP3_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" emissiveScale="0.8" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="field" node="mfD5_dblHLMfieldP3_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="mfD5_dblHLMheadlandP3_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC3"/>
+			<!-- Lifter State -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="1" jointSide="back" jointType="implement" node="mfD5_dblHLM3PBackLifterP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="2" jointSide="front" jointType="implement" node="mfD5_dblHLM3PFrontLifterP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+			<!-- PTO -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="pto" joints="2 5" node="mfD5_dblHLMFrontPtoP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="pto" joints="1 3 4" node="mfD5_dblHLMBackPtoP3_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="2 5"  node="mfD5_dblFrontPtoRpmP3_CC" factor="0.2875" doInterpolation="true" interpolationSpeed="0.2" options="any" max="542" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC3"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="1 3 4" node="mfD5_dblBackPtoRpmP3_CC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC3"/>	
+		</dashboardLive>
     </dashboard>
 
     <ai>
         <agent frontWheelNodes="wheelFrontLeft wheelFrontRight"/>
         <collisionTrigger useSize="true"/>
+		<automaticSteering>
+			<dashboards>
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="mfD5_dblGPSactiveP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="mfD5_dblGPSsatellitP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.3" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="mfD5_dblGPSactiveP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="mfD5_dblGPSsatellitP2_SC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.5" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC2"/>
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="mfD5_dblGPSactiveP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="mfD5_dblGPSsatellitP1_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.5" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC1"/>
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="mfD5_dblGPSactiveP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="mfD5_dblGPSsatellitP2_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.3" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC2"/>
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="mfD5_dblGPSactiveP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="mfD5_dblGPSsatellitP3_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.3" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC3"/>
+			</dashboards>
+		</automaticSteering>
     </ai>
 
     <foliageBending>
@@ -1189,6 +1432,115 @@
         <i3dMapping id="dashboardDecals2" node="0>0|7|7|4|0|0" />
         <i3dMapping id="dashboardDecals3" node="0>0|7|7|4|0|1" />
         <i3dMapping id="interiorScreenLight02" node="0>0|7|7|4|0|2" />
+		<i3dMapping id="mfD5_startScreen_SC" node="0>0|7|7|4|0|3|0|0"/>
+		<i3dMapping id="mfD5_dblPlayerNameP1_SC" node="0>0|7|7|4|0|3|1|0|0"/>
+		<i3dMapping id="mfD5_dblClockP1_SC" node="0>0|7|7|4|0|3|1|0|1"/>
+		<i3dMapping id="mfD5_dblOutsideTempP1_SC" node="0>0|7|7|4|0|3|1|0|2"/>
+		<i3dMapping id="mfD5_dblWeatherSunP1_SC" node="0>0|7|7|4|0|3|1|0|3"/>
+		<i3dMapping id="mfD5_dblWeatherCloudP1_SC" node="0>0|7|7|4|0|3|1|0|4"/>
+		<i3dMapping id="mfD5_dblWeatherRainP1_SC" node="0>0|7|7|4|0|3|1|0|5"/>
+		<i3dMapping id="mfD5_dblWeatherHailP1_SC" node="0>0|7|7|4|0|3|1|0|6"/>
+		<i3dMapping id="mfD5_dblWeatherSnowP1_SC" node="0>0|7|7|4|0|3|1|0|7"/>
+		<i3dMapping id="mfD5_dblWeatherTwisterP1_SC" node="0>0|7|7|4|0|3|1|0|8"/>
+		<i3dMapping id="mfD5_dblHLM3PBackLifterP1_SC" node="0>0|7|7|4|0|3|1|0|9"/>
+		<i3dMapping id="mfD5_dblHLMBackPtoP1_SC" node="0>0|7|7|4|0|3|1|0|10"/>
+		<i3dMapping id="mfD5_dblHLM3PFrontLifterP1_SC" node="0>0|7|7|4|0|3|1|0|11"/>
+		<i3dMapping id="mfD5_dblHLMFrontPtoP1_SC" node="0>0|7|7|4|0|3|1|0|12"/>
+		<i3dMapping id="mfD5_dblHLMonP1_SC" node="0>0|7|7|4|0|3|1|0|13"/>
+		<i3dMapping id="mfD5_dblHLMfieldP1_SC" node="0>0|7|7|4|0|3|1|0|14"/>
+		<i3dMapping id="mfD5_dblHLMheadlandP1_SC" node="0>0|7|7|4|0|3|1|0|15"/>
+		<i3dMapping id="mfD5_dblFrontPtoRpmP1_SC" node="0>0|7|7|4|0|3|1|0|16"/>
+		<i3dMapping id="mfD5_dblBackPtoRpmP1_SC" node="0>0|7|7|4|0|3|1|0|17"/>
+		<i3dMapping id="mfD5_dblEngineRpmP1_SC" node="0>0|7|7|4|0|3|1|0|18"/>
+		<i3dMapping id="mfD5_dblEngineRpmPercentP1_SC" node="0>0|7|7|4|0|3|1|0|19"/>
+		<i3dMapping id="mfD5_dblGPSsatellitP1_SC" node="0>0|7|7|4|0|3|1|0|20"/>
+		<i3dMapping id="mfD5_dblGPSactiveP1_SC" node="0>0|7|7|4|0|3|1|0|21"/>
+		<i3dMapping id="mfD5_dbl3PFrontLifterP1_SC" node="0>0|7|7|4|0|3|1|0|22"/>
+		<i3dMapping id="mfD5_dbl3PFrontLifterSliderP1_SC" node="0>0|7|7|4|0|3|1|0|23"/>
+		<i3dMapping id="mfD5_dblPtoFrontP1_SC" node="0>0|7|7|4|0|3|1|0|24"/>
+		<i3dMapping id="mfD5_dbl3PFrontLifterPercentP1_SC" node="0>0|7|7|4|0|3|1|0|25"/>
+		<i3dMapping id="mfD5_dbl3PBackLifterP1_SC" node="0>0|7|7|4|0|3|1|0|26"/>
+		<i3dMapping id="mfD5_dbl3PBackLifterSliderP1_SC" node="0>0|7|7|4|0|3|1|0|27"/>
+		<i3dMapping id="mfD5_dblPtoBackP1_SC" node="0>0|7|7|4|0|3|1|0|28"/>
+		<i3dMapping id="mfD5_dbl3PBackLifterPercentP1_SC" node="0>0|7|7|4|0|3|1|0|29"/>
+		<i3dMapping id="mfD5_basicScreenP1_SC" node="0>0|7|7|4|0|3|1|1|0"/>
+		<i3dMapping id="mfD5_dblFieldNumbersP2_SC" node="0>0|7|7|4|0|3|2|0|0"/>
+		<i3dMapping id="mfD5_dblGPSarrowLeftP2_SC" node="0>0|7|7|4|0|3|2|0|1"/>
+		<i3dMapping id="mfD5_dblGPSarrowRightP2_SC" node="0>0|7|7|4|0|3|2|0|2"/>
+		<i3dMapping id="mfD5_dblGPSwidthP2_SC" node="0>0|7|7|4|0|3|2|0|3"/>
+		<i3dMapping id="mfD5_dblCompassP2_SC" node="0>0|7|7|4|0|3|2|0|4"/>
+		<i3dMapping id="mfD5_dblCompassNumbersP2_SC" node="0>0|7|7|4|0|3|2|0|5"/>
+		<i3dMapping id="mfD5_dblGPSsatellitP2_SC" node="0>0|7|7|4|0|3|2|0|6"/>
+		<i3dMapping id="mfD5_dblGPSactiveP2_SC" node="0>0|7|7|4|0|3|2|0|7"/>
+		<i3dMapping id="mfD5_dblNaviMapP2_SC" node="0>0|7|7|4|0|3|2|1|0"/>
+		<i3dMapping id="mfD5_dblNaviMapPositionP2_SC" node="0>0|7|7|4|0|3|2|1|0|0"/>
+		<i3dMapping id="mfD5_gpsScreenP2_SC" node="0>0|7|7|4|0|3|2|2|0"/>
+		<i3dMapping id="mfD5_startScreen_CC" node="0>0|7|7|4|0|4|0|0"/>
+		<i3dMapping id="mfD5_dblFieldNumbersP1_CC" node="0>0|7|7|4|0|4|1|0|0"/>
+		<i3dMapping id="mfD5_dblGPSarrowLeftP1_CC" node="0>0|7|7|4|0|4|1|0|1"/>
+		<i3dMapping id="mfD5_dblGPSarrowRightP1_CC" node="0>0|7|7|4|0|4|1|0|2"/>
+		<i3dMapping id="mfD5_dblGPSwidthP1_CC" node="0>0|7|7|4|0|4|1|0|3"/>
+		<i3dMapping id="mfD5_dblCompassP1_CC" node="0>0|7|7|4|0|4|1|0|4"/>
+		<i3dMapping id="mfD5_dblCompassNumbersP1_CC" node="0>0|7|7|4|0|4|1|0|5"/>
+		<i3dMapping id="mfD5_dblGPSsatellitP1_CC" node="0>0|7|7|4|0|4|1|0|6"/>
+		<i3dMapping id="mfD5_dblGPSactiveP1_CC" node="0>0|7|7|4|0|4|1|0|7"/>
+		<i3dMapping id="mfD5_dblNaviMapP1_CC" node="0>0|7|7|4|0|4|1|1|0"/>
+		<i3dMapping id="mfD5_gpsScreenP1_CC" node="0>0|7|7|4|0|4|1|2|0"/>
+		<i3dMapping id="mfD5_dblPlayerNameP2_CC" node="0>0|7|7|4|0|4|2|0|0"/>
+		<i3dMapping id="mfD5_dblClockP2_CC" node="0>0|7|7|4|0|4|2|0|1"/>
+		<i3dMapping id="mfD5_dblOutsideTempP2_CC" node="0>0|7|7|4|0|4|2|0|2"/>
+		<i3dMapping id="mfD5_dblWeatherSunP2_CC" node="0>0|7|7|4|0|4|2|0|3"/>
+		<i3dMapping id="mfD5_dblWeatherCloudP2_CC" node="0>0|7|7|4|0|4|2|0|4"/>
+		<i3dMapping id="mfD5_dblWeatherRainP2_CC" node="0>0|7|7|4|0|4|2|0|5"/>
+		<i3dMapping id="mfD5_dblWeatherHailP2_CC" node="0>0|7|7|4|0|4|2|0|6"/>
+		<i3dMapping id="mfD5_dblWeatherSnowP2_CC" node="0>0|7|7|4|0|4|2|0|7"/>
+		<i3dMapping id="mfD5_dblWeatherTwisterP2_CC" node="0>0|7|7|4|0|4|2|0|8"/>
+		<i3dMapping id="mfD5_dblHLM3PBackLifterP2_CC" node="0>0|7|7|4|0|4|2|0|9"/>
+		<i3dMapping id="mfD5_dblHLMBackPtoP2_CC" node="0>0|7|7|4|0|4|2|0|10"/>
+		<i3dMapping id="mfD5_dblHLM3PFrontLifterP2_CC" node="0>0|7|7|4|0|4|2|0|11"/>
+		<i3dMapping id="mfD5_dblHLMFrontPtoP2_CC" node="0>0|7|7|4|0|4|2|0|12"/>
+		<i3dMapping id="mfD5_dblHLMonP2_CC" node="0>0|7|7|4|0|4|2|0|13"/>
+		<i3dMapping id="mfD5_dblHLMfieldP2_CC" node="0>0|7|7|4|0|4|2|0|14"/>
+		<i3dMapping id="mfD5_dblHLMheadlandP2_CC" node="0>0|7|7|4|0|4|2|0|15"/>
+		<i3dMapping id="mfD5_dblFrontPtoRpmP2_CC" node="0>0|7|7|4|0|4|2|0|16"/>
+		<i3dMapping id="mfD5_dblBackPtoRpmP2_CC" node="0>0|7|7|4|0|4|2|0|17"/>
+		<i3dMapping id="mfD5_dblEngineRpmP2_CC" node="0>0|7|7|4|0|4|2|0|18"/>
+		<i3dMapping id="mfD5_dblEngineRpmPercentP2_CC" node="0>0|7|7|4|0|4|2|0|19"/>
+		<i3dMapping id="mfD5_dblGPSsatellitP2_CC" node="0>0|7|7|4|0|4|2|0|20"/>
+		<i3dMapping id="mfD5_dblGPSactiveP2_CC" node="0>0|7|7|4|0|4|2|0|21"/>
+		<i3dMapping id="mfD5_dbl3PFrontLifterP2_CC" node="0>0|7|7|4|0|4|2|0|22"/>
+		<i3dMapping id="mfD5_dbl3PFrontLifterSliderP2_CC" node="0>0|7|7|4|0|4|2|0|23"/>
+		<i3dMapping id="mfD5_dblPtoFrontP2_CC" node="0>0|7|7|4|0|4|2|0|24"/>
+		<i3dMapping id="mfD5_dbl3PFrontLifterPercentP2_CC" node="0>0|7|7|4|0|4|2|0|25"/>
+		<i3dMapping id="mfD5_dbl3PBackLifterP2_CC" node="0>0|7|7|4|0|4|2|0|26"/>
+		<i3dMapping id="mfD5_dbl3PBackLifterSliderP2_CC" node="0>0|7|7|4|0|4|2|0|27"/>
+		<i3dMapping id="mfD5_dblPtoBackP2_CC" node="0>0|7|7|4|0|4|2|0|28"/>
+		<i3dMapping id="mfD5_dbl3PBackLifterPercentP2_CC" node="0>0|7|7|4|0|4|2|0|29"/>
+		<i3dMapping id="mfD5_basicScreenP2_CC" node="0>0|7|7|4|0|4|2|1|0"/>
+		<i3dMapping id="isoBusJoint" node="0>0|7|7|4|0|4|3|0"/>
+		<i3dMapping id="mfD5_dblPlayerNameP3_CC" node="0>0|7|7|4|0|4|3|1|0"/>
+		<i3dMapping id="mfD5_dblClockP3_CC" node="0>0|7|7|4|0|4|3|1|1"/>
+		<i3dMapping id="mfD5_dblOutsideTempP3_CC" node="0>0|7|7|4|0|4|3|1|2"/>
+		<i3dMapping id="mfD5_dblWeatherSunP3_CC" node="0>0|7|7|4|0|4|3|1|3"/>
+		<i3dMapping id="mfD5_dblWeatherCloudP3_CC" node="0>0|7|7|4|0|4|3|1|4"/>
+		<i3dMapping id="mfD5_dblWeatherRainP3_CC" node="0>0|7|7|4|0|4|3|1|5"/>
+		<i3dMapping id="mfD5_dblWeatherHailP3_CC" node="0>0|7|7|4|0|4|3|1|6"/>
+		<i3dMapping id="mfD5_dblWeatherSnowP3_CC" node="0>0|7|7|4|0|4|3|1|7"/>
+		<i3dMapping id="mfD5_dblWeatherTwisterP3_CC" node="0>0|7|7|4|0|4|3|1|8"/>
+		<i3dMapping id="mfD5_dblHLM3PBackLifterP3_CC" node="0>0|7|7|4|0|4|3|1|9"/>
+		<i3dMapping id="mfD5_dblHLMBackPtoP3_CC" node="0>0|7|7|4|0|4|3|1|10"/>
+		<i3dMapping id="mfD5_dblHLM3PFrontLifterP3_CC" node="0>0|7|7|4|0|4|3|1|11"/>
+		<i3dMapping id="mfD5_dblHLMFrontPtoP3_CC" node="0>0|7|7|4|0|4|3|1|12"/>
+		<i3dMapping id="mfD5_dblHLMonP3_CC" node="0>0|7|7|4|0|4|3|1|13"/>
+		<i3dMapping id="mfD5_dblHLMfieldP3_CC" node="0>0|7|7|4|0|4|3|1|14"/>
+		<i3dMapping id="mfD5_dblHLMheadlandP3_CC" node="0>0|7|7|4|0|4|3|1|15"/>
+		<i3dMapping id="mfD5_dblFrontPtoRpmP3_CC" node="0>0|7|7|4|0|4|3|1|16"/>
+		<i3dMapping id="mfD5_dblBackPtoRpmP3_CC" node="0>0|7|7|4|0|4|3|1|17"/>
+		<i3dMapping id="mfD5_dblEngineRpmP3_CC" node="0>0|7|7|4|0|4|3|1|18"/>
+		<i3dMapping id="mfD5_dblEngineRpmPercentP3_CC" node="0>0|7|7|4|0|4|3|1|19"/>
+		<i3dMapping id="mfD5_dblGPSsatellitP3_CC" node="0>0|7|7|4|0|4|3|1|20"/>
+		<i3dMapping id="mfD5_dblGPSactiveP3_CC" node="0>0|7|7|4|0|4|3|1|21"/>
+		<i3dMapping id="mfD5_isoBusScreenP3_CC" node="0>0|7|7|4|0|4|3|2|0"/>
         <i3dMapping id="engineDecal_210" node="0>0|8|0" />
         <i3dMapping id="engineDecal_165" node="0>0|8|1" />
         <i3dMapping id="engineDecal_155" node="0>0|8|2" />
