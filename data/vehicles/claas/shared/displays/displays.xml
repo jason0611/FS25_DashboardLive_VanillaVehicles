@@ -303,7 +303,7 @@
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingText2" node="cebisLexion_dblCompassP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="cebisLexion_dblCompassNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000.0" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
 		<!--Swath-->
-		<dashboard valueType="combine" cmd="swath" stateText="enabled" displayType="EMITTER" node="cebisLexion_dblSwathOutputP1_SC" baseColor="0.027 0.027 0.027 1" emitColor="CLAAS_GREEN1" intensity="0.5" groups="MOTOR_RUNNING"/> 	
+		<dashboard valueType="combine" cmd="swath" stateText="enabled" displayType="EMITTER" node="cebisLexion_dblSwathOutputP1_SC" baseColor="0.027 0.027 0.027 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.5" groups="MOTOR_RUNNING"/> 	
 		<!-- VCA -->
 		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="" node="cebisLexion_dblParkbreakP1_SC" baseColor="0.027 0.027 0.027 1" baseColorDarkMode="1 1 1 1" emitColor="RED" intensity="0.8" idleValue="-1" groups="MOTOR_RUNNING DBL_PARK"/>
 		<dashboard displayType="AUDIO" valueType="dbl.vca" cmd="park" outside="true" distance="50.0" audioName="Brake" loop="1" volume="0.5" audioFile="$data/sounds/vehicles/brake/brake_big.ogg" groups="MOTOR_RUNNING" />
