@@ -373,13 +373,13 @@
               <TransformGroup name="g5Display_dblFieldNumbersP1_GPS" translation="0.130361 -0.0740231 -1.23055e-15" rotation="0 1.45667e-13 -3.25689e-12" nodeId="766"/>
               <TransformGroup name="g5Display_dblDayTimeNumbersP1_GPS" translation="0.113155 -0.0678963 1.41034e-07" rotation="0 -4.35775e-05 0" nodeId="767"/>
               <TransformGroup name="g5Display_dblSpeedNumbersP1_GPS" translation="0.135695 0.0549759 1.58177e-07" rotation="0 -4.35775e-05 0" nodeId="768"/>
-              <TransformGroup name="g5Display_dblSpeedCCNumbersP1_GPS" translation="0.135695 0.0618457 1.58177e-07" rotation="0 -4.35775e-05 0" nodeId="769"/>
-              <TransformGroup name="g5Display_dblHeadingNumbersP1_GPS" translation="-0.0223157 0.0732871 3.79988e-08" rotation="0 -4.35775e-05 0" nodeId="770"/>
+              <TransformGroup name="g5Display_dblSpeedCCNumbersP1_GPS" translation="0.135695 0.0586541 1.58177e-07" rotation="0 -4.35775e-05 0" nodeId="769"/>
+              <TransformGroup name="g5Display_dblHeadingNumbersP1_GPS" translation="-0.0223157 0.0700955 3.79988e-08" rotation="0 -4.35775e-05 0" nodeId="770"/>
               <TransformGroup name="g5Display_dblHeadingAngleNumbersP1_GPS" translation="-0.022314 0.0658195 3.80001e-08" rotation="0 -4.35775e-05 0" nodeId="771"/>
               <TransformGroup name="g5Display_dblLaneDistanceNumbersP1_GPS" translation="-0.0215355 0.0565113 0.003" rotation="0 -4.35775e-05 0" nodeId="772"/>
               <TransformGroup name="g5Display_dblWorkWidthNumbersP1_GPS" translation="0.13642 0.0315498 1.58728e-07" rotation="0 -4.35775e-05 0" nodeId="773"/>
               <TransformGroup name="g5Display_dblHeadingDegreesSignNumbersP1_GPS" translation="-0.0115506 0.0693639 4.61864e-08" rotation="0 -4.35775e-05 0" nodeId="774"/>
-              <TransformGroup name="g5Display_dblLaneNumbersP1_GPS" translation="-0.021641 0.0445047 0.003" rotation="0 -4.35775e-05 0" nodeId="775"/>
+              <TransformGroup name="g5Display_dblLaneNumbersP1_GPS" translation="-0.0224995 0.0445047 0.003" rotation="0 -4.35775e-05 0" nodeId="775"/>
               <TransformGroup name="g5Display_dblseedTypeLettersP1_GPS" translation="-0.133644 0.0442663 0.002" rotation="0 1.45667e-13 -3.25689e-12" nodeId="776"/>
               <TransformGroup name="g5Display_dblSeedFilllevelKgP1_GPS" translation="0.137216 -0.00531539 0.001" rotation="0 1.45667e-13 -3.25689e-12" nodeId="777"/>
               <TransformGroup name="g5Display_dblSeedFilllevelLiterP1_GPS" translation="0.134904 -0.0093686 0.001" rotation="0 1.45667e-13 -3.25689e-12" nodeId="778"/>
@@ -610,7 +610,7 @@
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
-    <Camera name="work" translation="-0.171622 0.287655 0.447063" rotation="87.831 -0.688342 180" nodeId="951" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
+    <Camera name="work" translation="-0.000844523 0.30518 0.510727" rotation="87.831 -0.688342 180" nodeId="951" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
     <TransformGroup name="I_16x16_emitter" translation="-0.202158 1.60693e-08 0.306899" rotation="3e-06 180 -0" clipDistance="20" nodeId="952">
       <Shape name="I_Park1" translation="-0.046875 5.2e-05 -0.046875" rotation="1e-06 0 6e-06" shapeId="29" clipDistance="20" nodeId="953" castsShadows="true" receiveShadows="true" materialIds="24"/>
       <Shape name="I_Park2" translation="-0.040625 5.2e-05 -0.046875" rotation="1e-06 0 6e-06" shapeId="104" clipDistance="20" nodeId="954" castsShadows="true" receiveShadows="true" materialIds="24"/>
