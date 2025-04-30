@@ -3,6 +3,12 @@
 
 	<group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
+	
+	<!-- Tractor Pages SC -->
+	<group name="TRACTOR_PAGESC1" dbl="page" group="1" page="1"/>
+	<group name="TRACTOR_PAGESC2" dbl="page" group="1" page="2"/>
+	<!-- Tractor Pages CC -->
+	<!-- <group name="TRACTOR_PAGECC1" dbl="page" group="2" page="1"/> -->
 
     <!-- Xerion 12 -->
     <dashboardCompound name="CEBIS_XERION12_MAINPAGE" filename="data/vehicles/claas/shared/displays/claasDisplays.i3d" node="cebisXerion12">
@@ -356,28 +362,156 @@
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="cemisLexion_dblNaviMapP1_CC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="cemisLexion_dblNaviPositionP1_CC" groups="MOTOR_RUNNING"/>
     </dashboardCompound>
+	
+	<!-- Tractor -->
+    <dashboardCompound name="CEBIS_TRACTOR_MAINPAGE" filename="data/vehicles/claas/shared/displays/claasDisplays.i3d" node="cebisTractor">
+		<!-- start screen -->
+		<dashboard displayType="VISIBILITY" node="cebisAxion_startScreenSC" groups="MOTOR_STARTING"/>
+        <dashboard displayType="EMITTER" node="cebisAxion_startScreenSC" intensity="0.3" groups="MOTOR_STARTING"/>
+		
+		<!-- always on -->
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblForwardArrowAO_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblNeutralGearAO_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackwardArrowAO_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackDiffLockAO_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontDiffLockAO_SC" groups="MOTOR_ACTIVE"/>
+		<!-- displays -->
+		<dashboard displayType="EMITTER" node="cebisMainScreenP1_SC" intensity="0.15" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="cebisMainScreenDMP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisMainScreenP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="cebisMainScreenDMP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblSpeedSliderP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblRpmSliderP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cebisSpeedDecalP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblCruiseControlIconP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblAdBlueIconP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblEnginTempIconP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		
+		
+		<dashboard displayType="EMITTER" node="cebisAxion_dblNaviMapPosP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="cebisAxion_dblBackDiffLockP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="cebisAxion_dblFrontDiffLockP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<!-- always on -->
+		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisAxion_dblForwardArrowAO_SC" doInterpolation="true" groups="MOTOR_ACTIVE">
+			<state value="-1" visibility="false"/>
+			<state value="0" visibility="false"/>
+			<state value="1" visibility="true"/>
+		</dashboard>
+		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisAxion_dblNeutralGearAO_SC" doInterpolation="true" groups="MOTOR_ACTIVE">
+			<state value="-1" visibility="false"/>
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisAxion_dblBackwardArrowAO_SC" doInterpolation="true" groups="MOTOR_ACTIVE">
+			<state value="-1" visibility="true"/>
+			<state value="0" visibility="false"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<dashboard displayType="TEXT" valueType="motorized.speed" node="cebisAxion_dblSpeed1NumbersAO_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_ACTIVE"/>
+	<!-- Page1 -->
+		<!-- CVT -->
+		<dashboard displayType="EMITTER" valueType="cvt" cmd="motorcoldlamp" node="cebisAxion_dblEnginTempIconP1_SC" baseColor="1 1 1 0" emitColor="AGRIO_BLUE" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<!-- drivable -->
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="cebisAxion_dblCruiseControlIconP1_SC" intensity="0.5" baseColor="BOURGAULT_WHITE1" emitColor="CLAAS_GREEN1" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="cebisAxion_dblCruiseControlNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="drivable.cruiseControl" node="cebisAxion_dblCruiseControlP1_SC" minValueSlider="0" maxValueSlider="60" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1">
+			<valueMapping sourceValue="0"  dashboardValue="0.0"/>
+            <valueMapping sourceValue="5"  dashboardValue="10.0"/>
+            <valueMapping sourceValue="10" dashboardValue="18.0"/>
+            <valueMapping sourceValue="15" dashboardValue="24.5"/>
+            <valueMapping sourceValue="20" dashboardValue="30.5"/>
+            <valueMapping sourceValue="30" dashboardValue="40.0"/>
+            <valueMapping sourceValue="40" dashboardValue="48.0"/>
+            <valueMapping sourceValue="50" dashboardValue="55.0"/>
+            <valueMapping sourceValue="60" dashboardValue="60.0"/>
+        </dashboard>
+		<!-- enterable -->
+		<dashboard displayType="TEXT" valueType="operatingTime" node="cebisAxion_dblOperatingTimeNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<!-- fillLevel -->
+		<dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="cebisAxion_dblFuelSliderP1_SC" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="cebisAxion_dblAdBlueSliderP1_SC" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="fillLevelPct" fillType="DIESEL" node="cebisAxion_dblFuelPercentNumbersP1_SC" textColor="BOURGAULT_WHITE1" textSize="0.005" textMask="000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="fillLevelWarning" fillType="DEF" node="cebisAxion_dblAdBlueIconP1_SC" baseColor="BOURGAULT_WHITE1" emitColor="ALPEGO_BLUE" emissiveScale="1" intensity="0.8" warningThresholdMax="10" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<!-- motorized -->
+		<dashboard displayType="SLIDER" valueType="motorized.speed" node="cebisAxion_dblSpeedSliderP1_SC" minValueSlider="0" maxValueSlider="60" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="motorized.rpm" node="cebisAxion_dblRpmSliderP1_SC" minValueSlider="400" maxValueSlider="2400" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="cebisAxion_dblEngineTempSliderP1_SC" minValueSlider="20" maxValueSlider="120" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="motorized.speed" node="cebisAxion_dblSpeedNumbersP1_SC" textColor="BOURGAULT_WHITE1" emissiveScale="0.4" textSize="0.008" textMask="00" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="motorized.rpm" node="cebisAxion_dblRpmNumbersP1_SC" textColor="BOURGAULT_WHITE1" emissiveScale="0.4" textSize="0.005" textMask="0000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cebisAxion_dblFuelUsageNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<!-- VCA -->
+		<dashboard valueType="vca" cmd="slip" displayType="TEXT" node="cebisAxion_dblSlipNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<!-- MiniMap -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="cebisAxion_dblNaviMapP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="cebisAxion_dblNaviMapPosP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+	<!-- Page2 -->
+		<!-- displays -->
+		<dashboard displayType="EMITTER" node="cebisFieldScreenP2_SC" intensity="0.15" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="cebisFieldScreenDMP2_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisFieldScreenP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="cebisFieldScreenDMP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontHitchP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontLiftSliderP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontLiftDecalP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackHitchP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackLiftSliderP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackLiftDecalP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblCruiseControlP2_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		
+		<!-- Connect -->
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="connected" joints="2 5" node="cebisAxion_dblFrontHitchP2_SC" baseColor="CLAAS_DARKGREY1" baseColorDarkMode="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" groups="MOTOR_ACTIVE TRACTOR_PAGESC2" />
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="connected" joints="1 3 4" node="cebisAxion_dblBackHitchP2_SC" baseColor="CLAAS_DARKGREY1" baseColorDarkMode="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<!-- drivable -->
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="cebisAxion_dblCruiseControlNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="SLIDER" valueType="drivable.cruiseControl" node="cebisAxion_dblCruiseControlP2_SC" minValueSlider="0" maxValueSlider="60" intensity="0.4" groups="MOTOR_ACTIVE TRACTOR_PAGESC2">
+			<valueMapping sourceValue="0"  dashboardValue="0.0"/>
+            <valueMapping sourceValue="5"  dashboardValue="10.0"/>
+            <valueMapping sourceValue="10" dashboardValue="18.0"/>
+            <valueMapping sourceValue="15" dashboardValue="24.5"/>
+            <valueMapping sourceValue="20" dashboardValue="30.5"/>
+            <valueMapping sourceValue="30" dashboardValue="40.0"/>
+            <valueMapping sourceValue="40" dashboardValue="48.0"/>
+            <valueMapping sourceValue="50" dashboardValue="55.0"/>
+            <valueMapping sourceValue="60" dashboardValue="60.0"/>
+        </dashboard>
+		<!-- enterable -->
+		<dashboard displayType="TEXT" valueType="operatingTime" node="cebisAxion_dblOperatingTimeNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<!-- Lifter State -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" node="cebisAxion_dblFrontLiftSliderP2_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_ACTIVE TRACTOR_PAGESC2" />
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" node="cebisAxion_dblBackLiftSliderP2_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_ACTIVE TRACTOR_PAGESC2" />
+		<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.load" node="cebisAxion_dblEnginPowerPercentNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="000%" textAlignment="LEFT" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="motorized.rpm" node="cebisAxion_dblEnginRpmNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="0000" textAlignment="LEFT" font="GENERIC" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cebisAxion_dblFuelUsageNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<!-- pto -->
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="1 3 4" node="cebisAxion_dblBackPtoRpmNumbersP2_SC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textMask="0000" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+		<!-- VCA -->
+		<dashboard displayType="TEXT" valueType="vca" cmd="slip" node="cebisAxion_dblSlipNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+	</dashboardCompound>
 
     <i3dMappings>
 		<i3dMapping id="cebisXerion12" node="0>"/>
         <i3dMapping id="cebisXerion12_startScreen_decal" node="0>0|0|0"/>
 		<i3dMapping id="cebisXerion12_dblSpeedSliderP1_SC" node="0>0|1|0"/>
 		<i3dMapping id="cebisXerion12_dblCruiseControlArrow00P1_SC" node="0>0|1|1"/>
-		<i3dMapping id="cebisXerion12_dblBackAttacherSliderP1_SC" node="0>0|1|2"/> <!-- not active -->
+		<i3dMapping id="cebisXerion12_dblBackAttacherSliderP1_SC" node="0>0|1|2"/>
 		<i3dMapping id="cebisXerion12_dblAdBlueDecalP1_SC" node="0>0|1|3"/>
 		<i3dMapping id="cebisXerion12_dblFuelDecalP1_SC" node="0>0|1|4"/>
-		<i3dMapping id="cebisXerion12_dblSteeringWheelP1_SC" node="0>0|1|5"/> <!-- not active -->
+		<i3dMapping id="cebisXerion12_dblSteeringWheelP1_SC" node="0>0|1|5"/>
 		<i3dMapping id="cebisXerion12_dblBackPTOP1_SC" node="0>0|1|6"/>
 		<i3dMapping id="cemosXerion12_dblArrowForward00P1_SC" node="0>0|1|7"/>
 		<i3dMapping id="cebisXerion12_dblArrowForward01P1_SC" node="0>0|1|8"/>
 		<i3dMapping id="cemosXerion12_dblArrowBackward00P1_SC" node="0>0|1|9"/>
 		<i3dMapping id="cebisXerion12_dblArrowBackward01P1_SC" node="0>0|1|10"/>
-		<i3dMapping id="cebisXerion12_dblParkbreakP1_SC" node="0>0|1|11"/> <!-- not active VCA -->
+		<i3dMapping id="cebisXerion12_dblParkbreakP1_SC" node="0>0|1|11"/>
 		<i3dMapping id="cebisXerion12_dblNeutralP1_SC" node="0>0|1|12"/>
-		<i3dMapping id="cebisXerion12_dblGearGroup1P1_SC" node="0>0|1|13"/> <!-- not active CVT -->
-		<i3dMapping id="cebisXerion12_dblGearGroup2P1_SC" node="0>0|1|14"/> <!-- not active CVT -->
-		<i3dMapping id="cebisXerion12_dblGearGroup3P1_SC" node="0>0|1|15"/> <!-- not active CVT -->
-		<i3dMapping id="cebisXerion12_dblBackDiffP1_SC" node="0>0|1|16"/> <!-- not active VCA Diff -->
-		<i3dMapping id="cebisXerion12_dblFrontDiffP1_SC" node="0>0|1|17"/> <!-- not active VCA Diff -->
+		<i3dMapping id="cebisXerion12_dblGearGroup1P1_SC" node="0>0|1|13"/>
+		<i3dMapping id="cebisXerion12_dblGearGroup2P1_SC" node="0>0|1|14"/>
+		<i3dMapping id="cebisXerion12_dblGearGroup3P1_SC" node="0>0|1|15"/>
+		<i3dMapping id="cebisXerion12_dblBackDiffP1_SC" node="0>0|1|16"/>
+		<i3dMapping id="cebisXerion12_dblFrontDiffP1_SC" node="0>0|1|17"/>
 		<i3dMapping id="cebisXerion12_dblTimeNumbersP1_SC" node="0>0|1|18"/>
 		<i3dMapping id="cebisXerion12_dblAdBlueNumbersP1_SC" node="0>0|1|19"/>
 		<i3dMapping id="cebisXerion12_dblFuelNumbersP1_SC" node="0>0|1|20"/>
@@ -395,7 +529,7 @@
 		<i3dMapping id="cemisXerion12_dblFieldNumbersP1_CC" node="1>0|1|1"/>
 		<i3dMapping id="cemisXerion12_dblCompassP1_CC" node="1>0|1|2"/>
 		<i3dMapping id="cemisXerion12_dblCompassNumbersP1_CC" node="1>0|1|3"/>
-		<i3dMapping id="cemisXerion12_dblSteeringWheelP1_CC" node="1>0|1|4"/> <!-- basic GPS -->
+		<i3dMapping id="cemisXerion12_dblSteeringWheelP1_CC" node="1>0|1|4"/>
 		<i3dMapping id="cemisXerion12_dblHlmOnOffP1_CC" node="1>0|1|5"/>
 		<i3dMapping id="cemisXerion12_dblHlmFieldP1_CC" node="1>0|1|6"/>
 		<i3dMapping id="cemisXerion12_dblHlmHeadlandP1_CC" node="1>0|1|7"/>
@@ -414,11 +548,11 @@
 		<i3dMapping id="cebisJaguar_dblLoadSlider00P1_SC" node="2>0|1|3"/>
 		<i3dMapping id="cebisJaguar_dblForwardArrowP1_SC" node="2>0|1|4"/>
 		<i3dMapping id="cebisJaguar_dblBackwardArrowP1_SC" node="2>0|1|5"/>
-		<i3dMapping id="cebisJaguar_dblParkbreakP1_SC" node="2>0|1|6"/> <!-- not active VCA -->
+		<i3dMapping id="cebisJaguar_dblParkbreakP1_SC" node="2>0|1|6"/>
 		<i3dMapping id="cebisJaguar_dblNeutralGearP1_SC" node="2>0|1|7"/>
-		<i3dMapping id="cebisJaguar_dblGroup1P1_SC" node="2>0|1|8"/> <!-- not active CVT -->
-		<i3dMapping id="cebisJaguar_dblGroup2P1_SC" node="2>0|1|9"/> <!-- not active CVT -->
-		<i3dMapping id="cebisJaguar_dblGroup3P1_SC" node="2>0|1|10"/> <!-- not active CVT -->
+		<i3dMapping id="cebisJaguar_dblGroup1P1_SC" node="2>0|1|8"/>
+		<i3dMapping id="cebisJaguar_dblGroup2P1_SC" node="2>0|1|9"/>
+		<i3dMapping id="cebisJaguar_dblGroup3P1_SC" node="2>0|1|10"/>
 		<i3dMapping id="cebisJaguar_dblYieldArrowP1_SC" node="2>0|1|11"/>
 		<i3dMapping id="cebisJaguar_dblCruiseControl00P1_SC" node="2>0|1|12"/>
 		<i3dMapping id="cebisJaguar_dblCruiseControl01P1_SC" node="2>0|1|13"/>
@@ -467,18 +601,18 @@
 		<i3dMapping id="cebisLexion_dblGrainFillLevelSliderP1_SC" node="3>0|1|5"/>
 		<i3dMapping id="cebisLexion_dblSwathOutputP1_SC" node="3>0|1|6"/>
 		<i3dMapping id="cebisLexion_dblNeutralGearP1_SC" node="3>0|1|7"/>
-		<i3dMapping id="cebisLexion_dblParkbreakP1_SC" node="3>0|1|8"/> <!-- not active VCA -->
-		<i3dMapping id="cebisLexion_dblGroup1P1_SC" node="3>0|1|9"/> <!-- not active CVT -->
-		<i3dMapping id="cebisLexion_dblGroup2P1_SC" node="3>0|1|10"/> <!-- not active CVT -->
-		<i3dMapping id="cebisLexion_dblGroup3P1_SC" node="3>0|1|11"/> <!-- not active CVT -->
+		<i3dMapping id="cebisLexion_dblParkbreakP1_SC" node="3>0|1|8"/>
+		<i3dMapping id="cebisLexion_dblGroup1P1_SC" node="3>0|1|9"/>
+		<i3dMapping id="cebisLexion_dblGroup2P1_SC" node="3>0|1|10"/>
+		<i3dMapping id="cebisLexion_dblGroup3P1_SC" node="3>0|1|11"/>
 		<i3dMapping id="cebisLexion_dblFrontDiffP1_SC" node="3>0|1|12"/>
 		<i3dMapping id="cebisLexion_dblBackDiffP1_SC" node="3>0|1|13"/>
 		<i3dMapping id="cebisLexion_dblArrowForwardP1_SC" node="3>0|1|14"/>
 		<i3dMapping id="cebisLexion_dblArrowBackwardP1_SC" node="3>0|1|15"/>
 		<i3dMapping id="cebisLexion_dblAdBlueP1_SC" node="3>0|1|16"/>
 		<i3dMapping id="cebisLexion_dblFuelP1_SC" node="3>0|1|17"/>
-		<i3dMapping id="cebisLexion_dblGPSSatellitP1_SC" node="3>0|1|18"/> <!-- not active Wopster GPS -->
-		<i3dMapping id="cebisLexion_dblGPSAvtiveP1_SC" node="3>0|1|19"/> <!-- basic GPS -->
+		<i3dMapping id="cebisLexion_dblGPSSatellitP1_SC" node="3>0|1|18"/>
+		<i3dMapping id="cebisLexion_dblGPSAvtiveP1_SC" node="3>0|1|19"/>
 		<i3dMapping id="cebisLexion_dblTimeNumbersP1_SC" node="3>0|1|20"/>
 		<i3dMapping id="cebisLexion_dblCruiseControlNumbers00P1_SC" node="3>0|1|21"/>
 		<i3dMapping id="cebisLexion_dblCruiseControlNumbers01P1_SC" node="3>0|1|22"/>
@@ -513,5 +647,61 @@
 		<i3dMapping id="cemisLexion_gpsDecalDM00" node="4>0|3|5"/>
 		<i3dMapping id="cemisLexion_gpsDecalDM01" node="4>0|3|6"/>
 		<i3dMapping id="cemisLexion_gpsDecalDM02" node="4>0|3|7"/>
+		
+		<i3dMapping id="cebisTractor" node="5>"/>
+		<i3dMapping id="cebisAxion_startScreenSC" node="5>0|0"/>
+		
+		<i3dMapping id="cebisAxion_dblForwardArrowAO_SC" node="5>1|0|0"/>
+		<i3dMapping id="cebisAxion_dblNeutralGearAO_SC" node="5>1|0|1"/>
+		<i3dMapping id="cebisAxion_dblBackwardArrowAO_SC" node="5>1|0|2"/>
+		<i3dMapping id="cebisAxion_dblSpeed1NumbersAO_SC" node="5>1|0|3"/>
+		<i3dMapping id="cebisAxion_dblAWDautoIconAO_SC" node="5>1|0|4"/>
+		<i3dMapping id="cebisAxion_dblAWDIconAO__SC" node="5>1|0|5"/>
+		<i3dMapping id="cebisAxion_dblBackDiffLockAO_SC" node="5>1|0|6"/>
+		<i3dMapping id="cebisAxion_dblFrontDiffLockAO_SC" node="5>1|0|7"/>
+		
+		<i3dMapping id="cebisAxion_dblSpeedSliderP1_SC" node="5>1|1|0"/>
+		<i3dMapping id="cebisAxion_dblSpeedNumbersP1_SC" node="5>1|1|1"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlIconP1_SC" node="5>1|1|2"/>
+		<i3dMapping id="cebisAxion_dblRpmSliderP1_SC" node="5>1|1|3"/>
+		<i3dMapping id="cebisAxion_dblRpmNumbersP1_SC" node="5>1|1|4"/>
+		<i3dMapping id="cebisAxion_dblFuelSliderP1_SC" node="5>1|1|5"/>
+		<i3dMapping id="cebisAxion_dblFuelPercentNumbersP1_SC" node="5>1|1|6"/>
+		<i3dMapping id="cebisAxion_dblAdBlueSliderP1_SC" node="5>1|1|7"/>
+		<i3dMapping id="cebisAxion_dblAdBlueIconP1_SC" node="5>1|1|8"/>
+		<i3dMapping id="cebisAxion_dblEngineTempSliderP1_SC" node="5>1|1|9"/>
+		<i3dMapping id="cebisAxion_dblEnginTempIconP1_SC" node="5>1|1|10"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlP1_SC" node="5>1|1|11"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlNumbersP1_SC" node="5>1|1|12"/>
+		<i3dMapping id="cebisAxion_dblSlipNumbersP1_SC" node="5>1|1|13"/>
+		<i3dMapping id="cebisAxion_dblFuelUsageNumbersP1_SC" node="5>1|1|14"/>
+		<i3dMapping id="cebisAxion_dblOperatingTimeNumbersP1_SC" node="5>1|1|15"/>
+		
+		<i3dMapping id="cebisAxion_dblNaviMapP1_SC" node="5>1|2|0"/>
+		<i3dMapping id="cebisAxion_dblNaviMapPosP1_SC" node="5>1|2|0|0"/>
+		
+		<i3dMapping id="cebisMainScreenP1_SC" node="5>1|3|0"/>
+		<i3dMapping id="cebisMainScreenDMP1_SC" node="5>1|3|1"/>
+		<i3dMapping id="cebisSpeedDecalP1_SC" node="5>1|3|2"/>
+		
+		<i3dMapping id="cebisAxion_dblEnginPowerPercentNumbersP2_SC" node="5>2|0|0"/>
+		<i3dMapping id="cebisAxion_dblSlipNumbersP2_SC" node="5>2|0|1"/>
+		<i3dMapping id="cebisAxion_dblEnginRpmNumbersP2_SC" node="5>2|0|2"/>
+		<i3dMapping id="cebisAxion_dblBackPtoRpmNumbersP2_SC" node="5>2|0|3"/>
+		<i3dMapping id="cebisAxion_dblFrontHitchP2_SC" node="5>2|0|4"/>
+		<i3dMapping id="cebisAxion_dblFrontLiftSliderP2_SC" node="5>2|0|5"/>
+		<i3dMapping id="cebisAxion_dblFrontLiftDecalP2_SC" node="5>2|0|6"/>
+		<i3dMapping id="cebisAxion_dblBackHitchP2_SC" node="5>2|0|7"/>
+		<i3dMapping id="cebisAxion_dblBackLiftSliderP2_SC" node="5>2|0|8"/>
+		<i3dMapping id="cebisAxion_dblBackLiftDecalP2_SC" node="5>2|0|9"/>
+		<i3dMapping id="cebisAxion_dblGearWarningIconP2_SC" node="5>2|0|10"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlP2_SC" node="5>2|0|11"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlNumbersP2_SC" node="5>2|0|12"/>
+		<i3dMapping id="cebisAxion_dblSlipNumbersP2_SC" node="5>2|0|13"/>
+		<i3dMapping id="cebisAxion_dblFuelUsageNumbersP2_SC" node="5>2|0|14"/>
+		<i3dMapping id="cebisAxion_dblOperatingTimeNumbersP2_SC" node="5>2|0|15"/>
+		
+		<i3dMapping id="cebisFieldScreenP2_SC" node="5>2|1|0"/>
+		<i3dMapping id="cebisFieldScreenDMP2_SC" node="5>2|1|1"/>
     </i3dMappings>
 </dashboardCompounds>
