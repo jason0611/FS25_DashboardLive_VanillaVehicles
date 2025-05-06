@@ -1,0 +1,1053 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="combineCutterFruitPreparer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>Austoft 8800 Multi-Row</name>
+        <specs>
+            <workingWidth>2</workingWidth>
+            <power>353</power>
+            <maxSpeed>10</maxSpeed>
+        </specs>
+        <functions>
+            <function>$l10n_function_combine</function>
+        </functions>
+        <storePacks>
+            <storePack>STARTER_SUGARCANE</storePack>
+        </storePacks>
+        <image>$data/vehicles/caseIH/a8800MR/store_a8800MR.png</image>
+        <price>349000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>CASEIH</brand>
+        <category>sugarcaneHarvesters</category>
+        <shopTranslationOffset>0 0.007 0</shopTranslationOffset>
+        <shopRotationOffset>-0.7 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>3703296</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>990720</indexBufferMemoryUsage>
+        <textureMemoryUsage>1769472</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>422438</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_combine</typeDesc>
+        <filename>$data/vehicles/caseIH/a8800MR/a8800MR.i3d</filename>
+        <sounds filename="$data/vehicles/caseIH/a8800MR/sounds/a8800MR.xml" volumeFactor="0.9"/>
+        <size width="3.25" length="13.2" height="6.6" lengthOffset="-1.13"/>
+        <speedLimit value="10"/>
+        <components>
+            <component centerOfMass="0 0.9 0.07" solverIterationCount="20" mass="17430"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="HARVESTER"/>
+        <mapHotspot type="HARVESTER"/>
+    </base>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+                <wheels autoRotateBackSpeed="6.0" speedDependentRotateBack="false" differentialIndex="1" ackermannSteeringIndex="1">
+                    <wheel>
+                        <physics rotSpeed="-1" restLoad="4.6" repr="wheelFrontLeft"  radius="0.465" width="0.45" mass="0.1" frictionScale="2.25" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="145" damper="50" supportsWheelSink="false"/>
+                        <tire />
+                    </wheel>
+                    <wheel>
+                        <physics rotSpeed="-1" restLoad="4.6" repr="wheelFrontRight" radius="0.465" width="0.45" mass="0.1" frictionScale="2.25" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="145" damper="50" supportsWheelSink="false"/>
+                        <tire/>
+                    </wheel>
+                    <wheel hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1"  restLoad="4.6" repr="wheelBackLeft"   radius="0.485" width="0.45" mass="0.1" frictionScale="2.25" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="145" damper="50" supportsWheelSink="false"/>
+                        <tire tireTrackAtlasIndex="5"/>
+                    </wheel>
+                    <wheel hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1"  restLoad="4.6" repr="wheelBackRight"  radius="0.485" width="0.45" mass="0.1" frictionScale="2.25" forcePointRatio="0.25" initialCompression="30" suspTravel="0.1" spring="145" damper="50" supportsWheelSink="false"/>
+                        <tire tireTrackAtlasIndex="5"/>
+                    </wheel>
+                </wheels>
+
+                <crawlers>
+                    <crawler filename="$data/shared/crawlers/caseIH/a8800MRCrawler/a8800MRCrawler.xml" linkNode="leftTrackLinkNode"  wheelNodes="wheelBackLeft wheelFrontLeft" isLeft="true"/>
+                    <crawler filename="$data/shared/crawlers/caseIH/a8800MRCrawler/a8800MRCrawler.xml" linkNode="rightTrackLinkNode" wheelNodes="wheelBackRight wheelFrontRight" isLeft="false"/>
+                </crawlers>
+            </wheelConfiguration>
+        </wheelConfigurations>
+        <ackermannSteeringConfigurations>
+            <ackermannSteering rotSpeed="48" rotMax="80" rotCenter="0 3.0" rotCenterWheel1="1" rotCenterWheel2="4"/>
+        </ackermannSteeringConfigurations>
+    </wheels>
+
+    <enterable isTabbable="true" >
+        <enterReferenceNode node="caseIH8800MR_main_component1" />
+        <exitPoint node="exitPoint" />
+
+        <cameras>
+            <camera node="outdoorCamera" rotatable="true" rotateNode="outdoorCameraTarget" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="9.2" transMax="40" translation="0 0 13" rotation="-31 180 0">
+                <raycastNode node="cameraRaycastNode1"/>
+                <raycastNode node="cameraRaycastNode2"/>
+                <raycastNode node="cameraRaycastNode3"/>
+            </camera>
+            <camera node="indoorCamera" rotation="-25 180 0" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" shadowFocusBox="shadowFocusBox" suspensionNodeIndex="1"/>
+        </cameras>
+
+        <mirrors>
+            <mirror node="mirrorLeftDecal"  prio="1" />
+            <mirror node="mirrorRightDecal" prio="1" />
+        </mirrors>
+
+        <characterNode node="playerSkin" cameraMinDistance="0.5" >
+            <target ikChain="rightFoot" targetNode="playerRightFootTarget" />
+            <target ikChain="leftFoot"  targetNode="playerLeftFootTarget" />
+            <target ikChain="rightArm"  targetNode="playerRightHandTarget" poseId="wideFingers"/>
+            <target ikChain="leftArm"   targetNode="playerLeftHandTarget" />
+        </characterNode>
+
+        <dashboards>
+			<dashboard displayType="TEXT" valueType="operatingTime" node="a8800_dblOperatingTimeNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="000000.0" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="TEXT" valueType="outsideTemperature" node="a8800_dblOutsideTempNumbersP1_CC" textColor="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        </dashboards>
+    </enterable>
+
+    <motorized>
+        <consumerConfigurations>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="2" usage="176" fillType="diesel" />  <!-- usage is per hour at max load and max rpm -->
+                <consumer fillUnitIndex="3" usage="12.7" fillType="def" />     <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+        </consumerConfigurations>
+
+       <differentialConfigurations>
+            <differentialConfiguration>
+                <differentials>
+                    <differential torqueRatio="0.5" maxSpeedRatio="2.1" wheelIndex1="1" wheelIndex2="2" />
+                    <differential torqueRatio="0.5" maxSpeedRatio="2.1" wheelIndex1="3" wheelIndex2="4" />
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.2" differentialIndex1="1" differentialIndex2="2" /> <!-- front-back -->
+                </differentials>
+            </differentialConfiguration>
+        </differentialConfigurations>
+
+        <motorConfigurations>
+            <motorConfiguration name="Austoft 8800 MR" hp="353" price="0">
+                <motor torqueScale="1.726" minRpm="850" maxRpm="1900" minSpeed="0.01" maxForwardSpeed="20" maxBackwardSpeed="12" brakeForce="6.5" lowBrakeForceScale="0.4" dampingRateScale="1.9">
+                    <torque normRpm="0.45" torque="0.9"/>
+                    <torque normRpm="0.5" torque="0.97"/>
+                    <torque normRpm="0.59" torque="1"/>
+                    <torque normRpm="0.72" torque="1"/>
+                    <torque normRpm="0.86" torque="0.88"/>
+                    <torque normRpm="1" torque="0.72"/>
+                </motor>
+                <transmission minForwardGearRatio="35.8" maxForwardGearRatio="320" minBackwardGearRatio="60" maxBackwardGearRatio="320" name="$l10n_info_transmission_cvt"/>
+            </motorConfiguration>
+        </motorConfigurations>
+
+        <exhaustEffects>
+            <exhaustEffect node="exhaustEffect" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.05" maxRpmScale="0.5" />
+        </exhaustEffects>
+
+        <exhaustFlap node="exhaustFlap" maxRot="90" />
+        <brakeCompressor capacity="10000" fillSpeed="100" />
+        <motorStartDuration>4200</motorStartDuration>
+
+        <dashboards>
+            <dashboard displayType="TEXT" valueType="motorTemperature" node="a8800_dblEngineTempNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="000" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="TEXT" valueType="rpm" node="a8800_dblEgnineLoadNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="0000" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="TEXT" valueType="speed" node="a8800_dblEgnineSpeedNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="00.0" font="GENERIC" groups="MOTOR_RUNNING"/>
+
+            <dashboard displayType="ROT" valueType="speedDir" node="joystick" minRot="-10 0 0" maxRot="15 0 0" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </motorized>
+
+    <drivable>
+        <dashboards>
+            <dashboard displayType="ROT" valueType="steeringAngle" node="steeringJoystick" minRot="0 0 15" maxRot="0 0 -15" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT"  valueType="cruiseControl" node="a8800_dblCruiseControlNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="00.0" font="GENERIC" groups="MOTOR_RUNNING"/>
+			
+			<dashboard displayType="MULTI_STATE" valueType="movingDirection" node="a8800_dblForwardArrowP1_CC" doInterpolation="true" groups="MOTOR_RUNNING">
+                <state value="-1" visibility="false"/>
+                <state value="0" visibility="false"/>
+                <state value="1" visibility="true"/>
+            </dashboard>
+			<dashboard displayType="MULTI_STATE" valueType="movingDirection" node="a8800_dblNeutralGearP1_CC" doInterpolation="true" groups="MOTOR_RUNNING">
+                <state value="-1" visibility="false"/>
+                <state value="0" visibility="true"/>
+                <state value="1" visibility="false"/>
+            </dashboard>
+			<dashboard displayType="MULTI_STATE" valueType="movingDirection" node="a8800_dblBackwardArrowP1_CC" doInterpolation="true" groups="MOTOR_RUNNING">
+                <state value="-1" visibility="true"/>
+                <state value="0" visibility="false"/>
+                <state value="1" visibility="false"/>
+            </dashboard>
+        </dashboards>
+    </drivable>
+
+    <powerConsumer ptoRpm="400" neededMaxPtoPower="100"/>
+
+    <lights>
+        <sharedLight linkNode="rear2ChamberLight_05_left"  filename="$data/shared/assets/lights/lizard/rearLight05_left.xml"/>
+        <sharedLight linkNode="rear2ChamberLight_05_right" filename="$data/shared/assets/lights/lizard/rearLight05_right.xml"/>
+        <sharedLight linkNode="workingLightSquare_01_1"    lightTypes="4" filename="$data/shared/assets/lights/lizard/workingLight08.xml"/>
+        <sharedLight linkNode="workingLightSquare_01_2"    lightTypes="4" filename="$data/shared/assets/lights/lizard/workingLight08.xml"/>
+        <sharedLight linkNode="workingLightSquare_01_3"    lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight08.xml"/>
+        <sharedLight linkNode="workingLightSquare_01_4"    lightTypes="1" filename="$data/shared/assets/lights/lizard/workingLight08.xml"/>
+        <sharedLight linkNode="sideMarker_04White_1"       lightTypes="1" filename="$data/shared/assets/lights/lizard/sideMarker05White.xml"/>
+        <sharedLight linkNode="sideMarker_04White_2"       lightTypes="1" filename="$data/shared/assets/lights/lizard/sideMarker05White.xml"/>
+
+        <states>
+            <state lightTypes="0"/>
+            <state lightTypes="0 1"/>
+            <state lightTypes="0 1 2"/>
+            <state lightTypes="0 1 2 4"/>
+        </states>
+
+        <realLights>
+            <low>
+                <light node="frontLightLow"     lightTypes="0" excludedLightTypes="2 3" />
+                <light node="workLightBackLow"  lightTypes="1"/>
+                <light node="workLightFrontLow" lightTypes="2"/>
+                <light node="highBeamLow"       lightTypes="3" />
+                <light node="workLightPipeLow"  lightTypes="4"/>
+            </low>
+            <high>
+                <light node="frontLightHighLeft"           lightTypes="0" excludedLightTypes="2 3" />
+                <light node="workLightBackHighLeft"        lightTypes="1"/>
+                <light node="workLightFrontHigh"       lightTypes="2"/>
+                <light node="highBeamHigh"                 lightTypes="3"/>
+                <light node="pipeArmWorkLightBackLeftHigh" lightTypes="4"/>
+                <light node="backLightHighLeft"            lightTypes="0"/>
+                <brakeLight node="backLightHighLeft" />
+                <interiorLight node="interiorScreenLight"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="a8800MRLights_static"      intensity="5"/>
+                <node node="a8800MRLightsGlass_static" intensity="1"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+
+        <beaconLights>
+            <beaconLight node="beaconLight" filename="$data/shared/assets/beaconLights/lizard/beaconLight01.xml" />
+        </beaconLights>
+
+        <dashboards>
+            <dashboard displayType="EMITTER" valueType="lightState" node="joystickDecal" intensity="0.3" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="seatDecalsLight" intensity="0.3" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="cabinDecalsLight" intensity="0.3" lightTypes="0" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </lights>
+
+    <attacherJoints>
+        <attacherJointConfigurations title="$l10n_configuration_trailerHitch" isYesNoOption="true">
+            <attacherJointConfiguration name="$l10n_configuration_valueNo" price="0">
+                <attacherJoint node="trailerAttacherJointBack" jointType="trailer">  <!-- dummy attacher joint -->
+                    <schema position="1 0" rotation="0" invertX="false" />
+                </attacherJoint>
+                <objectChange node="trailerAttacherJointBack" translationActive="0 -10000 0" />
+                <objectChange node="trailerAttacher" visibilityActive="false" />
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="$l10n_configuration_valueYes" price="800" >
+                <attacherJoint node="trailerAttacherJointBack" jointType="trailer" allowsJointLimitMovement="false" allowsLowering="false" lowerRotLimit="25 55 50" lowerTransLimit="0 0 0" canTurnOnImplement="false" comboTime="1" enableCollision="true">
+                    <schema position="1 0" rotation="0" invertX="false" />
+                </attacherJoint>
+                <objectChange node="trailerAttacher" visibilityActive="true" />
+            </attacherJointConfiguration>
+        </attacherJointConfigurations>
+    </attacherJoints>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showOnInfoHud="false" fillTypes="sugarCane"/>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="480">
+					<dashboard displayType="SLIDER" valueType="fillLevel" node="a8800_dblFuelSliderP1_CC" fillTypes="diesel" groups="MOTOR_RUNNING"/>
+					<dashboard displayType="TEXT" valueType="fillLevelPct" node="a8800_dblFuelPercNumbersP1_CC" fillTypes="diesel" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+					<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="a8800_dblFuelIconP1_CC" fillTypes="diesel" baseColor="0.033 0.033 0.033 1" emitColor="AMAZONE_ORANGE1" intensity="1" warningThresholdMax="40" groups="MOTOR_RUNNING"/>
+                        <exactFillRootNode node="exactFillRootNodeFuel" />
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" showOnInfoHud="false" fillTypes="def" capacity="70">
+					<dashboard displayType="SLIDER" valueType="fillLevel" node="a8800_dblAdBlueSliderP1_CC" fillTypes="def" groups="MOTOR_RUNNING"/>
+					<dashboard displayType="TEXT" valueType="fillLevelPct" node="a8800_dblAdBluePercNumbersP1_CC" fillTypes="def" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+					<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="a8800_dblAdBlueIconP1_CC" fillTypes="def" baseColor="0.033 0.033 0.033 1" emitColor="ALPEGO_BLUE" intensity="1" warningThresholdMax="10" groups="MOTOR_RUNNING"/>
+					</fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <workAreas>
+        <workArea type="cutter" functionName="processCutterArea" >
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight" />
+            <groundReferenceNode index="1"/>
+            <testAreas autoGenerate="true" zOffset="0.5" xOffset="0" length="0.6" numAreas="3" areaWidthScale="0.25"/>
+        </workArea>
+        <workArea type="fruitPreparer" functionName="processFruitPreparerArea" >
+            <area startNode="fruitPreparerWorkAreaStart" widthNode="fruitPreparerWorkAreaWidth" heightNode="fruitPreparerWorkAreaHeight" />
+            <groundReferenceNode index="1"/>
+            <fruitPreparer dropWorkAreaIndex="3"/>
+        </workArea>
+
+        <workArea type="auxiliary" >
+            <area startNode="fruitPreparerDropAreaStart" widthNode="fruitPreparerDropAreaWidth" heightNode="fruitPreparerDropAreaHeight" />
+        </workArea>
+    </workAreas>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="groundReferenceNode" threshold="0.5"/>
+    </groundReferenceNodes>
+
+    <tipOccluder>
+        <occlusionArea start="tipOcclusionAreaStart" width="tipOcclusionAreaWidth" height="tipOcclusionAreaHeight" />
+    </tipOccluder>
+
+    <fruitPreparer fruitType="sugarCane">
+        <animationNodes>
+            <animationNode node="cutterLeft"     rotSpeed="-600" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="cutterRight"    rotSpeed="600"  rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="cutterArmBlade" rotSpeed="600"  rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+        </animationNodes>
+    </fruitPreparer>
+
+    <cutter fruitTypes="sugarCane" allowCuttingWhileRaised="true">
+        <fillEffect>
+            <effectNode effectClass="ParticleEffect" effectNode="particleEmitterCleaningDust" particleType="CLEANING_DUST" emitCountScale="2.0"/>
+
+            <effectNode effectClass="TypedMotionPathEffect" effectType="SUGARCANE_CHOPPER" linkNode="chopperEffectNode">
+                <motionPathEffect textureFilename="$data/effects/sugarcane/arrays/chopperArray24x30.dds" numRows="24" rowLength="30" delay="1"/>
+            </effectNode>
+            <effectNode effectClass="ParticleEffect" effectNode="pipeSeperatorEmitterSmoke" particleType="SMOKE"  materialType="smokeParticle" worldSpace="true" emitCountScale="1"/>
+
+            <effectNode effectClass="TypedMotionPathEffect" effectType="SUGARCANE_CHAFFER" linkNode="chafferEffectNode">
+                <motionPathEffect textureFilename="$data/effects/sugarcane/arrays/chafferArray12x32.dds" numRows="12" rowLength="32" delay="3"/>
+            </effectNode>
+
+            <effectNode effectClass="ParticleEffect" effectNode="pipeParticlePlaneEmitterShape" materialType="unloadingParticle" particleType="unloading" worldSpace="false" emitCountScale="1" lifespan="0.35" useCuttingWidth="false"/>
+        </fillEffect>
+
+        <effect>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="SUGARCANE_CUTTER" linkNode="cutterEffectNode">
+                <motionPathEffect textureFilename="$data/effects/sugarcane/arrays/cutterArray1x14.dds" numRows="1" rowLength="14"/>
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="SUGARCANE_PREPARE_FRUIT" linkNode="fruitPrepareEffectNode">
+                <motionPathEffect textureFilename="$data/effects/sugarcane/arrays/prepareFruitArray12x32.dds" numRows="12" rowLength="32"/>
+            </effectNode>
+        </effect>
+        <sounds>
+            <cut template="cropCuttingForage" linkNode="cutterArmLower"/>
+        </sounds>
+    </cutter>
+
+    <combine fillUnitIndex="1" allowThreshingDuringRain="false">
+        <swath available="false"/>
+        <chopper available="false"/>
+
+        <folding allowWhileThreshing="false" />
+        <animationNodes>
+            <animationNode node="feederLeftDrum01" rotSpeed="-700" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederLeftDrum02" rotSpeed="700" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederLeftDrum03" rotSpeed="300" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederLeftDrum04" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederLeftDrum" rotSpeed="300" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="seperatorLeftBlade" rotSpeed="400" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederRightDrum01" rotSpeed="700" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederRightDrum02" rotSpeed="-700" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederRightDrum03" rotSpeed="-300" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederRightDrum04" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="feederRightDrum" rotSpeed="-300" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="seperatorRightBlade" rotSpeed="-400" rotAxis="3" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartFeederTop" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartFeederBottom" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartCutterBottomLeft" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartCutterBottomRight" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower01" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower02" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower03" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower04" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower05" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower06" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartLower07" rotSpeed="-1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartUpper01" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartUpper02" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartUpper03" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartUpper04" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartUpper05" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="rotatingPartUpper06" rotSpeed="1000" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeRotatingPart" rotSpeed="900" rotAxis="2" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeArmVentilator" rotSpeed="900" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeArmRotatingPart1" rotSpeed="-350" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeArmRotatingPart2" rotSpeed="350" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeArmRotatingPart3" rotSpeed="-350" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeArmRotatingPart4" rotSpeed="-350" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+            <animationNode node="pipeArmConveyorBelt" shaderParameterName="offsetUV" shaderComponentScale="0 1 0 0" rotSpeed="-5.6" turnOnFadeTime="4" turnOffFadeTime="3" />
+        </animationNodes>
+		
+		<dashboards>
+			<dashboard displayType="TEXT" valueType="workedHectars" node="a8800_dblWorkHectareNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0065" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+        </dashboards>
+    </combine>
+
+    <pipe dischargeNodeIndex="1">
+        <states num="2" unloading="1 2" autoAiming="2"/>
+        <pipeNodes>
+            <pipeNode node="pipeBaseRot" rotationSpeeds="0 25 0" minRotationLimits="0 -90 0" maxRotationLimits="0 90 0" autoAimYRotation="true" autoAimInvertZ="true" >
+                <state rotation="0 0 0"/>
+                <state rotation="0 0 0"/>
+            </pipeNode>
+        </pipeNodes>
+
+        <unloadingTriggers>
+            <unloadingTrigger node="trailerTrigger" />
+        </unloadingTriggers>
+    </pipe>
+
+    <dischargeable>
+        <dischargeNode node="pipeDischargeNode" emptySpeed="610" fillUnitIndex="1" maxDistance="8" stopDischargeOnEmpty="false">
+            <info width="0.4" length="0.4" />
+
+            <effects>
+                <effectNode effectClass="MorphPositionEffect" effectNode="pipeArmEffectNode" materialType="belt" delay="0" fadeTime="5.0" speed="1.0" scrollLength="10" scrollSpeed="0.8" />
+                <effectNode effectClass="ParticleEffect" effectNode="pipeArmEffectEmitterShape" materialType="unloadingParticle" particleType="unloading" emitCountScale="1" lifespan="0.11" delay="5"/>
+            </effects>
+            <dischargeStateSound template="dischargeSnowBlower" volumeScale="1" linkNode="pipeSeperator" fadeIn="0.5" fadeOut="0.5"/>
+        </dischargeNode>
+    </dischargeable>
+
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="1" foldMiddleAnimTime="0.5" turnOnFoldMinLimit="0" turnOnFoldMaxLimit="0.5">
+                    <foldingPart animationName="foldFeeder" speedScale="1.0" />
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <wipers>
+        <wiper animName="wiperFrontAnimation" >
+            <state animSpeed="0.75" animPause="2.0" />
+            <state animSpeed="0.75" animPause="0.0" />
+            <state animSpeed="1.10" animPause="0.0" />
+        </wiper>
+    </wipers>
+
+    <animations>
+        <animation name="wiperFrontAnimation" isKeyframe="true">
+            <part node="wiperArm1" startTime="0" endTime="0.7" startRot="0 0 -15" endRot="0 0 65" />
+
+            <sound template="wiper1" startTime="0" endTime="0.7" direction="1"  volumeScale="1.0" pitchScale="0.8" fadeOut="0.1" linkNode="wiperArm1"/>
+            <sound template="wiper2" startTime="0" endTime="0.7" direction="-1" volumeScale="1.0" pitchScale="0.8" fadeOut="0.1" linkNode="wiperArm1"/>
+        </animation>
+        <animation name="foldFeeder">
+            <part node="feederLeftBase"        startTime="2" endTime="4"   endTrans="1.104 1.152 3.635" startTrans="1.541 1.152 3.635" />
+            <part node="feederLeftInput"       startTime="2" endTime="4"   endRot="0 0 0" startRot="0 0 -26" />
+            <part node="feederLeftMountLower"  startTime="0" endTime="2"   endRot="0 0 0" startRot="25 0 0" />
+            <part node="feederLeft"            startTime="0" endTime="2"   endRot="0 0 0" startRot="-25 0 0" />
+            <part node="seperatorLeft"         startTime="0" endTime="2"   endRot="0 0 0" startRot="0 0 30" />
+
+            <part node="feederRightBase"       startTime="2" endTime="4"   endTrans="-1.105 1.152 3.635" startTrans="-1.542 1.152 3.635" />
+            <part node="feederRightInput"      startTime="2" endTime="4"   endRot="0 0 0" startRot="0 0 26" />
+            <part node="feederRightMountLower" startTime="0" endTime="2"   endRot="0 0 0" startRot="25 0 0" />
+            <part node="feederRight"           startTime="0" endTime="2"   endRot="0 0 0" startRot="-25 0 0" />
+            <part node="seperatorRight"        startTime="0" endTime="2"   endRot="0 0 0" startRot="0 0 -30" />
+
+            <part node="cutterArmLower"        startTime="2" endTime="4"   endRot="-50 0 0" startRot="-30 0 0" />
+
+            <sound template="hydraulicOpen02"   startTime="0.0"  endTime="4.0"     pitchScale="0.70" volumeScale="5.8" linkNode="cutterArmLower" direction="0" fadeIn="0.1" fadeOut="0.05"/>
+            <sound template="hydraulicClose01"  startTime="0.0"  endTime="4.0"     pitchScale="0.7"  volumeScale="4.9" linkNode="cutterArmLower" direction="1" fadeIn="0.1" fadeOut="0.05"/>
+            <sound template="hydraulicClose03"  startTime="0.0"  endTime="4.0"     pitchScale="0.50" volumeScale="3.1" linkNode="feederLeft"     direction="0" fadeIn="0.2" fadeOut="0.05"/>
+            <sound template="hydraulicClose03"  startTime="0.0"  endTime="4.0"     pitchScale="0.70" volumeScale="3.1" linkNode="feederRight"    direction="0" fadeIn="0.2" fadeOut="0.05"/>
+            <sound template="sheetImp05"        startTime="0.01" pitchScale="0.4"  volumeScale="5"   direction="-1"    linkNode="cutterArmLower"/>
+            <sound template="clackVar6"         startTime="0.01" pitchScale="0.3"  volumeScale="4"   direction="-1"    linkNode="cutterArmLower"/>
+            <sound template="clackVar2"         startTime="0.01" pitchScale="1.9"  volumeScale="3.1" direction="-1"    linkNode="cutterArmLower"/>
+            <sound template="clackVar6"         startTime="1.99" pitchScale="0.35" volumeScale="3"   direction="1"     linkNode="feederRight"/>
+            <sound template="clackVar6"         startTime="1.99" pitchScale="0.45" volumeScale="3"   direction="1"     linkNode="feederLeft"/>
+            <sound template="metalClose"        startTime="1.99" pitchScale="1.85" volumeScale="3"   direction="1"     linkNode="feederLeft"/>
+            <sound template="clackVar1"         startTime="1.99" pitchScale="1.25" volumeScale="3"   direction="1"     linkNode="cutterArmLower"/>
+            <sound template="clackVar6"         startTime="2.00" pitchScale="0.6"  volumeScale="3"   direction="-1"    linkNode="feederRight"/>
+            <sound template="clackVar6"         startTime="2.00" pitchScale="0.3"  volumeScale="3"   direction="-1"    linkNode="cutterArmLower"/>
+            <sound template="clackVar6"         startTime="2.00" pitchScale="0.4"  volumeScale="3"   direction="-1"    linkNode="feederLeft"/>
+            <sound template="sheetImp05"        startTime="2.00" pitchScale="0.7"  volumeScale="5"   direction="-1"    linkNode="cutterArmLower"/>
+            <sound template="cylinderPunch"     startTime="2.00" pitchScale="1.0"  volumeScale="1"   direction="-1"    linkNode="cutterArmLower"/>
+            <sound template="clackVar6"         startTime="3.99" pitchScale="0.35" volumeScale="2"   direction="1"     linkNode="feederRight"/>
+            <sound template="clackVar6"         startTime="3.99" pitchScale="0.55" volumeScale="1"   direction="1"     linkNode="feederLeft"/>
+            <sound template="metalClose"        startTime="3.99" pitchScale="1.55" volumeScale="2"   direction="1"     linkNode="feederLeft"/>
+            <sound template="vibratingImp"      startTime="3.99" pitchScale="1.15" volumeScale="1"   direction="1"     linkNode="cutterArmLower"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="cutterArmLower" playSound="true" >
+                <dependentPart node="cutter" />
+                <dependentPart node="hydraulicCutter" />
+            </movingTool>
+
+            <movingTool node="feederLeftBase" playSound="true">
+                <dependentPart node="hydraulicFeederLeftBaseRoot" />
+            </movingTool>
+            <movingTool node="feederLeftInput" >
+                <dependentPart node="springFeederLeft" />
+            </movingTool>
+            <movingTool node="feederLeftMountLower" playSound="true">
+                <dependentPart node="feederLeftMountUpperRef" />
+            </movingTool>
+            <movingTool node="feederLeft" >
+                <dependentPart node="feederLeftMountUpper1" />
+            </movingTool>
+            <movingTool node="seperatorLeft" >
+                <dependentPart node="hydraulicSeperatorLeft" />
+            </movingTool>
+
+            <movingTool node="feederRightBase" playSound="true">
+                <dependentPart node="hydraulicFeederRightBaseRoot" />
+            </movingTool>
+            <movingTool node="feederRightInput" >
+                <dependentPart node="springFeederRight" />
+            </movingTool>
+            <movingTool node="feederRightMountLower" playSound="true">
+                <dependentPart node="feederRightMountUpper_ref" />
+            </movingTool>
+            <movingTool node="feederRight" >
+                <dependentPart node="feederRightMountUpper1" />
+            </movingTool>
+            <movingTool node="seperatorRight" >
+                <dependentPart node="hydraulicSeperatorRight" />
+            </movingTool>
+
+            <movingTool node="pipeBaseRot" >
+                <rotation rotSpeed="5" rotAcceleration="5" rotMax="90" rotMin="-90" rotationAxis="2" />
+                <attacherJoint jointIndices="1" />
+                <dependentPart node="hydraulicPipeBaseRotRight" />
+                <dependentPart node="hydraulicPipeBaseRotLeft" />
+                <dependentPart node="ringMountHydraulic" />
+
+                <dependentMovingTool node="pipeSeperator">
+                    <rotationBasedLimits>
+                        <limit rotation="-90"    rotMax="0"    rotMin="0" />
+                        <limit rotation="-40"    rotMax="0"    rotMin="0" />
+                        <limit rotation="-19.9"  rotMax="-90"    rotMin="-90" />
+                        <limit rotation="19.9"  rotMax="-90"    rotMin="-90" />
+                        <limit rotation="40"    rotMax="0"    rotMin="0" />
+                        <limit rotation="90"    rotMax="0"    rotMin="0" />
+                    </rotationBasedLimits>
+                </dependentMovingTool>
+
+                <dependentMovingTool node="pipeArmSeperator">
+                    <rotationBasedLimits>
+                        <limit rotation="-90"    rotMax="150"   rotMin="150" />
+                        <limit rotation="-55"    rotMax="90"    rotMin="90" />
+                        <limit rotation="-15"    rotMax="-90"    rotMin="-90" />
+                        <limit rotation="15"     rotMax="-90"   rotMin="-90" />
+                        <limit rotation="55"     rotMax="-90"   rotMin="-90" />
+                        <limit rotation="90"     rotMax="-150"  rotMin="-150" />
+                    </rotationBasedLimits>
+                </dependentMovingTool>
+            </movingTool>
+
+            <movingTool node="pipeSeperator">
+                <rotation rotSpeed="0" rotAcceleration="0" rotMax="90" rotMin="-90" rotationAxis="2" />
+            </movingTool>
+
+            <movingTool node="pipeArmSeperator">
+                <rotation rotSpeed="0" rotAcceleration="0" rotMax="170" rotMin="-170" rotationAxis="2" />
+            </movingTool>
+            <movingTool node="wiperArm1">
+                <dependentPart node="wiper" />
+                <dependentPart node="wiperArm2" />
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <movingPart node="wiper" referenceFrame="caseIH8800MR_main_component1" />
+            <movingPart node="wiperArm2" referencePoint="wiperArm2Ref" referenceFrame="wiperArm2Ref" />
+
+            <movingPart node="cutter" referencePoint="cutterArmUpper_ref" localReferencePoint="cutterArmUpper" referenceFrame="cutter_ref" >
+                <dependentPart node="cutterArmUpper" />
+            </movingPart>
+            <movingPart node="cutterArmUpper" referencePoint="cutterArmUpper_ref" referenceFrame="caseIH8800MR_main_component1" />
+            <movingPart node="hydraulicCutter" referencePoint="hydraulicCutter_ref" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicCutter_punch" />
+            </movingPart>
+
+            <movingPart node="hydraulicPipeBaseRotRight" referencePoint="hydraulicPipeBaseRotRightRef" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicPipeBaseRotRightPunch" />
+            </movingPart>
+            <movingPart node="hydraulicPipeBaseRotLeft" referencePoint="hydraulicPipeBaseRotLeftRef" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicPipeBaseRotLeftPunch" />
+            </movingPart>
+            <movingPart node="ringMountHydraulic" referencePoint="ringMountHydraulicRef" referenceFrame="caseIH8800MR_main_component1" invertZ="true" >
+                <dependentPart node="hydraulicPipeArmLeft" />
+                <dependentPart node="hydraulicPipeArmRight" />
+            </movingPart>
+
+            <movingPart node="hydraulicPipeArmLeft" referencePoint="hydraulicPipeArmLeftRef" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicPipeArmLeftPunch" />
+                <dependentPart node="hydraulicPipeArmLeft2" />
+            </movingPart>
+            <movingPart node="hydraulicPipeArmLeft2" referencePoint="hydraulicPipeArmLeft2Ref" referenceFrame="caseIH8800MR_main_component1" />
+
+            <movingPart node="hydraulicPipeArmRight" referencePoint="hydraulicPipeArmRightRef" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicPipeArmRightPunch" />
+                <dependentPart node="hydraulicPipeArmRight2" />
+            </movingPart>
+            <movingPart node="hydraulicPipeArmRight2" referencePoint="hydraulicPipeArmRight2Ref" referenceFrame="caseIH8800MR_main_component1" />
+
+            <movingPart node="hydraulicFeederLeftBaseRoot" referencePoint="hydraulicFeederLeftBase_ref" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicFeederLeftBase" />
+            </movingPart>
+
+            <movingPart node="springFeederLeft" referencePoint="springFeederLeft_ref" referenceFrame="caseIH8800MR_main_component1" scaleZ="true" />
+
+            <movingPart node="feederLeftMountUpper1" referencePoint="feederLeftMountUpperRef" localReferencePoint="feederLeftMountUpper2" referenceFrame="caseIH8800MR_main_component1" >
+                <dependentPart node="feederLeftMountUpper2" />
+                <dependentPart node="hydraulicFeederLeft" />
+            </movingPart>
+            <movingPart node="feederLeftMountUpper2" referencePoint="feederLeftMountUpperRef" referenceFrame="caseIH8800MR_main_component1" >
+                <dependentPart node="hydraulicFeederLeftMounts" />
+            </movingPart>
+            <movingPart node="hydraulicFeederLeft" referencePoint="hydraulicFeederLeft_ref" referenceFrame="hydraulicFeederLeft_ref" >
+                <translatingPart node="hydraulicFeederLeft_punch" />
+            </movingPart>
+            <movingPart node="hydraulicFeederLeftMounts" referencePoint="hydraulicFeederLeftMounts_ref" referenceFrame="hydraulicFeederLeftMounts_ref" >
+                <translatingPart node="hydraulicFeederLeftMounts_punch" />
+            </movingPart>
+
+            <movingPart node="hydraulicSeperatorLeft" referencePoint="hydraulicSeperatorLeft_ref" referenceFrame="hydraulicSeperatorLeft_ref" >
+                <translatingPart node="hydraulicSeperatorLeft_punch" />
+            </movingPart>
+
+            <movingPart node="hydraulicFeederRightBaseRoot" referencePoint="feederRightBase_ref" referenceFrame="caseIH8800MR_main_component1" >
+                <translatingPart node="hydraulicFeederRightBase" />
+            </movingPart>
+
+            <movingPart node="springFeederRight" referencePoint="springFeederRight_ref" referenceFrame="caseIH8800MR_main_component1" scaleZ="true" />
+
+            <movingPart node="feederRightMountUpper1" referencePoint="feederRightMountUpper_ref" localReferencePoint="feederRightMountUpper2" referenceFrame="caseIH8800MR_main_component1" >
+                <dependentPart node="feederRightMountUpper2" />
+                <dependentPart node="hydraulicFeederRight" />
+            </movingPart>
+            <movingPart node="feederRightMountUpper2" referencePoint="feederRightMountUpper_ref" referenceFrame="caseIH8800MR_main_component1" >
+                <dependentPart node="hydraulicFeederRightMounts" />
+            </movingPart>
+            <movingPart node="hydraulicFeederRight" referencePoint="hydraulicFeederRight_ref" referenceFrame="hydraulicFeederRight_ref" >
+                <translatingPart node="hydraulicFeederRight_push" />
+            </movingPart>
+            <movingPart node="hydraulicFeederRightMounts" referencePoint="hydraulicFeederRightMounts_ref" referenceFrame="hydraulicFeederRightMounts_ref" >
+                <translatingPart node="hydraulicFeederRightMounts_push" />
+            </movingPart>
+
+            <movingPart node="hydraulicSeperatorRight" referencePoint="hydraulicSeperatorRight_ref" referenceFrame="hydraulicSeperatorRight_ref" >
+                <translatingPart node="hydraulicSeperatorRight_push" />
+            </movingPart>
+
+            <movingPart node="leftTrackLinkNode" referencePoint="leftTrackLinkNodeRef" referenceFrame="caseIH8800MR_main_component1" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="hydraulicTrackLeft01" />
+                <dependentPart node="hydraulicTrackLeft02" />
+            </movingPart>
+            <movingPart node="hydraulicTrackLeft01" referencePoint="hydraulicTrackLeft01Ref" referenceFrame="hydraulicTrackLeft01Ref">
+                <translatingPart node="hydraulicTrackLeft01Punch" />
+            </movingPart>
+            <movingPart node="hydraulicTrackLeft02" referencePoint="hydraulicTrackLeft02Ref" referenceFrame="hydraulicTrackLeft02Ref">
+                <translatingPart node="hydraulicTrackLeft02Punch" />
+            </movingPart>
+
+           <movingPart node="rightTrackLinkNode" referencePoint="rightTrackLinkNodeRef" referenceFrame="caseIH8800MR_main_component1" isActiveDirty="true" maxUpdateDistance="75">
+                <dependentPart node="hydraulicTrackRight01" />
+                <dependentPart node="hydraulicTrackRight02" />
+            </movingPart>
+            <movingPart node="hydraulicTrackRight01" referencePoint="hydraulicTrackRight01Ref" referenceFrame="hydraulicTrackRight01Ref">
+                <translatingPart node="hydraulicTrackRight01Punch" />
+            </movingPart>
+            <movingPart node="hydraulicTrackRight02" referencePoint="hydraulicTrackRight02Ref" referenceFrame="hydraulicTrackRight02Ref">
+                <translatingPart node="hydraulicTrackRight02Punch" />
+            </movingPart>
+        </movingParts>
+    </cylindered>
+
+    <suspensions>
+        <suspension node="seat"              weight="150" minTranslation="-0.05 -0.15 0.0" maxTranslation="0.05 0.15 0.0" suspensionParametersX="20 4" suspensionParametersY="5 1" suspensionParametersZ="20 4" />
+        <suspension useCharacterTorso="true" weight="90" minRotation="0 -5 -5" maxRotation="0 5 5" suspensionParametersY="7 1" suspensionParametersZ="7 1" />
+    </suspensions>
+
+    <dashboard>
+        <groups>
+            <group name="MOTOR_STARTING" electronicsStarting="true"/>
+            <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+			<group name="MOTOR_RUNNING" electronicsRunning="true"/>
+        </groups>
+        <default>
+            <dashboard displayType="EMITTER" node="a8800StartScreen" idleValue="-1" intensity="0.3" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="a8800MainScreen" intensity="0.01" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800MainScreen" groups="MOTOR_RUNNING"/>
+			
+            <dashboard displayType="VISIBILITY" node="a8800_dblGPSsatellitP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblGPSactiveP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblAdBlueScalaDecalP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblAdBlueSliderP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblFuelScalaDecalP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblFuelSliderP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblAdBlueIconP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblFuelIconP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblForwardArrowP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblNeutralGearP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblBackwardArrowP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblCompassDecalP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblCompassNeedleP1_CC" groups="MOTOR_RUNNING"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherSunP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherCloudP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherRainP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherHailP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherSnowP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherTwisterP1_CC" groups="MOTOR_RUNNING"/>
+			
+			<dashboard displayType="EMITTER" node="a8800_dblAdBlueScalaDecalP1_CC" intensity="0.01" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblAdBlueSliderP1_CC" intensity="0.1" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblFuelScalaDecalP1_CC" intensity="0.01" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblFuelSliderP1_CC" intensity="0.1" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblNeutralGearP1_CC" baseColor="0.033 0.033 0.033 1" groups="MOTOR_RUNNING"/>
+        </default>
+		<dashboardLive>
+			<!-- Player Name -->
+			<dashboard displayType="TEXT" valueType="base" cmd="playerName" node="a8800_dblPlayerNameP1_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+			<!-- Fieldnumber -->
+			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="a8800_dblFieldNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- GPS -->
+			<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="a8800_dblCompassP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="heading" node="a8800_dblCompassNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="a8800_dblRealClockNumbersP1_CC" textColor="0.033 0.033 0.033 1" textMask="ssssssss" textSize="0.0045" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+			<!-- MiniMap -->
+			<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="a8800_dblNaviMapP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="a8800_dblNaviMapPosP1_CC" groups="MOTOR_RUNNING"/>
+		</dashboardLive>
+    </dashboard>
+
+    <ai>
+        <agent width="3.25" length="13.2" height="6.7" lengthOffset="-1.1" frontOffset="1.48" />
+        <collisionTrigger node="aiCollisionNode" width="3.4" height="6.8"/>
+        <areaMarkers leftNode="areaMarkerStart" rightNode="areaMarkerWidth" backNode="areaMarkerHeight" />
+        <sizeMarkers leftNode="sizeMarkerStart" rightNode="sizeMarkerWidth" backNode="sizeMarkerHeight" />
+        <steeringSpeed>5</steeringSpeed>
+		<automaticSteering>
+			<dashboards>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="a8800_dblGPSsatellitP1_CC" baseColor="0.033 0.033 0.033 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="a8800_dblGPSactiveP1_CC" baseColor="0.033 0.033 0.033 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+				<dashboard displayType="ROT" valueType="heading" node="a8800_dblCompassNeedleP1_CC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="0.3" groups="MOTOR_RUNNING"/>
+			</dashboards>
+		</automaticSteering>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-1.5" maxX="1.5" minZ="-2.1" maxZ="4.2" yOffset="0.5"/>
+    </foliageBending>
+
+    <dynamicMount forceLimitScale="1"/>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="caseIH8800MR_main_component1" node="0>" />
+        <i3dMapping id="wheelFrontLeft" node="0>0|0" />
+        <i3dMapping id="leftTrackLinkNodeRef" node="0>0|0|0" />
+        <i3dMapping id="wheelFrontRight" node="0>0|1" />
+        <i3dMapping id="rightTrackLinkNodeRef" node="0>0|1|0" />
+        <i3dMapping id="wheelBackLeft" node="0>0|2" />
+        <i3dMapping id="wheelBackRight" node="0>0|3" />
+        <i3dMapping id="leftTrackLinkNode" node="0>0|4" />
+        <i3dMapping id="hydraulicTrackLeft01" node="0>0|4|0" />
+        <i3dMapping id="hydraulicTrackLeft01Punch" node="0>0|4|0|0" />
+        <i3dMapping id="hydraulicTrackLeft02Ref" node="0>0|4|0|0|0" />
+        <i3dMapping id="hydraulicTrackLeft02" node="0>0|4|1" />
+        <i3dMapping id="hydraulicTrackLeft02Punch" node="0>0|4|1|0" />
+        <i3dMapping id="rightTrackLinkNode" node="0>0|5" />
+        <i3dMapping id="hydraulicTrackRight01" node="0>0|5|0" />
+        <i3dMapping id="hydraulicTrackRight01Punch" node="0>0|5|0|0" />
+        <i3dMapping id="hydraulicTrackRight02Ref" node="0>0|5|0|0|0" />
+        <i3dMapping id="hydraulicTrackRight02" node="0>0|5|1" />
+        <i3dMapping id="hydraulicTrackRight02Punch" node="0>0|5|1|0" />
+        <i3dMapping id="hydraulicTrackLeft01Ref" node="0>0|6" />
+        <i3dMapping id="hydraulicTrackRight01Ref" node="0>0|7" />
+        <i3dMapping id="outdoorCameraTarget" node="0>1|0" />
+        <i3dMapping id="outdoorCamera" node="0>1|0|0" />
+        <i3dMapping id="indoorCamera" node="0>1|1" />
+        <i3dMapping id="cameraRaycastNode1" node="0>1|2" />
+        <i3dMapping id="cameraRaycastNode2" node="0>1|3" />
+        <i3dMapping id="cameraRaycastNode3" node="0>1|4" />
+        <i3dMapping id="shadowFocusBox" node="0>1|5" />
+        <i3dMapping id="rear2ChamberLight_05_left" node="0>2|0|0" />
+        <i3dMapping id="rear2ChamberLight_05_right" node="0>2|0|1" />
+        <i3dMapping id="workingLightSquare_01_3" node="0>2|0|2" />
+        <i3dMapping id="workingLightSquare_01_4" node="0>2|0|3" />
+        <i3dMapping id="sideMarker_04White_1" node="0>2|0|4" />
+        <i3dMapping id="sideMarker_04White_2" node="0>2|0|5" />
+        <i3dMapping id="a8800MRLights_static" node="0>2|1|0" />
+        <i3dMapping id="a8800MRLightsGlass_static" node="0>2|1|1" />
+        <i3dMapping id="a8800MRLightsInterior_static" node="0>2|1|2" />
+        <i3dMapping id="a8800MRLightsGlassInterior_static" node="0>2|1|3" />
+        <i3dMapping id="frontLightLow" node="0>2|2|0" />
+        <i3dMapping id="highBeamLow" node="0>2|2|1" />
+        <i3dMapping id="frontLightHighLeft" node="0>2|2|2" />
+        <i3dMapping id="highBeamHigh" node="0>2|2|3" />
+        <i3dMapping id="workLightFrontLow" node="0>2|3|0" />
+        <i3dMapping id="workLightBackLow" node="0>2|3|1" />
+        <i3dMapping id="workLightFrontHigh" node="0>2|3|2" />
+        <i3dMapping id="workLightBackHighLeft" node="0>2|3|3" />
+        <i3dMapping id="backLightHighLeft" node="0>2|4|0" />
+        <i3dMapping id="beaconLight" node="0>2|5|0" />
+        <i3dMapping id="exitPoint" node="0>3" />
+        <i3dMapping id="seat" node="0>4|0" />
+        <i3dMapping id="playerSkin" node="0>4|0|0" />
+        <i3dMapping id="joystick" node="0>4|0|1" />
+        <i3dMapping id="playerRightHandTarget" node="0>4|0|1|0" />
+        <i3dMapping id="joystickDecal" node="0>4|0|1|1" />
+        <i3dMapping id="steeringJoystick" node="0>4|0|2|0" />
+        <i3dMapping id="playerLeftHandTarget" node="0>4|0|2|0|0" />
+        <i3dMapping id="seatDecalsLight" node="0>4|0|5" />
+        <i3dMapping id="playerRightFootTarget" node="0>4|1" />
+        <i3dMapping id="playerLeftFootTarget" node="0>4|2" />
+        <i3dMapping id="wiperArm1" node="0>4|3|0" />
+        <i3dMapping id="wiper" node="0>4|3|0|0" />
+        <i3dMapping id="wiperArm2" node="0>4|3|0|0|0" />
+        <i3dMapping id="wiperArm2Ref" node="0>4|3|1" />
+		
+		<i3dMapping id="a8800StartScreen" node="0>4|4|0|0|0"/>
+		
+		<i3dMapping id="a8800_dblPlayerNameP1_CC" node="0>4|4|0|1|0"/>
+		<i3dMapping id="a8800_dblGPSsatellitP1_CC" node="0>4|4|0|1|1"/>
+		<i3dMapping id="a8800_dblGPSactiveP1_CC" node="0>4|4|0|1|2"/>
+		<i3dMapping id="a8800_dblFieldNumbersP1_CC" node="0>4|4|0|1|3"/>
+		<i3dMapping id="a8800_dblCompassP1_CC" node="0>4|4|0|1|4"/>
+		<i3dMapping id="a8800_dblCompassNumbersP1_CC" node="0>4|4|0|1|5"/>
+		<i3dMapping id="a8800_dblAdBlueScalaDecalP1_CC" node="0>4|4|0|1|6"/>
+		<i3dMapping id="a8800_dblAdBlueSliderP1_CC" node="0>4|4|0|1|7"/>
+		<i3dMapping id="a8800_dblAdBlueIconP1_CC" node="0>4|4|0|1|8"/>
+		<i3dMapping id="a8800_dblAdBluePercNumbersP1_CC" node="0>4|4|0|1|9"/>
+		<i3dMapping id="a8800_dblFuelScalaDecalP1_CC" node="0>4|4|0|1|10"/>
+		<i3dMapping id="a8800_dblFuelSliderP1_CC" node="0>4|4|0|1|11"/>
+		<i3dMapping id="a8800_dblFuelIconP1_CC" node="0>4|4|0|1|12"/>
+		<i3dMapping id="a8800_dblFuelPercNumbersP1_CC" node="0>4|4|0|1|13"/>
+		<i3dMapping id="a8800_dblForwardArrowP1_CC" node="0>4|4|0|1|14"/>
+		<i3dMapping id="a8800_dblNeutralGearP1_CC" node="0>4|4|0|1|15"/>
+		<i3dMapping id="a8800_dblBackwardArrowP1_CC" node="0>4|4|0|1|16"/>
+		<i3dMapping id="a8800_dblRealClockNumbersP1_CC" node="0>4|4|0|1|17"/>
+		<i3dMapping id="a8800_dblOperatingTimeNumbersP1_CC" node="0>4|4|0|1|18"/>
+		<i3dMapping id="a8800_dblEngineTempNumbersP1_CC" node="0>4|4|0|1|19"/>
+		<i3dMapping id="a8800_dblWorkHectareNumbersP1_CC" node="0>4|4|0|1|20"/>
+		<i3dMapping id="a8800_dblEgnineLoadNumbersP1_CC" node="0>4|4|0|1|21"/>
+		<i3dMapping id="a8800_dblEgnineSpeedNumbersP1_CC" node="0>4|4|0|1|22"/>
+		<i3dMapping id="a8800_dblCruiseControlNumbersP1_CC" node="0>4|4|0|1|23"/>
+		<i3dMapping id="a8800_dblCompassDecalP1_CC" node="0>4|4|0|1|24"/>
+		<i3dMapping id="a8800_dblCompassNeedleP1_CC" node="0>4|4|0|1|25"/>
+		<i3dMapping id="a8800_dblWeatherSunP1_CC" node="0>4|4|0|1|26"/>
+		<i3dMapping id="a8800_dblWeatherCloudP1_CC" node="0>4|4|0|1|27"/>
+		<i3dMapping id="a8800_dblWeatherRainP1_CC" node="0>4|4|0|1|28"/>
+		<i3dMapping id="a8800_dblWeatherHailP1_CC" node="0>4|4|0|1|29"/>
+		<i3dMapping id="a8800_dblWeatherSnowP1_CC" node="0>4|4|0|1|30"/>
+		<i3dMapping id="a8800_dblWeatherTwisterP1_CC" node="0>4|4|0|1|31"/>
+		<i3dMapping id="a8800_dblOutsideTempNumbersP1_CC" node="0>4|4|0|1|32"/>
+		
+		<i3dMapping id="a8800_dblNaviMapP1_CC" node="0>4|4|0|2|0"/>
+		<i3dMapping id="a8800_dblNaviMapPosP1_CC" node="0>4|4|0|2|0|0"/>
+		
+		<i3dMapping id="a8800MainScreen" node="0>4|4|0|3|0"/>
+		
+        <i3dMapping id="areaMarkerStart" node="0>5|0|0" />
+        <i3dMapping id="areaMarkerWidth" node="0>5|0|1" />
+        <i3dMapping id="areaMarkerHeight" node="0>5|0|2" />
+        <i3dMapping id="sizeMarkerStart" node="0>5|1|0" />
+        <i3dMapping id="sizeMarkerWidth" node="0>5|1|1" />
+        <i3dMapping id="sizeMarkerHeight" node="0>5|1|2" />
+        <i3dMapping id="aiCollisionNode" node="0>5|2" />
+        <i3dMapping id="exhaustEffect" node="0>6|0" />
+        <i3dMapping id="exhaustFlap" node="0>6|0|0" />
+        <i3dMapping id="feederLeftArm" node="0>7|0|0" />
+        <i3dMapping id="feederLeftBase" node="0>7|0|0|0" />
+        <i3dMapping id="feederLeftMountLower" node="0>7|0|0|0|0" />
+        <i3dMapping id="feederLeft" node="0>7|0|0|0|0|0" />
+        <i3dMapping id="feederLeftMountUpper1" node="0>7|0|0|0|0|0|0" />
+        <i3dMapping id="feederLeftMountUpper2" node="0>7|0|0|0|0|0|0|0" />
+        <i3dMapping id="hydraulicFeederLeftMounts" node="0>7|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="hydraulicFeederLeftMounts_punch" node="0>7|0|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="hydraulicFeederLeft_ref" node="0>7|0|0|0|0|0|0|1" />
+        <i3dMapping id="hydraulicFeederLeft" node="0>7|0|0|0|0|0|1" />
+        <i3dMapping id="hydraulicFeederLeft_punch" node="0>7|0|0|0|0|0|1|0" />
+        <i3dMapping id="seperatorLeftRoot" node="0>7|0|0|0|0|0|2" />
+        <i3dMapping id="seperatorLeft" node="0>7|0|0|0|0|0|2|0" />
+        <i3dMapping id="seperatorLeftBlade" node="0>7|0|0|0|0|0|2|0|0" />
+        <i3dMapping id="seperatorLeftBlade_decal" node="0>7|0|0|0|0|0|2|0|0|0" />
+        <i3dMapping id="hydraulicSeperatorLeft_ref" node="0>7|0|0|0|0|0|2|0|1" />
+        <i3dMapping id="seperatorLeftMotor_vis" node="0>7|0|0|0|0|0|2|0|2" />
+        <i3dMapping id="hydraulicSeperatorLeft" node="0>7|0|0|0|0|0|3" />
+        <i3dMapping id="hydraulicSeperatorLeft_punch" node="0>7|0|0|0|0|0|3|0" />
+        <i3dMapping id="rotatingPartsFeederLeft" node="0>7|0|0|0|0|0|4" />
+        <i3dMapping id="feederLeftDrum01Root" node="0>7|0|0|0|0|0|4|0" />
+        <i3dMapping id="feederLeftDrum01" node="0>7|0|0|0|0|0|4|0|0" />
+        <i3dMapping id="feederLeftDrum02Root" node="0>7|0|0|0|0|0|4|1" />
+        <i3dMapping id="feederLeftDrum02" node="0>7|0|0|0|0|0|4|1|0" />
+        <i3dMapping id="feederLeftDrum03Root" node="0>7|0|0|0|0|0|4|2" />
+        <i3dMapping id="feederLeftDrum03" node="0>7|0|0|0|0|0|4|2|0" />
+        <i3dMapping id="feederLeftDrum04Root" node="0>7|0|0|0|0|0|4|3" />
+        <i3dMapping id="feederLeftDrum04" node="0>7|0|0|0|0|0|4|3|0" />
+        <i3dMapping id="feederLeftInputRoot" node="0>7|0|0|0|0|0|5" />
+        <i3dMapping id="feederLeftInput" node="0>7|0|0|0|0|0|5|0" />
+        <i3dMapping id="springFeederLeft" node="0>7|0|0|0|0|0|5|0|0" />
+        <i3dMapping id="feederLeftRoot" node="0>7|0|0|0|0|0|5|0|1" />
+        <i3dMapping id="feederLeftDrum" node="0>7|0|0|0|0|0|5|0|1|0" />
+        <i3dMapping id="springFeederLeft_ref" node="0>7|0|0|0|0|0|6" />
+        <i3dMapping id="hydraulicFeederLeftMounts_ref" node="0>7|0|0|0|0|1" />
+        <i3dMapping id="feederLeftMountUpperRef" node="0>7|0|0|0|1" />
+        <i3dMapping id="hydraulicFeederLeftBaseRoot" node="0>7|0|0|0|2" />
+        <i3dMapping id="hydraulicFeederLeftBase" node="0>7|0|0|0|2|0" />
+        <i3dMapping id="hydraulicFeederLeftBase_ref" node="0>7|0|0|1" />
+        <i3dMapping id="feederRightArm" node="0>7|0|1" />
+        <i3dMapping id="feederRightBase" node="0>7|0|1|0" />
+        <i3dMapping id="feederRightMountLower" node="0>7|0|1|0|0" />
+        <i3dMapping id="feederRight" node="0>7|0|1|0|0|0" />
+        <i3dMapping id="feederRightMountUpper1" node="0>7|0|1|0|0|0|0" />
+        <i3dMapping id="feederRightMountUpper2" node="0>7|0|1|0|0|0|0|0" />
+        <i3dMapping id="hydraulicFeederRightMounts" node="0>7|0|1|0|0|0|0|0|0" />
+        <i3dMapping id="hydraulicFeederRightMounts_push" node="0>7|0|1|0|0|0|0|0|0|0" />
+        <i3dMapping id="hydraulicFeederRight_ref" node="0>7|0|1|0|0|0|0|1" />
+        <i3dMapping id="hydraulicFeederRight" node="0>7|0|1|0|0|0|1" />
+        <i3dMapping id="hydraulicFeederRight_push" node="0>7|0|1|0|0|0|1|0" />
+        <i3dMapping id="seperatorRightRoot" node="0>7|0|1|0|0|0|2" />
+        <i3dMapping id="seperatorRight" node="0>7|0|1|0|0|0|2|0" />
+        <i3dMapping id="seperatorRightBlade" node="0>7|0|1|0|0|0|2|0|0" />
+        <i3dMapping id="hydraulicSeperatorRight_ref" node="0>7|0|1|0|0|0|2|0|1" />
+        <i3dMapping id="hydraulicSeperatorRight" node="0>7|0|1|0|0|0|3" />
+        <i3dMapping id="hydraulicSeperatorRight_push" node="0>7|0|1|0|0|0|3|0" />
+        <i3dMapping id="rotatingPartsFeederRight" node="0>7|0|1|0|0|0|4" />
+        <i3dMapping id="feederRightDrum01Root" node="0>7|0|1|0|0|0|4|0" />
+        <i3dMapping id="feederRightDrum01" node="0>7|0|1|0|0|0|4|0|0" />
+        <i3dMapping id="feederRightDrum02Root" node="0>7|0|1|0|0|0|4|1" />
+        <i3dMapping id="feederRightDrum02" node="0>7|0|1|0|0|0|4|1|0" />
+        <i3dMapping id="feederRightDrum03Root" node="0>7|0|1|0|0|0|4|2" />
+        <i3dMapping id="feederRightDrum03" node="0>7|0|1|0|0|0|4|2|0" />
+        <i3dMapping id="feederRightDrum04Root" node="0>7|0|1|0|0|0|4|3" />
+        <i3dMapping id="feederRightDrum04" node="0>7|0|1|0|0|0|4|3|0" />
+        <i3dMapping id="feederRightInputRoot" node="0>7|0|1|0|0|0|5" />
+        <i3dMapping id="feederRightInput" node="0>7|0|1|0|0|0|5|0" />
+        <i3dMapping id="springFeederRight" node="0>7|0|1|0|0|0|5|0|0" />
+        <i3dMapping id="feederRightDrumRoot" node="0>7|0|1|0|0|0|5|0|1" />
+        <i3dMapping id="feederRightDrum" node="0>7|0|1|0|0|0|5|0|1|0" />
+        <i3dMapping id="springFeederRight_ref" node="0>7|0|1|0|0|0|6" />
+        <i3dMapping id="feederRightMotor_vis" node="0>7|0|1|0|0|0|8" />
+        <i3dMapping id="hydraulicFeederRightMounts_ref" node="0>7|0|1|0|0|1" />
+        <i3dMapping id="feederRightMountUpper_ref" node="0>7|0|1|0|1" />
+        <i3dMapping id="hydraulicFeederRightBaseRoot" node="0>7|0|1|0|2" />
+        <i3dMapping id="hydraulicFeederRightBase" node="0>7|0|1|0|2|0" />
+        <i3dMapping id="feederRightBase_ref" node="0>7|0|1|1" />
+        <i3dMapping id="cutterArmLower" node="0>7|1|0" />
+        <i3dMapping id="cutter" node="0>7|1|0|0" />
+        <i3dMapping id="cutterArmUpper" node="0>7|1|0|0|0" />
+        <i3dMapping id="cutterLeftRoot" node="0>7|1|0|0|1|0" />
+        <i3dMapping id="cutterLeft" node="0>7|1|0|0|1|0|0" />
+        <i3dMapping id="cutterRightRoot" node="0>7|1|0|0|1|1" />
+        <i3dMapping id="cutterRight" node="0>7|1|0|0|1|1|0" />
+        <i3dMapping id="cutterArmBladeRoot" node="0>7|1|0|0|1|2" />
+        <i3dMapping id="cutterArmBlade" node="0>7|1|0|0|1|2|0" />
+        <i3dMapping id="fruitPreparerWorkAreaStart" node="0>7|1|0|0|2|0" />
+        <i3dMapping id="fruitPreparerWorkAreaWidth" node="0>7|1|0|0|2|1" />
+        <i3dMapping id="fruitPreparerWorkAreaHeight" node="0>7|1|0|0|2|2" />
+        <i3dMapping id="fruitPrepareEffectNode" node="0>7|1|0|0|3" />
+        <i3dMapping id="hydraulicCutter_ref" node="0>7|1|0|1" />
+        <i3dMapping id="hydraulicCutter" node="0>7|1|1" />
+        <i3dMapping id="hydraulicCutter_punch" node="0>7|1|1|0" />
+        <i3dMapping id="cutter_ref" node="0>7|1|2" />
+        <i3dMapping id="cutterArmUpper_ref" node="0>7|1|3" />
+        <i3dMapping id="trailerTrigger" node="0>7|2|0" />
+        <i3dMapping id="pipeRotatingPart" node="0>7|2|1" />
+        <i3dMapping id="pipeBaseRot" node="0>7|2|2" />
+        <i3dMapping id="pipeArm" node="0>7|2|2|0" />
+        <i3dMapping id="workingLightSquare_01_1" node="0>7|2|2|0|0|0" />
+        <i3dMapping id="workingLightSquare_01_2" node="0>7|2|2|0|0|1" />
+        <i3dMapping id="ringMountHydraulicRef" node="0>7|2|2|0|1" />
+        <i3dMapping id="hydraulicPipeArmLeft" node="0>7|2|2|0|2" />
+        <i3dMapping id="hydraulicPipeArmLeftPunch" node="0>7|2|2|0|2|0" />
+        <i3dMapping id="hydraulicPipeArmLeft2Ref" node="0>7|2|2|0|2|1" />
+        <i3dMapping id="hydraulicPipeArmLeft2" node="0>7|2|2|0|3" />
+        <i3dMapping id="hydraulicPipeArmRight" node="0>7|2|2|0|4" />
+        <i3dMapping id="hydraulicPipeArmRightPunch" node="0>7|2|2|0|4|0" />
+        <i3dMapping id="hydraulicPipeArmRight2Ref" node="0>7|2|2|0|4|1" />
+        <i3dMapping id="hydraulicPipeArmRight2" node="0>7|2|2|0|5" />
+        <i3dMapping id="pipeArmRotatingParts" node="0>7|2|2|0|6" />
+        <i3dMapping id="pipeArmVentilatorRoot" node="0>7|2|2|0|6|0" />
+        <i3dMapping id="pipeArmVentilator" node="0>7|2|2|0|6|0|0" />
+        <i3dMapping id="pipeArmRotatingPart1" node="0>7|2|2|0|6|1" />
+        <i3dMapping id="pipeArmRotatingPart2" node="0>7|2|2|0|6|2" />
+        <i3dMapping id="pipeArmRotatingPart3" node="0>7|2|2|0|6|3" />
+        <i3dMapping id="pipeArmRotatingPart4" node="0>7|2|2|0|6|4" />
+        <i3dMapping id="pipeArmConveyorBelt" node="0>7|2|2|0|6|5" />
+        <i3dMapping id="pipeArmSeperatorRoot" node="0>7|2|2|0|7" />
+        <i3dMapping id="pipeArmSeperator" node="0>7|2|2|0|7|0" />
+        <i3dMapping id="pipeSeperatorChopperEffect" node="0>7|2|2|0|7|0|0" />
+        <i3dMapping id="chafferEffectNode" node="0>7|2|2|0|7|0|0|0" />
+        <i3dMapping id="pipeDischargeNode" node="0>7|2|2|0|8" />
+        <i3dMapping id="pipeDischargeFabric" node="0>7|2|2|0|9" />
+        <i3dMapping id="hydraulicPipeDischarge" node="0>7|2|2|0|10" />
+        <i3dMapping id="hydraulicPipeDischarge_punch" node="0>7|2|2|0|10|0" />
+        <i3dMapping id="pipeArmLights" node="0>7|2|2|0|11" />
+        <i3dMapping id="workLightPipeLow" node="0>7|2|2|0|11|0" />
+        <i3dMapping id="pipeArmWorkLightBackLeftHigh" node="0>7|2|2|0|11|1" />
+        <i3dMapping id="pipeArmEffectEmitterShape" node="0>7|2|2|0|13|0" />
+        <i3dMapping id="pipeArmEffectNode" node="0>7|2|2|0|13|1" />
+        <i3dMapping id="pipeArmEffectNodeTarget" node="0>7|2|2|0|13|2" />
+        <i3dMapping id="hydraulicPipeBaseRotLeftRef" node="0>7|2|2|1" />
+        <i3dMapping id="hydraulicPipeBaseRotRightRef" node="0>7|2|2|2" />
+        <i3dMapping id="trailerAttacherJointBack" node="0>7|2|2|3" />
+        <i3dMapping id="trailerAttacher" node="0>7|2|2|4" />
+        <i3dMapping id="hydraulicPipeBaseRotRight" node="0>7|2|3" />
+        <i3dMapping id="hydraulicPipeBaseRotRightPunch" node="0>7|2|3|0" />
+        <i3dMapping id="hydraulicPipeBaseRotLeft" node="0>7|2|4" />
+        <i3dMapping id="hydraulicPipeBaseRotLeftPunch" node="0>7|2|4|0" />
+        <i3dMapping id="ringMountHydraulicRoot" node="0>7|2|5" />
+        <i3dMapping id="ringMountHydraulic" node="0>7|2|5|0" />
+        <i3dMapping id="hydraulicPipeArmLeftRef" node="0>7|2|5|0|0" />
+        <i3dMapping id="hydraulicPipeArmRightRef" node="0>7|2|5|0|1" />
+        <i3dMapping id="pipeSeperator" node="0>7|2|6" />
+        <i3dMapping id="chopperEffectNode" node="0>7|2|6|0|0" />
+        <i3dMapping id="pipeSeperatorEmitterSmoke" node="0>7|2|6|0|1" />
+        <i3dMapping id="fruitPreparerDropAreaStart" node="0>7|2|6|1|0" />
+        <i3dMapping id="fruitPreparerDropAreaWidth" node="0>7|2|6|1|1" />
+        <i3dMapping id="fruitPreparerDropAreaHeight" node="0>7|2|6|1|2" />
+        <i3dMapping id="rotatingPartFeederTop" node="0>7|3|0" />
+        <i3dMapping id="rotatingPartFeederBottom" node="0>7|3|1" />
+        <i3dMapping id="rotatingPartCutterBottomLeft" node="0>7|3|2" />
+        <i3dMapping id="rotatingPartCutterBottomRight" node="0>7|3|3" />
+        <i3dMapping id="rotatingPartLower01" node="0>7|3|4" />
+        <i3dMapping id="rotatingPartLower02" node="0>7|3|5" />
+        <i3dMapping id="rotatingPartLower03" node="0>7|3|6" />
+        <i3dMapping id="rotatingPartLower04" node="0>7|3|7" />
+        <i3dMapping id="rotatingPartLower05" node="0>7|3|8" />
+        <i3dMapping id="rotatingPartLower06" node="0>7|3|9" />
+        <i3dMapping id="rotatingPartLower07" node="0>7|3|10" />
+        <i3dMapping id="rotatingPartUpper01" node="0>7|3|11" />
+        <i3dMapping id="rotatingPartUpper02" node="0>7|3|12" />
+        <i3dMapping id="rotatingPartUpper03" node="0>7|3|13" />
+        <i3dMapping id="rotatingPartUpper04" node="0>7|3|14" />
+        <i3dMapping id="rotatingPartUpper05" node="0>7|3|15" />
+        <i3dMapping id="rotatingPartUpper06" node="0>7|3|16" />
+        <i3dMapping id="cabinDecalsLight" node="0>8|0" />
+        <i3dMapping id="interiorScreenLight" node="0>8|1" />
+        <i3dMapping id="mirrorRightDecal" node="0>9|0" />
+        <i3dMapping id="mirrorLeftDecal" node="0>9|1" />
+        <i3dMapping id="workAreaStart" node="0>10|0" />
+        <i3dMapping id="workAreaWidth" node="0>10|1" />
+        <i3dMapping id="workAreaHeight" node="0>10|2" />
+        <i3dMapping id="groundReferenceNode" node="0>10|3" />
+        <i3dMapping id="tipOcclusionAreaStart" node="0>11|0" />
+        <i3dMapping id="tipOcclusionAreaWidth" node="0>11|1" />
+        <i3dMapping id="tipOcclusionAreaHeight" node="0>11|2" />
+        <i3dMapping id="pipeParticlePlanes" node="0>12|0" />
+        <i3dMapping id="pipeParticlePlaneEmitterShape" node="0>12|0|0" />
+        <i3dMapping id="particleEmitterCleaningDust" node="0>12|1" />
+        <i3dMapping id="cutterEffectNode" node="0>12|2" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>13|0" />
+        <i3dMapping id="exterior_01" node="0>14|1" />
+        <i3dMapping id="exterior_new" node="0>14|2" />
+        <i3dMapping id="cabinInterior" node="0>14|6" />
+    </i3dMappings>
+</vehicle>
