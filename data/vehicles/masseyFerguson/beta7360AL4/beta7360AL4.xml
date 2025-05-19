@@ -472,16 +472,16 @@
         </animation>
 		
 		<animation name="gpsInactiveAnimP1">
-            <part node="varioTronic_dblGPSsteeringWheelInactiveP1_SC" startTime="0" endTime="0.001" visibility="true"/>
-            <part node="varioTronic_dblGPSsteeringWheelInactiveP1_SC" startTime="0.001" endTime="0.002" visibility="false"/>
+            <part node="varioTronic_dblGPSsteeringWheelInactiveP1_SC" startTime="0" endTime="0.1" visibility="true"/>
+            <part node="varioTronic_dblGPSsteeringWheelInactiveP1_SC" startTime="0.1" endTime="0.2" visibility="false"/>
         </animation>
 		<animation name="gpsInactiveAnimP2">
-            <part node="varioTronic_dblGPSsteeringWheelInactiveP2_SC" startTime="0" endTime="0.001" visibility="true"/>
-            <part node="varioTronic_dblGPSsteeringWheelInactiveP2_SC" startTime="0.001" endTime="0.002" visibility="false"/>
+            <part node="varioTronic_dblGPSsteeringWheelInactiveP2_SC" startTime="0" endTime="0.1" visibility="true"/>
+            <part node="varioTronic_dblGPSsteeringWheelInactiveP2_SC" startTime="0.1" endTime="0.2" visibility="false"/>
         </animation>
 		<animation name="gpsInactiveAnimP3">
-            <part node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" startTime="0" endTime="0.001" visibility="true"/>
-            <part node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" startTime="0.001" endTime="0.002" visibility="false"/>
+            <part node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" startTime="0" endTime="0.1" visibility="true"/>
+            <part node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" startTime="0.1" endTime="0.2" visibility="false"/>
         </animation>
     </animations>
 
@@ -754,8 +754,13 @@
 			<dashboard displayType="EMITTER" node="varioTronic_dblPtoStopP1_SC" intensity="0.01" baseColor="RED" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="EMITTER" node="varioTronic_dblPipeUnfoldingP1_SC" intensity="0.01" baseColor="GREEN" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="EMITTER" node="varioTronic_dblOverloadingArrowP1_SC" intensity="0.01" emissiveScale="0.5" baseColor="AMAZONE_ORANGE1" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblFuelSliderP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblAdBlueSliderP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblEngineTempSliderP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblEngineOilTempSliderP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblForwardArrowP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblBackwardArrowP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblBunkerSliderP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblChopperP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblGPSsatellitP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblGPSactiveP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
@@ -774,8 +779,13 @@
 			<dashboard displayType="EMITTER" node="varioTronic_dblPtoStopP2_SC" intensity="0.01" baseColor="RED" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="EMITTER" node="varioTronic_dblPipeUnfoldingP2_SC" intensity="0.01" baseColor="GREEN" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="EMITTER" node="varioTronic_dblOverloadingArrowP2_SC" intensity="0.01" emissiveScale="0.5" baseColor="AMAZONE_ORANGE1" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblFuelSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblAdBlueSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblEngineTempSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblEngineOilTempSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblForwardArrowP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblBackwardArrowP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblBunkerSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblChopperP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblGPSsatellitP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblGPSactiveP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
@@ -876,26 +886,21 @@
 		<automaticSteering>
 			<dashboards>
 			<!-- PAGESC1 -->
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelActiveP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+				<dashboard displayType="ANIMATION" valueType="steeringEngaged" animName="gpsInactiveAnimP1" groups="MOTOR_ACTIVE PAGESC1"/>
 				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSrtkSatellitP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.6" groups="MOTOR_ACTIVE PAGESC1"/>
 				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSsatellitP1_SC" baseColor="0.15 0.15 0.15 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE PAGESC1"/>
-				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="varioTronic_dblGPSactiveP1_SC" baseColor="0.15 0.15 0.15 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE PAGESC1"/>
-				<!-- <dashboard displayType="MULTI_STATE" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelInactiveP1_SC" groups="MOTOR_ACTIVE PAGESC1">
-					<state value="0" visibility="true"/>
-					<state value="1" visibility="false"/>
-					<state value="2" visibility="false"/>
-				</dashboard> -->
-				<dashboard displayType="ANIMATION" valueType="steeringEngaged" animName="gpsInactiveAnimP1" groups="MOTOR_ACTIVE PAGESC1"/>
-				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelActiveP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="varioTronic_dblGPSactiveP1_SC" baseColor="0.15 0.15 0.15 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE PAGESC1"/>	
 			<!-- PAGESC2 -->
+				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelActiveP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+				<dashboard displayType="ANIMATION" valueType="steeringEngaged" animName="gpsInactiveAnimP2" groups="MOTOR_ACTIVE PAGESC2"/>
 				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSrtkSatellitP2_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.6" groups="MOTOR_ACTIVE PAGESC2"/>
 				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSsatellitP2_SC" baseColor="0.15 0.15 0.15 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE PAGESC2"/>
 				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="varioTronic_dblGPSactiveP2_SC" baseColor="0.15 0.15 0.15 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE PAGESC2"/>
-				<dashboard displayType="ANIMATION" valueType="steeringEngaged" animName="gpsInactiveAnimP2" groups="MOTOR_ACTIVE PAGESC2"/>
-				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelActiveP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<!-- PAGESC2 -->
-				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSrtkSatellitP3_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.6" groups="MOTOR_ACTIVE PAGESC3"/>
-				<dashboard displayType="ANIMATION" valueType="steeringEngaged" animName="gpsInactiveAnimP3" groups="MOTOR_ACTIVE PAGESC3"/>
 				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelActiveP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
+				<dashboard displayType="ANIMATION" valueType="steeringEngaged" animName="gpsInactiveAnimP3" groups="MOTOR_ACTIVE PAGESC3"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSrtkSatellitP3_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.6" groups="MOTOR_ACTIVE PAGESC3"/>
 			</dashboards>
 		</automaticSteering>
     </ai>
