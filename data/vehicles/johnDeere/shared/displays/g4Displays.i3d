@@ -545,7 +545,7 @@
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
-    <Camera name="persp" translation="-0.308509 0.144189 0.04164" rotation="97.6239 2.83072 -180" nodeId="438" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
+    <Camera name="persp" translation="-0.412635 0.227196 0.0209194" rotation="90.4624 0.939955 180" nodeId="438" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
   </Scene>
 
   <UserAttributes>
