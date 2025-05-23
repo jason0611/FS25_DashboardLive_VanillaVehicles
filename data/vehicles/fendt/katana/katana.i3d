@@ -2,17 +2,17 @@
 
 <i3D name="katana.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.3"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.4"/>
   </Asset>
 
   <Files>
+    <File fileId="73" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="74" filename="textures/fendtKatanaNavi.dds"/>
     <File fileId="63" filename="textures/fendtKatanaVariotronicBootScreen_diffuse.png"/>
     <File fileId="68" filename="textures/fendtKatanaVariotronicChopperScreen0_diffuse.png"/>
     <File fileId="75" filename="textures/fendtKatanaVariotronicChopperScreen1_diffuse.png"/>
     <File fileId="76" filename="textures/fendtKatanaVariotronicGPSScreen_diffuse.png"/>
     <File fileId="64" filename="textures/fendtKatanaVariotronicMainScreen_diffuse.png"/>
-    <File fileId="73" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="65" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="52" filename="$data/shaders/glowShader.xml"/>
     <File fileId="54" filename="$data/shaders/mirrorShader.xml"/>
