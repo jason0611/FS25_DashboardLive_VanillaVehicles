@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/dashboardCompounds.xsd">
     <!-- tractors -->
-    <!-- <dashboardCompound name="JOHNDEERE_G4_APILLAR_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g4Displays.i3d" node="aPillarScreen"> -->
     <group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
+	<group name="PAGEAP1" dbl="page" group="3" page="1"/>
+	<group name="PAGEAP2" dbl="page" group="3" page="2"/>
 	<group name="PAGESC1" dbl="page" group="1" page="1"/>
 	<!-- <group name="PAGESC2" dbl="page" group="1" page="2"/> -->
 	<group name="PAGEGPS1" dbl="page" group="2" page="1"/>
 	<group name="PAGEGPS2" dbl="page" group="2" page="2"/>
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
-	<group name="DBL_F_TRAILER2" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="2" dblJointSide="back"/>
-	<group name="FL_ATTACHED" dblJointSide="front" dblJointType="attachableFrontloader" />
+	<!-- <group name="DBL_F_TRAILER1" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="1" dblJointSide="back"/> -->
+	<!-- <group name="DBL_F_TRAILER2" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="2" dblJointSide="back"/> -->
+	<!-- <group name="FL_ATTACHED" dblJointSide="front" dblJointType="attachableFrontloader" /> -->
     <!-- <group name="MOTOR_OFF" electronicsStarting="false" electronicsRunning="false"/> -->
     <!-- need to set a cond motor off -->
     <!-- </dashboardCompound> -->
@@ -243,10 +245,17 @@
 		<dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontHitchSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 		
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFrontFoldingSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING PAGESC1"/> -->
-		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="0" maxValueSlider="75" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="0" maxValueSlider="80" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- <dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="0" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/> -->
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFrontLiftImplementSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING PAGESC1"/> -->
-		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="75" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="80" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- <dashboard valueType="dbl.base" cmd="liftState" jointSide="front" trailer="1" option="any" factor="100" minValueSlider="0" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/> -->
 		
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowered" jointSide="front" node="g5Display_dblCutterLoweredP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                                         node="g5Display_dblCutterLoweredP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifted" jointSide="front"  node="g5Display_dblCutterLiftedP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                                         node="g5Display_dblCutterLiftedP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
 		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFoldingStateFrontClosingP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFoldingStateFrontClosedP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="EMITTER" node="g5Display_dblFoldingStateFrontClosedP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
@@ -362,6 +371,9 @@
         <!-- <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_iconGPSActive_decal" intensity="0.3" groups="MOTOR_STARTING"/> -->
         <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_decal" idleValue="-1" intensity="0.2" intensityDarkMode="0.01" groups="MOTOR_ACTIVE"/>
 
+        <dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="1" node="g5Display_ScreenWarningFuel" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5Display_ScreenWarningFuel" emitColor="1 0.1 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+
         <dashboard displayType="VISIBILITY" node="g5Display_dblMotorTempIconP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
         <dashboard displayType="VISIBILITY" node="g5Display_dblSpeedIconP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
         <dashboard displayType="EMITTER" node="g5Display_dblSpeedIconP1_SC" emitColor="0.09 0.09 0.07 1" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
@@ -407,7 +419,7 @@
 		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblWorkWidthNumbersP1_GPS" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING"/> -->
 		
         <dashboard displayType="VISIBILITY" node="g5Display_dblRidgeMarkerLeftP1_CC" valueType="dbl.base"  jointSide="back" option="any" cmd="ridgeMarker" state="2" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="VISIBILITY" node="g5Display_dblRidgeMarkerRightP1_CC" valueType="dbl.base"  jointSide="back" option="any" cmd="ridgeMarker" state="2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_dblRidgeMarkerRightP1_CC" valueType="dbl.base"  jointSide="back" option="any" cmd="ridgeMarker" state="1" groups="MOTOR_RUNNING"/>
         <!-- <dashboard displayType="VISIBILITY" node="g5Display_dblSwathMarkerLeftP1_CC" valueType="dbl.base"  jointSide="back" option="any" cmd="swath" state="2" groups="MOTOR_RUNNING"/> -->
         <!-- <dashboard displayType="VISIBILITY" node="g5Display_dblSwathMarkerRightP1_CC" valueType="dbl.base" jointSide="back" option="any" cmd="swath" state="1" groups="MOTOR_RUNNING"/> -->
         <dashboard displayType="EMITTER" node="g5Display_dblRidgeMarkerLeftP1_CC" emitColor="1 0 0.5 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
@@ -569,76 +581,571 @@
         <dashboard displayType="EMITTER" node="g5Display_dblEnvWeatherSnowIconP1_CC"    emitColor="0.9 0.9 0.9 1" intensity="0.7" groups="MOTOR_RUNNING"/>
         <dashboard displayType="EMITTER" node="g5Display_dblEnvWeatherTwisterIconP1_CC" emitColor="0.9 0.005 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
 		
-		<!-- Camera -->
-        
+        <!-- PrecisionFarming-->
+        <dashboard displayType="VISIBILITY" valueType="dbl.precfarming" cmd="cropSensor" node="g5Display_dblPf_CropSensorActive1_P1_GPS" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.precfarming" cmd="cropSensor" node="g5Display_dblPf_CropSensorActive2_P1_GPS" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_dblSprayAmountAutoModeSliderP1_CC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fieldNumber" cond="not" condValue="0" node="g5Display_dblPrecisionFarmingBg1_P1_GPS" groups="MOTOR_RUNNING"/>
 
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_Actual_P1_GPS" textColor="0.8 0.5 0.2 1"  textSize="0.0025"   textMask="Actual"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_Target_P1_GPS" textColor="0.2 0.5 0.7 1"  textSize="0.0025"   textMask="Target"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_Changed_P1_GPS" textColor="0.1 0.9 0.2" textSize="0.0025"  textMask="Changed"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_AR_Text_P1_GPS" textColor="0.9 0.2 0.9 1" textSize="0.0025"  textMask="Application Rate"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_PH_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0025"       textMask="pH"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_N_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0025"        textMask="N"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phActual" node="g5Display_dblPf_PHactual_P1_GPS" textColor="0.8 0.5 0.2 1" textSize="0.0035" textMask="00.000"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phTarget" node="g5Display_dblPf_PHtarget_P1_GPS" textColor="0.2 0.5 0.7 1" textSize="0.0035" textMask="00.000"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phChanged" node="g5Display_dblPf_PHchanged_P1_GPS" textColor="0.1 0.9 0.2 1" textSize="0.0035" textMask="00.000"             font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nActual" node="g5Display_dblPf_NitrogenActual_P1_GPS" textColor="0.8 0.5 0.2 1" textSize="0.0035" textMask="00.000"          font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nTarget" node="g5Display_dblPf_NitrogenTarget_P1_GPS" textColor="0.2 0.5 0.7 1" textSize="0.0035" textMask="00.000"          font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nChanged" node="g5Display_dblPf_NitrogenChanged_P1_GPS" textColor="0.1 0.9 0.2 1" textSize="0.0035" textMask="00.000"        font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="applicationRate" node="g5Display_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.2 0.9 1" textSize="0.0035" textMask="00.000" font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="soilType" node="g5Display_dblPf_SoilType_P1_GPS" textColor="0.9 0.9 0.8" textSize="0.0035" textMask="sssssssssssssss"      font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" node="g5Display_dblPf_CropSensorActive1_P1_GPS" emitColor="0.0 0.95 0.0 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5Display_dblPf_CropSensorActive2_P1_GPS" emitColor="0.0 0.95 0.0 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="EMITTER" node="g5Display_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" baseColor="0 0 0" emitColor="0.3 0.7 0.3" intensityDarkMode="0.05" default="0" groups="MOTOR_ACTIVE PAGESC1"/>
+
+		<!-- Camera -->
 
     </dashboardCompound>
 
 
 
 
-    <!-- COMBINE -->
+   <!-- COMBINE -->
     <!-- <dashboardCompound name="JOHNDEERE_G4_APILLAR_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="aPillarScreen"> -->
-    <dashboardCompound name="JOHNDEERE_G5_APILLAR_COMBINE_DISPLAY" filename="$data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="g5Display_aPillarHarvester_decal">
+    <dashboardCompound name="JOHNDEERE_G5_APILLAR_COMBINE_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="aPillarScreenCombine">
+        <!-- <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_decal" baseColor="0 0 0" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" groups="MOTOR_ACTIVE"/> -->
         <!-- numbers -->
         <dashboard displayType="TEXT" valueType="motorized.rpm" node="g5Display_aPillarHarvester_numbersRPM" textColor="1 1 1 1" textSize="0.009" textMask="0000" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="motorized.speed" node="g5Display_aPillarHarvester_numbersSpeed" textColor="1 1 1 1" textSize="0.009" textMask="0.00" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE" maxActiveValue="9.99"/>
         <dashboard displayType="TEXT" valueType="motorized.speed" node="g5Display_aPillarHarvester_numbersSpeed" textColor="1 1 1 1" textSize="0.009" textMask="00.0" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE" minActiveValue="10"/>
         <dashboard displayType="TEXT" valueType="enterable.operatingTime" node="g5Display_aPillarHarvester_numbersOperatingTime" textColor="1 1 1 1" textSize="0.004" textMask="000.0 h" font="GENERIC" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="motorized.load" node="g5Display_aPillarHarvester_numbersLoad" textColor="1 1 1 1" textSize="0.0035" textMask="000%" textAlignment="RIGHT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" jointSide="front" factor="321" minActiveValue="0" maxActiveValue="210" node="g5Display_aPillarHarvester_numbersCutHeight" textColor="1 1 1 1" textSize="0.004" textMask="000.0" textAlignment="RIGHT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE PAGEAP1"/>
 
         <!-- icons -->
         <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="g5Display_aPillarHarvester_iconTurnLightLeft_decal" baseColor="0 0 0" emitColor="GREEN" hideInactive="true" intensity="0.3" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="g5Display_aPillarHarvester_iconTurnLightRight_decal" baseColor="0 0 0" emitColor="GREEN" hideInactive="true" intensity="0.3" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="g5Display_aPillarHarvester_iconTurnLightTrailer_decal" baseColor="0 0 0" emitColor="GREEN" hideInactive="true" intensity="0.3" groups="MOTOR_ACTIVE BACK_ATTACHMENT"/>
-        <dashboard displayType="EMITTER" valueType="lights.lightState" node="g5Display_aPillarHarvester_iconHighBeamLight_decal" baseColor="0 0 0" emitColor="BLUE" hideInactive="true" intensity="0.3" lightTypes="3" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="g5Display_aPillarHarvester_iconHighBeamLight_decal" baseColor="0 0 0" emitColor="BLUE" hideInactive="true" intensity="0.4" lightTypes="3" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" valueType="lights.lightState" node="g5Display_aPillarHarvester_iconDefaultLight_decal" baseColor="0 0 0" emitColor="GREEN" hideInactive="true" intensity="0.3" lightTypes="0" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5Display_aPillarHarvester_iconGPSActive_decal" baseColor="0 0 0" emitColor="1 1 1" hideInactive="true" intensity="0.3" groups="MOTOR_ACTIVE"/>
+        
+        <!-- worklights -->
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="g5Display_aPillarHarvester_IconWorklightFront_AP" lightTypes="2" baseColor="0 0 0" emitColor="1 0.5 0" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="g5Display_aPillarHarvester_IconWorklightBack_AP"  lightTypes="1" baseColor="0 0 0" emitColor="1 0.5 0" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.lightState" node="g5Display_aPillarHarvester_IconLightPipe_AP"      lightTypes="4" baseColor="0 0 0" emitColor="1 0.5 0" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="lights.beaconLight" node="g5Display_aPillarHarvester_IconLightBeacons_AP"                 baseColor="0 0 0" emitColor="1 0.3 0" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        
+        <dashboard valueType="dbl.vca" cmd="park" displayType="VISIBILITY" node="g5Display_aPillarHarvester_Park_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_Park_AP" emitColor="RED" intensity="0.8" idleValue="-1" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.vca" cmd="park" cond="not" displayType="AUDIO" outside="true" distance="50.0" audioName="Brake" loop="1" volume="0.5" audioFile="$data/sounds/vehicles/brake/vehBrakeCompressedAir_02.ogg" groups="MOTOR_ACTIVE" />
+        <dashboard valueType="dbl.vca" cmd="park" displayType="AUDIO" outside="true" distance="50.0" audioName="BrakeRelease" loop="1" volume="0.4" audioFile="$data/sounds/vehicles/brake/vehTruckBrakeAirRelease_BgMN01.ogg" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="g5Display_aPillarHarvester_IconStop_AP" doInterpolation="true" interpolationSpeed="0.0007" groups="MOTOR_RUNNING">
+            <state value="-1" visibility="false"/>
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+        <dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="g5Display_aPillarHarvester_IconStopBG_AP" doInterpolation="true" interpolationSpeed="0.0007" groups="MOTOR_RUNNING">
+            <state value="-1" visibility="false"/>
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
 
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="pipeState" state="2" node="g5Display_aPillarHarvester_IconUnloadingPipe_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="combine" cmd="pipeState" state="2" node="g5Display_aPillarHarvester_IconUnloadingPipe_AP" baseColor="0.3 0.3 0.3 1" emitColor="GREEN" intensity="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="overloading" state="1" node="g5Display_aPillarHarvester_BlinkUnloading_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="combine" cmd="overloading" state="1" node="g5Display_aPillarHarvester_BlinkUnloading_AP" baseColor="0.3 0.3 0.3 1" emitColor="GREEN" intensity="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="pipeFolding" node="g5Display_aPillarHarvester_IconFoldingPipe_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER"node="g5Display_aPillarHarvester_IconFoldingPipe_AP" baseColor="0.3 0.3 0.3 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.5" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_IconStop_AP" baseColor=".3 .3 .3" emitColor="1 1 1" intensity="0.2" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_IconStopBG_AP" baseColor=".3 .3 .3" emitColor="RED" intensity="0.9" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_iconStarting_decals" intensity="0.3" hideInactive="true" groups="MOTOR_STARTING"/>
 
         <!-- sliders -->
         <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="g5Display_aPillarHarvester_sliderFuel_decal" intensity="0.2" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="g5Display_aPillarHarvester_sliderDef_decal" intensity="0.2" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="g5Display_aPillarHarvester_sliderDef_decal" intensity="0.2" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="combine" cmd="pipeFoldingState" factor="10" minValueSlider="0" maxValueSlider="10" node="g5Display_aPillarHarvester_sliderPipe_decal" intensity="0.2" groups="MOTOR_ACTIVE PAGEAP1"/>
 
         <dashboard displayType="TRANS" valueType="motorized.motorTemperature" node="g5Display_aPillarHarvester_loadBarTemperature_decal" minTrans="0 0 0" maxTrans="0 0 0.035" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TRANS" valueType="motorized.load" node="g5Display_aPillarHarvester_loadBarLoad_decal" minTrans="0 0 0" maxTrans="0 0 0.035" interpolationSpeed="0.003" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="motorized.motorTemperature" maxActiveValue="56"   node="g5Display_aPillarHarvester_loadBarTemperature_decal" emitColor="0 0 1" intensity="0.4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" valueType="motorized.motorTemperature" minActiveValue="56.1" node="g5Display_aPillarHarvester_loadBarTemperature_decal" emitColor="1 1 1" intensity="0.4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_loadBarLoad_decal" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TRANS" valueType="motorized.load" node="g5Display_aPillarHarvester_loadBarLoad_decal" minTrans="0 0 0" maxTrans="0 0 0.035" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="VISIBILITY" node="g5Display_aPillarHarvester_cutHeightPin_decalRot"groups="MOTOR_RUNNING PAGEAP1"/>
+        <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TRANS" valueType="dbl.base" cmd="liftState" jointSide="front" factor="1" minValueTrans="0.3" maxValueTrans=".5" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" minTrans="0 0 -0.03" maxTrans="0 0 0" doInterpolation="true" interpolationSpeed="0.0003" groups="MOTOR_ACTIVE PAGEAP1"/>
+        
+        <!-- aP P2 -->
+        <dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g5Display_naviMapTractorP1_AP" groups="MOTOR_RUNNING PAGEAP2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g5HarvestingPageAP_dblNaviPosition" groups="MOTOR_RUNNING PAGEAP2"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g5Display_naviMapTractorP1_AP" intensity="0.3" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g5HarvestingPageAP_dblNaviPosition" intensity="1.0" intensityDarkMode="0.6" groups="MOTOR_ACTIVE"/>
 
         <!-- display -->
-        <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_decal" idleValue="-1" hideInactiveChildren="true" intensity="0.3" groups="MOTOR_ACTIVE" />
+        <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_decal" idleValue="-1" hideInactiveChildren="true" intensity="0.4" intensityDarkMode="0.05" groups="MOTOR_ACTIVE" />
     </dashboardCompound>
 
-
-    <dashboardCompound name="JOHNDEERE_G5_HARVESTINGPAGE" filename="$data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="g5Display_harvestingPage_decal">
+    <!-- SC -->
+    <dashboardCompound name="JOHNDEERE_G5_HARVESTINGPAGE" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="basicScreenCombine">
         <!-- numbers -->
-        <dashboard displayType="TEXT" valueType="enterable.time" node="g5Display_harvestingPage_numbersTime" textColor="1 1 1 1" textSize="0.0035" textMask="00:00" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="combine.workedHectars" node="g5Display_harvestingPage_numbersHaCounter" textColor="0 0 0 0" textSize="0.007" textMask="000.0" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="g5Display_harvestingPage_numbersFillLevelPct" fillUnitIndex="1" textColor="0 0 0 0" textSize="0.005" textMask="000%" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="enterable.time"                node="g5HarvestingPageBasic_dblGemeTimeNumberP1_SC" textColor="1 1 1 1" textSize="0.0035" textMask="00:00" textScaleX="0.8" textAlignment="LEFT" emissiveScale="0.8" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="playerName"     node="g5HarvestingPageBasic_dblUserNameNumberP1_SC" textColor="1 1 1 1" textSize="0.0035" textMask="sssssssssssssssss" textScaleX="0.8" textAlignment="LEFT" emissiveScale="0.8" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 
-        <!-- icons -->
-        <dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g5Display_harvestingPage_iconGPSActive_decal" idleValue="-1" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5Display_harvestingPage_iconGPSActive_decal" intensity="0.3" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="combine.workedHectars"         node="g5HarvestingPageBasic_dblHectarCounterNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="000.000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct"         node="g5HarvestingPageBasic_dblFilllevelPercentNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="000%" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="fillUnit.fillLevel"            node="g5HarvestingPageBasic_dblFilllevelLiterNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.0055" textMask="00000.0" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.gpsWidth"                  node="g5HarvestingPageBasic_dblSpreadWidthNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.003" textMask="00" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber"    node="g5HarvestingPageBasic_dblFieldNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.006" textMask="000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="fillLevel" fillType="DIESEL"   node="g5HarvestingPageBasic_dblDieselLiterNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.006" textMask="0000.00" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.fuelUsage"           node="g5HarvestingPageBasic_dblDieselUsageNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="000.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.speed"               node="g5HarvestingPageBasic_dblSpeedNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.rpm"                 node="g5HarvestingPageBasic_dblRpmNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="drivable.cruiseControl"        node="g5HarvestingPageBasic_dblCruiseControlSpeedNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <!-- <dashboard displayType="TEXT" valueType="cc" cmd="speed"           node="g5HarvestingPageBasic_dblCruiseControlSpeedNumberP1_SC" textColor="0 0 0 0" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/> -->
+        <dashboard displayType="TEXT" valueType="enterable.operatingTime"       node="g5HarvestingPageBasic_dblOperatingHoursNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00000.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.005" doInterpolation="true" interpolationSpeed="0.04" node="g5HarvestingPageBasic_dblRpmReelP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.02" doInterpolation="true" interpolationSpeed="0.05" node="g5HarvestingPageBasic_dblRpmReelPullInP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.18" doInterpolation="true" interpolationSpeed="0.2" node="g5HarvestingPageBasic_dblRpmHarvestingP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="1.13" doInterpolation="true" interpolationSpeed="0.4" node="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="icon"      node="g5HarvestingPageBasic_dblFruitTypeIconP1_SC" intensity=".5" groups="MOTOR_RUNNING"/>
+
+
+        <dashboard displayType="TEXT" valueType="ai.automaticSteering.headingLetter" node="g5HarvestingPageBasic_dblHeadingNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>	
+		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading"       node="g5HarvestingPageBasic_dblHeadingAngleNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+		<dashboard displayType="TEXT"                                                node="g5HarvestingPageBasic_dblHeadingDegreesSignNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.002" textMask="o" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+		<dashboard displayType="TEXT" valueType="dbl.gpsLane"   node="g5HarvestingPageBasic_dblLaneNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.005" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+        <dashboard displayType="TEXT" valueType="dbl.gpsWidth"  node="g5HarvestingPageBasic_dblWorkWidthNumberP1_SC" textColor="0.05 0.05 0.04 1" textColorDarkMode="0 0 0 1" textSize="0.007" textMask="00.00m" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+
+        <!-- cutHeight doesn't func -->
+        <dashboard displayType="TEXT" valueType="combine" cmd="cutHeight" node="g5HarvestingPageBasic_dblCutHeightNumberP1_SC" textColor="0.4 0.4 0.7 1" textSize="0.005" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 
         <!-- displays -->
         <dashboard displayType="VISIBILITY" node="g5Display_harvestingPage_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
         <dashboard displayType="EMITTER" node="g5Display_harvestingPage_startScreen_decal" intensity="0.3" groups="MOTOR_STARTING"/>
-        <dashboard displayType="EMITTER" node="g5Display_harvestingPage_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
-    </dashboardCompound>
+        <dashboard displayType="EMITTER" node="harvestingPageBasic_Screen" idleValue="-1" intensity="0.3" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/>
 
-    <dashboardCompound name="JOHNDEERE_G5_HARVESTAUTOMATIONPAGE" filename="$data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="g5Display_harvestAutomationPage_decal">
+        <!-- MiniMap -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g5HarvestingPageBasic_dblNaviMapP1_SC" groups="MOTOR_RUNNING"/>
+		<!-- <dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g5HarvestingPageSC_dblNaviPosition" groups="MOTOR_RUNNING"/> -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g5HarvestingPageBasic_dblNaviMapP1_SC" intensity="0.5" intensityDarkMode="0.1" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g5HarvestingPageSC_dblNaviPosition" intensity="1" groups="MOTOR_ACTIVE"/> -->
+
+        <!-- gps -->
+        <dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSActiveIconP1_SC" idleValue="-1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSActiveIconP1_SC" intensity="0.3" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringState" node="g5HarvestingPageBasic_dblGPSSatellitP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSSatellitP1_SC" baseColor=".5 .5 .5" emitColor="1 1 1" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY"  node="g5HarvestingPageBasic_dblSetTrackButtonP1_CC1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="MULTI_STATE" node="g5HarvestingPageBasic_dblSetTrackButtonP1_CC1" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING" >
+			<state value="0" visibility="true"/>
+            <state value="1" visibility="false"/>
+            <state value="2" visibility="false"/>
+		</dashboard>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblSetTrackButtonP1_CC1" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_RUNNING"/>
+
+        <!-- CruiseControl -->
+        <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive"        node="g5HarvestingPageBasic_dblCC1ActiveP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="1"       node="g5HarvestingPageBasic_dblCC1ActiveP1_SC" baseColor="0.05 0.05 0.05 1" emitColor="GREEN" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.cc" cmd="active" state="2"       node="g5HarvestingPageBasic_dblCC2ActiveP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="2"       node="g5HarvestingPageBasic_dblCC2ActiveP1_SC" baseColor="0.05 0.05 0.05 1" emitColor="BLUE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.cc" cmd="active" state="3"       node="g5HarvestingPageBasic_dblCC3ActiveP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="3"       node="g5HarvestingPageBasic_dblCC3ActiveP1_SC" baseColor="0.05 0.05 0.05 1" emitColor="RED" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <!-- GrainTank -->
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folded" joints="0" node="g5HarvestingPageBasic_dblGrainTankFoldingP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblGrainTankFoldingP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolded" joints="0" node="g5HarvestingPageBasic_dblGrainTankUnfoldingP1_SC1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblGrainTankUnfoldingP1_SC1" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolding" joints="0" node="g5HarvestingPageBasic_dblGrainTankFoldingStatusP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblGrainTankFoldingStatusP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folding" joints="0" node="g5HarvestingPageBasic_dblGrainTankUnfoldingStatusP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblGrainTankUnfoldingStatusP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <!-- Cutter -->
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="foldable" jointSide="front" node="cutterFolding" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolding" jointSide="front" node="g5HarvestingPageBasic_dblCutterFoldedP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterFoldedP1_SC" baseColor="1 1 1 1" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.6" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folding" jointSide="front" node="g5HarvestingPageBasic_dblCutterUnfoldedP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterUnfoldedP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folded" jointSide="front" node="g5HarvestingPageBasic_dblCutterUnfoldingP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterUnfoldingP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolded" jointSide="front" node="g5HarvestingPageBasic_dblCutterFoldingP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterFoldingP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="chopper" stateText="enabled" node="g5HarvestingPageBasic_dblSwathShredderP1_SC" idleValue="-1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblSwathShredderP1_SC" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="chopper" stateText="enabled" node="g5HarvestingPageBasic_dblSwathSpreadLP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="chopper" stateText="enabled" node="g5HarvestingPageBasic_dblSwathSpreadRP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="swath"   stateText="enabled" node="g5HarvestingPageBasic_dblSwathSliderFakeP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="dbl.gpsWidth" node="g5HarvestingPageBasic_dblSwathSpreadLP1_SC" minValueSlider="3" maxValueSlider="15.2" intensity="0.4" intensityDarkMode="0.01" doInterpolation="true" interpolationSpeed="0.006" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="dbl.gpsWidth" node="g5HarvestingPageBasic_dblSwathSpreadRP1_SC" minValueSlider="3" maxValueSlider="15.2" intensity="0.4" intensityDarkMode="0.01" doInterpolation="true" interpolationSpeed="0.006" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblSwathSliderFakeP1_SC" intensity="0.4" intensityDarkMode="0.1" doInterpolation="true" interpolationSpeed="0.006" groups="MOTOR_RUNNING"/>
+        <!-- workWith doesn't func -->
+
+
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblFilllevelSliderP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevelPct" fillUnitIndex="1" factor="1" node="g5HarvestingPageBasic_dblFilllevelSliderP1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.3" intensityDarkMode="0.1" doInterpolation="true" interpolationSpeed="0.2" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageBasic_dblGrainFillP1_SC" intensity="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"  node="g5HarvestingPageBasic_dblGrainFillP1_SC" intensity="0.3" emitColor="RED" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSActiveONP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSActiveONP1_SC" baseColor="0 0 0" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSActiveP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5HarvestingPageBasic_dblGPSActiveP1_SC" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="pto" jointSide="front" node="g5HarvestingPageBasic_dblCutterActiveP1_SC" doInterpolation="true" interpolationSpeed="0.00005" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    node="g5HarvestingPageBasic_dblCutterActiveP1_SC" baseColor="0 0.2 0 1" emitColor="1 0 0 1" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="pto" jointSide="front" node="g5HarvestingPageBasic_dblCutterPTOactiveP1_SC" doInterpolation="true" interpolationSpeed="0.0025" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    node="g5HarvestingPageBasic_dblCutterPTOactiveP1_SC" emitColor="1 1 1 1" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+
+        <!-- Groups -->
+        <!-- jointType="cutterHarvester" -->
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblGroupCombineP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5HarvestingPageBasic_dblGroupCutterP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.base" cmd="connected" jointSide="back" option="any" displayType="VISIBILITY" node="g5HarvestingPageBasic_dblGroupTrailerP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.selection" selection="0" displayType="EMITTER" node="g5HarvestingPageBasic_dblGroupCombineP1_SC" 		baseColor="0.5 0.5 0.5 1" emitColor="0.6 0.6 0.6 1" intensity="0.4"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="1" displayType="EMITTER" node="g5HarvestingPageBasic_dblGroupCutterP1_SC"  		baseColor="0.5 0.5 0.5 1" emitColor="1 1 1 1" intensity="0.6"  intensityDarkMode="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="-1" displayType="EMITTER" node="g5HarvestingPageBasic_dblGroupTrailerP1_SC"  	baseColor="0.5 0.5 0.5 1" emitColor="1 1 1 1" intensity="0.6"  intensityDarkMode="0.3" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowered" jointSide="front" node="g5HarvestingPageBasic_dblCutterLoweredP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterLoweredP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifted" jointSide="front" node="g5HarvestingPageBasic_dblCutterLiftedP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterLiftedP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowering" jointSide="front" node="g5HarvestingPageBasic_dblCutterLoweringP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterLoweringP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifting" jointSide="front" node="g5HarvestingPageBasic_dblCutterLiftingP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageBasic_dblCutterLiftingP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageBasic_dblCutterFilling1P1_SC" intensity="0.6" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                      node="g5HarvestingPageBasic_dblCutterFilling1P1_SC" intensity="0.6" emitColor="ORANGE" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageBasic_dblCutterFilling2P1_SC" intensity="0.6" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                      node="g5HarvestingPageBasic_dblCutterFilling2P1_SC" intensity="0.6" emitColor="ORANGE" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageBasic_dblCutterFilling3P1_SC" intensity="0.6" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                      node="g5HarvestingPageBasic_dblCutterFilling3P1_SC" intensity="0.6" emitColor="ORANGE" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageBasic_dblCutterFilling4P1_SC" intensity="0.6" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                      node="g5HarvestingPageBasic_dblCutterFilling4P1_SC" intensity="0.6" emitColor="ORANGE" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageBasic_dblCutterFilling5P1_SC" intensity="0.6" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                      node="g5HarvestingPageBasic_dblCutterFilling5P1_SC" intensity="0.6" emitColor="ORANGE" groups="MOTOR_RUNNING"/>
+        
+        <!-- HLM -->
+		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g5HarvestingPageBasic_dblHLMActiveONP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g5HarvestingPageBasic_dblHlmHeadActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="headland" displayType="VISIBILITY" node="g5HarvestingPageBasic_dblHLMHeadlandP1_SC"  groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="field"	 displayType="VISIBILITY" node="g5HarvestingPageBasic_dblHLMFieldP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="contour"  displayType="VISIBILITY" node="g5HarvestingPageBasic_dblHlmConourActiveRotBlinkP1_SC" groups="MOTOR_RUNNING"/>
+
+		<dashboard valueType="hlm" option="field" 	 displayType="EMITTER"    node="g5HarvestingPageBasic_dblHLMFieldP1_SC" 	           baseColor="GREEN" emitColor="GREEN" intensity="0.3" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="headland" displayType="EMITTER"    node="g5HarvestingPageBasic_dblHLMHeadlandP1_SC" 							                    emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option="contour"  displayType="EMITTER"    node="g5HarvestingPageBasic_dblHlmConourActiveRotBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.9 0.04 1" intensity="0.9" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option=""         displayType="EMITTER"    node="g5HarvestingPageBasic_dblHLMActiveONP1_SC"             baseColor="0 0 0" intensity="0.4" intensityDarkMode="0.2"  groups="MOTOR_RUNNING"/>
+		<dashboard valueType="hlm" option=""         displayType="EMITTER"    node="g5HarvestingPageBasic_dblHlmHeadActiveP1_SC"           emitColor="1 1 1" intensity="0.4" intensityDarkMode="0.2"  groups="MOTOR_RUNNING"/>
+
+        <!-- CVTa -->
+        <dashboard displayType="AUDIO" valueType="dbl.cvt" cmd="critheat" state="1" outside="false" distance="1.0" loop="3" volume="0.5" audioName="heatCrit" audioFile="utils/sounds/warning.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard displayType="AUDIO" valueType="dbl.cvt" cmd="critdamage" state="1" outside="false" distance="1.0" loop="1" volume="0.3" audioName="dmgCrit" audioFile="utils/sounds/alarm.ogg" groups="MOTOR_ACTIVE" />
+
+        <dashboard displayType="TEXT" valueType="dbl.cvt" cmd="cvtwear" node="g5HarvestingPageBasic_dblCvtGearWearPercentNumbersP1_SC" textColor="0.05 0.05 0.04 1" textSize="0.003" textMask="000%" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4"   node="g5HarvestingPageBasic_dblCvtAccRampOneP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampTwoP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampThreeP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampFourP1_SC" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="1"            node="g5HarvestingPageBasic_dblCvtAccRampOneP1_SC"   baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="2"            node="g5HarvestingPageBasic_dblCvtAccRampTwoP1_SC"   baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="3"            node="g5HarvestingPageBasic_dblCvtAccRampThreeP1_SC" baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="4"            node="g5HarvestingPageBasic_dblCvtAccRampFourP1_SC"  baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" valueType="dbl.cvt" cmd="drivinglevel" state="2" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC"  valueType="dbl.cvt" cmd="drivinglevel" state="1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" valueType="dbl.cvt" cmd="drivinglevel" state="2" textColor="1 1 1 1" textSize="0.006" textMask="Strassenfahrt" textScaleX="0.8" emissiveScale="0.7" textAlignment="LEFT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC"  valueType="dbl.cvt" cmd="drivinglevel" state="1" textColor="1 1 1 1" textSize="0.006" textMask="Feldmodus"     textScaleX="0.8" emissiveScale="0.7" textAlignment="LEFT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preglowing"             node="g5HarvestingPageBasic_dblCvtPreglowActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="glowingstate" state="1" node="g5HarvestingPageBasic_dblCvtPreglowReadyP1_SC" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warnheat" state="1"     node="g5HarvestingPageBasic_dblCvtHeatWarnIconP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critheat" state="1"     node="g5HarvestingPageBasic_dblCvtHeatCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warndamage" state="1"   node="g5HarvestingPageBasic_dblCvtDamageWarnIconP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critdamage" state="1"   node="g5HarvestingPageBasic_dblCvtDamageCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="highpressure" state="1" node="g5HarvestingPageBasic_dblCvtHighPressureBlinkP1_SC" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtHeatWarnIconP1_SC" 	 valueType="dbl.cvt" cmd="critheat" state="0"   baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtHeatCritBlinkP1_SC"   valueType="dbl.cvt" cmd="critheat" state="1"   emitColor="0.9 0.45 0.04 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtDamageWarnIconP1_SC"  valueType="dbl.cvt" cmd="critdamage" state="0" baseColor="0.5 0.5 0.4 1" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtDamageCritBlinkP1_SC" valueType="dbl.cvt" cmd="critdamage" state="1" emitColor="0.9 0.45 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtHighPressureBlinkP1_SC" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtGearWearPercentIconP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    node="g5HarvestingPageBasic_dblCvtGearWearPercentIconP1_SC" baseColor="0.8 0.35 0.004 1" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
+		
+        <!-- i need to update it -->
+        <!-- <dashboard displayType="MULTI_STATE" node="g5HarvestingPageBasic_dblCvtVmaxFowardNumberP1_SC" valueType="drivable.movingDirection" groups="MOTOR_RUNNING">
+            <state value="-1" visibility="false"/>
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="true"/>
+		</dashboard>
+        <dashboard displayType="MULTI_STATE" node="g5HarvestingPageBasic_dblCvtVmaxBackwardNumberP1_SC" valueType="drivable.movingDirection" groups="MOTOR_RUNNING">
+            <state value="-1" visibility="true"/>
+			<state value="0" visibility="false"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+        <dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblCvtVmaxFowardNumberP1_SC"    valueType="dbl.cvt" cmd="vmaxfoward"   textColor="0.4 0.7 0.4 1" textSize="0.004" textMask="00" textScaleX="0.8" emissiveScale="0.7" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblCvtVmaxBackwardNumberP1_SC"  valueType="dbl.cvt" cmd="vmaxbackward" textColor="0.7 0.4 0.4 1" textSize="0.004" textMask="00" textScaleX="0.8" emissiveScale="0.7" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/> -->
+
+        <!-- diffs + cvt-->
+		<dashboard displayType="VISIBILITY"  node="g5HarvestingPageBasic_dblDifferentialIconP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER"     node="g5HarvestingPageBasic_dblDifferentialIconP1_SC" emitColor="0.05 0.05 0.04 1" intensity="0.8" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		
+		<dashboard valueType="dbl.vca" cmd="diff_awd" displayType="VISIBILITY"      node="g5HarvestingPageBasic_dblDiffAwdP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_front" displayType="VISIBILITY"    node="g5HarvestingPageBasic_dblDiffLockFrontP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_back" displayType="VISIBILITY"     node="g5HarvestingPageBasic_dblDiffLockBackP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_awdF" displayType="VISIBILITY"     node="g5HarvestingPageBasic_dblFrontAxleVoreilungActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_awd" displayType="EMITTER"         node="g5HarvestingPageBasic_dblDiffAwdP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_front" displayType="EMITTER"       node="g5HarvestingPageBasic_dblDiffLockFrontP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_back" displayType="EMITTER"        node="g5HarvestingPageBasic_dblDiffLockBackP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.vca" cmd="diff_awdF" displayType="EMITTER"        node="g5HarvestingPageBasic_dblFrontAxleVoreilungActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
+
+        <dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="30" factor="100" outside="false" distance="1.0" loop="1" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="100" outside="false" distance="1.0" loop="2" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="100" outside="false" distance="1.0" loop="4" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs" state="1"    node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="preautodiffs" state="1"    node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" baseColor="JOHNDEERE_ORANGE1" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autodiffs" state="1"       node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" 							 intensity="0.7" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipIconP1_SC" factor="100" cond="less" condValue="40" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipBlinkP1_SC" factor="100" cond="moreequal" condValue="40" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblWheelSlipIconP1_SC"  baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.05 0.04 1" intensity="0.8" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblWheelSlipBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipPercentNumbersP1_SC" factor="100" textColor="0.05 0.05 0.04 1" textSize="0.0035" doInterpolation="true" interpolationSpeed="0.08" textMask="000%" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        
+
+        <dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="100" node="g5HarvestingPageBasic_dblFuelWarningP1_CC1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblFuelWarningP1_CC1" emitColor="1 0.5 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="AUDIO" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="100" outside="false" distance="1.0" loop="1" volume="0.4" audioName="fuelWarning" audioFile="$data/sounds/vehicles/reverse_beep/vehTerraVariant435ReverseBeepPlay_01.ogg" groups="MOTOR_ACTIVE"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="50" node="g5HarvestingPageBasic_dblFuelWarnLowP1_CC1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblFuelWarnLowP1_CC1" emitColor="1 0.3 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="AUDIO" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="50" outside="false" distance="1.0" loop="2" volume="0.4" audioName="fuelWarning" audioFile="$data/sounds/vehicles/reverse_beep/vehTerraVariant435ReverseBeepPlay_01.ogg" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="25" node="g5HarvestingPageBasic_dblFuelWarnResP1_CC1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblFuelWarnResP1_CC1" emitColor="1 0.1 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="AUDIO" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="25" outside="false" distance="1.0" loop="4" volume="0.4" audioName="fuelWarning" audioFile="$data/sounds/vehicles/reverse_beep/vehTerraVariant435ReverseBeepPlay_01.ogg" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="1" node="harvestingPageBasic_ScreenWarningFuel" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="harvestingPageBasic_ScreenWarningFuel" emitColor="1 0.1 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+
+        <!-- weather -->
+        <dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblEnvWeatherSunP1_SC" 	 textColorDarkMode="0.4 0.4 0.4 1" textColor="0.9 0.9 0.8 1"	textSize="0.005" textMask="Klar" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblEnvWeatherCloudyP1_SC"  textColorDarkMode="0.4 0.4 0.4 1" textColor="0.9 0.9 0.8 1"	textSize="0.005" textMask="Bedeckt" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblEnvWeatherRainP1_SC" 	 textColorDarkMode="0.4 0.4 0.4 1" textColor="0.9 0.9 0.8 1"	textSize="0.005" textMask="Regen" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblEnvWeatherHailP1_SC" 	 textColorDarkMode="0.4 0.4 0.4 1" textColor="0.9 0.9 0.8 1"	textSize="0.005" textMask="Hagel" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblEnvWeatherSnowP1_SC" 	 textColorDarkMode="0.4 0.4 0.4 1" textColor="0.9 0.9 0.8 1"	textSize="0.005" textMask="Schnee" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblEnvWeatherTwisterP1_SC" textColorDarkMode="0.5 0.1 0.0 1" textColor="0.9 0.4 0.1 1" textSize="0.005" textMask="Unwetter!" textAlignment="LEFT" emissiveScale="0.7" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="outsideTemperature" cond="less" condValue="3" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="5" volume="0.5" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+
+        <!-- <dashboard displayType="EMITTER" node="g5tempBg3_P1_GPS"     emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/> -->
+        <dashboard displayType="VISIBILITY" valueType="outsideTemperature"  node="g5HarvestingPageBasic_dblOutdoorTempNumbersP1_GPS" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="outsideTemperature"        node="g5HarvestingPageBasic_dblOutdoorTempNumbersP1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0055" textMask="00 C" font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblOutdoorTempOP1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.004" textMask="o" font="GENERIC" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+		
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblEnvWeatherSunIconP1_CC"      groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblEnvWeatherCloudyIconP1_CC"   groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblEnvWeatherRainIconP1_CC"     groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblEnvWeatherHailIconP1_CC"     groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblEnvWeatherSnowIconP1_CC"     groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblEnvWeatherTwisterIconP1_CC"  groups="MOTOR_RUNNING"/>
+		
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherSunIconP1_CC"     emitColor="0.9 0.25 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherCloudyIconP1_CC"  emitColor="0.2 0.2 0.3 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherRainIconP1_CC"    emitColor="0.01 0.01 0.8 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherHailIconP1_CC"    emitColor="0.1 0.5 0.4 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherSnowIconP1_CC"    emitColor="0.9 0.9 0.9 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherTwisterIconP1_CC" emitColor="0.9 0.005 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
+
+        <!-- PrecisionFarming-->
+        <!-- <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" groups="MOTOR_RUNNING"/> -->
+
+        <!-- <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phActual"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phTarget"        node="g5HarvestingPageBasic_dblPf_PHtarget_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phChanged"       node="g5HarvestingPageBasic_dblPf_PHchanged_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nActual"         node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nTarget"         node="g5HarvestingPageBasic_dblPf_NitrogenTarget_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nChanged"        node="g5HarvestingPageBasic_dblPf_NitrogenChanged_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="applicationRate" node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="soilType"        node="g5HarvestingPageBasic_dblPf_SoilType_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="sssssssssss" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/> -->
+
+        <!-- <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="SLIDER" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" intensityDarkMode="0.05" default="0" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE PAGESC1"/> -->
+
+        <!-- combineXP -->
+        <dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="tonPerHour"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0065" textMask="00.00 th"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="yield"         node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1"      textSize="0.0065" textMask="00.00tHa"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="engineLoad" node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0070" textMask="000.00%"    font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fieldNumber" cond="not" condValue="0" node="g5HarvestingPageBasic_dblPrecisionFarmingBg1_P1_GPS" groups="MOTOR_RUNNING"/>
+    </dashboardCompound>
+    
+    <!-- CC -->
+    <dashboardCompound name="JOHNDEERE_G5_HARVESTAUTOMATIONPAGE" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="gpsScreenCombine">
         <!-- numbers -->
         <dashboard displayType="TEXT" valueType="enterable.time" node="g5Display_harvestAutomationPage_numbersTime" textColor="1 1 1 1" textSize="0.0035" textMask="00:00" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="g5Display_harvestAutomationPage_numbersFillLevelPct" fillUnitIndex="1" textColor="0 0 0 0" textSize="0.005" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct"         node="g5HarvestingPageGPS_dblFilllevelPercentNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.01" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber"    node="g5HarvestingPageGPS_dblFieldNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.007" textMask="000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        <!-- <dashboard displayType="TEXT" valueType="drivable.cruiseControl"        node="g5HarvestingPageGPS_dblCruiseControlSpeedNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/> -->
+        <dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="icon"      node="g5HarvestingPageGPS_dblFruitTypeIconP1_SC" intensity=".5" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblFilllevelSliderP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevelPct" fillUnitIndex="1" factor="1" node="g5HarvestingPageGPS_dblFilllevelSliderP1_SC" emitColor="RED" minValueSlider="0" maxValueSlider="60" intensity="0.7" intensityDarkMode="0.4" doInterpolation="true" interpolationSpeed="0.2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblFilllevelSliderLP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevelPct" fillUnitIndex="1" factor="1" node="g5HarvestingPageGPS_dblFilllevelSliderLP1_SC" minValueSlider="60" maxValueSlider="100" intensity="0.7" intensityDarkMode="0.4" doInterpolation="true" interpolationSpeed="0.2" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblFilllevelSliderRP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="fillUnit.fillLevelPct" fillUnitIndex="1" factor="1" node="g5HarvestingPageGPS_dblFilllevelSliderRP1_SC" minValueSlider="60" maxValueSlider="100" intensity="0.7" intensityDarkMode="0.4" doInterpolation="true" interpolationSpeed="0.2" groups="MOTOR_RUNNING"/>
+        
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="filling" node="g5HarvestingPageGPS_dblGrainFillP1_SC" intensity="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"  node="g5HarvestingPageGPS_dblGrainFillP1_SC" intensity="0.3" emitColor="RED" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="TEXT" valueType="ai.automaticSteering.headingLetter" node="g5HarvestingPageGPS_dblHeadingNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>	
+		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading"       node="g5HarvestingPageGPS_dblHeadingAngleNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+		<dashboard displayType="TEXT"                                                node="g5HarvestingPageGPS_dblHeadingDegreesSignNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.002" textMask="o" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+		<dashboard displayType="TEXT" valueType="dbl.gpsLane"                        node="g5HarvestingPageGPS_dblLaneNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.005" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
+
+        <dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="g5HarvestingPageGPS_dblWorkWidthNumberP1_SC" textColor="0.05 0.05 0.04 1" textColorDarkMode="0 0 0 1" textSize="0.007" textMask="00.00m" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>	
 
         <!-- icons -->
         <dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g5Display_harvestAutomationPage_iconGPSActive_decal" idleValue="-1" groups="MOTOR_RUNNING"/>
         <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5Display_harvestAutomationPage_iconGPSActive_decal" intensity="0.3" groups="MOTOR_RUNNING"/>
 
+        <dashboard displayType="VISIBILITY"  node="g5HarvestingPageGPS_dblSetTrackButtonP1_CC1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="MULTI_STATE" node="g5HarvestingPageGPS_dblSetTrackButtonP1_CC1" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING" >
+			<state value="0" visibility="true"/>
+            <state value="1" visibility="false"/>
+            <state value="2" visibility="false"/>
+		</dashboard>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblSetTrackButtonP1_CC1" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_RUNNING"/>
+
         <!-- displays -->
         <dashboard displayType="VISIBILITY" node="g5Display_harvestAutomationPage_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
         <dashboard displayType="EMITTER" node="g5Display_harvestAutomationPage_startScreen_decal" intensity="0.3" groups="MOTOR_STARTING"/>
-        <dashboard displayType="EMITTER" node="g5Display_harvestAutomationPage_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" node="g5HarvestingPageGPS_Screen" idleValue="-1" intensity="0.3" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/>
+
+        <!-- Foldings -->
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblCombineFolding" groups="MOTOR_RUNNING"/> 	
+        <dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblCombineFolding" intensity="0.8" groups="MOTOR_RUNNING"/> 	
+        
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblPipeFoldingRot" groups="MOTOR_RUNNING"/> 	
+        <dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblPipeFoldingRot" intensity="0.8" groups="MOTOR_RUNNING"/> 
+        <dashboard displayType="ROT" valueType="combine" cmd="pipeFoldingState" factor="1" rotAxis="2" minRot="-108" maxRot="0" minValueRot="0" maxValueRot="1" node="g5HarvestingPageGPS_dblPipeFoldingRot" intensity="0.5" groups="MOTOR_RUNNING"/> 	
+
+        <dashboard displayType="VISIBILITY" valueType="combine" cmd="overloading" state="1" node="g5HarvestingPageGPS_dblGrainOverloadingP1_CC" intensity="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" valueType="combine" cmd="overloading" state="1" node="g5HarvestingPageGPS_dblGrainOverloadingP1_CC" intensity="0.5" groups="MOTOR_RUNNING"/>
+
+        <!-- MiniMap -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g5HarvestingPageGPS_dblNaviMap" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g5HarvestingPageGPS_dblNaviPosition" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g5HarvestingPageGPS_dblNaviMap" intensity="0.6" intensityDarkMode="0.1" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g5HarvestingPageGPS_dblNaviPosition" intensity="2" groups="MOTOR_ACTIVE"/>
+
+        <!-- GrainTank -->
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folded" joints="0" node="g5HarvestingPageGPS_dblGrainTankFoldingP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageGPS_dblGrainTankFoldingP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolded" joints="0" node="g5HarvestingPageGPS_dblGrainTankUnfoldingP1_SC1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageGPS_dblGrainTankUnfoldingP1_SC1" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolding" joints="0" node="g5HarvestingPageGPS_dblGrainTankFoldingStatusP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageGPS_dblGrainTankFoldingStatusP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folding" joints="0" node="g5HarvestingPageGPS_dblGrainTankUnfoldingStatusP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"                                        node="g5HarvestingPageGPS_dblGrainTankUnfoldingStatusP1_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.7" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <!-- CruiseControl -->
+        <dashboard displayType="TEXT" valueType="cc" state="1" cmd="speed"      node="g5HarvestingPageGPS_dblCruiseControlSpeedNumberP1_SC"  textColor="0.9 0.9 0.9 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="cc" state="2" cmd="speed"      node="g5HarvestingPageGPS_dblCruiseControlSpeed2NumberP1_SC" textColor="0.9 0.9 0.9 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="cc" state="3" cmd="speed"      node="g5HarvestingPageGPS_dblCruiseControlSpeed3NumberP1_SC" textColor="0.9 0.9 0.9 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY"  node="g5HarvestingPageGPS_dblCCspeed1activeP1_SC" groups="MOTOR_RUNNING"/>
+        <!-- <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive" cond="not" node="g5HarvestingPageGPS_dblCCspeed1activeP1_SC" groups="MOTOR_RUNNING"/> -->
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="1"       node="g5HarvestingPageGPS_dblCCspeed1activeP1_SC" baseColor="0.5 0.5 0.5 1" emitColor="ORANGE" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY"       node="g5HarvestingPageGPS_dblCCspeed2activeP1_SC" groups="MOTOR_RUNNING"/>
+        <!-- <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive" cond="not"      node="g5HarvestingPageGPS_dblCCspeed2activeP1_SC" groups="MOTOR_RUNNING"/> -->
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="2"       node="g5HarvestingPageGPS_dblCCspeed2activeP1_SC" baseColor="0.5 0.5 0.5 1" emitColor="ORANGE" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY"       node="g5HarvestingPageGPS_dblCCspeed3activeP1_SC" groups="MOTOR_RUNNING"/>
+        <!-- <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive" cond="not"      node="g5HarvestingPageGPS_dblCCspeed3activeP1_SC" groups="MOTOR_RUNNING"/> -->
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="3"       node="g5HarvestingPageGPS_dblCCspeed3activeP1_SC" baseColor="0.5 0.5 0.5 1" emitColor="ORANGE" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
+        
+
+        <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive"        node="g5HarvestingPageGPS_dblCCspeed1P1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="1"       node="g5HarvestingPageGPS_dblCCspeed1P1_SC" baseColor="0.5 0.5 0.5 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive"        node="g5HarvestingPageGPS_dblCCspeed2P1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="2"       node="g5HarvestingPageGPS_dblCCspeed2P1_SC" baseColor="0.5 0.5 0.5 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="VISIBILITY" valueType="drivable.cruiseControlActive"        node="g5HarvestingPageGPS_dblCCspeed3P1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER"    valueType="dbl.cc" cmd="active" state="3"       node="g5HarvestingPageGPS_dblCCspeed3P1_SC" baseColor="0.5 0.5 0.5 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+
+        <!-- Lanes -->
+        <dashboard displayType="VISIBILITY"  node="g5HarvestingPageGPS_dblLaneLoadedP1_GPS" valueType="ai.automaticSteering.steeringState" state="1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="MULTI_STATE" node="g5HarvestingPageGPS_dblLaneLoadedMidP1_GPS" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING">
+			<state value="0" visibility="false"/>
+            <state value="1" visibility="true"/>
+            <state value="2" visibility="false"/>
+		</dashboard>
+		
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLanesLoaded10mP1_GPS"  valueType="dbl.gpsWidth" minActiveValue="6" maxActiveValue="11.9" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLanesLoaded13mP1_GPS"  valueType="dbl.gpsWidth" minActiveValue="12" maxActiveValue="13.9" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLanesLoaded15mP1_GPS"  valueType="dbl.gpsWidth" minActiveValue="14" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLaneActiveP1_GPS" valueType="ai.automaticSteering.steeringEngaged" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLaneActiveMidP1_GPS" valueType="ai.automaticSteering.steeringEngaged" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLanesActive10mP1_GPS"  valueType="dbl.gpsWidth" minActiveValue="6" maxActiveValue="11.9" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLanesActive13mP1_GPS"  valueType="dbl.gpsWidth" minActiveValue="12" maxActiveValue="13.9" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblLanesActive15mP1_GPS" valueType="dbl.gpsWidth" minActiveValue="14" groups="MOTOR_RUNNING"/>
+
+        <dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedMidP1_GPS" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedLeft10mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedRight10mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedLeft13mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedRight13mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedLeft15mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneLoadedRight15mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveMidP1_GPS" emitColor="GREEN" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveLeft10mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveRight10mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveLeft13mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveRight13mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveLeft15mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5HarvestingPageGPS_dblLaneActiveRight15mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
+
+
     </dashboardCompound>
 
     <i3dMappings>
@@ -646,17 +1153,20 @@
         <!-- <i3dMapping id="aPillarScreen" node="0>0|0"/> -->
         <!-- <i3dMapping id="g5Display_aPillarTractor_decal" node="0>0|0|0"/> -->
         <i3dMapping id="g5Display_defaultPageTractor_decal" node="0>0|1|3|0"/>
-        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightLeft_decal" node="0>0|0|0|0|0"/>
+        <!-- <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightLeft_decal" node="0>0|0|0|0|0"/>
         <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightRight_decal" node="0>0|0|0|0|1"/>
         <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightTrailer_decal" node="0>0|0|0|0|2"/>
         <i3dMapping id="g5Display_aPillarHarvester_iconHighBeamLight_decal" node="0>0|0|0|0|3"/>
         <i3dMapping id="g5Display_aPillarHarvester_iconDefaultLight_decal" node="0>0|0|0|0|4"/>
         <i3dMapping id="g5Display_aPillarHarvester_iconGPSActive_decal" node="0>0|0|0|0|5"/>
-        <i3dMapping id="g5Display_aPillarHarvester_iconStarting_decals" node="0>0|0|0|0|6"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconStarting_decals" node="0>0|0|0|0|6"/> -->
         <i3dMapping id="g5Display_aPillarTractor_sliderFuel_decal" node="0>0|0|0|1|0"/>
         <i3dMapping id="g5Display_aPillarTractor_sliderDef_decal" node="0>0|0|0|1|1"/>
         <i3dMapping id="g5Display_aPillarTractor_loadBarAir_decal" node="0>0|0|0|1|2"/>
         <i3dMapping id="g5Display_aPillarTractor_loadBarTemperature_decal" node="0>0|0|0|1|3"/>
+
+        <i3dMapping id="g5Display_aPillarHarvester_cutHeight_decalRot" node="0>1|0|0|0|1|5"/>
+        <i3dMapping id="g5Display_aPillarHarvester_cutHeightPin_decalRot" node="0>1|0|0|0|1|5|0"/>
 
         <i3dMapping id="g5Display_dblFrontPTOP1_SC" node="0>0|1|1|1"/>
         <i3dMapping id="g5Display_dblFrontPTOArrowP1_SC" node="0>0|1|1|2"/>
@@ -664,8 +1174,15 @@
         <i3dMapping id="g5Display_dblGPSActiveP1_SC" node="0>0|1|1|5"/>
         <i3dMapping id="g5Display_dblGPSActiveONP1_SC" node="0>0|1|1|6"/>
         <i3dMapping id="g5Display_naviMapTractorP1_SC" node="0>0|1|2|0"/>
+
+        <!-- lights -->
+        <i3dMapping id="g5Display_aPillarHarvester_IconWorklightFront_AP" node="0>1|0|0|0|15"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconWorklightBack_AP" node="0>1|0|0|0|16"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconLightBeacons_AP" node="0>1|0|0|0|17"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconLightPipe_AP" node="0>1|0|0|0|18"/>
         
         <i3dMapping id="basicScreen" node="0>0|1"/>
+        <i3dMapping id="g5Display_ScreenWarningFuel" node="0>0|1|3|1|0"/>
         <!-- <i3dMapping id="tractorDisplays" node="0>0"/> -->
         <!-- <i3dMapping id="startScreen" node="0>0|1|0"/> -->
         <i3dMapping id="g5Display_defaultPageTractor_startScreen_decal" node="0>0|1|0|0"/>
@@ -709,7 +1226,7 @@
         <i3dMapping id="g5Display_dblLaneNumbersP1_SC" node="0>0|1|1|0|34"/>
         <i3dMapping id="g5Display_dblWorkWidthNumbersP1_SC" node="0>0|1|1|0|35"/>
         <i3dMapping id="g5Display_dblSpeedNumbersP1_SC" node="0>0|1|1|0|36"/>
-
+        
         <i3dMapping id="g5Display_dblRearHitchSliderP1_SC" node="0>0|1|1|1|0"/>
         <i3dMapping id="g5Display_dblFoldingSliderP1_SC" node="0>0|1|1|1|1"/>
         <i3dMapping id="g5Display_dblBackLiftImplementSliderP1_SC" node="0>0|1|1|1|10"/>
@@ -723,6 +1240,8 @@
         <i3dMapping id="g5Display_dblTippingSliderP1_SC" node="0>0|1|1|1|9"/>
         <i3dMapping id="g5Display_dblSteeringIndex1SliderP1_SC" node="0>0|1|1|1|11"/>
         <i3dMapping id="g5Display_dblSteeringIndex2SliderP1_SC" node="0>0|1|1|1|12"/>
+        <i3dMapping id="g5Display_dblCutterLoweredP1_SC" node="0>0|1|1|68"/>
+        <i3dMapping id="g5Display_dblCutterLiftedP1_SC" node="0>0|1|1|69"/>
 
         <i3dMapping id="g5Display_dblSliderEngineLoadP1_SC" node="0>0|1|1|10"/>
         <i3dMapping id="g5Display_dblGPSActiveSatelliteP1_SC" node="0>0|1|1|11"/>
@@ -880,6 +1399,25 @@
         <i3dMapping id="g5Display_dblOutdoorTempOP1_GPS" node="0>0|2|1|0|27"/>
         <i3dMapping id="g5tempBg3_P1_GPS" node="0>0|2|1|2|4"/>
         <i3dMapping id="g5Display_dblCruiseBgIconP1_CC" node="0>0|2|1|19"/>
+        <!-- PF -->
+        <i3dMapping id="g5Display_dblPf_CropSensorActive1_P1_GPS" node="0>0|2|2|0|1"/>
+        <i3dMapping id="g5Display_dblPf_CropSensorActive2_P1_GPS" node="0>0|2|2|0|2"/>
+        <i3dMapping id="g5Display_dblPrecisionFarmingBg1_P1_GPS" node="0>0|2|1|0|28"/>
+        <i3dMapping id="g5Display_dblPf_PHactual_P1_GPS" node="0>0|2|1|0|29"/>
+        <i3dMapping id="g5Display_dblPf_PHtarget_P1_GPS" node="0>0|2|1|0|30"/>
+        <i3dMapping id="g5Display_dblPf_PHchanged_P1_GPS" node="0>0|2|1|0|31"/>
+        <i3dMapping id="g5Display_dblPf_NitrogenActual_P1_GPS" node="0>0|2|1|0|32"/>
+        <i3dMapping id="g5Display_dblPf_NitrogenTarget_P1_GPS" node="0>0|2|1|0|33"/>
+        <i3dMapping id="g5Display_dblPf_NitrogenChanged_P1_GPS" node="0>0|2|1|0|34"/>
+        <i3dMapping id="g5Display_dblPf_ApplicationRate_P1_GPS" node="0>0|2|1|0|35"/>
+        <i3dMapping id="g5Display_dblPf_SoilType_P1_GPS" node="0>0|2|1|0|36"/>
+        <i3dMapping id="g5Display_dblSprayAmountAutoModeSliderP1_CC" node="0>0|2|1|20"/>
+        <i3dMapping id="g5Display_dblPf_Actual_P1_GPS" node="0>0|2|1|0|37"/>
+        <i3dMapping id="g5Display_dblPf_Target_P1_GPS" node="0>0|2|1|0|38"/>
+        <i3dMapping id="g5Display_dblPf_Changed_P1_GPS" node="0>0|2|1|0|39"/>
+        <i3dMapping id="g5Display_dblPf_AR_Text_P1_GPS" node="0>0|2|1|0|40"/>
+        <i3dMapping id="g5Display_dblPf_PH_P1_GPS" node="0>0|2|1|0|41"/>
+        <i3dMapping id="g5Display_dblPf_N_P1_GPS" node="0>0|2|1|0|42"/>
 
         <!-- lanes -->
         <i3dMapping id="g5Display_dblLaneLoadedP1_GPS" node="0>0|2|2|0|0|0"/>
@@ -917,6 +1455,251 @@
         <i3dMapping id="g5Display_dblLaneActiveLeft24mP1_GPS" node="0>0|2|2|0|0|1|4|1"/>
         <i3dMapping id="g5Display_dblLaneActiveMidP1_GPS" node="0>0|2|2|0|0|1|5"/>
 
+        <!-- Combine aPillar -->
+        <i3dMapping id="aPillarScreenCombine" node="0>1|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_decal" node="0>1|0|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_numbersOperatingTime" node="0>1|0|0|0|0|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_numbersSpeed" node="0>1|0|0|0|0|1"/>
+        <i3dMapping id="g5Display_aPillarHarvester_numbersLoad" node="0>1|0|0|0|0|2"/>
+        <i3dMapping id="g5Display_aPillarHarvester_numbersRPM" node="0>1|0|0|0|0|3"/>
+        <i3dMapping id="g5Display_aPillarHarvester_numbersCutHeight" node="0>1|0|0|0|0|4"/>
+
+        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightLeft_decal" node="0>1|0|0|0|2"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightRight_decal" node="0>1|0|0|0|3"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightTrailer_decal" node="0>1|0|0|0|4"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconHighBeamLight_decal" node="0>1|0|0|0|5"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconDefaultLight_decal" node="0>1|0|0|0|6"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconGPSActive_decal" node="0>1|0|0|0|7"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconStarting_decals" node="0>1|0|0|0|8"/>
+        <i3dMapping id="g5Display_naviMapTractorP1_AP" node="0>1|0|0|1|0"/>
+        <i3dMapping id="g5HarvestingPageAP_dblNaviPosition" node="0>1|0|0|1|0|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_Park_AP" node="0>1|0|0|0|9"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconStop_AP" node="0>1|0|0|0|10"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconStopBG_AP" node="0>1|0|0|0|11"/>
+        <i3dMapping id="g5Display_aPillarHarvester_BlinkUnloading_AP" node="0>1|0|0|0|12"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconUnloadingPipe_AP" node="0>1|0|0|0|13"/>
+        <i3dMapping id="g5Display_aPillarHarvester_IconFoldingPipe_AP" node="0>1|0|0|0|14"/>
+
+        <!-- slider -->
+        <i3dMapping id="g5Display_aPillarHarvester_sliderFuel_decal" node="0>1|0|0|0|1|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_sliderDef_decal" node="0>1|0|0|0|1|1"/>
+        <!-- <i3dMapping id="g5Display_aPillarHarvester_loadBarLoad_decalRot" node="0>1|0|0|0|1|2"/> -->
+        <i3dMapping id="g5Display_aPillarHarvester_loadBarLoad_decal" node="0>1|0|0|0|1|2|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_loadBarTemperature_decalRot" node="0>1|0|0|0|1|3"/>
+        <i3dMapping id="g5Display_aPillarHarvester_loadBarTemperature_decal" node="0>1|0|0|0|1|3|0"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightLeft_decal" node="0>1|0|0|0|2"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightRight_decal" node="0>1|0|0|0|3"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconTurnLightTrailer_decal" node="0>1|0|0|0|4"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconHighBeamLight_decal" node="0>1|0|0|0|5"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconDefaultLight_decal" node="0>1|0|0|0|6"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconGPSActive_decal" node="0>1|0|0|0|7"/>
+        <i3dMapping id="g5Display_aPillarHarvester_iconStarting_decals" node="0>1|0|0|0|8"/>
+        <i3dMapping id="g5Display_aPillarHarvester_sliderPipe_decal" node="0>1|0|0|0|1|4"/>
+
+        <!-- SC -->
+        <i3dMapping id="basicScreenCombine" node="0>1|1"/>
+        <i3dMapping id="g5Display_harvestingPage_startScreen_decal" node="0>1|1|0|0"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblGrainTankFoldingP1_SC" node="0>1|1|1|1"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGrainTankUnfoldingP1_SC1" node="0>1|1|1|2"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGrainTankFoldingStatusP1_SC" node="0>1|1|1|3"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGrainTankUnfoldingStatusP1_SC" node="0>1|1|1|4"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGPSSatellitP1_SC" node="0>1|1|1|5"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGPSActiveIconP1_SC" node="0>1|1|1|6"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSwathShredderP1_SC" node="0>1|1|1|7"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSwathSpreadLP1_SC" node="0>1|1|1|8"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSwathSpreadRP1_SC" node="0>1|1|1|9"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSwathSliderFakeP1_SC" node="0>1|1|1|10"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGrainFillP1_SC" node="0>1|1|1|11"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFilllevelSliderP1_SC" node="0>1|1|1|12"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGPSActiveONP1_SC" node="0>1|1|1|13"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGPSActiveP1_SC" node="0>1|1|1|14"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHlmConourActiveRotBlinkP1_SC" node="0>1|1|1|15"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHLMActiveONP1_SC" node="0>1|1|1|16"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHLMFieldP1_SC" node="0>1|1|1|17"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHLMHeadlandP1_SC" node="0>1|1|1|18"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCC1ActiveP1_SC" node="0>1|1|1|19"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCC2ActiveP1_SC" node="0>1|1|1|20"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCC3ActiveP1_SC" node="0>1|1|1|21"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHlmHeadActiveP1_SC" node="0>1|1|1|35"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFruitTypeIconP1_SC" node="0>1|1|1|36"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtAccRampOneP1_SC" node="0>1|1|1|37|0"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtAccRampTwoP1_SC" node="0>1|1|1|37|1"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtAccRampThreeP1_SC" node="0>1|1|1|37|2"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtAccRampFourP1_SC" node="0>1|1|1|37|3"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" node="0>1|1|1|38|0"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" node="0>1|1|1|38|1"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblDiffLockBackP1_SC" node="0>1|1|1|38|2"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblDiffAwdP1_SC" node="0>1|1|1|38|3"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblDiffLockFrontP1_SC" node="0>1|1|1|38|4"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblDifferentialIconP1_SC" node="0>1|1|1|38|5"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtPreglowActiveP1_SC" node="0>1|1|1|39"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtPreglowReadyP1_SC" node="0>1|1|1|40"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblWheelSlipBlinkP1_SC" node="0>1|1|1|41"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblWheelSlipIconP1_SC" node="0>1|1|1|42"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtGearWearPercentIconP1_SC" node="0>1|1|1|43"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtDamageCritBlinkP1_SC" node="0>1|1|1|44"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtDamageWarnIconP1_SC" node="0>1|1|1|45"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtHeatWarnIconP1_SC" node="0>1|1|1|46"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtHeatCritBlinkP1_SC" node="0>1|1|1|47"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtHighPressureBlinkP1_SC" node="0>1|1|1|48"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSetTrackButtonP1_CC1" node="0>1|1|1|49"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFuelWarningP1_CC1" node="0>1|1|1|50"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFuelWarnLowP1_CC1" node="0>1|1|1|51"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFuelWarnResP1_CC1" node="0>1|1|1|52"/>
+        
+        <i3dMapping id="g5HarvestingPageBasic_dblGroupCombineP1_SC" node="0>1|1|1|22"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGroupCutterP1_SC" node="0>1|1|1|23"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGroupTrailerP1_SC" node="0>1|1|1|53"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" node="0>1|1|1|54"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherCloudyIconP1_CC" node="0>1|1|1|55"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherSnowIconP1_CC" node="0>1|1|1|56"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherHailIconP1_CC" node="0>1|1|1|57"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherRainIconP1_CC" node="0>1|1|1|58"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherTwisterIconP1_CC" node="0>1|1|1|59"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherSunIconP1_CC" node="0>1|1|1|60"/>
+
+        <i3dMapping id="cutterFolding" node="0>1|1|1|61"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFoldingP1_SC" node="0>1|1|1|61|0"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterUnfoldingP1_SC" node="0>1|1|1|61|1"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFoldedP1_SC" node="0>1|1|1|61|2"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterUnfoldedP1_SC" node="0>1|1|1|61|3"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterLoweredP1_SC" node="0>1|1|1|24"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterLoweringP1_SC" node="0>1|1|1|25"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterLiftedP1_SC" node="0>1|1|1|26"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterLiftingP1_SC" node="0>1|1|1|27"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFilling1P1_SC" node="0>1|1|1|28"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFilling2P1_SC" node="0>1|1|1|29"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFilling3P1_SC" node="0>1|1|1|30"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFilling4P1_SC" node="0>1|1|1|31"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterFilling5P1_SC" node="0>1|1|1|32"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterActiveP1_SC" node="0>1|1|1|33"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutterPTOactiveP1_SC" node="0>1|1|1|34"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblNaviMapP1_SC" node="0>1|1|2|0"/>
+        <i3dMapping id="g5HarvestingPageSC_dblNaviPosition" node="0>1|1|2|0|0"/>
+
+        <i3dMapping id="harvestingPageBasic_Screen" node="0>1|1|3|0"/>
+        <i3dMapping id="harvestingPageBasic_ScreenWarningFuel" node="0>1|1|3|1|0"/>
+
+        <i3dMapping id="g5HarvestingPageBasic_dblFilllevelLiterNumberP1_SC" node="0>1|1|1|0|0"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFilllevelPercentNumberP1_SC" node="0>1|1|1|0|1"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblOperatingHoursNumberP1_SC" node="0>1|1|1|0|10"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCutHeightNumberP1_SC" node="0>1|1|1|0|11"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSpreadWidthNumberP1_SC" node="0>1|1|1|0|2"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHectarCounterNumberP1_SC" node="0>1|1|1|0|3"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFieldNumberP1_SC" node="0>1|1|1|0|4"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblDieselLiterNumberP1_SC" node="0>1|1|1|0|5"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblDieselUsageNumberP1_SC" node="0>1|1|1|0|6"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblSpeedNumberP1_SC" node="0>1|1|1|0|7"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblRpmNumberP1_SC" node="0>1|1|1|0|8"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCruiseControlSpeedNumberP1_SC" node="0>1|1|1|0|9"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblGemeTimeNumberP1_SC" node="0>1|1|1|0|12"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblUserNameNumberP1_SC" node="0>1|1|1|0|13"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblRpmReelP1_SC" node="0>1|1|1|0|14"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblRpmReelPullInP1_SC" node="0>1|1|1|0|15"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblRpmHarvestingP1_SC" node="0>1|1|1|0|16"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" node="0>1|1|1|0|17"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" node="0>1|1|1|0|18"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" node="0>1|1|1|0|19"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC" node="0>1|1|1|0|20"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtVmaxFowardNumberP1_SC" node="0>1|1|1|0|21"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtVmaxBackwardNumberP1_SC" node="0>1|1|1|0|22"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblLaneNumbersP1_SC" node="0>1|1|1|0|23"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHeadingDegreesSignNumbersP1_SC" node="0>1|1|1|0|24"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHeadingAngleNumbersP1_SC" node="0>1|1|1|0|25"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblHeadingNumbersP1_SC" node="0>1|1|1|0|26"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblCvtGearWearPercentNumbersP1_SC" node="0>1|1|1|0|27"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblWheelSlipPercentNumbersP1_SC" node="0>1|1|1|0|28"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherTwisterP1_SC" node="0>1|1|1|0|29"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherSnowP1_SC" node="0>1|1|1|0|30"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherHailP1_SC" node="0>1|1|1|0|31"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherRainP1_SC" node="0>1|1|1|0|32"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherCloudyP1_SC" node="0>1|1|1|0|33"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblEnvWeatherSunP1_SC" node="0>1|1|1|0|34"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblVoltageNumberP1_SC" node="0>1|1|1|0|35"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblWorkWidthNumberP1_SC" node="0>1|1|1|0|36"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblOutdoorTempOP1_GPS" node="0>1|1|1|0|37"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblOutdoorTempNumbersP1_GPS" node="0>1|1|1|0|38"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPrecisionFarmingBg1_P1_GPS" node="0>1|1|1|0|39|0"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" node="0>1|1|1|0|39|1"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_PHtarget_P1_GPS" node="0>1|1|1|0|39|2"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_PHchanged_P1_GPS" node="0>1|1|1|0|39|3"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" node="0>1|1|1|0|39|4"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_NitrogenTarget_P1_GPS" node="0>1|1|1|0|39|5"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_NitrogenChanged_P1_GPS" node="0>1|1|1|0|39|6"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" node="0>1|1|1|0|39|7"/>
+        <i3dMapping id="g5HarvestingPageBasic_dblPf_SoilType_P1_GPS" node="0>1|1|1|0|39|8"/>
+
+        <!-- cc gps -->
+        <i3dMapping id="gpsScreenCombine" node="0>1|2"/>
+        <i3dMapping id="g5Display_harvestAutomationPage_startScreen_decal" node="0>1|2|0|0"/>
+
+
+        <i3dMapping id="g5HarvestingPageGPS_dblNaviMap" node="0>1|2|2|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblNaviPosition" node="0>1|2|2|0|0"/>
+
+        <i3dMapping id="g5HarvestingPageGPS_Screen" node="0>1|2|3|0"/>
+
+        <i3dMapping id="g5HarvestingPageGPS_dblFilllevelPercentNumberP1_SC" node="0>1|2|1|0|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblFieldNumberP1_SC" node="0>1|2|1|0|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" node="0>1|2|1|0|2"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneNumbersP1_SC" node="0>1|2|1|0|3"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblHeadingDegreesSignNumbersP1_SC" node="0>1|2|1|0|4"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblHeadingAngleNumbersP1_SC" node="0>1|2|1|0|5"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblHeadingNumbersP1_SC" node="0>1|2|1|0|6"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCruiseControlSpeedNumberP1_SC" node="0>1|2|1|0|7"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCruiseControlSpeed2NumberP1_SC" node="0>1|2|1|0|8"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCruiseControlSpeed3NumberP1_SC" node="0>1|2|1|0|9"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblWorkWidthNumberP1_SC" node="0>1|2|1|0|10"/>
+
+        <i3dMapping id="g5HarvestingPageGPS_dblCombineFolding" node="0>1|2|1|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblPipeFoldingRot" node="0>1|2|1|2"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblGrainOverloadingP1_CC" node="0>1|2|1|3"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblGrainTankUnfoldingStatusP1_SC" node="0>1|2|1|4"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblGrainTankFoldingStatusP1_SC" node="0>1|2|1|5"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblGrainTankFoldingP1_SC" node="0>1|2|1|6"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblGrainTankUnfoldingP1_SC1" node="0>1|2|1|7"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblFilllevelSliderP1_SC" node="0>1|2|1|8"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblFilllevelSliderLP1_SC" node="0>1|2|1|12"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblFilllevelSliderRP1_SC" node="0>1|2|1|13"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblGrainFillP1_SC" node="0>1|2|1|9"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblFruitTypeIconP1_SC" node="0>1|2|1|10"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblSetTrackButtonP1_CC1" node="0>1|2|1|11"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCCspeed1P1_SC" node="0>1|2|1|14"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCCspeed2P1_SC" node="0>1|2|1|15"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCCspeed3P1_SC" node="0>1|2|1|16"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCCspeed1activeP1_SC" node="0>1|2|1|17"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCCspeed2activeP1_SC" node="0>1|2|1|18"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblCCspeed3activeP1_SC" node="0>1|2|1|19"/>
+
+        <!-- lanes -->
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedP1_GPS" node="0>1|2|2|0|0|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLanesLoaded10mP1_GPS" node="0>1|2|2|0|0|0|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedRight10mP1_GPS" node="0>1|2|2|0|0|0|0|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedLeft10mP1_GPS" node="0>1|2|2|0|0|0|0|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLanesLoaded13mP1_GPS" node="0>1|2|2|0|0|0|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedRight13mP1_GPS" node="0>1|2|2|0|0|0|1|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedLeft13mP1_GPS" node="0>1|2|2|0|0|0|1|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLanesLoaded15mP1_GPS" node="0>1|2|2|0|0|0|2"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedRight15mP1_GPS" node="0>1|2|2|0|0|0|2|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedLeft15mP1_GPS" node="0>1|2|2|0|0|0|2|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneLoadedMidP1_GPS" node="0>1|2|2|0|0|0|3"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveP1_GPS" node="0>1|2|2|0|0|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLanesActive10mP1_GPS" node="0>1|2|2|0|0|1|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveRight10mP1_GPS" node="0>1|2|2|0|0|1|0|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveLeft10mP1_GPS" node="0>1|2|2|0|0|1|0|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLanesActive13mP1_GPS" node="0>1|2|2|0|0|1|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveRight13mP1_GPS" node="0>1|2|2|0|0|1|1|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveLeft13mP1_GPS" node="0>1|2|2|0|0|1|1|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLanesActive15mP1_GPS" node="0>1|2|2|0|0|1|2"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveRight15mP1_GPS" node="0>1|2|2|0|0|1|2|0"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveLeft15mP1_GPS" node="0>1|2|2|0|0|1|2|1"/>
+        <i3dMapping id="g5HarvestingPageGPS_dblLaneActiveMidP1_GPS" node="0>1|2|2|0|0|1|3"/>
 
     </i3dMappings>
 </dashboardCompounds>
