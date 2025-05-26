@@ -757,6 +757,7 @@
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblPtoStopP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblPipeUnfoldingP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblHLMonP1_SC" groups="MOTOR_ACTIVE PAGESC1"/>
+			<dashboard displayType="EMITTER" node="varioTronic_dblGPSsteeringWheelInactiveP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
 		<!-- PAGESC2 -->	
 			<dashboard displayType="EMITTER" node="varioTronic_secondScreenP2_SC" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_secondScreenP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
@@ -782,13 +783,15 @@
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblPtoStopP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblPipeUnfoldingP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblHLMonP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
-		<!-- PAGESC2 -->	
+			<dashboard displayType="EMITTER" node="varioTronic_dblGPSsteeringWheelInactiveP2_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<!-- PAGESC3 -->	
 			<dashboard displayType="EMITTER" node="varioTronic_thirdScreenP3_SC" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_thirdScreenP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 			
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblGPSrtkSatellitP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblHLMonP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
+			<dashboard displayType="EMITTER" node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
         </default>
 		
 		<dashboardLive>
@@ -900,7 +903,7 @@
 					<state value="0" visibility="true"/>
 					<state value="1" visibility="false"/>
 				</dashboard>
-			<!-- PAGESC2 -->
+			<!-- PAGESC3 -->
 				<dashboard displayType="VISIBILITY" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelActiveP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 				<dashboard displayType="EMITTER" valueType="steeringState" node="varioTronic_dblGPSrtkSatellitP3_SC" baseColor="1 1 1 1" emitColor="ORANGE" intensity="0.6" groups="MOTOR_ACTIVE PAGESC3"/>
 				<dashboard displayType="MULTI_STATE" valueType="steeringEngaged" node="varioTronic_dblGPSsteeringWheelInactiveP3_SC" doInterpolation="true" groups="MOTOR_ACTIVE PAGESC3">
