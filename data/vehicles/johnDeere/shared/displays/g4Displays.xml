@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
     
-	<group name="DARKMODE" dbl="darkmode"/>
-	<group name="LIGHTMODE" dbl="lightmode"/>
-	<group name="PAGEGPS1" dbl="page" group="1" page="1"/>
-	<group name="PAGEGPS2" dbl="page" group="1" page="2"/>
-	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
-	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
+	<!-- <group name="DARKMODE" dbl="darkmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/> -->
+	<group name="PAGE4GPS1" dbl="page" group="1" page="1"/>
+	<group name="PAGE4GPS2" dbl="page" group="1" page="2"/>
+	<!-- <group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/> -->
+	<!-- <group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/> -->
 	<group name="DBL_F_TRAILER1" dbl="base_connected" dblTrailer="1" dblJointSide="back"/>
 	<!-- <group name="DBL_F_TRAILER1" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="1" dblJointSide="back"/> -->
 	<group name="DBL_F_TRAILER2" dbl="base_connected" dblTrailer="2" dblJointSide="back"/>
@@ -34,10 +34,10 @@
         <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="aPillarDisplay_iconTurnLightRight_decal" baseColor="0 0 0" hideInactive="true" intensity="0.5" groups=""/>
         <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarDisplay_iconTurnLightTrailer_decal" baseColor="0 0 0" emitColor="GREEN" intensity="0.3" groups="BACK_ATTACHMENT"/>
 		<!-- :( turnlight dont seperate trailer 1 or 2 or one attached thing -->
-        <dashboard displayType="VISIBILITY" valueType="dbl.base" node="aPillarDisplay_iconTurnLightTrailer1_decal" jointSide="back" jointType="trailer trailerLow"  groups="MOTOR_RUNNING DBL_F_TRAILER1"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" node="aPillarDisplay_iconTurnLightTrailer1_decal" jointSide="back" jointType="trailer trailerLow" trailer="1" groups="MOTOR_RUNNING DBL_F_TRAILER1"/>
         <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarDisplay_iconTurnLightTrailer1_decal" baseColor="0 0 0" emitColor="GREEN" intensity="0.5" groups="MOTOR_RUNNING DBL_F_TRAILER1"/>
         
-		<dashboard displayType="VISIBILITY" valueType="dbl.base" node="aPillarDisplay_iconTurnLightTrailer2_decal" jointSide="back" jointType="trailer trailerLow"  groups="MOTOR_RUNNING DBL_F_TRAILER2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.base" node="aPillarDisplay_iconTurnLightTrailer2_decal" jointSide="back" jointType="trailer trailerLow" trailer="2" groups="MOTOR_RUNNING DBL_F_TRAILER2"/>
         <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarDisplay_iconTurnLightTrailer2_decal" baseColor="0 0 0" emitColor="GREEN" intensity="0.5" groups="MOTOR_RUNNING DBL_F_TRAILER2"/>
         
 		<dashboard displayType="EMITTER" valueType="lights.lightState" node="aPillarDisplay_iconHighBeamLight_decal" baseColor="0 0 0" hideInactive="true" intensity="0.5" intensityDarkMode="0.4" lightTypes="3" groups="MOTOR_RUNNING"/>
@@ -448,7 +448,7 @@
             <state value="2" visibility="false"/>
 		</dashboard>
 
-		<dashboard displayType="VISIBILITY" node="g4Display_dblCultivatorDephP1_GPS" valueType="dbl.base" cmd="cultivator" state="shallowmode" groups="MOTOR_RUNNING PAGEGPS1"/>
+		<dashboard displayType="VISIBILITY" node="g4Display_dblCultivatorDephP1_GPS" valueType="dbl.base" cmd="cultivator" state="shallowmode" groups="MOTOR_RUNNING PAGE4GPS1"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblCultivatorDephP1_GPS" emitColor="GREEN" intensity="0.6" groups="MOTOR_ACTIVE"/>
 		
 		<dashboard displayType="VISIBILITY" node="g4Display_dblLanesLoaded3mP1_GPS"  valueType="dbl.gpsWidth" maxActiveValue="3.9" groups="MOTOR_RUNNING"/>
@@ -527,13 +527,13 @@
 		<dashboard displayType="EMITTER" node="g4Display_dblLaneActiveLeft24mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblLaneActiveRight24mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl1ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="1" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGEGPS1"/>
-		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl2ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="2" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGEGPS1"/>
-		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGEGPS1"/>
+		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl1ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="1" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl2ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="2" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGE4GPS1"/>
 		
-		<dashboard displayType="EMITTER" node="g4seedTypeBg1_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGEGPS1"/>
-		<dashboard displayType="EMITTER" node="g4seedTypeBg2_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGEGPS1"/>
-		<dashboard displayType="EMITTER" node="g4seedTypeBg3_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGEGPS1"/>
+		<dashboard displayType="EMITTER" node="g4seedTypeBg1_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="EMITTER" node="g4seedTypeBg2_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="EMITTER" node="g4seedTypeBg3_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGE4GPS1"/>
 		
 		<dashboard displayType="EMITTER" node="g4Display_dblSeedFilllevelWarnBlinkP1_GPS" emitColor="0.9 0.09 0.09 0.1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblFertilizerFilllevelWarnBlinkP1_GPS" emitColor="0.9 0.09 0.09 0.1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
@@ -580,15 +580,15 @@
 
 		<!-- MiniMap -->
 			<!-- P1 -->
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP1_GPS" groups="MOTOR_RUNNING PAGEGPS1"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP1_GPS" groups="MOTOR_RUNNING PAGEGPS1"/>
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP1_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE PAGEGPS1"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP1_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE PAGEGPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP1_GPS" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP1_GPS" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP1_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE PAGE4GPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP1_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE PAGE4GPS1"/>
 			<!-- P2 -->
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP2_GPS" groups="MOTOR_RUNNING PAGEGPS2"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP2_GPS" groups="MOTOR_RUNNING PAGEGPS2"/>
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP2_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE PAGEGPS2"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP2_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE PAGEGPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP2_GPS" groups="MOTOR_RUNNING PAGE4GPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP2_GPS" groups="MOTOR_RUNNING PAGE4GPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP2_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE PAGE4GPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP2_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE PAGE4GPS2"/>
 		
 		<!-- gps -->
 		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g4Display_dblGPSActiveP12_GPS" groups="MOTOR_ACTIVE"/>

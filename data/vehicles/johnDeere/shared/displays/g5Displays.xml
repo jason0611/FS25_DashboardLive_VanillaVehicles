@@ -587,17 +587,24 @@
         <dashboard displayType="VISIBILITY" node="g5Display_dblSprayAmountAutoModeSliderP1_CC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fieldNumber" cond="not" condValue="0" node="g5Display_dblPrecisionFarmingBg1_P1_GPS" groups="MOTOR_RUNNING"/>
 
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phActual" node="g5Display_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phTarget" node="g5Display_dblPf_PHtarget_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phChanged" node="g5Display_dblPf_PHchanged_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nActual" node="g5Display_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nTarget" node="g5Display_dblPf_NitrogenTarget_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nChanged" node="g5Display_dblPf_NitrogenChanged_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="applicationRate" node="g5Display_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="soilType" node="g5Display_dblPf_SoilType_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="sssssssssss" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_Actual_P1_GPS" textColor="0.8 0.5 0.2 1"  textSize="0.0025"   textMask="Actual"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_Target_P1_GPS" textColor="0.2 0.5 0.7 1"  textSize="0.0025"   textMask="Target"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_Changed_P1_GPS" textColor="0.1 0.9 0.2" textSize="0.0025"  textMask="Changed"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_AR_Text_P1_GPS" textColor="0.9 0.2 0.9 1" textSize="0.0025"  textMask="Application Rate"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_PH_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0025"       textMask="pH"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT"  node="g5Display_dblPf_N_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0025"        textMask="N"              font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phActual" node="g5Display_dblPf_PHactual_P1_GPS" textColor="0.8 0.5 0.2 1" textSize="0.0035" textMask="00.000"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phTarget" node="g5Display_dblPf_PHtarget_P1_GPS" textColor="0.2 0.5 0.7 1" textSize="0.0035" textMask="00.000"               font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phChanged" node="g5Display_dblPf_PHchanged_P1_GPS" textColor="0.1 0.9 0.2 1" textSize="0.0035" textMask="00.000"             font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nActual" node="g5Display_dblPf_NitrogenActual_P1_GPS" textColor="0.8 0.5 0.2 1" textSize="0.0035" textMask="00.000"          font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nTarget" node="g5Display_dblPf_NitrogenTarget_P1_GPS" textColor="0.2 0.5 0.7 1" textSize="0.0035" textMask="00.000"          font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nChanged" node="g5Display_dblPf_NitrogenChanged_P1_GPS" textColor="0.1 0.9 0.2 1" textSize="0.0035" textMask="00.000"        font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="applicationRate" node="g5Display_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.2 0.9 1" textSize="0.0035" textMask="00.000" font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="soilType" node="g5Display_dblPf_SoilType_P1_GPS" textColor="0.9 0.9 0.8" textSize="0.0035" textMask="sssssssssssssss"      font="GENERIC" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" node="g5Display_dblPf_CropSensorActive1_P1_GPS" emitColor="0.0 0.95 0.0 1" intensity="0.7" groups="MOTOR_RUNNING"/>
         <dashboard displayType="EMITTER" node="g5Display_dblPf_CropSensorActive2_P1_GPS" emitColor="0.0 0.95 0.0 1" intensity="0.7" groups="MOTOR_RUNNING"/>
-        <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="SLIDER" node="g5Display_dblSprayAmountAutoModeSliderP1_CC" intensity="0.5" intensityDarkMode="0.05" default="0" factor="100" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE PAGESC1"/>
+        <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="EMITTER" node="g5Display_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" baseColor="0 0 0" emitColor="0.3 0.7 0.3" intensityDarkMode="0.05" default="0" groups="MOTOR_ACTIVE PAGESC1"/>
 
 		<!-- Camera -->
 
@@ -977,18 +984,24 @@
         <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblEnvWeatherTwisterIconP1_CC" emitColor="0.9 0.005 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
 
         <!-- PrecisionFarming-->
-        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" groups="MOTOR_RUNNING"/>
+        <!-- <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" groups="MOTOR_RUNNING"/> -->
 
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phActual"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <!-- <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phActual"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phTarget"        node="g5HarvestingPageBasic_dblPf_PHtarget_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="phChanged"       node="g5HarvestingPageBasic_dblPf_PHchanged_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nActual"         node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nTarget"         node="g5HarvestingPageBasic_dblPf_NitrogenTarget_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="nChanged"        node="g5HarvestingPageBasic_dblPf_NitrogenChanged_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="applicationRate" node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="00000" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="soilType"        node="g5HarvestingPageBasic_dblPf_SoilType_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="sssssssssss" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="soilType"        node="g5HarvestingPageBasic_dblPf_SoilType_P1_GPS" textColor="0.9 0.9 0.9 1" textSize="0.0035" textMask="sssssssssss" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/> -->
 
-        <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="SLIDER" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" intensityDarkMode="0.05" default="0" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE PAGESC1"/>
+        <!-- <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="SLIDER" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" intensityDarkMode="0.05" default="0" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE PAGESC1"/> -->
+
+        <!-- combineXP -->
+        <dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="tonPerHour"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0065" textMask="00.00 th"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="yield"         node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1"      textSize="0.0065" textMask="00.00tHa"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="engineLoad" node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0070" textMask="000.00%"    font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+
 
         <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fieldNumber" cond="not" condValue="0" node="g5HarvestingPageBasic_dblPrecisionFarmingBg1_P1_GPS" groups="MOTOR_RUNNING"/>
     </dashboardCompound>
@@ -1399,6 +1412,12 @@
         <i3dMapping id="g5Display_dblPf_ApplicationRate_P1_GPS" node="0>0|2|1|0|35"/>
         <i3dMapping id="g5Display_dblPf_SoilType_P1_GPS" node="0>0|2|1|0|36"/>
         <i3dMapping id="g5Display_dblSprayAmountAutoModeSliderP1_CC" node="0>0|2|1|20"/>
+        <i3dMapping id="g5Display_dblPf_Actual_P1_GPS" node="0>0|2|1|0|37"/>
+        <i3dMapping id="g5Display_dblPf_Target_P1_GPS" node="0>0|2|1|0|38"/>
+        <i3dMapping id="g5Display_dblPf_Changed_P1_GPS" node="0>0|2|1|0|39"/>
+        <i3dMapping id="g5Display_dblPf_AR_Text_P1_GPS" node="0>0|2|1|0|40"/>
+        <i3dMapping id="g5Display_dblPf_PH_P1_GPS" node="0>0|2|1|0|41"/>
+        <i3dMapping id="g5Display_dblPf_N_P1_GPS" node="0>0|2|1|0|42"/>
 
         <!-- lanes -->
         <i3dMapping id="g5Display_dblLaneLoadedP1_GPS" node="0>0|2|2|0|0|0"/>
