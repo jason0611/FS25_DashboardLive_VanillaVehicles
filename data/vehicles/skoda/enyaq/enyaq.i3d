@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="enyaq.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
+  </Asset>
+
+  <Files>
+    <File fileId="59" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="60" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="56" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="64" filename="$data/shaders/mirrorShader.xml"/>
+    <File fileId="5" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="48" filename="$data/shared/clearPlastic_diffuse.png"/>
+    <File fileId="54" filename="$data/shared/default_normal.png"/>
+    <File fileId="61" filename="$data/shared/default_specular.dds"/>
+    <File fileId="55" filename="$data/shared/default_vmask.png"/>
+    <File fileId="15" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_diffuse.png"/>
+    <File fileId="14" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_normal.png"/>
+    <File fileId="13" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_specular.png"/>
+    <File fileId="38" filename="$data/shared/detailLibrary/calibrated/grainSmall_specular.png"/>
+    <File fileId="7" filename="$data/shared/detailLibrary/flat_normal.png"/>
+    <File fileId="17" filename="$data/shared/detailLibrary/metallic/clear_diffuse.png"/>
+    <File fileId="39" filename="$data/shared/detailLibrary/metallic/clear_specular.png"/>
+    <File fileId="51" filename="$data/shared/detailLibrary/metallic/glass/glassClear01_specular.png"/>
+    <File fileId="49" filename="$data/shared/detailLibrary/metallic/glass/glassClear03_specular.png"/>
+    <File fileId="50" filename="$data/shared/detailLibrary/metallic/glass/glassHeadlight_specular.png"/>
+    <File fileId="18" filename="$data/shared/detailLibrary/metallic/rough_specular.png"/>
+    <File fileId="26" filename="$data/shared/detailLibrary/metallic/silverScratched_diffuse.png"/>
+    <File fileId="25" filename="$data/shared/detailLibrary/metallic/silverScratched_specular.png"/>
+    <File fileId="16" filename="$data/shared/detailLibrary/mixed/noise1_specular.png"/>
+    <File fileId="29" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric1Bluish_diffuse.png"/>
+    <File fileId="33" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric1_diffuse.png"/>
+    <File fileId="28" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric1_normal.png"/>
+    <File fileId="27" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric1_specular.png"/>
+    <File fileId="41" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_normal.png"/>
+    <File fileId="40" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_specular.png"/>
+    <File fileId="46" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_diffuse.png"/>
+    <File fileId="45" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_normal.png"/>
+    <File fileId="44" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_specular.png"/>
+    <File fileId="24" filename="$data/shared/detailLibrary/nonMetallic/leather/leather3_diffuse.png"/>
+    <File fileId="23" filename="$data/shared/detailLibrary/nonMetallic/leather/leather3_normal.png"/>
+    <File fileId="22" filename="$data/shared/detailLibrary/nonMetallic/leather/leather3_specular.png"/>
+    <File fileId="32" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_diffuse.png"/>
+    <File fileId="31" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_normal.png"/>
+    <File fileId="30" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_specular.png"/>
+    <File fileId="67" filename="$data/shared/detailLibrary/nonMetallic/metal/metalPainted_diffuse.png"/>
+    <File fileId="66" filename="$data/shared/detailLibrary/nonMetallic/metal/metalPainted_specular.png"/>
+    <File fileId="8" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticGraniteGrainSmall_diffuse.png"/>
+    <File fileId="6" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticGraniteGrainSmall_specular.png"/>
+    <File fileId="37" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_diffuse.png"/>
+    <File fileId="36" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_specular.png"/>
+    <File fileId="35" filename="$data/shared/detailLibrary/nonMetallic/reflector/reflector_diffuse.png"/>
+    <File fileId="34" filename="$data/shared/detailLibrary/nonMetallic/reflector/reflector_specular.png"/>
+    <File fileId="21" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubberBlack_diffuse.png"/>
+    <File fileId="43" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_diffuse.png"/>
+    <File fileId="20" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_normal.png"/>
+    <File fileId="19" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_specular.png"/>
+    <File fileId="2" filename="$data/shared/white_diffuse.png"/>
+    <File fileId="70" filename="$data/shared/windowDark_diffuse.png"/>
+    <File fileId="68" filename="$data/shared/window_diffuse.png"/>
+    <File fileId="69" filename="$data/shared/window_specular.png"/>
+    <File fileId="53" filename="$data/vehicles/skoda/enyaq/enyaqAlpha_normal.png"/>
+    <File fileId="42" filename="$data/vehicles/skoda/enyaq/enyaqCarpetDetail_diffuse.png"/>
+    <File fileId="58" filename="$data/vehicles/skoda/enyaq/enyaqDisplay2_diffuse.png"/>
+    <File fileId="57" filename="$data/vehicles/skoda/enyaq/enyaqDisplay_diffuse.png"/>
+    <File fileId="65" filename="$data/vehicles/skoda/enyaq/enyaqRasterPattern_diffuse.png"/>
+    <File fileId="52" filename="$data/vehicles/skoda/enyaq/enyaq_diffuse.png"/>
+    <File fileId="47" filename="$data/vehicles/skoda/enyaq/enyaq_emissive.png"/>
+    <File fileId="3" filename="$data/vehicles/skoda/enyaq/enyaq_normal.png"/>
+    <File fileId="4" filename="$data/vehicles/skoda/enyaq/enyaq_vmask.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="59">
+    </Material>
+    <Material name="enyaq_calibratedGlossPaint_mat" materialId="6" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="13"/>
+      <Custommap name="detailNormal" fileId="14"/>
+      <Custommap name="detailDiffuse" fileId="15"/>
+      <CustomParameter name="colorScale" value="0.56 0.61 0"/>
+      <CustomParameter name="smoothnessScale" value="0.85"/>
+      <CustomParameter name="clearCoatIntensity" value="0.5"/>
+      <CustomParameter name="clearCoatSmoothness" value="0.85"/>
+    </Material>
+    <Material name="enyaq_calibratedPaint_01_mat" materialId="7" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="13"/>
+      <Custommap name="detailNormal" fileId="14"/>
+      <Custommap name="detailDiffuse" fileId="15"/>
+      <CustomParameter name="colorScale" value="0.012 0.012 0.012"/>
+      <CustomParameter name="smoothnessScale" value="0.85"/>
+      <CustomParameter name="clearCoatIntensity" value="0.1"/>
+      <CustomParameter name="clearCoatSmoothness" value="0.2"/>
+    </Material>
+    <Material name="enyaq_calibratedPaint_02_mat" materialId="8" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="13"/>
+      <Custommap name="detailNormal" fileId="14"/>
+      <Custommap name="detailDiffuse" fileId="15"/>
+      <CustomParameter name="smoothnessScale" value="0.85"/>
+      <CustomParameter name="clearCoatIntensity" value="0.1"/>
+      <CustomParameter name="clearCoatSmoothness" value="0.2"/>
+    </Material>
+    <Material name="enyaq_chrome_01_mat" materialId="9" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="39"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="1 0 0"/>
+    </Material>
+    <Material name="enyaq_chrome_02_mat" materialId="10" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="39"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+    </Material>
+    <Material name="enyaq_chrome_alphaBlending_mat" materialId="11" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="39"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+    </Material>
+    <Material name="enyaq_chrome_opaque_mat" materialId="12" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="39"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+    </Material>
+    <Material name="enyaq_decal_mat" materialId="13" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="38"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="colorScale" value="0.01 0.01 0.01"/>
+    </Material>
+    <Material name="enyaq_fabric1_01_mat" materialId="14" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="27"/>
+      <Custommap name="detailNormal" fileId="28"/>
+      <Custommap name="detailDiffuse" fileId="33"/>
+      <CustomParameter name="colorScale" value="0.1549 0.1549 0.1549"/>
+      <CustomParameter name="porosity" value="1"/>
+    </Material>
+    <Material name="enyaq_fabric1_02_mat" materialId="15" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="27"/>
+      <Custommap name="detailNormal" fileId="28"/>
+      <Custommap name="detailDiffuse" fileId="33"/>
+      <CustomParameter name="colorScale" value="0.05634 0.05634 0.05634"/>
+      <CustomParameter name="porosity" value="1"/>
+    </Material>
+    <Material name="enyaq_fabric1Bluish_01_mat" materialId="16" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="27"/>
+      <Custommap name="detailNormal" fileId="28"/>
+      <Custommap name="detailDiffuse" fileId="29"/>
+      <CustomParameter name="colorScale" value="0.6505 0.6972 0.6425"/>
+      <CustomParameter name="porosity" value="1"/>
+    </Material>
+    <Material name="enyaq_fabric1Bluish_02_mat" materialId="17" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="27"/>
+      <Custommap name="detailNormal" fileId="28"/>
+      <Custommap name="detailDiffuse" fileId="29"/>
+      <CustomParameter name="colorScale" value="0.5493 0.549 0.4523"/>
+      <CustomParameter name="porosity" value="1"/>
+    </Material>
+    <Material name="enyaq_fabric2_mat" materialId="18" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="40"/>
+      <Custommap name="detailNormal" fileId="41"/>
+      <Custommap name="detailDiffuse" fileId="42"/>
+      <CustomParameter name="porosity" value="1"/>
+    </Material>
+    <Material name="enyaq_glassClear01_mat" materialId="19" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="48"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="51"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.4662 0.4662 0.4662"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+    <Material name="enyaq_glassClear03_01_mat" materialId="20" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="48"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="49"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.33 0.33 0.33"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+    <Material name="enyaq_glassClear03_02_mat" materialId="21" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="48"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="49"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.4437 0.4437 0.4437"/>
+    </Material>
+    <Material name="enyaq_glassClear03_03_mat" materialId="22" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="48"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="49"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.1197 0.1197 0.1197"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+    <Material name="enyaq_glassClear03_04_mat" materialId="23" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="48"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="49"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.47 0.47 0.47"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+    <Material name="enyaq_glassHeadlight_mat" materialId="24" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="48"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="50"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.27 0.02 0"/>
+      <CustomParameter name="smoothnessScale" value="0.94"/>
+      <CustomParameter name="metalnessScale" value="0.4"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+    <Material name="enyaq_halfMetalNoise1Black_alphaBlending_mat" materialId="25" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="16"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="colorScale" value="0.03 0.03 0.03"/>
+    </Material>
+    <Material name="enyaq_halfMetalNoise1Black_mat" materialId="26" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="16"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.03 0.03 0.03"/>
+    </Material>
+    <Material name="enyaq_halfMetalNoise1Black_opaque_mat" materialId="27" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="16"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="colorScale" value="0.03 0.03 0.03"/>
+    </Material>
+    <Material name="enyaq_interior_baseColor2_mat" materialId="28" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+    </Material>
+    <Material name="enyaq_interior_baseColor_mat" materialId="29" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_leather1_mat" materialId="30" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="44"/>
+      <Custommap name="detailNormal" fileId="45"/>
+      <Custommap name="detailDiffuse" fileId="46"/>
+      <CustomParameter name="colorScale" value="0.1972 0.1972 0.1972"/>
+    </Material>
+    <Material name="enyaq_leather3GrayDark_01_mat" materialId="31" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="22"/>
+      <Custommap name="detailNormal" fileId="23"/>
+      <Custommap name="detailDiffuse" fileId="24"/>
+      <CustomParameter name="colorScale" value="0.07746 0.07746 0.07746"/>
+    </Material>
+    <Material name="enyaq_leather3GrayDark_02_mat" materialId="32" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="22"/>
+      <Custommap name="detailNormal" fileId="23"/>
+      <Custommap name="detailDiffuse" fileId="24"/>
+      <CustomParameter name="colorScale" value="0.1083 0.1127 0.1086"/>
+    </Material>
+    <Material name="enyaq_leather3GrayDark_03_mat" materialId="33" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="22"/>
+      <Custommap name="detailNormal" fileId="23"/>
+      <Custommap name="detailDiffuse" fileId="24"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.08 0.08 0.08"/>
+    </Material>
+    <Material name="enyaq_mat" materialId="34" customShaderId="56" customShaderVariation="staticLight_specularUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+    </Material>
+    <Material name="enyaq_metalPainted_mat" materialId="35" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="66"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="67"/>
+      <CustomParameter name="colorScale" value="0.1831 0.1831 0.1831"/>
+    </Material>
+    <Material name="enyaq_perforatedSynthetic2_01_mat" materialId="36" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="30"/>
+      <Custommap name="detailNormal" fileId="31"/>
+      <Custommap name="detailDiffuse" fileId="32"/>
+      <CustomParameter name="colorScale" value="0.06338 0.06338 0.06338"/>
+    </Material>
+    <Material name="enyaq_perforatedSynthetic2_02_mat" materialId="37" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="30"/>
+      <Custommap name="detailNormal" fileId="31"/>
+      <Custommap name="detailDiffuse" fileId="32"/>
+      <CustomParameter name="colorScale" value="0.2042 0.2042 0.2042"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_01_mat" materialId="38" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.05 0.05 0.05"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_02_mat" materialId="39" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.1268 0.1268 0.1268"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_03_mat" materialId="40" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.09155 0.09155 0.09155"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_04_mat" materialId="41" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.03 0.03 0.03"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_05_mat" materialId="42" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.09 0.09 0.09"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_06_mat" materialId="43" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.1161 0.1188 0.12"/>
+    </Material>
+    <Material name="enyaq_plasticGraniteGrainSmall_07_mat" materialId="44" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.12 0.12 0.13"/>
+    </Material>
+    <Material name="enyaq_plasticPainted_01_mat" materialId="45" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+    </Material>
+    <Material name="enyaq_plasticPainted_02_mat" materialId="46" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0.09155 0.09155 0.09155"/>
+    </Material>
+    <Material name="enyaq_plasticPainted_03_mat" materialId="47" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0.05634 0.05634 0.05634"/>
+    </Material>
+    <Material name="enyaq_plasticPainted_04_mat" materialId="48" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0.04225 0.04225 0.04225"/>
+    </Material>
+    <Material name="enyaq_plasticPainted_05_mat" materialId="49" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0.1056 0.1056 0.1056"/>
+    </Material>
+    <Material name="enyaq_plasticPaintedShinyGray_01_mat" materialId="50" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0.2183 0 0.002916"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_plasticPaintedShinyGray_02_mat" materialId="51" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="1 0.0865 0"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_plasticPaintedShinyGray_03_mat" materialId="52" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0.06338 0.06338 0.06338"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_plasticPaintedShinyGray_04_mat" materialId="53" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <CustomParameter name="colorScale" value="0 0.4155 0"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_plasticPaintedShinyGray_05_mat" materialId="54" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="1 0.09 0"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_plasticPaintedShinyGray_06_mat" materialId="55" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="36"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="37"/>
+      <Custommap name="lightsIntensity" fileId="47"/>
+      <CustomParameter name="colorScale" value="0.07 0.07 0.07"/>
+      <CustomParameter name="smoothnessScale" value="1.52"/>
+    </Material>
+    <Material name="enyaq_reflectorRed_mat" materialId="56" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="34"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="35"/>
+      <CustomParameter name="colorScale" value="0.61 0 0.02"/>
+      <CustomParameter name="clearCoatIntensity" value="0.25"/>
+      <CustomParameter name="clearCoatSmoothness" value="1"/>
+    </Material>
+    <Material name="enyaq_rubber_01_mat" materialId="57" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="19"/>
+      <Custommap name="detailNormal" fileId="20"/>
+      <Custommap name="detailDiffuse" fileId="43"/>
+      <CustomParameter name="colorScale" value="0.09859 0.09859 0.09859"/>
+      <CustomParameter name="porosity" value="0.5"/>
+    </Material>
+    <Material name="enyaq_rubber_02_mat" materialId="58" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="19"/>
+      <Custommap name="detailNormal" fileId="20"/>
+      <Custommap name="detailDiffuse" fileId="43"/>
+      <CustomParameter name="porosity" value="0.5"/>
+    </Material>
+    <Material name="enyaq_rubber_03_mat" materialId="59" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="19"/>
+      <Custommap name="detailNormal" fileId="20"/>
+      <Custommap name="detailDiffuse" fileId="43"/>
+      <CustomParameter name="colorScale" value="0.05634 0.05634 0.05634"/>
+      <CustomParameter name="porosity" value="0.5"/>
+    </Material>
+    <Material name="enyaq_rubberBlack_mat" materialId="60" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="19"/>
+      <Custommap name="detailNormal" fileId="20"/>
+      <Custommap name="detailDiffuse" fileId="21"/>
+      <CustomParameter name="porosity" value="0.5"/>
+    </Material>
+    <Material name="enyaq_silverRough_01_mat" materialId="61" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="18"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="smoothnessScale" value="2"/>
+    </Material>
+    <Material name="enyaq_silverRough_02_mat" materialId="62" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="18"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="smoothnessScale" value="1.5"/>
+    </Material>
+    <Material name="enyaq_silverScratched_alphaBlending_mat" materialId="63" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="25"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="26"/>
+    </Material>
+    <Material name="enyaq_silverScratched_opaque_mat" materialId="64" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="25"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="26"/>
+    </Material>
+    <Material name="enyaq_SIP_RED1_mat" materialId="65" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="13"/>
+      <Custommap name="detailNormal" fileId="14"/>
+      <Custommap name="detailDiffuse" fileId="15"/>
+      <CustomParameter name="colorScale" value="0.7952 0 0"/>
+      <CustomParameter name="smoothnessScale" value="0.85"/>
+      <CustomParameter name="clearCoatIntensity" value="0.1"/>
+      <CustomParameter name="clearCoatSmoothness" value="0.2"/>
+    </Material>
+    <Material name="enyaqDisplay2_01_mat" materialId="66" alphaBlending="true" customShaderId="56" customShaderVariation="slider">
+      <Texture fileId="58"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+    </Material>
+    <Material name="enyaqDisplay2_02_mat" materialId="67" alphaBlending="true" customShaderId="56" customShaderVariation="staticLight_specularUV2_normalUV3">
+      <Texture fileId="58"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+    </Material>
+    <Material name="enyaqDisplay_decal_mat" materialId="68" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="57"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+      <Custommap name="detailSpecular" fileId="38"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+    </Material>
+    <Material name="enyaqDisplay_mat" materialId="69" customShaderId="56" customShaderVariation="staticLight">
+      <Texture fileId="57"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+    </Material>
+    <Material name="enyaqDisplay_mat" materialId="70" customShaderId="56" customShaderVariation="staticLight_specularUV2_normalUV3">
+      <Texture fileId="57"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+    </Material>
+    <Material name="enyaqRasterPattern_plasticGraniteGrainSmallBlack_mat" materialId="71" customShaderId="5" customShaderVariation="vmaskUV2">
+      <Texture fileId="65"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="55"/>
+      <Custommap name="detailSpecular" fileId="6"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="8"/>
+      <CustomParameter name="colorScale" value="0.05 0.05 0.05"/>
+      <CustomParameter name="smoothnessScale" value="0"/>
+    </Material>
+    <Material name="lambert1" materialId="72" diffuseColor="0.501961 0.501961 0.501961 1">
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="73" alphaBlending="true" customShaderId="56" customShaderVariation="staticLight">
+      <Texture fileId="60"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="61"/>
+    </Material>
+    <Material name="mirror_mat" materialId="74" diffuseColor="0 0 0 1" specularColor="0 1 1" customShaderId="64">
+      <Reflectionmap lodDistanceScaling="0.5" viewDistanceScaling="0.5" type="planar" scaling="1" refractiveIndex="10" bumpScale="0.1" shapesObjectMask="4294967295" lightsObjectMask="4294967295"/>
+    </Material>
+    <Material name="skodaEnyaq_baseColor2_mat" materialId="75" alphaBlending="true" customShaderId="5" customShaderVariation="vmaskUV2_normalUV3">
+      <Texture fileId="52"/>
+      <Normalmap fileId="53"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="13"/>
+      <Custommap name="detailNormal" fileId="14"/>
+      <Custommap name="detailDiffuse" fileId="15"/>
+      <CustomParameter name="colorScale" value="0.37 0.57 0"/>
+      <CustomParameter name="smoothnessScale" value="0.85"/>
+      <CustomParameter name="clearCoatIntensity" value="0.5"/>
+      <CustomParameter name="clearCoatSmoothness" value="0.85"/>
+    </Material>
+    <Material name="skodaEnyaq_baseColor_mat" materialId="76" customShaderId="5">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+      <Custommap name="detailSpecular" fileId="13"/>
+      <Custommap name="detailNormal" fileId="14"/>
+      <Custommap name="detailDiffuse" fileId="15"/>
+      <CustomParameter name="colorScale" value="0.37 0.57 0"/>
+      <CustomParameter name="smoothnessScale" value="0.85"/>
+      <CustomParameter name="clearCoatIntensity" value="0.5"/>
+      <CustomParameter name="clearCoatSmoothness" value="0.85"/>
+    </Material>
+    <Material name="window_glassWindow_mat" materialId="77" alphaBlending="true" customShaderId="5">
+      <Texture fileId="68"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="69"/>
+      <Custommap name="detailSpecular" fileId="38"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+    <Material name="windowDark_glassWindow_mat" materialId="78" alphaBlending="true" customShaderId="5">
+      <Texture fileId="70"/>
+      <Normalmap fileId="54"/>
+      <Glossmap fileId="69"/>
+      <Custommap name="detailSpecular" fileId="38"/>
+      <Custommap name="detailNormal" fileId="7"/>
+      <Custommap name="detailDiffuse" fileId="17"/>
+      <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="enyaq.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <Shape name="enyaq_main_component1" shapeId="1" dynamic="true" compound="true" collisionFilterGroup="0x10004" collisionFilterMask="0xfe3ffb83" clipDistance="300" nodeId="137" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="72">
+      <Shape name="enyaq_vis" shapeId="2" clipDistance="300" nodeId="138" castsShadows="true" receiveShadows="true" skinBindNodeIds="138 141 143 149 151 156 158 160 162 202 235 237 240 277 284 294 295 302 304 306 308 310 312 315 317 324 329 331 338 340 342 344" materialIds="40,7,38,76,27,61,60,31,64,39,17,36,15,41,6,56,50,13,65,62,10,16,51,18,57,58,32,42,43,37,44,52,53,14,29,30,59">
+        <TransformGroup name="wheels" nodeId="139">
+          <TransformGroup name="wheelFrontLeftReprRot" translation="0.714934 0.251208 1.48362" rotation="-4.03383 3.76164 0.5825" nodeId="140">
+            <TransformGroup name="wheelFrontLeftRepr" clipDistance="300" nodeId="141">
+              <TransformGroup name="wheelFrontLeftRot" translation="0.061189 0.123016 -0.003936" rotation="4.08041 -3.71105 -0.847265" nodeId="142">
+                <TransformGroup name="wheelFrontLeft" translation="0.026388 0 0" clipDistance="300" nodeId="143">
+                  <TransformGroup name="wheelFrontLeftLinkNode" translation="0.029977 -6.6e-05 0" nodeId="144"/>
+                </TransformGroup>
+              </TransformGroup>
+              <TransformGroup name="steeringBarLeftRef" translation="-0.027193 0.0962 -0.145491" rotation="18.8892 78.4893 19.8777" nodeId="145"/>
+              <TransformGroup name="wheelFrontLeftArmRef" rotation="12.778 74.3767 14.165" nodeId="146"/>
+              <TransformGroup name="leftShaftRef" translation="-0.12 0.124573 -0.015163" rotation="32.5613 82.2799 31.0936" nodeId="147"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="wheelFrontRightReprRot" translation="-0.714934 0.251208 1.48362" rotation="-4.03383 -3.76164 0.5825" nodeId="148">
+            <TransformGroup name="wheelFrontRightRepr" translation="-1e-06 0 0" clipDistance="300" nodeId="149">
+              <TransformGroup name="wheelFrontRightRot" translation="-0.061189 0.12292 0.006259" rotation="8.83674 3.62822 1.1518" nodeId="150">
+                <TransformGroup name="wheelFrontRight" translation="-0.026388 0 0" clipDistance="300" nodeId="151">
+                  <TransformGroup name="wheelFrontRightLinkNode" translation="-0.029977 -6.6e-05 0" nodeId="152"/>
+                </TransformGroup>
+              </TransformGroup>
+              <TransformGroup name="steeringBarRightRef" translation="0.027193 0.107911 -0.137031" rotation="37.8576 -76.1463 -38.3953" nodeId="153"/>
+              <TransformGroup name="wheelFrontRightArmRef" rotation="28.3528 -72.6105 -29.1072" nodeId="154"/>
+              <TransformGroup name="rightShaftRef" translation="0.12 0.121721 -0.015527" rotation="31.7606 -82.2497 -31.4598" nodeId="155"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="wheelBackLeftRepr" translation="0.620843 0.285264 -1.38862" rotation="2.38234 4.45958 6.87365" clipDistance="300" nodeId="156">
+            <TransformGroup name="wheelBackLeftRot" translation="0.18039 0.071191 0.099633" rotation="-1.83833 -4.70957 -6.70527" nodeId="157">
+              <TransformGroup name="wheelBackLeft" translation="0.033642 0 0" clipDistance="300" nodeId="158">
+                <TransformGroup name="wheelBackLeftLinkNode" translation="-0.035 0 0" nodeId="159"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="wheelBackRightRepr" translation="-0.620842 0.285264 -1.38862" rotation="2.38234 -4.45962 -6.87364" clipDistance="300" nodeId="160">
+            <TransformGroup name="wheelBackRightRot" translation="-0.18039 0.071191 0.099633" rotation="-1.83833 4.70961 6.70526" nodeId="161">
+              <TransformGroup name="wheelBackRight" translation="-0.033642 0 0" clipDistance="300" nodeId="162">
+                <TransformGroup name="wheelBackRightLinkNode" translation="0.035 0 0" nodeId="163"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="cameras" nodeId="164">
+          <Camera name="indoorCamera" translation="0.365 1.37 -0.02" rotation="-12 180 0" nodeId="165" fov="60" nearClip="0.1" farClip="5000" orthographicHeight="1"/>
+          <TransformGroup name="outdoorCameraTarget" translation="0 0.82 0" rotation="-24 180 0" nodeId="166">
+            <Camera name="outdoorCamera" translation="0 -0.76118 10.4969" nodeId="167" fov="54.4322" nearClip="0.3" farClip="5000" orthographicHeight="1"/>
+          </TransformGroup>
+          <TransformGroup name="cameraRaycastNode1" translation="0 0.763303 2.30857" nodeId="168"/>
+          <TransformGroup name="cameraRaycastNode2" translation="0 1.62617 -0.36091" nodeId="169"/>
+          <TransformGroup name="cameraRaycastNode3" translation="0 1.21548 -2.23598" nodeId="170"/>
+          <Shape name="shadowFocusBox" translation="0 1.0151 -0.304751" shapeId="3" clipDistance="150" nodeId="171" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="72"/>
+        </TransformGroup>
+        <TransformGroup name="lights" nodeId="172">
+          <TransformGroup name="staticLights" nodeId="173">
+            <Shape name="enyaqLights_static" translation="0 0.955102 0.01271" shapeId="4" clipDistance="75" nodeId="174" castsShadows="true" receiveShadows="true" materialIds="12,55,26,9,33,54"/>
+            <Shape name="enyaqLightsGlass_static" translation="0 0.809905 0.0154" shapeId="5" clipDistance="75" nodeId="175" castsShadows="true" receiveShadows="true" materialIds="20,24,21,19,23"/>
+            <Shape name="enyaqLightsGlassInterior_static" translation="0 0.953517 -0.13409" shapeId="6" clipDistance="75" nodeId="176" castsShadows="true" receiveShadows="true" materialIds="20"/>
+          </TransformGroup>
+          <TransformGroup name="defaultLights" nodeId="177">
+            <Light name="frontLightLow" translation="0 0.816104 2.29033" rotation="165 0 -180" clipDistance="75" nodeId="178" type="spot" color="0.85 0.85 1" emitDiffuse="true" emitSpecular="true" range="20" coneAngle="80" dropOff="3"/>
+            <Light name="highBeamLow" translation="0 0.819785 2.27929" rotation="170 0 180" clipDistance="75" nodeId="179" type="spot" color="0.85 0.85 1" emitDiffuse="true" emitSpecular="true" range="30" coneAngle="70" dropOff="2"/>
+            <Light name="frontLightHigh" translation="0.76427 0.846289 2.03155" rotation="165 -8 180" clipDistance="75" nodeId="180" type="spot" color="0.85 0.85 1" emitDiffuse="true" emitSpecular="true" range="25" coneAngle="70" dropOff="3">
+              <Light name="frontLightHigh1" translation="1.5134 -0.055049 0.205447" rotation="0.575673 -15.441 -4.24443" clipDistance="75" nodeId="181" type="spot" color="0.85 0.85 1" emitDiffuse="true" emitSpecular="true" range="25" coneAngle="70" dropOff="3"/>
+            </Light>
+            <Light name="highBeamHigh" translation="0.590498 0.820821 2.18828" rotation="170 -5 180" clipDistance="75" nodeId="182" type="spot" color="0.85 0.85 1" emitDiffuse="true" emitSpecular="true" range="60" coneAngle="30" dropOff="2.5">
+              <Light name="highBeamHigh1" translation="1.17601 -0.017866 0.101324" rotation="0.151082 -9.84655 -1.75378" clipDistance="75" nodeId="183" type="spot" color="0.85 0.85 1" emitDiffuse="true" emitSpecular="true" range="60" coneAngle="30" dropOff="2.5"/>
+            </Light>
+            <Light name="licensePlateLightHigh" translation="0.12 0.72854 -2.35814" rotation="-135.542 0 0" clipDistance="75" nodeId="184" type="spot" color="1 1 1" emitDiffuse="true" emitSpecular="true" range="0.2" coneAngle="120" dropOff="2">
+              <Light name="licensePlateLightHigh1" translation="-0.24 0 0" clipDistance="75" nodeId="185" type="spot" color="1 1 1" emitDiffuse="true" emitSpecular="true" range="0.2" coneAngle="120" dropOff="2"/>
+            </Light>
+            <Light name="interiorScreenLight" translation="-0.01524 1.08345 0.499826" rotation="162.199 0 180" clipDistance="20" nodeId="186" type="point" color="0.59 0.653079 1" emitDiffuse="true" emitSpecular="true" range="0.25">
+              <Light name="interiorScreenLight1" translation="-0.375685 0.028054 -0.238122" rotation="-5.29205 0 0" clipDistance="20" nodeId="187" type="point" color="0.59 0.653079 1" emitDiffuse="true" emitSpecular="true" range="0.1"/>
+            </Light>
+          </TransformGroup>
+          <TransformGroup name="backLights" nodeId="188">
+            <Light name="backLightsHigh" translation="0.62577 1.01437 -2.17991" rotation="-15 0 0" clipDistance="75" nodeId="189" type="spot" color="0.5 0 0" emitDiffuse="true" emitSpecular="true" range="2.5" coneAngle="130" dropOff="2">
+              <Light name="backLightsHigh1" translation="-1.25177 0 0" clipDistance="75" nodeId="190" type="spot" color="0.5 0 0" emitDiffuse="true" emitSpecular="true" range="2.5" coneAngle="130" dropOff="2"/>
+            </Light>
+          </TransformGroup>
+          <TransformGroup name="turnLights" nodeId="191">
+            <Light name="turnLightLeftFront" translation="0.697533 0.834478 2.10028" rotation="165 0 -180" clipDistance="75" nodeId="192" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" range="4" coneAngle="120" dropOff="3">
+              <Light name="turnLightLeftBack" translation="0 -0.928018 4.10186" rotation="150 0 -180" clipDistance="75" nodeId="193" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" range="4" coneAngle="120" dropOff="3"/>
+            </Light>
+            <Light name="turnLightRightFront" translation="-0.698 0.834478 2.10028" rotation="165 0 -180" clipDistance="75" nodeId="194" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" range="4" coneAngle="120" dropOff="3">
+              <Light name="turnLightRightBack" translation="0 -0.928018 4.10186" rotation="150 0 -180" clipDistance="75" nodeId="195" type="spot" color="0.31 0.14 0" emitDiffuse="true" emitSpecular="true" range="4" coneAngle="120" dropOff="3"/>
+            </Light>
+          </TransformGroup>
+          <TransformGroup name="reverseLights" nodeId="196">
+            <Light name="reverseLightHigh" translation="0.547894 1.00923 -2.17775" rotation="-15 0 0" clipDistance="75" nodeId="197" type="spot" color="0.9 0.9 1" emitDiffuse="true" emitSpecular="true" range="2.5" coneAngle="130" dropOff="3">
+              <Light name="reverseLightHigh1" translation="-1.09589 0 0" clipDistance="75" nodeId="198" type="spot" color="0.9 0.9 1" emitDiffuse="true" emitSpecular="true" range="2.5" coneAngle="130" dropOff="3"/>
+            </Light>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="exitPoint" translation="1.2 0 0" nodeId="199"/>
+        <TransformGroup name="interior" nodeId="200">
+          <TransformGroup name="steeringWheelRot" translation="0.365226 1.02153 0.4584" rotation="68.2965 180 0" nodeId="201">
+            <TransformGroup name="steeringWheel" translation="0 0 0.000437" clipDistance="300" nodeId="202">
+              <TransformGroup name="playerLeftHandTarget" translation="-0.174 -0.016229 0.009943" rotation="172.703 14.9973 -93.8573" nodeId="203"/>
+              <TransformGroup name="playerRightHandTarget" translation="0.173554 -0.016229 0.009943" rotation="-172.703 -14.9973 86.1427" nodeId="204"/>
+              <Shape name="steeringWheel_decals" translation="-0.011934 -0.017709 -0.013987" rotation="-111.704 -7.7e-05 180" shapeId="7" clipDistance="30" nodeId="205" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="45,48"/>
+              <Shape name="steeringWheelButtons_decal" translation="0.001972 0.00274 6.6e-05" rotation="-111.704 -7.7e-05 180" shapeId="8" clipDistance="30" nodeId="206" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+              <Shape name="steeringWheelStitching_decal" translation="1e-05 -0.005843 -0.009264" rotation="-111.704 -7.7e-05 180" shapeId="9" clipDistance="30" nodeId="207" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="28"/>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="dashboard" nodeId="208">
+            <TransformGroup name="icons" nodeId="209">
+              <Shape name="displayLoading_decal" translation="-0.0175297 1.09132 0.629194" shapeId="10" clipDistance="30" nodeId="210" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="70"/>
+              <Shape name="iconsLoading_decal" shapeId="11" clipDistance="30" nodeId="211" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="67"/>
+              <Shape name="displayGlass_decal" translation="0.153327 1.0876 0.713336" shapeId="12" clipDistance="30" nodeId="212" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="68"/>
+              <Shape name="display_decal" translation="0.001 0.0013 -0.0028" shapeId="13" clipDistance="30" nodeId="213" castsShadows="false" receiveShadows="true" materialIds="69"/>
+              <Shape name="buttons_decal" translation="0.667237 0.902286 0.686745" shapeId="14" clipDistance="30" nodeId="214" castsShadows="false" receiveShadows="true" materialIds="34"/>
+              <Shape name="turnLightHazard_decal" translation="-0.009016 0.857841 0.536491" shapeId="15" clipDistance="30" nodeId="215" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+              <Shape name="buttonsGreen_decal" translation="0.667237 0.902286 0.686745" shapeId="16" clipDistance="30" nodeId="216" castsShadows="false" receiveShadows="true" materialIds="34"/>
+              <Shape name="sliderBattery01" translation="0.37568 1.02489 0.8" shapeId="17" clipDistance="30" nodeId="217" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="66"/>
+              <Shape name="sliderBattery02" translation="0.368846 1.02082 0.799392" shapeId="18" clipDistance="30" nodeId="218" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="66"/>
+              <Shape name="sliderBattery03" shapeId="19" clipDistance="30" nodeId="219" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="66"/>
+              <Shape name="turnLightLeft_decal" translation="0.417486 1.0579 0.804391" shapeId="20" clipDistance="30" nodeId="220" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="67"/>
+              <Shape name="turnLightRight_decal" translation="0.303455 1.05739 0.804275" shapeId="21" clipDistance="30" nodeId="221" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="67"/>
+              <Shape name="cruiseControlON_decal" shapeId="22" clipDistance="30" nodeId="222" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="67"/>
+              <TransformGroup name="cruiseControlOFF" nodeId="223">
+                <Shape name="cruiseControlOFF_decal" shapeId="23" clipDistance="30" nodeId="224" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="67"/>
+              </TransformGroup>
+              <TransformGroup name="skodaEnyaqDashboard" translation="-0.0165735 1.09314 0.625607" rotation="7.02924 -0 0" clipDistance="30" nodeId="225">
+                <Shape name="skodaEnyaq_dblMainScreenP1" shapeId="24" clipDistance="30" nodeId="226" castsShadows="false" receiveShadows="true" materialIds="69"/>
+                <Shape name="skodaEnyaq_dblNaviMapP2" shapeId="25" clipDistance="30" nodeId="227" castsShadows="false" receiveShadows="true" materialIds="5">
+                  <Shape name="skodaEnyaq_dblNaviMapPosP2" scale="1.5 1 1.5" shapeId="26" clipDistance="20" nodeId="228" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="73"/>
+                </Shape>
+              </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="numbers" nodeId="229">
+              <TransformGroup name="numbersSpeed" translation="0.358369 1.03111 0.800429" rotation="-8 180 0" nodeId="230"/>
+              <TransformGroup name="numbersBattery" translation="0.370239 1.02249 0.799122" rotation="-8 180 0" nodeId="231"/>
+              <TransformGroup name="numbersTime" translation="-0.018421 1.15225 0.640528" rotation="-7.78741 180 0" nodeId="232"/>
+              <TransformGroup name="numbersMilage" translation="0.344625 1.02227 0.799092" rotation="-8 180 0" nodeId="233"/>
+            </TransformGroup>
+            <TransformGroup name="pedals" nodeId="234">
+              <TransformGroup name="gasPedal" translation="0.214442 0.601181 1.14421" clipDistance="300" nodeId="235">
+                <TransformGroup name="playerRightFootTargetGasRef" translation="-0.041724 -0.063857 -0.169492" rotation="-39.2921 -0.830633 0" nodeId="236"/>
+              </TransformGroup>
+              <TransformGroup name="brakePedal" translation="0.250014 0.797183 1.02771" clipDistance="300" nodeId="237">
+                <TransformGroup name="playerRightFootTargetBrake" translation="0.064043 -0.338626 -0.2809" rotation="-22.7736 0 0" nodeId="238"/>
+              </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="drivingDirectionKnobRot" translation="0.044983 0.646006 0.394099" rotation="-10.4814 0.033261 0" nodeId="239">
+              <TransformGroup name="drivingDirectionKnob" clipDistance="300" nodeId="240">
+                <Shape name="gearKnobR_icon" translation="-4.9e-05 0.105518 0.012907" rotation="10.4814 -0.032706 -0.006051" shapeId="27" clipDistance="30" nodeId="241" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+                <Shape name="gearKnobN_icon" translation="5.3e-05 0.105877 0.005361" rotation="10.4814 -0.032706 -0.006051" shapeId="28" clipDistance="30" nodeId="242" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="45"/>
+                <Shape name="gearKnobD_icon" translation="0.000267 0.105645 -0.010447" rotation="10.4814 -0.032706 -0.006051" shapeId="29" clipDistance="30" nodeId="243" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+                <Shape name="gearKnobSelector_icon" translation="0.000164 0.105946 -0.002797" shapeId="30" clipDistance="30" nodeId="244" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="playerRoot" translation="0.365 0.57677 -0.037414" nodeId="245">
+            <TransformGroup name="playerSkin" nodeId="246"/>
+            <TransformGroup name="playerLeftFootTarget" translation="0.16039 -0.199471 0.76061" rotation="-18.054 8.29691 -5.9453" nodeId="247"/>
+            <TransformGroup name="playerRightFootTarget" translation="-0.171707 -0.207732 0.75319" rotation="-9.35475 0.6999 0.722954" nodeId="248"/>
+            <TransformGroup name="playerRightFootTargetGas" translation="-0.189925 -0.196663 0.84963" rotation="-39.2921 -0.830633 0" nodeId="249"/>
+          </TransformGroup>
+          <TransformGroup name="passengerSeats" nodeId="250">
+            <TransformGroup name="passengerSeat01" translation="-0.358833 0.576386 0.05" rotation="-10.307 0 0" nodeId="251">
+              <TransformGroup name="passengerSeat01PlayerSkin" translation="0 0.000127 -0.049907" rotation="-2 0 0" nodeId="252"/>
+              <TransformGroup name="passengerSeat01PlayerRightFoot" translation="-0.208919 -0.295735 0.589077" rotation="5.76919 6.73437 -1.74037" nodeId="253"/>
+              <TransformGroup name="passengerSeat01PlayerLeftFoot" translation="0.081537 -0.307042 0.637" rotation="-4.91199 0 0" nodeId="254"/>
+              <TransformGroup name="passengerSeat01PlayerLeftHand" translation="0.141136 0.185618 0.37121" rotation="149.32 -83.4947 -163.466" nodeId="255"/>
+              <TransformGroup name="passengerSeat01PlayerRightHand" translation="-0.338224 0.233857 0.276893" rotation="149.551 72.7118 129.835" nodeId="256"/>
+              <TransformGroup name="passengerSeat01ExitPoint" translation="-0.841167 -0.558139 -0.152322" rotation="10.307 0 0" nodeId="257"/>
+              <Camera name="passengerSeat01Camera" translation="-0.001167 0.8082 0.044863" rotation="158.603 0 180" nodeId="258" fov="60" nearClip="0.1" farClip="5000" orthographicHeight="1"/>
+            </TransformGroup>
+            <TransformGroup name="passengerSeat02" translation="-0.358833 0.576386 -0.9" rotation="-10.307 0 0" nodeId="259">
+              <TransformGroup name="passengerSeat02PlayerSkin" rotation="0.14597 0 0" nodeId="260"/>
+              <TransformGroup name="passengerSeat02PlayerRightFoot" translation="-0.2 -0.308701 0.667913" rotation="-4.44101 6.73437 -1.74037" nodeId="261"/>
+              <TransformGroup name="passengerSeat02PlayerLeftFoot" translation="0.081537 -0.307042 0.6" rotation="-4.91199 0 0" nodeId="262"/>
+              <TransformGroup name="passengerSeat02PlayerLeftHand" translation="0.123454 0.296659 0.451735" rotation="154.508 -83.4947 -163.466" nodeId="263"/>
+              <TransformGroup name="passengerSeat02PlayerRightHand" translation="-0.316062 0.225645 0.366025" rotation="149.551 72.7118 129.835" nodeId="264"/>
+              <TransformGroup name="passengerSeat02ExitPoint" translation="-0.891167 -0.567085 -0.103128" rotation="10.307 0 0" nodeId="265"/>
+              <Camera name="passengerSeat02Camera" translation="-0.001167 0.769625 0.020809" rotation="159.256 0 180" nodeId="266" fov="60" nearClip="0.1" farClip="5000" orthographicHeight="1"/>
+            </TransformGroup>
+            <TransformGroup name="passengerSeat03" translation="0.359 0.576386 -0.9" rotation="-10.307 0 0" nodeId="267">
+              <TransformGroup name="passengerSeat03PlayerSkin" rotation="0.14597 0 0" nodeId="268"/>
+              <TransformGroup name="passengerSeat03PlayerRightFoot" translation="-0.2 -0.308701 0.65" rotation="-4.44101 6.73437 -1.74037" nodeId="269"/>
+              <TransformGroup name="passengerSeat03PlayerLeftFoot" translation="0.081537 -0.307042 0.6" rotation="-4.91199 0 0" nodeId="270"/>
+              <TransformGroup name="passengerSeat03PlayerLeftHand" translation="0.305089 0.204192 0.425992" rotation="114.049 -67.735 -115.458" nodeId="271"/>
+              <TransformGroup name="passengerSeat03PlayerRightHand" translation="-0.156378 0.246309 0.398625" rotation="198.221 88.6705 201.366" nodeId="272"/>
+              <TransformGroup name="passengerSeat03ExitPoint" translation="0.891 -0.567085 -0.103128" rotation="10.307 0 0" nodeId="273"/>
+              <Camera name="passengerSeat03Camera" translation="-0.001167 0.769625 0.020809" rotation="159.256 0 180" nodeId="274" fov="60" nearClip="0.1" farClip="5000" orthographicHeight="1"/>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="mirrors" translation="0.013252 1.35604 0.578795" nodeId="275">
+          <TransformGroup name="mirrorLeftRot" translation="0.888808 -0.253435 0.160261" rotation="177.091 52.7142 -180" nodeId="276">
+            <TransformGroup name="mirrorLeft" clipDistance="300" nodeId="277">
+              <TransformGroup name="lights" rotation="175.204 -52.6173 -176.186" nodeId="278">
+                <Shape name="enyaqLights_static1" translation="0.055651 0.029931 -0.042223" shapeId="31" clipDistance="75" nodeId="279" castsShadows="true" receiveShadows="true" materialIds="12,26"/>
+                <Shape name="enyaqLightsGlass_static1" translation="0.05689 0.029429 -0.041448" shapeId="32" clipDistance="75" nodeId="280" castsShadows="true" receiveShadows="true" materialIds="20,22"/>
+              </TransformGroup>
+              <Shape name="mirrorLeft_decal" translation="0.064377 0.040064 0.10888" rotation="86.7422 -72.1567 -170.916" shapeId="33" visibility="false" clipDistance="300" nodeId="281" castsShadows="true" receiveShadows="true" materialIds="74">
+                <TransformGroup name="mirrorLeftRef" translation="0.913265 2.25675 -0.365007" nodeId="282"/>
+              </Shape>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="mirrorRightRot" translation="-0.915311 -0.253435 0.16026" rotation="177.09 -52.7141 180" nodeId="283">
+            <TransformGroup name="mirrorRight" clipDistance="300" nodeId="284">
+              <TransformGroup name="lights" nodeId="285">
+                <Shape name="enyaqLights_static2" translation="0.00012 0.026347 0.071285" rotation="175.204 52.6172 176.186" shapeId="34" clipDistance="75" nodeId="286" castsShadows="true" receiveShadows="true" materialIds="12,26"/>
+                <Shape name="enyaqLightsGlass_static2" translation="0.001471 0.025811 0.071754" rotation="175.204 52.6172 176.186" shapeId="35" clipDistance="75" nodeId="287" castsShadows="true" receiveShadows="true" materialIds="20,22"/>
+              </TransformGroup>
+              <Shape name="mirrorRight_decal" translation="-0.066425 0.039291 0.104113" rotation="63.5849 84.1557 150.229" shapeId="36" visibility="false" clipDistance="300" nodeId="288" castsShadows="true" receiveShadows="true" materialIds="74">
+                <TransformGroup name="mirrorRightRef" translation="-1.24615 2.04748 -0.239956" nodeId="289"/>
+              </Shape>
+            </TransformGroup>
+          </TransformGroup>
+          <Shape name="mirrorInterior_decal" translation="0 0.001229 0.00843" rotation="-89.4633 -15.0178 0" shapeId="37" clipDistance="300" nodeId="290" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="74">
+            <TransformGroup name="mirrorInteriorRef" translation="-0.478299 1.77725 -0.016739" nodeId="291"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="movingParts" nodeId="292">
+          <TransformGroup name="suspension" nodeId="293">
+            <TransformGroup name="wheelFrontLeftArm" translation="0.45003 0.239366 1.43032" rotation="-2.50955 78.6244 0" clipDistance="300" nodeId="294"/>
+            <TransformGroup name="wheelFrontRightArm" translation="-0.450029 0.239366 1.43032" rotation="-2.50954 -78.6244 0" clipDistance="300" nodeId="295"/>
+            <Shape name="steeringBarLeft" translation="0.45003 0.328747 1.30574" rotation="-1.95534 82.9449 0" shapeId="38" clipDistance="300" nodeId="296" castsShadows="true" receiveShadows="true" materialIds="7"/>
+            <Shape name="steeringBarRight" translation="-0.450029 0.328747 1.30574" rotation="-1.95533 -82.9449 0" shapeId="39" clipDistance="300" nodeId="297" castsShadows="true" receiveShadows="true" materialIds="7"/>
+            <Shape name="leftShaft" translation="0.4 0.375 1.46" rotation="0.651314 87.1559 0" shapeId="40" clipDistance="300" nodeId="298" castsShadows="true" receiveShadows="true" materialIds="7"/>
+            <Shape name="rightShaft" translation="-0.4 0.374958 1.46" rotation="0.651298 -87.1559 0" shapeId="41" clipDistance="300" nodeId="299" castsShadows="true" receiveShadows="true" materialIds="7"/>
+          </TransformGroup>
+          <TransformGroup name="wipers" nodeId="300">
+            <TransformGroup name="wiperFront01Rot" translation="0.640563 1.05053 1.31129" rotation="-63.3203 21.9503 0" nodeId="301">
+              <TransformGroup name="wiperFront01" clipDistance="300" nodeId="302">
+                <TransformGroup name="wiperFront01PartRot" translation="-0.099309 0.033267 0.018829" rotation="100.198 2.06442 71.8512" nodeId="303">
+                  <TransformGroup name="wiperFront01Part" clipDistance="300" nodeId="304">
+                    <TransformGroup name="wiperFront01MainRot" translation="0.026434 -0.148867 -0.450404" rotation="-15.6487 -1.98984 -1.64737" nodeId="305">
+                      <TransformGroup name="wiperFront01Main" clipDistance="300" nodeId="306"/>
+                    </TransformGroup>
+                  </TransformGroup>
+                </TransformGroup>
+              </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="wiperFront02Rot" translation="0.225428 1.04615 1.39182" rotation="-66.4198 8.9635 0" nodeId="307">
+              <TransformGroup name="wiperFront02" clipDistance="300" nodeId="308">
+                <TransformGroup name="wiperFront02PartRot" translation="-0.101906 0.023157 0.019427" rotation="100.532 0.841036 77.354" nodeId="309">
+                  <TransformGroup name="wiperFront02Part" clipDistance="300" nodeId="310">
+                    <TransformGroup name="wiperFront02MainRot" translation="0.096789 -0.181566 -0.619826" rotation="-15.9242 -19.1601 5.39228" nodeId="311">
+                      <TransformGroup name="wiperFront02Main" clipDistance="300" nodeId="312"/>
+                    </TransformGroup>
+                  </TransformGroup>
+                </TransformGroup>
+              </TransformGroup>
+            </TransformGroup>
+            <TransformGroup name="wiperBackRot" translation="0.001443 1.23997 -2.11572" rotation="-22.5005 -9.07673 0" nodeId="313">
+              <TransformGroup name="wiperBackYRot" nodeId="314">
+                <TransformGroup name="wiperBack" clipDistance="300" nodeId="315">
+                  <TransformGroup name="wiperBackPartRot" translation="-0.239753 -0.025396 0.036582" rotation="6.75167 -79.4188 2.96215" nodeId="316">
+                    <TransformGroup name="wiperBackPart" clipDistance="300" nodeId="317"/>
+                  </TransformGroup>
+                </TransformGroup>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="licensePlates" nodeId="318">
+          <TransformGroup name="licensePlateBack" translation="0 0.670941 -2.24768" rotation="-25.5266 180 0" nodeId="319"/>
+          <TransformGroup name="licensePlateFront" translation="0 0.468371 2.31277" nodeId="320"/>
+        </TransformGroup>
+        <TransformGroup name="fillUnit" nodeId="321">
+          <Shape name="exactFillRootNodeBattery" translation="-0.646593 0.679699 -1.40362" shapeId="42" kinematic="true" compound="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x20000000" nodeId="322" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="72"/>
+        </TransformGroup>
+        <TransformGroup name="configurations" translation="0 0.373544 -2.19945" nodeId="323">
+          <TransformGroup name="trailerAttacherBack" clipDistance="300" nodeId="324">
+            <TransformGroup name="trailerAttacherJointBack" translation="0 0.05431 -0.155148" rotation="0 90 0" nodeId="325"/>
+            <Shape name="attacher_colPart" translation="0 0.051854 -0.036681" shapeId="43" compoundChild="true" collisionFilterGroup="0x10004" collisionFilterMask="0xfe3ffb83" density="0.001" nodeId="326" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="72"/>
+            <TransformGroup name="electricBack" translation="0.017455 -0.029172 -0.106299" rotation="0 -90 0" nodeId="327"/>
+            <TransformGroup name="electricFlapRot" translation="0.019295 -0.023092 -0.117684" rotation="-30 0 0" nodeId="328">
+              <TransformGroup name="electricFlap" translation="-0.003134 -0.011276 -0.01562" clipDistance="300" nodeId="329"/>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="visuals" nodeId="330">
+          <TransformGroup name="interior_vis" clipDistance="300" nodeId="331"/>
+          <Shape name="raster" rotation="-90 90 0" shapeId="44" clipDistance="300" nodeId="332" castsShadows="true" receiveShadows="true" materialIds="71"/>
+          <Shape name="decals1" shapeId="45" clipDistance="30" nodeId="333" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="45,11,75,46,63,47,49,25,35"/>
+          <Shape name="decals2" shapeId="46" clipDistance="30" nodeId="334" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8,28"/>
+          <TransformGroup name="leverLightsRot" translation="0.449275 0.961384 0.595056" rotation="-66.0859 -15.8906 0" nodeId="335">
+            <TransformGroup name="leverHighBeam" nodeId="336">
+              <TransformGroup name="leverLights" nodeId="337">
+                <TransformGroup name="leverTurnlights" translation="-0.009055 9.4e-05 -7.8e-05" clipDistance="300" nodeId="338">
+                  <Shape name="lightsLever_decal" translation="0.062896 0.085209 0.029595" shapeId="47" clipDistance="30" nodeId="339" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+                </TransformGroup>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="leverWiper" translation="0.288479 0.961956 0.595297" clipDistance="300" nodeId="340">
+            <Shape name="wiperLever_decal" translation="-0.077079 0.060999 -0.04702" shapeId="48" clipDistance="30" nodeId="341" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+          </TransformGroup>
+          <TransformGroup name="leverCruiseControl" translation="0.441963 0.922734 0.579242" rotation="0 -5 0" clipDistance="300" nodeId="342">
+            <Shape name="cruiseControlLever_decal" translation="0.047149 0.020886 -0.064796" shapeId="49" clipDistance="30" nodeId="343" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+          </TransformGroup>
+          <TransformGroup name="ignitionButton" translation="0.274532 0.910862 0.57505" rotation="3.81635 70.8115 0" clipDistance="300" nodeId="344">
+            <Shape name="ignitionButton_decal" rotation="-11.4726 -70.4497 10.8273" shapeId="50" clipDistance="30" nodeId="345" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
+          </TransformGroup>
+          <TransformGroup name="windows" nodeId="346">
+            <Shape name="window01" translation="0 1.27555 0.888363" shapeId="51" clipDistance="200" nodeId="347" castsShadows="true" receiveShadows="true" materialIds="77"/>
+            <Shape name="window02" translation="0.720476 1.27278 0.351903" shapeId="52" clipDistance="300" nodeId="348" castsShadows="true" receiveShadows="true" materialIds="77"/>
+            <Shape name="window03" translation="-0.720476 1.27278 0.351902" shapeId="53" clipDistance="300" nodeId="349" castsShadows="true" receiveShadows="true" materialIds="77"/>
+            <Shape name="window04" translation="0.74013 1.31519 -0.724255" shapeId="54" clipDistance="200" nodeId="350" castsShadows="true" receiveShadows="true" materialIds="78"/>
+            <Shape name="window05" translation="-0.740132 1.31519 -0.724251" shapeId="55" clipDistance="200" nodeId="351" castsShadows="true" receiveShadows="true" materialIds="78"/>
+            <Shape name="window06" translation="0 1.3509 -1.70964" shapeId="56" clipDistance="200" nodeId="352" castsShadows="true" receiveShadows="true" materialIds="78"/>
+            <Shape name="window07" shapeId="57" clipDistance="20" nodeId="353" castsShadows="true" receiveShadows="true" materialIds="78"/>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+    </Shape>
+  </Scene>
+
+</i3D>

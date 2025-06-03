@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="tractor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <parentFile xmlFilename="data/vehicles//volvo/fh16/fh16.xml">
+        <attributes>
+            <!-- Store data -->
+            <set path="vehicle.storeData.name" value="FH Electric"/>
+            <set path="vehicle.storeData.image" value="$data/vehicles/volvo/fhElectric/store_fhElectric.png"/>
+            <set path="vehicle.storeData.price" value="145000"/>
+
+            <!-- Design 2 -->
+            <set path="vehicle.design2Configurations.design2Configuration(0)#isSelectable" value="true"/>
+            <set path="vehicle.design2Configurations.design2Configuration(1)#isSelectable" value="false"/>
+            <set path="vehicle.design2Configurations.design2Configuration(2)#isSelectable" value="false"/>
+            <set path="vehicle.design2Configurations.design2Configuration(3)#isSelectable" value="true"/>
+            <set path="vehicle.design2Configurations.design2Configuration(3)#price" value="5000"/>
+
+            <!-- Design 5 -->
+            <set path="vehicle.design5Configurations.design5Configuration(0)#isSelectable" value="false"/>
+            <set path="vehicle.design5Configurations.design5Configuration(1)#isSelectable" value="false"/>
+            <set path="vehicle.design5Configurations.design5Configuration(2)#isSelectable" value="true"/>
+
+            <!-- Wheels -->
+            <set path="vehicle.wheels.wheelConfigurations.wheelConfiguration(0)#isSelectable" value="true"/>
+            <set path="vehicle.wheels.wheelConfigurations.wheelConfiguration(1)#isSelectable" value="true"/>
+            <set path="vehicle.wheels.wheelConfigurations.wheelConfiguration(2)#isSelectable" value="false"/>
+            <set path="vehicle.wheels.wheelConfigurations.wheelConfiguration(3)#isSelectable" value="false"/>
+
+            <!-- Motorized -->
+            <set path="vehicle.motorized#forceSpeedHudDisplay" value="true"/>
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(0)#isSelectable" value="false"/>
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(1)#isSelectable" value="false"/>
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(2)#isSelectable" value="false"/>
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(3)#isSelectable" value="true"/>
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(4)#isSelectable" value="true"/>
+
+            <!-- Base Color -->
+            <set path="vehicle.baseColorConfigurations.baseColorConfiguration(0)#isSelectable" value="true"/>
+            <set path="vehicle.baseColorConfigurations.baseColorConfiguration(1)#isSelectable" value="true"/>
+            <set path="vehicle.baseColorConfigurations.baseColorConfiguration(2)#isSelectable" value="true"/>
+            <set path="vehicle.baseColorConfigurations.baseColorConfiguration(3)#isSelectable" value="true"/>
+            <set path="vehicle.baseColorConfigurations.baseColorConfiguration(4)#isSelectable" value="true"/>
+            <set path="vehicle.baseColorConfigurations.baseColorConfiguration(5)#isSelectable" value="true"/>
+
+            <!-- Grill Color -->
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(0)#isSelectable" value="true"/>
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(1)#isSelectable" value="true"/>
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(2)#isSelectable" value="true"/>
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(3)#isSelectable" value="true"/>
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(4)#isSelectable" value="true"/>
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(5)#isSelectable" value="true"/>
+            <set path="vehicle.designColorConfigurations.designColorConfiguration(6)#isSelectable" value="true"/>
+         </attributes>
+    </parentFile>
+
+    <!-- ONLY FOR ICON GENERATION -->
+    <storeData>
+        <name>FH Electric</name>
+        <image>$data/vehicles/volvo/fhElectric/store_fhElectric.png</image>
+        <brand>VOLVO</brand>
+        <category>trucks</category>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+</vehicle>

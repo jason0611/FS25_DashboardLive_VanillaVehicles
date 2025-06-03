@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="car" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>Kodiaq</name>
+        <specs>
+            <power>190</power>
+            <maxSpeed>180</maxSpeed>
+            <combination xmlFilename="$data/vehicles/stema/trius/trius.xml"/>
+            <combination xmlFilename="$data/vehicles/thunderCreek/fst990/fst990.xml"/>
+        </specs>
+        <functions>
+            <function>$l10n_function_car</function>
+        </functions>
+        <image>$data/vehicles/skoda/kodiaq/store_kodiaq.png</image>
+        <price>39500</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>SKODA</brand>
+        <category>cars</category>
+        <shopTranslationOffset>0 -0.046 0</shopTranslationOffset>
+        <shopRotationOffset>-0.033 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>3302144</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>1486336</indexBufferMemoryUsage>
+        <textureMemoryUsage>786432</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>92598</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_car</typeDesc>
+        <filename>$data/vehicles/skoda/kodiaq/kodiaq.i3d</filename>
+        <sounds filename="$data/vehicles/skoda/kodiaq/sounds/kodiaq.xml"/>
+        <size width="1.9" length="4.8" height="1.75"/>
+        <components>
+            <component centerOfMass="0 0.45 0" solverIterationCount="10" mass="1480"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="CAR"/>
+        <mapHotspot type="CAR"/>
+        <objectChanges>
+            <objectChange node="cover" visibilityActive="false"/>
+        </objectChanges>
+    </base>
+
+    <configurationSets isYesNoOption="true">
+        <configurationSet name="Style">
+            <configuration name="wheel" index="1"/>
+            <configuration name="design" index="1"/>
+            <configuration name="motor" index="1"/>
+        </configurationSet>
+        <configurationSet name="RS">
+            <configuration name="design" index="2"/>
+            <configuration name="design2" index="2"/>
+            <configuration name="motor" index="2"/>
+        </configurationSet>
+    </configurationSets>
+
+    <designConfigurations>
+        <designConfiguration name="Style">
+            <objectChange node="config_st" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="steeringWheel_st" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="pedalBrake_st" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="pedalGas_st" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="mirrorLeft_Style" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="mirrorRight_Style" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="exhaustParticle01" translationActive="-0.174 -0.144 -0.085" rotationActive="-31.519 0 0"/>
+            <objectChange node="exhaustParticle02" translationActive="0.174 -0.144 -0.085" rotationActive="-31.519 0 0"/>
+
+            <objectChange node="wheelFrontLeftBrake" scaleActive="1 0.9 0.9"/>
+            <objectChange node="wheelFrontLeftBrakeDisc" scaleActive="1 0.9 0.9"/>
+            <objectChange node="wheelFrontRightBrake" scaleActive="1 0.9 0.9"/>
+            <objectChange node="wheelFrontRightBrakeDisc" scaleActive="1 0.9 0.9"/>
+
+            <material materialSlotName="frontBrakes_mat" materialTemplateName="metalPaintedBlack"/>
+        </designConfiguration>
+        <designConfiguration name="RS">
+            <objectChange node="config_rs" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="steeringWheel_rs" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="pedalBrake_rs" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="pedalGas_rs" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="mirrorLeft_RS" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="mirrorRight_RS" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="exhaustParticle01" translationActive="0 0 0" rotationActive="0 0 0"/>
+            <objectChange node="exhaustParticle02" translationActive="0 0 0" rotationActive="0 0 0"/>
+
+            <objectChange node="wheelFrontLeftBrake" scaleActive="1 1 1"/>
+            <objectChange node="wheelFrontLeftBrakeDisc" scaleActive="1 1 1"/>
+            <objectChange node="wheelFrontRightBrake" scaleActive="1 1 1"/>
+            <objectChange node="wheelFrontRightBrakeDisc" scaleActive="1 1 1"/>
+
+            <material materialSlotName="frontBrakes_mat" materialTemplateName="metalPainted">
+                <colorScale value="1 0 0" />
+            </material>
+        </designConfiguration>
+    </designConfigurations>
+
+    <design2Configurations title="$l10n_configuration_windows">
+        <design2Configuration name="$l10n_configuration_valueDefault" price="0"/>
+        <design2Configuration name="$l10n_configuration_valueTinted" price="0">
+            <material materialSlotName="windowsBack_mat">
+                <textures diffuse="$data/shared/windowDark_diffuse.png"/>
+            </material>
+        </design2Configuration>
+    </design2Configurations>
+
+    <wheels>
+        <wheelConfigurations title="$l10n_configuration_rims">
+            <wheelConfiguration name="Elbrus" price="0" brand="CONTINENTAL" saveId="CONTINENTAL_ST" isSelectable="false">
+                <wheels autoRotateBackSpeed="2.5">
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_55R18.xml" isLeft="true"  hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="0.42" repr="wheelFrontLeftRepr"  driveNode="wheelFrontLeftDriveNode"  linkNode="wheelFrontLeftLinkNode"  forcePointRatio="0.3" initialCompression="35" suspTravel="0.11" spring="9" damper="5" frictionScale="2.6" useReprOffset="true" yOffset="0.0735" transRatio="1"/>
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/elbrus.i3d" widthAndDiam="9 18.5" node="0|0"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_55R18.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="1" restLoad="0.42" repr="wheelFrontRightRepr" driveNode="wheelFrontRightDriveNode" linkNode="wheelFrontRightLinkNode" forcePointRatio="0.3" initialCompression="35" suspTravel="0.11" spring="9" damper="5" frictionScale="2.6" useReprOffset="true" yOffset="0.0735" transRatio="1"/>
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/elbrus.i3d" widthAndDiam="9 18.5" node="0|1"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_55R18.xml" isLeft="true"  hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="0.46" repr="wheelBackLeftRepr"  driveNode="wheelBackLeft"  linkNode="wheelBackLeftLinkNode"  forcePointRatio="0.3" initialCompression="35" suspTravel="0.11" spring="10" damper="5" frictionScale="3" useReprOffset="true" yOffset="0.03" transRatio="1"/>
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/elbrus.i3d" widthAndDiam="9 18.5" node="0|0"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_55R18.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics rotSpeed="0" restLoad="0.46" repr="wheelBackRightRepr" driveNode="wheelBackRight" linkNode="wheelBackRightLinkNode" forcePointRatio="0.3" initialCompression="35" suspTravel="0.11" spring="10" damper="5" frictionScale="3" useReprOffset="true" yOffset="0.03" transRatio="1"/>
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/elbrus.i3d" widthAndDiam="9 18.5" node="0|1"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+
+            <wheelConfiguration name="Sagitarius" price="0" brand="CONTINENTAL" saveId="CONTINENTAL_RS">
+                <wheels baseConfig="CONTINENTAL_ST">
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="0|0"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="0|1"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="0|0"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="0|1"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+            <wheelConfiguration name="Sagitarius Aero" price="0" brand="CONTINENTAL" saveId="CONTINENTAL_RS2">
+                <wheels baseConfig="CONTINENTAL_RS">
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="1|0"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="1|1"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="1|0"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/continental/ultraContactNXT/235_45R20.xml">
+                        <innerRim filename="-"/>
+                        <outerRim filename="$data/shared/wheels/rims/skoda/sagitarius.i3d" widthAndDiam="8.5 20.5" node="1|1"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <ackermannSteeringConfigurations>
+            <ackermannSteering rotSpeed="35" rotMax="40" rotCenterWheel1="3" rotCenterWheel2="4"/>
+        </ackermannSteeringConfigurations>
+    </wheels>
+
+    <lights>
+        <states>
+            <state lightTypes="0"/>
+        </states>
+
+        <realLights>
+            <low>
+                <light node="frontLightLow" lightTypes="0" excludedLightTypes="3"/>
+                <light node="highBeamLow"   lightTypes="3"/>
+            </low>
+            <high>
+                <light node="frontLightHigh"        lightTypes="0 3" excludedLightTypes="3"/>
+                <light node="licensePlateLightHigh" lightTypes="0"/>
+                <light node="backLightsHigh"        lightTypes="0"/>
+                <light node="highBeamHigh"          lightTypes="3"/>
+                <brakeLight node="backLightsHigh" />
+                <turnLightLeft node="turnLightLeftFront" />
+                <turnLightRight node="turnLightRightFront" />
+                <reverseLight node="reverseLightHigh" />
+                <interiorLight node="interiorScreenLight"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="kodiaqLights_static" intensity="5"/>
+                <node node="kodiaqLightsGlass_static" intensity="1"/>
+                <node node="kodiaqLightsBack_static" intensity="5" useSliderTurnLights="true"/>
+                <node node="kodiaqLightsBackGlass_static" intensity="1" useSliderTurnLights="true"/>
+                <node node="kodiaqLights_mirrorLeftStatic" intensity="5" useSliderTurnLights="true"/>
+                <node node="kodiaqLights_mirrorRightStatic" intensity="5" useSliderTurnLights="true"/>
+                <node node="kodiaqLightsGlass_mirrorLeftStatic" intensity="1" useSliderTurnLights="true"/>
+                <node node="kodiaqLightsGlass_mirrorRightStatic" intensity="1" useSliderTurnLights="true"/>
+
+                <function name="TURN_LIGHT_LEFT" uvSlotIndex="3" uvOffset="6"/>
+                <function name="DAY_TIME_RUNNING_LIGHT" uvSlotIndex="3" uvOffset="0"/>
+                <function name="TURN_LIGHT_RIGHT" uvSlotIndex="4" uvOffset="6"/>
+                <function name="DAY_TIME_RUNNING_LIGHT" uvSlotIndex="4" uvOffset="0"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+
+        <dashboards>
+            <dashboard displayType="EMITTER" valueType="turnLightLeft" node="iconTurnLightLeft_decal" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightRight" node="iconTurnLightRight_decal" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightHazard" node="iconTurnLightHazard_decal" baseColor="SHARED_BLACK4" emitColor="RED" intensity="0.3"/>
+            <dashboard displayType="ROT"     valueType="turnLight" node="leverTurnlight" minRot="10 0 0" maxRot="-10 0 0" doInterpolation="true" />
+            <dashboard displayType="EMITTER" valueType="turnLightHazard" node="iconTurnLightHazardButton_decal" intensity="0.3"/>
+        </dashboards>
+    </lights>
+
+    <licensePlates defaultPlacement="BOTH">
+        <licensePlate node="licensePlateFront" position="FRONT" preferedType="ELONGATED" placementArea="0.10 0.3 0.10 0.3"/>
+        <licensePlate node="licensePlateBack"  position="BACK"  preferedType="ELONGATED" placementArea="0.06 0.3 0.15 0.3"/>
+    </licensePlates>
+
+    <enterable isTabbable="true" >
+        <enterReferenceNode node="kodiaq_main_component1"/>
+        <exitPoint node="exitPoint"/>
+        <enterAnimation name="mirrorsAnimation"/>
+
+        <cameras>
+            <camera node="outdoorCamera1" rotatable="true" rotateNode="outdoorCameraTarget" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="3.2" transMax="40" translation="0 0 4.55" rotation="-12 180 0">
+                <raycastNode node="cameraRaycastNode1"/>
+                <raycastNode node="cameraRaycastNode2"/>
+                <raycastNode node="cameraRaycastNode3"/>
+            </camera>
+            <camera node="indoorCamera1" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+        </cameras>
+
+        <mirrors>
+            <mirror node="mirrorLeft_decal"     prio="1"/>
+            <mirror node="mirrorRight_decal"    prio="1"/>
+            <mirror node="mirrorInterior_decal" prio="2"/>
+        </mirrors>
+
+        <characterNode node="playerSkin" cameraMinDistance="0.5" >
+            <target ikChain="leftArm"   targetNode="playerLeftHandTarget"  poseId="narrowFingers"/>
+            <target ikChain="rightArm"  targetNode="playerRightHandTarget" poseId="narrowFingers"/>
+            <target ikChain="leftFoot"  targetNode="playerLeftFootTarget" />
+            <target ikChain="rightFoot" targetNode="playerRightFootTarget" />
+        </characterNode>
+
+        <characterTargetNodeModifier node="playerRightFootTarget" transitionTime="0.1" >
+            <state node="playerRightFootTargetGas" referenceNode="pedalGas"/>
+            <state node="playerRightFootTargetBrake" referenceNode="pedalBrake"/>
+        </characterTargetNodeModifier>
+
+        <passengerSeats>
+            <passengerSeat node="passengerSeat01" exitPoint="passengerSeat01ExitPoint" outdoorCameraIndex="1">
+                <camera node="passengerSeat01Camera" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                <characterNode node="passengerSeat01PlayerSkin" cameraMinDistance="0.5">
+                    <target ikChain="leftArm"   targetNode="passengerSeat01PlayerLeftHand" poseId="flatFingers"/>
+                    <target ikChain="rightArm"  targetNode="passengerSeat01PlayerRightHand" poseId="flatFingers"/>
+                    <target ikChain="leftFoot"  targetNode="passengerSeat01PlayerLeftFoot" />
+                    <target ikChain="rightFoot" targetNode="passengerSeat01PlayerRightFoot" />
+                </characterNode>
+            </passengerSeat>
+            <passengerSeat node="passengerSeat02" exitPoint="passengerSeat02ExitPoint" outdoorCameraIndex="1">
+                <camera node="passengerSeat02Camera" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                <characterNode node="passengerSeat02PlayerSkin" cameraMinDistance="0.5">
+                    <target ikChain="leftArm"   targetNode="passengerSeat02PlayerLeftHand" poseId="flatFingers"/>
+                    <target ikChain="rightArm"  targetNode="passengerSeat02PlayerRightHand" poseId="flatFingers"/>
+                    <target ikChain="leftFoot"  targetNode="passengerSeat02PlayerLeftFoot" />
+                    <target ikChain="rightFoot" targetNode="passengerSeat02PlayerRightFoot" />
+                </characterNode>
+            </passengerSeat>
+            <passengerSeat node="passengerSeat03" exitPoint="passengerSeat03ExitPoint" outdoorCameraIndex="1">
+                <camera node="passengerSeat03Camera" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" positionSmoothingParameter="0" shadowFocusBox="shadowFocusBox"/>
+                <characterNode node="passengerSeat03PlayerSkin" cameraMinDistance="0.5">
+                    <target ikChain="leftArm"   targetNode="passengerSeat03PlayerLeftHand" poseId="flatFingers"/>
+                    <target ikChain="rightArm"  targetNode="passengerSeat03PlayerRightHand" poseId="flatFingers"/>
+                    <target ikChain="leftFoot"  targetNode="passengerSeat03PlayerLeftFoot" />
+                    <target ikChain="rightFoot" targetNode="passengerSeat03PlayerRightFoot" />
+                </characterNode>
+            </passengerSeat>
+        </passengerSeats>
+    </enterable>
+
+    <attacherJoints>
+        <attacherJoint node="trailerAttacherJointBack" jointType="trailerCar" lowerRotLimit="25 70 50" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" comboTime="1">
+            <schema position="1 0" rotation="0" invertX="false"/>
+        </attacherJoint>
+    </attacherJoints>
+
+    <connectionHoses>
+        <target attacherJointIndices="1" type="electric" node="electricBack">
+            <objectChange node="electricFlap" rotationActive="0 -70 0" rotationInactive="0 0 0" />
+        </target>
+    </connectionHoses>
+
+    <drivable>
+        <steeringWheel node="steeringWheel" indoorRotation="540" outdoorRotation="50" />
+        <dashboards>
+            <dashboard displayType="ROT" valueType="accelerationAxis" node="pedalGas"   minRot="0 0 0" maxRot="-20 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="decelerationAxis" node="pedalBrake" minRot="0 0 0" maxRot="-20 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </drivable>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="60" >
+                        <exactFillRootNode node="exactFillRootNodeFuel" />
+                        <dashboard displayType="SLIDER" valueType="fillLevel" node="sliderFuelDiesel_decals" groups="MOTOR_ACTIVE"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <motorized statsType="car">
+        <consumerConfigurations>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="1" usage="19" fillType="diesel"/> <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="1" usage="24" fillType="diesel"/> <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+        </consumerConfigurations>
+
+        <differentialConfigurations>
+            <differentialConfiguration>
+                <differentials>
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.30" wheelIndex1="1" wheelIndex2="2" /> <!-- front left-right -->
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.30" wheelIndex1="3" wheelIndex2="4" /> <!-- back left-right -->
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.15" differentialIndex1="1" differentialIndex2="2" /> <!-- front-back -->
+                </differentials>
+            </differentialConfiguration>
+        </differentialConfigurations>
+
+        <motorConfigurations>
+            <motorConfiguration name="Kodiaq" hp="190" price="0">
+                <motor torqueScale="0.365" minRpm="850" maxRpm="4500" maxForwardSpeed="180" maxBackwardSpeed="30" brakeForce="1.95" lowBrakeForceScale="0.1" dampingRateScale="0.1">
+                    <torque rpm="1000" torque="0.9"/>
+                    <torque rpm="2400" torque="1"/>
+                    <torque rpm="3480" torque="1"/>
+                    <torque rpm="4560" torque="0.8"/>
+                    <torque rpm="5280" torque="0.8"/>
+                    <torque rpm="6000" torque="0.8"/>
+                </motor>
+                <transmission autoGearChangeTime="0.3" gearChangeTime="0.3" name="$l10n_info_transmission_manual" axleRatio="15" startGearThreshold="0.15">
+                    <directionChange useGear="true"/>
+                    <backwardGear gearRatio="3.6" name="R"/>
+                    <forwardGear gearRatio="4"/>
+                    <forwardGear gearRatio="2.6"/>
+                    <forwardGear gearRatio="1.7"/>
+                    <forwardGear gearRatio="1.2"/>
+                    <forwardGear gearRatio="0.826"/>
+                    <forwardGear gearRatio="0.643"/>
+                    <forwardGear gearRatio="0.45"/>
+                </transmission>
+            </motorConfiguration>
+            <motorConfiguration name="Kodiaq RS" hp="239" price="8500" consumerConfigurationIndex="2">
+                <motor torqueScale="0.459" dampingRateScale="0.12"/>
+            </motorConfiguration>
+        </motorConfigurations>
+
+        <exhaustEffects>
+            <exhaustEffect node="exhaustParticle01" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.02" maxRpmScale="0.1" />
+            <exhaustEffect node="exhaustParticle02" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.02" maxRpmScale="0.1" />
+        </exhaustEffects>
+
+        <motorStartDuration>3000</motorStartDuration>
+
+        <dashboards>
+            <dashboard displayType="EMITTER" valueType="directionForwardExclusive" node="drivingDirectionD_decals" intensity="0.3" baseColor="GREY" emitColor="GREEN" toggleVisibility="true" hideInactive="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="directionNeutral" node="drivingDirectionN_decals" intensity="0.3" baseColor="GREY" emitColor="GREEN" toggleVisibility="true" hideInactive="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="directionBackward" node="drivingDirectionR_decals" intensity="0.3" baseColor="GREY" emitColor="GREEN" toggleVisibility="true" hideInactive="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="SLIDER" valueType="motorTemperature" node="sliderTemperatureWater_decals" minValueSlider="50" maxValueSlider="120" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="SLIDER" valueType="motorTemperature" node="sliderTemperatureOil_decals" minValueSlider="50" maxValueSlider="120" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="SLIDER" valueType="load" node="sliderSpeedl_decals" minValueSlider="0" maxValueSlider="220" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="rpm" node="needleRpm" minValueSlider="0" maxValueSlider="4000" rotAxis="1" minRot="0" maxRot="-106" toggleVisibility="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="TEXT" valueType="speed" node="numbersSpeed" textColor="1 1 1 1" textMask="000" textSize="0.015" font="GENERIC" hideInactive="true" groups="MOTOR_ACTIVE" textAlignment="CENTER"/>
+            <dashboard displayType="ROT" valueType="movingDirection"  node="leverGears" minRot="25 0 0" maxRot="0 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </motorized>
+
+    <animations>
+        <animation name="mirrorsAnimation">
+            <part node="mirrorLeft" startTime="0.25" endTime="1.375" startRot="0 0 40" endRot="0 0 0"/>
+            <part node="mirrorRight" startTime="0.25" endTime="1.375" startRot="0 0 -40" endRot="0 0 0"/>
+        </animation>
+
+        <animation name="wiperFront" isKeyframe="true">
+            <part node="wiperLeft"  startTime="0" endTime="0.5" startRot="0 0 0" endRot="-45 0 0"/>
+            <part node="wiperLeft"  startTime="0.5" endTime="1" startRot="-45 0 0" endRot="-90 0 2.75"/>
+            <part node="wiperRight"  startTime="0" endTime="0.5" startRot="0 0 0" endRot="-45.136 3.947 -3.957"/>
+            <part node="wiperRight"  startTime="0.5" endTime="1" startRot="-45.136 3.947 -3.957" endRot="-90 0 -7.447"/>
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="1" pitchScale="0.7" fadeOut="0.1" linkNode="wiperLeft"/>
+            <sound template="wiper2" startTime="0" endTime="1" direction="-1"  volumeScale="1" pitchScale="0.7" fadeOut="0.1" linkNode="wiperRight"/>
+        </animation>
+        <animation name="wiperBack" isKeyframe="true">
+            <part node="wiperBack"  startTime="0.0" endTime="0.5" startRot="0 0 0" endRot="0 -2 90"/>
+            <part node="wiperBack"  startTime="0.5" endTime="1.0" startRot="0 -2 90" endRot="0 0 170"/>
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="1" pitchScale="0.7" fadeOut="0.1" linkNode="wiperBack"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingParts>
+            <movingPart node="wheelSuspensionArmBackLeft" referencePoint="wheelSuspensionArmBackLeftRef" referenceFrame="wheelSuspensionArmBackLeftRefFrame" isActiveDirty="true" maxUpdateDistance="50"/>
+            <movingPart node="wheelSuspensionArmBackRight" referencePoint="wheelSuspensionArmBackRightRef" referenceFrame="wheelSuspensionArmBackRightRefFrame" isActiveDirty="true" maxUpdateDistance="50"/>
+            <movingPart node="wheelSuspensionArmFrontLeft" referencePoint="wheelSuspensionArmFrontLeftRef" referenceFrame="wheelSuspensionArmFrontLeftRefFrame" isActiveDirty="true" maxUpdateDistance="50"/>
+            <movingPart node="wheelSuspensionArmFrontRight" referencePoint="wheelSuspensionArmFrontRightRef" referenceFrame="wheelSuspensionArmFrontRightRefFrame" isActiveDirty="true" maxUpdateDistance="50"/>
+        </movingParts>
+    </cylindered>
+
+    <wipers>
+        <wiper animName="wiperFront" >
+            <state animSpeed="1.0" animPause="2.0" />
+            <state animSpeed="1.0" animPause="0.0" />
+            <state animSpeed="2.0" animPause="0.0" />
+        </wiper>
+        <wiper animName="wiperBack" >
+            <state animSpeed="1.0" animPause="2.0" />
+        </wiper>
+    </wipers>
+
+    <suspensions>
+        <suspension useCharacterTorso="true" weight="90" minRotation="0 -5 -5" maxRotation="0 5 5" suspensionParametersY="7 1" suspensionParametersZ="7 1"/>
+    </suspensions>
+
+    <dashboard>
+        <groups>
+            <group name="MOTOR_STARTING" electronicsStarting="true"/>
+            <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+            <group name="MOTOR_ACTIVE_ONLY"   electronicsRunning="true"/>
+			<!-- Page -->
+			<group name="PAGE1" dbl="page" page="1"/>
+			<group name="PAGE2" dbl="page" page="2"/>
+        </groups>
+
+        <default>
+            <dashboard displayType="VISIBILITY" node="display_decals" groups="MOTOR_ACTIVE" />
+            <dashboard displayType="VISIBILITY" node="display_decalsStart" groups="MOTOR_STARTING" />
+            <dashboard displayType="VISIBILITY" node="needleRpm" groups="MOTOR_ACTIVE_ONLY" />
+            <dashboard displayType="VISIBILITY" node="numbersSpeed" groups="MOTOR_ACTIVE_ONLY" />
+            <dashboard displayType="EMITTER" node="display_decals" intensity="0.5" groups="MOTOR_ACTIVE" />
+            <dashboard displayType="EMITTER" node="display_decalsStart" intensity="0.5" groups="MOTOR_STARTING" />
+            <dashboard displayType="EMITTER" node="startingDecals2" baseColor="SHARED_BLACK1" emitColor="SHARED_RED1" intensity="0.2" groups="MOTOR_STARTING" />
+            <dashboard displayType="EMITTER" node="steeringWheelDecals" baseColor="SHARED_BLACK1" intensity="0.2" groups="MOTOR_ACTIVE" />
+            <dashboard displayType="EMITTER" node="startingDecals3" baseColor="SHARED_BLACK1" intensity="0.2" groups="MOTOR_ACTIVE" />
+			
+			<dashboard displayType="VISIBILITY" node="skodaKodiaq_dblMainScreenP1" groups="MOTOR_ACTIVE PAGE1"/>
+			<dashboard displayType="EMITTER" node="skodaKodiaq_dblMainScreenP1" intensity="0.5" groups="MOTOR_ACTIVE PAGE1"/>
+			<dashboard displayType="VISIBILITY" node="skodaKodiaq_dblNaviMapP2" groups="MOTOR_ACTIVE PAGE2"/>
+			<dashboard displayType="EMITTER" node="skodaKodiaq_dblNaviMapP2" intensity="0.5" groups="MOTOR_ACTIVE PAGE2"/>
+			<dashboard displayType="EMITTER" node="skodaKodiaq_dblNaviMapPosP2" emitColor="SKODA_ENERGY_BLUE" intensity="0.7" groups="MOTOR_ACTIVE PAGE2"/>
+        </default>
+		<dashboardLive>
+		<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="skodaKodiaq_dblNaviMapP2" groups="MOTOR_ACTIVE PAGE2"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="skodaKodiaq_dblNaviMapPosP2" groups="MOTOR_ACTIVE PAGE2"/>
+		</dashboardLive>
+    </dashboard>
+
+    <ai>
+        <agent frontWheelNodes="wheelFrontLeftRepr wheelFrontRightRepr"/>
+        <collisionTrigger useSize="true"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-0.95" maxX="0.95" minZ="-1.75" maxZ="1.9" yOffset="0.25"/>
+        <bendingNode minX="-0.75" maxX="0.75" minZ="-2.3" maxZ="-1.75" yOffset="0.3"/>
+        <bendingNode minX="-0.85" maxX="0.85" minZ="1.9" maxZ="2.42" yOffset="0.3"/>
+    </foliageBending>
+
+    <baseColorConfigurations>
+        <baseColorConfiguration materialTemplateName="SKODA_ENERGY_BLUE"/>
+        <baseColorConfiguration materialTemplateName="SKODA_STEEL_GREY"/>
+        <baseColorConfiguration materialTemplateName="SKODA_VELVET_RED_METALLIC"/>
+        <baseColorConfiguration materialTemplateName="SKODA_GRAPHITE_GREY_METALLIC"/>
+        <baseColorConfiguration materialTemplateName="SKODA_BRILLIANT_SILVER_METALLIC"/>
+        <baseColorConfiguration materialTemplateName="SKODA_RACE_BLUE_METALLIC"/>
+        <baseColorConfiguration materialTemplateName="SKODA_GOLD_BRONZE" isDefault="true"/>
+        <baseColorConfiguration materialTemplateName="SKODA_BLACK_MAGIC"/>
+        <baseColorConfiguration materialTemplateName="SKODA_MOON_WHITE"/>
+
+        <material materialSlotName="body_mat"/>
+    </baseColorConfigurations>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="kodiaq_main_component1" node="0>" />
+        <i3dMapping id="kodiaq_vis" node="0>0" />
+        <i3dMapping id="wheelFrontLeftRepr" node="0>0|0|0|0" />
+        <i3dMapping id="wheelFrontLeftDriveNode" node="0>0|0|0|0|0|0" />
+        <i3dMapping id="wheelFrontLeftLinkNode" node="0>0|0|0|0|0|0|0" />
+        <i3dMapping id="wheelFrontLeftBrakeDisc" node="0>0|0|0|0|0|0|1" />
+        <i3dMapping id="wheelFrontLeftBrake" node="0>0|0|0|0|0|1" />
+        <i3dMapping id="wheelSuspensionArmFrontLeftRef" node="0>0|0|0|0|1" />
+        <i3dMapping id="wheelFrontRightRepr" node="0>0|0|1|0" />
+        <i3dMapping id="wheelFrontRightDriveNode" node="0>0|0|1|0|0|0" />
+        <i3dMapping id="wheelFrontRightLinkNode" node="0>0|0|1|0|0|0|0" />
+        <i3dMapping id="wheelFrontRightBrakeDisc" node="0>0|0|1|0|0|0|1" />
+        <i3dMapping id="wheelFrontRightBrake" node="0>0|0|1|0|0|1" />
+        <i3dMapping id="wheelSuspensionArmFrontRightRef" node="0>0|0|1|0|1" />
+        <i3dMapping id="wheelBackLeftRepr" node="0>0|0|2" />
+        <i3dMapping id="wheelBackLeft" node="0>0|0|2|0|0" />
+        <i3dMapping id="wheelBackLeftLinkNode" node="0>0|0|2|0|0|0" />
+        <i3dMapping id="wheelSuspensionArmBackLeftRef" node="0>0|0|2|1" />
+        <i3dMapping id="wheelBackRightRepr" node="0>0|0|3" />
+        <i3dMapping id="wheelBackRight" node="0>0|0|3|0|0" />
+        <i3dMapping id="wheelBackRightLinkNode" node="0>0|0|3|0|0|0" />
+        <i3dMapping id="wheelSuspensionArmBackRightRef" node="0>0|0|3|1" />
+        <i3dMapping id="wheelSuspensionArmBackLeftRefFrame" node="0>0|0|4" />
+        <i3dMapping id="wheelSuspensionArmBackLeft" node="0>0|0|4|0" />
+        <i3dMapping id="wheelSuspensionArmBackRightRefFrame" node="0>0|0|5" />
+        <i3dMapping id="wheelSuspensionArmBackRight" node="0>0|0|5|0" />
+        <i3dMapping id="wheelSuspensionArmFrontLeftRefFrame" node="0>0|0|6" />
+        <i3dMapping id="wheelSuspensionArmFrontLeft" node="0>0|0|6|0" />
+        <i3dMapping id="wheelSuspensionArmFrontRightRefFrame" node="0>0|0|7" />
+        <i3dMapping id="wheelSuspensionArmFrontRight" node="0>0|0|7|0" />
+        <i3dMapping id="trailerAttacherJointBack" node="0>0|1" />
+        <i3dMapping id="kodiaqLightsGlass_static" node="0>0|2|0|0" />
+        <i3dMapping id="kodiaqLights_static" node="0>0|2|0|1" />
+        <i3dMapping id="kodiaqLightsBack_static" node="0>0|2|0|2" />
+        <i3dMapping id="kodiaqLightsBackGlass_static" node="0>0|2|0|3" />
+        <i3dMapping id="frontLightLow" node="0>0|2|1|0" />
+        <i3dMapping id="highBeamLow" node="0>0|2|1|1" />
+        <i3dMapping id="frontLightHigh" node="0>0|2|1|2" />
+        <i3dMapping id="highBeamHigh" node="0>0|2|1|3" />
+        <i3dMapping id="licensePlateLightHigh" node="0>0|2|1|4" />
+        <i3dMapping id="interiorScreenLight" node="0>0|2|1|5" />
+        <i3dMapping id="backLightsHigh" node="0>0|2|2|0" />
+        <i3dMapping id="turnLightLeftFront" node="0>0|2|3|0" />
+        <i3dMapping id="turnLightRightFront" node="0>0|2|3|1" />
+        <i3dMapping id="reverseLightHigh" node="0>0|2|4|0" />
+        <i3dMapping id="outdoorCameraTarget" node="0>0|3|0" />
+        <i3dMapping id="outdoorCamera1" node="0>0|3|0|0" />
+        <i3dMapping id="indoorCamera1" node="0>0|3|1" />
+        <i3dMapping id="cameraRaycastNode1" node="0>0|3|2" />
+        <i3dMapping id="cameraRaycastNode2" node="0>0|3|3" />
+        <i3dMapping id="cameraRaycastNode3" node="0>0|3|4" />
+        <i3dMapping id="shadowFocusBox" node="0>0|3|5" />
+        <i3dMapping id="exitPoint" node="0>0|4" />
+        <i3dMapping id="playerSkin" node="0>0|5|0" />
+        <i3dMapping id="playerRightFootTarget" node="0>0|5|1" />
+        <i3dMapping id="playerLeftFootTarget" node="0>0|5|2" />
+        <i3dMapping id="pedalBrake" node="0>0|6" />
+        <i3dMapping id="pedalBrake_rs" node="0>0|6|0" />
+        <i3dMapping id="pedalBrake_st" node="0>0|6|1" />
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|6|2" />
+        <i3dMapping id="pedalGas" node="0>0|7" />
+        <i3dMapping id="pedalGas_rs" node="0>0|7|0" />
+        <i3dMapping id="pedalGas_st" node="0>0|7|1" />
+        <i3dMapping id="playerRightFootTargetGas" node="0>0|7|2" />
+        <i3dMapping id="steeringWheel" node="0>0|8|0" />
+        <i3dMapping id="steeringWheelDecals" node="0>0|8|0|0" />
+        <i3dMapping id="steeringWheel_rs" node="0>0|8|0|1" />
+        <i3dMapping id="steeringWheel_st" node="0>0|8|0|2" />
+        <i3dMapping id="playerLeftHandTarget" node="0>0|8|0|3" />
+        <i3dMapping id="playerRightHandTarget" node="0>0|8|0|4" />
+        <i3dMapping id="config_rs" node="0>0|9" />
+        <i3dMapping id="config_st" node="0>0|10" />
+        <i3dMapping id="licensePlateBack" node="0>0|11|0" />
+        <i3dMapping id="licensePlateFront" node="0>0|11|1" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>0|12" />
+        <i3dMapping id="electricBack" node="0>0|13|0" />
+        <i3dMapping id="electricFlap" node="0>0|13|1|0" />
+        <i3dMapping id="mirrorInterior_decal" node="0>0|14|0" />
+        <i3dMapping id="mirrorLeft" node="0>0|14|1|0" />
+        <i3dMapping id="mirrorLeft_decal" node="0>0|14|1|0|0" />
+        <i3dMapping id="mirrorLeft_Style" node="0>0|14|1|0|1|0" />
+        <i3dMapping id="mirrorLeft_RS" node="0>0|14|1|0|1|1" />
+        <i3dMapping id="kodiaqLights_mirrorLeftStatic" node="0>0|14|1|0|2|0" />
+        <i3dMapping id="kodiaqLightsGlass_mirrorLeftStatic" node="0>0|14|1|0|2|1" />
+        <i3dMapping id="mirrorRight" node="0>0|14|2|0" />
+        <i3dMapping id="mirrorRight_decal" node="0>0|14|2|0|0" />
+        <i3dMapping id="mirrorRight_Style" node="0>0|14|2|0|1|0" />
+        <i3dMapping id="mirrorRight_RS" node="0>0|14|2|0|1|1" />
+        <i3dMapping id="kodiaqLights_mirrorRightStatic" node="0>0|14|2|0|2|0" />
+        <i3dMapping id="kodiaqLightsGlass_mirrorRightStatic" node="0>0|14|2|0|2|1" />
+        <i3dMapping id="display_decalsStart" node="0>0|15|0" />
+        <i3dMapping id="display_decals" node="0>0|15|1" />
+        <i3dMapping id="startingDecals2" node="0>0|15|2" />
+        <i3dMapping id="sliderTemperatureWater_decals" node="0>0|15|3" />
+        <i3dMapping id="drivingDirectionD_decals" node="0>0|15|4" />
+        <i3dMapping id="drivingDirectionN_decals" node="0>0|15|5" />
+        <i3dMapping id="drivingDirectionR_decals" node="0>0|15|6" />
+        <i3dMapping id="sliderFuelDiesel_decals" node="0>0|15|7" />
+        <i3dMapping id="sliderSpeedl_decals" node="0>0|15|8" />
+        <i3dMapping id="sliderTemperatureOil_decals" node="0>0|15|9" />
+        <i3dMapping id="iconTurnLightLeft_decal" node="0>0|15|10" />
+        <i3dMapping id="iconTurnLightHazard_decal" node="0>0|15|11" />
+        <i3dMapping id="iconTurnLightRight_decal" node="0>0|15|12" />
+        <i3dMapping id="startingDecals3" node="0>0|15|13" />
+        <i3dMapping id="needleRpm" node="0>0|15|14|0" />
+        <i3dMapping id="numbersSpeed" node="0>0|15|15" />
+        <i3dMapping id="leverTurnlight" node="0>0|15|16|0" />
+        <i3dMapping id="leverGears" node="0>0|15|17" />
+        <i3dMapping id="iconTurnLightHazardButton_decal" node="0>0|15|18" />
+		
+		<i3dMapping id="skodaKodiaq_dblMainScreenP1" node="0>0|15|19|0"/>
+		<i3dMapping id="skodaKodiaq_dblNaviMapP2" node="0>0|15|19|1"/>
+		<i3dMapping id="skodaKodiaq_dblNaviMapPosP2" node="0>0|15|19|1|0"/>
+		
+        <i3dMapping id="wiperLeft" node="0>0|16|0|0" />
+        <i3dMapping id="wiperRight" node="0>0|16|1|0" />
+        <i3dMapping id="wiperBack" node="0>0|16|2|0" />
+        <i3dMapping id="cover" node="0>0|17|7" />
+        <i3dMapping id="passengerSeat01" node="0>0|18" />
+        <i3dMapping id="passengerSeat01PlayerSkin" node="0>0|18|0" />
+        <i3dMapping id="passengerSeat01PlayerRightFoot" node="0>0|18|1" />
+        <i3dMapping id="passengerSeat01PlayerLeftFoot" node="0>0|18|2" />
+        <i3dMapping id="passengerSeat01PlayerLeftHand" node="0>0|18|3" />
+        <i3dMapping id="passengerSeat01PlayerRightHand" node="0>0|18|4" />
+        <i3dMapping id="passengerSeat01ExitPoint" node="0>0|18|5" />
+        <i3dMapping id="passengerSeat01Camera" node="0>0|18|6" />
+        <i3dMapping id="exhaustParticle01" node="0>0|19|0|0" />
+        <i3dMapping id="exhaustParticle02" node="0>0|19|1|0" />
+        <i3dMapping id="passengerSeat02" node="0>0|20" />
+        <i3dMapping id="passengerSeat02PlayerSkin" node="0>0|20|0" />
+        <i3dMapping id="passengerSeat02PlayerRightFoot" node="0>0|20|1" />
+        <i3dMapping id="passengerSeat02PlayerLeftFoot" node="0>0|20|2" />
+        <i3dMapping id="passengerSeat02PlayerLeftHand" node="0>0|20|3" />
+        <i3dMapping id="passengerSeat02PlayerRightHand" node="0>0|20|4" />
+        <i3dMapping id="passengerSeat02ExitPoint" node="0>0|20|5" />
+        <i3dMapping id="passengerSeat02Camera" node="0>0|20|6" />
+        <i3dMapping id="passengerSeat03" node="0>0|21" />
+        <i3dMapping id="passengerSeat03PlayerSkin" node="0>0|21|0" />
+        <i3dMapping id="passengerSeat03PlayerRightFoot" node="0>0|21|1" />
+        <i3dMapping id="passengerSeat03PlayerLeftFoot" node="0>0|21|2" />
+        <i3dMapping id="passengerSeat03PlayerLeftHand" node="0>0|21|3" />
+        <i3dMapping id="passengerSeat03PlayerRightHand" node="0>0|21|4" />
+        <i3dMapping id="passengerSeat03ExitPoint" node="0>0|21|5" />
+        <i3dMapping id="passengerSeat03Camera" node="0>0|21|6" />
+    </i3dMappings>
+</vehicle>
