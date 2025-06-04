@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="volvoFH16Display.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
+  </Asset>
+
+  <Files>
+    <File fileId="7" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="4" filename="volvoFH16Display_diffuse.dds"/>
+    <File fileId="8" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="5" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.dds"/>
+    <File fileId="9" filename="$data/shared/default_specular.dds"/>
+    <File fileId="3" filename="$data/shared/default_vmask.dds"/>
+    <File fileId="1" filename="$data/vehicles/volvo/fh16/fh16InteriorDecal_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="7">
+    </Material>
+    <Material name="fh16InteriorDecal_opaque_mat" materialId="6">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="7" alphaBlending="true" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="8"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="9"/>
+    </Material>
+    <Material name="volvoFH16Display_mat" materialId="22" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="4"/>
+    </Material>
+    <Material name="volvoFH16Display_mat" materialId="8" customShaderId="5" customShaderVariation="staticLight">
+      <Texture fileId="4"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="volvoFH16Display.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <Shape name="decal3" shapeId="1" clipDistance="30" nodeId="14" castsShadows="false" receiveShadows="true" materialIds="6"/>
+    <TransformGroup name="volvoFH16Dashboard" nodeId="15">
+      <Shape name="volvoFH16_dblStartScreen" shapeId="2" clipDistance="30" nodeId="26" castsShadows="false" receiveShadows="true" materialIds="22">
+        <Shape name="volvoLogo_decal" shapeId="3" clipDistance="30" nodeId="27" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="22"/>
+      </Shape>
+      <Shape name="volvoFH16_dblMainScreenP1" shapeId="4" clipDistance="30" nodeId="16" castsShadows="false" receiveShadows="true" materialIds="8"/>
+      <Shape name="volvoFH16_dblNaviMapP2" shapeId="5" clipDistance="30" nodeId="17" castsShadows="false" receiveShadows="true" materialIds="5">
+        <Shape name="volvoFH16_dblNaviMapPosP2" scale="1.5 1 1.5" shapeId="6" clipDistance="20" nodeId="18" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>
