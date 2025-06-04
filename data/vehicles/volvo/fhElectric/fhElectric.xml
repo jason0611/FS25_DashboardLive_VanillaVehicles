@@ -2,7 +2,7 @@
 <vehicle type="tractor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
 
-    <parentFile xmlFilename="data/vehicles//volvo/fh16/fh16.xml">
+    <parentFile xmlFilename="data/vehicles/volvo/fh16/fh16.xml">
         <attributes>
             <!-- Store data -->
             <set path="vehicle.storeData.name" value="FH Electric"/>
