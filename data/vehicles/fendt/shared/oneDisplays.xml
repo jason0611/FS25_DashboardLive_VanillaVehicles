@@ -43,9 +43,9 @@
 	<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
 	<group name="DBL_AWD" isMotorStarting="true" op="" dbl="vca_diff_awd"/>
 <!-- Headland Management -->
-	<group name="DBL_HLM_ON" op="and" dbl="hlm_on"/>
-	<group name="DBL_HLM_FIELD" op="and" dbl="hlm_active_field"/>
-	<group name="DBL_HLM_HEADLAND" op="and" dbl="hlm_active_headland"/>
+	<!-- <group name="DBL_HLM_ON" op="and" dbl="hlm_on"/> -->
+	<!-- <group name="DBL_HLM_FIELD" op="and" dbl="hlm_active_field"/> -->
+	<!-- <group name="DBL_HLM_HEADLAND" op="and" dbl="hlm_active_headland"/> -->
 	
 	<dashboardCompound name="FENDT_ONE_DASHBOARD" filename="data/vehicles/fendt/shared/oneDisplays.i3d" node="fendtOneDisplayFront">
 <!-- SteeringWheel always on -->
@@ -583,7 +583,7 @@
 		<!-- OutsideTemp -->
 		<dashboard displayType="TEXT" valueType="enterable.outsideTemperature" node="dbl_outsideTempT1_CC" textColor="1 1 1 1" textSize="0.0029" textMask="00" font="GENERIC" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
 		<!-- Player Name -->
-		<dashboard valueType="dbl.base" cmd="playerName" displayType="TEXT" node="dbl_playerNameT1_CC" textColor="1 1 1 1" textSize="0.0035" textMask="ssssssssssssss" textAlignment="CENTER" font="GENERIC" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="playerName" displayType="TEXT" node="dbl_playerNameT1_CC" textColor="1 1 1 1" textSize="0.0035" textMask="...................." textAlignment="CENTER" font="GENERIC" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
 	
 	<!-- CabConsole PAGE1 -->
 		<dashboard displayType="VISIBILITY" node="dashboardDisplayBasicP1_CC" groups="MOTOR_ACTIVE LIGHTMODE PAGECC1"/>

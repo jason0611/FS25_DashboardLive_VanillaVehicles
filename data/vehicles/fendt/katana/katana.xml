@@ -553,9 +553,21 @@
 		<!-- <animation name="combineXPEngineLoadAnimP2_SC">
 			<part node="dbl_engineLoadNeedleP2_SC" startTime="0" endTime="1" startRot="0 60 0" endRot="0 -60 0"/>
 		</animation> -->
+		<animation name="gpsActiveAnimP2_SC">
+            <part node="dbl_gpsOFFP2_SC" startTime="0" endTime="0.01" visibility="true"/>
+            <part node="dbl_gpsOFFP2_SC" startTime="0.01" endTime="0.02" visibility="false"/>
+		</animation>
 		<!-- <animation name="combineXPEngineLoadAnimP3_SC">
 			<part node="dbl_engineLoadNeedleP3_SC" startTime="0" endTime="1" startRot="0 60 0" endRot="0 -60 0"/>
 		</animation> -->
+		<animation name="gpsActiveAnimP3_SC">
+            <part node="dbl_gpsOFFP3_SC" startTime="0" endTime="0.01" visibility="true"/>
+            <part node="dbl_gpsOFFP3_SC" startTime="0.01" endTime="0.02" visibility="false"/>
+		</animation>
+		<animation name="gpsActiveAnimP4_SC">
+            <part node="dbl_gpsOFFP4_SC" startTime="0" endTime="0.01" visibility="true"/>
+            <part node="dbl_gpsOFFP4_SC" startTime="0.01" endTime="0.02" visibility="false"/>
+		</animation>
     </animations>
 
     <wipers>
@@ -804,6 +816,7 @@
 			<dashboard valueType="gps" option="active" displayType="EMITTER" node="dbl_gpsActiveP2_SC" baseColor="0.3 0.3 0.3 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
 			<dashboard valueType="gps" option="active" displayType="VISIBILITY" node="dbl_gpsONP2_SC" groups="MOTOR_RUNNING PAGE2"/>
 			<dashboard valueType="gps" option="active" displayType="EMITTER" node="dbl_gpsONP2_SC" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
+			<dashboard valueType="gps" option="active" displayType="ANIMATION" animName="gpsActiveAnimP2_SC" groups="MOTOR_RUNNING PAGE2"/>
 			<dashboard valueType="gpsLane" option="dirLeft"  displayType="VISIBILITY" node="dbl_gpsLaneLeftP2_SC" groups="MOTOR_RUNNING DBL_GPS_ON PAGE2"/>
 			<dashboard valueType="gpsLane" option="dirRight" displayType="VISIBILITY" node="dbl_gpsLaneRightP2_SC" groups="MOTOR_RUNNING DBL_GPS_ON PAGE2"/>
 			<dashboard valueType="gpsLane" option="dirLeft"  displayType="EMITTER" node="dbl_gpsLaneLeftP2_SC" intensity="1" groups="MOTOR_RUNNING"/>
@@ -895,6 +908,7 @@
 			<dashboard valueType="gps" option="active" displayType="EMITTER" node="dbl_gpsActiveP3_SC" baseColor="0.3 0.3 0.3 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING PAGE3"/>
 			<dashboard valueType="gps" option="active" displayType="VISIBILITY" node="dbl_gpsONP3_SC" groups="MOTOR_RUNNING PAGE3"/>
 			<dashboard valueType="gps" option="active" displayType="EMITTER" node="dbl_gpsONP3_SC" intensity="0.5" groups="MOTOR_RUNNING PAGE3"/>
+			<dashboard valueType="gps" option="active" displayType="ANIMATION" animName="gpsActiveAnimP3_SC" groups="MOTOR_RUNNING PAGE3"/>
 			<dashboard valueType="gpsLane" option="dirLeft"  displayType="VISIBILITY" node="dbl_gpsLaneLeftP3_SC" groups="MOTOR_RUNNING DBL_GPS_ON PAGE3"/>
 			<dashboard valueType="gpsLane" option="dirRight" displayType="VISIBILITY" node="dbl_gpsLaneRightP3_SC" groups="MOTOR_RUNNING DBL_GPS_ON PAGE3"/>
 			<dashboard valueType="gpsLane" option="dirLeft"  displayType="EMITTER" node="dbl_gpsLaneLeftP3_SC" intensity="1" groups="MOTOR_RUNNING"/>
@@ -931,6 +945,7 @@
 			<!-- GPS -->
 			<dashboard valueType="gps" option="active" displayType="VISIBILITY" node="dbl_gpsONP4_SC" groups="MOTOR_RUNNING PAGE4"/>
 			<dashboard valueType="gps" option="active" displayType="EMITTER" node="dbl_gpsONP4_SC" intensity="0.5" groups="MOTOR_RUNNING PAGE4"/>
+			<dashboard valueType="gps" option="active" displayType="ANIMATION" animName="gpsActiveAnimP4_SC" groups="MOTOR_RUNNING PAGE4"/>
 			<dashboard valueType="gpsLane" option="dirLeft"  displayType="VISIBILITY" node="dbl_gpsLaneLeftP4_SC" groups="MOTOR_RUNNING DBL_GPS_ON PAGE4"/>
 			<dashboard valueType="gpsLane" option="dirRight" displayType="VISIBILITY" node="dbl_gpsLaneRightP4_SC" groups="MOTOR_RUNNING DBL_GPS_ON PAGE4"/>
 			<dashboard valueType="gpsLane" option="dirLeft"  displayType="EMITTER" node="dbl_gpsLaneLeftP4_SC" intensity="1" groups="MOTOR_RUNNING"/>
@@ -954,29 +969,12 @@
 		
 		<automaticSteering>
 			<dashboards>
-			<!-- PAGE1 -->
 				<dashboard displayType="EMITTER" valueType="steeringState" node="dbl_gpsSatellitP1_SC" baseColor="0.2 0.2 0.2 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGE1"/>
 				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="dbl_gpsActiveP1_SC" baseColor="0.2 0.2 0.2 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGE1"/>
-				
-			<!-- PAGE2 -->
 				<dashboard displayType="EMITTER" valueType="steeringState" node="dbl_gpsSatellitP2_SC" baseColor="0.2 0.2 0.2 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGE2"/>
 				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="dbl_gpsActiveP2_SC" baseColor="0.2 0.2 0.2 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGE2"/>
-				<dashboard displayType="MULTI_STATE" valueType="steeringEngaged" node="dbl_gpsOFFP2_SC" doInterpolation="true" groups="MOTOR_ACTIVE PAGE2">
-					<state value="0" visibility="true"/>
-					<state value="1" visibility="false"/>
-				</dashboard>
-			<!-- PAGE3 -->
 				<dashboard displayType="EMITTER" valueType="steeringState" node="dbl_gpsSatellitP3_SC" baseColor="0.2 0.2 0.2 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGE3"/>
 				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="dbl_gpsActiveP3_SC" baseColor="0.2 0.2 0.2 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_RUNNING PAGE3"/>
-				<dashboard displayType="MULTI_STATE" valueType="steeringEngaged" node="dbl_gpsOFFP3_SC" doInterpolation="true" groups="MOTOR_ACTIVE PAGE3">
-					<state value="0" visibility="true"/>
-					<state value="1" visibility="false"/>
-				</dashboard>
-			<!-- PAGE4 -->
-				<dashboard displayType="MULTI_STATE" valueType="steeringEngaged" node="dbl_gpsOFFP4_SC" doInterpolation="true" groups="MOTOR_ACTIVE PAGE4">
-					<state value="0" visibility="true"/>
-					<state value="1" visibility="false"/>
-				</dashboard>
 			</dashboards>
 		</automaticSteering>
     </ai>

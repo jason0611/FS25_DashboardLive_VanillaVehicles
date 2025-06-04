@@ -491,7 +491,13 @@
 
         <dashboards>
             <dashboard displayType="TEXT" valueType="time" node="numbersTime" textColor="0 0 0 1" textSize="0.011" textMask="00:00" font="DIGIT" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
-        </dashboards>
+			<!-- Page1 -->
+			<dashboard displayType="TEXT" valueType="operatingTime" node="cebisAxion_dblOperatingTimeNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- Page2 -->
+			<dashboard displayType="TEXT" valueType="operatingTime" node="cebisAxion_dblOperatingTimeNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- Page2 -->
+			<dashboard displayType="TEXT" valueType="outsideTemperature" node="cebisAxion_dblOutsideTempCC" textColor="CLAAS_DARKGREY1" textSize="0.0035" textMask="00,0" textScaleX="0.9" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		</dashboards>
     </enterable>
 
     <suspensions>
@@ -579,6 +585,19 @@
             <dashboard displayType="EMITTER" valueType="directionBackward" node="iconMovingDirectionBackward_decal" baseColor="SHARED_BLACK4" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="TEXT" valueType="speed" node="numbersSpeed01" textColor="0 0 0 1" textSize="0.013" textMask="00.0" font="DIGIT" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="TEXT" valueType="rpm"   node="numbersRPM"   textColor="0 0 0 1" textSize="0.01" textMask="0000" font="DIGIT" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<!-- Page1 -->
+			<dashboard displayType="SLIDER" valueType="speed" node="cebisAxion_dblSpeedSliderP1_SC" minValueSlider="0" maxValueSlider="60" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="SLIDER" valueType="rpm" node="cebisAxion_dblRpmSliderP1_SC" minValueSlider="400" maxValueSlider="2400" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="SLIDER" valueType="motorTemperature" node="cebisAxion_dblEngineTempSliderP1_SC" minValueSlider="20" maxValueSlider="120" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="speed" node="cebisAxion_dblSpeedNumbersP1_SC" textColor="BOURGAULT_WHITE1" emissiveScale="0.4" textSize="0.008" textMask="00" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="rpm" node="cebisAxion_dblRpmNumbersP1_SC" textColor="BOURGAULT_WHITE1" emissiveScale="0.4" textSize="0.005" textMask="0000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="fuelUsage" node="cebisAxion_dblFuelUsageNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- Page2 -->
+			<dashboard displayType="TEXT" valueType="load" node="cebisAxion_dblEnginPowerPercentNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="000%" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="rpm" node="cebisAxion_dblEnginRpmNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.005" textMask="0000" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="fuelUsage" node="cebisAxion_dblFuelUsageNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- Claas GPS Pilot -->
+			<dashboard displayType="TEXT" valueType="speed" node="cebisAxion_dblSpeedNumbersCC" textColor="BOURGAULT_WHITE1" emissiveScale="0.4" textSize="0.003" textMask="00.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
         </dashboards>
     </motorized>
 
@@ -588,6 +607,50 @@
         <dashboards>
             <dashboard displayType="ROT" valueType="accelerationAxis" node="pedalGas" minRot="0 0 0" maxRot="-10 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="ROT" valueType="decelerationAxis" node="pedalBrake" minRot="0 0 0" maxRot="-13 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="MULTI_STATE" valueType="movingDirection" node="cebisAxion_dblForwardArrowAO_SC" doInterpolation="true" groups="MOTOR_RUNNING">
+			<state value="-1" visibility="false"/>
+			<state value="0" visibility="false"/>
+			<state value="1" visibility="true"/>
+			</dashboard>
+			<dashboard displayType="MULTI_STATE" valueType="movingDirection" node="cebisAxion_dblNeutralGearAO_SC" doInterpolation="true" groups="MOTOR_RUNNING">
+				<state value="-1" visibility="false"/>
+				<state value="0" visibility="true"/>
+				<state value="1" visibility="false"/>
+			</dashboard>
+			<dashboard displayType="MULTI_STATE" valueType="movingDirection" node="cebisAxion_dblBackwardArrowAO_SC" doInterpolation="true" groups="MOTOR_RUNNING">
+				<state value="-1" visibility="true"/>
+				<state value="0" visibility="false"/>
+				<state value="1" visibility="false"/>
+			</dashboard>
+			<!-- Page1 -->
+			<dashboard displayType="EMITTER" valueType="cruiseControlActive" node="cebisAxion_dblCruiseControlIconP1_SC" intensity="0.5" baseColor="BOURGAULT_WHITE1" emitColor="CLAAS_GREEN1" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="cruiseControl" node="cebisAxion_dblCruiseControlNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="cruiseControlReverse" node="cebisAxion_dblCruiseControlReverseNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="SLIDER" valueType="cruiseControl" node="cebisAxion_dblCruiseControlP1_SC" minValueSlider="0" maxValueSlider="60" intensity="0.4" groups="MOTOR_RUNNING PAGESC1">
+				<valueMapping sourceValue="0"  dashboardValue="0.0"/>
+				<valueMapping sourceValue="5"  dashboardValue="10.0"/>
+				<valueMapping sourceValue="10" dashboardValue="18.0"/>
+				<valueMapping sourceValue="15" dashboardValue="24.5"/>
+				<valueMapping sourceValue="20" dashboardValue="30.5"/>
+				<valueMapping sourceValue="30" dashboardValue="40.0"/>
+				<valueMapping sourceValue="40" dashboardValue="48.0"/>
+				<valueMapping sourceValue="50" dashboardValue="55.0"/>
+				<valueMapping sourceValue="60" dashboardValue="60.0"/>
+			</dashboard>
+			<!-- Page2 -->
+			<dashboard displayType="TEXT" valueType="cruiseControl" node="cebisAxion_dblCruiseControlNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="cruiseControlReverse" node="cebisAxion_dblCruiseControlReverseNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="SLIDER" valueType="cruiseControl" node="cebisAxion_dblCruiseControlP2_SC" minValueSlider="0" maxValueSlider="60" intensity="0.4" groups="MOTOR_RUNNING PAGESC2">
+				<valueMapping sourceValue="0"  dashboardValue="0.0"/>
+				<valueMapping sourceValue="5"  dashboardValue="10.0"/>
+				<valueMapping sourceValue="10" dashboardValue="18.0"/>
+				<valueMapping sourceValue="15" dashboardValue="24.5"/>
+				<valueMapping sourceValue="20" dashboardValue="30.5"/>
+				<valueMapping sourceValue="30" dashboardValue="40.0"/>
+				<valueMapping sourceValue="40" dashboardValue="48.0"/>
+				<valueMapping sourceValue="50" dashboardValue="55.0"/>
+				<valueMapping sourceValue="60" dashboardValue="60.0"/>
+			</dashboard>
         </dashboards>
     </drivable>
 
@@ -638,6 +701,10 @@
             <part node="frontPtoPart01" startTime="0" endTime="1" startRot="0 0 0" endRot="0 0 360" />
             <part node="frontPtoPart02" startTime="0" endTime="1" startRot="0 0 0" endRot="0 0 360" />
             <part node="frontPtoPart03" startTime="0" endTime="1" startRot="0 0 0" endRot="0 0 360" />
+        </animation>
+		
+		<animation name="precFarmFlagAnimCC" >
+			<part node="axionGps_dblPrecFarmFlagCC" startTime="0.0" endTime="1.0" startTrans="0.0175 0 0" endTrans="-0.021 0 0" />
         </animation>
     </animations>
 
@@ -742,9 +809,13 @@
                     <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="245">
                         <exactFillRootNode node="exactFillRootNodeFuel" />
                         <dashboard displayType="ROT" valueType="fillLevel" node="needleFuel" rotAxis="3" minRot="0" maxRot="-98" doInterpolation="true" interpolationSpeed="0.3" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="SLIDER" valueType="fillLevel" node="cebisAxion_dblFuelSliderP1_SC" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+						<dashboard displayType="TEXT" valueType="fillLevelPct" node="cebisAxion_dblFuelPercentNumbersP1_SC" textColor="BOURGAULT_WHITE1" textSize="0.005" textMask="000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
                     </fillUnit>
                     <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" showOnInfoHud="false" fillTypes="def" capacity="16">
                         <dashboard displayType="SLIDER" valueType="fillLevelPct" node="sliderDef_decal" intensity="0.3" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="SLIDER" valueType="fillLevel" node="cebisAxion_dblAdBlueSliderP1_SC" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+						<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="cebisAxion_dblAdBlueIconP1_SC" baseColor="BOURGAULT_WHITE1" emitColor="ALPEGO_BLUE" emissiveScale="1" intensity="0.8" warningThresholdMax="10" groups="MOTOR_RUNNING PAGESC1"/>
                     </fillUnit>
                     <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" showOnInfoHud="false" fillTypes="air" capacity="4000">
                         <dashboard displayType="SLIDER" valueType="fillLevel" node="sliderAir_decal" minValueSlider="0" maxValueSlider="4000" intensity="0.3" groups="MOTOR_ACTIVE"/>
@@ -758,9 +829,21 @@
         <groups>
             <group name="MOTOR_STARTING" electronicsStarting="true"/>
             <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+			<group name="MOTOR_RUNNING" electronicsStarting="false" electronicsRunning="true"/>
             <group name="BACK_ATTACHMENT" attacherJointIndices="1 3 4"/>
             <group name="FRONT_ATTACHMENT" attacherJointIndices="2 5"/>
             <group name="LIGHT_ENABLED" lightTypes="0"/>
+			
+			<!-- Page -->
+			<group name="PAGESC1" dbl="page" page="1"/>
+			<group name="PAGESC2" dbl="page" page="2"/>
+			<!-- <group name="PAGESC3" dbl="page" page="3"/> -->
+			
+			<group name="DARKMODE" dbl="darkmode"/>
+			<group name="LIGHTMODE" dbl="lightmode"/>
+			<!-- Guidance Steering -->
+			<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
+			<group name="DBL_AWD" isMotorStarting="true" op="" dbl="vca_diff_awd"/>
         </groups>
 
         <default>
@@ -774,14 +857,130 @@
             <dashboard displayType="EMITTER" node="needleTemperatureGlow" intensity="0.2" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="EMITTER" node="needleFuelGlow" intensity="0.2" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="VISIBILITY" node="backgrundLinesDecal" groups="MOTOR_ACTIVE"/>
+			
+			<!-- SeatConsole StartScreen -->
+			<dashboard displayType="EMITTER" node="cebisAxion_startScreenSC" idleValue="-1" intensity="0.5" groups="MOTOR_STARTING"/>
+			<dashboard displayType="VISIBILITY" node="loadingBar01" groups="MOTOR_STARTING"/>
+			<dashboard displayType="VISIBILITY" node="loadingBar02" groups="MOTOR_STARTING"/>
+			<dashboard displayType="VISIBILITY" node="cebisDecal" groups="MOTOR_STARTING"/>
+			<!-- SeatConsole Screens -->
+			<dashboard displayType="VISIBILITY" node="cebisMainScreenP1_SC" groups="MOTOR_RUNNING PAGESC1 LIGHTMODE"/>
+			<dashboard displayType="VISIBILITY" node="cebisMainScreenDMP1_SC" groups="MOTOR_RUNNING PAGESC1 DARKMODE"/>
+			<dashboard displayType="VISIBILITY" node="cebisFieldScreenP2_SC" groups="MOTOR_RUNNING PAGESC2 LIGHTMODE"/>
+			<dashboard displayType="VISIBILITY" node="cebisFieldScreenDMP2_SC" groups="MOTOR_RUNNING PAGESC2 DARKMODE"/>
+			<dashboard displayType="EMITTER" node="cebisMainScreenP1_SC" intensity="0.2" groups="MOTOR_RUNNING PAGESC1 LIGHTMODE"/>
+			<dashboard displayType="EMITTER" node="cebisMainScreenDMP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1 DARKMODE"/>
+			<dashboard displayType="EMITTER" node="cebisFieldScreenP2_SC" intensity="0.2" groups="MOTOR_RUNNING PAGESC2 LIGHTMODE"/>
+			<dashboard displayType="EMITTER" node="cebisFieldScreenDMP2_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC2 DARKMODE"/>
+			<!-- always on -->
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblForwardArrowAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblNeutralGearAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackwardArrowAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontDiffLockAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackDiffLockAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="cebisAxion_dblForwardArrowAO_SC" emitColor="CLAAS_GREY1" emitColorDarkMode="BOURGAULT_WHITE1" intensity="0.5" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="cebisAxion_dblNeutralGearAO_SC" emitColor="CLAAS_GREY1" emitColorDarkMode="BOURGAULT_WHITE1" intensity="0.5" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="cebisAxion_dblBackwardArrowAO_SC" emitColor="CLAAS_GREY1" emitColorDarkMode="BOURGAULT_WHITE1" intensity="0.5" groups="MOTOR_RUNNING"/>
+			<!-- Page1 -->
+			<dashboard displayType="VISIBILITY" node="cebisSpeedDecalP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblSpeedSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblRpmSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblFuelSliderP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisSpeedDecalP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblCruiseControlIconP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblAdBlueIconP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblEnginTempIconP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblCruiseControlP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblGPSactiveP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblGPSsatellitP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="EMITTER" node="cebisSpeedDecalP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- Page2 -->
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontLiftDecalP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackLiftDecalP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontHitchP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontLiftSliderP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackHitchP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackLiftSliderP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblGearWarningIconP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblCruiseControlP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblGPSactiveP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblGPSsatellitP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- Claas GPS Pilot -->
+			<dashboard displayType="VISIBILITY" node="axionGps_decalCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="axionGps_dblButtonDecalCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="axionGps_decalCC" intensity="0.8" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="axionGps_dblButtonDecalCC" intensity="0.8" groups="MOTOR_RUNNING"/>
+			
+			<dashboard displayType="VISIBILITY" node="axionGps_dblPrecFarmFlagCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="axionGps_dblCompassNeedleRotCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="axionGps_dblGPSsatellitCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="axionGps_dblGPSactiveCC" groups="MOTOR_RUNNING"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblWeatherSunCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblWeatherCloudCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblWeatherRainCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblWeatherHailCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblWeatherSnowCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="cebisAxion_dblWeatherTwisterCC" groups="MOTOR_RUNNING"/>
         </default>
 		
-		<compounds>
-            <compound linkNode="mainDisplay" filename="../shared/displays/displays.xml" name="CEBIS_TRACTOR_MAINPAGE"/>
-			<compound linkNode="mainDisplay" filename="data/vehicles/claas/shared/displays/displays.xml" name="CEBIS_TRACTOR_MAINPAGE"/>
-            <compound linkNode="mainDisplay" filename="$data/vehicles/claas/shared/displays/displays.xml" name="CEBIS_TRACTOR_MAINPAGE"/>
-            <!-- <compound linkNode="gpsDisplay"  filename="$data/vehicles/claas/shared/displays/displays.xml" name="CEMIS_TRACTOR_GPSPAGE"/> -->
-        </compounds>
+		<dashboardLive>
+		<!-- always on -->
+			<!-- VCA -->
+			<dashboard displayType="VISIBILITY" valueType="vca" cmd="park" node="cebisAxion_dblNeutralGearAO_SC" baseColor="AGCO_GREY2" emitColor="RED" cond="not" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" valueType="vca" cmd="park" node="cebisAxion_dblParkbreakAO_SC" baseColor="AGCO_GREY2" emitColor="RED" idleValue="0" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="vca" cmd="park" node="cebisAxion_dblParkbreakAO_SC" baseColor="AGCO_GREY2" emitColor="RED" idleValue="0" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" valueType="cvt" cmd="autodiffs" node="cebisAxion_dblAWDautoIconAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" valueType="vca" cmd="diff_awd" node="cebisAxion_dblAWDIconAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" valueType="vca" cmd="diff_front" node="cebisAxion_dblFrontDiffPointAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" valueType="vca" cmd="diff_back" node="cebisAxion_dblBackDiffPointAO_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="cvt" cmd="autodiffs" node="cebisAxion_dblAWDautoIconAO_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.8" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="vca" cmd="diff_awd" node="cebisAxion_dblAWDIconAO_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.8" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="vca" cmd="diff_front" node="cebisAxion_dblFrontDiffPointAO_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.8" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="vca" cmd="diff_front" node="cebisAxion_dblFrontDiffLockAO_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.8" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="vca" cmd="diff_back" node="cebisAxion_dblBackDiffPointAO_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.8" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="vca" cmd="diff_back" node="cebisAxion_dblBackDiffLockAO_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.8" groups="MOTOR_RUNNING"/>
+		<!-- Page1 -->
+			<!-- CVT -->
+			<dashboard displayType="EMITTER" valueType="cvt" cmd="motorcoldlamp" node="cebisAxion_dblEnginTempIconP1_SC" baseColor="1 1 1 1" emitColor="AGRIO_BLUE" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- VCA -->
+			<dashboard displayType="TEXT" valueType="vca" cmd="slip" node="cebisAxion_dblSlipNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC1"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="cebisAxion_dblNaviMapP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="cebisAxion_dblNaviMapPosP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Page2 -->
+			<!-- CVT -->
+			<dashboard displayType="EMITTER" valueType="cvt" cmd="critdamage" node="cebisAxion_dblGearWarningIconP2_SC" baseColor="CLAAS_DARKGREY1" baseColorDarkMode="1 1 1 1" emitColor="BOURGAULT_YELLOW1" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- VCA -->
+			<dashboard displayType="TEXT" valueType="vca" cmd="slip" node="cebisAxion_dblSlipNumbers00P2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="vca" cmd="slip" node="cebisAxion_dblSlipNumbers01P2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- pto -->
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" options="any" joints="1 3 4" node="cebisAxion_dblBackPtoRpmNumbersP2_SC" factor="0.53214" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textMask="0000" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- Lifter State -->
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="front" jointType="implement" options="any" node="cebisAxion_dblFrontLiftSliderP2_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="back" jointType="implement" node="cebisAxion_dblBackLiftSliderP2_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING PAGESC"/>
+			<!-- connect -->
+			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="2 5" node="cebisAxion_dblFrontHitchP2_SC" baseColor="CLAAS_DARKGREY1" baseColorDarkMode="1 1 1 1" emitColor="AGRIO_BLUE" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="1 3 4" node="cebisAxion_dblBackHitchP2_SC" baseColor="CLAAS_DARKGREY1" baseColorDarkMode="1 1 1 1" emitColor="AGRIO_BLUE" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="cebisAxion_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="cebisAxion_dblNaviMapPosP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- Claas GPS Pilot -->
+			<!-- PrecFarming -->
+			<dashboard displayType="TEXT" valueType="precfarming" cmd="applicationRate" node="cebisAxion_dblPrecFarmAppRateCC" textColor="CLAAS_DARKGREY1" textSize="0.0028" textMask="00000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="precfarming" cmd="soilType" node="cebisAxion_dblPrecFarmSoilTypeCC" textColor="CLAAS_DARKGREY1" textSize="0.0035" textMask="..............." font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="precfarming" cmd="nChanged" node="cebisAxion_dblPrecFarmNCangedCC" textColor="CLAAS_DARKGREY1" textSize="0.0028" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="ANIMATION" valueType="precfarming" cmd="nChanged" animName="precFarmFlagAnimCC" factor="1" minValueAnim="0" maxValueAnim="220" groups="MOTOR_RUNNING"/>
+			<!-- GPS -->
+			<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="cebisAxion_dblCompassCC" textColor="CLAAS_DARKGREY1" textSize="0.0035" textMask="00" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="heading" node="cebisAxion_dblCompassNumbersCC" textColor="CLAAS_DARKGREY1" textSize="0.0035" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="cebisAxion_dblFieldNumbersCC" textColor="CLAAS_DARKGREY1" textSize="0.004" textMask="000" font="GENERIC_BOLD" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- WorkWidth -->
+			<dashboard displayType="TEXT" valueType="gpsWidth" node="cebisAxion_dblWorkWidthNumbersCC" textColor="CLAAS_DARKGREY1" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="axionGps_dblNaviMapCC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="cebisAxion_dblNaviMapPosCC" groups="MOTOR_RUNNING"/>
+		</dashboardLive>
     </dashboard>
 
     <ai>
@@ -791,6 +990,16 @@
         <automaticSteering>
             <dashboards>
                 <dashboard displayType="EMITTER" valueType="steeringEngaged" node="iconGPS_decal" intensity="0.3" baseColor="SHARED_BLACK4" emitColor="GREEN" groups="MOTOR_ACTIVE"/>
+				<!-- Page1 -->
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="cebisAxion_dblGPSactiveP1_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.7" groups="MOTOR_RUNNING PAGESC1"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="cebisAxion_dblGPSsatellitP1_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.7" groups="MOTOR_RUNNING PAGESC1"/>
+				<!-- Page2 -->
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="cebisAxion_dblGPSactiveP2_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.7" groups="MOTOR_RUNNING PAGESC2"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="cebisAxion_dblGPSsatellitP2_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.7" groups="MOTOR_RUNNING PAGESC2"/>
+				<!-- Claas GPS Pilot -->
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="axionGps_dblGPSactiveCC" baseColor="1 1 1 1" emitColor="0 1 0.051 1" intensity="0.4" groups="MOTOR_RUNNING"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="axionGps_dblGPSsatellitCC" baseColor="1 1 1 1" emitColor="0 1 0.051 1" intensity="0.4" groups="MOTOR_RUNNING"/>
+				<dashboard displayType="ROT" valueType="heading" node="axionGps_dblCompassNeedleRotCC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="1" groups="MOTOR_RUNNING"/>
             </dashboards>
         </automaticSteering>
     </ai>
@@ -975,6 +1184,103 @@
         <i3dMapping id="playerRightHandTarget" node="0>0|4|6|0|1" />
         <i3dMapping id="defaultSeatDecal" node="0>0|4|6|2|0" />
         <i3dMapping id="mainDisplay" node="0>0|4|6|3" />
+		
+		<i3dMapping id="cebisAxion_startScreenSC" node="0>0|4|6|3|0|0|0"/>
+		<i3dMapping id="loadingBar01" node="0>0|4|6|3|0|0|0|0"/>
+		<i3dMapping id="loadingBar02" node="0>0|4|6|3|0|0|0|1"/>
+		<i3dMapping id="cebisDecal" node="0>0|4|6|3|0|0|0|2"/>
+		
+		<i3dMapping id="cebisAxion_dblForwardArrowAO_SC" node="0>0|4|6|3|0|1|0|0"/>
+		<i3dMapping id="cebisAxion_dblNeutralGearAO_SC" node="0>0|4|6|3|0|1|0|1"/>
+		<i3dMapping id="cebisAxion_dblBackwardArrowAO_SC" node="0>0|4|6|3|0|1|0|2"/>
+		<i3dMapping id="cebisAxion_dblParkbreakAO_SC" node="0>0|4|6|3|0|1|0|3"/>
+		<i3dMapping id="cebisAxion_dblSpeed1NumbersAO_SC" node="0>0|4|6|3|0|1|0|4"/>
+		<i3dMapping id="cebisAxion_dblAWDautoIconAO_SC" node="0>0|4|6|3|0|1|0|5"/>
+		<i3dMapping id="cebisAxion_dblAWDIconAO_SC" node="0>0|4|6|3|0|1|0|6"/>
+		<i3dMapping id="cebisAxion_dblBackDiffLockAO_SC" node="0>0|4|6|3|0|1|0|7"/>
+		<i3dMapping id="cebisAxion_dblFrontDiffLockAO_SC" node="0>0|4|6|3|0|1|0|8"/>
+		<i3dMapping id="cebisAxion_dblFrontDiffPointAO_SC" node="0>0|4|6|3|0|1|0|9"/>
+		<i3dMapping id="cebisAxion_dblBackDiffPointAO_SC" node="0>0|4|6|3|0|1|0|10"/>
+		
+		<i3dMapping id="cebisAxion_dblSpeedSliderP1_SC" node="0>0|4|6|3|0|1|1|0"/>
+		<i3dMapping id="cebisAxion_dblSpeedNumbersP1_SC" node="0>0|4|6|3|0|1|1|1"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlIconP1_SC" node="0>0|4|6|3|0|1|1|2"/>
+		<i3dMapping id="cebisAxion_dblRpmSliderP1_SC" node="0>0|4|6|3|0|1|1|3"/>
+		<i3dMapping id="cebisAxion_dblRpmNumbersP1_SC" node="0>0|4|6|3|0|1|1|4"/>
+		<i3dMapping id="cebisAxion_dblFuelSliderP1_SC" node="0>0|4|6|3|0|1|1|5"/>
+		<i3dMapping id="cebisAxion_dblFuelPercentNumbersP1_SC" node="0>0|4|6|3|0|1|1|6"/>
+		<i3dMapping id="cebisAxion_dblAdBlueSliderP1_SC" node="0>0|4|6|3|0|1|1|7"/>
+		<i3dMapping id="cebisAxion_dblAdBlueIconP1_SC" node="0>0|4|6|3|0|1|1|8"/>
+		<i3dMapping id="cebisAxion_dblEngineTempSliderP1_SC" node="0>0|4|6|3|0|1|1|9"/>
+		<i3dMapping id="cebisAxion_dblEnginTempIconP1_SC" node="0>0|4|6|3|0|1|1|10"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlP1_SC" node="0>0|4|6|3|0|1|1|11"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlNumbersP1_SC" node="0>0|4|6|3|0|1|1|12"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlReverseNumbersP1_SC" node="0>0|4|6|3|0|1|1|13"/>
+		<i3dMapping id="cebisAxion_dblSlipNumbersP1_SC" node="0>0|4|6|3|0|1|1|14"/>
+		<i3dMapping id="cebisAxion_dblFuelUsageNumbersP1_SC" node="0>0|4|6|3|0|1|1|15"/>
+		<i3dMapping id="cebisAxion_dblOperatingTimeNumbersP1_SC" node="0>0|4|6|3|0|1|1|16"/>
+		<i3dMapping id="cebisAxion_dblGPSsatellitP1_SC" node="0>0|4|6|3|0|1|1|17"/>
+		<i3dMapping id="cebisAxion_dblGPSactiveP1_SC" node="0>0|4|6|3|0|1|1|18"/>
+		
+		<i3dMapping id="cebisAxion_dblNaviMapP1_SC" node="0>0|4|6|3|0|1|2|0"/>
+		<i3dMapping id="cebisAxion_dblNaviMapPosP1_SC" node="0>0|4|6|3|0|1|2|0|0"/>
+		
+		<i3dMapping id="cebisMainScreenP1_SC" node="0>0|4|6|3|0|1|3|0"/>
+		<i3dMapping id="cebisMainScreenDMP1_SC" node="0>0|4|6|3|0|1|3|1"/>
+		<i3dMapping id="cebisSpeedDecalP1_SC" node="0>0|4|6|3|0|1|3|2"/>
+		
+		
+		<i3dMapping id="cebisAxion_dblEnginPowerPercentNumbersP2_SC" node="0>0|4|6|3|0|2|0|0"/>
+		<i3dMapping id="cebisAxion_dblSlipNumbers00P2_SC" node="0>0|4|6|3|0|2|0|1"/>
+		<i3dMapping id="cebisAxion_dblEnginRpmNumbersP2_SC" node="0>0|4|6|3|0|2|0|2"/>
+		<i3dMapping id="cebisAxion_dblBackPtoRpmNumbersP2_SC" node="0>0|4|6|3|0|2|0|3"/>
+		<i3dMapping id="cebisAxion_dblFrontHitchP2_SC" node="0>0|4|6|3|0|2|0|4"/>
+		<i3dMapping id="cebisAxion_dblFrontLiftSliderP2_SC" node="0>0|4|6|3|0|2|0|5"/>
+		<i3dMapping id="cebisAxion_dblFrontLiftDecalP2_SC" node="0>0|4|6|3|0|2|0|6"/>
+		<i3dMapping id="cebisAxion_dblBackHitchP2_SC" node="0>0|4|6|3|0|2|0|7"/>
+		<i3dMapping id="cebisAxion_dblBackLiftSliderP2_SC" node="0>0|4|6|3|0|2|0|8"/>
+		<i3dMapping id="cebisAxion_dblBackLiftDecalP2_SC" node="0>0|4|6|3|0|2|0|9"/>
+		<i3dMapping id="cebisAxion_dblGearWarningIconP2_SC" node="0>0|4|6|3|0|2|0|10"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlP2_SC" node="0>0|4|6|3|0|2|0|11"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlNumbersP2_SC" node="0>0|4|6|3|0|2|0|12"/>
+		<i3dMapping id="cebisAxion_dblCruiseControlReverseNumbersP2_SC" node="0>0|4|6|3|0|2|0|13"/>
+		<i3dMapping id="cebisAxion_dblSlipNumbers01P2_SC" node="0>0|4|6|3|0|2|0|14"/>
+		<i3dMapping id="cebisAxion_dblFuelUsageNumbersP2_SC" node="0>0|4|6|3|0|2|0|15"/>
+		<i3dMapping id="cebisAxion_dblOperatingTimeNumbersP2_SC" node="0>0|4|6|3|0|2|0|16"/>
+		<i3dMapping id="cebisAxion_dblGPSsatellitP2_SC" node="0>0|4|6|3|0|2|0|17"/>
+		<i3dMapping id="cebisAxion_dblGPSactiveP2_SC" node="0>0|4|6|3|0|2|0|18"/>
+		
+		<i3dMapping id="cebisAxion_dblNaviMapP2_SC" node="0>0|4|6|3|0|2|1|0"/>
+		<i3dMapping id="cebisAxion_dblNaviMapPosP2_SC" node="0>0|4|6|3|0|2|1|0|0"/>
+		
+		<i3dMapping id="cebisFieldScreenP2_SC" node="0>0|4|6|3|0|2|2|0"/>
+		<i3dMapping id="cebisFieldScreenDMP2_SC" node="0>0|4|6|3|0|2|2|1"/>
+		
+		<i3dMapping id="cebisAxion_dblPrecFarmSoilTypeCC" node="0>0|4|10|8|0|0"/>
+		<i3dMapping id="cebisAxion_dblPrecFarmAppRateCC" node="0>0|4|10|8|0|1"/>
+		<i3dMapping id="cebisAxion_dblPrecFarmNCangedCC" node="0>0|4|10|8|0|2"/>
+		<i3dMapping id="axionGps_dblPrecFarmFlagCC" node="0>0|4|10|8|0|3|0"/>
+		<i3dMapping id="cebisAxion_dblSpeedNumbersCC" node="0>0|4|10|8|0|4"/>
+		<i3dMapping id="axionGps_dblGPSsatellitCC" node="0>0|4|10|8|0|5"/>
+		<i3dMapping id="axionGps_dblCompassNeedleRotCC" node="0>0|4|10|8|0|6"/>
+		<i3dMapping id="cebisAxion_dblCompassCC" node="0>0|4|10|8|0|7"/>
+		<i3dMapping id="cebisAxion_dblCompassNumbersCC" node="0>0|4|10|8|0|8"/>
+		<i3dMapping id="cebisAxion_dblFieldNumbersCC" node="0>0|4|10|8|0|9"/>
+		<i3dMapping id="axionGps_dblGPSactiveCC" node="0>0|4|10|8|0|10"/>
+		<i3dMapping id="cebisAxion_dblWorkWidthNumbersCC" node="0>0|4|10|8|0|11"/>
+		<i3dMapping id="cebisAxion_dblOutsideTempCC" node="0>0|4|10|8|0|12"/>
+		<i3dMapping id="cebisAxion_dblWeatherSunCC" node="0>0|4|10|8|0|13"/>
+		<i3dMapping id="cebisAxion_dblWeatherCloudCC" node="0>0|4|10|8|0|14"/>
+		<i3dMapping id="cebisAxion_dblWeatherRainCC" node="0>0|4|10|8|0|15"/>
+		<i3dMapping id="cebisAxion_dblWeatherHailCC" node="0>0|4|10|8|0|16"/>
+		<i3dMapping id="cebisAxion_dblWeatherSnowCC" node="0>0|4|10|8|0|17"/>
+		<i3dMapping id="cebisAxion_dblWeatherTwisterCC" node="0>0|4|10|8|0|18"/>
+		<i3dMapping id="axionGps_dblNaviMapCC" node="0>0|4|10|8|0|19"/>
+		<i3dMapping id="cebisAxion_dblNaviMapPosCC" node="0>0|4|10|8|0|19|0"/>
+
+		<i3dMapping id="axionGps_decalCC" node="0>0|4|10|8|1|0"/>
+		<i3dMapping id="axionGps_dblButtonDecalCC" node="0>0|4|10|8|1|1"/>
+		
         <i3dMapping id="interiorScreenLight02" node="0>0|4|6|4" />
         <i3dMapping id="mirrorLeft_decal" node="0>0|4|8|0" />
         <i3dMapping id="mirrorRight_decal" node="0>0|4|8|1" />
