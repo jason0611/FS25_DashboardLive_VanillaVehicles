@@ -714,8 +714,8 @@
         <dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.18" doInterpolation="true" interpolationSpeed="0.2" node="g5HarvestingPageBasic_dblRpmHarvestingP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="1.13" doInterpolation="true" interpolationSpeed="0.4" node="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
         
-        <dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="..................." textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="icon"      node="g5HarvestingPageBasic_dblFruitTypeIconP1_SC" intensity=".5" groups="MOTOR_RUNNING"/>
 
 
@@ -1015,8 +1015,8 @@
         <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct"         node="g5HarvestingPageGPS_dblFilllevelPercentNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.01" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber"    node="g5HarvestingPageGPS_dblFieldNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.007" textMask="000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
         <!-- <dashboard displayType="TEXT" valueType="drivable.cruiseControl"        node="g5HarvestingPageGPS_dblCruiseControlSpeedNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/> -->
-        <dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="sssssssssssssssss" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="..................." textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="icon"      node="g5HarvestingPageGPS_dblFruitTypeIconP1_SC" intensity=".5" groups="MOTOR_RUNNING"/>
 
         <dashboard displayType="VISIBILITY" node="g5HarvestingPageGPS_dblFilllevelSliderP1_SC" groups="MOTOR_RUNNING"/>
