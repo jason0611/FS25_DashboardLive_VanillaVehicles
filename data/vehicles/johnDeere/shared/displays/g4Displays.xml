@@ -607,7 +607,7 @@
         <dashboard displayType="VISIBILITY" node="4gRadio_TimeNumbersP1_FM" groups=""/>
         <dashboard displayType="EMITTER" node="radioDisplay_startScreen_decal" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_STARTING"/>
         <dashboard displayType="EMITTER" node="radioDisplay_decal" idleValue="-1" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realClock" node="4gRadio_TimeNumbersP1_FM" textColor="0.6 0.6 0.7 1" textColorDarkMode="0.4 0.4 0.32 1" textSize="0.01" textMask="ssssssss" emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD" groups=""/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realClock" node="4gRadio_TimeNumbersP1_FM" textColor="0.6 0.6 0.7 1" textColorDarkMode="0.4 0.4 0.32 1" textSize="0.01" textMask="........." emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD" groups=""/>
     </dashboardCompound>
 
     <i3dMappings>

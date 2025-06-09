@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="96">
+<modDesc descVersion="98">
 	<author>Glowins Modschmiede</author>
-	<version>0.4.2.9</version>
+	<version>0.4.3.0</version>
 	<contributors>SbSh, mister_mojo_AT, AgrarPlay und LUWZ, Farming Duds</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
