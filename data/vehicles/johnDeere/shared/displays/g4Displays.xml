@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
     
-	<!-- <group name="DARKMODE" dbl="darkmode"/>
-	<group name="LIGHTMODE" dbl="lightmode"/> -->
+	<group name="DARKMODE" dbl="darkmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/>
 	<group name="PAGE4GPS1" dbl="page" group="1" page="1"/>
 	<group name="PAGE4GPS2" dbl="page" group="1" page="2"/>
-	<!-- <group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/> -->
-	<!-- <group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/> -->
+	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
+	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
 	<group name="DBL_F_TRAILER1" dbl="base_connected" dblTrailer="1" dblJointSide="back"/>
 	<!-- <group name="DBL_F_TRAILER1" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="1" dblJointSide="back"/> -->
 	<group name="DBL_F_TRAILER2" dbl="base_connected" dblTrailer="2" dblJointSide="back"/>
@@ -30,8 +30,8 @@
         <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="aPillarDisplay_numbersCruiseControl" textColor="JOHNDEERE_ORANGE1" textSize="0.012" textMask="00.0" intensity="0.5" emissiveScale="0.2" textAlignment="RIGHT" textScaleY="1.2" font="DIGIT" groups="MOTOR_RUNNING DARKMODE" minActiveValue="10"/>
 
         <!-- icons -->
-        <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="aPillarDisplay_iconTurnLightLeft_decal" baseColor="0 0 0" hideInactive="true" intensity="0.5" groups=""/>
-        <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="aPillarDisplay_iconTurnLightRight_decal" baseColor="0 0 0" hideInactive="true" intensity="0.5" groups=""/>
+        <dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="aPillarDisplay_iconTurnLightLeft_decal" baseColor="0 0 0" hideInactive="true" intensity="0.5"/>
+        <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="aPillarDisplay_iconTurnLightRight_decal" baseColor="0 0 0" hideInactive="true" intensity="0.5"/>
         <dashboard displayType="EMITTER" valueType="lights.turnLightAny" node="aPillarDisplay_iconTurnLightTrailer_decal" baseColor="0 0 0" emitColor="GREEN" intensity="0.3" groups="BACK_ATTACHMENT"/>
 		<!-- :( turnlight dont seperate trailer 1 or 2 or one attached thing -->
         <dashboard displayType="VISIBILITY" valueType="dbl.base" node="aPillarDisplay_iconTurnLightTrailer1_decal" jointSide="back" jointType="trailer trailerLow" trailer="1" groups="MOTOR_RUNNING DBL_F_TRAILER1"/>
@@ -604,10 +604,10 @@
     <dashboardCompound name="JOHNDEERE_RADIODISPLAY" filename="data/vehicles/johnDeere/shared/displays/g4Displays.i3d" node="g4RadioScreen">
         <!-- display -->
         <dashboard displayType="VISIBILITY" node="radioDisplay_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
-        <dashboard displayType="VISIBILITY" node="4gRadio_TimeNumbersP1_FM" groups=""/>
+        <dashboard displayType="VISIBILITY" node="4gRadio_TimeNumbersP1_FM"/>
         <dashboard displayType="EMITTER" node="radioDisplay_startScreen_decal" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_STARTING"/>
         <dashboard displayType="EMITTER" node="radioDisplay_decal" idleValue="-1" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realClock" node="4gRadio_TimeNumbersP1_FM" textColor="0.6 0.6 0.7 1" textColorDarkMode="0.4 0.4 0.32 1" textSize="0.01" textMask="........." emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD" groups=""/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realClock" node="4gRadio_TimeNumbersP1_FM" textColor="0.6 0.6 0.7 1" textColorDarkMode="0.4 0.4 0.32 1" textSize="0.01" textMask="........." emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD"/>
     </dashboardCompound>
 
     <i3dMappings>
