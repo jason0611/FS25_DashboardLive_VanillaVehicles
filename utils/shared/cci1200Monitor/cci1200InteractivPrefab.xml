@@ -1,0 +1,83 @@
+<!-- cci1200 Einträge -->
+	
+<vehicle>
+	<dashboard>
+		<default>
+			<dashboard displayType="EMITTER" node="cci1200_mainScreenP1_CC" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="cci1200_mainDecalsP1_CC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="cci1200_mainDecalsP1_CC" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="VISIBILITY" node="cci1200_dblGPSactiveP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="cci1200_dblGPSsatellitP1_CC" groups="MOTOR_ACTIVE"/>
+		</default>
+	
+		<dashboardLive>
+			<!-- Field -->
+			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="cci1200_dblFieldNumbersP1_CC" textColor="0.7 0.7 0.7 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+			<!-- GPS -->
+			<dashboard valueType="gps" option="lane+" displayType="VISIBILITY" node="cci1200_dblGPSlaneLeftP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="gps" option="lane-" displayType="VISIBILITY" node="cci1200_dblGPSlaneRightP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="base" cmd="headingText2" displayType="TEXT" node="cci1200_dblGPScompassP1_CC" textColor="0.7 0.7 0.7 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="base" cmd="heading" displayType="TEXT" node="cci1200_dblGPScompassNumbersP1_CC" textColor="0.7 0.7 0.7 1" textSize="0.004" textMask="000.0" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="gpsWidth" displayType="TEXT" node="cci1200_dblWorkWidthNumbersP1_CC" textColor="0.4 0.4 0.4 1" textSize="0.0035" textMask="00.00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<!-- HLM -->
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="headland" node="cci1200_dblHLMheadlandP1_CC"  groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="field" 	  node="cci1200_dblHLMfieldP1_CC"  groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="" 			  node="cci1200_dblHLMonP1_CC" baseColor="SHARED_GREY1" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="field" 	  node="cci1200_dblHLMfieldP1_CC" baseColor="SHARED_GREY1" emitColor="ELMERSMFG_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="headland" 	  node="cci1200_dblHLMheadlandP1_CC" baseColor="SHARED_GREY1" emitColor="ELMERSMFG_BLUE1" intensity="1" groups="MOTOR_ACTIVE"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="cci1200_dblNaviMapP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="cci1200_dblNaviMapPosP1_CC" groups="MOTOR_ACTIVE"/>
+		</dashboardLive>
+    </dashboard>
+	
+	<ai>
+		<automaticSteering>
+            <dashboards>
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="cci1200_dblGPSactiveP1_CC" emitColor="GREEN" intensity="0.4" groups="MOTOR_ACTIVE"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="cci1200_dblGPSsatellitP1_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_ACTIVE"/>
+            </dashboards>
+        </automaticSteering>
+	</ai>
+	
+	<i3dMappings>
+	<!-- Display Version 1 -->
+		<i3dMapping id="cci1200_dblGPSsatellitP1_CC" node="0>0|2|0|0"/>
+		<i3dMapping id="cci1200_dblFieldNumbersP1_CC" node="0>0|2|0|1"/>
+		<i3dMapping id="cci1200_dblGPSlaneLeftP1_CC" node="0>0|2|0|2"/>
+		<i3dMapping id="cci1200_dblWorkWidthNumbersP1_CC" node="0>0|2|0|3"/>
+		<i3dMapping id="cci1200_dblGPSlaneRightP1_CC" node="0>0|2|0|4"/>
+		<i3dMapping id="cci1200_dblGPSactiveP1_CC" node="0>0|2|0|5"/>
+		<i3dMapping id="cci1200_dblGPScompassP1_CC" node="0>0|2|0|6"/>
+		<i3dMapping id="cci1200_dblGPScompassNumbersP1_CC" node="0>0|2|0|7"/>
+		<i3dMapping id="cci1200_dblHLMonP1_CC" node="0>0|2|0|8"/>
+		<i3dMapping id="cci1200_dblHLMfieldP1_CC" node="0>0|2|0|9"/>
+		<i3dMapping id="cci1200_dblHLMheadlandP1_CC" node="0>0|2|0|10"/>
+		
+		<i3dMapping id="cci1200_dblNaviMapP1_CC" node="0>0|2|1|0"/>
+		<i3dMapping id="cci1200_dblNaviMapPosP1_CC" node="0>0|2|1|0|0"/>
+		
+		<i3dMapping id="cci1200_mainScreenP1_CC" node="0>0|2|2|0"/>
+		<i3dMapping id="cci1200_mainDecalsP1_CC" node="0>0|2|2|1"/>
+		
+	<!-- Display Version 2 -->
+		<i3dMapping id="cci1200_dblGPSsatellitP1_CC" node="1>0|2|0|0"/>
+		<i3dMapping id="cci1200_dblFieldNumbersP1_CC" node="1>0|2|0|1"/>
+		<i3dMapping id="cci1200_dblGPSlaneLeftP1_CC" node="1>0|2|0|2"/>
+		<i3dMapping id="cci1200_dblWorkWidthNumbersP1_CC" node="1>0|2|0|3"/>
+		<i3dMapping id="cci1200_dblGPSlaneRightP1_CC" node="1>0|2|0|4"/>
+		<i3dMapping id="cci1200_dblGPSactiveP1_CC" node="1>0|2|0|5"/>
+		<i3dMapping id="cci1200_dblGPScompassP1_CC" node="1>0|2|0|6"/>
+		<i3dMapping id="cci1200_dblGPScompassNumbersP1_CC" node="1>0|2|0|7"/>
+		<i3dMapping id="cci1200_dblHLMonP1_CC" node="1>0|2|0|8"/>
+		<i3dMapping id="cci1200_dblHLMfieldP1_CC" node="1>0|2|0|9"/>
+		<i3dMapping id="cci1200_dblHLMheadlandP1_CC" node="1>0|2|0|10"/>
+		
+		<i3dMapping id="cci1200_dblNaviMapP1_CC" node="1>0|2|1|0"/>
+		<i3dMapping id="cci1200_dblNaviMapPosP1_CC" node="1>0|2|1|0|0"/>
+		
+		<i3dMapping id="cci1200_mainScreenP1_CC" node="1>0|2|2|0"/>
+		<i3dMapping id="cci1200_mainDecalsP1_CC" node="1>0|2|2|1"/>
+	</i3dMappings>
+</vehicle>

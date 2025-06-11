@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="cci1200Displays.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
+  </Asset>
+
+  <Files>
+    <File fileId="32" filename="../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="30" filename="../../DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="22" filename="textures/cci1200Decals_diffuse.png"/>
+    <File fileId="23" filename="textures/cci1200Decals_normal.png"/>
+    <File fileId="25" filename="textures/cci1200NaviDisplay_diffuse.png"/>
+    <File fileId="24" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="4" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="12" filename="$data/shared/default_normal.png"/>
+    <File fileId="31" filename="$data/shared/default_specular.dds"/>
+    <File fileId="13" filename="$data/shared/default_vmask.png"/>
+    <File fileId="20" filename="$data/shared/detailLibrary/flat_normal.dds"/>
+    <File fileId="6" filename="$data/shared/detailLibrary/flat_normal.png"/>
+    <File fileId="18" filename="$data/shared/detailLibrary/metallic/scratched_diffuse.png"/>
+    <File fileId="17" filename="$data/shared/detailLibrary/metallic/silverScratched_specular.png"/>
+    <File fileId="21" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_diffuse.dds"/>
+    <File fileId="7" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_diffuse.png"/>
+    <File fileId="19" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_specular.dds"/>
+    <File fileId="5" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_specular.png"/>
+    <File fileId="16" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubberBlack_diffuse.png"/>
+    <File fileId="15" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_normal.png"/>
+    <File fileId="14" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_specular.png"/>
+    <File fileId="1" filename="$data/shared/white_diffuse.png"/>
+    <File fileId="2" filename="$data/vehicles/oxbo/shared/at5104LNMSInterior_normal.png"/>
+    <File fileId="3" filename="$data/vehicles/oxbo/shared/at5104LNMSInterior_vmask.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="cci1200Adapter_mat" materialId="40" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+      <Custommap name="detailSpecular" fileId="19"/>
+      <Custommap name="detailNormal" fileId="20"/>
+      <Custommap name="detailDiffuse" fileId="21"/>
+      <CustomParameter name="colorScale" value="0.1137 0.1137 0.1137"/>
+    </Material>
+    <Material name="cci1200Decal_mat" materialId="225" customShaderId="24">
+      <Texture fileId="22"/>
+      <Normalmap fileId="23"/>
+      <Glossmap fileId="13"/>
+      <CustomParameter name="lightControl" value="0"/>
+    </Material>
+    <Material name="cci1200Display_mat" materialId="7" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="detailSpecular" fileId="5"/>
+      <Custommap name="detailNormal" fileId="6"/>
+      <Custommap name="detailDiffuse" fileId="7"/>
+      <CustomParameter name="colorScale" value="0.1137 0.1137 0.1137"/>
+    </Material>
+    <Material name="cci1200NaviDisplay_mat" materialId="96" customShaderId="24" customShaderVariation="staticLight">
+      <Texture fileId="25"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+    </Material>
+    <Material name="cci1200Screw_mat" materialId="8" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+      <Custommap name="detailSpecular" fileId="17"/>
+      <Custommap name="detailNormal" fileId="6"/>
+      <Custommap name="detailDiffuse" fileId="18"/>
+      <CustomParameter name="colorScale" value="0.9294 0.9568 0.9725"/>
+    </Material>
+    <Material name="connectorRubber_mat" materialId="9" customShaderId="4">
+      <Texture fileId="1"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+      <Custommap name="detailSpecular" fileId="14"/>
+      <Custommap name="detailNormal" fileId="15"/>
+      <Custommap name="detailDiffuse" fileId="16"/>
+    </Material>
+    <Material name="dblNaviMap_mat" materialId="97" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="32">
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="244" customShaderId="24" customShaderVariation="staticLight">
+      <Texture fileId="30"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="31"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="98" alphaBlending="true" customShaderId="24" customShaderVariation="staticLight">
+      <Texture fileId="30"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="31"/>
+    </Material>
+    <Material name="multiType_mat" materialId="99" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="4" customShaderVariation="staticLight_vertex_slide">
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+      <CustomParameter name="lightIds0" value="1 0 0 0"/>
+      <CustomParameter name="lightTypeBitMask" value="3"/>
+      <CustomParameter name="blinkMulti" value="2 1 15 0"/>
+    </Material>
+    <Material name="multiType_mat" materialId="216" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="4" customShaderVariation="staticLight_vertex_slide">
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+      <CustomParameter name="lightIds0" value="1 0 0 0"/>
+      <CustomParameter name="lightTypeBitMask" value="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="cci1200Displays.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="cci1200Display" translation="0 0 -0.3" clipDistance="300" nodeId="19">
+      <Shape name="cci1200Monitor" translation="0.108432 0 0" shapeId="1" clipDistance="300" nodeId="20" castsShadows="true" receiveShadows="true" materialIds="7,9,8">
+        <Shape name="cci1200Holder" shapeId="2" clipDistance="300" nodeId="21" castsShadows="true" receiveShadows="true" materialIds="7">
+          <Shape name="cci1200Adapter" translation="-0.078339 0 0" shapeId="3" clipDistance="300" nodeId="22" castsShadows="true" receiveShadows="true" materialIds="40"/>
+        </Shape>
+        <Shape name="cci1200Decals" translation="0.045433 -0.033774 0.046575" shapeId="4" clipDistance="300" nodeId="23" castsShadows="true" receiveShadows="true" materialIds="225"/>
+        <TransformGroup name="cci1200Dashboard" translation="0.0512257 -0.0116357 3.28113e-06" rotation="90.3782 -89.7824 179.639" clipDistance="30" nodeId="165">
+          <TransformGroup name="cci1200Icon" nodeId="166">
+            <Shape name="cci1200_dblGPSsatellitP1_CC" translation="0.085674 0 0.047156" shapeId="5" clipDistance="30" nodeId="167" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="96"/>
+            <TransformGroup name="cci1200_dblFieldNumbersP1_CC" translation="0.0780176 -0.000139236 0.0416057" rotation="90 0.000134042 180" clipDistance="30" nodeId="168"/>
+            <Shape name="cci1200_dblGPSlaneLeftP1_CC" translation="0.0189759 1.19209e-07 0.0469785" rotation="8.53774e-07 -8.53774e-07 1.70755e-06" shapeId="6" clipDistance="30" nodeId="169" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="99"/>
+            <TransformGroup name="cci1200_dblWorkWidthNumbersP1_CC" translation="1.75834e-05 -0.000138581 0.0436058" rotation="90 0.000133189 180" clipDistance="30" nodeId="170"/>
+            <Shape name="cci1200_dblGPSlaneRightP1_CC" translation="-0.0193681 5.96046e-08 0.0469785" rotation="8.53774e-07 -8.53774e-07 1.70755e-06" shapeId="7" clipDistance="30" nodeId="171" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="99"/>
+            <Shape name="cci1200_dblGPSactiveP1_CC" translation="-0.085046 0 0.047156" shapeId="8" clipDistance="30" nodeId="172" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="96"/>
+            <TransformGroup name="cci1200_dblGPScompassP1_CC" translation="1.75834e-05 -0.000138581 0.035" rotation="90 0.000133189 180" clipDistance="30" nodeId="173"/>
+            <TransformGroup name="cci1200_dblGPScompassNumbersP1_CC" translation="1.75834e-05 -0.000138581 0.03" rotation="90 0.000133189 180" clipDistance="30" nodeId="174"/>
+            <Shape name="cci1200_dblHLMonP1_CC" translation="0.089 0 -0.045" rotation="-180 -1.86694e-05 180" shapeId="9" clipDistance="20" nodeId="302" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="244"/>
+            <Shape name="cci1200_dblHLMfieldP1_CC" translation="0.089 0 -0.045" rotation="-180 -3.23298e-05 180" scale="2 1 2" shapeId="10" clipDistance="20" nodeId="303" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="244"/>
+            <Shape name="cci1200_dblHLMheadlandP1_CC" translation="0.089 0 -0.045" rotation="-180 -3.23298e-05 180" scale="2 1 2" shapeId="11" clipDistance="20" nodeId="304" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="244"/>
+          </TransformGroup>
+          <TransformGroup name="cci1200NaviMap" clipDistance="30" nodeId="175">
+            <Shape name="cci1200_dblNaviMapP1_CC" translation="-0.005102 0 -0.004427" shapeId="12" clipDistance="30" nodeId="176" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="97">
+              <Shape name="cci1200_dblNaviMapPosP1_CC" scale="1.5 1 1.5" shapeId="13" clipDistance="20" nodeId="177" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="98"/>
+            </Shape>
+          </TransformGroup>
+          <TransformGroup name="cci1200Screen" clipDistance="30" nodeId="178">
+            <Shape name="cci1200_mainScreenP1_CC" shapeId="14" clipDistance="30" nodeId="179" castsShadows="false" receiveShadows="true" materialIds="96"/>
+            <Shape name="cci1200_mainDecalsP1_CC" translation="-0.005388 0 -0.003092" shapeId="15" clipDistance="30" nodeId="180" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="96"/>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+    </TransformGroup>
+    <TransformGroup name="cci1200Display" clipDistance="300" nodeId="24">
+      <Shape name="cci1200Monitor" translation="0.108432 0 0" shapeId="16" clipDistance="300" nodeId="25" castsShadows="true" receiveShadows="true" materialIds="7,9,8">
+        <Shape name="cci1200Holder" translation="0 0.001181 -0.000761" shapeId="17" clipDistance="300" nodeId="26" castsShadows="true" receiveShadows="true" materialIds="7">
+          <Shape name="cci1200Adapter" translation="-0.078339 -0.001181 0.000761" shapeId="18" clipDistance="300" nodeId="27" castsShadows="true" receiveShadows="true" materialIds="40">
+            <Shape name="cci1200Adapter" translation="-0.0388797 0 -0.000761" shapeId="19" clipDistance="300" nodeId="28" castsShadows="true" receiveShadows="true" materialIds="8,40,9"/>
+          </Shape>
+        </Shape>
+        <Shape name="cci1200Decals" translation="0.045433 -0.033774 0.046575" shapeId="4" clipDistance="300" nodeId="29" castsShadows="true" receiveShadows="true" materialIds="225"/>
+        <TransformGroup name="cci1200Dashboard" translation="0.0512257 -0.0116357 3.28113e-06" rotation="90.3782 -89.7824 179.639" clipDistance="30" nodeId="109">
+          <TransformGroup name="cci1200Icon" nodeId="110">
+            <Shape name="cci1200_dblGPSsatellitP1_CC" translation="0.085674 0 0.047156" shapeId="5" clipDistance="30" nodeId="111" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="96"/>
+            <TransformGroup name="cci1200_dblFieldNumbersP1_CC" translation="0.0780176 -0.000139236 0.0416057" rotation="90 0.000134042 180" clipDistance="30" nodeId="112"/>
+            <Shape name="cci1200_dblGPSlaneLeftP1_CC" translation="0.0189759 1.19209e-07 0.0469785" rotation="8.53774e-07 -8.53774e-07 1.70755e-06" shapeId="6" clipDistance="30" nodeId="113" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="216"/>
+            <TransformGroup name="cci1200_dblWorkWidthNumbersP1_CC" translation="1.75834e-05 -0.000138581 0.0436058" rotation="90 0.000133189 180" clipDistance="30" nodeId="114"/>
+            <Shape name="cci1200_dblGPSlaneRightP1_CC" translation="-0.0193681 5.96046e-08 0.0469785" rotation="8.53774e-07 -8.53774e-07 1.70755e-06" shapeId="7" clipDistance="30" nodeId="115" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="99"/>
+            <Shape name="cci1200_dblGPSactiveP1_CC" translation="-0.085046 0 0.047156" shapeId="8" clipDistance="30" nodeId="116" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="96"/>
+            <TransformGroup name="cci1200_dblGPScompassP1_CC" translation="1.75834e-05 -0.000138581 0.035" rotation="90 0.000133189 180" clipDistance="30" nodeId="117"/>
+            <TransformGroup name="cci1200_dblGPScompassNumbersP1_CC" translation="1.75834e-05 -0.000138581 0.03" rotation="90 0.000133189 180" clipDistance="30" nodeId="118"/>
+            <Shape name="cci1200_dblHLMonP1_CC" translation="0.089 0 -0.045" rotation="0 180 0" shapeId="9" clipDistance="20" nodeId="249" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="244"/>
+            <Shape name="cci1200_dblHLMfieldP1_CC" translation="0.089 0 -0.045" rotation="0 180 0" scale="2 1 2" shapeId="10" clipDistance="20" nodeId="250" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="244"/>
+            <Shape name="cci1200_dblHLMheadlandP1_CC" translation="0.089 0 -0.045" rotation="0 180 0" scale="2 1 2" shapeId="11" clipDistance="20" nodeId="251" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="244"/>
+          </TransformGroup>
+          <TransformGroup name="cci1200NaviMap" clipDistance="30" nodeId="119">
+            <Shape name="cci1200_dblNaviMapP1_CC" translation="-0.005102 0 -0.004427" shapeId="12" clipDistance="30" nodeId="120" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="97">
+              <Shape name="cci1200_dblNaviMapPosP1_CC" scale="1.5 1 1.5" shapeId="13" clipDistance="20" nodeId="121" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="98"/>
+            </Shape>
+          </TransformGroup>
+          <TransformGroup name="cci1200Screen" clipDistance="30" nodeId="122">
+            <Shape name="cci1200_mainScreenP1_CC" shapeId="14" clipDistance="30" nodeId="123" castsShadows="false" receiveShadows="true" materialIds="96"/>
+            <Shape name="cci1200_mainDecalsP1_CC" translation="-0.005388 0 -0.003092" shapeId="15" clipDistance="30" nodeId="124" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="96"/>
+          </TransformGroup>
+        </TransformGroup>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

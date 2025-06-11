@@ -1,0 +1,1704 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="combineCutter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>MKB-4TR</name>
+        <specs>
+            <power>400</power>
+            <maxSpeed>25</maxSpeed>
+            <workingWidth>3.5</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_combine</function>
+        </functions>
+        <image>$data/vehicles/oxbo/mkb4TR/store_mkb4TR.png</image>
+        <price>635000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>OXBO</brand>
+        <category>spinachHarvesters</category>
+        <shopLoadingDelay initial="0.5"/>
+        <shopTranslationOffset>0 0.012 0</shopTranslationOffset>
+        <shopRotationOffset>0.003 0 0</shopRotationOffset>
+        <shopFoldingTime>0.034</shopFoldingTime>
+        <vertexBufferMemoryUsage>6886912</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>2669056</indexBufferMemoryUsage>
+        <textureMemoryUsage>1376256</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>1612473</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_harvester</typeDesc>
+        <filename>$data/vehicles/oxbo/mkb4TR/mkb4TR.i3d</filename>
+        <sounds filename="$data/vehicles/oxbo/mkb4TR/sounds/mkb4TR.xml" volumeFactor="0.7"/>
+        <size width="4.1" length="14.4" height="4.1"/>
+        <components>
+            <component centerOfMass="0 0.85 1.6"  solverIterationCount="40" mass="4000"/>
+            <component centerOfMass="0 0.85 -4.1" solverIterationCount="40" mass="6700"/>
+            <component centerOfMass="0 0 0"    solverIterationCount="40" mass="2000" inertiaScale="6 6 6"/>
+            <component centerOfMass="0.2 0 0"  solverIterationCount="40" mass="2000" inertiaScale="2 2 6"/>
+            <component centerOfMass="-0.2 0 0" solverIterationCount="20" mass="2000" inertiaScale="2 2 6"/>
+            <component centerOfMass="0.2 0 0"  solverIterationCount="20" mass="2000" inertiaScale="2 2 6"/>
+            <component centerOfMass="-0.2 0 0" solverIterationCount="20" mass="2000" inertiaScale="2 2 6"/>
+
+            <joint component1="1" component2="2" node="componentJointBack" rotLimit="0 0 0" transLimit="0 0 0" rotLimitSpring="0 0 240" rotLimitDamping="0 0 300"/>
+            <joint component1="1" component2="3" node="componentJointHeader" rotLimit="0 0 0" transLimit="0 0 0" rotLimitSpring="0 0 240" rotLimitDamping="0 0 300"/>
+            <joint component1="1" component2="4" node="componentJointBoggieFrontLeft"  rotLimit="3 0 0" transLimit="0 0 0" rotLimitSpring="500 0 0" rotLimitDamping="500 0 0"/>
+            <joint component1="1" component2="5" node="componentJointBoggieFrontRight" rotLimit="3 0 0" transLimit="0 0 0" rotLimitSpring="500 0 0" rotLimitDamping="500 0 0"/>
+            <joint component1="2" component2="6" node="componentJointBoggieBackLeft"   rotLimit="3 0 0" transLimit="0 0 0" rotLimitSpring="500 0 0" rotLimitDamping="500 0 0"/>
+            <joint component1="2" component2="7" node="componentJointBoggieBackRight"  rotLimit="3 0 0" transLimit="0 0 0" rotLimitSpring="500 0 0" rotLimitDamping="500 0 0"/>
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="HARVESTER"/>
+        <mapHotspot type="HARVESTER"/>
+        <speedLimit value="10"/>
+    </base>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="LIZARD" saveId="LIZARD_CRAWLER">
+                <wheels autoRotateBackSpeed="1.8">
+                    <wheel>
+                        <physics rotSpeed="1" restLoad="3.5" repr="wheelFrontLeft01"                                         showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="385" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false" brakeFactor="0.8"/>
+                    </wheel>
+                    <wheel hasParticles="true" hasTireTracks="true" >
+                        <physics rotSpeed="1" restLoad="3.5" repr="wheelFrontLeft02" driveNode="wheelFrontLeft02DriveNode"   showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="385" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false" brakeFactor="0.8"/>
+                        <tire tireTrackAtlasIndex="7"/>
+                    </wheel>
+                    <wheel>
+                        <physics rotSpeed="1" restLoad="3.7" repr="wheelFrontRight01"                                        showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="385" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false" brakeFactor="0.8"/>
+                    </wheel>
+                    <wheel hasParticles="true" hasTireTracks="true" >
+                        <physics rotSpeed="1" restLoad="3.7" repr="wheelFrontRight02" driveNode="wheelFrontRight02DriveNode" showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="385" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false" brakeFactor="0.8"/>
+                        <tire tireTrackAtlasIndex="7"/>
+                    </wheel>
+                    <wheel>
+                        <physics rotSpeed="1" restLoad="2.9" repr="wheelBackLeft01"                                          showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="315" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false"/>
+                    </wheel>
+                    <wheel hasParticles="true" hasTireTracks="true" >
+                        <physics rotSpeed="1" restLoad="2.9" repr="wheelBackLeft02" driveNode="wheelBackLeft02DriveNode"     showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="315" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false"/>
+                        <tire tireTrackAtlasIndex="7"/>
+                    </wheel>
+                    <wheel>
+                        <physics rotSpeed="1" restLoad="2.9" repr="wheelBackRight01"                                         showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="315" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false"/>
+                    </wheel>
+                    <wheel hasParticles="true" hasTireTracks="true" >
+                        <physics rotSpeed="1" restLoad="2.9" repr="wheelBackRight02" driveNode="wheelBackRight02DriveNode"   showSteeringAngle="false" radius="0.56" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="15" suspTravel="0.05" spring="315" damper="100" frictionScale="2.0" tireType="crawler" supportsWheelSink="false"/>
+                        <tire tireTrackAtlasIndex="7"/>
+                    </wheel>
+
+                    <wheel>
+                        <physics rotSpeed="1" restLoad="0.6" repr="headerWheelLeft"  radius="0.121" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="10" suspTravel="0.08" spring="50" damper="50" frictionScale="1.0" supportsWheelSink="false"/>
+                    </wheel>
+                    <wheel>
+                        <physics rotSpeed="1" restLoad="0.6" repr="headerWheelRight" radius="0.121" width="0.86" mass="0.5" forcePointRatio="0.15" initialCompression="10" suspTravel="0.08" spring="50" damper="50" frictionScale="1.0" supportsWheelSink="false"/>
+                    </wheel>
+                </wheels>
+
+                <crawlers>
+                    <crawler filename="$data/shared/crawlers/claas/terraTracLexion/terraTracLexion.xml" linkNode="crawlerLinkNodeFrontLeft" wheelNodes="wheelFrontLeft02 wheelFrontLeft01" isLeft="true"/>
+                    <crawler filename="$data/shared/crawlers/claas/terraTracLexion/terraTracLexion.xml" linkNode="crawlerLinkNodeFrontRight" wheelNodes="wheelFrontRight02 wheelFrontRight01" isLeft="false"/>
+                    <crawler filename="$data/shared/crawlers/claas/terraTracLexion/terraTracLexion.xml" linkNode="crawlerLinkNodeBackLeft" wheelNodes="wheelBackLeft02 wheelBackLeft01" isLeft="true"/>
+                    <crawler filename="$data/shared/crawlers/claas/terraTracLexion/terraTracLexion.xml" linkNode="crawlerLinkNodeBackRight" wheelNodes="wheelBackRight02 wheelBackRight01" isLeft="false"/>
+                </crawlers>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+        <rimMaterial materialTemplateName="SHARED_BLACK1"/>
+
+        <ackermannSteeringConfigurations>
+            <ackermannSteering rotSpeed="25" rotMax="25" rotCenterNode="rotCenterNode"/>
+        </ackermannSteeringConfigurations>
+    </wheels>
+
+    <articulatedAxis rotNode="componentJointBack" componentJointIndex="1" anchorActor="0" rotSpeed="-30" rotMax="35" rotMin="-35" aiReverserNode="aiReverserNode" customWheelIndices1="1 2 3 4" customWheelIndices2="5 6 7 8"/>
+
+    <powerConsumer ptoRpm="470" neededMaxPtoPower="10"/>
+
+    <dynamicallyLoadedParts>
+        <dynamicallyLoadedPart node="0" linkNode="chockSupport01"  filename="$data/shared/assets/wheelChocks/wheelChockSupport01.i3d" />
+        <dynamicallyLoadedPart node="0" linkNode="chockSupport02"  filename="$data/shared/assets/wheelChocks/wheelChockSupport01.i3d" />
+        <dynamicallyLoadedPart node="0" linkNode="wheelChock02_01"  filename="$data/shared/assets/wheelChocks/wheelChock02.i3d" />
+        <dynamicallyLoadedPart node="0" linkNode="wheelChock02_02"  filename="$data/shared/assets/wheelChocks/wheelChock02.i3d" />
+    </dynamicallyLoadedParts>
+
+    <speedRotatingParts>
+        <speedRotatingPart nodes="driveShaftFrontLeft01 driveShaftFrontLeft02 driveShaftFrontLeft02Punch driveShaftFrontLeft03" wheelNodes="wheelFrontLeft01 wheelFrontLeft02" wheelScale="5"/>
+        <speedRotatingPart nodes="driveShaftFrontRight01 driveShaftFrontRight02 driveShaftFrontRight02Punch driveShaftFrontRight03" wheelNodes="wheelFrontRight01 wheelFrontRight02" wheelScale="5"/>
+        <speedRotatingPart nodes="driveShaftBackLeft01 driveShaftBackLeft02 driveShaftBackLeft02Punch driveShaftBackLeft03" wheelNodes="wheelBackLeft01 wheelBackLeft02" wheelScale="5"/>
+        <speedRotatingPart nodes="driveShaftBackRight01 driveShaftBackRight02 driveShaftBackRight02Punch driveShaftBackRight03" wheelNodes="wheelBackRight01 wheelBackRight02" wheelScale="5"/>
+        <speedRotatingPart node="depthSettingRoll" radius="0.121" groundReferenceNodeIndex="1" onlyActiveWhenLowered="true"/>
+    </speedRotatingParts>
+
+    <lights>
+        <states>
+            <state lightTypes="0"/>
+            <state lightTypes="0 1"/>
+            <state lightTypes="0 1 2"/>
+        </states>
+
+        <sharedLight linkNode="hellaWorkingLight01_01" lightTypes="2" filename="$data/shared/assets/lights/hella/hellaWorkingLight01.xml">
+            <rotationNode name="rotationNode1" rotation="25 0 0"/>
+        </sharedLight>
+        <sharedLight linkNode="hellaWorkingLight01_02" lightTypes="2" filename="$data/shared/assets/lights/hella/hellaWorkingLight01.xml">
+            <rotationNode name="rotationNode1" rotation="25 0 0"/>
+        </sharedLight>
+        <sharedLight linkNode="hellaWorkingLight01_03" filename="$data/shared/assets/lights/hella/hellaWorkingLight01.xml">
+            <rotationNode name="rotationNode1" rotation="-75 0 0"/>
+        </sharedLight>
+        <sharedLight linkNode="hellaWorkingLight01_04" filename="$data/shared/assets/lights/hella/hellaWorkingLight01.xml">
+            <rotationNode name="rotationNode1" rotation="-75 0 0"/>
+        </sharedLight>
+        <sharedLight linkNode="workingLight03_left_01" lightTypes="0" filename="$data/shared/assets/lights/lizard/workingLight03_left.xml">
+            <rotationNode name="rotationNode1" rotation="0 0 25"/>
+        </sharedLight>
+        <sharedLight linkNode="workingLight03_left_02" lightTypes="0" filename="$data/shared/assets/lights/lizard/workingLight03_left.xml">
+            <rotationNode name="rotationNode1" rotation="0 0 0"/>
+        </sharedLight>
+        <sharedLight linkNode="workingLight03_right_01" lightTypes="0" filename="$data/shared/assets/lights/lizard/workingLight03_right.xml">
+            <rotationNode name="rotationNode1" rotation="0 0 -25"/>
+        </sharedLight>
+        <sharedLight linkNode="workingLight03_right_02" lightTypes="0" filename="$data/shared/assets/lights/lizard/workingLight03_right.xml">
+            <rotationNode name="rotationNode1" rotation="0 0 0"/>
+        </sharedLight>
+        <sharedLight linkNode="sideMarker04_left01" lightTypes="0" filename="$data/shared/assets/lights/lizard/sideMarker04_left.xml"/>
+        <sharedLight linkNode="sideMarker04_left02" lightTypes="0" filename="$data/shared/assets/lights/lizard/sideMarker04_left.xml"/>
+        <sharedLight linkNode="sideMarker04_right01" lightTypes="0" filename="$data/shared/assets/lights/lizard/sideMarker04_right.xml"/>
+        <sharedLight linkNode="sideMarker04_right02" lightTypes="0" filename="$data/shared/assets/lights/lizard/sideMarker04_right.xml"/>
+        <sharedLight linkNode="sideMarker23Orange_01" lightTypes="0" filename="$data/shared/assets/lights/lizard/sideMarker23Orange.xml"/>
+        <sharedLight linkNode="sideMarker23Orange_02" lightTypes="0" filename="$data/shared/assets/lights/lizard/sideMarker23Orange.xml"/>
+        <sharedLight linkNode="frontLight10_left" filename="$data/shared/assets/lights/lizard/frontLight10_left.xml"/>
+        <sharedLight linkNode="frontLight10_right" filename="$data/shared/assets/lights/lizard/frontLight10_right.xml"/>
+        <sharedLight linkNode="rearLight63White01" filename="$data/shared/assets/lights/lizard/rearLight63White.xml" />
+        <sharedLight linkNode="rearLight63White02" filename="$data/shared/assets/lights/lizard/rearLight63White.xml" />
+
+        <realLights>
+            <low>
+                <light node="frontLightLow"     lightTypes="0" excludedLightTypes="2 3" />
+                <light node="workLightBackLow"  lightTypes="1"/>
+                <light node="workLightFrontLow" lightTypes="2"/>
+                <light node="highBeamLow"       lightTypes="3" />
+            </low>
+            <high>
+                <light node="frontLightHigh01" lightTypes="0" excludedLightTypes="2 3" />
+                <light node="frontLightHigh02" lightTypes="0" excludedLightTypes="2 3" />
+                <light node="highBeamHigh01" lightTypes="3"/>
+                <light node="highBeamHigh02" lightTypes="3"/>
+                <light node="licensePlateLightHigh" lightTypes="0"/>
+                <light node="workLightBackHigh" lightTypes="1"/>
+                <light node="workLightFrontHigh" lightTypes="2"/>
+                <light node="backLightsHigh" lightTypes="0"/>
+                <brakeLight node="backLightsHigh" />
+                <turnLightLeft  node="turnLightLeftFront01" />
+                <turnLightLeft  node="turnLightLeftFront02" />
+                <turnLightLeft  node="turnLightLeftBack" />
+                <turnLightRight node="turnLightRightFront01" />
+                <turnLightRight node="turnLightRightFront02" />
+                <turnLightRight node="turnLightRightBack" />
+                <interiorLight node="interiorScreenLight01"/>
+                <interiorLight node="interiorScreenLight02"/>
+            </high>
+        </realLights>
+
+        <staticLightCompounds>
+            <staticLightCompound>
+                <node node="mkb4TRLights01_static" intensity="5"/>
+                <node node="mkb4TRLights01Glass_static" intensity="1"/>
+                <node node="mkb4TRLights02_static" intensity="5"/>
+                <node node="mkb4TRLights02Glass_static" intensity="1"/>
+            </staticLightCompound>
+        </staticLightCompounds>
+
+        <beaconLights>
+            <beaconLight node="beaconLight07_01" filename="$data/shared/assets/beaconLights/lizard/beaconLight07.xml"/>
+            <beaconLight node="beaconLight07_02" filename="$data/shared/assets/beaconLights/lizard/beaconLight07.xml"/>
+            <beaconLight node="beaconLight07_03" filename="$data/shared/assets/beaconLights/lizard/beaconLight07.xml"/>
+            <beaconLight node="beaconLight07_04" filename="$data/shared/assets/beaconLights/lizard/beaconLight07.xml"/>
+        </beaconLights>
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="turnLight" node="leverTurnLight" minRot="0 20 0" maxRot="0 -20 0" doInterpolation="true" />
+            <dashboard displayType="ROT" valueType="turnLightHazard" node="switchTurnLightHazard" minRot="0 0 0" maxRot="0 0 30" doInterpolation="true" />
+            <dashboard displayType="ROT" valueType="lightState" node="leverTurnLightHighBeamRot" minRot="0 0 0" maxRot="0 0 -20" lightTypes="3" doInterpolation="true"/>
+            <dashboard displayType="ROT" valueType="lightState" node="switchDefaultLight" minRot="0 0 0" maxRot="0 0 83.5" lightTypes="0" doInterpolation="true"/>
+            <dashboard displayType="ROT" valueType="beaconLight" node="switchBeaconLight" minRot="0 0 0" maxRot="0 0 83.5" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="MULTI_STATE" valueType="lightState" node="switchWorkLight" doInterpolation="true" groups="MOTOR_ACTIVE">
+                <state value="0" rotation="0 0 0"/>
+                <state value="1" rotation="0 0 55"/>
+                <state value="2" rotation="0 0 83.5"/>
+            </dashboard>
+            <dashboard displayType="EMITTER" valueType="turnLightHazard" node="iconTurnLightHazard_decal" idleValue="-0.1" intensity="0.2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow01_decals" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow02_decals" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow03_decals" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow04_decal" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow05_decal" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="interiorGlow06_decal" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState" node="iconSwitchWorkMode_decal" intensity="0.2" lightTypes="0" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightLeft" node="oxboMKB4TR_dblTurnLightLeftP1_SC" hideInactive="true" emitColor="DFM_GREEN2" intensity="0.5" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="turnLightRight" node="oxboMKB4TR_dblTurnLightRightP1_SC" hideInactive="true" emitColor="DFM_GREEN2" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="beaconLight" node="oxboMKB4TR_dblBeaconLightP1_SC" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState"  node="oxboMKB4TR_dblDefaultLightP1_SC" emitColor="DFM_GREEN2" lightTypes="0" intensity="0.4" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lightState"  node="oxboMKB4TR_dblWorkLightP1_SC" emitColor="DFM_GREEN2" lightTypes="1 2" intensity="0.4" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </lights>
+
+    <attacherJoints>
+        <attacherJoint node="trailerAttacherJoint" rootNode="mkb4TR_back_component2" jointType="trailer" lowerRotLimit="25 70 80" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" >
+            <schema position="1 0" rotation="0" invertX="false" />
+        </attacherJoint>
+    </attacherJoints>
+
+    <licensePlates>
+        <licensePlate node="licensePlateFront" position="FRONT" preferedType="SQUARISH"  placementArea="0.08 0.3 0.3 0.11" />
+        <licensePlate node="licensePlateBack"  position="BACK"  preferedType="ELONGATED" placementArea="0.08 0.3 0.08 0.3" />
+    </licensePlates>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="groundReferenceNode" threshold="0.2" />
+    </groundReferenceNodes>
+
+    <workAreas>
+        <workArea type="cutter" functionName="processCutterArea">
+            <area startNode="workAreaCutterStart" widthNode="workAreaCutterWidth" heightNode="workAreaCutterHeight" />
+            <testAreas autoGenerate="true" zOffset="0.5" xOffset="0" length="0.6" numAreas="6" areaWidthScale="0.25"/>
+            <groundReferenceNode index="1" />
+            <onlyActiveWhenLowered value="true"/>
+        </workArea>
+    </workAreas>
+
+    <enterable>
+        <exitPoint node="exitPoint"/>
+        <enterReferenceNode node="mkb4TR_main_component1"/>
+
+        <cameras>
+            <camera node="outdoorCamera" rotatable="true" rotateNode="outdoorCameraTarget" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="8.8" transMax="40" translation="0 0 14.6" rotation="-18.5 180 0">
+                <raycastNode node="cameraRaycastNode1"/>
+                <raycastNode node="cameraRaycastNode2"/>
+                <raycastNode node="cameraRaycastNode3"/>
+            </camera>
+            <camera node="indoorCamera" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" shadowFocusBox="shadowFocusBox" suspensionNodeIndex="1"/>
+        </cameras>
+
+        <characterNode node="playerSkin" cameraMinDistance="0.5">
+            <target ikChain="leftFoot" targetNode="playerLeftFootTarget" />
+            <target ikChain="rightFoot" targetNode="playerRightFootTarget" />
+            <target ikChain="leftArm" targetNode="playerLeftHandTarget" />
+            <target ikChain="rightArm" targetNode="playerRightHandTarget" poseId="wideFingers"/>
+        </characterNode>
+
+        <characterTargetNodeModifier node="playerRightFootTarget" transitionTime="0.1" >
+            <state node="playerRightFootTargetBrake" referenceNode="pedalBrake" />
+        </characterTargetNodeModifier>
+
+        <mirrors>
+            <mirror node="mirrorLeft" prio="1"/>
+            <mirror node="mirrorRight" prio="1"/>
+        </mirrors>
+
+        <dashboards>
+            <dashboard displayType="TEXT" valueType="outsideTemperature" node="oxboMKB4TR_dblOutsideTempP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.004" textMask="00.0" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="operatingTime" node="oxboMKB4TR_dblOperatingTimeP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </enterable>
+
+    <suspensions>
+        <suspension node="cabin"             weight="400" minRotation="-0.25 0 -1" maxRotation="0.25 0 1" suspensionParametersX="200 100" suspensionParametersZ="200 17" />
+        <suspension node="seat"              weight="90" minTranslation="-0.05 -0.15 0.0" maxTranslation="0.05 0.15 0.0" suspensionParametersX="20 4" suspensionParametersY="5 1" suspensionParametersZ="20 4" />
+        <suspension useCharacterTorso="true" weight="90" minRotation="0 -5 -5" maxRotation="0 5 5" suspensionParametersY="7 1" suspensionParametersZ="7 1" />
+    </suspensions>
+
+    <motorized>
+        <consumerConfigurations>
+            <consumerConfiguration>
+                <consumer fillUnitIndex="2" usage="200" fillType="diesel" />   <!-- usage is per hour at max load and max rpm -->
+                <consumer fillUnitIndex="3" usage="12.7" fillType="def" />      <!-- usage is per hour at max load and max rpm -->
+            </consumerConfiguration>
+        </consumerConfigurations>
+
+        <differentialConfigurations>
+            <differentialConfiguration>
+                <differentials>
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.2" wheelIndex1="3" wheelIndex2="4"/>
+                    <differential torqueRatio="0.5" maxSpeedRatio="1.2" wheelIndex1="1" wheelIndex2="2"/>
+                    <differential torqueRatio="0.5" maxSpeedRatio="3.2" differentialIndex1="1" differentialIndex2="2"/>
+                </differentials>
+            </differentialConfiguration>
+        </differentialConfigurations>
+
+        <motorConfigurations>
+            <motorConfiguration name="MKB-4TR" hp="400" price="0">
+                <motor torqueScale="1.688" minRpm="850" maxRpm="2200" maxForwardSpeed="25" maxBackwardSpeed="10" brakeForce="8" lowBrakeForceScale="0.1" lowBrakeForceSpeedLimit="1" accelerationLimit="1.6" dampingRateScale="1.3">
+                    <torque normRpm="0.45" torque="0.9"/>
+                    <torque normRpm="0.5" torque="0.97"/>
+                    <torque normRpm="0.59" torque="1"/>
+                    <torque normRpm="0.72" torque="1"/>
+                    <torque normRpm="0.86" torque="0.88"/>
+                    <torque normRpm="1" torque="0.72"/>
+                </motor>
+                <transmission minForwardGearRatio="33" maxForwardGearRatio="320" minBackwardGearRatio="75" maxBackwardGearRatio="320" name="$l10n_info_transmission_cvt"/>
+            </motorConfiguration>
+        </motorConfigurations>
+
+        <motorStartDuration>3200</motorStartDuration>
+
+        <exhaustFlap node="exhaustFlap" maxRot="25.5" rotationAxis="1"/>
+
+        <exhaustEffects>
+            <exhaustEffect node="exhaustParticle" filename="$data/effects/exhaust/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.9 0.9 0.9 0.4" minRpmScale="0.05" maxRpmScale="0.5" />
+        </exhaustEffects>
+
+        <dashboards>
+            <dashboard displayType="ANIMATION" valueType="speedDir" animName="joystickMovement" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="MULTI_STATE" valueType="ignitionState" node="keyIgnition" doInterpolation="true" groups="MOTOR_ACTIVE">
+                <state value="0" rotation="0 0 0"/>
+                <state value="1" rotation="0 -141 0"/>
+                <state value="2" rotation="0 -92 0"/>
+            </dashboard>
+			<dashboard displayType="SLIDER" valueType="rpm" node="oxboMKB4TR_dblRpmSliderP1_SC" minValueSlider="600" maxValueSlider="2200" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="speed" node="oxboMKB4TR_dblSpeedrSliderP1_SC" minValueSlider="0" maxValueSlider="30" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="motorTemperature" node="oxboMKB4TR_dblOilTempSliderP1_SC" doInterpolation="true" interpolationSpeed="0.1" minValueSlider="10" maxValueSlider="80" offsetValue="-18" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="motorTemperature" node="oxboMKB4TR_dblEngineTempSliderP1_SC" minValueSlider="70" maxValueSlider="105" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="TEXT" valueType="speed" node="oxboMKB4TR_dblSpeedNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.011" textMask="00.0" font="GENERIC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorTemperature" node="oxboMKB4TR_dblOilTempNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.1" textColor="0.2 0.2 0.2 1" textSize="0.004" textMask="000" offsetValue="-18" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorTemperature" node="oxboMKB4TR_dblEngineTempNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" valueType="directionForwardExclusive" node="oxboMKB4TR_dblGearDriveP1_SC"  baseColor="SHARED_GREY1" emitColor="GREEN" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="directionNeutral" node="oxboMKB4TR_dblGearNeutralP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="directionBackward" node="oxboMKB4TR_dblGearReversP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" hideInactive="true" intensity="0.5"  groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </motorized>
+
+    <drivable>
+        <steeringWheel node="steeringWheel" indoorRotation="540" outdoorRotation="90"/>
+
+        <dashboards>
+            <dashboard displayType="ROT" valueType="decelerationAxis" node="pedalBrake" minRot="0 0 0" maxRot="15 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="steeringAngle" node="playerLeftHandTargetRotNode" minRot="0 100 0" maxRot="0 -100 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="steeringAngle" node="playerSkinRotNode" minRot="15 0 0" maxRot="7 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="ROT" valueType="cruiseControl" node="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" rotAxis="2" minRot="-90" maxRot="0" minValueRot="0" maxValueRot="30" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="cruiseControlActive" node="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" baseColor="SHARED_GREY1" emitColor="OXBO_YELLOW1" intensity="0.4" groups="MOTOR_ACTIVE"/>
+        </dashboards>
+    </drivable>
+
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="1" foldMiddleAnimTime="0.2" turnOnFoldMaxLimit="0.2">
+                    <foldingPart animationName="folding" speedScale="1"/>
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+
+    <animations>
+        <animation name="folding">
+            <!-- lowering -->
+            <part startTime="0.0" endTime="1.0" componentJointIndex="2" startRotMinLimit="-0.5 0 -1" startRotMaxLimit="10 0 1" endRotLimit="0 0 0"/>
+            <part startTime="0.0" endTime="1.0" node="componentJointHeaderRot" startRot="2 0 0" endRot="-10 0 0"/>
+
+            <!-- folding -->
+            <part startTime="1.1" endTime="2.0" node="reelArmRotPhys" endRot="0 0 0"/>
+            <part startTime="1.1" endTime="2.0" dependentAnimation="airBlowerAnimation" direction="1" dependentAnimationStartTime="0" dependentAnimationEndTime="0"/>
+            <part startTime="1.1" endTime="2.0" dependentAnimation="airBlowerAnimation" direction="-1" dependentAnimationStartTime="1" dependentAnimationEndTime="1"/>
+
+            <part startTime="1.0" endTime="2.0" node="depthSettingRollerArm" startRot="17 0 0" endRot="0 0 0"/>
+            <part startTime="1.0" endTime="2.0" node="depthSettingRollerArmPhys" startRot="17 0 0" endRot="0 0 0"/>
+            <part startTime="1.0" endTime="1.2" node="bunkerTopPartLockArmFront" startRot="0 0 0" endRot="30 0 0"/>
+            <part startTime="1.2" endTime="5.0" node="bunkerTopPart" startTrans="0 0.01 0" endTrans="0 -0.820 0" />
+            <part startTime="1.2" endTime="5.0" node="bunkerTopPartRollsFront" startRot="0 0 0" endRot="560 0 0" />
+            <part startTime="1.2" endTime="5.0" node="bunkerTopPartRollsBack" startRot="0 0 0" endRot="560 0 0" />
+            <part startTime="4.8" endTime="5.0" node="switchWorkMode" startRot="0 0 0" endRot="0 0 30" />
+
+            <sound template="hydraulicClose01" startTime="1.2"  endTime="4.99" direction="-1"    volumeScale="8"  pitchScale="0.5" fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicOpen02"  startTime="1.2"  endTime="4.99" direction="-1"    volumeScale="3"  pitchScale="1.5" fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicOpen05"  startTime="1.2"  endTime="4.99" direction="1"     volumeScale="5"  startPitchScale="1.1" endPitchScale="1.0" fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicOpen06"  startTime="1.2"  endTime="4.99" direction="1"     volumeScale="2"  startPitchScale="0.7" endPitchScale="0.6" fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicClose03" startTime="1.2"  endTime="2"    volumeScale="4"   pitchScale="2.6" linkNode="depthSettingRollerArm" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="vibratingImp"     startTime="4.99" direction="1"  volumeScale="2.2" pitchScale="1"   linkNode="bunkerTopPart" />
+            <sound template="hingeImp"         startTime="4.9"  direction="1"  volumeScale="1.6" pitchScale="0.8" linkNode="bunkerTopPart"/>
+            <sound template="cylinderPunch"    startTime="4.99" direction="1"  volumeScale="1.6" pitchScale="1.1" linkNode="bunkerTopPart"/>
+            <sound template="cylinderPunch"    startTime="1.2"  direction="-1" volumeScale="1.6" pitchScale="1.1" linkNode="bunkerTopPart"/>
+            <sound template="clackVar6"        startTime="1.2"  direction="-1" volumeScale="0.6" pitchScale="2.1" linkNode="bunkerTopPart"/>
+            <sound template="clackVar4"        startTime="1.1"  direction="0"  volumeScale="1.6" pitchScale="1.1" linkNode="bunkerTopPart"/>
+            <sound template="hingeImp"         startTime="1.1"  direction="0"  volumeScale="0.7" pitchScale="1.6" linkNode="bunkerTopPart" linkNodeOffset="-2 0 0"/>
+            <sound template="vibratingImp"     startTime="2"    direction="1"  volumeScale="1.6" pitchScale="1.1" linkNode="depthSettingRollerArm"/>
+            <sound template="clackVar4"        startTime="2"    direction="1"  volumeScale="3.6" pitchScale="0.6" linkNode="depthSettingRollerArm"/>
+            <sound template="foldStartMed02"   startTime="1.01" direction="-1" volumeScale="3.6" pitchScale="0.7" linkNode="depthSettingRollerArm"/>
+            <sound template="vibratingImp"     startTime="1.01" direction="-1" volumeScale="1.3" pitchScale="1.3" linkNode="depthSettingRollerArm"/>
+            <sound template="metalImpHigh01"   startTime="1.01" direction="-1" volumeScale="1.3" pitchScale="0.8" linkNode="depthSettingRollerArm"/>
+            <sound template="hydraulicOpen02"  startTime="0.01" endTime="0.99" volumeScale="3"   pitchScale="1.2" direction="-1" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicOpen06"  startTime="0.01" endTime="0.99" volumeScale="2"   pitchScale="0.6" direction="-1" fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicClose03" startTime="0.01" endTime="0.99" volumeScale="7"   pitchScale="1.5" direction="1"  fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="hydraulicClose01" startTime="0.01" endTime="0.99" volumeScale="7"   pitchScale="0.6" direction="1"  fadeIn="0.1" fadeOut="0.1"/>
+            <sound template="vibratingImp"     startTime="0.2"  direction="-1" volumeScale="3.5" pitchScale="1.0"  />
+            <sound template="foldStartMed02"   startTime="0.2"  direction="-1" volumeScale="6"   pitchScale="0.6"  />
+            <sound template="cylinderPunch"    startTime="0.2"  direction="-1" volumeScale="1.5" pitchScale="1.6"  />
+        </animation>
+
+        <animation name="ladderAnimation" soundVolumeFactor="3">
+            <part node="ladder" startTime="0.0" endTime="2.0" startRot="0 0 169.5" endRot="0 0 0"/>
+
+            <!-- jointAnim -->
+            <part node="ladderAnimJoint01" startTime="0.0" endTime="0.2" startTrans="1.449 2.703 1.944" endTrans="1.503 2.704 1.944" startRot="-88.57 -39.436 -179.497" endRot="-88.01 -40.155 -174.575" />
+            <part node="ladderAnimJoint01" startTime="0.2" endTime="0.4" startTrans="1.503 2.704 1.944" endTrans="1.554 2.709 1.949" startRot="-88.01 -40.155 -174.575" endRot="-86.717 -40.939 -169.313" />
+            <part node="ladderAnimJoint01" startTime="0.4" endTime="0.6" startTrans="1.554 2.709 1.949" endTrans="1.575 2.711 1.951" startRot="-86.717 -40.939 -169.313" endRot="-86.869 -41.771 -169.369" />
+            <part node="ladderAnimJoint01" startTime="0.6" endTime="0.8" startTrans="1.575 2.711 1.951" endTrans="1.614 2.719 1.946" startRot="-86.869 -41.771 -169.369" endRot="-89.451 -42.742 -162.265" />
+            <part node="ladderAnimJoint01" startTime="0.8" endTime="1.0" startTrans="1.614 2.719 1.946" endTrans="1.615 2.718 1.947" startRot="-89.451 -42.742 -162.265" endRot="-88.748 -43.366 -164.696" />
+            <part node="ladderAnimJoint01" startTime="1.0" endTime="1.2" startTrans="1.615 2.718 1.947" endTrans="1.613 2.717 1.94" startRot="-88.748 -43.366 -164.696" endRot="-84.729 -43.793 -166.181" />
+            <part node="ladderAnimJoint01" startTime="1.2" endTime="1.4" startTrans="1.613 2.717 1.94" endTrans="1.59 2.711 1.942" startRot="-84.729 -43.793 -166.181" endRot="-87.575 -44.575 -167.401" />
+            <part node="ladderAnimJoint01" startTime="1.4" endTime="1.6" startTrans="1.59 2.711 1.942" endTrans="1.566 2.705 1.952" startRot="-87.575 -44.575 -167.401" endRot="-89.76 -44.451 -172.965" />
+            <part node="ladderAnimJoint01" startTime="1.6" endTime="1.8" startTrans="1.566 2.705 1.952" endTrans="1.528 2.699 1.939" startRot="-89.76 -44.451 -172.965" endRot="-89.703 -44.463 -170.079" />
+            <part node="ladderAnimJoint01" startTime="1.8" endTime="2.0" startTrans="1.528 2.699 1.939" endTrans="1.513 2.701 1.941" startRot="-89.703 -44.463 -170.079" endRot="-89.703 -44.475 -174.425" />
+            <part node="ladderAnimJoint02" startTime="0.0" endTime="0.2" startTrans="1.402 2.41 1.943" endTrans="1.558 2.413 1.959" startRot="-80.101 -66.718 -178.51" endRot="-76.744 -64.426 -171.883" />
+            <part node="ladderAnimJoint02" startTime="0.2" endTime="0.4" startTrans="1.558 2.413 1.959" endTrans="1.647 2.428 1.965" startRot="-76.744 -64.426 -171.883" endRot="-79.35 -61.631 -159.957" />
+            <part node="ladderAnimJoint02" startTime="0.4" endTime="0.6" startTrans="1.647 2.428 1.965" endTrans="1.676 2.433 1.965" startRot="-79.35 -61.631 -159.957" endRot="-83.58 -58.343 -154.653" />
+            <part node="ladderAnimJoint02" startTime="0.6" endTime="0.8" startTrans="1.676 2.433 1.965" endTrans="1.727 2.445 1.957" startRot="-83.58 -58.343 -154.653" endRot="-85.011 -55.094 -156.136" />
+            <part node="ladderAnimJoint02" startTime="0.8" endTime="1.0" startTrans="1.727 2.445 1.957" endTrans="1.717 2.439 1.954" startRot="-85.011 -55.094 -156.136" endRot="-87.216 -52.366 -155.58" />
+            <part node="ladderAnimJoint02" startTime="1.0" endTime="1.2" startTrans="1.717 2.439 1.954" endTrans="1.713 2.437 1.949" startRot="-87.216 -52.366 -155.58" endRot="-88.577 -49.912 -159.373" />
+            <part node="ladderAnimJoint02" startTime="1.2" endTime="1.4" startTrans="1.713 2.437 1.949" endTrans="1.678 2.426 1.947" startRot="-88.577 -49.912 -159.373" endRot="-89.142 -48.36 -161.77" />
+            <part node="ladderAnimJoint02" startTime="1.4" endTime="1.6" startTrans="1.678 2.426 1.947" endTrans="1.622 2.413 1.951" startRot="-89.142 -48.36 -161.77" endRot="-89.061 -46.84 -164.823" />
+            <part node="ladderAnimJoint02" startTime="1.6" endTime="1.8" startTrans="1.622 2.413 1.951" endTrans="1.575 2.405 1.938" startRot="-89.061 -46.84 -164.823" endRot="-89.578 -45.852 -170.047" />
+            <part node="ladderAnimJoint02" startTime="1.8" endTime="2.0" startTrans="1.575 2.405 1.938" endTrans="1.55 2.406 1.942" startRot="-89.578 -45.852 -170.047" endRot="-89.884 -44.97 -171.722" />
+            <part node="ladderAnimJoint03" startTime="0.0" endTime="0.2" startTrans="1.55 2.644 2.028" endTrans="1.751 2.61 2.012" startRot="-90.407 -15.42 -16.221" endRot="-87.519 -19.686 -15.74" />
+            <part node="ladderAnimJoint03" startTime="0.2" endTime="0.399" startTrans="1.751 2.61 2.012" endTrans="1.908 2.5 2.013" startRot="-87.519 -19.686 -15.74" endRot="-85.744 -24.634 -25.019" />
+            <part node="ladderAnimJoint03" startTime="0.399" endTime="0.599" startTrans="1.908 2.5 2.013" endTrans="1.997 2.35 2.009" startRot="-85.744 -24.634 -25.019" endRot="-83.943 -29.514 -49.047" />
+            <part node="ladderAnimJoint03" startTime="0.599" endTime="0.799" startTrans="1.997 2.35 2.009" endTrans="2.023 2.22 1.984" startRot="-83.943 -29.514 -49.047" endRot="-83.572 -31.13 -91.329" />
+            <part node="ladderAnimJoint03" startTime="0.799" endTime="0.998" startTrans="2.023 2.22 1.984" endTrans="1.973 2.148 1.98" startRot="-83.572 -31.13 -91.329" endRot="-83.717 -33.882 -120.747" />
+            <part node="ladderAnimJoint03" startTime="0.998" endTime="1.198" startTrans="1.973 2.148 1.98" endTrans="1.909 2.095 1.957" startRot="-83.717 -33.882 -120.747" endRot="-88.565 -37.046 -136.387" />
+            <part node="ladderAnimJoint03" startTime="1.198" endTime="1.398" startTrans="1.909 2.095 1.957" endTrans="1.839 2.064 1.95" startRot="-88.565 -37.046 -136.387" endRot="-90.809 -39.559 -150.931" />
+            <part node="ladderAnimJoint03" startTime="1.398" endTime="1.597" startTrans="1.839 2.064 1.95" endTrans="1.753 2.039 1.954" startRot="-90.809 -39.559 -150.931" endRot="-85.526 -40.9 -160.349" />
+            <part node="ladderAnimJoint03" startTime="1.597" endTime="1.797" startTrans="1.753 2.039 1.954" endTrans="1.662 2.018 1.942" startRot="-85.526 -40.9 -160.349" endRot="-90.071 -42.131 -162.301" />
+            <part node="ladderAnimJoint03" startTime="1.797" endTime="1.997" startTrans="1.662 2.018 1.942" endTrans="1.614 2.014 1.949" startRot="-90.071 -42.131 -162.301" endRot="-90.066 -43.17 -170.472" />
+            <part node="ladderAnimJoint04" startTime="0.0" endTime="0.2" startTrans="1.467 2.842 2.028" endTrans="1.722 2.808 2.021" startRot="-87.43 -32.158 2.27" endRot="-87.43 -33.609 -3.789" />
+            <part node="ladderAnimJoint04" startTime="0.2" endTime="0.4" startTrans="1.722 2.808 2.021" endTrans="1.956 2.692 2.021" startRot="-87.43 -33.609 -3.789" endRot="-88.388 -35.581 -11.147" />
+            <part node="ladderAnimJoint04" startTime="0.4" endTime="0.6" startTrans="1.956 2.692 2.021" endTrans="2.103 2.515 2.021" startRot="-88.388 -35.581 -11.147" endRot="-86.448 -37.876 -23.94" />
+            <part node="ladderAnimJoint04" startTime="0.6" endTime="0.8" startTrans="2.103 2.515 2.021" endTrans="2.198 2.298 2.004" startRot="-86.448 -37.876 -23.94" endRot="-83.122 -39.28 -50.364" />
+            <part node="ladderAnimJoint04" startTime="0.8" endTime="1.002" startTrans="2.198 2.298 2.004" endTrans="2.162 2.111 1.996" startRot="-83.122 -39.28 -50.364" endRot="-83.987 -39.385 -85.674" />
+            <part node="ladderAnimJoint04" startTime="1.002" endTime="1.2" startTrans="2.162 2.111 1.996" endTrans="2.071 1.985 1.967" startRot="-83.987 -39.385 -85.674" endRot="-85.406 -40.557 -112.49" />
+            <part node="ladderAnimJoint04" startTime="1.2" endTime="1.4" startTrans="2.071 1.985 1.967" endTrans="1.957 1.905 1.954" startRot="-85.406 -40.557 -112.49" endRot="-88.356 -42.0 -140.869" />
+            <part node="ladderAnimJoint04" startTime="1.4" endTime="1.6" startTrans="1.957 1.905 1.954" endTrans="1.842 1.862 1.959" startRot="-88.356 -42.0 -140.869" endRot="-90.99 -42.856 -149.756" />
+            <part node="ladderAnimJoint04" startTime="1.6" endTime="1.8" startTrans="1.842 1.862 1.959" endTrans="1.723 1.829 1.935" startRot="-90.99 -42.856 -149.756" endRot="-90.43 -43.534 -163.007" />
+            <part node="ladderAnimJoint04" startTime="1.8" endTime="2.0" startTrans="1.723 1.829 1.935" endTrans="1.641 1.818 1.923" startRot="-90.43 -43.534 -163.007" endRot="-90.229 -44.005 -172.783" />
+            <part node="ladderAnimJoint05" startTime="0.0" endTime="0.2" startTrans="1.397 3.322 2.013" endTrans="1.701 3.297 2.023" startRot="-87.752 -28.841 20.779" endRot="-87.746 -29.302 20.779" />
+            <part node="ladderAnimJoint05" startTime="0.2" endTime="0.399" startTrans="1.701 3.297 2.023" endTrans="1.984 3.185 2.033" startRot="-87.746 -29.302 20.779" endRot="-87.724 -30.163 12.103" />
+            <part node="ladderAnimJoint05" startTime="0.399" endTime="0.599" startTrans="1.984 3.185 2.033" endTrans="2.222 2.994 2.036" startRot="-87.724 -30.163 12.103" endRot="-87.7 -31.303 -4.881" />
+            <part node="ladderAnimJoint05" startTime="0.599" endTime="0.799" startTrans="2.222 2.994 2.036" endTrans="2.408 2.739 2.031" startRot="-87.7 -31.303 -4.881" endRot="-87.674 -32.495 -15.941" />
+            <part node="ladderAnimJoint05" startTime="0.799" endTime="0.998" startTrans="2.408 2.739 2.031" endTrans="2.503 2.441 2.014" startRot="-87.674 -32.495 -15.941" endRot="-87.644 -33.782 -30.432" />
+            <part node="ladderAnimJoint05" startTime="0.998" endTime="1.198" startTrans="2.503 2.441 2.014" endTrans="2.507 2.126 1.995" startRot="-87.644 -33.782 -30.432" endRot="-87.612 -35.153 -44.173" />
+            <part node="ladderAnimJoint05" startTime="1.198" endTime="1.398" startTrans="2.507 2.126 1.995" endTrans="2.402 1.85 1.982" startRot="-87.612 -35.153 -44.173" endRot="-87.577 -36.616 -70.572" />
+            <part node="ladderAnimJoint05" startTime="1.398" endTime="1.597" startTrans="2.402 1.85 1.982" endTrans="2.231 1.602 1.974" startRot="-87.577 -36.616 -70.572" endRot="-87.549 -38.178 -89.56" />
+            <part node="ladderAnimJoint05" startTime="1.597" endTime="1.797" startTrans="2.231 1.602 1.974" endTrans="1.992 1.453 1.965" startRot="-87.549 -38.178 -89.56" endRot="-87.494 -40.293 -124.625" />
+            <part node="ladderAnimJoint05" startTime="1.797" endTime="1.997" startTrans="1.992 1.453 1.965" endTrans="1.821 1.359 1.955" startRot="-87.494 -40.293 -124.625" endRot="-87.445 -41.603 -167.62" />
+
+            <sound template="slideOpen"    startTime="0.01" endTime="1.99" volumeScale="2" pitchScale="0.6" linkNode="ladder"/>
+            <sound template="vibratingImp" startTime="0.01" direction="-1" volumeScale="1" pitchScale="1.6" linkNode="ladder"/>
+            <sound template="vibratingImp" startTime="1.99" direction="1"  volumeScale="1" pitchScale="1.6" linkNode="ladder"/>
+        </animation>
+
+        <animation name="pipeAnimation">
+            <part node="bunkerLiftArmLeft" startTime="0.0" endTime="4.0" startRot="0 0 0.3" endRot="0 0 -35"/>
+            <part node="bunkerLiftArmRightRefFrame" startTime="0.0" endTime="4.0" startRot="0 0 0" endRot="35 0 0"/>
+            <part node="bunkerFlap" startTime="4.0" endTime="6.0" startRot="0 0 90" endRot="0 0 0"/>
+            <part node="bunkerEffects" startTime="0.00" endTime="5.99" visibility="false" />
+            <part node="bunkerEffects" startTime="5.99" endTime="6.00" visibility="true" />
+
+            <sound template="hydraulicClose01"       startTime="0.01" endTime="4"    direction="1"   volumeScale="8"   pitchScale="0.5"      fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicClose03"       startTime="0.01" endTime="4"    direction="1"   volumeScale="5"   pitchScale="1.5"      fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicOpen02"        startTime="0.01" endTime="4"    direction="-1"  volumeScale="4"   startPitchScale="1.4" endPitchScale="1.5" fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicOpen06"        startTime="0.01" endTime="4"    direction="-1"  volumeScale="1.5" startPitchScale="0.5" endPitchScale="0.6" fadeIn="0.1" fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="hydraulicOpen05"        startTime="4"    endTime="5.99" volumeScale="4" pitchScale="1.4"  fadeIn="0.1"          fadeOut="0.1" linkNode="bunkerTopPart"/>
+            <sound template="clackVar6"              startTime="4"    direction="1"  volumeScale="5" pitchScale="0.6"  linkNode="bunkerTopPart"/>
+            <sound template="cylinderPunch"          startTime="4"    direction="1"  volumeScale="2" pitchScale="1.0"  linkNode="bunkerTopPart"/>
+            <sound template="vibratingImp"           startTime="4"    direction="1"  volumeScale="2" pitchScale="1.0"  linkNode="bunkerTopPart"/>
+            <sound template="vibratingImp"           startTime="5.99" direction="1"  volumeScale="2" pitchScale="1.3"  linkNode="bunkerTopPart"/>
+            <sound template="clackVar6"              startTime="5.99" direction="1"  volumeScale="6" pitchScale="0.6"  linkNode="bunkerTopPart"/>
+            <sound template="hingeImp"               startTime="4.1"  direction="-1" volumeScale="2" pitchScale="0.9"  linkNode="bunkerTopPart"/>
+            <sound template="vibratingImp"           startTime="4"    direction="-1" volumeScale="2" pitchScale="0.9"  linkNode="bunkerTopPart"/>
+            <sound template="clackVar6"              startTime="4"    direction="-1" volumeScale="5" pitchScale="0.6"  linkNode="bunkerTopPart"/>
+            <sound template="cylinderPunch"          startTime="0.01" direction="-1" volumeScale="2" pitchScale="1"    linkNode="bunkerTopPart"/>
+            <sound template="vibratingImp"           startTime="0.01" direction="-1" volumeScale="2" pitchScale="1"    linkNode="bunkerTopPart"/>
+            <sound template="trailerCloseImpact_01"  startTime="0.01" direction="-1" volumeScale="2" pitchScale="0.7"  linkNode="bunkerTopPart"/>
+        </animation>
+
+        <animation name="joystickMovement" isKeyframe="true">
+            <part node="joystick" startTime="0.00" endTime="0.99" startRot="-15.137 0 4.895" endRot="0 0 4.895" />
+            <part node="joystick" startTime="0.99" endTime="1.0" startRot="0 0 4.895" endRot="0 0 -4.042" />
+            <part node="joystick" startTime="1.0" endTime="2.00" startRot="0 0 -4.042" endRot="20.915 0 -4.042" />
+        </animation>
+
+        <animation name="wiperFrontAnimation" isKeyframe="true">
+            <part node="wiperFrontArm01" startTime="0.0" endTime="0.25" startRot="0.0 0.0 0.0" endRot="0.0 0.0 90.0" />
+            <part node="wiperFrontArm01" startTime="0.25" endTime="0.5" startRot="0.0 0.0 90.0" endRot="0.0 0.0 180.0" />
+            <part node="wiperFrontArm01" startTime="0.5" endTime="0.75" startRot="0.0 0.0 180.0" endRot="0.0 0.0 270.0" />
+            <part node="wiperFrontArm01" startTime="0.75" endTime="1.0" startRot="0.0 0.0 270.0" endRot="0.0 0.0 360.0" />
+            <part node="wiperFrontArm02" startTime="0.0" endTime="0.25" startRot="0.0 0.0 0.0" endRot="6.85 0.0 0.0" />
+            <part node="wiperFrontArm02" startTime="0.25" endTime="0.5" startRot="6.85 0.0 0.0" endRot="0.235 0.0 0.0" />
+            <part node="wiperFrontArm02" startTime="0.5" endTime="0.75" startRot="0.235 0.0 0.0" endRot="6.85 0.0 0.0" />
+            <part node="wiperFrontArm02" startTime="0.75" endTime="1.0" startRot="6.85 0.0 0.0" endRot="0.0 0.0 0.0" />
+            <part node="wiperFront" startTime="0.0" endTime="0.25" startRot="0.0 0.0 0.0" endRot="2.125 0.0 0.0" />
+            <part node="wiperFront" startTime="0.25" endTime="0.5" startRot="2.125 0.0 0.0" endRot="0.0 0.0 0.0" />
+            <part node="wiperFront" startTime="0.5" endTime="0.75" startRot="0.0 0.0 0.0" endRot="2.125 0.0 0.0" />
+            <part node="wiperFront" startTime="0.75" endTime="1.0" startRot="2.125 0.0 0.0" endRot="0.0 0.0 0.0" />
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="0.7" pitchScale="1.0" fadeOut="0.1" linkNode="wiperFront"/>
+            <sound template="wiper2" startTime="0" endTime="1" direction="-1"  volumeScale="0.7" pitchScale="1.0" fadeOut="0.1" linkNode="wiperFront"/>
+        </animation>
+
+        <animation name="wiperSideLeftAnimation" isKeyframe="true">
+            <part node="wiperSideLeftArm01" startTime="0.0" endTime="0.5" startRot="0.0 0.0 0.0" endRot="-45.0 0.0 0.0" />
+            <part node="wiperSideLeftArm01" startTime="0.5" endTime="1.0" startRot="-45.0 0.0 0.0" endRot="-85.0 0.0 0.0" />
+            <part node="wiperSideLeftArm02" startTime="0.0" endTime="0.5" startRot="0.0 0.0 0.0" endRot="0.0 1.25 0.0" />
+            <part node="wiperSideLeftArm02" startTime="0.5" endTime="1.0" startRot="0.0 1.25 0.0" endRot="0.0 4.0 0.0" />
+            <part node="wiperSideLeft" startTime="0.0" endTime="0.5" startRot="0.0 0.0 0.0" endRot="0.0 -1.5 0.0" />
+            <part node="wiperSideLeft" startTime="0.5" endTime="1.0" startRot="0.0 -1.5 0.0" endRot="0.0 -0.75 0.0" />
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="0.7" pitchScale="0.8" fadeOut="0.1" linkNode="wiperSideLeft"/>
+            <sound template="wiper2" startTime="0" endTime="1" direction="-1"  volumeScale="0.7" pitchScale="0.8" fadeOut="0.1" linkNode="wiperSideLeft"/>
+        </animation>
+
+        <animation name="wiperSideRightAnimation" isKeyframe="true">
+            <part node="wiperSideRightArm01" startTime="0.0" endTime="0.5" startRot="0.0 0.0 0.0" endRot="-45.0 0.0 0.0" />
+            <part node="wiperSideRightArm01" startTime="0.5" endTime="1.0" startRot="-45.0 0.0 0.0" endRot="-85.0 0.0 0.0" />
+            <part node="wiperSideRightArm02" startTime="0.0" endTime="0.5" startRot="0.0 0.0 0.0" endRot="0.0 -1.25 0.0" />
+            <part node="wiperSideRightArm02" startTime="0.5" endTime="1.0" startRot="0.0 -1.25 0.0" endRot="0.0 -4.0 0.0" />
+            <part node="wiperSideRight" startTime="0.0" endTime="0.5" startRot="0.0 0.0 0.0" endRot="0.0 1.5 0.0" />
+            <part node="wiperSideRight" startTime="0.5" endTime="1.0" startRot="0.0 1.5 0.0" endRot="0.0 0.75 0.0" />
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="0.7" pitchScale="1.2" fadeOut="0.1" linkNode="wiperSideRight"/>
+            <sound template="wiper2" startTime="0" endTime="1" direction="-1"  volumeScale="0.7" pitchScale="1.2" fadeOut="0.1" linkNode="wiperSideRight"/>
+        </animation>
+
+        <animation name="wiperBackAnimation" isKeyframe="true">
+            <part node="wiperBackArm" startTime="0.0" endTime="0.25" startRot="0.0 0.0 0.0" endRot="-0.0 -3.0 45.0" />
+            <part node="wiperBackArm" startTime="0.25" endTime="0.5" startRot="-0.0 -3.0 45.0" endRot="-0.0 -2.5 90.0" />
+            <part node="wiperBackArm" startTime="0.5" endTime="0.75" startRot="-0.0 -2.5 90.0" endRot="-0.0 -3.0 135.0" />
+            <part node="wiperBackArm" startTime="0.75" endTime="1.0" startRot="-0.0 -3.0 135.0" endRot="-0.0 0.0 180.0" />
+            <part node="wiperBack" startTime="0.0" endTime="0.333" startRot="0.0 0.0 0.0" endRot="0.0 -0.65 0.0" />
+
+            <sound template="wiper1" startTime="0" endTime="1" direction="1"   volumeScale="0.7" pitchScale="0.7" fadeOut="0.1" linkNode="wiperBack"/>
+            <sound template="wiper2" startTime="0" endTime="1" direction="-1"  volumeScale="0.7" pitchScale="0.7" fadeOut="0.1" linkNode="wiperBack"/>
+        </animation>
+
+         <animation name="reelHosesAnimation" isKeyframe="true">
+            <part node="leftTranslateAnimJoint01" startTime="0.1" endTime="0.2" startTrans="1.67 0.764 4.653" endTrans="1.676 0.763 4.677" startRot="-81.148 -7.344 -175.385" endRot="-81.148 -7.456 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.2" endTime="0.3" startTrans="1.676 0.763 4.677" endTrans="1.681 0.763 4.701" startRot="-81.148 -7.456 -175.385" endRot="-81.148 -7.591 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.3" endTime="0.4" startTrans="1.681 0.763 4.701" endTrans="1.685 0.763 4.725" startRot="-81.148 -7.591 -175.385" endRot="-81.148 -7.718 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.4" endTime="0.5" startTrans="1.685 0.763 4.725" endTrans="1.689 0.763 4.75" startRot="-81.148 -7.718 -175.385" endRot="-81.974 -7.842 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.5" endTime="0.6" startTrans="1.689 0.763 4.75" endTrans="1.693 0.764 4.775" startRot="-81.974 -7.842 -175.385" endRot="-84.152 -7.906 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.6" endTime="0.7" startTrans="1.693 0.764 4.775" endTrans="1.696 0.764 4.801" startRot="-84.152 -7.906 -175.385" endRot="-87.231 -7.959 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.7" endTime="0.8" startTrans="1.696 0.764 4.801" endTrans="1.7 0.765 4.826" startRot="-87.231 -7.959 -175.385" endRot="-90.761 -7.999 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.8" endTime="0.9" startTrans="1.7 0.765 4.826" endTrans="1.703 0.766 4.851" startRot="-90.761 -7.999 -175.385" endRot="-94.29 -8.032 -175.385" />
+            <part node="leftTranslateAnimJoint01" startTime="0.9" endTime="1.0" startTrans="1.703 0.766 4.851" endTrans="1.706 0.766 4.872" startRot="-94.29 -8.032 -175.385" endRot="-97.369 -8.063 -175.385" />
+            <part node="leftTranslateAnimJoint02" startTime="0.0" endTime="1.0" startTrans="1.635 0.681 4.709" endTrans="1.615 0.61 4.884" />
+            <part node="leftTranslateAnimJoint03" startTime="0.0" endTime="0.1" startTrans="1.675 0.652 4.683" endTrans="1.67 0.645 4.687" startRot="-61.612 -0.999 183.076" endRot="-62.115 -1.859 182.93" />
+            <part node="leftTranslateAnimJoint03" startTime="0.1" endTime="0.2" startTrans="1.67 0.645 4.687" endTrans="1.67 0.642 4.71" startRot="-62.115 -1.859 182.93" endRot="-67.189 -6.662 181.61" />
+            <part node="leftTranslateAnimJoint03" startTime="0.2" endTime="0.3" startTrans="1.67 0.642 4.71" endTrans="1.669 0.64 4.733" startRot="-67.189 -6.662 181.61" endRot="-73.435 -7.64 181.695" />
+            <part node="leftTranslateAnimJoint03" startTime="0.3" endTime="0.4" startTrans="1.669 0.64 4.733" endTrans="1.668 0.639 4.755" startRot="-73.435 -7.64 181.695" endRot="-80.256 -8.461 181.708" />
+            <part node="leftTranslateAnimJoint03" startTime="0.4" endTime="0.5" startTrans="1.668 0.639 4.755" endTrans="1.667 0.638 4.778" startRot="-80.256 -8.461 181.708" endRot="-86.178 -10.505 181.831" />
+            <part node="leftTranslateAnimJoint03" startTime="0.5" endTime="0.6" startTrans="1.667 0.638 4.778" endTrans="1.666 0.639 4.803" startRot="-86.178 -10.505 181.831" endRot="-91.926 -13.345 181.95" />
+            <part node="leftTranslateAnimJoint03" startTime="0.6" endTime="0.7" startTrans="1.666 0.639 4.803" endTrans="1.666 0.64 4.826" startRot="-91.926 -13.345 181.95" endRot="-99.172 -15.643 181.453" />
+            <part node="leftTranslateAnimJoint03" startTime="0.7" endTime="0.783" startTrans="1.666 0.64 4.826" endTrans="1.666 0.641 4.846" startRot="-99.172 -15.643 181.453" endRot="-104.0 -16.211 180.905" />
+            <part node="leftTranslateAnimJoint03" startTime="0.783" endTime="0.8" startTrans="1.666 0.641 4.846" endTrans="1.666 0.641 4.851" startRot="-104.0 -16.211 180.905" endRot="-104.742 -16.221 180.649" />
+            <part node="leftTranslateAnimJoint03" startTime="0.8" endTime="0.867" startTrans="1.666 0.641 4.851" endTrans="1.666 0.643 4.869" startRot="-104.742 -16.221 180.649" endRot="-107.035 -12.801 178.403" />
+            <part node="leftTranslateAnimJoint03" startTime="0.867" endTime="0.9" startTrans="1.666 0.643 4.869" endTrans="1.667 0.643 4.879" startRot="-107.035 -12.801 178.403" endRot="-107.424 -11.604 177.8" />
+            <part node="leftTranslateAnimJoint03" startTime="0.9" endTime="1.0" startTrans="1.667 0.643 4.879" endTrans="1.669 0.643 4.912" startRot="-107.424 -11.604 177.8" endRot="-107.005 -15.005 178.365" />
+            <part node="leftTranslateAnimJoint04" startTime="0.0" endTime="0.1" startTrans="1.689 0.633 4.794" endTrans="1.688 0.631 4.798" startRot="-17.573 28.037 47.398" endRot="-11.785 33.008 55.776" />
+            <part node="leftTranslateAnimJoint04" startTime="0.1" endTime="0.2" startTrans="1.688 0.631 4.798" endTrans="1.692 0.623 4.817" startRot="-11.785 33.008 55.776" endRot="-11.068 36.9 59.02" />
+            <part node="leftTranslateAnimJoint04" startTime="0.2" endTime="0.3" startTrans="1.692 0.623 4.817" endTrans="1.694 0.616 4.835" startRot="-11.068 36.9 59.02" endRot="-14.498 40.231 56.221" />
+            <part node="leftTranslateAnimJoint04" startTime="0.3" endTime="0.4" startTrans="1.694 0.616 4.835" endTrans="1.694 0.611 4.851" startRot="-14.498 40.231 56.221" endRot="-16.55 46.109 55.968" />
+            <part node="leftTranslateAnimJoint04" startTime="0.4" endTime="0.5" startTrans="1.694 0.611 4.851" endTrans="1.696 0.607 4.866" startRot="-16.55 46.109 55.968" endRot="-17.327 52.463 57.247" />
+            <part node="leftTranslateAnimJoint04" startTime="0.5" endTime="0.6" startTrans="1.696 0.607 4.866" endTrans="1.697 0.604 4.881" startRot="-17.327 52.463 57.247" endRot="-16.782 59.125 59.454" />
+            <part node="leftTranslateAnimJoint04" startTime="0.6" endTime="0.7" startTrans="1.697 0.604 4.881" endTrans="1.701 0.602 4.896" startRot="-16.782 59.125 59.454" endRot="2.22 61.863 76.917" />
+            <part node="leftTranslateAnimJoint04" startTime="0.7" endTime="0.8" startTrans="1.701 0.602 4.896" endTrans="1.706 0.601 4.91" startRot="2.22 61.863 76.917" endRot="25.018 61.28 96.438" />
+            <part node="leftTranslateAnimJoint04" startTime="0.8" endTime="0.9" startTrans="1.706 0.601 4.91" endTrans="1.714 0.601 4.919" startRot="25.018 61.28 96.438" endRot="56.642 54.05 123.07" />
+            <part node="leftTranslateAnimJoint04" startTime="0.9" endTime="1.0" startTrans="1.714 0.601 4.919" endTrans="1.724 0.601 4.923" startRot="56.642 54.05 123.07" endRot="83.901 36.858 142.634" />
+            <part node="leftTranslateAnimJoint05" startTime="0.0" endTime="0.1" startTrans="1.7 0.728 4.868" endTrans="1.701 0.727 4.871" startRot="-62.967 26.111 8.877" endRot="-63.162 27.387 8.578" />
+            <part node="leftTranslateAnimJoint05" startTime="0.1" endTime="0.2" startTrans="1.701 0.727 4.871" endTrans="1.704 0.725 4.881" startRot="-63.162 27.387 8.578" endRot="-67.933 29.156 7.605" />
+            <part node="leftTranslateAnimJoint05" startTime="0.2" endTime="0.3" startTrans="1.704 0.725 4.881" endTrans="1.706 0.722 4.892" startRot="-67.933 29.156 7.605" endRot="-72.225 30.728 6.233" />
+            <part node="leftTranslateAnimJoint05" startTime="0.3" endTime="0.4" startTrans="1.706 0.722 4.892" endTrans="1.706 0.721 4.899" startRot="-72.225 30.728 6.233" endRot="-75.538 32.045 4.698" />
+            <part node="leftTranslateAnimJoint05" startTime="0.4" endTime="0.5" startTrans="1.706 0.721 4.899" endTrans="1.707 0.721 4.906" startRot="-75.538 32.045 4.698" endRot="-78.507 33.806 3.616" />
+            <part node="leftTranslateAnimJoint05" startTime="0.5" endTime="0.6" startTrans="1.707 0.721 4.906" endTrans="1.709 0.72 4.913" startRot="-78.507 33.806 3.616" endRot="-81.288 36.077 2.625" />
+            <part node="leftTranslateAnimJoint05" startTime="0.6" endTime="0.7" startTrans="1.709 0.72 4.913" endTrans="1.711 0.72 4.921" startRot="-81.288 36.077 2.625" endRot="-85.11 38.224 1.292" />
+            <part node="leftTranslateAnimJoint05" startTime="0.7" endTime="0.8" startTrans="1.711 0.72 4.921" endTrans="1.714 0.72 4.929" startRot="-85.11 38.224 1.292" endRot="-88.932 39.699 0.323" />
+            <part node="leftTranslateAnimJoint05" startTime="0.8" endTime="0.9" startTrans="1.714 0.72 4.929" endTrans="1.718 0.72 4.934" startRot="-88.932 39.699 0.323" endRot="-91.345 38.443 0.58" />
+            <part node="leftTranslateAnimJoint05" startTime="0.9" endTime="1.0" startTrans="1.718 0.72 4.934" endTrans="1.721 0.72 4.934" startRot="-91.345 38.443 0.58" endRot="-90.931 32.733 2.057" />
+            <part node="leftTranslateAnimJoint06" startTime="0.0" endTime="0.1" startTrans="1.707 0.848 4.906" endTrans="1.708 0.848 4.908" startRot="-73.92 22.223 2.814" endRot="-74.468 25.929 4.273" />
+            <part node="leftTranslateAnimJoint06" startTime="0.1" endTime="0.2" startTrans="1.708 0.848 4.908" endTrans="1.709 0.847 4.911" startRot="-74.468 25.929 4.273" endRot="-76.284 32.109 5.669" />
+            <part node="leftTranslateAnimJoint06" startTime="0.2" endTime="0.3" startTrans="1.709 0.847 4.911" endTrans="1.71 0.847 4.914" startRot="-76.284 32.109 5.669" endRot="-78.27 40.505 6.149" />
+            <part node="leftTranslateAnimJoint06" startTime="0.3" endTime="0.4" startTrans="1.71 0.847 4.914" endTrans="1.711 0.846 4.917" startRot="-78.27 40.505 6.149" endRot="-78.812 50.417 7.31" />
+            <part node="leftTranslateAnimJoint06" startTime="0.4" endTime="0.5" startTrans="1.711 0.846 4.917" endTrans="1.711 0.846 4.919" startRot="-78.812 50.417 7.31" endRot="-78.408 61.5 9.111" />
+            <part node="leftTranslateAnimJoint06" startTime="0.5" endTime="0.6" startTrans="1.711 0.846 4.919" endTrans="1.712 0.846 4.922" startRot="-78.408 61.5 9.111" endRot="-75.472 73.567 13.156" />
+            <part node="leftTranslateAnimJoint06" startTime="0.6" endTime="0.7" startTrans="1.712 0.846 4.922" endTrans="1.713 0.846 4.924" startRot="-75.472 73.567 13.156" endRot="-55.85 86.145 33.962" />
+            <part node="leftTranslateAnimJoint06" startTime="0.7" endTime="0.8" startTrans="1.713 0.846 4.924" endTrans="1.714 0.846 4.927" startRot="-55.85 86.145 33.962" endRot="-92.8 99.923 -2.188" />
+            <part node="leftTranslateAnimJoint06" startTime="0.8" endTime="0.9" startTrans="1.714 0.846 4.927" endTrans="1.715 0.846 4.928" startRot="-92.8 99.923 -2.188" endRot="-88.327 113.082 3.073" />
+            <part node="leftTranslateAnimJoint06" startTime="0.9" endTime="1.0" startTrans="1.715 0.846 4.928" endTrans="1.715 0.846 4.928" startRot="-88.327 113.082 3.073" endRot="-89.014 126.149 3.157" />
+            <part node="rightTranslateAnimJoint01" startTime="0.0" endTime="0.1" startTrans="-2.039 0.872 4.472" endTrans="-2.038 0.866 4.467" startRot="-135.451 -19.846 18.919" endRot="-134.728 -19.675 18.722" />
+            <part node="rightTranslateAnimJoint01" startTime="0.1" endTime="0.2" startTrans="-2.038 0.866 4.467" endTrans="-2.038 0.855 4.466" startRot="-134.728 -19.675 18.722" endRot="-133.508 -19.692 18.132" />
+            <part node="rightTranslateAnimJoint01" startTime="0.2" endTime="0.3" startTrans="-2.038 0.855 4.466" endTrans="-2.038 0.844 4.471" startRot="-133.508 -19.692 18.132" endRot="-130.385 -20.427 16.846" />
+            <part node="rightTranslateAnimJoint01" startTime="0.3" endTime="0.4" startTrans="-2.038 0.844 4.471" endTrans="-2.039 0.838 4.486" startRot="-130.385 -20.427 16.846" endRot="-129.63 -24.543 16.277" />
+            <part node="rightTranslateAnimJoint01" startTime="0.4" endTime="0.5" startTrans="-2.039 0.838 4.486" endTrans="-2.041 0.832 4.501" startRot="-129.63 -24.543 16.277" endRot="-122.061 -26.53 14.217" />
+            <part node="rightTranslateAnimJoint01" startTime="0.5" endTime="0.6" startTrans="-2.041 0.832 4.501" endTrans="-2.041 0.83 4.521" startRot="-122.061 -26.53 14.217" endRot="-114.738 -26.493 10.829" />
+            <part node="rightTranslateAnimJoint01" startTime="0.6" endTime="0.7" startTrans="-2.041 0.83 4.521" endTrans="-2.04 0.83 4.544" startRot="-114.738 -26.493 10.829" endRot="-108.0 -26.283 7.722" />
+            <part node="rightTranslateAnimJoint01" startTime="0.7" endTime="0.8" startTrans="-2.04 0.83 4.544" endTrans="-2.039 0.831 4.57" startRot="-108.0 -26.283 7.722" endRot="-102.503 -26.617 5.096" />
+            <part node="rightTranslateAnimJoint01" startTime="0.8" endTime="0.9" startTrans="-2.039 0.831 4.57" endTrans="-2.039 0.83 4.597" startRot="-102.503 -26.617 5.096" endRot="-99.566 -26.651 4.208" />
+            <part node="rightTranslateAnimJoint01" startTime="0.9" endTime="1.0" startTrans="-2.039 0.83 4.597" endTrans="-2.039 0.828 4.62" startRot="-99.566 -26.651 4.208" endRot="-97.783 -27.271 3.488" />
+            <part node="rightTranslateAnimJoint02" startTime="0.0" endTime="0.1" startTrans="-2.038 0.765 4.615" endTrans="-2.037 0.76 4.611" startRot="-159.353 -18.339 40.217" endRot="-160.679 -17.035 41.065" />
+            <part node="rightTranslateAnimJoint02" startTime="0.1" endTime="0.2" startTrans="-2.037 0.76 4.611" endTrans="-2.036 0.75 4.611" startRot="-160.679 -17.035 41.065" endRot="-162.296 -15.648 41.862" />
+            <part node="rightTranslateAnimJoint02" startTime="0.2" endTime="0.3" startTrans="-2.036 0.75 4.611" endTrans="-2.036 0.738 4.614" startRot="-162.296 -15.648 41.862" endRot="-163.622 -14.55 42.467" />
+            <part node="rightTranslateAnimJoint02" startTime="0.3" endTime="0.4" startTrans="-2.036 0.738 4.614" endTrans="-2.045 0.729 4.626" startRot="-163.622 -14.55 42.467" endRot="-166.456 -18.896 56.296" />
+            <part node="rightTranslateAnimJoint02" startTime="0.4" endTime="0.5" startTrans="-2.045 0.729 4.626" endTrans="-2.044 0.714 4.632" startRot="-166.456 -18.896 56.296" endRot="-165.845 -17.644 49.912" />
+            <part node="rightTranslateAnimJoint02" startTime="0.5" endTime="0.6" startTrans="-2.044 0.714 4.632" endTrans="-2.042 0.703 4.641" startRot="-165.845 -17.644 49.912" endRot="-163.354 -17.304 45.631" />
+            <part node="rightTranslateAnimJoint02" startTime="0.6" endTime="0.7" startTrans="-2.042 0.703 4.641" endTrans="-2.04 0.693 4.652" startRot="-163.354 -17.304 45.631" endRot="-160.85 -18.912 43.556" />
+            <part node="rightTranslateAnimJoint02" startTime="0.7" endTime="0.8" startTrans="-2.04 0.693 4.652" endTrans="-2.039 0.688 4.668" startRot="-160.85 -18.912 43.556" endRot="-159.394 -19.285 42.432" />
+            <part node="rightTranslateAnimJoint02" startTime="0.8" endTime="0.9" startTrans="-2.039 0.688 4.668" endTrans="-2.04 0.678 4.682" startRot="-159.394 -19.285 42.432" endRot="-154.596 -25.5 40.319" />
+            <part node="rightTranslateAnimJoint02" startTime="0.9" endTime="1.0" startTrans="-2.04 0.678 4.682" endTrans="-2.041 0.67 4.695" startRot="-154.596 -25.5 40.319" endRot="-150.13 -28.796 38.445" />
+            <part node="rightTranslateAnimJoint03" startTime="0.0" endTime="0.1" startTrans="-2.037 0.74 4.702" endTrans="-2.036 0.738 4.698" startRot="-177.219 -2.495 58.402" endRot="-178.466 -0.245 59.132" />
+            <part node="rightTranslateAnimJoint03" startTime="0.1" endTime="0.2" startTrans="-2.036 0.738 4.698" endTrans="-2.035 0.732 4.699" startRot="-178.466 -0.245 59.132" endRot="-179.855 2.219 59.705" />
+            <part node="rightTranslateAnimJoint03" startTime="0.2" endTime="0.3" startTrans="-2.035 0.732 4.699" endTrans="-2.034 0.724 4.703" startRot="-179.855 2.219 59.705" endRot="-181.497 4.923 60.088" />
+            <part node="rightTranslateAnimJoint03" startTime="0.3" endTime="0.4" startTrans="-2.034 0.724 4.703" endTrans="-2.04 0.713 4.714" startRot="-181.497 4.923 60.088" endRot="-177.461 6.383 64.266" />
+            <part node="rightTranslateAnimJoint03" startTime="0.4" endTime="0.5" startTrans="-2.04 0.713 4.714" endTrans="-2.042 0.703 4.721" startRot="-177.461 6.383 64.266" endRot="-181.185 9.628 63.961" />
+            <part node="rightTranslateAnimJoint03" startTime="0.5" endTime="0.6" startTrans="-2.042 0.703 4.721" endTrans="-2.04 0.693 4.729" startRot="-181.185 9.628 63.961" endRot="-184.623 11.275 61.578" />
+            <part node="rightTranslateAnimJoint03" startTime="0.6" endTime="0.7" startTrans="-2.04 0.693 4.729" endTrans="-2.039 0.683 4.739" startRot="-184.623 11.275 61.578" endRot="-186.195 12.893 60.532" />
+            <part node="rightTranslateAnimJoint03" startTime="0.7" endTime="0.8" startTrans="-2.039 0.683 4.739" endTrans="-2.041 0.674 4.755" startRot="-186.195 12.893 60.532" endRot="-188.322 8.849 60.935" />
+            <part node="rightTranslateAnimJoint03" startTime="0.8" endTime="0.9" startTrans="-2.041 0.674 4.755" endTrans="-2.042 0.663 4.766" startRot="-188.322 8.849 60.935" endRot="-189.036 13.665 60.514" />
+            <part node="rightTranslateAnimJoint03" startTime="0.9" endTime="1.0" startTrans="-2.042 0.663 4.766" endTrans="-2.042 0.654 4.776" startRot="-189.036 13.665 60.514" endRot="-190.607 16.493 59.647" />
+            <part node="rightTranslateAnimJoint04" startTime="0.0" endTime="0.1" startTrans="-2.035 0.751 4.791" endTrans="-2.034 0.752 4.787" startRot="176.619 17.587 73.641" endRot="176.293 19.188 74.231" />
+            <part node="rightTranslateAnimJoint04" startTime="0.1" endTime="0.2" startTrans="-2.034 0.752 4.787" endTrans="-2.033 0.75 4.788" startRot="176.293 19.188 74.231" endRot="175.814 21.168 74.665" />
+            <part node="rightTranslateAnimJoint04" startTime="0.2" endTime="0.3" startTrans="-2.033 0.75 4.788" endTrans="-2.032 0.747 4.79" startRot="175.814 21.168 74.665" endRot="175.071 23.707 74.972" />
+            <part node="rightTranslateAnimJoint04" startTime="0.3" endTime="0.4" startTrans="-2.032 0.747 4.79" endTrans="-2.034 0.737 4.801" startRot="175.071 23.707 74.972" endRot="176.921 26.493 76.955" />
+            <part node="rightTranslateAnimJoint04" startTime="0.4" endTime="0.5" startTrans="-2.034 0.737 4.801" endTrans="-2.038 0.733 4.806" startRot="176.921 26.493 76.955" endRot="177.083 29.843 78.963" />
+            <part node="rightTranslateAnimJoint04" startTime="0.5" endTime="0.6" startTrans="-2.038 0.733 4.806" endTrans="-2.038 0.727 4.813" startRot="177.083 29.843 78.963" endRot="174.697 32.557 77.324" />
+            <part node="rightTranslateAnimJoint04" startTime="0.6" endTime="0.7" startTrans="-2.038 0.727 4.813" endTrans="-2.038 0.721 4.821" startRot="174.697 32.557 77.324" endRot="172.473 35.307 75.481" />
+            <part node="rightTranslateAnimJoint04" startTime="0.7" endTime="0.8" startTrans="-2.038 0.721 4.821" endTrans="-2.043 0.712 4.836" startRot="172.473 35.307 75.481" endRot="164.991 35.707 64.584" />
+            <part node="rightTranslateAnimJoint04" startTime="0.8" endTime="0.9" startTrans="-2.043 0.712 4.836" endTrans="-2.044 0.707 4.843" startRot="164.991 35.707 64.584" endRot="156.827 37.18 55.633" />
+            <part node="rightTranslateAnimJoint04" startTime="0.9" endTime="1.0" startTrans="-2.044 0.707 4.843" endTrans="-2.044 0.703 4.851" startRot="156.827 37.18 55.633" endRot="155.785 40.633 56.251" />
+            <part node="rightTranslateAnimJoint05" startTime="0.0" endTime="0.1" startTrans="-2.033 0.788 4.873" endTrans="-2.031 0.79 4.869" startRot="26.101 150.653 -48.084" endRot="26.417 151.094 -46.826" />
+            <part node="rightTranslateAnimJoint05" startTime="0.1" endTime="0.2" startTrans="-2.031 0.79 4.869" endTrans="-2.031 0.791 4.868" startRot="26.417 151.094 -46.826" endRot="27.256 150.506 -45.828" />
+            <part node="rightTranslateAnimJoint05" startTime="0.2" endTime="0.3" startTrans="-2.031 0.791 4.868" endTrans="-2.031 0.79 4.869" startRot="27.256 150.506 -45.828" endRot="28.356 149.659 -44.556" />
+            <part node="rightTranslateAnimJoint05" startTime="0.3" endTime="0.4" startTrans="-2.031 0.79 4.869" endTrans="-2.031 0.784 4.877" startRot="28.356 149.659 -44.556" endRot="31.957 147.591 -42.58" />
+            <part node="rightTranslateAnimJoint05" startTime="0.4" endTime="0.5" startTrans="-2.031 0.784 4.877" endTrans="-2.034 0.783 4.88" startRot="31.957 147.591 -42.58" endRot="34.694 148.576 -39.203" />
+            <part node="rightTranslateAnimJoint05" startTime="0.5" endTime="0.6" startTrans="-2.034 0.783 4.88" endTrans="-2.036 0.78 4.884" startRot="34.694 148.576 -39.203" endRot="35.946 146.755 -38.754" />
+            <part node="rightTranslateAnimJoint05" startTime="0.6" endTime="0.7" startTrans="-2.036 0.78 4.884" endTrans="-2.036 0.778 4.89" startRot="35.946 146.755 -38.754" endRot="37.328 144.206 -38.323" />
+            <part node="rightTranslateAnimJoint05" startTime="0.7" endTime="0.8" startTrans="-2.036 0.778 4.89" endTrans="-2.04 0.772 4.902" startRot="37.328 144.206 -38.323" endRot="44.103 146.609 -30.144" />
+            <part node="rightTranslateAnimJoint05" startTime="0.8" endTime="0.9" startTrans="-2.04 0.772 4.902" endTrans="-2.041 0.771 4.905" startRot="44.103 146.609 -30.144" endRot="46.401 142.901 -32.086" />
+            <part node="rightTranslateAnimJoint05" startTime="0.9" endTime="1.0" startTrans="-2.041 0.771 4.905" endTrans="-2.042 0.769 4.91" startRot="46.401 142.901 -32.086" endRot="47.472 140.889 -31.526" />
+            <part node="rightTranslateAnimJoint06" startTime="0.0" endTime="0.1" startTrans="-2.03 0.85 4.931" endTrans="-2.029 0.852 4.927" startRot="68.936 157.556 -10.435" endRot="67.92 158.564 -9.605" />
+            <part node="rightTranslateAnimJoint06" startTime="0.1" endTime="0.2" startTrans="-2.029 0.852 4.927" endTrans="-2.029 0.853 4.926" startRot="67.92 158.564 -9.605" endRot="68.166 158.712 -8.869" />
+            <part node="rightTranslateAnimJoint06" startTime="0.2" endTime="0.3" startTrans="-2.029 0.853 4.926" endTrans="-2.029 0.852 4.926" startRot="68.166 158.712 -8.869" endRot="68.683 158.874 -7.931" />
+            <part node="rightTranslateAnimJoint06" startTime="0.3" endTime="0.4" startTrans="-2.029 0.852 4.926" endTrans="-2.031 0.85 4.93" startRot="68.683 158.874 -7.931" endRot="72.352 157.889 -5.677" />
+            <part node="rightTranslateAnimJoint06" startTime="0.4" endTime="0.5" startTrans="-2.031 0.85 4.93" endTrans="-2.033 0.849 4.932" startRot="72.352 157.889 -5.677" endRot="72.912 159.649 -5.66" />
+            <part node="rightTranslateAnimJoint06" startTime="0.5" endTime="0.6" startTrans="-2.033 0.849 4.932" endTrans="-2.034 0.848 4.934" startRot="72.912 159.649 -5.66" endRot="74.396 159.747 -4.941" />
+            <part node="rightTranslateAnimJoint06" startTime="0.6" endTime="0.7" startTrans="-2.034 0.848 4.934" endTrans="-2.036 0.847 4.937" startRot="74.396 159.747 -4.941" endRot="76.419 159.026 -4.045" />
+            <part node="rightTranslateAnimJoint06" startTime="0.7" endTime="0.8" startTrans="-2.036 0.847 4.937" endTrans="-2.039 0.845 4.945" startRot="76.419 159.026 -4.045" endRot="81.709 163.268 -1.861" />
+            <part node="rightTranslateAnimJoint06" startTime="0.8" endTime="0.9" startTrans="-2.039 0.845 4.945" endTrans="-2.039 0.845 4.945" startRot="81.709 163.268 -1.861" endRot="82.493 160.272 -2.008" />
+            <part node="rightTranslateAnimJoint06" startTime="0.9" endTime="1.0" startTrans="-2.039 0.845 4.945" endTrans="-2.04 0.845 4.947" startRot="82.493 160.272 -2.008" endRot="84.081 160.101 -1.156" />
+        </animation>
+
+        <animation name="airBlowerAnimation">
+            <part node="airBlowerArm" startTime="0.0" endTime="1.0" startRot="20 0 0" endRot="-5 0 0"/>
+            <part node="airBlowerArmPhys" startTime="0.0" endTime="1.0" startRot="20 0 0" endRot="-5 0 0"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="componentJointHeaderRot" playSound="true">
+                <componentJoint index="2" />
+            </movingTool>
+
+            <movingTool node="ladder" playSound="true">
+                <dependentPart node="ladderArm" />
+            </movingTool>
+
+            <!-- header -->
+            <movingTool node="reelArmTransPhys" delayedNode="reelArmTrans" foldMaxLimit="0.2" playSound="true">
+                <controls axis="AXIS_CUTTER_REEL" invertAxis="true" mouseSpeedFactor="0.3" iconName="REEL_TRANSLATE_X"/>
+                <translation transSpeed="0.2" transAcceleration="10" transMin="-0.17" transMax="0" translationAxis="3" startTrans="-0.17"/>
+                <dependentAnimation name="reelHosesAnimation" translationAxis="3" minValue="-0.17" maxValue="0" invert="true" />
+            </movingTool>
+            <movingTool node="reelArmRotPhys" delayedNode="reelArmRot" foldMaxLimit="0.2" playSound="true">
+                <controls axis="AXIS_CUTTER_REEL2" invertAxis="true" mouseSpeedFactor="0.3" iconName="REEL_TRANSLATE_Y"/>
+                <rotation rotSpeed="20" rotAcceleration="80" rotMin="-20" rotMax="0" rotationAxis="1" startRot="0"/>
+                <dependentAnimation name="airBlowerAnimation" rotationAxis="1" minValue="-20" maxValue="-2" invert="false" />
+            </movingTool>
+
+            <movingTool node="reelArmTrans">
+                <dependentPart node="reelArmHydraulic01"/>
+                <dependentPart node="reelArmHydraulic02"/>
+            </movingTool >
+
+            <movingTool node="reelArmRot">
+                <dependentPart node="reelArmHydraulic01"/>
+                <dependentPart node="reelArmHydraulic02"/>
+            </movingTool >
+            <movingTool node="airBlowerArm">
+                <dependentPart node="airBlowerArmHydraulic" />
+            </movingTool >
+            <movingTool node="airBlowerArmRot">
+                <dependentPart node="airBlowerArmHydraulic" />
+            </movingTool >
+
+            <movingTool node="reel" playSound="true">
+                <dependentPart node="reelTine01"/>
+                <dependentPart node="reelTine02"/>
+                <dependentPart node="reelTine03"/>
+                <dependentPart node="reelTine04"/>
+                <dependentPart node="reelTine05"/>
+                <dependentPart node="reelTine06"/>
+            </movingTool>
+
+            <movingTool node="cutterRotationNode">
+                <dependentPart node="cutterBarTopMotorArm01" />
+                <dependentPart node="cutterBarBottomMotorArm01" />
+            </movingTool >
+
+            <movingTool node="depthSettingRollerArmPhys" wheelNodes="headerWheelLeft headerWheelRight"/>
+            <movingTool node="depthSettingRollerArm" playSound="true">
+                <dependentPart node="depthSettingRollerArmHydraulic" />
+            </movingTool>
+
+            <!-- bunker -->
+            <movingTool node="bunkerLiftArmLeft" playSound="true">
+                <dependentPart node="bunkerLiftArmRight" />
+            </movingTool>
+            <movingTool node="bunkerFlap" playSound="true">
+                <dependentPart node="bunkerFlapHydraulic" />
+            </movingTool>
+            <movingTool node="bunkerTopPartLockArmFront" playSound="true">
+                <dependentPart node="bunkerTopPartLockFront" />
+                <dependentPart node="bunkerTopPartLockArmBack" />
+                <dependentPart node="bunkerTopPartLockArmHydraulic" />
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <!-- Boogie alignment -->
+            <movingPart node="crawlerLinkNodeFrontLeft" referencePoint="wheelFrontLeft02" referenceFrame="mkb4TR_main_component1" isActiveDirty="true" maxUpdateDistance="40">
+                <dependentPart node="crawlerLinkNodeFrontRight"/>
+                <dependentPart node="driveShaftFrontLeft02Orient" maxUpdateDistance="15"/>
+            </movingPart>
+            <movingPart node="driveShaftFrontLeft02Orient" referencePoint="driveShaftFrontLeft02OrientRef" referenceFrame="driveShaftFrontLeft02OrientRef">
+                <translatingPart node="driveShaftFrontLeft02OrientPunch" />
+            </movingPart>
+            <movingPart node="crawlerLinkNodeFrontRight" referencePoint="wheelFrontRight02" referenceFrame="mkb4TR_main_component1">
+                <dependentPart node="crawlerLinkNodeBackLeft"/>
+                <dependentPart node="driveShaftFrontRight02Orient" maxUpdateDistance="15"/>
+            </movingPart>
+            <movingPart node="driveShaftFrontRight02Orient" referencePoint="driveShaftFrontRight02OrientRef" referenceFrame="driveShaftFrontRight02OrientRef">
+                <translatingPart node="driveShaftFrontRight02OrientPunch" />
+            </movingPart>
+            <movingPart node="crawlerLinkNodeBackLeft" referencePoint="wheelBackLeft02" referenceFrame="mkb4TR_back_component2">
+                <dependentPart node="crawlerLinkNodeBackRight"/>
+                <dependentPart node="driveShaftBackLeft02Orient" maxUpdateDistance="15"/>
+            </movingPart>
+            <movingPart node="driveShaftBackLeft02Orient" referencePoint="driveShaftBackLeft02OrientRef" referenceFrame="driveShaftBackLeft02OrientRef">
+                <translatingPart node="driveShaftBackLeft02OrientPunch" />
+            </movingPart>
+            <movingPart node="crawlerLinkNodeBackRight" referencePoint="wheelBackRight01" referenceFrame="mkb4TR_back_component2">
+                <dependentPart node="driveShaftBackRight02Orient" maxUpdateDistance="15"/>
+            </movingPart>
+            <movingPart node="driveShaftBackRight02Orient" referencePoint="driveShaftBackRight02Ref" referenceFrame="driveShaftBackRight02Ref">
+                <translatingPart node="driveShaftBackRight02OrientPunch" />
+            </movingPart>
+
+            <!-- ladder -->
+            <movingPart node="ladderArm" referencePoint="ladderArmRef" referenceFrame="ladderArmRefFrame">
+                <translatingPart node="ladderHydraulicPunch" />
+            </movingPart>
+
+            <!-- steering -->
+            <movingPart node="steeringHydraulicLeft" referencePoint="steeringHydraulicLeftRef" referenceFrame="steeringHydraulicLeftRef" isActiveDirty="true" maxUpdateDistance="50">
+                <translatingPart node="steeringHydraulicLeftPunch" />
+            </movingPart>
+            <movingPart node="steeringHydraulicRight" referencePoint="steeringHydraulicRightRef" referenceFrame="steeringHydraulicRightRef" isActiveDirty="true" maxUpdateDistance="50">
+                <translatingPart node="steeringHydraulicRightPunch" />
+            </movingPart>
+
+            <!-- header -->
+            <movingPart node="feederArm" referencePoint="feederArmRef" referenceFrame="feederArmRefFrame" limitedAxis="1" isActiveDirty="true" maxUpdateDistance="300">
+                <dependentPart node="headerFrame"/>
+                <dependentPart node="feederArmHydraulic" maxUpdateDistance="30"/>
+            </movingPart>
+            <movingPart node="headerFrame" referencePoint="headerFrameRef" referenceFrame="headerFrameRefFrame" limitedAxis="1">
+                <dependentPart node="header" />
+                <dependentPart node="headerFrameHydraulic" maxUpdateDistance="50"/>
+            </movingPart>
+            <movingPart node="header" referencePoint="headerRef" referenceFrame="headerRefFrame" limitedAxis="1">
+                <dependentPart node="headerSpringBase" maxUpdateDistance="50"/>
+            </movingPart>
+
+            <movingPart node="feederArmHydraulic" referencePoint="feederArmHydraulicRef" referenceFrame="feederArmHydraulicRef">
+                <translatingPart node="feederArmHydraulicPunch" />
+                <dependentPart node="feederArmSpring" />
+            </movingPart>
+            <movingPart node="feederArmSpring" referencePoint="feederArmSpringRef" referenceFrame="feederArmSpringRef" scaleZ="true"/>
+            <movingPart node="headerFrameHydraulic" referencePoint="headerFrameHydraulicRef" referenceFrame="headerFrameHydraulicRef">
+                <translatingPart node="headerFrameHydraulicPunch" />
+            </movingPart>
+            <movingPart node="headerSpringBase" referencePoint="headerSpringBaseRef" referenceFrame="headerSpringBaseRef">
+                <translatingPart node="headerSpringPunch" />
+                <dependentPart node="headerSpring" />
+            </movingPart>
+            <movingPart node="headerSpring" referencePoint="headerSpringRef" referenceFrame="headerSpringRef" scaleZ="true"/>
+
+            <movingPart node="depthSettingRollerArmHydraulic" referencePoint="depthSettingRollerArmHydraulicRef" referenceFrame="depthSettingRollerArmHydraulicRef">
+                <translatingPart node="depthSettingRollerArmHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="reelArmHydraulic01" referencePoint="reelArmHydraulic01Ref" referenceFrame="reelArmHydraulic01Ref">
+                <translatingPart node="reelArmHydraulic01Punch" />
+            </movingPart>
+            <movingPart node="reelArmHydraulic02" referencePoint="reelArmHydraulic02Ref" referenceFrame="reelArmHydraulic02Ref">
+                <translatingPart node="reelArmHydraulic02Punch" />
+            </movingPart>
+            <movingPart node="reelTine01" referenceFrame="mkb4TR_main_component1"/>
+            <movingPart node="reelTine02" referenceFrame="mkb4TR_main_component1"/>
+            <movingPart node="reelTine03" referenceFrame="mkb4TR_main_component1"/>
+            <movingPart node="reelTine04" referenceFrame="mkb4TR_main_component1"/>
+            <movingPart node="reelTine05" referenceFrame="mkb4TR_main_component1"/>
+            <movingPart node="reelTine06" referenceFrame="mkb4TR_main_component1"/>
+            <movingPart node="airBlowerArmHydraulic" referencePoint="airBlowerArmHydraulicRef" referenceFrame="airBlowerArmHydraulicRef">
+                <translatingPart node="airBlowerArmHydraulicPunch" />
+            </movingPart>
+
+            <!-- cutter top row -->
+            <movingPart node="cutterBarTopMotorArm01" localReferencePoint="cutterBarTopMotorArm02" referencePoint="cutterBarTopMotorArmRef" referenceFrame="cutterBarTopMotorArm01RefFrame" limitedAxis="1">
+                <dependentPart node="cutterBarTopMotorArm02"/>
+            </movingPart>
+            <movingPart node="cutterBarTopMotorArm02" referencePoint="cutterBarTopMotorArmRef" referenceFrame="cutterBarTopMotorArm02RefFrame" limitedAxis="1">
+                <dependentPart node="cutterBarTop"/>
+            </movingPart>
+            <movingPart node="cutterBarTop" referenceFrame="cutterBarRefFrame" >
+                <dependentPart node="cutterBarTopArm01"/>
+            </movingPart>
+            <movingPart node="cutterBarTopArm01" referencePoint="cutterBarTopArm01Ref" referenceFrame="cutterBarTopArm01Ref" >
+                <dependentPart node="cutterBarTopArm02"/>
+                <dependentPart node="cutterBarTopArm03"/>
+                <dependentPart node="cutterBarTopArm04"/>
+                <dependentPart node="cutterBarTopArm05"/>
+                <dependentPart node="cutterBarTopArm06"/>
+                <dependentPart node="cutterBarTopArm07"/>
+                <dependentPart node="cutterBarTopArm08"/>
+            </movingPart>
+            <movingPart node="cutterBarTopArm02" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarTopArm03" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarTopArm04" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarTopArm05" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarTopArm06" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarTopArm07" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarTopArm08" referenceFrame="cutterBarTopArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+
+            <!-- cutter bottom row -->
+            <movingPart node="cutterBarBottomMotorArm01" localReferencePoint="cutterBarBottomMotorArm02" referencePoint="cutterBarBottomMotorArmRef" referenceFrame="cutterBarBottomMotorArm01RefFrame" limitedAxis="1">
+                <dependentPart node="cutterBarBottomMotorArm02"/>
+            </movingPart>
+            <movingPart node="cutterBarBottomMotorArm02" referencePoint="cutterBarBottomMotorArmRef" referenceFrame="cutterBarBottomMotorArm02RefFrame" limitedAxis="1">
+                <dependentPart node="cutterBarBottom"/>
+            </movingPart>
+            <movingPart node="cutterBarBottom" referenceFrame="cutterBarRefFrame" >
+                <dependentPart node="cutterBarBottomArm01"/>
+            </movingPart>
+            <movingPart node="cutterBarBottomArm01" referencePoint="cutterBarBottomArm01Ref" referenceFrame="cutterBarBottomArm01Ref" >
+                <dependentPart node="cutterBarBottomArm02"/>
+                <dependentPart node="cutterBarBottomArm03"/>
+                <dependentPart node="cutterBarBottomArm04"/>
+                <dependentPart node="cutterBarBottomArm05"/>
+                <dependentPart node="cutterBarBottomArm06"/>
+                <dependentPart node="cutterBarBottomArm07"/>
+                <dependentPart node="cutterBarBottomArm08"/>
+            </movingPart>
+            <movingPart node="cutterBarBottomArm02" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarBottomArm03" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarBottomArm04" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarBottomArm05" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarBottomArm06" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarBottomArm07" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+            <movingPart node="cutterBarBottomArm08" referenceFrame="cutterBarBottomArm01" doRotationAlignment="true" doDirectionAlignment="false" rotMultiplier="1"/>
+
+            <!-- bunker -->
+            <movingPart node="bunkerLiftArmRight" referenceFrame="bunkerLiftArmRightRefFrame" doLineAlignment="true" doDirectionAlignment="false">
+                <orientationLine partLengthNode="bunkerLiftArmRightRef">
+                    <lineNode node="bunkerLiftArmRightLineStart"/>
+                    <lineNode node="bunkerLiftArmRightLineEnd"/>
+                </orientationLine>
+                <dependentPart node="bunkerRailPartRight" />
+                <dependentPart node="bunker" />
+            </movingPart>
+            <movingPart node="bunker" referencePoint="bunkerRef" referenceFrame="bunkerRefFrame" doInversedLineAlignment="true" doDirectionAlignment="false">
+                <orientationLine>
+                    <lineNode node="bunkerLineStart"/>
+                    <lineNode node="bunkerLineEnd"/>
+                </orientationLine>
+                <dependentPart node="bunkerHydraulic" />
+                <dependentPart node="bunkerRailPartLeft" />
+            </movingPart>
+            <movingPart node="bunkerRailPartLeft" referenceFrame="bunkerLineStart"/>
+            <movingPart node="bunkerRailPartRight" referenceFrame="bunkerLiftArmRightLineStart"/>
+            <movingPart node="bunkerHydraulic" referencePoint="bunkerHydraulicRef" referenceFrame="bunkerHydraulicRef">
+                <translatingPart node="bunkerHydraulicPunch" />
+            </movingPart>
+            <movingPart node="bunkerFlapHydraulic" referencePoint="bunkerFlapHydraulicRef" referenceFrame="bunkerFlapHydraulicRef">
+                <translatingPart node="bunkerFlapHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="bunkerTopPartLockFront" referencePoint="bunkerTopPartLockFrontRef" referenceFrame="bunkerTopPartLockFrontRef"/>
+            <movingPart node="bunkerTopPartLockArmHydraulic" referencePoint="bunkerTopPartLockArmHydraulicRef" referenceFrame="bunkerTopPartLockArmHydraulicRef">
+                <translatingPart node="bunkerTopPartLockArmHydraulicPunch" />
+            </movingPart>
+
+            <movingPart node="bunkerTopPartLockArmBack" localReferencePoint="bunkerTopPartLockArmMiddle" referencePoint="bunkerTopPartLockArmRef" referenceFrame="bunkerTopPartLockArmBackRefFrame" limitedAxis="1" >
+                <dependentPart node="bunkerTopPartLockArmMiddle" />
+                <dependentPart node="bunkerTopPartLockBack" />
+            </movingPart>
+            <movingPart node="bunkerTopPartLockArmMiddle" referencePoint="bunkerTopPartLockArmRef" referenceFrame="bunkerTopPartLockArmRef"/>
+            <movingPart node="bunkerTopPartLockBack" referencePoint="bunkerTopPartLockBackRef" referenceFrame="bunkerTopPartLockBackRef"/>
+
+            <movingPart node="effectAngleReferenceNode" referencePoint="effectAngleReferenceNodeRef" referenceFrame="effectAngleReferenceNodeRef" isActiveDirty="true" maxUpdateDistance="75"/>
+        </movingParts>
+        <sounds>
+            <actionSound template="hydraulicClose03" volumeScale="5"   pitchScale="1.3" linkNode="reelArmTransPhys" actionNames="TOOL_MOVE_POS TOOL_MOVE_NEG"                     nodes="reelArmTransPhys" fadeIn="0.1" fadeOut="0.1" />
+            <actionSound template="vibratingImp"     volumeScale="3"   pitchScale="1.3" linkNode="reelArmTransPhys" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="reelArmTransPhys" />
+            <actionSound template="metalImpHigh01"   volumeScale="1"   pitchScale="0.8" linkNode="reelArmTransPhys" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="reelArmTransPhys" />
+            <actionSound template="cylinderPunch"    volumeScale="0.6" pitchScale="1.8" linkNode="reelArmTransPhys" actionNames="TOOL_MOVE_END_POS_LIMIT TOOL_MOVE_END_NEG_LIMIT" nodes="reelArmTransPhys" />
+        </sounds>
+    </cylindered>
+
+    <wipers>
+        <wiper animName="wiperFrontAnimation" >
+            <state animSpeed="0.75" animPause="2.0" />
+            <state animSpeed="0.75" animPause="0.0" />
+            <state animSpeed="1.10" animPause="0.0" />
+        </wiper>
+        <wiper animName="wiperSideLeftAnimation" >
+            <state animSpeed="1.0" animPause="2.0" />
+        </wiper>
+        <wiper animName="wiperSideRightAnimation" >
+            <state animSpeed="1.0" animPause="2.0" />
+        </wiper>
+        <wiper animName="wiperBackAnimation" >
+            <state animSpeed="1.0" animPause="2.0" />
+        </wiper>
+
+        <dashboards>
+            <dashboard displayType="MULTI_STATE" valueType="state" node="switchWiper" doInterpolation="true">
+                <state value="0" rotation="0 0 0"/>
+                <state value="1" rotation="30 0 0"/>
+                <state value="2" rotation="30 0 0"/>
+            </dashboard>
+        </dashboards>
+    </wipers>
+
+    <cutter fruitTypes="spinach">
+        <fillEffect>
+            <effectNode effectClass="CutterMotionPathEffect" effectType="PICKUPIN" linkNode="headerEffectLinkNode">
+                <motionPathEffect textureFilename="$data/vehicles/oxbo/mkb4TR/headerArray18x20.dds" numRows="18" rowLength="20" minFade="0.15" visibilityX="1.4 -1.85" shapeScale="1.0" maxShapeScale="0.9" speedScale="0.425"/>
+            </effectNode>
+            <effectNode effectClass="CutterMotionPathEffect" effectType="PICKUPIN" linkNode="feederEffectLinkNode">
+                <motionPathEffect textureFilename="$data/vehicles/oxbo/mkb4TR/feederArray6x18.dds" numRows="6" rowLength="18" delay="1.4" visibilityX="0.6 -0.6" shapeScale="0.9" maxShapeScale="0.6" speedScale="0.7"/>
+            </effectNode>
+        </fillEffect>
+
+        <animationNodes>
+            <animationNode node="reel" rotAxis="1" rotSpeed="220" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="reelPart" rotAxis="1" rotSpeed="220" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="airBlowerFan" rotAxis="1" rotSpeed="1000" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="overloadingFan01" rotAxis="3" rotSpeed="1000" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="overloadingFan02" rotAxis="3" rotSpeed="1000" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="overloadingFan03" rotAxis="3" rotSpeed="1000" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="overloadingFan04" rotAxis="3" rotSpeed="1000" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="cutterRotationNode" rotAxis="3" rotSpeed="2500" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="headerBeltSideRollLeft01" rotAxis="3" rotSpeed="400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="headerBeltSideRollLeft02" rotAxis="3" rotSpeed="400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="headerBeltSideRollRight01" rotAxis="3" rotSpeed="400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="headerBeltSideRollRight02" rotAxis="3" rotSpeed="400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="headerBeltMainRoll01" rotAxis="1" rotSpeed="400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="headerBeltMainRoll02" rotAxis="1" rotSpeed="400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="beltHeaderMain" shaderParameterName="offsetUV" rotSpeed="-45" shaderComponentScale="0 1 0 0" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="beltHeaderSide" shaderParameterName="offsetUV" rotSpeed="-45" shaderComponentScale="0 1 0 0" turnOnFadeTime="2" turnOffFadeTime="3"/>
+        </animationNodes>
+    </cutter>
+
+    <combine allowThreshingDuringRain="true">
+        <chopper available="false"/>
+        <ladder animName="ladderAnimation" animSpeedScale="1" foldDirection="-1" foldMinLimit="0.1" foldMaxLimit="1"/>
+        <swath available="false"/>
+        <buffer loadingDelay="2.5"/>
+
+        <fillEffect>
+            <effectNode effectClass="VariableMotionPathEffect" effectType="STRAW_CHOPPER" materialType="CHOPPER" linkNode="pipeEffectLinkNode">
+                <motionPathEffect textureFilename="$data/vehicles/oxbo/mkb4TR/pipeArray16x18.dds" numRows="16" rowLength="18" delay="2.0" shapeScale="0.5" maxShapeScale="2.5" speedScale="1.0"/>
+                <variableState referenceNode="effectAngleReferenceNode" referenceRotAxis="2">
+                    <state referenceValue="-10" visibilityX="3 -1" visibilityZ="50 -2.3"/>
+                    <state referenceValue="-3" visibilityX="3 -1" visibilityZ="50 -4"/>
+                    <state referenceValue="0" visibilityX="3 -3" visibilityZ="50 -7"/>
+                    <state referenceValue="3" visibilityX="1 -3" visibilityZ="50 -4"/>
+                    <state referenceValue="10" visibilityX="1 -3" visibilityZ="50 -2.3"/>
+                </variableState>
+            </effectNode>
+        </fillEffect>
+
+        <animationNodes speedReverseFillLevel="0.8">
+            <animationNode node="beltFeeder" shaderParameterName="offsetUV" rotSpeed="-90" shaderComponentScale="0 1 0 0" turnOnFadeTime="2" turnOffFadeTime="2"/>
+        </animationNodes>
+    </combine>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit shopDisplayUnit="CUBICMETER" fillTypes="spinach" capacity="35000">
+                        <fillMassNode node="mkb4TR_main_component1"/>
+						<dashboard displayType="SLIDER" valueType="fillLevel" node="oxboMKB4TR_dblBunkerFillLevelP1_SC" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="TEXT" valueType="fillLevel" node="oxboMKB4TR_dblBunkerFillLevelNumbersP1_SC" textColor="0.2 0.2 0.2 1" textMask="00000" textSize="0.006" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="TEXT" valueType="fillLevelPct" node="oxboMKB4TR_dblBunkerFillLevelPrecNumbersP1_SC" textColor="0.2 0.2 0.2 1" textMask="000" textSize="0.007" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" fillTypes="diesel" capacity="950">
+                        <exactFillRootNode node="exactFillRootNodeFuel" />
+                        <dashboard displayType="SLIDER" valueType="fillLevelPct" node="oxboMKB4TR_dblFuelSliderP1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.5" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="oxboMKB4TR_dblFuelWarningP1_SC" baseColor="SHARED_GREY1" emitColor="OLOFSFORS_BLUE1" intensity="0.5" warningThresholdMax="42.5" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="TEXT" valueType="fillLevelPct" node="oxboMKB4TR_dblFuelPercNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+                    </fillUnit>
+                    <fillUnit unitTextOverride="$l10n_unit_literShort" showOnHud="false" showInShop="false" showOnInfoHud="false" fillTypes="def" capacity="60">
+                        <dashboard displayType="SLIDER" valueType="fillLevelPct" node="oxboMKB4TR_dblAdBlueSliderP1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.5" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="EMITTER" valueType="fillLevelWarning" node="oxboMKB4TR_dblAdblueWarningP1_SC" baseColor="SHARED_GREY1" emitColor="OLOFSFORS_BLUE1" intensity="0.5" warningThresholdMax="6" groups="MOTOR_ACTIVE"/>
+						<dashboard displayType="TEXT" valueType="fillLevelPct" node="oxboMKB4TR_dblAdBluePercNumbersP1_SC" textColor="0.2 0.2 0.2 0" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+                    </fillUnit>
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <fillVolume>
+        <fillVolumeConfigurations>
+            <fillVolumeConfiguration>
+                <volumes>
+                    <volume node="fillVolume" maxDelta="0.5" maxAllowedHeapAngle="20" fillUnitIndex="1"/>
+                </volumes>
+            </fillVolumeConfiguration>
+        </fillVolumeConfigurations>
+
+        <loadInfos>
+            <loadInfo>
+                <node node="loadInfoBack" width="0.6" length="1"/>
+            </loadInfo>
+        </loadInfos>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node node="unloadInfo" width="2" length="5"/>
+            </unloadInfo>
+        </unloadInfos>
+    </fillVolume>
+
+    <pipe pipeInText="$l10n_action_bunkerDown" pipeOutText="$l10n_action_bunkerUp" foldMaxLimit="0.2" foldMinState="1" foldMaxState="1" dischargeNodeIndex="1" aiFoldedPipeUsesTrailerSpace="true" turnOnStateWarning="$l10n_warning_lowerBunkerFirst">
+        <states num="2" unloading="2" turnOnAllowed="1"/>
+        <animation name="pipeAnimation" speedScale="1"/>
+
+        <unloadingTriggers>
+            <unloadingTrigger node="trailerTrigger"/>
+        </unloadingTriggers>
+
+        <animationNodes>
+            <animationNode node="bunkerGearWheels01" rotAxis="3" rotSpeed="-400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="bunkerGearWheels02" rotAxis="3" rotSpeed="-400" turnOnFadeTime="2" turnOffFadeTime="3"/>
+
+            <animationNode class="ScrollingAnimation" node="beltBunker" shaderParameterName="offsetUV" scrollSpeed="2" shaderParameterComponent="2" turnOnFadeTime="3" turnOffFadeTime="1"/>
+        </animationNodes>
+    </pipe>
+
+    <dischargeable>
+        <dischargeNode node="dischargeNode" emptySpeed="2335" fillUnitIndex="1" maxDistance="6">
+            <info width="5" length="1" useRaycastHitPosition="true"/>
+
+            <effects>
+                <effectNode effectClass="TypedMotionPathEffect" effectType="PICKUPIN" linkNode="beltBunkerEffectLinkNode">
+                    <motionPathEffect textureFilename="$data/vehicles/oxbo/mkb4TR/beltBunkerArray24x10.dds" numRows="24" rowLength="25" startFade="0.25" shapeScale="1.0" maxShapeScale="1.0" speedScale="0.4" visibilityZ="2.4 -2.7"/>
+                </effectNode>
+                <effectNode effectClass="ParticleEffect" effectNode="effectParticleUnloading" materialType="unloadingParticle" particleType="unloading" extraDistance="-0.3" emitCountScale="5" delay="2.25" lifespan="0.11" worldSpace="true"/>
+            </effects>
+        </dischargeNode>
+    </dischargeable>
+
+    <dashboard>
+        <groups>
+            <group name="MOTOR_STARTING" electronicsStarting="true"/>
+            <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
+        </groups>
+
+        <default>
+            <dashboard displayType="EMITTER" node="display01_decals" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_mainDisplay" idleValue="-1" intensity="0.15" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_mainDecal" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_mainDecal" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblAdblueWarningP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblFuelWarningP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblEngineTempWarningP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblFillLevelTonSliderP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblGPSactiveP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblGPSsatellitP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblParkBreakP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblHLMonP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblDefaultLightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWorkLightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblBeaconLightP1_SC" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblLadderCloseP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblLadderOpenP1_SC" baseColor="SHARED_GREY1" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblHeaderLoweredP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblHeaderLiftedP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblBunkerFillLevelP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherSunP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherCloudP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherRainP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherHailP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherSnowP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherTwisterP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherSunP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherCloudP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherRainP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherHailP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherSnowP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherTwisterP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+        </default>
+		
+		<dashboardLive>
+			<!-- CVT -->
+			<dashboard displayType="EMITTER" valueType="cvt" cmd="motorcoldlamp" node="oxboMKB4TR_dblEngineTempWarningP1_SC" baseColor="SHARED_GREY1" emitColor="AGRIO_BLUE" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<!-- VCA -->
+			<dashboard displayType="EMITTER" valueType="vca" cmd="park" node="oxboMKB4TR_dblParkBreakP1_SC" emitColor="RED" groups="MOTOR_ACTIVE"/>
+			<!-- FillLevel -->
+			<dashboard displayType="SLIDER" valueType="base" cmd="fillLevel" option="abskg" joints="0" partition="1" node="oxboMKB4TR_dblFillLevelTonSliderP1_SC" factor="0.001" minValueSlider="0" maxValueSlider="5" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="fillLevel" option="abskg" joints="0" partition="1" node="oxboMKB4TR_dblBunkerFillLevelTonNumbersP1_SC" factor="0.001" textColor="0.2 0.2 0.2 1" textMask="00.00" textSize="0.007" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Combine -->
+			<dashboard displayType="VISIBILITY" valueType="combine" cmd="pipeState" state="2" node="oxboMKB4TR_dblLadderCloseP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="combine" cmd="pipeState" state="1" node="oxboMKB4TR_dblLadderOpenP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="combine" cmd="overloading" node="oxboMKB4TR_dblBunkerOverlodingP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="combine" cmd="hectars" node="oxboMKB4TR_dblPrecFarmHectarAllP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Bunker Folding -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folded" joints="0"  node="oxboMKB4TR_dblBunkerFoldedP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolded" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folding" joints="0" node="oxboMKB4TR_dblBunkerFoldingStateP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolding" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="folded" joints="0" node="oxboMKB4TR_dblBunkerFoldedP1_SC" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="unfolded" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingP1_SC" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="folding" joints="0" node="oxboMKB4TR_dblBunkerFoldingStateP1_SC" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="unfolding" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<!-- Header -->
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lowered" joints="0" node="oxboMKB4TR_dblHeaderLoweredP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="0" node="oxboMKB4TR_dblHeaderLiftedP1_SC" groups="MOTOR_ACTIVE"/>
+			<!-- PTO -->
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0"  node="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" factor="0.4525" doInterpolation="true" interpolationSpeed="0.16" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" factor="0.451895" doInterpolation="true" interpolationSpeed="0.2" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" factor="0.0642" doInterpolation="true" interpolationSpeed="0.06" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Field -->
+			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="oxboMKB4TR_dblFieldNumbersP1_SC" textColor="0 0 0 0" textSize="0.0025" textMask="000" font="GENERIC_BOLD" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+			<!-- HLM -->
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="headland" node="oxboMKB4TR_dblHLMheadlandP1_SC"  groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="hlm" option="field" node="oxboMKB4TR_dblHLMfieldP1_SC"  groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="" 			  node="oxboMKB4TR_dblHLMonP1_SC" baseColor="SHARED_GREY1" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="field" 	  node="oxboMKB4TR_dblHLMfieldP1_SC" baseColor="SHARED_GREY1" emitColor="ELMERSMFG_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="hlm" option="headland" 	  node="oxboMKB4TR_dblHLMheadlandP1_SC" baseColor="SHARED_GREY1" emitColor="ELMERSMFG_BLUE1" intensity="1" groups="MOTOR_ACTIVE"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="oxboMKB4TR_dblRealClockP1_SC" textColor="1 1 1 1" textMask="........." textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="oxboMKB4TR_dblNaviMapP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="oxboMKB4TR_dblNaviiMapPosP1_CC" groups="MOTOR_ACTIVE"/>
+		</dashboardLive>
+    </dashboard>
+
+    <tipOccluder>
+        <occlusionArea start="tipOcclusionAreaStartFront" width="tipOcclusionAreaWidthFront" height="tipOcclusionAreaHeightFront" />
+        <occlusionArea start="tipOcclusionAreaStartBack" width="tipOcclusionAreaWidthBack" height="tipOcclusionAreaHeightBack" />
+    </tipOccluder>
+
+    <ai>
+        <agent frontWheelNodes="wheelFrontLeft01 wheelFrontLeft02 wheelFrontRight01 wheelFrontRight02"/>
+        <collisionTrigger useSize="true"/>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack" sideOffset="0.22"/>
+        <sizeMarkers leftNode="sizeMarkerLeft" rightNode="sizeMarkerRight" backNode="sizeMarkerBack"/>
+        <toolReverserDirectionNode node="aiToolReverserDirectionNode"/>
+        <overlap value="0"/>
+        <headlandTailAvoidance enabled="true"/>
+		<automaticSteering>
+            <dashboards>
+				<dashboard displayType="EMITTER" valueType="steeringEngaged" node="oxboMKB4TR_dblGPSactiveP1_SC" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
+				<dashboard displayType="EMITTER" valueType="steeringState" node="oxboMKB4TR_dblGPSsatellitP1_SC" baseColor="1 1 1 1" emitColor="OXBO_YELLOW1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+            </dashboards>
+        </automaticSteering>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-1.7" maxX="1.7" minZ="-0.7" maxZ="3.2" yOffset="0.6"/>
+        <bendingNode minX="-1.7" maxX="1.7" minZ="-7" maxZ="-0.7" yOffset="0.6" node="mkb4TR_back_component2"/>
+        <bendingNode minX="-1.9" maxX="2.0" minZ="-2.4" maxZ="0" yOffset="0.25" node="groundReferenceNode"/>
+        <bendingNode minX="-1.9" maxX="1.8" minZ="-0.15" maxZ="1.6" yOffset="-0.7" node="reelArmTransPhys"/>
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="mkb4TR_main_component1" node="0>" />
+        <i3dMapping id="outdoorCameraTarget" node="0>0|0|0" />
+        <i3dMapping id="outdoorCamera" node="0>0|0|0|0" />
+        <i3dMapping id="indoorCamera" node="0>0|0|1" />
+        <i3dMapping id="cameraRaycastNode1" node="0>0|0|2" />
+        <i3dMapping id="cameraRaycastNode2" node="0>0|0|3" />
+        <i3dMapping id="cameraRaycastNode3" node="0>0|0|4" />
+        <i3dMapping id="shadowFocusBox" node="0>0|0|5" />
+        <i3dMapping id="yellowRectangle_01_03" node="0>0|1|0|0" />
+        <i3dMapping id="yellowRectangle_01_04" node="0>0|1|0|1" />
+        <i3dMapping id="yellowRectangle_01_11" node="0>0|1|0|2" />
+        <i3dMapping id="yellowRectangle_01_12" node="0>0|1|0|3" />
+        <i3dMapping id="sideMarker23Orange_01" node="0>0|1|0|4" />
+        <i3dMapping id="sideMarker23Orange_02" node="0>0|1|0|5" />
+        <i3dMapping id="mkb4TRLights01_static" node="0>0|1|1|0" />
+        <i3dMapping id="mkb4TRLights01Glass_static" node="0>0|1|1|1" />
+        <i3dMapping id="frontLightLow" node="0>0|1|2|0" />
+        <i3dMapping id="highBeamLow" node="0>0|1|2|1" />
+        <i3dMapping id="frontLightHigh02" node="0>0|1|2|2" />
+        <i3dMapping id="highBeamHigh02" node="0>0|1|2|3" />
+        <i3dMapping id="turnLights" node="0>0|1|3" />
+        <i3dMapping id="turnLightLeftFront02" node="0>0|1|3|0" />
+        <i3dMapping id="turnLightRightFront02" node="0>0|1|3|1" />
+        <i3dMapping id="exitPoint" node="0>0|2" />
+        <i3dMapping id="exhaustParticle" node="0>0|3" />
+        <i3dMapping id="steeringHydraulicLeft" node="0>0|4|0|0" />
+        <i3dMapping id="steeringHydraulicLeftPunch" node="0>0|4|0|0|0" />
+        <i3dMapping id="steeringHydraulicRight" node="0>0|4|0|1" />
+        <i3dMapping id="steeringHydraulicRightPunch" node="0>0|4|0|1|0" />
+        <i3dMapping id="feederArmRefFrame" node="0>0|4|1|0" />
+        <i3dMapping id="feederArm" node="0>0|4|1|0|0" />
+        <i3dMapping id="headerFrameRefFrame" node="0>0|4|1|0|0|0" />
+        <i3dMapping id="headerFrame" node="0>0|4|1|0|0|0|0" />
+        <i3dMapping id="headerRefFrame" node="0>0|4|1|0|0|0|0|0" />
+        <i3dMapping id="header" node="0>0|4|1|0|0|0|0|0|0" />
+        <i3dMapping id="reelArmRot" node="0>0|4|1|0|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="reelArmTrans" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="sideMarker04_left01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0" />
+        <i3dMapping id="sideMarker04_right01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1" />
+        <i3dMapping id="airBlowerArmRot" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0" />
+        <i3dMapping id="airBlowerArm" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0" />
+        <i3dMapping id="frontLight10_left" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0" />
+        <i3dMapping id="frontLight10_right" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|1" />
+        <i3dMapping id="yellowRectangle_01_01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|2" />
+        <i3dMapping id="yellowRectangle_01_13" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|3" />
+        <i3dMapping id="frontLightHigh01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|1|0" />
+        <i3dMapping id="highBeamHigh01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|1|1" />
+        <i3dMapping id="turnLightLeftFront01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|2|0" />
+        <i3dMapping id="turnLightRightFront01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|2|1" />
+        <i3dMapping id="airBlowerFan" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|1" />
+        <i3dMapping id="airBlowerArmHydraulicRef" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|0|0|2" />
+        <i3dMapping id="airBlowerArmHydraulic" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|1" />
+        <i3dMapping id="airBlowerArmHydraulicPunch" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|1|0" />
+        <i3dMapping id="reel" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2" />
+        <i3dMapping id="reelTine01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2|0" />
+        <i3dMapping id="reelTine02" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2|1" />
+        <i3dMapping id="reelTine03" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2|2" />
+        <i3dMapping id="reelTine04" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2|3" />
+        <i3dMapping id="reelTine05" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2|4" />
+        <i3dMapping id="reelTine06" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|2|5" />
+        <i3dMapping id="reelPart" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|3" />
+        <i3dMapping id="reelArmHydraulic01Ref" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|4" />
+        <i3dMapping id="reelArmHydraulic02Ref" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|1|5" />
+        <i3dMapping id="leftTranslateAnimJoint01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="leftTranslateAnimJoint02" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|1" />
+        <i3dMapping id="leftTranslateAnimJoint03" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|2" />
+        <i3dMapping id="leftTranslateAnimJoint04" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|3" />
+        <i3dMapping id="leftTranslateAnimJoint05" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|4" />
+        <i3dMapping id="leftTranslateAnimJoint06" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|5" />
+        <i3dMapping id="rightTranslateAnimJoint01" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|6" />
+        <i3dMapping id="rightTranslateAnimJoint02" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|7" />
+        <i3dMapping id="rightTranslateAnimJoint03" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|8" />
+        <i3dMapping id="rightTranslateAnimJoint04" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|9" />
+        <i3dMapping id="rightTranslateAnimJoint05" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|10" />
+        <i3dMapping id="rightTranslateAnimJoint06" node="0>0|4|1|0|0|0|0|0|0|0|0|0|0|0|2|11" />
+        <i3dMapping id="reelArmHydraulic01" node="0>0|4|1|0|0|0|0|0|0|0|1" />
+        <i3dMapping id="reelArmHydraulic01Punch" node="0>0|4|1|0|0|0|0|0|0|0|1|0" />
+        <i3dMapping id="reelArmHydraulic02" node="0>0|4|1|0|0|0|0|0|0|0|2" />
+        <i3dMapping id="reelArmHydraulic02Punch" node="0>0|4|1|0|0|0|0|0|0|0|2|0" />
+        <i3dMapping id="depthSettingRollerArm" node="0>0|4|1|0|0|0|0|0|0|0|3|0" />
+        <i3dMapping id="depthSettingRollerArmHydraulicRef" node="0>0|4|1|0|0|0|0|0|0|0|3|0|0" />
+        <i3dMapping id="depthSettingRoll" node="0>0|4|1|0|0|0|0|0|0|0|3|0|1" />
+        <i3dMapping id="depthSettingRollerArmHydraulic" node="0>0|4|1|0|0|0|0|0|0|0|4" />
+        <i3dMapping id="depthSettingRollerArmHydraulicPunch" node="0>0|4|1|0|0|0|0|0|0|0|4|0" />
+        <i3dMapping id="cutterRotationNode" node="0>0|4|1|0|0|0|0|0|0|0|5|0" />
+        <i3dMapping id="cutterBarTopMotorArmRef" node="0>0|4|1|0|0|0|0|0|0|0|5|0|0" />
+        <i3dMapping id="cutterBarBottomMotorArmRef" node="0>0|4|1|0|0|0|0|0|0|0|5|0|1" />
+        <i3dMapping id="cutterBarBottomMotorArm01RefFrame" node="0>0|4|1|0|0|0|0|0|0|0|6" />
+        <i3dMapping id="cutterBarBottomMotorArm01" node="0>0|4|1|0|0|0|0|0|0|0|6|0" />
+        <i3dMapping id="cutterBarBottomMotorArm02RefFrame" node="0>0|4|1|0|0|0|0|0|0|0|6|0|0" />
+        <i3dMapping id="cutterBarBottomMotorArm02" node="0>0|4|1|0|0|0|0|0|0|0|6|0|0|0" />
+        <i3dMapping id="cutterBarBottom" node="0>0|4|1|0|0|0|0|0|0|0|6|0|1|0" />
+        <i3dMapping id="cutterBarBottomArm01Ref" node="0>0|4|1|0|0|0|0|0|0|0|6|0|1|0|0" />
+        <i3dMapping id="cutterBarTopMotorArm01RefFrame" node="0>0|4|1|0|0|0|0|0|0|0|7" />
+        <i3dMapping id="cutterBarTopMotorArm01" node="0>0|4|1|0|0|0|0|0|0|0|7|0" />
+        <i3dMapping id="cutterBarTopMotorArm02RefFrame" node="0>0|4|1|0|0|0|0|0|0|0|7|0|0" />
+        <i3dMapping id="cutterBarTopMotorArm02" node="0>0|4|1|0|0|0|0|0|0|0|7|0|0|0" />
+        <i3dMapping id="cutterBarTop" node="0>0|4|1|0|0|0|0|0|0|0|7|0|1|0" />
+        <i3dMapping id="cutterBarTopArm01Ref" node="0>0|4|1|0|0|0|0|0|0|0|7|0|1|0|0" />
+        <i3dMapping id="cutterBarRefFrame" node="0>0|4|1|0|0|0|0|0|0|0|8" />
+        <i3dMapping id="cutterBarTopArm01" node="0>0|4|1|0|0|0|0|0|0|0|9|0" />
+        <i3dMapping id="cutterBarTopArm02" node="0>0|4|1|0|0|0|0|0|0|0|9|1" />
+        <i3dMapping id="cutterBarTopArm03" node="0>0|4|1|0|0|0|0|0|0|0|9|2" />
+        <i3dMapping id="cutterBarTopArm04" node="0>0|4|1|0|0|0|0|0|0|0|9|3" />
+        <i3dMapping id="cutterBarTopArm05" node="0>0|4|1|0|0|0|0|0|0|0|9|4" />
+        <i3dMapping id="cutterBarTopArm06" node="0>0|4|1|0|0|0|0|0|0|0|9|5" />
+        <i3dMapping id="cutterBarTopArm07" node="0>0|4|1|0|0|0|0|0|0|0|9|6" />
+        <i3dMapping id="cutterBarTopArm08" node="0>0|4|1|0|0|0|0|0|0|0|9|7" />
+        <i3dMapping id="cutterBarBottomArm01" node="0>0|4|1|0|0|0|0|0|0|0|10|0" />
+        <i3dMapping id="cutterBarBottomArm02" node="0>0|4|1|0|0|0|0|0|0|0|10|1" />
+        <i3dMapping id="cutterBarBottomArm03" node="0>0|4|1|0|0|0|0|0|0|0|10|2" />
+        <i3dMapping id="cutterBarBottomArm04" node="0>0|4|1|0|0|0|0|0|0|0|10|3" />
+        <i3dMapping id="cutterBarBottomArm05" node="0>0|4|1|0|0|0|0|0|0|0|10|4" />
+        <i3dMapping id="cutterBarBottomArm06" node="0>0|4|1|0|0|0|0|0|0|0|10|5" />
+        <i3dMapping id="cutterBarBottomArm07" node="0>0|4|1|0|0|0|0|0|0|0|10|6" />
+        <i3dMapping id="cutterBarBottomArm08" node="0>0|4|1|0|0|0|0|0|0|0|10|7" />
+        <i3dMapping id="headerBeltSideRollLeft01" node="0>0|4|1|0|0|0|0|0|0|1|0|0" />
+        <i3dMapping id="headerBeltSideRollLeft02" node="0>0|4|1|0|0|0|0|0|0|1|1|0" />
+        <i3dMapping id="headerBeltSideRollRight01" node="0>0|4|1|0|0|0|0|0|0|1|2|0" />
+        <i3dMapping id="headerBeltSideRollRight02" node="0>0|4|1|0|0|0|0|0|0|1|3|0" />
+        <i3dMapping id="headerBeltMainRoll01" node="0>0|4|1|0|0|0|0|0|0|1|4" />
+        <i3dMapping id="headerBeltMainRoll02" node="0>0|4|1|0|0|0|0|0|0|1|5" />
+        <i3dMapping id="beltHeaderSide" node="0>0|4|1|0|0|0|0|0|0|1|6" />
+        <i3dMapping id="beltHeaderMain" node="0>0|4|1|0|0|0|0|0|0|1|7" />
+        <i3dMapping id="yellowRectangle_01_02" node="0>0|4|1|0|0|0|0|0|0|2|0|0" />
+        <i3dMapping id="yellowRectangle_01_14" node="0>0|4|1|0|0|0|0|0|0|2|0|1" />
+        <i3dMapping id="headerFrameHydraulicRef" node="0>0|4|1|0|0|0|0|0|0|3" />
+        <i3dMapping id="headerSpringBaseRef" node="0>0|4|1|0|0|0|0|0|0|4" />
+        <i3dMapping id="headerEffectLinkNode" node="0>0|4|1|0|0|0|0|0|0|5" />
+        <i3dMapping id="headerSpringBase" node="0>0|4|1|0|0|0|0|1" />
+        <i3dMapping id="headerSpringPunch" node="0>0|4|1|0|0|0|0|1|0" />
+        <i3dMapping id="headerSpringRef" node="0>0|4|1|0|0|0|0|1|0|0" />
+        <i3dMapping id="headerSpring" node="0>0|4|1|0|0|0|0|1|1" />
+        <i3dMapping id="feederArmHydraulicRef" node="0>0|4|1|0|0|1" />
+        <i3dMapping id="feederEffectLinkNode" node="0>0|4|1|0|0|2" />
+        <i3dMapping id="feederArmHydraulic" node="0>0|4|1|1" />
+        <i3dMapping id="feederArmHydraulicPunch" node="0>0|4|1|1|0" />
+        <i3dMapping id="feederArmSpringRef" node="0>0|4|1|1|0|0" />
+        <i3dMapping id="feederArmSpring" node="0>0|4|1|1|1" />
+        <i3dMapping id="headerFrameHydraulic" node="0>0|4|1|2" />
+        <i3dMapping id="headerFrameHydraulicPunch" node="0>0|4|1|2|0" />
+        <i3dMapping id="ladder" node="0>0|4|2|0" />
+        <i3dMapping id="ladderArmRef" node="0>0|4|2|0|0" />
+        <i3dMapping id="ladderArm" node="0>0|4|2|1|0" />
+        <i3dMapping id="ladderHydraulicPunch" node="0>0|4|2|1|0|0" />
+        <i3dMapping id="ladderAnimJoint01" node="0>0|4|2|2|0" />
+        <i3dMapping id="ladderAnimJoint02" node="0>0|4|2|2|1" />
+        <i3dMapping id="ladderAnimJoint03" node="0>0|4|2|2|2" />
+        <i3dMapping id="ladderAnimJoint04" node="0>0|4|2|2|3" />
+        <i3dMapping id="ladderAnimJoint05" node="0>0|4|2|2|4" />
+        <i3dMapping id="ladderArmRefFrame" node="0>0|4|2|3" />
+        <i3dMapping id="overloadingFan01" node="0>0|4|3|0|0" />
+        <i3dMapping id="overloadingFan02" node="0>0|4|3|1|0" />
+        <i3dMapping id="overloadingFan03" node="0>0|4|3|2|0" />
+        <i3dMapping id="overloadingFan04" node="0>0|4|3|3|0" />
+        <i3dMapping id="driveShaftFrontLeft01" node="0>0|4|3|4" />
+        <i3dMapping id="driveShaftFrontLeft02Orient" node="0>0|4|3|4|0" />
+        <i3dMapping id="driveShaftFrontLeft02OrientPunch" node="0>0|4|3|4|0|0" />
+        <i3dMapping id="driveShaftFrontLeft02Punch" node="0>0|4|3|4|0|0|0|0" />
+        <i3dMapping id="driveShaftFrontLeft02" node="0>0|4|3|4|0|1|0" />
+        <i3dMapping id="driveShaftFrontRight01" node="0>0|4|3|5" />
+        <i3dMapping id="driveShaftFrontRight02Orient" node="0>0|4|3|5|0" />
+        <i3dMapping id="driveShaftFrontRight02OrientPunch" node="0>0|4|3|5|0|0" />
+        <i3dMapping id="driveShaftFrontRight02Punch" node="0>0|4|3|5|0|0|0|0" />
+        <i3dMapping id="driveShaftFrontRight02" node="0>0|4|3|5|0|1|0" />
+        <i3dMapping id="exhaustFlap" node="0>0|4|4" />
+        <i3dMapping id="effectAngleReferenceNodeRef" node="0>0|4|5" />
+        <i3dMapping id="cabin" node="0>0|5" />
+        <i3dMapping id="steeringWheel" node="0>0|5|0|0" />
+        <i3dMapping id="playerLeftHandTargetRotNode" node="0>0|5|0|0|0" />
+        <i3dMapping id="playerLeftHandTarget" node="0>0|5|0|0|0|0" />
+        <i3dMapping id="seat" node="0>0|5|1" />
+		
+		<i3dMapping id="oxboMKB4TR_dblNaviMapP1_CC" node="0>0|5|4|6"/>
+		<i3dMapping id="oxboMKB4TR_dblNaviiMapPosP1_CC" node="0>0|5|4|6|0"/>
+        
+		<i3dMapping id="oxboMKB4TR_dblRpmSliderP1_SC" node="0>0|5|1|0|0|0|0|0"/>
+		<i3dMapping id="oxboMKB4TR_dblSpeedrSliderP1_SC" node="0>0|5|1|0|0|0|0|1"/>
+		<i3dMapping id="oxboMKB4TR_dblSpeedNumbersP1_SC" node="0>0|5|1|0|0|0|0|2"/>
+		<i3dMapping id="oxboMKB4TR_dblGearDriveP1_SC" node="0>0|5|1|0|0|0|0|3"/>
+		<i3dMapping id="oxboMKB4TR_dblGearNeutralP1_SC" node="0>0|5|1|0|0|0|0|4"/>
+		<i3dMapping id="oxboMKB4TR_dblGearReversP1_SC" node="0>0|5|1|0|0|0|0|5"/>
+		<i3dMapping id="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" node="0>0|5|1|0|0|0|0|6"/>
+		<i3dMapping id="oxboMKB4TR_dblAdBlueSliderP1_SC" node="0>0|5|1|0|0|0|0|7"/>
+		<i3dMapping id="oxboMKB4TR_dblAdblueWarningP1_SC" node="0>0|5|1|0|0|0|0|8"/>
+		<i3dMapping id="oxboMKB4TR_dblAdBluePercNumbersP1_SC" node="0>0|5|1|0|0|0|0|9"/>
+		<i3dMapping id="oxboMKB4TR_dblFuelSliderP1_SC" node="0>0|5|1|0|0|0|0|10"/>
+		<i3dMapping id="oxboMKB4TR_dblFuelWarningP1_SC" node="0>0|5|1|0|0|0|0|11"/>
+		<i3dMapping id="oxboMKB4TR_dblFuelPercNumbersP1_SC" node="0>0|5|1|0|0|0|0|12"/>
+		<i3dMapping id="oxboMKB4TR_dblOilTempSliderP1_SC" node="0>0|5|1|0|0|0|0|13"/>
+		<i3dMapping id="oxboMKB4TR_dblOilTempNumbersP1_SC" node="0>0|5|1|0|0|0|0|14"/>
+		<i3dMapping id="oxboMKB4TR_dblEngineTempSliderP1_SC" node="0>0|5|1|0|0|0|0|15"/>
+		<i3dMapping id="oxboMKB4TR_dblEngineTempWarningP1_SC" node="0>0|5|1|0|0|0|0|16"/>
+		<i3dMapping id="oxboMKB4TR_dblEngineTempNumbersP1_SC" node="0>0|5|1|0|0|0|0|17"/>
+		<i3dMapping id="oxboMKB4TR_dblPrecFarmTonPerHectarP1_SC" node="0>0|5|1|0|0|0|0|18"/>
+		<i3dMapping id="oxboMKB4TR_dblPrecFarmHectarDailyP1_SC" node="0>0|5|1|0|0|0|0|19"/>
+		<i3dMapping id="oxboMKB4TR_dblPrecFarmHectarAllP1_SC" node="0>0|5|1|0|0|0|0|20"/>
+		<i3dMapping id="oxboMKB4TR_dblOperatingTimeP1_SC" node="0>0|5|1|0|0|0|0|21"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFoldedP1_SC" node="0>0|5|1|0|0|0|0|22"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFoldingStateP1_SC" node="0>0|5|1|0|0|0|0|23"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" node="0>0|5|1|0|0|0|0|24"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerUnfoldingP1_SC" node="0>0|5|1|0|0|0|0|25"/>
+		<i3dMapping id="oxboMKB4TR_dblLadderCloseP1_SC" node="0>0|5|1|0|0|0|0|26"/>
+		<i3dMapping id="oxboMKB4TR_dblLadderOpenP1_SC" node="0>0|5|1|0|0|0|0|27"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelP1_SC" node="0>0|5|1|0|0|0|0|28"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelNumbersP1_SC" node="0>0|5|1|0|0|0|0|29"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelPrecNumbersP1_SC" node="0>0|5|1|0|0|0|0|30"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerOverlodingP1_SC" node="0>0|5|1|0|0|0|0|31"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelTonNumbersP1_SC" node="0>0|5|1|0|0|0|0|32"/>
+		<i3dMapping id="oxboMKB4TR_dblFillLevelTonSliderP1_SC" node="0>0|5|1|0|0|0|0|33"/>
+		<i3dMapping id="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" node="0>0|5|1|0|0|0|0|34"/>
+		<i3dMapping id="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" node="0>0|5|1|0|0|0|0|35"/>
+		<i3dMapping id="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" node="0>0|5|1|0|0|0|0|36"/>
+		<i3dMapping id="oxboMKB4TR_dblHeaderLoweredP1_SC" node="0>0|5|1|0|0|0|0|37"/>
+		<i3dMapping id="oxboMKB4TR_dblHeaderLiftedP1_SC" node="0>0|5|1|0|0|0|0|38"/>
+		<i3dMapping id="oxboMKB4TR_dblGPSsatellitP1_SC" node="0>0|5|1|0|0|0|0|39"/>
+		<i3dMapping id="oxboMKB4TR_dblFieldNumbersP1_SC" node="0>0|5|1|0|0|0|0|40"/>
+		<i3dMapping id="oxboMKB4TR_dblGPSactiveP1_SC" node="0>0|5|1|0|0|0|0|41"/>
+		<i3dMapping id="oxboMKB4TR_dblParkBreakP1_SC" node="0>0|5|1|0|0|0|0|42"/>
+		<i3dMapping id="oxboMKB4TR_dblRealClockP1_SC" node="0>0|5|1|0|0|0|0|43"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherSunP1_SC" node="0>0|5|1|0|0|0|0|44"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherCloudP1_SC" node="0>0|5|1|0|0|0|0|45"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherRainP1_SC" node="0>0|5|1|0|0|0|0|46"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherHailP1_SC" node="0>0|5|1|0|0|0|0|47"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherSnowP1_SC" node="0>0|5|1|0|0|0|0|48"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherTwisterP1_SC" node="0>0|5|1|0|0|0|0|49"/>
+		<i3dMapping id="oxboMKB4TR_dblOutsideTempP1_SC" node="0>0|5|1|0|0|0|0|50"/>
+		<i3dMapping id="oxboMKB4TR_dblHLMonP1_SC" node="0>0|5|1|0|0|0|0|51"/>
+		<i3dMapping id="oxboMKB4TR_dblHLMfieldP1_SC" node="0>0|5|1|0|0|0|0|52"/>
+		<i3dMapping id="oxboMKB4TR_dblHLMheadlandP1_SC" node="0>0|5|1|0|0|0|0|53"/>
+		<i3dMapping id="oxboMKB4TR_dblTurnLightLeftP1_SC" node="0>0|5|1|0|0|0|0|54"/>
+		<i3dMapping id="oxboMKB4TR_dblTurnLightRightP1_SC" node="0>0|5|1|0|0|0|0|55"/>
+		<i3dMapping id="oxboMKB4TR_dblDefaultLightP1_SC" node="0>0|5|1|0|0|0|0|56"/>
+		<i3dMapping id="oxboMKB4TR_dblWorkLightP1_SC" node="0>0|5|1|0|0|0|0|57"/>
+		<i3dMapping id="oxboMKB4TR_dblBeaconLightP1_SC" node="0>0|5|1|0|0|0|0|58"/>
+		
+		<i3dMapping id="oxboMKB4TR_mainDisplay" node="0>0|5|1|0|0|0|1|0"/>
+		<i3dMapping id="oxboMKB4TR_mainDecal" node="0>0|5|1|0|0|0|1|1"/>
+		
+        <i3dMapping id="joystick" node="0>0|5|1|0|1|0" />
+        <i3dMapping id="playerRightHandTarget" node="0>0|5|1|0|1|0|0" />
+        <i3dMapping id="interiorGlow03_decals" node="0>0|5|1|0|1|0|1" />
+        <i3dMapping id="interiorGlow02_decals" node="0>0|5|1|0|2" />
+        <i3dMapping id="playerSkinRotNode" node="0>0|5|1|1" />
+        <i3dMapping id="playerSkin" node="0>0|5|1|1|0" />
+        <i3dMapping id="interiorScreenLight01" node="0>0|5|1|3" />
+        <i3dMapping id="hellaWorkingLight01_01" node="0>0|5|2|0|0" />
+        <i3dMapping id="hellaWorkingLight01_02" node="0>0|5|2|0|1" />
+        <i3dMapping id="beaconLight07_03" node="0>0|5|2|0|2" />
+        <i3dMapping id="beaconLight07_04" node="0>0|5|2|0|3" />
+        <i3dMapping id="workingLight03_left_01" node="0>0|5|2|0|4" />
+        <i3dMapping id="workingLight03_left_02" node="0>0|5|2|0|5" />
+        <i3dMapping id="workingLight03_right_01" node="0>0|5|2|0|6" />
+        <i3dMapping id="workingLight03_right_02" node="0>0|5|2|0|7" />
+        <i3dMapping id="workLightFrontLow" node="0>0|5|2|2|0" />
+        <i3dMapping id="workLightFrontHigh" node="0>0|5|2|2|1" />
+        <i3dMapping id="interiorScreenLight02" node="0>0|5|2|3" />
+        <i3dMapping id="wiperFrontArm01" node="0>0|5|3|0|0|0" />
+        <i3dMapping id="wiperFrontArm02" node="0>0|5|3|0|0|0|0|0" />
+        <i3dMapping id="wiperFront" node="0>0|5|3|0|0|0|0|0|0|0" />
+        <i3dMapping id="wiperSideLeftArm01" node="0>0|5|3|0|1|0" />
+        <i3dMapping id="wiperSideLeftArm02" node="0>0|5|3|0|1|0|0|0" />
+        <i3dMapping id="wiperSideLeft" node="0>0|5|3|0|1|0|0|0|0|0" />
+        <i3dMapping id="wiperBackArm" node="0>0|5|3|0|2|0" />
+        <i3dMapping id="wiperBack" node="0>0|5|3|0|2|0|0|0" />
+        <i3dMapping id="wiperSideRightArm01" node="0>0|5|3|0|3|0" />
+        <i3dMapping id="wiperSideRightArm02" node="0>0|5|3|0|3|0|0|0" />
+        <i3dMapping id="wiperSideRight" node="0>0|5|3|0|3|0|0|0|0|0" />
+        <i3dMapping id="doorLeft" node="0>0|5|3|1|0" />
+        <i3dMapping id="switchDefaultLight" node="0>0|5|4|0|0|0" />
+        <i3dMapping id="interiorGlow04_decal" node="0>0|5|4|0|0|0|0" />
+        <i3dMapping id="switchBeaconLight" node="0>0|5|4|0|1|0" />
+        <i3dMapping id="interiorGlow05_decal" node="0>0|5|4|0|1|0|0" />
+        <i3dMapping id="switchWorkLight" node="0>0|5|4|0|2|0" />
+        <i3dMapping id="interiorGlow06_decal" node="0>0|5|4|0|2|0|0" />
+        <i3dMapping id="switchTurnLightHazard" node="0>0|5|4|0|3|0" />
+        <i3dMapping id="iconTurnLightHazard_decal" node="0>0|5|4|0|3|0|0" />
+        <i3dMapping id="switchWorkMode" node="0>0|5|4|0|4|0" />
+        <i3dMapping id="iconSwitchWorkMode_decal" node="0>0|5|4|0|4|0|0" />
+        <i3dMapping id="leverTurnLightHighBeamRot" node="0>0|5|4|1|0|0" />
+        <i3dMapping id="leverTurnLight" node="0>0|5|4|1|0|0|0" />
+        <i3dMapping id="switchWiper" node="0>0|5|4|1|0|0|0|0|0" />
+        <i3dMapping id="pedalBrake" node="0>0|5|4|2|0|0" />
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|5|4|2|0|0|0" />
+        <i3dMapping id="keyIgnition" node="0>0|5|4|3|0" />
+        <i3dMapping id="interiorGlow01_decals" node="0>0|5|4|4" />
+        <i3dMapping id="display01_decals" node="0>0|5|4|5" />
+        <i3dMapping id="playerLeftFootTarget" node="0>0|5|5|0" />
+        <i3dMapping id="playerRightFootTarget" node="0>0|5|5|1" />
+        <i3dMapping id="mirrorLeft" node="0>0|5|6|0" />
+        <i3dMapping id="mirrorRight" node="0>0|5|6|1" />
+        <i3dMapping id="componentJointBack" node="0>0|6|0" />
+        <i3dMapping id="componentJointHeaderRot" node="0>0|6|1" />
+        <i3dMapping id="componentJointHeader" node="0>0|6|1|0" />
+        <i3dMapping id="componentJointBoggieFrontLeft" node="0>0|6|2" />
+        <i3dMapping id="componentJointBoggieFrontRight" node="0>0|6|3" />
+        <i3dMapping id="workAreaCutterStart" node="0>0|7|0" />
+        <i3dMapping id="workAreaCutterWidth" node="0>0|7|1" />
+        <i3dMapping id="workAreaCutterHeight" node="0>0|7|2" />
+        <i3dMapping id="exactFillRootNodeFuel" node="0>0|8|0" />
+        <i3dMapping id="tipOcclusionAreaStartFront" node="0>0|9|0" />
+        <i3dMapping id="tipOcclusionAreaWidthFront" node="0>0|9|1" />
+        <i3dMapping id="tipOcclusionAreaHeightFront" node="0>0|9|2" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|10|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|10|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|10|2" />
+        <i3dMapping id="sizeMarkerLeft" node="0>0|10|3" />
+        <i3dMapping id="sizeMarkerRight" node="0>0|10|4" />
+        <i3dMapping id="sizeMarkerBack" node="0>0|10|5" />
+        <i3dMapping id="rotCenterNode" node="0>0|11" />
+        <i3dMapping id="pipeEffectLinkNode" node="0>0|12|0" />
+        <i3dMapping id="extinguisher" node="0>0|13|0|0" />
+        <i3dMapping id="licensePlateFront" node="0>0|13|1" />
+        <i3dMapping id="hoses" node="0>1|0" />
+        <i3dMapping id="beltBunker" node="0>1|2" />
+        <i3dMapping id="beltFeeder" node="0>1|3" />
+        <i3dMapping id="mkb4TR_back_component2" node="1>" />
+        <i3dMapping id="yellowRectangle_01_05" node="1>0|0|0|0" />
+        <i3dMapping id="yellowRectangle_01_06" node="1>0|0|0|1" />
+        <i3dMapping id="yellowRectangle_01_07" node="1>0|0|0|2" />
+        <i3dMapping id="yellowRectangle_01_08" node="1>0|0|0|3" />
+        <i3dMapping id="yellowRectangle_01_09" node="1>0|0|0|4" />
+        <i3dMapping id="yellowRectangle_01_10" node="1>0|0|0|5" />
+        <i3dMapping id="rearLight63White01" node="1>0|0|0|6" />
+        <i3dMapping id="rearLight63White02" node="1>0|0|0|7" />
+        <i3dMapping id="yellowRound_01" node="1>0|0|0|8" />
+        <i3dMapping id="yellowRound_02" node="1>0|0|0|9" />
+        <i3dMapping id="sideMarker04_left02" node="1>0|0|0|10" />
+        <i3dMapping id="sideMarker04_right02" node="1>0|0|0|11" />
+        <i3dMapping id="mkb4TRLights02_static" node="1>0|0|1|0" />
+        <i3dMapping id="mkb4TRLights02Glass_static" node="1>0|0|1|1" />
+        <i3dMapping id="licensePlateLightHigh" node="1>0|0|2|0" />
+        <i3dMapping id="backLightsHigh" node="1>0|0|3|0" />
+        <i3dMapping id="turnLightLeftBack" node="1>0|0|4|0" />
+        <i3dMapping id="turnLightRightBack" node="1>0|0|4|1" />
+        <i3dMapping id="bunkerLiftArmLeft" node="1>0|1|0|0" />
+        <i3dMapping id="bunkerLiftArmRight" node="1>0|1|0|0|0|0" />
+        <i3dMapping id="bunkerRailPartRight" node="1>0|1|0|0|0|0|0|0" />
+        <i3dMapping id="bunkerRailPartLeft" node="1>0|1|0|0|0|0|1|0" />
+        <i3dMapping id="bunkerLiftArmRightRef" node="1>0|1|0|0|0|0|2" />
+        <i3dMapping id="bunkerRef" node="1>0|1|0|0|0|0|3" />
+        <i3dMapping id="bunkerLiftArmRightRefFrame" node="1>0|1|0|0|1|0" />
+        <i3dMapping id="bunkerRefFrame" node="1>0|1|0|0|2" />
+        <i3dMapping id="bunker" node="1>0|1|0|0|2|0" />
+        <i3dMapping id="bunkerFlap" node="1>0|1|0|0|2|0|0|0|0" />
+        <i3dMapping id="bunkerGearWheels01" node="1>0|1|0|0|2|0|0|0|0|0" />
+        <i3dMapping id="bunkerFlapHydraulicRef" node="1>0|1|0|0|2|0|0|0|0|1" />
+        <i3dMapping id="bunkerEffects" node="1>0|1|0|0|2|0|0|0|0|2" />
+        <i3dMapping id="beltBunkerEffectLinkNode" node="1>0|1|0|0|2|0|0|0|0|2|0" />
+        <i3dMapping id="effectParticleUnloading" node="1>0|1|0|0|2|0|0|0|0|2|1" />
+        <i3dMapping id="bunkerFlapHydraulic" node="1>0|1|0|0|2|0|0|1" />
+        <i3dMapping id="bunkerFlapHydraulicPunch" node="1>0|1|0|0|2|0|0|1|0" />
+        <i3dMapping id="bunkerTopPartLockBack" node="1>0|1|0|0|2|0|0|2" />
+        <i3dMapping id="bunkerTopPartLockFront" node="1>0|1|0|0|2|0|0|3" />
+        <i3dMapping id="bunkerTopPartLockArmFront" node="1>0|1|0|0|2|0|0|4|0" />
+        <i3dMapping id="bunkerTopPartLockArmRef" node="1>0|1|0|0|2|0|0|4|0|0" />
+        <i3dMapping id="bunkerTopPartLockFrontRef" node="1>0|1|0|0|2|0|0|4|0|1" />
+        <i3dMapping id="bunkerTopPartLockArmHydraulicRef" node="1>0|1|0|0|2|0|0|4|0|2" />
+        <i3dMapping id="bunkerTopPartLockArmHydraulic" node="1>0|1|0|0|2|0|0|5" />
+        <i3dMapping id="bunkerTopPartLockArmHydraulicPunch" node="1>0|1|0|0|2|0|0|5|0" />
+        <i3dMapping id="bunkerTopPartLockArmBackRefFrame" node="1>0|1|0|0|2|0|0|6" />
+        <i3dMapping id="bunkerTopPartLockArmBack" node="1>0|1|0|0|2|0|0|6|0" />
+        <i3dMapping id="bunkerTopPartLockArmMiddle" node="1>0|1|0|0|2|0|0|6|0|0" />
+        <i3dMapping id="bunkerTopPartLockBackRef" node="1>0|1|0|0|2|0|0|6|0|1" />
+        <i3dMapping id="bunkerTopPart" node="1>0|1|0|0|2|0|0|7|0" />
+        <i3dMapping id="bunkerTopPartRollsFront" node="1>0|1|0|0|2|0|0|7|0|0" />
+        <i3dMapping id="bunkerTopPartRollsBack" node="1>0|1|0|0|2|0|0|7|0|1" />
+        <i3dMapping id="bunkerGearWheels02" node="1>0|1|0|0|2|0|0|8|0" />
+        <i3dMapping id="bunkerHydraulicRef" node="1>0|1|0|0|2|0|0|9" />
+        <i3dMapping id="bunkerLineStart" node="1>0|1|0|0|2|0|0|10" />
+        <i3dMapping id="bunkerLineEnd" node="1>0|1|0|0|2|0|0|11" />
+        <i3dMapping id="fillVolume" node="1>0|1|0|0|2|0|1|0" />
+        <i3dMapping id="loadInfoBack" node="1>0|1|0|0|2|0|1|1" />
+        <i3dMapping id="unloadInfo" node="1>0|1|0|0|2|0|1|2" />
+        <i3dMapping id="dischargeNode" node="1>0|1|0|0|2|0|1|3|0" />
+        <i3dMapping id="hellaWorkingLight01_03" node="1>0|1|0|0|2|0|2|0|0" />
+        <i3dMapping id="hellaWorkingLight01_04" node="1>0|1|0|0|2|0|2|0|1" />
+        <i3dMapping id="beaconLight07_01" node="1>0|1|0|0|2|0|2|0|2" />
+        <i3dMapping id="beaconLight07_02" node="1>0|1|0|0|2|0|2|0|3" />
+        <i3dMapping id="workLightBackLow" node="1>0|1|0|0|2|0|2|1|0" />
+        <i3dMapping id="workLightBackHigh" node="1>0|1|0|0|2|0|2|1|1" />
+        <i3dMapping id="camera_03" node="1>0|1|0|0|2|0|3" />
+        <i3dMapping id="bunkerHydraulic" node="1>0|1|0|1" />
+        <i3dMapping id="bunkerHydraulicPunch" node="1>0|1|0|1|0" />
+        <i3dMapping id="bunkerLiftArmRightLineStart" node="1>0|1|0|2" />
+        <i3dMapping id="bunkerLiftArmRightLineEnd" node="1>0|1|0|3" />
+        <i3dMapping id="driveShaftBackLeft01" node="1>0|1|1|0" />
+        <i3dMapping id="driveShaftBackLeft02Orient" node="1>0|1|1|0|0" />
+        <i3dMapping id="driveShaftBackLeft02OrientPunch" node="1>0|1|1|0|0|0" />
+        <i3dMapping id="driveShaftBackLeft02Punch" node="1>0|1|1|0|0|0|0|0" />
+        <i3dMapping id="driveShaftBackLeft02" node="1>0|1|1|0|0|1|0" />
+        <i3dMapping id="driveShaftBackRight01" node="1>0|1|1|1" />
+        <i3dMapping id="driveShaftBackRight02Orient" node="1>0|1|1|1|0" />
+        <i3dMapping id="driveShaftBackRight02OrientPunch" node="1>0|1|1|1|0|0" />
+        <i3dMapping id="driveShaftBackRight02Punch" node="1>0|1|1|1|0|0|0|0" />
+        <i3dMapping id="driveShaftBackRight02" node="1>0|1|1|1|0|1|0" />
+        <i3dMapping id="steeringHydraulicLeftRef" node="1>0|1|2" />
+        <i3dMapping id="steeringHydraulicRightRef" node="1>0|1|3" />
+        <i3dMapping id="effectAngleReferenceNode" node="1>0|1|4" />
+        <i3dMapping id="componentJointBoggieBackLeft" node="1>0|2|0" />
+        <i3dMapping id="componentJointBoggieBackRight" node="1>0|2|1" />
+        <i3dMapping id="tipOcclusionAreaStartBack" node="1>0|3|0" />
+        <i3dMapping id="tipOcclusionAreaWidthBack" node="1>0|3|1" />
+        <i3dMapping id="tipOcclusionAreaHeightBack" node="1>0|3|2" />
+        <i3dMapping id="aiReverserNode" node="1>0|4" />
+        <i3dMapping id="aiToolReverserDirectionNode" node="1>0|5" />
+        <i3dMapping id="trailerAttacherJoint" node="1>0|6" />
+        <i3dMapping id="trailerTrigger" node="1>0|7" />
+        <i3dMapping id="wheelChock02_01" node="1>0|8|0|0" />
+        <i3dMapping id="wheelChock02_02" node="1>0|8|0|1" />
+        <i3dMapping id="chockSupport01" node="1>0|8|0|2" />
+        <i3dMapping id="chockSupport02" node="1>0|8|0|3" />
+        <i3dMapping id="licensePlateBack" node="1>0|8|1" />
+        <i3dMapping id="reelArmRotPhys" node="2>0|0" />
+        <i3dMapping id="reelArmTransPhys" node="2>0|0|0|0" />
+        <i3dMapping id="airBlowerArmPhysRot" node="2>0|0|0|0|0" />
+        <i3dMapping id="airBlowerArmPhys" node="2>0|0|0|0|0|0" />
+        <i3dMapping id="colPart11" node="2>0|0|0|0|0|0|0" />
+        <i3dMapping id="colPart10" node="2>0|0|0|0|1" />
+        <i3dMapping id="depthSettingRollerArmPhys" node="2>1" />
+        <i3dMapping id="headerWheelLeft" node="2>1|0" />
+        <i3dMapping id="headerWheelRight" node="2>1|1" />
+        <i3dMapping id="groundReferenceNode" node="2>2" />
+        <i3dMapping id="feederArmRef" node="2>3" />
+        <i3dMapping id="headerFrameRef" node="2>4" />
+        <i3dMapping id="headerRef" node="2>5" />
+        <i3dMapping id="mkb4TR_boogieAxleLeftFront_component4" node="3>" />
+        <i3dMapping id="wheelFrontLeft01" node="3>0" />
+        <i3dMapping id="wheelFrontLeft02" node="3>1" />
+        <i3dMapping id="crawlerLinkNodeFrontLeft" node="3>1|0" />
+        <i3dMapping id="driveShaftFrontLeft03" node="3>1|0|0" />
+        <i3dMapping id="driveShaftFrontLeft02OrientRef" node="3>1|0|1" />
+        <i3dMapping id="wheelFrontLeft02DriveNode" node="3>1|1" />
+        <i3dMapping id="mkb4TR_boogieAxleRightFront_component5" node="4>" />
+        <i3dMapping id="wheelFrontRight01" node="4>0" />
+        <i3dMapping id="wheelFrontRight02" node="4>1" />
+        <i3dMapping id="crawlerLinkNodeFrontRight" node="4>1|0" />
+        <i3dMapping id="driveShaftFrontRight03" node="4>1|0|0" />
+        <i3dMapping id="driveShaftFrontRight02OrientRef" node="4>1|0|1" />
+        <i3dMapping id="wheelFrontRight02DriveNode" node="4>1|1" />
+        <i3dMapping id="mkb4TR_boogieAxleLeftBack_component6" node="5>" />
+        <i3dMapping id="wheelBackLeft01" node="5>0" />
+        <i3dMapping id="wheelBackLeft02" node="5>1" />
+        <i3dMapping id="crawlerLinkNodeBackLeft" node="5>1|0" />
+        <i3dMapping id="driveShaftBackLeft03" node="5>1|0|0" />
+        <i3dMapping id="driveShaftBackLeft02OrientRef" node="5>1|0|1" />
+        <i3dMapping id="wheelBackLeft02DriveNode" node="5>1|1" />
+        <i3dMapping id="mkb4TR_boogieAxleRightBack_component7" node="6>" />
+        <i3dMapping id="wheelBackRight01" node="6>0" />
+        <i3dMapping id="wheelBackRight02" node="6>1" />
+        <i3dMapping id="crawlerLinkNodeBackRight" node="6>1|0" />
+        <i3dMapping id="driveShaftBackRight03" node="6>1|0|0" />
+        <i3dMapping id="driveShaftBackRight02Ref" node="6>1|0|1" />
+        <i3dMapping id="wheelBackRight02DriveNode" node="6>1|1" />
+    </i3dMappings>
+</vehicle>
