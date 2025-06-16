@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="tractor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <parentFile xmlFilename="data/vehicles/volvo/l120H/l120H.xml">
+        <attributes>
+            <set path="vehicle.storeData.name" value="L120H Electric Conversion"/>
+            <set path="vehicle.storeData.price" value="262000"/>
+            <set path="vehicle.storeData.image" value="$data/vehicles/volvo/l120H/store_l120HElectric.png"/>
+
+            <set path="vehicle.base.sounds#filename" value="$data/vehicles/volvo/l120H/sounds/l120HElectric.xml"/>
+
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(0)#isSelectable" value="false"/>
+            <set path="vehicle.motorized.motorConfigurations.motorConfiguration(1)#isSelectable" value="true"/>
+
+            <set path="vehicle.fillUnit.fillUnitConfigurations.fillUnitConfiguration(0)#isSelectable" value="true"/>
+            <remove path="vehicle.fillUnit.fillUnitConfigurations.fillUnitConfiguration(0)"/>
+         </attributes>
+    </parentFile>
+
+    <!-- ONLY FOR ICON GENERATION -->
+    <storeData>
+        <name>L120H Electric Conversion</name>
+        <image>$data/objects/bigBag/chickenFood/store_l120HElectric.png</image>
+        <brand>VOLVO</brand>
+        <category>wheelLoaderVehicles</category>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+</vehicle>
