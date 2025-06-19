@@ -1086,10 +1086,12 @@
 
     <dashboard>
         <groups>
+        	<!--
             <group name="MOTOR_STARTING" electronicsStarting="true"/>
             <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
             <group name="MOTOR_RUNNING" electronicsRunning="true"/>
             <group name="BACK_ATTACHMENT" attacherJointIndices="1"/>
+            -->
 			<!-- Page -->
 			<group name="PAGE1" dbl="page" page="1"/>
 			<group name="PAGE2" dbl="page" page="2"/>
