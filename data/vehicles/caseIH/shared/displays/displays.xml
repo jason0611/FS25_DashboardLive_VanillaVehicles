@@ -341,10 +341,8 @@
 		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderDefArrowDecal" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderAirArrowDecal" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliderTempArrowDecal" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoBack01Decal" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoBack03Decal" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoFront01Decal" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoFront03Decal" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_iconPtoBack01Decal" groups="MOTOR_ACTIVE"/>
 		
 		<!-- general -->
         <dashboard displayType="VISIBILITY" node="aPillarScreenCaseIH_sliders" intensity="0.5" groups="MOTOR_ACTIVE" />
@@ -384,20 +382,20 @@
 
             <objectChange node="aPillarScreenCaseIHCVXDrive_decal" visibilityActive="true" visibilityInactive="false" />
         </configuration>
-
-        <configuration id="PTO_FRONT_BACK">
-            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront02Decal" intensity="0.5" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront03Decal" intensity="0.5" powerTakeOffIndex="2" inverted="true" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack02Decal" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack03Decal" intensity="0.5" powerTakeOffIndex="1" inverted="true" groups="MOTOR_ACTIVE"/>
+		
+		<configuration id="PTO_FRONT">
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.8" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="aPillarScreenCaseIH_iconPtoFront_decal" idleValue="-1" intensity="0.2" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="2 5" node="aPillarScreenCaseIH_dblFrontRpmNumbers" textColor="1 1 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" textAlignment="LEFT" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
 
             <objectChange node="aPillarScreenCaseIH_iconPtosFront" visibilityActive="true" visibilityInactive="false"/>
        </configuration>
-        <configuration id="PTO_BACK_ONLY">
-            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack02Decal" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+        <configuration id="PTO_BACK">
+            <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.8" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" node="aPillarScreenCaseIH_iconPtoBack_decal" idleValue="-1" intensity="0.2" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="aPillarScreenCaseIH_dblBackRpmNumbers" textColor="1 1 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" textAlignment="LEFT" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+
+            <objectChange node="aPillarScreenCaseIH_iconPtosBack" visibilityActive="true" visibilityInactive="false"/>
         </configuration>
 
         <configuration id="ATTACHMENT_BACK">
@@ -685,6 +683,7 @@
 		<i3dMapping id="aPillarScreenCaseIH" node="1>0"/>
 		<i3dMapping id="aPillarScreenCaseIH_speed" node="1>0|0|0"/>
 		<i3dMapping id="aPillarScreenCaseIH_rpm" node="1>0|0|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_sliders" node="1>0|1"/>
 		<i3dMapping id="aPillarScreenCaseIH_sliderFuelDecal" node="1>0|1|0"/>
 		<i3dMapping id="aPillarScreenCaseIH_sliderFuelArrowDecal" node="1>0|1|0|0"/>
 		<i3dMapping id="aPillarScreenCaseIH_sliderDefDecal" node="1>0|1|1"/>
@@ -694,6 +693,7 @@
 		<i3dMapping id="aPillarScreenCaseIH_sliderAirDecal" node="1>0|1|3"/>
 		<i3dMapping id="aPillarScreenCaseIH_sliderAirArrowDecal" node="1>0|1|3|0"/>
 		<i3dMapping id="aPillarScreenCaseIH_startingDecals" node="1>0|2|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_icons" node="1>0|2"/>
 		<i3dMapping id="aPillarScreenCaseIH_iconForwardDecal" node="1>0|2|1"/>
 		<i3dMapping id="aPillarScreenCaseIH_iconBackwardDecal" node="1>0|2|2"/>
 		<i3dMapping id="aPillarScreenCaseIH_iconLightDecal" node="1>0|2|3"/>
@@ -702,22 +702,29 @@
 		<i3dMapping id="aPillarScreenCaseIH_iconTurnRightDecal" node="1>0|2|6"/>
 		<i3dMapping id="aPillarScreenCaseIH_iconTurnTrailer1Decal" node="1>0|2|7"/>
 		<i3dMapping id="aPillarScreenCaseIH_iconTurnTrailer2Decal" node="1>0|2|8"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack01Decal" node="1>0|2|9"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack02Decal" node="1>0|2|10"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack03Decal" node="1>0|2|11"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtosFront" node="1>0|2|12"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront01Decal" node="1>0|2|12|0"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront02Decal" node="1>0|2|12|1"/>
-		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront03Decal" node="1>0|2|12|2"/>
 		<i3dMapping id="aPillarScreenCaseIHPowerDrive_decal" node="1>0|3|0"/>
 		<i3dMapping id="aPillarScreenCaseIHPowerDrive_gear" node="1>0|3|0|0"/>
 		<i3dMapping id="aPillarScreenCaseIHCVXDrive_decal" node="1>0|3|1"/>
 		<i3dMapping id="aPillarScreenCaseIHCVXDrive_cruiseControl" node="1>0|3|1|0"/>
 		<i3dMapping id="aPillarScreenCaseIHCVXDrive_sliderMotorLoadDecal" node="1>0|3|1|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtosFront" node="1>0|3|2"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront_decal" node="1>0|3|2|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoFront01Decal" node="1>0|3|2|0|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_dblFrontRpmNumbers" node="1>0|3|2|0|1"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtosBack" node="1>0|3|3"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack_decal" node="1>0|3|3|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_iconPtoBack01Decal" node="1>0|3|3|0|0"/>
+		<i3dMapping id="aPillarScreenCaseIH_dblBackRpmNumbers" node="1>0|3|3|1"/>
 		
 		<!-- aPillar Steyr -->
 		<i3dMapping id="aPillarScreenSteyr" node="2>0"/>
 		<i3dMapping id="aPillarScreenSteyr_decal" node="2>0|0"/>
+		
+		<i3dMapping id="aPillarScreenSteyr_numbersCruiseControl" node="2>0|0|0|0"/>
+		<i3dMapping id="aPillarScreenSteyr_numbersVoltage" node="2>0|0|0|1"/>
+		<i3dMapping id="aPillarScreenSteyr_numbersRPM" node="2>0|0|0|2"/>
+		<i3dMapping id="aPillarScreenSteyr_numbersTime" node="2>0|0|0|3"/>
+		<i3dMapping id="aPillarScreenSteyr_numbersSpeed" node="2>0|0|0|4"/>
 		
 		<i3dMapping id="aPillarScreenSteyr_iconStartingDecals" node="2>0|0|1|0"/>
 		<i3dMapping id="aPillarScreenSteyr_iconForwardDecal" node="2>0|0|1|1"/>

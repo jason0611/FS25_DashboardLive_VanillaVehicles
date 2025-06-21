@@ -2,15 +2,15 @@
 
 <i3D name="cnhDisplays.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.3"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
   </Asset>
 
   <Files>
+    <File fileId="11" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="1" filename="textures/cnhBasicScreen_diffuse.png"/>
     <File fileId="9" filename="textures/cnhGPSScreen_diffuse.png"/>
     <File fileId="13" filename="textures/cnhISOBusScreen_diffuse.png"/>
     <File fileId="12" filename="textures/cnhSystemScreen_diffuse.png"/>
-    <File fileId="11" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
     <File fileId="2" filename="$data/shared/default_normal.dds"/>
@@ -373,23 +373,27 @@
           <Shape name="aPillarScreenCaseIH_iconTurnRightDecal" translation="-0.040284 0.000465 0.093481" shapeId="69" clipDistance="20" nodeId="868" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
           <Shape name="aPillarScreenCaseIH_iconTurnTrailer1Decal" translation="0.012141 0.000465 -0.078743" shapeId="70" clipDistance="20" nodeId="869" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
           <Shape name="aPillarScreenCaseIH_iconTurnTrailer2Decal" translation="4.6e-05 0.000465 -0.07872" shapeId="71" clipDistance="20" nodeId="870" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-          <Shape name="aPillarScreenCaseIH_iconPtoBack01Decal" translation="-0.028409 0.000807 -0.01066" shapeId="72" clipDistance="20" nodeId="871" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-          <Shape name="aPillarScreenCaseIH_iconPtoBack02Decal" translation="-0.033608 0.000807 -0.020374" shapeId="73" clipDistance="20" nodeId="872" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-          <Shape name="aPillarScreenCaseIH_iconPtoBack03Decal" translation="-0.026892 0.000807 -0.020379" shapeId="74" clipDistance="20" nodeId="873" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-          <TransformGroup name="aPillarScreenCaseIH_iconPtosFront" nodeId="874">
-            <Shape name="aPillarScreenCaseIH_iconPtoFront01Decal" translation="-0.028369 0.000807 1.8e-05" shapeId="72" clipDistance="20" nodeId="875" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-            <Shape name="aPillarScreenCaseIH_iconPtoFront02Decal" translation="-0.033608 0.000807 0.007593" shapeId="73" clipDistance="20" nodeId="876" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-            <Shape name="aPillarScreenCaseIH_iconPtoFront03Decal" translation="-0.026892 0.000807 0.007593" shapeId="74" clipDistance="20" nodeId="877" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-          </TransformGroup>
         </TransformGroup>
         <TransformGroup name="configurations" nodeId="878">
-          <Shape name="aPillarScreenCaseIHPowerDrive_decal" shapeId="75" clipDistance="10" nodeId="879" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15">
+          <Shape name="aPillarScreenCaseIHPowerDrive_decal" shapeId="72" clipDistance="10" nodeId="879" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15">
             <TransformGroup name="aPillarScreenCaseIHPowerDrive_gear" translation="-0.005994 0 -0.004428" rotation="90 0 180" nodeId="880"/>
           </Shape>
-          <Shape name="aPillarScreenCaseIHCVXDrive_decal" shapeId="76" clipDistance="10" nodeId="881" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15">
+          <Shape name="aPillarScreenCaseIHCVXDrive_decal" shapeId="73" clipDistance="10" nodeId="881" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15">
             <TransformGroup name="aPillarScreenCaseIHCVXDrive_cruiseControl" translation="0.002956 0 -0.014256" rotation="90 0 180" nodeId="882"/>
-            <Shape name="aPillarScreenCaseIHCVXDrive_sliderMotorLoadDecal" translation="-0.018961 0.000597 -0.032104" shapeId="77" clipDistance="20" nodeId="883" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="aPillarScreenCaseIHCVXDrive_sliderMotorLoadDecal" translation="-0.018961 0.000597 -0.032104" shapeId="74" clipDistance="20" nodeId="883" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
           </Shape>
+          <TransformGroup name="aPillarScreenCaseIH_iconPtosFront" nodeId="1903">
+            <Shape name="aPillarScreenCaseIH_iconPtoFront_decal" translation="-0.034226 0.000725 0.014712" shapeId="75" clipDistance="10" nodeId="1904" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15">
+              <Shape name="aPillarScreenCaseIH_iconPtoFront01Decal" translation="0.005857 8.2e-05 -0.014694" shapeId="76" clipDistance="20" nodeId="1905" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
+              <TransformGroup name="aPillarScreenCaseIH_dblFrontRpmNumbers" translation="0.008 -0.000725 -0.01" rotation="90 0 -180" nodeId="1925"/>
+            </Shape>
+          </TransformGroup>
+          <TransformGroup name="aPillarScreenCaseIH_iconPtosBack" nodeId="1908">
+            <Shape name="aPillarScreenCaseIH_iconPtoBack_decal" translation="-0.034226 0.000725 -0.027983" shapeId="77" clipDistance="10" nodeId="1909" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15">
+              <Shape name="aPillarScreenCaseIH_iconPtoBack01Decal" translation="0.005817 8.2e-05 0.017323" shapeId="76" clipDistance="20" nodeId="1910" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
+            </Shape>
+            <TransformGroup name="aPillarScreenCaseIH_dblBackRpmNumbers" translation="-0.026226 0 -0.022" rotation="90 0 -180" nodeId="1926"/>
+          </TransformGroup>
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
