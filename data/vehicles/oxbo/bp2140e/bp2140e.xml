@@ -895,6 +895,7 @@
 			<dashboard displayType="VISIBILITY" node="oxboBP_dblDefaultLightP1_SC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" node="oxboBP_dblWorkLightP1_SC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" node="oxboBP_dblBeaconLightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboBP_dblOilTempSliderP1_SC" groups="MOTOR_ACTIVE"/>
 			
 			<dashboard displayType="EMITTER" node="oxboBP_dblLadderCloseP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="EMITTER" node="oxboBP_dblLadderOpenP1_SC" baseColor="SHARED_GREY1" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE"/>
@@ -1190,12 +1191,6 @@
         <i3dMapping id="playerRightHandTarget" node="0>0|6|1|0|0|0|0" />
         <i3dMapping id="interiorGlow03_decals" node="0>0|6|1|0|0|0|1" />
 		
-		<i3dMapping id="oxboBP_dblTurnLightLeftP1_SC" node="0>0|6|1|0|1|0|0|53"/>
-		<i3dMapping id="oxboBP_dblTurnLightRightP1_SC" node="0>0|6|1|0|1|0|0|54"/>
-		<i3dMapping id="oxboBP_dblDefaultLightP1_SC" node="0>0|6|1|0|1|0|0|55"/>
-		<i3dMapping id="oxboBP_dblWorkLightP1_SC" node="0>0|6|1|0|1|0|0|56"/>
-		<i3dMapping id="oxboBP_dblBeaconLightP1_SC" node="0>0|6|1|0|1|0|0|57"/>
-		
 		<i3dMapping id="oxboBP_dblNaviMapP1_CC" node="0>0|6|4|7"/>
 		<i3dMapping id="oxboBP_dblNaviMapPosP1_CC" node="0>0|6|4|7|0"/>
 		
@@ -1249,9 +1244,15 @@
 		<i3dMapping id="oxboBP_dblWeatherSnowP1_SC" node="0>0|6|1|0|1|0|0|47"/>
 		<i3dMapping id="oxboBP_dblWeatherTwisterP1_SC" node="0>0|6|1|0|1|0|0|48"/>
 		<i3dMapping id="oxboBP_dblOutsideTempP1_SC" node="0>0|6|1|0|1|0|0|49"/>
-		<i3dMapping id="oxboBP_dblHLMonP1_SC" node="0>0|6|1|0|1|0|0|50"/>
-		<i3dMapping id="oxboBP_dblHLMfieldP1_SC" node="0>0|6|1|0|1|0|0|51"/>
-		<i3dMapping id="oxboBP_dblHLMheadlandP1_SC" node="0>0|6|1|0|1|0|0|52"/>
+		<i3dMapping id="oxboBP_dblFieldNumbersP1_SC" node="0>0|6|1|0|1|0|0|50"/>
+		<i3dMapping id="oxboBP_dblHLMonP1_SC" node="0>0|6|1|0|1|0|0|51"/>
+		<i3dMapping id="oxboBP_dblHLMfieldP1_SC" node="0>0|6|1|0|1|0|0|52"/>
+		<i3dMapping id="oxboBP_dblHLMheadlandP1_SC" node="0>0|6|1|0|1|0|0|53"/>
+		<i3dMapping id="oxboBP_dblTurnLightLeftP1_SC" node="0>0|6|1|0|1|0|0|54"/>
+		<i3dMapping id="oxboBP_dblTurnLightRightP1_SC" node="0>0|6|1|0|1|0|0|55"/>
+		<i3dMapping id="oxboBP_dblDefaultLightP1_SC" node="0>0|6|1|0|1|0|0|56"/>
+		<i3dMapping id="oxboBP_dblWorkLightP1_SC" node="0>0|6|1|0|1|0|0|57"/>
+		<i3dMapping id="oxboBP_dblBeaconLightP1_SC" node="0>0|6|1|0|1|0|0|58"/>
 		
 		<i3dMapping id="oxbobBP_mainDisplay" node="0>0|6|1|0|1|0|1|0"/>
 		<i3dMapping id="oxboBP_mainDecals" node="0>0|6|1|0|1|0|1|1"/>

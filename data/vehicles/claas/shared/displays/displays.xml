@@ -298,9 +298,6 @@
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblAdBlueP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblFuelP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblSwathOutputP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader1380mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader1080mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeader620mP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="cebisLexion_dblHeaderPtoP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
 		
 		<dashboard displayType="EMITTER" node="cebisLexion_dblNeutralGearP1_SC" emitColor="0.027 0.027 0.027 1" emitColorDarkMode="1 1 1 1" intensity="0.5" groups="MOTOR_ACTIVE"/>
@@ -327,7 +324,7 @@
 		<dashboard displayType="TEXT" valueType="motorized.load" option="percent" node="cebisLexion_dblLoadNumbers01P1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="motorized.rpm" node="cebisLexion_dblRpmNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="0000" font="GENERIC" groups="MOTOR_RUNNING"/>
         
-		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisLexion_dblForwardArrowP1_SC" doInterpolation="true" groups="MOTOR_RUNNING">
+		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisLexion_dblArrowForwardP1_SC" doInterpolation="true" groups="MOTOR_RUNNING">
 			<state value="-1" visibility="false"/>
 			<state value="0" visibility="false"/>
 			<state value="1" visibility="true"/>
@@ -337,7 +334,7 @@
 			<state value="0" visibility="true"/>
 			<state value="1" visibility="false"/>
 		</dashboard>
-		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisLexion_dblBackwardArrowP1_SC" doInterpolation="true" groups="MOTOR_RUNNING">
+		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisLexion_dblArrowBackwardP1_SC" doInterpolation="true" groups="MOTOR_RUNNING">
 			<state value="-1" visibility="true"/>
 			<state value="0" visibility="false"/>
 			<state value="1" visibility="false"/>

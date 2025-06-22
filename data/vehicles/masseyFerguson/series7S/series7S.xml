@@ -639,8 +639,6 @@
             <dashboard displayType="TEXT" valueType="outsideTemperature" node="numbersOutsideTemp" textColor="0 0 0 1" emissiveScale="0.4" textMask="00.0" textSize="0.003" font="DIGIT" groups="MOTOR_ACTIVE"/>
 			<!-- SeatConsole Page1 -->
 			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP1_SC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGESC1"/>
-			<!-- CabConsole Page1 -->
-			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP1_CC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGECC1"/>
 			<!-- CabConsole Page2 -->
 			<dashboard displayType="TEXT" valueType="outsideTemperature" node="mfD5_dblOutsideTempP2_CC" textColor="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGECC2"/>
 			<!-- CabConsole Page3 -->
@@ -756,9 +754,6 @@
 		<!-- SeatConsole Page1 --> 
 			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP1_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
 			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP1_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
-		<!-- SeatConsole Page3 --> 
-			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP3_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
-			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP3_SC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
 		<!-- CabConsole Page2 --> 
 			<dashboard displayType="TEXT" valueType="rpm" node="mfD5_dblEngineRpmP2_CC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
 			<dashboard displayType="TEXT" valueType="load" node="mfD5_dblEngineRpmPercentP2_CC" textColor="1 1 1 1" textSize="0.0055" fontThickness="1.2" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
@@ -943,9 +938,10 @@
             <dashboard displayType="EMITTER" node="cabinDecalsLight10" idleValue="0" groups="MOTOR_ACTIVE" intensity="0.2"/>
             <dashboard displayType="EMITTER" node="cabinDecalsLight04" idleValue="0" groups="MOTOR_ACTIVE" intensity="0.2"/>
 			
-			<dashboard displayType="VISIBILITY" node="mfD5_startScreen_SC" idleValue="0" groups="MOTOR_STARTING"/>
-			<dashboard displayType="VISIBILITY" node="mfD5_basicScreenP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
-			<dashboard displayType="EMITTER" node="mfD5_basicScreenP1_SC" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_basicScreenP1_SC" groups="MOTOR_STARTING"/>
+			<dashboard displayType="EMITTER" node="mfD5_startScreen_SC" idleValue="-1" groups="MOTOR_STARTING"/>
+			<dashboard displayType="VISIBILITY" node="mfD5_basicScreenP1_SC" groups="MOTOR_RUNNING PAGECC1"/>
+			<dashboard displayType="EMITTER" node="mfD5_basicScreenP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
 		<!-- SeatConsole Page1 -->
 			<dashboard displayType="VISIBILITY" node="mfD5_dblHLM3PBackLifterP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 			<dashboard displayType="VISIBILITY" node="mfD5_dblHLMBackPtoP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
@@ -979,7 +975,7 @@
 			<dashboard displayType="EMITTER" node="mfD5_dblGPSactiveP2_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC2"/>
 			
 		<!-- CabConsole Page1 -->
-			<dashboard displayType="VISIBILITY" node="mfD5_startScreen_CC" idleValue="0" groups="MOTOR_STARTING"/>
+			<dashboard displayType="EMITTER" node="mfD5_startScreen_CC" idleValue="-1" groups="MOTOR_STARTING"/>
 			<dashboard displayType="VISIBILITY" node="mfD5_gpsScreenP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
 			<dashboard displayType="EMITTER" node="mfD5_gpsScreenP1_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC1"/>
 			
@@ -1038,9 +1034,9 @@
 		<dashboardLive>
 		<!-- SeatConsole Page1 -->
 			<!-- Player Name -->
-			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP1_SC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP1_SC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="...................." textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
 			<!-- Real Clock -->
-			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP1_SC" textColor="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP1_SC" textColor="1 1 1 1" textMask="........" textSize="0.003" textScaleX="1.2" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
 			<!-- HLM -->
 			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMfieldP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMheadlandP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
@@ -1052,8 +1048,8 @@
 			<!-- Lifter State -->
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="1" jointSide="back" jointType="implement" node="mfD5_dblHLM3PBackLifterP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="2" jointSide="front" jointType="implement" node="mfD5_dblHLM3PFrontLifterP1_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
-			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="front" jointType="implement" node="mfD5_dbl3PFrontLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1" />
-			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="back" jointType="implement" node="mfD5_dbl3PBackLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1" />
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" joints="2" jointSide="front" jointType="implement" node="mfD5_dbl3PFrontLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1" />
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" joints="1" jointSide="back" jointType="implement" node="mfD5_dbl3PBackLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGESC1" />
 			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="2" jointSide="front" jointType="implement" option="percent" node="mfD5_dbl3PFrontLifterPercentP1_SC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
 			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="1" jointSide="back" jointType="implement" option="percent" node="mfD5_dbl3PBackLifterPercentP1_SC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
 			<!-- PTO -->
@@ -1088,9 +1084,9 @@
 			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="mfD5_dblNaviMapPositionP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
 		<!-- CabConsole Page2 -->
 			<!-- Player Name -->
-			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP2_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP2_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="...................." textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC2"/>
 			<!-- Real Clock -->
-			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP2_CC" textColor="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP2_CC" textColor="1 1 1 1" textMask="........" textSize="0.003" textScaleX="1.2" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
 			<!-- HLM -->
 			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMfieldP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
 			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMheadlandP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
@@ -1102,8 +1098,8 @@
 			<!-- Lifter State -->
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="1" jointSide="back" jointType="implement" node="mfD5_dblHLM3PBackLifterP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="2" jointSide="front" jointType="implement" node="mfD5_dblHLM3PFrontLifterP2_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC2"/>
-			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="front" jointType="implement" node="mfD5_dbl3PFrontLifterSliderP2_CC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGECC2" />
-			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" jointSide="back" jointType="implement" node="mfD5_dbl3PBackLifterSliderP2_CC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGECC2" />
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" joints="2" jointSide="front" jointType="implement" node="mfD5_dbl3PFrontLifterSliderP2_CC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGECC2" />
+			<dashboard displayType="SLIDER" valueType="base" cmd="liftState" joints="1" jointSide="back" jointType="implement" node="mfD5_dbl3PBackLifterSliderP2_CC" factor="100" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING PAGECC2" />
 			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="2" jointSide="front" jointType="implement" option="percent" node="mfD5_dbl3PFrontLifterPercentP2_CC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
 			<dashboard displayType="TEXT" valueType="base" cmd="liftState" joints="1" jointSide="back" jointType="implement" option="percent" node="mfD5_dbl3PBackLifterPercentP2_CC" default="0" factor="100" textColor="1 1 1 1" textSize="0.004" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC2"/>
 			<!-- PTO -->
@@ -1118,9 +1114,9 @@
 			<dashboard displayType="EMITTER" valueType="base" cmd="connected" joints="1 3 4" node="mfD5_dbl3PBackLifterP2_CC" baseColor="1 1 1 1" emitColor="AMAZONE_ORANGE1" groups="MOTOR_RUNNING PAGECC2"/>	
 		<!-- SeatConsole Page3 -->
 			<!-- Player Name -->
-			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP3_SC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC3"/>
+			<dashboard valueType="base" cmd="playerName" displayType="TEXT" node="mfD5_dblPlayerNameP3_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="...................." textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING PAGECC3"/>
 			<!-- Real Clock -->
-			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP3_SC" textColor="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC3"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="mfD5_dblClockP3_CC" textColor="1 1 1 1" textMask="........" textSize="0.003" textScaleX="1.2" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGECC3"/>
 			<!-- HLM -->
 			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMfieldP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
 			<dashboard displayType="VISIBILITY" valueType="hlm" node="mfD5_dblHLMheadlandP3_CC" groups="MOTOR_RUNNING PAGECC3"/>
@@ -1485,6 +1481,7 @@
 		<i3dMapping id="mfD5_dblGPSsatellitP1_CC" node="0>0|7|7|4|0|4|1|0|6"/>
 		<i3dMapping id="mfD5_dblGPSactiveP1_CC" node="0>0|7|7|4|0|4|1|0|7"/>
 		<i3dMapping id="mfD5_dblNaviMapP1_CC" node="0>0|7|7|4|0|4|1|1|0"/>
+		<i3dMapping id="mfD5_dblNaviMapPositionP1_CC" node="0>0|7|7|4|0|4|1|1|0|0"/>
 		<i3dMapping id="mfD5_gpsScreenP1_CC" node="0>0|7|7|4|0|4|1|2|0"/>
 		<i3dMapping id="mfD5_dblPlayerNameP2_CC" node="0>0|7|7|4|0|4|2|0|0"/>
 		<i3dMapping id="mfD5_dblClockP2_CC" node="0>0|7|7|4|0|4|2|0|1"/>
