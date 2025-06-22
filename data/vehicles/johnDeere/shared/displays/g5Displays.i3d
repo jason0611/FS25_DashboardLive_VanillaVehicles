@@ -6,6 +6,14 @@
   </Asset>
 
   <Files>
+    <File fileId="23" filename="$data/fillPlanes/maize_diffuse.dds"/>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.dds"/>
+    <File fileId="10" filename="$data/shared/default_specular.png"/>
+    <File fileId="6" filename="$data/shared/default_vmask.dds"/>
+    <File fileId="7" filename="$data/shared/white_diffuse.dds"/>
+    <File fileId="16" filename="$data/shared/windowDark_diffuse.dds"/>
+    <File fileId="1" filename="$data/vehicles/johnDeere/shared/displays/g5Displays_diffuse.png"/>
     <File fileId="12" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="18" filename="g5Displays_diffuse.dds"/>
     <File fileId="20" filename="textures/filling_diffuse.dds"/>
@@ -16,14 +24,6 @@
     <File fileId="14" filename="textures/warnings_diffuse.dds"/>
     <File fileId="9" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
     <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
-    <File fileId="23" filename="$data/fillPlanes/maize_diffuse.dds"/>
-    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
-    <File fileId="2" filename="$data/shared/default_normal.dds"/>
-    <File fileId="10" filename="$data/shared/default_specular.png"/>
-    <File fileId="6" filename="$data/shared/default_vmask.dds"/>
-    <File fileId="7" filename="$data/shared/white_diffuse.dds"/>
-    <File fileId="16" filename="$data/shared/windowDark_diffuse.dds"/>
-    <File fileId="1" filename="$data/vehicles/johnDeere/shared/displays/g5Displays_diffuse.png"/>
   </Files>
 
 
@@ -78,12 +78,12 @@
       <Texture fileId="8"/>
       <CustomParameter name="blinkSimple" value="2 0"/>
     </Material>
-    <Material name="g5Displays_01_mat" materialId="19" specularColor="0.501961 1 0.501961" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="18"/>
-      <Normalmap fileId="2"/>
-    </Material>
     <Material name="g5Displays_01_mat" materialId="18" specularColor="0.501961 1 0.501961" customShaderId="4" customShaderVariation="staticLight">
       <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+    </Material>
+    <Material name="g5Displays_01_mat" materialId="19" specularColor="0.501961 1 0.501961" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="18"/>
       <Normalmap fileId="2"/>
     </Material>
     <Material name="g5Displays_02_mat" materialId="20" specularColor="0.501961 1 0.501961" customShaderId="4" customShaderVariation="slider">
@@ -768,7 +768,7 @@
               <TransformGroup name="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" translation="-0.00815794 -0.000353082 0.464341" rotation="90 -4.35775e-05 -180" nodeId="1024">
                 <Shape name="plane" translation="0 0 0.000353124" rotation="90 -5.00895e-06 180" scale="0.00363458 1 0.00136837" shapeId="103" visibility="false" nodeId="1025" castsShadows="false" receiveShadows="false" distanceBlending="false" materialIds="56"/>
               </TransformGroup>
-              <TransformGroup name="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" translation="0.0442265 -0.000353087 0.45516" rotation="90 -4.35775e-05 -180" nodeId="1026"/>
+              <TransformGroup name="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" translation="0.0511089 -0.000353087 0.45516" rotation="90 -4.35775e-05 -180" nodeId="1026"/>
               <TransformGroup name="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" translation="0.138584 -0.000353085 0.571975" rotation="90 -4.35775e-05 -180" nodeId="1027"/>
               <TransformGroup name="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC" translation="0.138584 -0.000353085 0.571975" rotation="90 -4.35775e-05 -180" nodeId="1028"/>
               <TransformGroup name="g5HarvestingPageBasic_dblCvtVmaxFowardNumberP1_SC" translation="0.128181 -0.000353085 0.557675" rotation="90 -4.35775e-05 -180" nodeId="1029"/>
@@ -812,7 +812,7 @@
             <Shape name="g5HarvestingPageBasic_dblSwathSpreadRP1_SC" translation="0.07 -6.966e-18 -0.00733412" rotation="0 -90 0" scale="0.8 1 0.275" shapeId="15" clipDistance="50" nodeId="1065" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
             <Shape name="g5HarvestingPageBasic_dblSwathSliderFakeP1_SC" translation="0.0765189 -6.966e-18 -0.00732002" rotation="0 -90 0" scale="0.8 1 0.04" shapeId="15" clipDistance="50" nodeId="1066" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
             <Shape name="g5HarvestingPageBasic_dblGrainFillP1_SC" translation="0.0326958 0 -0.0548286" rotation="0 180 0" scale="0.0091 1 0.0091" shapeId="111" nodeId="1067" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="9"/>
-            <Shape name="g5HarvestingPageBasic_dblFilllevelSliderP1_SC" translation="0.0491404 -6.966e-18 -0.0339371" scale="1 1 0.4" shapeId="15" clipDistance="50" nodeId="1068" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7">
+            <Shape name="g5HarvestingPageBasic_dblFilllevelSliderP1_SC" translation="0.0491404 -6.966e-18 -0.0321209" scale="1 1 0.31" shapeId="15" clipDistance="50" nodeId="1068" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7">
               <Shape name="0" translation="-7.39784e-05 0 -0.023" rotation="0 -5.00895e-06 0" scale="0.005 1 0.0005" shapeId="103" nodeId="1069" castsShadows="false" receiveShadows="false" distanceBlending="false" decalLayer="3" materialIds="10"/>
               <Shape name="12" translation="-7.39773e-05 0 1.00631e-10" rotation="0 -5.00895e-06 0" scale="0.005 1 0.0005" shapeId="103" nodeId="1070" castsShadows="false" receiveShadows="false" distanceBlending="false" decalLayer="3" materialIds="10"/>
               <Shape name="34" translation="-7.39773e-05 0 0.0115" rotation="0 -5.00895e-06 0" scale="0.005 1 0.0005" shapeId="103" nodeId="1071" castsShadows="false" receiveShadows="false" distanceBlending="false" decalLayer="3" materialIds="10"/>
@@ -886,8 +886,8 @@
             </TransformGroup>
           </TransformGroup>
           <TransformGroup name="naviMap" nodeId="1136">
-            <Shape name="g5HarvestingPageBasic_dblNaviMapP1_SC" translation="-0.021639 0 0.031302" shapeId="123" clipDistance="30" nodeId="1137" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="6">
-              <Shape name="g5HarvestingPageSC_dblNaviPosition" translation="0 0.001 0.0210131" scale="0.5 1 0.5" shapeId="124" clipDistance="30" nodeId="1138" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="23"/>
+            <Shape name="g5HarvestingPageBasic_dblNaviMapP1_SC" translation="-0.022 0.002 0.031302" shapeId="123" clipDistance="30" nodeId="1137" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6">
+              <Shape name="g5HarvestingPageSC_dblNaviPosition" translation="0.000360984 -0.001 0.0210131" scale="0.5 1 0.5" shapeId="124" visibility="false" clipDistance="30" nodeId="1138" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="23"/>
             </Shape>
           </TransformGroup>
           <TransformGroup name="basicScreen" nodeId="1139">
@@ -907,7 +907,7 @@
             <TransformGroup name="numbers" translation="0 0 -0.5" nodeId="1148">
               <TransformGroup name="g5HarvestingPageGPS_dblFilllevelPercentNumberP1_SC" translation="0.104161 -0.000353092 0.473237" rotation="90 -4.35775e-05 -180" nodeId="1149"/>
               <TransformGroup name="g5HarvestingPageGPS_dblFieldNumberP1_SC" translation="-0.130184 -0.000353123 0.423283" rotation="90 -4.35775e-05 180" nodeId="1150"/>
-              <TransformGroup name="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" translation="0.131405 -0.000353096 0.444031" rotation="90 -4.35775e-05 -180" nodeId="1151"/>
+              <TransformGroup name="g5HarvestingPageGPS_dblFruitTypeNumberP1_SC" translation="0.139161 -0.000353097 0.444031" rotation="90 -4.35775e-05 -180" nodeId="1151"/>
               <TransformGroup name="g5HarvestingPageGPS_dblLaneNumbersP1_SC" translation="-0.000722124 0.00123614 0.549531" rotation="90 -4.35775e-05 -180" nodeId="1152"/>
               <TransformGroup name="g5HarvestingPageGPS_dblHeadingDegreesSignNumbersP1_SC" translation="-0.0097085 0.00123614 0.563372" rotation="90 -4.35775e-05 -180" nodeId="1153"/>
               <TransformGroup name="g5HarvestingPageGPS_dblHeadingAngleNumbersP1_SC" translation="-0.00798548 0.00123614 0.560671" rotation="90 -4.35775e-05 -180" nodeId="1154"/>
@@ -938,7 +938,7 @@
             <Shape name="g5HarvestingPageGPS_dblCCspeed3activeP1_SC" translation="-0.0471926 0 0.074807" rotation="1e-06 180 6e-06" scale="2 1 2" shapeId="21" clipDistance="20" nodeId="1178" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="37"/>
           </TransformGroup>
           <TransformGroup name="naviMap" nodeId="1179">
-            <Shape name="g5HarvestingPageGPS_dblNaviMap" translation="0 -0.001 -0.01238" shapeId="132" clipDistance="30" nodeId="1765" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="6">
+            <Shape name="g5HarvestingPageGPS_dblNaviMap" translation="0 -0.001 -0.01238" shapeId="132" clipDistance="30" nodeId="1180" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="6">
               <Shape name="g5HarvestingPageGPS_dblNaviPosition" translation="0 0.001 -0.005" shapeId="133" clipDistance="30" nodeId="1181" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="23">
                 <TransformGroup name="g5HarvestingPageGPS_dblLaneLoadedP1_GPS" translation="8.94057e-10 0 0.0102268" rotation="-1e-05 90 0" scale="0.5 1 3" nodeId="1182">
                   <TransformGroup name="g5HarvestingPageGPS_dblLanesLoaded10mP1_GPS" translation="-0.00033499 0 -6.57737e-05" rotation="-4.37114e-13 -90 0" scale="0.5 1 2" nodeId="1183">
@@ -979,7 +979,7 @@
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
-    <Camera name="work" translation="-0.400536 0.670636 0.498654" rotation="90.2865 0.0572772 -180" nodeId="1206" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
+    <Camera name="work" translation="-0.265291 0.796465 0.290756" rotation="90.2865 0.0572772 -180" nodeId="1206" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
     <TransformGroup name="I_16x16_emitter" translation="-0.202158 1.60693e-08 0.306899" rotation="3e-06 180 -0" clipDistance="20" nodeId="1207">
       <Shape name="I_Park1" translation="-0.046875 5.2e-05 -0.046875" rotation="1e-06 0 6e-06" shapeId="29" clipDistance="20" nodeId="1208" castsShadows="true" receiveShadows="true" materialIds="37"/>
       <Shape name="I_Park2" translation="-0.040625 5.2e-05 -0.046875" rotation="1e-06 0 6e-06" shapeId="96" clipDistance="20" nodeId="1209" castsShadows="true" receiveShadows="true" materialIds="37"/>
