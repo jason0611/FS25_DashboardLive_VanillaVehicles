@@ -414,8 +414,6 @@
             <dashboard displayType="TEXT"        valueType="fuelUsage" node="numbersFuelUsage" textColor="0.9 0.9 0.9 1" textSize="0.004" textMask="00.0" emissiveScale="0.2" font="GENERIC" groups="MOTOR_RUNNING"/>
             <dashboard displayType="TEXT"        valueType="gear" node="numbersGears" textColor="0.9 0.9 0.9 1" textSize="0.005" textMask="00" font="GENERIC" textAlignment="CENTER" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
             <dashboard displayType="ROT"         valueType="movingDirection" node="leverDrivingDirection"  minRot="0 8 0" maxRot="0 -8 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
-            <!-- <dashboard displayType="VISIBILITY"  valueType="directionForward" node="iconForward_decals" groups="MOTOR_ACTIVE"/> -->
-            <!-- <dashboard displayType="VISIBILITY"  valueType="directionBackward" node="iconBackward_decals" groups="MOTOR_ACTIVE"/> -->
             <dashboard displayType="MULTI_STATE" valueType="ignitionState" node="keyIgnition" doInterpolation="true" groups="MOTOR_ACTIVE">
                 <state value="0" rotation="0 0 0"/>
                 <state value="1" rotation="0 0 -117"/>
@@ -625,9 +623,6 @@
             <dashboard displayType="EMITTER" node="engineStartYellow_decals" idleValue="0" baseColor="SHARED_GREY4" emitColor="ORANGE" intensity="0.2" groups="MOTOR_STARTING"/>
             <dashboard displayType="EMITTER" node="displayRunning_decals" idleValue="-1" intensity="0.5" groups="MOTOR_RUNNING"/>
             <dashboard displayType="EMITTER" node="displayCabin_decals" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
-            <!-- <dashboard displayType="EMITTER" node="displayCopilot_decals" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/> -->
-            <!-- <dashboard displayType="VISIBILITY" node="displayCopilotStarting_decals" idleValue="0" groups="MOTOR_STARTING"/> -->
-            <!-- <dashboard displayType="EMITTER" node="displayCopilotStarting_decals" idleValue="0" intensity="0.2" groups="MOTOR_STARTING"/> -->
 			
 			<!-- DBL -->
 			<dashboard displayType="VISIBILITY" node="volvoCoPilotStarting_decals" idleValue="0" groups="MOTOR_STARTING"/>
@@ -747,12 +742,8 @@
         <i3dMapping id="displayStarting_decals" node="0>0|6|3|15" />
         <i3dMapping id="displayRunning_decals" node="0>0|6|3|16" />
         <i3dMapping id="displayCabin_decals" node="0>0|6|3|17" />
-        <!-- <i3dMapping id="displayCopilot_decals" node="0>0|6|3|18" /> -->
-        <!-- <i3dMapping id="displayCopilotStarting_decals" node="0>0|6|3|19" /> -->
         <i3dMapping id="dashboard" node="0>0|6|3|20" />
         <i3dMapping id="interiorGlow_decals" node="0>0|6|3|21" />
-        <!-- <i3dMapping id="iconForward_decals" node="0>0|6|3|22" /> -->
-        <!-- <i3dMapping id="iconBackward_decals" node="0>0|6|3|23" /> -->
         <i3dMapping id="engineStartRed_decals" node="0>0|6|3|24" />
         <i3dMapping id="engineStartYellow_decals" node="0>0|6|3|25" />
         <i3dMapping id="iconPerm_decals" node="0>0|6|3|26" />
@@ -762,7 +753,7 @@
         <i3dMapping id="iconBeacon_decals" node="0>0|6|3|30" />
         <i3dMapping id="iconHighbeam_decals" node="0>0|6|3|31" />
 		
-		<i3dMapping id="displayCopilotStarting_decals" node="0>0|6|3|32|0|0"/>
+		<i3dMapping id="volvoCoPilotStarting_decals" node="0>0|6|3|32|0|0"/>
 		
 		<i3dMapping id="volvoCoPilot_dblRealClockP1_SC" node="0>0|6|3|32|1|0|0"/>
 		<i3dMapping id="volvoCoPilot_dblFrontToolRotDegreeP1_SC" node="0>0|6|3|32|1|0|1"/>
@@ -780,7 +771,7 @@
 		<i3dMapping id="volvoCoPilot_dblWeatherTwisterP1_CC" node="0>0|6|3|32|1|0|13"/>
 		<i3dMapping id="volvoCoPilot_dblSOutsideTempP1_SC" node="0>0|6|3|32|1|0|14"/>
 		
-		<i3dMapping id="displayCopilot_decals" node="0>0|6|3|32|1|1|0"/>
+		<i3dMapping id="volvoCoPilot_mainDisplay_decals" node="0>0|6|3|32|1|1|0"/>
 		
         <i3dMapping id="pedalGas" node="0>0|6|4|0|0" />
         <i3dMapping id="playerRightFootTargetGas" node="0>0|6|4|0|0|0" />

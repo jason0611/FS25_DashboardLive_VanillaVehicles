@@ -1229,6 +1229,7 @@
 		<i3dMapping id="dbl_hlmFieldP2_SC" node="0>0|7|2|3|2|0|20"/>
 		<i3dMapping id="dbl_hlmHeadlandP2_SC" node="0>0|7|2|3|2|0|21"/>
 		<i3dMapping id="dbl_smallMapPlaneP2_SC" node="0>0|7|2|3|2|0|22"/>
+		<i3dMapping id="dbl_smallNaviPositionP2_SC" node="0>0|7|2|3|2|0|22|0"/>
 		<i3dMapping id="dbl_fuelNumbersP2_SC" node="0>0|7|2|3|2|0|23"/>
 		<i3dMapping id="dbl_workHoursNumbersP2_SC" node="0>0|7|2|3|2|0|24"/>
 		<i3dMapping id="dbl_cruiseControl01P2_SC" node="0>0|7|2|3|2|0|25"/>
@@ -1270,6 +1271,7 @@
 		<i3dMapping id="dbl_hlmFieldP3_SC" node="0>0|7|2|3|3|0|20"/>
 		<i3dMapping id="dbl_hlmHeadlandP3_SC" node="0>0|7|2|3|3|0|21"/>
 		<i3dMapping id="dbl_middleMapPlaneP3_SC" node="0>0|7|2|3|3|0|22"/>
+		<i3dMapping id="dbl_middleNaviPositionP3_SC" node="0>0|7|2|3|3|0|22|0"/>
 		<i3dMapping id="dbl_fuelNumbersP3_SC" node="0>0|7|2|3|3|0|23"/>
 		<i3dMapping id="dbl_workHoursNumbersP3_SC" node="0>0|7|2|3|3|0|24"/>
 		<i3dMapping id="dbl_cruiseControl01P3_SC" node="0>0|7|2|3|3|0|25"/>

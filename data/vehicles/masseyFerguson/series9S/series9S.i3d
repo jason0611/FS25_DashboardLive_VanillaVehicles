@@ -1013,7 +1013,7 @@
                       <Shape name="mfD5_dblGPSactiveP3_SC" translation="-0.0388393 0 0.0516224" shapeId="24" clipDistance="30" nodeId="395" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13"/>
                     </TransformGroup>
                     <TransformGroup name="isoBusScreen" clipDistance="30" nodeId="396">
-                      <Shape name="isoBusScreenP3_SC" shapeId="31" clipDistance="30" nodeId="397" castsShadows="false" receiveShadows="true" materialIds="12"/>
+                      <Shape name="isoBusScreenP3_SC" shapeId="31" clipDistance="30" nodeId="397" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12"/>
                     </TransformGroup>
                   </TransformGroup>
                 </TransformGroup>

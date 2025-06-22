@@ -386,14 +386,14 @@
 		<configuration id="PTO_FRONT">
             <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoFront01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.8" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="EMITTER" node="aPillarScreenCaseIH_iconPtoFront_decal" idleValue="-1" intensity="0.2" groups="MOTOR_ACTIVE" />
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="2 5" node="aPillarScreenCaseIH_dblFrontRpmNumbers" textColor="1 1 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" textAlignment="LEFT" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" joints="2 5" node="aPillarScreenCaseIH_dblFrontRpmNumbers" factor="0.5" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="1 1 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" textAlignment="LEFT" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
 
             <objectChange node="aPillarScreenCaseIH_iconPtosFront" visibilityActive="true" visibilityInactive="false"/>
        </configuration>
         <configuration id="PTO_BACK">
             <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenCaseIH_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.8" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="EMITTER" node="aPillarScreenCaseIH_iconPtoBack_decal" idleValue="-1" intensity="0.2" groups="MOTOR_ACTIVE" />
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="aPillarScreenCaseIH_dblBackRpmNumbers" textColor="1 1 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" textAlignment="LEFT" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="aPillarScreenCaseIH_dblBackRpmNumbers" factor="0.500102" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="1 1 1" textSize="0.007" textMask="0000" font="GENERIC_BOLD" textAlignment="LEFT" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
 
             <objectChange node="aPillarScreenCaseIH_iconPtosBack" visibilityActive="true" visibilityInactive="false"/>
         </configuration>
@@ -421,14 +421,16 @@
         <dashboard displayType="TEXT" valueType="motorized.speed" node="aPillarScreenSteyr_numbersSpeed" textColor="0 0 0" textSize="0.006" textMask="00.0" textAlignment="LEFT" emissiveScale="0.4" font="GENERIC_BOLD" fontThickness="0.6" groups="MOTOR_ACTIVE" minActiveValue="10"/>
 
         <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="aPillarScreenSteyr_numbersCruiseControl" textColor="0.5529 0.0118 0.0078" textSize="0.0055" textMask="00.0" font="GENERIC_BOLD" fontThickness="1" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
-
+		
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" joints="2 5" node="aPillarScreenSteyr_dblFrontRpmNumbers" factor="0.5" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="0 0 0" textSize="0.005" textMask="0000" font="GENERIC_BOLD" textAlignment="CENTER" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="back" joints="1 3 4" node="aPillarScreenSteyr_dblBackRpmNumbers" factor="0.500102" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="0 0 0" textSize="0.005" textMask="0000" font="GENERIC_BOLD" textAlignment="CENTER" fontThickness="0.6" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
+		
         <!-- icons -->
         <dashboard displayType="EMITTER" node="aPillarScreenSteyr_iconStartingDecals" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_STARTING" />
         <dashboard displayType="EMITTER" node="aPillarScreenSteyr_iconAlwaysActiveDecal" intensity="0.5" baseColor="0.02 0.02 0.02" groups="MOTOR_ACTIVE" />
         <dashboard displayType="VISIBILITY" node="aPillarScreenSteyr_sliderAlwaysActiveDecal" intensity="0.5" groups="MOTOR_ACTIVE" />
 
-        <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoFront02Decal" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
-        <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoBack02Decal" powerTakeOffIndex="2" groups="MOTOR_ACTIVE"/>
+
         <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoFront01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" valueType="powerTakeOffs.state" node="aPillarScreenSteyr_iconPtoBack01Decal" baseColor="0.57 0.57 0.57" emitColor="SHARED_YELLOW2" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_ACTIVE"/>
 
@@ -725,6 +727,8 @@
 		<i3dMapping id="aPillarScreenSteyr_numbersRPM" node="2>0|0|0|2"/>
 		<i3dMapping id="aPillarScreenSteyr_numbersTime" node="2>0|0|0|3"/>
 		<i3dMapping id="aPillarScreenSteyr_numbersSpeed" node="2>0|0|0|4"/>
+		<i3dMapping id="aPillarScreenSteyr_dblFrontRpmNumbers" node="2>0|0|0|5"/>
+		<i3dMapping id="aPillarScreenSteyr_dblBackRpmNumbers" node="2>0|0|0|6"/>
 		
 		<i3dMapping id="aPillarScreenSteyr_iconStartingDecals" node="2>0|0|1|0"/>
 		<i3dMapping id="aPillarScreenSteyr_iconForwardDecal" node="2>0|0|1|1"/>
@@ -737,9 +741,7 @@
 		<i3dMapping id="aPillarScreenSteyr_iconTurnTrailer2Decal" node="2>0|0|1|8"/>
 		<i3dMapping id="aPillarScreenSteyr_iconPtoFront01Decal" node="2>0|0|1|9"/>
 		<i3dMapping id="aPillarScreenSteyr_iconPtoBack01Decal" node="2>0|0|1|10"/>
-		<i3dMapping id="aPillarScreenSteyr_iconPtoFront02Decal" node="2>0|0|1|11"/>
-		<i3dMapping id="aPillarScreenSteyr_iconPtoBack02Decal" node="2>0|0|1|12"/>
-		<i3dMapping id="aPillarScreenSteyr_iconAlwaysActiveDecal" node="2>0|0|1|13"/>
+		<i3dMapping id="aPillarScreenSteyr_iconAlwaysActiveDecal" node="2>0|0|1|11"/>
 		
 		<i3dMapping id="aPillarScreenSteyr_sliderFuelDecal" node="2>0|0|2|0"/>
 		<i3dMapping id="aPillarScreenSteyr_sliderDefDecal" node="2>0|0|2|1"/>

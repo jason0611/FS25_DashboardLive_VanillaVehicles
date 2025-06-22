@@ -804,10 +804,7 @@
         </groups>
 
         <default>
-            <!-- <dashboard displayType="VISIBILITY" node="dashboardDisplay01Content" groups="MOTOR_ACTIVE" /> -->
-            <!-- <dashboard displayType="EMITTER" node="dashboardDisplay01" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE" /> -->
             <dashboard displayType="EMITTER" node="dashboardDisplay02" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE" />
-            <dashboard displayType="VISIBILITY" node="slider" idleValue="0.3" intensity="0.3" groups="MOTOR_ACTIVE" />
             <dashboard displayType="EMITTER" node="dashboardDisplay02Decals" idleValue="0" intensity="0.3" groups="MOTOR_ACTIVE" />
 			
 			<dashboard displayType="EMITTER" node="oxboAT_mainDisplay" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
