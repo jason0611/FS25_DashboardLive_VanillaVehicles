@@ -10,7 +10,7 @@
     <File fileId="70" filename="textures/oxboBP2140MainDisplay_diffuse.png"/>
     <File fileId="73" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="72" filename="../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
-    <File fileId="76" filename="../../../../../../mods/FS25_DashboardLive_VanillaVehicles/utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="76" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="74" filename="$data/fillPlanes/greenbean_diffuse.dds"/>
     <File fileId="75" filename="$data/fillPlanes/greenbean_normal.dds"/>
     <File fileId="68" filename="$data/shaders/glowShader.xml"/>
