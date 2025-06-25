@@ -659,7 +659,7 @@
         <dashboard displayType="VISIBILITY" valueType="combine" cmd="overloading" state="1" node="g5Display_aPillarHarvester_BlinkUnloading_AP" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="combine" cmd="overloading" state="1" node="g5Display_aPillarHarvester_BlinkUnloading_AP" baseColor="0.3 0.3 0.3 1" emitColor="GREEN" intensity="0.5" groups="MOTOR_RUNNING"/>
         <dashboard displayType="VISIBILITY" valueType="combine" cmd="pipeFolding" node="g5Display_aPillarHarvester_IconFoldingPipe_AP" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER"node="g5Display_aPillarHarvester_IconFoldingPipe_AP" baseColor="0.3 0.3 0.3 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.5" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_IconFoldingPipe_AP" baseColor="0.3 0.3 0.3 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.5" groups="MOTOR_RUNNING"/>
 
         <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_IconStop_AP" baseColor=".3 .3 .3" emitColor="1 1 1" intensity="0.2" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_IconStopBG_AP" baseColor=".3 .3 .3" emitColor="RED" intensity="0.9" groups="MOTOR_ACTIVE"/>
@@ -677,7 +677,7 @@
         <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_loadBarLoad_decal" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TRANS" valueType="motorized.load" node="g5Display_aPillarHarvester_loadBarLoad_decal" minTrans="0 0 0" maxTrans="0 0 0.035" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE"/>
 
-        <dashboard displayType="VISIBILITY" node="g5Display_aPillarHarvester_cutHeightPin_decalRot"groups="MOTOR_RUNNING PAGEAP1"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" groups="MOTOR_RUNNING PAGEAP1"/>
         <dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TRANS" valueType="dbl.base" cmd="liftState" jointSide="front" factor="1" minValueTrans="0.3" maxValueTrans=".5" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" minTrans="0 0 -0.03" maxTrans="0 0 0" doInterpolation="true" interpolationSpeed="0.0003" groups="MOTOR_ACTIVE PAGEAP1"/>
         

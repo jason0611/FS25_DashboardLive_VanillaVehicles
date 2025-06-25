@@ -979,7 +979,6 @@
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
-    <Camera name="work" translation="-0.265291 0.796465 0.290756" rotation="90.2865 0.0572772 -180" nodeId="1206" fov="60" nearClip="0.01" farClip="1000" orthographicHeight="1"/>
     <TransformGroup name="I_16x16_emitter" translation="-0.202158 1.60693e-08 0.306899" rotation="3e-06 180 -0" clipDistance="20" nodeId="1207">
       <Shape name="I_Park1" translation="-0.046875 5.2e-05 -0.046875" rotation="1e-06 0 6e-06" shapeId="29" clipDistance="20" nodeId="1208" castsShadows="true" receiveShadows="true" materialIds="37"/>
       <Shape name="I_Park2" translation="-0.040625 5.2e-05 -0.046875" rotation="1e-06 0 6e-06" shapeId="96" clipDistance="20" nodeId="1209" castsShadows="true" receiveShadows="true" materialIds="37"/>
