@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+	
+	<group name="DARKMODE" dbl="darkmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/>
+<!-- Pages SC -->
+	<group name="PAGESC1" dbl="page" group="1" page="1"/>
+	<group name="PAGESC2" dbl="page" group="1" page="2"/>
+	<group name="PAGESC3" dbl="page" group="1" page="3"/>
+	
+	<compound linkNode="oneDisplayArmrest" filename="../FS25_DashboardLive_VanillaVehicles/data/vehicles/fendt/shared/varioTronicDisplays.xml" name="FENDT_VARIO_TRONIC_POWER_MAIN"/>
+
+    <dashboardCompound name="FENDT_VARIO_TRONIC_POWER_MAIN" filename="data/vehicles/fendt/shared/varioTronicDisplays.i3d" node="varioTronicPowerDashboard">
+		
+		<dashboard displayType="AUDIO" valueType="dbl.base" audioName="varioTronic_dblStartScreen" loop="1" volume="0.5" audioFile="../FS25_DashboardLive_VanillaVehicles/utils/sounds/fendtBoot.ogg" groups="MOTOR_STARTING"/>
+		
+	<!-- Start Screen -->
+		<dashboard displayType="EMITTER" node="varioTronicP_startScreen" idleValue="-1" intensity="0.5" groups="MOTOR_STARTING"/>
+	<!-- Page1 -->
+		<dashboard displayType="VISIBILITY" node="varioTronicP_mainDisplay" groups="MOTOR_RUNNING PAGESC1 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_mainDisplayDM" groups="MOTOR_RUNNING PAGESC1 DARKMODE"/>
+		
+		<!-- Lifter State -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" joints="2" jointSide="front" jointType="implement" node="varioTronicP_dblFrontLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" joints="1" jointSide="back" jointType="implement" node="varioTronicP_dblBackLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- PTO -->
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="2 5" jointSide="front" node="varioTronicP_dblFrontPtoRpmNumbersP1_SC" factor="0.5" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="1 3 4" jointSide="back" node="varioTronicP_dblBackPtoRpmNumbersP1_SC" factor="0.500102" doInterpolation="true" interpolationSpeed="0.3" max="1002" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Cruise Control -->
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="varioTronicP_dblCruiseControl00NumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.cc" cmd="active" state="2" node="varioTronicP_dblCruiseControl01NumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="varioTronicP_dblCCfrontMemoP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControlReverse" node="varioTronicP_dblCCbackMemoP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		
+	<!-- Page2 -->
+		<dashboard displayType="VISIBILITY" node="varioTronicP_secondDisplay" groups="MOTOR_RUNNING PAGESC2 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_secondDisplayDM" groups="MOTOR_RUNNING PAGESC2 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="varioTronicP_dblHLMonP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_dblGPSinactiveP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_dblGPSsatellitP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+		<!-- WorkWidth -->
+		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="varioTronicP_dblWorkWidthNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" emissiveScale="0.5" textSize="0.0045" textMask="00.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- GPS -->
+		<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="varioTronicP_dblCompassP2_SC" textColor="1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="heading" node="varioTronicP_dblCompassNumbersP2_SC" textColor="1 1 1" textSize="0.003" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="varioTronicP_dblFieldNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicP_dblGPSactiveP2_SC" cond="not" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="varioTronicP_dblGPSsatellitP2_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicP_dblGPSinactiveP2_SC" doInterpolation="true" groups="MOTOR_RUNNING PAGESC2">
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<!-- HLM -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="headland" node="varioTronicP_dblHLMheadlandP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="field" node="varioTronicP_dblHLMfieldP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="" node="varioTronicP_dblHLMonP2_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" node="varioTronicP_dblHLMfieldP2_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" node="varioTronicP_dblHLMheadlandP2_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicP_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicP_dblNaviMapPosP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+	<!-- Page3 -->
+		<dashboard displayType="VISIBILITY" node="varioTronicP_thirdDisplay" groups="MOTOR_RUNNING PAGESC3 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_thirdDisplayDM" groups="MOTOR_RUNNING PAGESC3 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="varioTronicP_dblHLMonP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_dblGPSinactiveP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicP_dblGPSsatellitP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		
+		<!-- fillUnit -->
+		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" fillType="DIESEL" node="varioTronicP_dblFuelLevelNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" fillType="DEF" node="varioTronicP_dblAdBlueLevelNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC3"/>
+		<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="varioTronicP_dblFuelUsageNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="000.00" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="varioTronicP_dblEngineTempNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="battery" node="varioTronicP_dblEngineVoltNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="00.0" textAlignment="RIGHT" textScaleX="0.8" font="GENERIC" groups="MOTOR_RUNNING PAGESC3"/>
+		<!-- enterable -->
+		<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="varioTronicP_dblOperatingTimeNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC3"/>
+		<!-- WorkWidth -->
+		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="varioTronicP_dblWorkWidthNumbersP3_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" emissiveScale="0.5" textSize="0.0045" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC3"/>
+		<!-- GPS -->
+		<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="varioTronicP_dblCompassP3_SC" textColor="1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="heading" node="varioTronicP_dblCompassNumbersP3_SC" textColor="1 1 1" textSize="0.003" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicP_dblGPSactiveP3_SC" cond="not" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="varioTronicP_dblGPSsatellitP3_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicP_dblGPSinactiveP3_SC" doInterpolation="true" groups="MOTOR_RUNNING PAGESC3">
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<!-- HLM -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="headland" node="varioTronicP_dblHLMheadlandP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="field" node="varioTronicP_dblHLMfieldP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="" node="varioTronicP_dblHLMonP3_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" node="varioTronicP_dblHLMfieldP3_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" node="varioTronicP_dblHLMheadlandP3_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC3"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicP_dblNaviMapP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicP_dblNaviMapPosP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+    </dashboardCompound>
+	
+	<compound linkNode="oneDisplayArmrest" filename="../FS25_DashboardLive_VanillaVehicles/data/vehicles/fendt/shared/varioTronicDisplays.xml" name="FENDT_VARIO_TRONIC_POWER_PLUS_MAIN"/>
+	
+	<dashboardCompound name="FENDT_VARIO_TRONIC_POWER_PLUS_MAIN" filename="data/vehicles/fendt/shared/varioTronicDisplays.i3d" node="varioTronicPowerPlusPDashboard">
+	
+		<dashboard displayType="AUDIO" valueType="dbl.base" audioName="varioTronic_dblStartScreen" loop="1" volume="0.5" audioFile="../FS25_DashboardLive_VanillaVehicles/utils/sounds/fendtBoot.ogg" groups="MOTOR_STARTING"/>
+	
+	<!-- Start Screen -->
+		<dashboard displayType="EMITTER" node="varioTronicPP_startScreen" idleValue="-1" intensity="0.5" groups="MOTOR_STARTING"/>
+	<!-- Page1 -->
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_mainDisplay" groups="MOTOR_RUNNING PAGESC1 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_mainDisplayDM" groups="MOTOR_RUNNING PAGESC1 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblHLMonP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblGPSinactiveP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblGPSsatellitP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		
+		<!-- fillUnit -->
+		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" fillType="DIESEL" node="varioTronicPP_dblFuelLevelNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" fillType="DEF" node="varioTronicPP_dblAdBlueLevelNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="varioTronicPP_dblFuelUsageNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="000.00" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="varioTronicPP_dblEngineTempNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="battery" node="varioTronicPP_dblEngineVoltNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="00.0" textAlignment="RIGHT" textScaleX="0.8" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- enterable -->
+		<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="varioTronicPP_dblOperatingTimeNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- WorkWidth -->
+		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="varioTronicPP_dblWorkWidthNumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" emissiveScale="0.5" textSize="0.0045" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- GPS -->
+		<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="varioTronicPP_dblCompassP1_SC" textColor="1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="heading" node="varioTronicPP_dblCompassNumbersP1_SC" textColor="1 1 1" textSize="0.003" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicPP_dblGPSactiveP1_SC" cond="not" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="varioTronicPP_dblGPSsatellitP1_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicPP_dblGPSinactiveP1_SC" doInterpolation="true" groups="MOTOR_RUNNING PAGESC1">
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<!-- HLM -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="headland" node="varioTronicPP_dblHLMheadlandP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="field" node="varioTronicPP_dblHLMfieldP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="" node="varioTronicPP_dblHLMonP1_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" node="varioTronicPP_dblHLMfieldP1_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" node="varioTronicPP_dblHLMheadlandP1_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Lifter State -->
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" joints="2" jointSide="front" jointType="implement" node="varioTronicPP_dblFrontLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" joints="1" jointSide="back" jointType="implement" node="varioTronicPP_dblBackLifterSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- Cruise Control -->
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="varioTronicPP_dblCruiseControl00NumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.cc" cmd="active" state="2" node="varioTronicPP_dblCruiseControl01NumbersP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="varioTronicPP_dblCCfrontMemoP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="drivable.cruiseControlReverse" node="varioTronicPP_dblCCbackMemoP1_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC1"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicPP_dblNaviMapP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicPP_dblNaviMapPosP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		
+	<!-- Page2 -->
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_secondDisplay" groups="MOTOR_RUNNING PAGESC2 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_secondDisplayDM" groups="MOTOR_RUNNING PAGESC2 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblHLMonP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblGPSinactiveP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblGPSsatellitP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+		<!-- fillUnit -->
+		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" fillType="DIESEL" node="varioTronicPP_dblFuelLevelNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" fillType="DEF" node="varioTronicPP_dblAdBlueLevelNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- motorized -->
+		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="varioTronicPP_dblFuelUsageNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="000.00" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="varioTronicPP_dblEngineTempNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="battery" node="varioTronicPP_dblEngineVoltNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="00.0" textAlignment="RIGHT" textScaleX="0.8" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- enterable -->
+		<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="varioTronicPP_dblOperatingTimeNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- WorkWidth -->
+		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="varioTronicPP_dblWorkWidth00NumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" emissiveScale="0.5" textSize="0.0045" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="varioTronicPP_dblWorkWidth01NumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" emissiveScale="0.5" textSize="0.0045" textMask="00.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- GPS -->
+		<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="varioTronicPP_dblCompassP2_SC" textColor="1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="heading" node="varioTronicPP_dblCompassNumbersP2_SC" textColor="1 1 1" textSize="0.003" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="varioTronicPP_dblFieldNumbersP2_SC" textColor="0.05 0.05 0.05 1" textColorDarkMode="1 1 1" textSize="0.0045" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicPP_dblGPSactiveP2_SC" cond="not" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="varioTronicPP_dblGPSsatellitP2_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicPP_dblGPSinactiveP2_SC" doInterpolation="true" groups="MOTOR_RUNNING PAGESC2">
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<!-- HLM -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="headland" node="varioTronicPP_dblHLMheadlandP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="field" node="varioTronicPP_dblHLMfieldP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="" node="varioTronicPP_dblHLMonP2_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" node="varioTronicPP_dblHLMfieldP2_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" node="varioTronicPP_dblHLMheadlandP2_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicPP_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicPP_dblNaviMapPosP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+	<!-- Page2 -->
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_thirdDisplay" groups="MOTOR_RUNNING PAGESC3 LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_thirdDisplayDM" groups="MOTOR_RUNNING PAGESC3 DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblHLMonP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblGPSinactiveP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="varioTronicPP_dblGPSsatellitP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		
+		<!-- GPS -->
+		<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="varioTronicPP_dblCompassP3_SC" textColor="1 1 1" textSize="0.003" textMask="00" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="TEXT" valueType="base" cmd="heading" node="varioTronicPP_dblCompassNumbersP3_SC" textColor="1 1 1" textSize="0.003" textMask="000" font="GENERIC_BOLD" textAlignment="CENTER" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicPP_dblGPSactiveP3_SC" cond="not" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="varioTronicPP_dblGPSsatellitP3_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="MULTI_STATE" valueType="ai.automaticSteering.steeringEngaged" node="varioTronicPP_dblGPSinactiveP3_SC" doInterpolation="true" groups="MOTOR_RUNNING PAGESC3">
+			<state value="0" visibility="true"/>
+			<state value="1" visibility="false"/>
+		</dashboard>
+		<!-- HLM -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="headland" node="varioTronicPP_dblHLMheadlandP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="field" node="varioTronicPP_dblHLMfieldP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="" node="varioTronicPP_dblHLMonP3_SC" baseColor="1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.6" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" node="varioTronicPP_dblHLMfieldP3_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" node="varioTronicPP_dblHLMheadlandP3_SC" baseColor="1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_RUNNING PAGESC3"/>
+		<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicPP_dblNaviMapP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicPP_dblNaviMapPosP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+	</dashboardCompound>
+
+    <i3dMappings>
+		<!-- Power Page1 -->
+		<i3dMapping id="varioTronicPowerDashboard" node="0>"/>
+		<i3dMapping id="varioTronicP_startScreen" node="0>0|0"/>
+		<i3dMapping id="varioTronicP_dblFrontLifterSliderP1_SC" node="0>1|0|0"/>
+		<i3dMapping id="varioTronicP_dblBackLifterSliderP1_SC" node="0>1|0|1"/>
+		<i3dMapping id="varioTronicP_dblFrontPtoRpmNumbersP1_SC" node="0>1|0|2"/>
+		<i3dMapping id="varioTronicP_dblBackPtoRpmNumbersP1_SC" node="0>1|0|3"/>
+		<i3dMapping id="varioTronicP_dblCruiseControl00NumbersP1_SC" node="0>1|0|4"/>
+		<i3dMapping id="varioTronicP_dblCruiseControl01NumbersP1_SC" node="0>1|0|5"/>
+		<i3dMapping id="varioTronicP_dblCCfrontMemoP1_SC" node="0>1|0|6"/>
+		<i3dMapping id="varioTronicP_dblCCbackMemoP1_SC" node="0>1|0|7"/>
+		<i3dMapping id="varioTronicP_mainDisplay" node="0>1|1|0"/>
+		<i3dMapping id="varioTronicP_mainDisplayDM" node="0>1|1|1"/>
+		<!-- Power Page2 -->
+		<i3dMapping id="varioTronicP_dblWorkWidthNumbersP2_SC" node="0>2|0|0"/>
+		<i3dMapping id="varioTronicP_dblFieldNumbersP2_SC" node="0>2|0|1"/>
+		<i3dMapping id="varioTronicP_dblGPSinactiveP2_SC" node="0>2|0|2"/>
+		<i3dMapping id="varioTronicP_dblGPSactiveP2_SC" node="0>2|0|3"/>
+		<i3dMapping id="varioTronicP_dblGPSsatellitP2_SC" node="0>2|0|4"/>
+		<i3dMapping id="varioTronicP_dblCompassP2_SC" node="0>2|0|5"/>
+		<i3dMapping id="varioTronicP_dblCompassNumbersP2_SC" node="0>2|0|6"/>
+		<i3dMapping id="varioTronicP_dblHLMonP2_SC" node="0>2|0|7"/>
+		<i3dMapping id="varioTronicP_dblHLMfieldP2_SC" node="0>2|0|8"/>
+		<i3dMapping id="varioTronicP_dblHLMheadlandP2_SC" node="0>2|0|9"/>
+		<i3dMapping id="varioTronicP_dblNaviMapP2_SC" node="0>2|1|0"/>
+		<i3dMapping id="varioTronicP_dblNaviMapPosP2_SC" node="0>2|1|0|0"/>
+		<i3dMapping id="varioTronicP_secondDisplay" node="0>2|2|0"/>
+		<i3dMapping id="varioTronicP_secondDisplayDM" node="0>2|2|1"/>
+		<!-- Power Page3 -->
+		<i3dMapping id="varioTronicP_dblFuelLevelNumbersP3_SC" node="0>3|0|0"/>
+		<i3dMapping id="varioTronicP_dblFuelUsageNumbersP3_SC" node="0>3|0|1"/>
+		<i3dMapping id="varioTronicP_dblOperatingTimeNumbersP3_SC" node="0>3|0|2"/>
+		<i3dMapping id="varioTronicP_dblAdBlueLevelNumbersP3_SC" node="0>3|0|3"/>
+		<i3dMapping id="varioTronicP_dblEngineTempNumbersP3_SC" node="0>3|0|4"/>
+		<i3dMapping id="varioTronicP_dblEngineVoltNumbersP3_SC" node="0>3|0|5"/>
+		<i3dMapping id="varioTronicP_dblWorkWidthNumbersP3_SC" node="0>3|0|6"/>
+		<i3dMapping id="varioTronicP_dblGPSinactiveP3_SC" node="0>3|0|7"/>
+		<i3dMapping id="varioTronicP_dblGPSactiveP3_SC" node="0>3|0|8"/>
+		<i3dMapping id="varioTronicP_dblGPSsatellitP3_SC" node="0>3|0|9"/>
+		<i3dMapping id="varioTronicP_dblCompassP3_SC" node="0>3|0|10"/>
+		<i3dMapping id="varioTronicP_dblCompassNumbersP3_SC" node="0>3|0|11"/>
+		<i3dMapping id="varioTronicP_dblHLMonP3_SC" node="0>3|0|12"/>
+		<i3dMapping id="varioTronicP_dblHLMfieldP3_SC" node="0>3|0|13"/>
+		<i3dMapping id="varioTronicP_dblHLMheadlandP3_SC" node="0>3|0|14"/>
+		<i3dMapping id="varioTronicP_dblNaviMapP3_SC" node="0>3|1|0"/>
+		<i3dMapping id="varioTronicP_dblNaviMapPosP3_SC" node="0>3|1|0|0"/>
+		<i3dMapping id="varioTronicP_thirdDisplay" node="0>3|2|0"/>
+		<i3dMapping id="varioTronicP_thirdDisplayDM" node="0>3|2|1"/>
+		
+		<!-- Power Plus Page1 -->
+		<i3dMapping id="varioTronicPowerPlusPDashboard" node="1>"/>
+		<i3dMapping id="varioTronicPP_startScreen" node="1>0|0"/>
+		<i3dMapping id="varioTronicPP_dblFuelLevelNumbersP1_SC" node="1>1|0|0"/>
+		<i3dMapping id="varioTronicPP_dblFuelUsageNumbersP1_SC" node="1>1|0|1"/>
+		<i3dMapping id="varioTronicPP_dblOperatingTimeNumbersP1_SC" node="1>1|0|2"/>
+		<i3dMapping id="varioTronicPP_dblAdBlueLevelNumbersP1_SC" node="1>1|0|3"/>
+		<i3dMapping id="varioTronicPP_dblEngineTempNumbersP1_SC" node="1>1|0|4"/>
+		<i3dMapping id="varioTronicPP_dblEngineVoltNumbersP1_SC" node="1>1|0|5"/>
+		<i3dMapping id="varioTronicPP_dblWorkWidthNumbersP1_SC" node="1>1|0|6"/>
+		<i3dMapping id="varioTronicPP_dblGPSinactiveP1_SC" node="1>1|0|7"/>
+		<i3dMapping id="varioTronicPP_dblGPSactiveP1_SC" node="1>1|0|8"/>
+		<i3dMapping id="varioTronicPP_dblGPSsatellitP1_SC" node="1>1|0|9"/>
+		<i3dMapping id="varioTronicPP_dblHLMonP1_SC" node="1>1|0|10"/>
+		<i3dMapping id="varioTronicPP_dblHLMfieldP1_SC" node="1>1|0|11"/>
+		<i3dMapping id="varioTronicPP_dblHLMheadlandP1_SC" node="1>1|0|12"/>
+		<i3dMapping id="varioTronicPP_dblCompassP1_SC" node="1>1|0|13"/>
+		<i3dMapping id="varioTronicPP_dblCompassNumbersP1_SC" node="1>1|0|14"/>
+		<i3dMapping id="varioTronicPP_dblFrontLifterSliderP1_SC" node="1>1|0|15"/>
+		<i3dMapping id="varioTronicPP_dblBackLifterSliderP1_SC" node="1>1|0|16"/>
+		<i3dMapping id="varioTronicPP_dblFrontPtoRpmNumbersP1_SC" node="1>1|0|17"/>
+		<i3dMapping id="varioTronicPP_dblBackPtoRpmNumbersP1_SC" node="1>1|0|18"/>
+		<i3dMapping id="varioTronicPP_dblCruiseControl00NumbersP1_SC" node="1>1|0|19"/>
+		<i3dMapping id="varioTronicPP_dblCruiseControl01NumbersP1_SC" node="1>1|0|20"/>
+		<i3dMapping id="varioTronicPP_dblCCfrontMemoP1_SC" node="1>1|0|21"/>
+		<i3dMapping id="varioTronicPP_dblCCbackMemoP1_SC" node="1>1|0|22"/>
+		<i3dMapping id="varioTronicPP_dblNaviMapP1_SC" node="1>1|1|0"/>
+		<i3dMapping id="varioTronicPP_dblNaviMapPosP1_SC" node="1>1|1|0|0"/>
+		<i3dMapping id="varioTronicPP_mainDisplay" node="1>1|2|0"/>
+		<i3dMapping id="varioTronicPP_mainDisplayDM" node="1>1|2|1"/>
+		<!-- Power Plus Page2 -->
+		<i3dMapping id="varioTronicPP_dblFuelLevelNumbersP2_SC" node="1>2|0|0"/>
+		<i3dMapping id="varioTronicPP_dblFuelUsageNumbersP2_SC" node="1>2|0|1"/>
+		<i3dMapping id="varioTronicPP_dblOperatingTimeNumbersP2_SC" node="1>2|0|2"/>
+		<i3dMapping id="varioTronicPP_dblAdBlueLevelNumbersP2_SC" node="1>2|0|3"/>
+		<i3dMapping id="varioTronicPP_dblEngineTempNumbersP2_SC" node="1>2|0|4"/>
+		<i3dMapping id="varioTronicPP_dblEngineVoltNumbersP2_SC" node="1>2|0|5"/>
+		<i3dMapping id="varioTronicPP_dblWorkWidth00NumbersP2_SC" node="1>2|0|6"/>
+		<i3dMapping id="varioTronicPP_dblGPSinactiveP2_SC" node="1>2|0|7"/>
+		<i3dMapping id="varioTronicPP_dblGPSactiveP2_SC" node="1>2|0|8"/>
+		<i3dMapping id="varioTronicPP_dblGPSsatellitP2_SC" node="1>2|0|9"/>
+		<i3dMapping id="varioTronicPP_dblHLMonP2_SC" node="1>2|0|10"/>
+		<i3dMapping id="varioTronicPP_dblHLMfieldP2_SC" node="1>2|0|11"/>
+		<i3dMapping id="varioTronicPP_dblHLMheadlandP2_SC" node="1>2|0|12"/>
+		<i3dMapping id="varioTronicPP_dblCompassP2_SC" node="1>2|0|13"/>
+		<i3dMapping id="varioTronicPP_dblCompassNumbersP2_SC" node="1>2|0|14"/>
+		<i3dMapping id="varioTronicPP_dblWorkWidth01NumbersP2_SC" node="1>2|0|15"/>
+		<i3dMapping id="varioTronicPP_dblFieldNumbersP2_SC" node="1>2|0|16"/>
+		<i3dMapping id="varioTronicPP_dblNaviMapP2_SC" node="1>2|1|0"/>
+		<i3dMapping id="varioTronicPP_dblNaviMapPosP2_SC" node="1>2|1|0|0"/>
+		<i3dMapping id="varioTronicPP_secondDisplay" node="1>2|2|0"/>
+		<i3dMapping id="varioTronicPP_secondDisplayDM" node="1>2|2|1"/>
+		<!-- Power Plus Page3 -->
+		<i3dMapping id="varioTronicPP_dblGPSinactiveP3_SC" node="1>3|0|0"/>
+		<i3dMapping id="varioTronicPP_dblGPSactiveP3_SC" node="1>3|0|1"/>
+		<i3dMapping id="varioTronicPP_dblGPSsatellitP3_SC" node="1>3|0|2"/>
+		<i3dMapping id="varioTronicPP_dblHLMonP3_SC" node="1>3|0|3"/>
+		<i3dMapping id="varioTronicPP_dblHLMfieldP3_SC" node="1>3|0|4"/>
+		<i3dMapping id="varioTronicPP_dblHLMheadlandP3_SC" node="1>3|0|5"/>
+		<i3dMapping id="varioTronicPP_dblCompassP3_SC" node="1>3|0|6"/>
+		<i3dMapping id="varioTronicPP_dblCompassNumbersP3_SC" node="1>3|0|7"/>
+		<i3dMapping id="varioTronicPP_dblNaviMapP3_SC" node="1>3|1|0"/>
+		<i3dMapping id="varioTronicPP_dblNaviMapPosP3_SC" node="1>3|1|0|0"/>
+		<i3dMapping id="varioTronicPP_thirdDisplay" node="1>3|2|0"/>
+		<i3dMapping id="varioTronicPP_thirdDisplayDM" node="1>3|2|1"/>
+	</i3dMappings>
+</dashboardCompounds>
