@@ -2,19 +2,16 @@
 
 <i3D name="DBL_minimap_plane.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="9.0.4"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
   </Asset>
 
   <Files>
-    <File fileId="2" filename="../../shader/minimap.xml"/>
-    <File fileId="1" filename="dashboardSymbols_diffuse.dds"/>
+    <File fileId="2" filename="../../../FS25_DashboardLive/shader/minimap.xml"/>
   </Files>
 
 
   <Materials>
-    <Material name="miniMap" materialId="5" customShaderId="2">
-      <Texture fileId="1"/>
-      <CustomParameter name="lightControl" value="0.2 0 0 0"/>
+    <Material name="miniMap" materialId="5" diffuseColor="1 1 1 1" customShaderId="2">
     </Material>
     <Material name="UnnamedMaterial" materialId="6" diffuseColor="1 1 1 1">
     </Material>
@@ -24,14 +21,10 @@
   <Shapes externalShapesFile="DBL_minimap_plane.i3d.shapes">
   </Shapes>
 
-
-  <Dynamics>
-  </Dynamics>
-
   <Scene>
-      <Shape shapeId="1" name="dbl_mapPlane" nodeId="9" materialIds="5" distanceBlending="false">
-        <Shape shapeId="1" name="dbl_position" translation="0 0.001 0" scale="0.02 0.02 0.02" nodeId="10" materialIds="6" distanceBlending="false"/>
-      </Shape>
+    <Shape name="dbl_mapPlane" shapeId="1" nodeId="9" castsShadows="false" receiveShadows="false" distanceBlending="false" materialIds="5">
+      <Shape name="dbl_position" translation="0 0.001 0" scale="0.02 0.02 0.02" shapeId="1" nodeId="10" castsShadows="false" receiveShadows="false" distanceBlending="false" materialIds="6"/>
+    </Shape>
   </Scene>
 
 </i3D>
