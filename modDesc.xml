@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="99">
 	<author>Glowins Modschmiede</author>
-	<version>0.9.0.5</version>
+	<version>1.G.M.0</version>
 	<contributors>SbSh, mister_mojo_AT, AgrarPlay und LUWZ, Farming Duds</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
@@ -27,13 +27,6 @@ Dashboard Live (kurz DBL) ermöglicht das Anzeigen aller möglichen Informatione
 Weitere Ideen oder Wünsche werden gerne unter <a href="https://github.com/jason0611/FS22_DashboardLive">GitHub: FS22_DashboardLive</a> entgegengenommen
 ]]>
 		</de>
-		<br>
-<![CDATA[
-Painel ao vivo (abreviação: DBL) permite que você exiba todos os tipos de informações em seus computadores de bordo e/ou painéis em todos os tipos de tratores, não importa a marca.
-
-Mais ideias ou solicitações são bem-vindas em <a href="https://github.com/jason0611/FS22_DashboardLive">GitHub: FS22_DashboardLive</a>.
-]]>
-		</br>	
  	</description>	
     <multiplayer supported="true"/>
 	<iconFilename>icon_DashboardLive.dds</iconFilename>
