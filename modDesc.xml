@@ -29,5 +29,5 @@ Weitere Ideen oder Wünsche werden gerne unter <a href="https://github.com/jason
 		</de>
  	</description>	
     <multiplayer supported="true"/>
-	<iconFilename>icon_DashboardLive.dds</iconFilename>
+	<iconFilename>icon_DashboardLive_VanillaVehicles.dds</iconFilename>
 </modDesc>
