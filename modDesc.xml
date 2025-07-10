@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="99">
-	<author>Glowins Modschmiede</author>
-	<version>1.G.M.0</version>
-	<contributors>SbSh, mister_mojo_AT, AgrarPlay und LUWZ, Farming Duds</contributors>
+<modDesc descVersion="100">
+	<author>mister_mojo_AT, SbSh, Glowins Modschmiede</author>
+	<version>1.0.0.0</version>
+	<contributors>AgrarPlay und LUWZ</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
 	</dependencies>
@@ -15,16 +15,16 @@
     <description>
 		<en>
 <![CDATA[
-Dashboard Live (short: DBL) allows you to display all kinds of information in your board computers and/or dashboards in all kinds of tractors, no matter what brand. 
+Dashboard Live Vanilla Vehicles adds the functionality of Dashboard Live to many vehicles in the base game:
 
-Further ideas or requests are welcome at <a href="https://github.com/jason0611/FS22_DashboardLive">GitHub: FS22_DashboardLive</a>.
+Further ideas or requests are welcome at <a href="https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles">GitHub: FS25_DashboardLive_VanillaVehicles</a>
 ]]>
 		</en>
 		<de>
 <![CDATA[
-Dashboard Live (kurz DBL) ermöglicht das Anzeigen aller möglichen Informationen in euren Boardcomputern und/oder Amaturen in allen möglichen Traktoren, völlig egal welcher Marke. 
+Dashboard Live Vanilla Vehicles fügt die Funktionalität von Dashboard Live in viele Fahrzeuge des Basis-Spiels ein:
 
-Weitere Ideen oder Wünsche werden gerne unter <a href="https://github.com/jason0611/FS22_DashboardLive">GitHub: FS22_DashboardLive</a> entgegengenommen
+Weitere Ideen oder Wünsche werden gerne unter <a href="https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles">GitHub: FS25_DashboardLive_VanillaVehicles</a> entgegengenommen
 ]]>
 		</de>
  	</description>	
