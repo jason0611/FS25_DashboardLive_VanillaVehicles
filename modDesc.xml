@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="99">
-	<author>Glowins Modschmiede</author>
-	<version>1.G.M.1</version>
-	<contributors>SbSh, mister_mojo_AT, AgrarPlay und LUWZ, Farming Duds</contributors>
+<modDesc descVersion="100">
+	<author>mister_mojo_AT, SbSh, Glowins Modschmiede</author>
+	<version>1.0.0.0</version>
+	<contributors>AgrarPlay und LUWZ</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
 	</dependencies>
@@ -193,7 +193,7 @@ Volvo
 	L120H Electric
 	L180H
 	VNX 300
-	
+
 Weitere Ideen oder Wünsche werden gerne unter <a href="https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles">GitHub: FS25_DashboardLive_VanillaVehicles</a> entgegengenommen
 ]]>
 		</de>
