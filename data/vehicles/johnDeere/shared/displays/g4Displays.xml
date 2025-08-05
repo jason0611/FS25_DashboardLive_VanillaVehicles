@@ -114,9 +114,9 @@
     <dashboardCompound name="JOHNDEERE_G4_MAINPAGE" filename="data/vehicles/johnDeere/shared/displays/g4Displays.i3d" node="g4BasicScreen">
 	<!-- BASE -->
 	    <!-- Displays -->
-		<dashboard displayType="VISIBILITY" node="g4Display_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_basicScreen" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblMotorTempIconP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="g4Display_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblFuelIconP1_SC" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblMotorFanBlinkP1_SC" valueType="dbl.base" cmd="motorFan" groups="MOTOR_ACTIVE"/>
 		
@@ -210,7 +210,7 @@
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g4Display_dblFrontHitchPercentNumbersP1_SC" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g4Display_dblFrontHitchSliderP1_SC" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="EMITTER" node="g4Display_tileFrontPTO_decal" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="EMITTER" node="g4Display_dblFrontHitchPercentNumbersP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="EMITTER" node="g4Display_dblFrontHitchPercentNumbersP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
 		
 		<dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.2" node="g4Display_dblFrontHitchSliderP1_SC" groups="MOTOR_ACTIVE" />
 		
@@ -228,8 +228,8 @@
 		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="EMITTER" node="g4Display_dblFoldingStateFrontClosedP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.4" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="front" option="any" displayType="EMITTER" node="g4Display_dblFoldingStateFrontClosingP1_SC" emitColor="0.07 0.07 0.04 1" intensity="1" groups="MOTOR_ACTIVE"/>
 		
-		<dashboard displayType="VISIBILITY" node="g4Display_dblFrontCoverStateSliderP1_SC" 		jointSide="front" 											groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideTrailer1P1_SC" 			jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
+		<dashboard displayType="VISIBILITY" node="g4Display_dblFrontCoverStateSliderP1_SC" 		jointSide="front" 											groups="MOTOR_RUNNING"/> <!-- 2|82) -->
+		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideTrailer1P1_SC" 			jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER1"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideIcon1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER1"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSide2Icon1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER1"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideGrain1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER1"/>
@@ -239,7 +239,7 @@
 		<dashboard displayType="VISIBILITY" node="g4Display_dblFilllevelTrailer1SliderP1_SC" 	jointSide="back" trailer="1"								groups="MOTOR_ACTIVE AT_TRAILER1"/>
 
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideTrailer2P1_SC" 			jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideIcon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
+		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideIcon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER2"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSide2Icon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER2"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideGrain2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER2"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblTipSideBack2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_ACTIVE AT_TRAILER2"/>
