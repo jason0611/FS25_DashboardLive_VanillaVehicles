@@ -3,6 +3,8 @@ Vanilla Integration for DashboardLIve
 
 Dashboard Live Vanilla Vehicles (short: DBL_VV) is an extension to Dashboard Live and integrates it into the following vehicles of the base game.
 
+For further sugestions or ideas, please visit us on Discord: https://discord.gg/GMfFHatyB4
+
 Vehicle list:
 
 CaseIH
