@@ -159,7 +159,7 @@
 		<!-- Player Name -->
 		<dashboard valueType="dbl.base" cmd="playerName" displayType="TEXT" node="cemisXerion12_dblPlayerNameP1_CC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.0035" textMask="...................." textAlignment="CENTER" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
 		<!-- Real Clock -->
-			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="cemisXerion12_dblRealClockP1_CC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textMask="........." textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="cemisXerion12_dblRealClockP1_CC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textMask="........." textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
 		<!-- GPS -->
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="cemisXerion12_dblSteeringWheelP1_CC" baseColor="0.027 0.027 0.027 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="1" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="cemisXerion12_dblGPSsatellitP1_CC" baseColor="0.027 0.027 0.027 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="1" groups="MOTOR_RUNNING"/>
@@ -530,7 +530,7 @@
             <valueMapping sourceValue="60" dashboardValue="60.0"/>
         </dashboard>
 		<!-- enterable -->
-		<dashboard displayType="TEXT" valueType="operatingTime" node="cebisAxion_dblOperatingTimeNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="operatingTime" node="cebisAxion_dblOperatingTimeNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
 		<!-- Lifter State -->
 		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" node="cebisAxion_dblFrontLiftSliderP2_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_ACTIVE TRACTOR_PAGESC2" />
 		<dashboard displayType="SLIDER" valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" node="cebisAxion_dblBackLiftSliderP2_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" groups="MOTOR_ACTIVE TRACTOR_PAGESC2" />
