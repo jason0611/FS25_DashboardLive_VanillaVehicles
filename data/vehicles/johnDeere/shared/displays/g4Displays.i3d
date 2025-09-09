@@ -2,22 +2,18 @@
 
 <i3D name="g4Displays.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.4"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.6"/>
   </Asset>
 
   <Files>
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
-    <File fileId="13" filename="$data/shaders/vehicleShader.xml"/>
     <File fileId="2" filename="$data/shared/default_normal.dds"/>
     <File fileId="6" filename="$data/shared/default_specular.png"/>
     <File fileId="8" filename="$data/shared/default_vmask.dds"/>
-    <File fileId="16" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_diffuse.dds"/>
-    <File fileId="15" filename="$data/shared/detailLibrary/flat_normal.dds"/>
-    <File fileId="14" filename="$data/shared/detailLibrary/mixed/carbonPattern01_specular.dds"/>
     <File fileId="12" filename="$data/shared/windowDark_diffuse.dds"/>
     <File fileId="1" filename="$data/vehicles/johnDeere/shared/displays/g4Displays_diffuse.png"/>
-    <File fileId="22" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
-    <File fileId="23" filename="g4Displays_diffuse.dds"/>
+    <File fileId="14" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="15" filename="g4Displays_diffuse.dds"/>
     <File fileId="10" filename="textures/johnDeereDisplayDecal_diffuse.dds"/>
     <File fileId="9" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
     <File fileId="11" filename="textures/johnDeereG4DisplayGPS_diffuse.png"/>
@@ -27,7 +23,7 @@
 
 
   <Materials>
-    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="22">
+    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="14">
     </Material>
     <Material name="dblSliderLine_mat" materialId="6" customShaderId="4" customShaderVariation="slider">
       <Texture fileId="7"/>
@@ -74,7 +70,7 @@
       <CustomParameter name="blinkSimple" value="3.4 2.7"/>
     </Material>
     <Material name="g4Displays_01_mat" materialId="15" specularColor="0.501961 1 0.501961" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="23"/>
+      <Texture fileId="15"/>
       <Normalmap fileId="2"/>
       <CustomParameter name="blinkSimple" value="3.4 2.7"/>
     </Material>
@@ -165,13 +161,11 @@
       <CustomParameter name="baseColor" value="1 1 1 0"/>
       <CustomParameter name="blinkSimple" value="0.5 0"/>
     </Material>
-    <Material name="mat_16x16_visible2" materialId="31" alphaBlending="true" customShaderId="13">
+    <Material name="mat_16x16_visible2" materialId="486" alphaBlending="true" customShaderId="4">
       <Texture fileId="12"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="6"/>
-      <Custommap name="detailSpecular" fileId="14"/>
-      <Custommap name="detailNormal" fileId="15"/>
-      <Custommap name="detailDiffuse" fileId="16"/>
+      <CustomParameter name="lightControl" value="0"/>
     </Material>
   </Materials>
 
@@ -412,9 +406,9 @@
             <Shape name="g4Display_dblCruiseControl3ActiveP1_GPS" rotation="-180 -1.86693e-05 -180" scale="2.5 1 2.5" shapeId="46" visibility="false" clipDistance="20" nodeId="337" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="21"/>
           </TransformGroup>
           <TransformGroup name="g4seedTypeBgCountsP1_GPS" translation="0.0470691 0.001 0.0318078" rotation="-180 -1.86693e-05 -180" nodeId="338">
-            <Shape name="g4seedTypeBg1_P1_GPS" translation="-0.0132566 -1.60405e-16 0.000170369" rotation="0 0 2.16973e-13" scale="1 1 1.5" shapeId="87" clipDistance="20" nodeId="339" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="31"/>
-            <Shape name="g4seedTypeBg2_P1_GPS" translation="0.00874586 2.26964e-16 0.000170369" rotation="0 0 2.16973e-13" scale="6.5 1 1.5" shapeId="87" clipDistance="20" nodeId="340" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="31"/>
-            <Shape name="g4seedTypeBg3_P1_GPS" translation="0.030685 5.18421e-16 0.000170369" rotation="0 0 2.16973e-13" scale="1 1 1.5" shapeId="87" clipDistance="20" nodeId="341" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="31"/>
+            <Shape name="g4seedTypeBg1_P1_GPS" translation="-0.0132566 -1.60405e-16 0.000170369" rotation="0 0 2.16973e-13" scale="1 1 1.5" shapeId="87" clipDistance="20" nodeId="339" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="486"/>
+            <Shape name="g4seedTypeBg2_P1_GPS" translation="0.00874586 2.26964e-16 0.000170369" rotation="0 0 2.16973e-13" scale="6.5 1 1.5" shapeId="87" clipDistance="20" nodeId="340" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="486"/>
+            <Shape name="g4seedTypeBg3_P1_GPS" translation="0.030685 5.18421e-16 0.000170369" rotation="0 0 2.16973e-13" scale="1 1 1.5" shapeId="87" clipDistance="20" nodeId="341" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="486"/>
           </TransformGroup>
           <Shape name="g4Display_dblSeedFilllevelWarnBlinkP1_GPS" translation="-0.069269 0.000999998 -0.0261085" rotation="1e-06 180 6e-06" scale="2 1 2" shapeId="88" clipDistance="20" nodeId="342" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="25"/>
           <Shape name="g4Display_dblFertilizerFilllevelWarnBlinkP1_GPS" translation="-0.069269 0.000999998 -0.0348867" rotation="1e-06 180 6e-06" scale="2 1 2" shapeId="88" clipDistance="20" nodeId="343" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="26"/>
@@ -542,6 +536,8 @@
         </Shape>
         <TransformGroup name="Numbers" nodeId="436">
           <TransformGroup name="4gRadio_TimeNumbersP1_FM" translation="-0.0287966 0.001 -0.017" rotation="90 -4.358e-05 -180" nodeId="437"/>
+          <TransformGroup name="4gRadio_RadioNameNumbersP1_FM" translation="0.0520703 0.000999995 0.0114065" rotation="90 -4.358e-05 -180" visibility="false" nodeId="445"/>
+          <TransformGroup name="4gRadio_RadioVolumeNumbersP1_FM" translation="-0.0340605 0.001 0.0185868" rotation="90 -4.358e-05 -180" visibility="false" nodeId="446"/>
         </TransformGroup>
       </TransformGroup>
     </TransformGroup>
@@ -775,15 +771,6 @@
     </UserAttribute>
     <UserAttribute nodeId="337">
       <Attribute name="MaxHandle" type="integer" value="191"/>
-    </UserAttribute>
-    <UserAttribute nodeId="339">
-      <Attribute name="MaxHandle" type="integer" value="451"/>
-    </UserAttribute>
-    <UserAttribute nodeId="340">
-      <Attribute name="MaxHandle" type="integer" value="451"/>
-    </UserAttribute>
-    <UserAttribute nodeId="341">
-      <Attribute name="MaxHandle" type="integer" value="451"/>
     </UserAttribute>
     <UserAttribute nodeId="342">
       <Attribute name="MaxHandle" type="integer" value="38"/>
