@@ -2,7 +2,7 @@
 
 <i3D name="coPilotMainDisplay.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.8"/>
   </Asset>
 
   <Files>
@@ -13,6 +13,7 @@
     <File fileId="9" filename="$data/shared/default_specular.dds"/>
     <File fileId="6" filename="$data/shared/default_vmask.dds"/>
     <File fileId="1" filename="$data/vehicles/volvo/shared/display/co-pilotLoadingImage_diffuse.png"/>
+    <File fileId="10" filename="$data/vehicles/volvo/shared/l180HInteriorDecals_diffuse.dds"/>
   </Files>
 
 
@@ -25,21 +26,26 @@
       <Normalmap fileId="2"/>
       <Glossmap fileId="6"/>
     </Material>
-    <Material name="mat_16x16_emitter" materialId="56" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+    <Material name="mat_16x16_emitter" materialId="7" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
       <Texture fileId="8"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="9"/>
     </Material>
-    <Material name="volvoCopilotMainDisplay_mat" materialId="7" customShaderId="4" customShaderVariation="staticLight">
+    <Material name="volvoCopilotMainDisplay_mat" materialId="8" customShaderId="4" customShaderVariation="staticLight">
       <Texture fileId="7"/>
     </Material>
-    <Material name="volvoCopilotMainDisplay_mat" materialId="30" customShaderId="4" customShaderVariation="slider">
+    <Material name="volvoCopilotMainDisplay_mat" materialId="9" customShaderId="4" customShaderVariation="slider">
       <Texture fileId="7"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="6"/>
     </Material>
-    <Material name="volvoCopilotMainDisplay_mat" materialId="8" customShaderId="4" customShaderVariation="staticLight">
+    <Material name="volvoCopilotMainDisplay_mat" materialId="10" customShaderId="4" customShaderVariation="staticLight">
       <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="6"/>
+    </Material>
+    <Material name="volvoCopilotRadioDecal_mat" materialId="11" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="10"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="6"/>
     </Material>
@@ -50,31 +56,44 @@
   </Shapes>
 
   <Scene>
-    <TransformGroup name="coPilotDashboard" rotation="-90 -0 0" nodeId="15">
-      <TransformGroup name="startScreen" rotation="90 -0 0" nodeId="16">
-        <Shape name="displayCopilotStarting_decals" rotation="-90 -0 0" shapeId="1" visibility="false" clipDistance="50" nodeId="17" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="5"/>
+    <TransformGroup name="coPilotDashboard" rotation="-90 -0 0" clipDistance="50" nodeId="30">
+      <TransformGroup name="startScreen" rotation="90 -0 0" clipDistance="50" nodeId="31">
+        <Shape name="volvoCoPilotStarting_decals" rotation="-90 -0 0" shapeId="1" visibility="false" clipDistance="50" nodeId="32" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="5"/>
       </TransformGroup>
-      <TransformGroup name="mainDisplay" rotation="90 -0 0" nodeId="18">
-        <TransformGroup name="mainIcon" nodeId="19">
-          <TransformGroup name="volvoCoPilot_dblRealClockP1_SC" translation="0.076 0 -0.095" rotation="-90 -90 0" clipDistance="30" nodeId="20"/>
-          <TransformGroup name="volvoCoPilot_dblFrontToolRotDegreeP1_SC" translation="0.025 0 -0.054" rotation="-90 -90 0" clipDistance="30" nodeId="21"/>
-          <TransformGroup name="volvoCoPilot_dblShovelFillLevelP1_SC" translation="0.02 0 0.048" rotation="-90 -90 0" clipDistance="30" nodeId="22"/>
-          <Shape name="volvoCoPilot_dblShovelFillTypeIconP1_SC" translation="-0.0623467 0.000999987 0.0417167" rotation="180 -5.00896e-06 180" scale="0.007 1 0.007" shapeId="2" clipDistance="50" nodeId="23" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
-          <TransformGroup name="volvoCoPilot_dblShovelFillTypeP1_SC" translation="-0.065 0 0.047" rotation="-90 -90 0" clipDistance="30" nodeId="24"/>
-          <Shape name="volvoCoPilot_dblForwardArrowP1_SC" translation="-0.011 0 -0.034" rotation="-90 -0 0" shapeId="3" clipDistance="30" nodeId="25" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
-          <Shape name="volvoCoPilot_dblBackwardArrowP1_SC" translation="-0.011 0 -0.029" rotation="-90 -0 0" shapeId="4" clipDistance="30" nodeId="26" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
-          <Shape name="volvoCoPilot_dblTrailerFillLevelSliderP1_SC" translation="-0.026674 6.24316e-09 0.0191601" rotation="-90 -0 0" shapeId="5" clipDistance="30" nodeId="33" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="30"/>
-          <Shape name="volvoCoPilot_dblWeatherSunP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="6" clipDistance="20" nodeId="64" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="56" weatherRequiredMask="0x1"/>
-          <Shape name="volvoCoPilot_dblWeatherCloudP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="7" clipDistance="20" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="56" weatherRequiredMask="0x10"/>
-          <Shape name="volvoCoPilot_dblWeatherRainP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="8" clipDistance="20" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="56" weatherRequiredMask="0x2"/>
-          <Shape name="volvoCoPilot_dblWeatherHailP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="9" clipDistance="20" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="56" weatherRequiredMask="0x4"/>
-          <Shape name="volvoCoPilot_dblWeatherSnowP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="10" clipDistance="20" nodeId="68" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="56" weatherRequiredMask="0x8"/>
-          <Shape name="volvoCoPilot_dblWeatherTwisterP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="11" clipDistance="20" nodeId="69" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="56" weatherPreventMask="0x1f"/>
-          <TransformGroup name="volvoCoPilot_dblSOutsideTempP1_SC" translation="0.076 0 0.057" rotation="-90 -90 0" clipDistance="30" nodeId="115"/>
+      <TransformGroup name="mainDisplay" rotation="90 -0 0" clipDistance="50" nodeId="33">
+        <TransformGroup name="mainIcon" clipDistance="50" nodeId="34">
+          <TransformGroup name="volvoCoPilot_dblRealClockP1_SC" translation="0.076 0 -0.095" rotation="-90 -90 0" clipDistance="30" nodeId="35"/>
+          <TransformGroup name="volvoCoPilot_dblFrontToolRotDegreeP1_SC" translation="0.025 0 -0.054" rotation="-90 -90 0" clipDistance="30" nodeId="36"/>
+          <TransformGroup name="volvoCoPilot_dblShovelFillLevelP1_SC" translation="0.02 0 0.048" rotation="-90 -90 0" clipDistance="30" nodeId="37"/>
+          <Shape name="volvoCoPilot_dblShovelFillTypeIconP1_SC" translation="-0.0623467 0.000999987 0.0417167" rotation="180 0 180" scale="0.007 1 0.007" shapeId="2" clipDistance="50" nodeId="38" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="volvoCoPilot_dblShovelFillTypeP1_SC" translation="-0.065 0 0.047" rotation="-90 -90 0" clipDistance="30" nodeId="39"/>
+          <Shape name="volvoCoPilot_dblForwardArrowP1_SC" translation="-0.011 0 -0.034" rotation="-90 -0 0" shapeId="3" clipDistance="30" nodeId="40" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <Shape name="volvoCoPilot_dblBackwardArrowP1_SC" translation="-0.011 0 -0.029" rotation="-90 -0 0" shapeId="4" clipDistance="30" nodeId="41" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <Shape name="volvoCoPilot_dblTrailerFillLevelSliderP1_SC" translation="-0.026674 6.24316e-09 0.0191601" rotation="-90 -0 0" shapeId="5" clipDistance="30" nodeId="42" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+          <Shape name="volvoCoPilot_dblWeatherSunP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="6" clipDistance="20" nodeId="43" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7" weatherRequiredMask="0x1"/>
+          <Shape name="volvoCoPilot_dblWeatherCloudP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="7" clipDistance="20" nodeId="44" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7" weatherRequiredMask="0x10"/>
+          <Shape name="volvoCoPilot_dblWeatherRainP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="8" clipDistance="20" nodeId="45" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7" weatherRequiredMask="0x2"/>
+          <Shape name="volvoCoPilot_dblWeatherHailP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="9" clipDistance="20" nodeId="46" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7" weatherRequiredMask="0x4"/>
+          <Shape name="volvoCoPilot_dblWeatherSnowP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="10" clipDistance="20" nodeId="47" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7" weatherRequiredMask="0x8"/>
+          <Shape name="volvoCoPilot_dblWeatherTwisterP1_CC" translation="0.079 0 0.067" rotation="-180 -5.00896e-06 180" shapeId="11" clipDistance="20" nodeId="48" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7" weatherPreventMask="0x1f"/>
+          <TransformGroup name="volvoCoPilot_dblSOutsideTempP1_SC" translation="0.076 0 0.057" rotation="-90 -90 0" clipDistance="30" nodeId="49"/>
+          <Shape name="volvoCoPilot_dblShovelIconP1_SC" translation="0.051 0 -0.073" rotation="-90 0 0" shapeId="12" clipDistance="30" nodeId="50" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <Shape name="volvoCoPilot_dblForkLifterIconP1_SC" translation="0.051 0 -0.073" rotation="-90 0 0" shapeId="13" visibility="false" clipDistance="30" nodeId="51" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <Shape name="volvoCoPilot_dblBigBagLifterIconP1_SC" translation="0.051 0 -0.073" rotation="-90 0 0" shapeId="14" visibility="false" clipDistance="30" nodeId="52" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <Shape name="volvoCoPilot_dblSilageForkIconP1_SC" translation="0.051 0 -0.073" rotation="-90 0 0" shapeId="15" visibility="false" clipDistance="30" nodeId="53" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
         </TransformGroup>
-        <TransformGroup name="mainScreen" nodeId="27">
-          <Shape name="displayCopilot_decals" rotation="-90 -0 0" shapeId="12" clipDistance="30" nodeId="28" castsShadows="false" receiveShadows="true" materialIds="7"/>
+        <TransformGroup name="mainScreen" clipDistance="50" nodeId="54">
+          <Shape name="volvoCoPilot_mainDisplay_decals" rotation="-90 -0 0" shapeId="16" clipDistance="30" nodeId="55" castsShadows="false" receiveShadows="true" materialIds="8"/>
         </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="coPilotRadioDisplay" translation="0 0 0.2" rotation="-90 0 0" clipDistance="50" nodeId="56">
+      <TransformGroup name="radioIcon" rotation="90 -0 0" clipDistance="50" nodeId="57">
+        <TransformGroup name="volvoCoPilot_dblRadioChannel" translation="-0.004 2.70447e-10 -0.004" rotation="-90 -90 0" clipDistance="30" nodeId="58"/>
+        <TransformGroup name="volvoCoPilot_dblRadioVolume" translation="-0.004 2.70447e-10 0.031" rotation="-90 -90 0" clipDistance="30" nodeId="59"/>
+      </TransformGroup>
+      <TransformGroup name="radioScreen" rotation="90 -0 0" clipDistance="50" nodeId="60">
+        <Shape name="volvoCoPilot_dblRadioDisplay_decal" rotation="-90 -0 0" shapeId="17" clipDistance="30" nodeId="61" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="11"/>
       </TransformGroup>
     </TransformGroup>
   </Scene>
