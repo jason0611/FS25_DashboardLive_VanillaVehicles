@@ -523,12 +523,15 @@
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 	
 	<!-- SeatConsole PAGE3 -->
-		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="isobusUTJoint" groups="MOTOR_ACTIVE PAGESC3"/>
+		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE PAGESC3"/>
+<!-- 	<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="fendtOneDisplaySide"/> -->
+		
+		<dashboard displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE LIGHTMODE PAGESC3"/>
+		<dashboard displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE DARKMODE PAGESC3"/>
+		<dashboard displayType="EMITTER" node="dashboardDisplayUT_SC" intensity="0.2" groups="MOTOR_ACTIVE LIGHTMODE PAGESC3"/>
+		<dashboard displayType="EMITTER" node="dashboardDisplayUTDM_SC" intensity="0.3" groups="MOTOR_ACTIVE DARKMODE PAGESC3"/>
 
-		<dashboard displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE LIGHTMODE NOISOBUS PAGESC3"/>
-		<dashboard displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE DARKMODE NOISOBUS PAGESC3"/>
-		<dashboard displayType="EMITTER" node="dashboardDisplayUT_SC" intensity="0.2" groups="MOTOR_ACTIVE NOISOBUS LIGHTMODE PAGESC3"/>
-		<dashboard displayType="EMITTER" node="dashboardDisplayUTDM_SC" intensity="0.3" groups="MOTOR_ACTIVE NOISOBUS DARKMODE PAGESC3"/>
+
 
 		<dashboard displayType="VISIBILITY" node="dbl_ptoFrontP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 		<dashboard displayType="VISIBILITY" node="dbl_ptoBackP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
