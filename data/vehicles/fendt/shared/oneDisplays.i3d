@@ -497,8 +497,8 @@
           <TransformGroup name="dbl_ptoBackRpmP3_SC" translation="0.001 0.132962 -0.0672665" rotation="86.504 2.35198 89.3667" clipDistance="15" nodeId="888"/>
         </TransformGroup>
         <TransformGroup name="utScreen" clipDistance="50" nodeId="889">
-          <Shape name="dashboardDisplayUT_SC" rotation="0 0 -90" shapeId="98" clipDistance="50" nodeId="890" castsShadows="false" receiveShadows="true" materialIds="19"/>
-          <Shape name="dashboardDisplayUTDM_SC" rotation="0 0 -90" shapeId="98" clipDistance="50" nodeId="891" castsShadows="false" receiveShadows="true" materialIds="20"/>
+          <Shape name="dashboardDisplayUT_SC" rotation="0 0 -90" shapeId="98" visibility="false" clipDistance="50" nodeId="890" castsShadows="false" receiveShadows="true" materialIds="19"/>
+          <Shape name="dashboardDisplayUTDM_SC" rotation="0 0 -90" shapeId="98" visibility="false" clipDistance="50" nodeId="891" castsShadows="false" receiveShadows="true" materialIds="20"/>
         </TransformGroup>
       </TransformGroup>
       <TransformGroup name="flDashboard" translation="0 0.001 0" rotation="0 0 90" visibility="false" nodeId="892">
