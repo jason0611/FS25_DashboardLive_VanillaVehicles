@@ -524,6 +524,7 @@
 	
 	<!-- SeatConsole PAGE3 -->
 		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE PAGESC3"/>
+		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 <!-- 	<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="fendtOneDisplaySide"/> -->
 		
 		<dashboard displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE LIGHTMODE PAGESC3"/>
