@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="skodaKodiaqDashboard.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.8"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="8" filename="$data/shared/default_specular.dds"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="1" filename="$data/vehicles/skoda/kodiaq/kodiaqDisplay_diffuse.png"/>
+    <File fileId="6" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="7" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="6">
+    </Material>
+    <Material name="kodiaqDisplay_mat" materialId="6" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="7" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="8"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="skodaKodiaqDashboard.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="skodaKodiaqDashboard" nodeId="12">
+      <Shape name="skodaKodiaq_dblMainScreenP1" shapeId="1" clipDistance="30" nodeId="13" castsShadows="false" receiveShadows="true" materialIds="6"/>
+      <Shape name="skodaKodiaq_dblNaviMapP2" translation="0 -5.96046e-08 0" rotation="0 -0 -8.14222e-13" shapeId="2" clipDistance="30" nodeId="14" castsShadows="true" receiveShadows="true" materialIds="5">
+        <Shape name="skodaKodiaq_dblNaviMapPosP2" scale="1.5 1 1.5" shapeId="3" clipDistance="20" nodeId="15" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="mainDisplay_arion550.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.10"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="6" filename="$data/shared/default_specular.png"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="1" filename="$data/vehicles/claas/shared/displays/displays_diffuse.dds"/>
+    <File fileId="10" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="14" filename="textures/axionGpsPilotDisplay_diffuse.png"/>
+    <File fileId="13" filename="textures/axionLCDDisplayFieldTripDM_diffuse.dds"/>
+    <File fileId="12" filename="textures/axionLCDDisplayFieldTrip_diffuse.png"/>
+    <File fileId="11" filename="textures/axionLCDDisplayStreetdriveDM_diffuse.dds"/>
+    <File fileId="7" filename="textures/axionLCDDisplayStreetdrive_diffuse.dds"/>
+    <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="8" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="cebisDisplay_mat" materialId="5" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="12"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="cebisDisplay_mat" materialId="6" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="13"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="cebisDisplay_mat" materialId="7" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="cebisDisplay_mat" materialId="8" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="cebisDisplay_mat" materialId="9" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="11"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="claasGpsPilotDisplay_mat" materialId="10" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="14"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="claasGpsPilotDisplay_mat" materialId="11" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="14"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="dblNaviMap_mat" materialId="12" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="10">
+    </Material>
+    <Material name="dblNaviMap_mat" materialId="13" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="10">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="dblSliderLine_mat" materialId="14" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="8"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="displays_04_mat" materialId="15" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="sliderPos" value="0 0.2"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="16" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="5"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="6"/>
+    </Material>
+    <Material name="xerion12Display_mat" materialId="17" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="mainDisplay_arion550.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="mainDisplay_arion550" clipDistance="30" nodeId="66">
+      <TransformGroup name="cebisTractor" translation="5.96046e-08 0 0" rotation="-1.69368e-06 -0 1.69484e-06" scale="1.0075 1.00819 1.00455" clipDistance="30" nodeId="67">
+        <TransformGroup name="cebisStartScreen" clipDistance="30" nodeId="68">
+          <Shape name="cebisAxion_startScreenSC" translation="9.80581e-08 -0.000199132 4.0279e-07" shapeId="1" clipDistance="50" nodeId="69" castsShadows="false" receiveShadows="true" materialIds="17">
+            <Shape name="loadingBar01" translation="0.000115 0 -0.05101" shapeId="2" clipDistance="10" nodeId="70" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
+            <Shape name="loadingBar02" shapeId="3" clipDistance="10" nodeId="71" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="17"/>
+            <Shape name="cebisDecal" translation="-0.01 0.001 -0.01" shapeId="4" clipDistance="10" nodeId="72" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="17"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="cebisMainScreen" clipDistance="30" nodeId="73">
+          <TransformGroup name="alwaysOn" nodeId="74">
+            <Shape name="cebisAxion_dblForwardArrowAO_SC" translation="0.006 0.001 -0.076" rotation="-180 -5.00896e-06 -180" scale="1.5 1 1.4" shapeId="5" visibility="false" clipDistance="20" nodeId="75" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="cebisAxion_dblNeutralGearAO_SC" translation="-0.007 0 -0.076" rotation="1e-06 -0 6e-06" shapeId="6" visibility="false" clipDistance="20" nodeId="76" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="cebisAxion_dblBackwardArrowAO_SC" translation="-0.0175651 0.001 -0.076" rotation="1e-06 -0 6e-06" scale="1.5 1 1.4" shapeId="5" visibility="false" clipDistance="20" nodeId="77" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="cebisAxion_dblParkbreakAO_SC" translation="-0.007 5.2e-05 -0.076" rotation="0 180 5.12264e-06" shapeId="7" clipDistance="20" nodeId="78" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <TransformGroup name="cebisAxion_dblSpeed1NumbersAO_SC" translation="-0.0424498 3.13917e-08 -0.0777992" rotation="90 -5.00896e-06 180" clipDistance="30" nodeId="79"/>
+            <Shape name="cebisAxion_dblAWDautoIconAO_SC" translation="0.090761 0.0002 -0.076672" shapeId="8" clipDistance="30" nodeId="80" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblAWDIconAO_SC" translation="0.090761 0.0002 -0.072881" shapeId="9" clipDistance="30" nodeId="81" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblBackDiffLockAO_SC" translation="-0.011755 0.0002 -0.076333" shapeId="10" clipDistance="30" nodeId="82" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblFrontDiffLockAO_SC" translation="-0.001735 0.0002 -0.076333" shapeId="11" clipDistance="30" nodeId="83" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblFrontDiffPointAO_SC" translation="0.0833227 5.1248e-05 -0.0746972" rotation="1e-06 180 6e-06" scale="0.4 1 0.4" shapeId="12" clipDistance="20" nodeId="84" castsShadows="true" receiveShadows="true" materialIds="16"/>
+            <Shape name="cebisAxion_dblBackDiffPointAO_SC" translation="0.0769476 5.43211e-05 -0.0747046" rotation="1e-06 180 6e-06" scale="0.4 1 0.4" shapeId="12" clipDistance="20" nodeId="85" castsShadows="true" receiveShadows="true" materialIds="16"/>
+          </TransformGroup>
+          <TransformGroup name="basicIcon" clipDistance="30" nodeId="86">
+            <Shape name="cebisAxion_dblSpeedSliderP1_SC" translation="0.050775 0.0001 0.053573" shapeId="13" clipDistance="30" nodeId="87" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+            <TransformGroup name="cebisAxion_dblSpeedNumbersP1_SC" translation="0.0510056 0 0.0185412" rotation="-90 180 0" clipDistance="30" nodeId="88"/>
+            <Shape name="cebisAxion_dblCruiseControlIconP1_SC" translation="0.050629 0.0002 0.042735" shapeId="14" clipDistance="30" nodeId="89" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblRpmSliderP1_SC" translation="0.098786 0 0.017163" shapeId="15" clipDistance="30" nodeId="90" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <TransformGroup name="cebisAxion_dblRpmNumbersP1_SC" translation="0.099355 3.15375e-08 0.00333941" rotation="90 -1.86693e-05 180" clipDistance="30" nodeId="91"/>
+            <Shape name="cebisAxion_dblFuelSliderP1_SC" translation="0.003175 0.001 0.01708" shapeId="16" clipDistance="30" nodeId="92" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <TransformGroup name="cebisAxion_dblFuelPercentNumbersP1_SC" translation="0.00328093 1.70433e-08 0.00333944" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="93"/>
+            <Shape name="cebisAxion_dblAdBlueSliderP1_SC" translation="0.070322 0 -0.037247" shapeId="17" clipDistance="30" nodeId="94" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <Shape name="cebisAxion_dblAdBlueIconP1_SC" translation="0.07 5.2e-05 -0.04" rotation="1e-06 180 6e-06" scale="1.7 1 1.7" shapeId="18" clipDistance="20" nodeId="95" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="cebisAxion_dblEngineTempSliderP1_SC" translation="0.03134 0 -0.037279" shapeId="19" clipDistance="30" nodeId="96" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <Shape name="cebisAxion_dblEnginTempIconP1_SC" translation="0.031235 0.0002 -0.039776" shapeId="20" clipDistance="30" nodeId="97" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblCruiseControlP1_SC" translation="-0.062725 0 0.017084" shapeId="21" clipDistance="30" nodeId="98" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <TransformGroup name="cebisAxion_dblCruiseControlNumbersP1_SC" translation="-0.0624732 8.05255e-09 -0.00617191" rotation="-90 180 0" clipDistance="30" nodeId="99"/>
+            <TransformGroup name="cebisAxion_dblCruiseControlReverseNumbersP1_SC" translation="-0.0624732 1.78814e-07 -0.015" rotation="90 -4.26887e-06 180" clipDistance="30" nodeId="100"/>
+            <TransformGroup name="cebisAxion_dblSlipNumbersP1_SC" translation="-0.0439812 1.93014e-08 -0.0406945" rotation="-90 180 0" clipDistance="30" nodeId="101"/>
+            <TransformGroup name="cebisAxion_dblFuelUsageNumbersP1_SC" translation="-0.0439812 2.30694e-08 -0.0522582" rotation="-90 180 0" clipDistance="30" nodeId="102"/>
+            <TransformGroup name="cebisAxion_dblOperatingTimeNumbersP1_SC" translation="-0.0439812 2.683e-08 -0.0637994" rotation="-90 180 0" clipDistance="30" nodeId="103"/>
+            <Shape name="cebisAxion_dblGPSsatellitP1_SC" translation="0.048 0 0.076" rotation="1e-06 180 6e-06" scale="2 1 2" shapeId="22" clipDistance="20" nodeId="104" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="cebisAxion_dblGPSactiveP1_SC" translation="0.037 5.2e-05 0.076" rotation="1e-06 180 0" scale="2 1 2" shapeId="23" clipDistance="20" nodeId="105" castsShadows="true" receiveShadows="true" materialIds="16"/>
+          </TransformGroup>
+          <TransformGroup name="naviMap" clipDistance="30" nodeId="106">
+            <Shape name="cebisAxion_dblNaviMapP1_SC" translation="-0.0623799 1.29003e-06 0.0569993" shapeId="24" clipDistance="30" nodeId="107" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12">
+              <Shape name="cebisAxion_dblNaviMapPosP1_SC" translation="-0.000342581 0 -0.00141848" scale="0.5 1 0.5" shapeId="25" clipDistance="30" nodeId="108" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="8"/>
+            </Shape>
+          </TransformGroup>
+          <TransformGroup name="basicScreen" clipDistance="30" nodeId="109">
+            <Shape name="cebisMainScreenP1_SC" shapeId="26" clipDistance="30" nodeId="110" castsShadows="false" receiveShadows="true" materialIds="8"/>
+            <Shape name="cebisMainScreenDMP1_SC" shapeId="26" clipDistance="30" nodeId="111" castsShadows="false" receiveShadows="true" materialIds="9"/>
+            <Shape name="cebisSpeedDecalP1_SC" translation="0.098883 -0.001 0.012502" shapeId="27" clipDistance="30" nodeId="112" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="8"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="cebisFieldScreen" clipDistance="30" nodeId="113">
+          <TransformGroup name="fieldIcon" clipDistance="30" nodeId="114">
+            <TransformGroup name="cebisAxion_dblEnginPowerPercentNumbersP2_SC" translation="0.095 0 0.055" rotation="90 -5.00896e-06 180" clipDistance="30" nodeId="115"/>
+            <TransformGroup name="cebisAxion_dblSlipNumbers00P2_SC" translation="0.095 0 0.045" rotation="90 -5.00896e-06 -180" clipDistance="30" nodeId="116"/>
+            <TransformGroup name="cebisAxion_dblEnginRpmNumbersP2_SC" translation="0.094 0 0.036" rotation="90 -5.00896e-06 -180" clipDistance="30" nodeId="117"/>
+            <TransformGroup name="cebisAxion_dblBackPtoRpmNumbersP2_SC" translation="0.03 0 0.055" rotation="90 -5.00896e-06 -180" clipDistance="30" nodeId="118"/>
+            <Shape name="cebisAxion_dblFrontHitchP2_SC" translation="0.109872 0 0.021006" shapeId="28" clipDistance="30" nodeId="119" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblFrontLiftSliderP2_SC" translation="0.123473 0 0.021339" shapeId="29" clipDistance="30" nodeId="120" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <Shape name="cebisAxion_dblFrontLiftDecalP2_SC" translation="0.12662 0 0.021339" shapeId="30" clipDistance="30" nodeId="121" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="8"/>
+            <Shape name="cebisAxion_dblBackHitchP2_SC" translation="-0.003948 0 0.021006" shapeId="31" clipDistance="30" nodeId="122" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblBackLiftSliderP2_SC" translation="-0.0178 0 0.0209768" shapeId="32" clipDistance="30" nodeId="123" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <Shape name="cebisAxion_dblBackLiftDecalP2_SC" translation="-0.0205094 0 0.021339" shapeId="33" clipDistance="30" nodeId="124" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="8"/>
+            <Shape name="cebisAxion_dblGearWarningIconP2_SC" translation="0.049805 0.0002 0.025164" shapeId="34" clipDistance="30" nodeId="125" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+            <Shape name="cebisAxion_dblCruiseControlP2_SC" translation="-0.062725 0 0.017084" shapeId="21" clipDistance="30" nodeId="126" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+            <TransformGroup name="cebisAxion_dblCruiseControlNumbersP2_SC" translation="-0.0624732 8.05255e-09 -0.00617191" rotation="90 -5.00896e-06 180" clipDistance="30" nodeId="127"/>
+            <TransformGroup name="cebisAxion_dblCruiseControlReverseNumbersP2_SC" translation="-0.0624732 1.19209e-07 -0.0150003" rotation="90 -3.41509e-06 -180" clipDistance="30" nodeId="128"/>
+            <TransformGroup name="cebisAxion_dblSlipNumbers01P2_SC" translation="-0.0439812 1.93014e-08 -0.0406945" rotation="-90 180 0" clipDistance="30" nodeId="129"/>
+            <TransformGroup name="cebisAxion_dblFuelUsageNumbersP2_SC" translation="-0.0439812 2.30694e-08 -0.0522582" rotation="-90 180 0" clipDistance="30" nodeId="130"/>
+            <TransformGroup name="cebisAxion_dblOperatingTimeNumbersP2_SC" translation="-0.0439812 2.683e-08 -0.0637994" rotation="-90 180 0" clipDistance="30" nodeId="131"/>
+            <Shape name="cebisAxion_dblGPSsatellitP2_SC" translation="0.048 1.19209e-07 0.0759997" rotation="-180 -1.8783e-05 -180" scale="2 1 2" shapeId="22" clipDistance="20" nodeId="132" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>
+            <Shape name="cebisAxion_dblGPSactiveP2_SC" translation="0.0369999 5.20945e-05 0.076" rotation="-180 -1.79292e-05 180" scale="2 1 2" shapeId="23" clipDistance="20" nodeId="133" castsShadows="true" receiveShadows="true" materialIds="16"/>
+          </TransformGroup>
+          <TransformGroup name="naviMap" rotation="0 -0 -1.70755e-06" clipDistance="30" nodeId="134">
+            <Shape name="cebisAxion_dblNaviMapP2_SC" translation="-0.0623804 2.07655e-06 0.0566007" shapeId="24" clipDistance="30" nodeId="135" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12">
+              <Shape name="cebisAxion_dblNaviMapPosP2_SC" translation="-0.000342581 0 -0.00141848" scale="0.5 1 0.5" shapeId="25" clipDistance="30" nodeId="136" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="8"/>
+            </Shape>
+          </TransformGroup>
+          <TransformGroup name="fieldScreen" clipDistance="30" nodeId="137">
+            <Shape name="cebisFieldScreenP2_SC" shapeId="26" clipDistance="30" nodeId="138" castsShadows="false" receiveShadows="true" materialIds="5"/>
+            <Shape name="cebisFieldScreenDMP2_SC" shapeId="26" clipDistance="30" nodeId="139" castsShadows="false" receiveShadows="true" materialIds="6"/>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+    <TransformGroup name="claasGpsPilot" translation="0 0 0.22522" clipDistance="30" nodeId="140">
+      <TransformGroup name="gpsIcon" clipDistance="30" nodeId="141">
+        <TransformGroup name="cebisAxion_dblPrecFarmSoilTypeCC" translation="0.0779767 0.001 0.0694816" rotation="90 -0 -180" clipDistance="30" nodeId="142"/>
+        <TransformGroup name="cebisAxion_dblPrecFarmAppRateCC" translation="0.0820014 0.001 0.057" rotation="90 -0 -180" clipDistance="30" nodeId="143"/>
+        <TransformGroup name="cebisAxion_dblPrecFarmNCangedCC" translation="0.0556643 0.000999928 0.057" rotation="90 -4.26887e-07 180" clipDistance="30" nodeId="144"/>
+        <TransformGroup name="cebisAxion_dblSpeedNumbersCC" translation="-0.0641583 0.001 0.0656858" rotation="90 -0 -180" clipDistance="30" nodeId="145"/>
+        <Shape name="axionGps_dblGPSsatellitCC" translation="-0.083371 -1.19209e-07 0.0702932" rotation="-1.28066e-06 -0 0" shapeId="35" clipDistance="30" nodeId="146" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="10"/>
+        <Shape name="axionGps_dblCompassNeedleRotCC" translation="0.093693 -1.19209e-07 -0.0710537" rotation="-1.28066e-06 -0 0" shapeId="36" clipDistance="30" nodeId="147" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="10"/>
+        <TransformGroup name="cebisAxion_dblCompassCC" translation="0.0779767 0.001 -0.075" rotation="90 -4.26887e-07 180" clipDistance="30" nodeId="148"/>
+        <TransformGroup name="cebisAxion_dblCompassNumbersCC" translation="0.0779767 0.001 -0.071" rotation="90 -0 -180" clipDistance="30" nodeId="149"/>
+        <TransformGroup name="cebisAxion_dblFieldNumbersCC" translation="0.057 0.001 -0.074" rotation="90 -0 -180" clipDistance="30" nodeId="150"/>
+        <Shape name="axionGps_dblGPSactiveCC" translation="0.000351012 0 -0.0711491" rotation="-1.28066e-06 -0 0" shapeId="37" clipDistance="30" nodeId="151" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="10"/>
+        <TransformGroup name="cebisAxion_dblWorkWidthNumbersCC" translation="4.27997e-05 0.001 -0.06" rotation="90 -0 -180" clipDistance="30" nodeId="152"/>
+        <TransformGroup name="cebisAxion_dblOutsideTempCC" translation="-0.08 0.001 -0.074" rotation="90 -0 -180" clipDistance="30" nodeId="153"/>
+        <Shape name="cebisAxion_dblWeatherSunCC" translation="-0.091 0 -0.0715" rotation="0 180 6.83019e-06" scale="1.5 1 1.5" shapeId="38" clipDistance="20" nodeId="154" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="16" weatherRequiredMask="0x1"/>
+        <Shape name="cebisAxion_dblWeatherCloudCC" translation="-0.091 0 -0.0715" rotation="0 180 6.83e-06" scale="1.5 1 1.5" shapeId="39" clipDistance="20" nodeId="155" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="16" weatherRequiredMask="0x10"/>
+        <Shape name="cebisAxion_dblWeatherRainCC" translation="-0.091 0 -0.0715" rotation="0 180 6.83e-06" scale="1.5 1 1.5" shapeId="40" clipDistance="20" nodeId="156" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="16" weatherRequiredMask="0x2"/>
+        <Shape name="cebisAxion_dblWeatherHailCC" translation="-0.091 0 -0.0715" rotation="0 180 6.83e-06" scale="1.5 1 1.5" shapeId="41" clipDistance="20" nodeId="157" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="16" weatherRequiredMask="0x4"/>
+        <Shape name="cebisAxion_dblWeatherSnowCC" translation="-0.091 0 -0.0715" rotation="0 180 6.83e-06" scale="1.5 1 1.5" shapeId="42" clipDistance="20" nodeId="158" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="16" weatherRequiredMask="0x8"/>
+        <Shape name="cebisAxion_dblWeatherTwisterCC" translation="-0.091 0 -0.0715" rotation="0 180 6.83e-06" scale="1.5 1 1.5" shapeId="43" clipDistance="20" nodeId="159" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="16" weatherPreventMask="0x1f"/>
+        <Shape name="axionGps_dblNaviMapCC" rotation="-1.28066e-06 -0 0" shapeId="44" clipDistance="30" nodeId="160" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="13">
+          <Shape name="cebisAxion_dblNaviMapPosCC" translation="2.98023e-08 0 0" rotation="4.26887e-07 -3.55739e-07 1.42296e-06" scale="1.2 1 1.2" shapeId="25" clipDistance="30" nodeId="161" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="8"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="gpsScreen" clipDistance="30" nodeId="162">
+        <Shape name="axionGps_decalCC" rotation="-1.28066e-06 -0 0" shapeId="45" clipDistance="30" nodeId="163" castsShadows="false" receiveShadows="true" materialIds="11"/>
+        <Shape name="axionGps_dblButtonDecalCC" translation="0.000250965 -1.19209e-07 -0.000427961" rotation="-1.28066e-06 -0 0" shapeId="46" clipDistance="30" nodeId="164" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="11"/>
+        <Shape name="axionGps_backgroundDecalCC" rotation="-1.28066e-06 -0 0" scale="1.03 1 1.03" shapeId="47" clipDistance="30" nodeId="165" castsShadows="false" receiveShadows="true" materialIds="10"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="76">
+      <Attribute name="MaxHandle" type="integer" value="199"/>
+    </UserAttribute>
+    <UserAttribute nodeId="84">
+      <Attribute name="MaxHandle" type="integer" value="102"/>
+    </UserAttribute>
+    <UserAttribute nodeId="85">
+      <Attribute name="MaxHandle" type="integer" value="102"/>
+    </UserAttribute>
+    <UserAttribute nodeId="105">
+      <Attribute name="MaxHandle" type="integer" value="195"/>
+    </UserAttribute>
+    <UserAttribute nodeId="133">
+      <Attribute name="MaxHandle" type="integer" value="195"/>
+    </UserAttribute>
+    <UserAttribute nodeId="156">
+      <Attribute name="MaxHandle" type="integer" value="232"/>
+    </UserAttribute>
+    <UserAttribute nodeId="157">
+      <Attribute name="MaxHandle" type="integer" value="233"/>
+    </UserAttribute>
+    <UserAttribute nodeId="158">
+      <Attribute name="MaxHandle" type="integer" value="234"/>
+    </UserAttribute>
+    <UserAttribute nodeId="159">
+      <Attribute name="MaxHandle" type="integer" value="235"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

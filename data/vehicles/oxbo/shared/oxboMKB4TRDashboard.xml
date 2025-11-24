@@ -1,0 +1,212 @@
+﻿dbl.<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+    
+	<dashboardCompound name="OXBO_MKB4TR_DASHBOARD" filename="data/vehicles/oxbo/shared/oxboMKB4TRDashboard.i3d" node="oxboMKB4TRDashboard">
+	<!-- </lights> -->
+			<dashboard displayType="EMITTER" valueType="lights.turnLightLeft" node="oxboMKB4TR_dblTurnLightLeftP1_SC" hideInactive="true" emitColor="DFM_GREEN2" intensity="0.5" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lights.turnLightRight" node="oxboMKB4TR_dblTurnLightRightP1_SC" hideInactive="true" emitColor="DFM_GREEN2" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="lights.beaconLight" node="oxboMKB4TR_dblBeaconLightP1_SC" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lights.lightState"  node="oxboMKB4TR_dblDefaultLightP1_SC" emitColor="DFM_GREEN2" lightTypes="0" intensity="0.4" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="EMITTER" valueType="lights.lightState"  node="oxboMKB4TR_dblWorkLightP1_SC" emitColor="DFM_GREEN2" lightTypes="1 2" intensity="0.4" groups="MOTOR_ACTIVE"/>
+	<!-- </enterable> -->		
+			<dashboard displayType="TEXT" valueType="enterable.outsideTemperature" node="oxboMKB4TR_dblOutsideTempP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.004" textMask="00.0" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="oxboMKB4TR_dblOperatingTimeP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+	<!-- <drivable>	 -->
+			<dashboard displayType="ROT" valueType="drivable.cruiseControl" node="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" rotAxis="2" minRot="-90" maxRot="0" minValueRot="0" maxValueRot="30" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" baseColor="SHARED_GREY1" emitColor="OXBO_YELLOW1" intensity="0.4" groups="MOTOR_ACTIVE"/>
+	<!-- <fillUnit> -->		
+			<dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" node="oxboMKB4TR_dblBunkerFillLevelP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" node="oxboMKB4TR_dblBunkerFillLevelNumbersP1_SC" textColor="0.2 0.2 0.2 1" textMask="00000" textSize="0.006" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="oxboMKB4TR_dblBunkerFillLevelPrecNumbersP1_SC" textColor="0.2 0.2 0.2 1" textMask="000" textSize="0.007" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="fillUnit.fillLevelPct" node="oxboMKB4TR_dblFuelSliderP1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="oxboMKB4TR_dblFuelWarningP1_SC" baseColor="SHARED_GREY1" emitColor="OLOFSFORS_BLUE1" intensity="0.5" warningThresholdMax="42.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="oxboMKB4TR_dblFuelPercNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="fillUnit.fillLevelPct" node="oxboMKB4TR_dblAdBlueSliderP1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="oxboMKB4TR_dblAdblueWarningP1_SC" baseColor="SHARED_GREY1" emitColor="OLOFSFORS_BLUE1" intensity="0.5" warningThresholdMax="6" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="oxboMKB4TR_dblAdBluePercNumbersP1_SC" textColor="0.2 0.2 0.2 0" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+	<!-- </motorized> -->
+			<dashboard displayType="SLIDER" valueType="motorized.rpm" node="oxboMKB4TR_dblRpmSliderP1_SC" minValueSlider="600" maxValueSlider="2200" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="motorized.speed" node="oxboMKB4TR_dblSpeedrSliderP1_SC" minValueSlider="0" maxValueSlider="30" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="oxboMKB4TR_dblOilTempSliderP1_SC" doInterpolation="true" interpolationSpeed="0.1" minValueSlider="10" maxValueSlider="80" offsetValue="-18" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="motorized.motorTemperature" node="oxboMKB4TR_dblEngineTempSliderP1_SC" minValueSlider="70" maxValueSlider="105" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="TEXT" valueType="motorized.speed" node="oxboMKB4TR_dblSpeedNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.011" textMask="00.0" font="GENERIC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="oxboMKB4TR_dblOilTempNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.1" textColor="0.2 0.2 0.2 1" textSize="0.004" textMask="000" offsetValue="-18" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="oxboMKB4TR_dblEngineTempNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" valueType="motorized.directionForwardExclusive" node="oxboMKB4TR_dblGearDriveP1_SC"  baseColor="SHARED_GREY1" emitColor="GREEN" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="motorized.directionNeutral" node="oxboMKB4TR_dblGearNeutralP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="motorized.directionBackward" node="oxboMKB4TR_dblGearReversP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" hideInactive="true" intensity="0.5"  groups="MOTOR_ACTIVE"/>
+	<!-- DBL -->
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_mainDisplay" idleValue="-1" intensity="0.15" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_mainDecal" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_mainDecal" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblAdblueWarningP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblFuelWarningP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblEngineTempWarningP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblFillLevelTonSliderP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblGPSactiveP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblGPSsatellitP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblParkBreakP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblHLMonP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblDefaultLightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWorkLightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblBeaconLightP1_SC" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblLadderCloseP1_SC" baseColor="SHARED_GREY1" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblLadderOpenP1_SC" baseColor="SHARED_GREY1" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblHeaderLoweredP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblHeaderLiftedP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblBunkerFillLevelP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherSunP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherCloudP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherRainP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherHailP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherSnowP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="oxboMKB4TR_dblWeatherTwisterP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherSunP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherCloudP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherRainP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherHailP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherSnowP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="oxboMKB4TR_dblWeatherTwisterP1_SC" emitColor="SHARED_GREY1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<!-- CVT -->
+			<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="motorcoldlamp" node="oxboMKB4TR_dblEngineTempWarningP1_SC" baseColor="SHARED_GREY1" emitColor="AGRIO_BLUE" intensity="0.5" groups="MOTOR_ACTIVE"/>
+			<!-- VCA -->
+			<dashboard displayType="EMITTER" valueType="dbl.vca" cmd="park" node="oxboMKB4TR_dblParkBreakP1_SC" emitColor="RED" groups="MOTOR_ACTIVE"/>
+			<!-- FillLevel -->
+			<dashboard displayType="SLIDER" valueType="dbl.base" cmd="fillLevel" option="abskg" joints="0" partition="1" node="oxboMKB4TR_dblFillLevelTonSliderP1_SC" factor="0.001" minValueSlider="0" maxValueSlider="5" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="fillLevel" option="abskg" joints="0" partition="1" node="oxboMKB4TR_dblBunkerFillLevelTonNumbersP1_SC" factor="0.001" textColor="0.2 0.2 0.2 1" textMask="00.00" textSize="0.007" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Combine -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.combine" cmd="pipeState" state="2" node="oxboMKB4TR_dblLadderCloseP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.combine" cmd="pipeState" state="1" node="oxboMKB4TR_dblLadderOpenP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.combine" cmd="overloading" node="oxboMKB4TR_dblBunkerOverlodingP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.combine" cmd="hectars" node="oxboMKB4TR_dblPrecFarmHectarAllP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Bunker Folding -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folded" joints="0"  node="oxboMKB4TR_dblBunkerFoldedP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolded" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="folding" joints="0" node="oxboMKB4TR_dblBunkerFoldingStateP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolding" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="folded" joints="0" node="oxboMKB4TR_dblBunkerFoldedP1_SC" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="unfolded" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingP1_SC" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="folding" joints="0" node="oxboMKB4TR_dblBunkerFoldingStateP1_SC" emitColor="RED" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="dbl.base" cmd="unfolding" joints="0" node="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" emitColor="GREEN" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<!-- Header -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowered" joints="0" node="oxboMKB4TR_dblHeaderLoweredP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifted" joints="0" node="oxboMKB4TR_dblHeaderLiftedP1_SC" groups="MOTOR_ACTIVE"/>
+			<!-- PTO -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0"  node="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" factor="0.4525" doInterpolation="true" interpolationSpeed="0.16" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" factor="0.451895" doInterpolation="true" interpolationSpeed="0.2" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" factor="0.0642" doInterpolation="true" interpolationSpeed="0.06" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Field -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="oxboMKB4TR_dblFieldNumbersP1_SC" textColor="0 0 0 0" textSize="0.0025" textMask="000" font="GENERIC_BOLD" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+			<!-- HLM -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="headland" node="oxboMKB4TR_dblHLMheadlandP1_SC"  groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.hlm" option="field" node="oxboMKB4TR_dblHLMfieldP1_SC"  groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="dbl.hlm" option="" 			  node="oxboMKB4TR_dblHLMonP1_SC" baseColor="SHARED_GREY1" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" 	  node="oxboMKB4TR_dblHLMfieldP1_SC" baseColor="SHARED_GREY1" emitColor="ELMERSMFG_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" 	  node="oxboMKB4TR_dblHLMheadlandP1_SC" baseColor="SHARED_GREY1" emitColor="ELMERSMFG_BLUE1" intensity="1" groups="MOTOR_ACTIVE"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="oxboMKB4TR_dblRealClockP1_SC" textColor="1 1 1 1" textMask="........." textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+		<!-- <ai> -->	
+			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="oxboMKB4TR_dblGPSactiveP1_SC" emitColor="GREEN" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="oxboMKB4TR_dblGPSsatellitP1_SC" baseColor="1 1 1 1" emitColor="OXBO_YELLOW1" intensity="0.5" groups="MOTOR_ACTIVE"/>
+    </dashboardCompound>
+	
+	<dashboardCompound name="OXBO_MKB4TR_NAVI" filename="data/vehicles/oxbo/shared/oxboMKB4TRDashboard.i3d" node="oxboMKB4TR_dblNaviMapP1_CC">
+	<!-- MiniMap -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="oxboMKB4TR_dblNaviMapP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="oxboMKB4TR_dblNaviiMapPosP1_CC" groups="MOTOR_ACTIVE"/>	
+	
+    </dashboardCompound>
+	
+	<dashboardCompound name="OXBO_MKB4TR_RADIO" filename="data/vehicles/oxbo/shared/oxboMKB4TRDashboard.i3d" node="oxboMKB4TR_RadioDisplay">
+		
+		<dashboard displayType="EMITTER" node="oxboMKB4TR_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="radio" node="oxboMKB4TR_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="radio" option="station" node="oxboMKB4TR_dblRadioChannel" textColor="0 0 0" textMask=".............." textSize="0.009" textScaleX="1.4" textScaleY="0.8" font="DIGIT" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="radio" option="volume" node="oxboMKB4TR_dblRadioVolume" textColor="0 0 0" textMask="0.0" textSize="0.009" textScaleX="0.4" textScaleY="0.8" font="DIGIT" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+		
+	</dashboardCompound>
+	
+	<i3dMappings>
+		<i3dMapping id="oxboMKB4TRDashboard" node="0>"/>
+		<i3dMapping id="mainDisplay" node="0>0"/>
+		<i3dMapping id="mainIcon" node="0>0|0"/>
+		<i3dMapping id="oxboMKB4TR_dblRpmSliderP1_SC" node="0>0|0|0"/>
+		<i3dMapping id="oxboMKB4TR_dblSpeedrSliderP1_SC" node="0>0|0|1"/>
+		<i3dMapping id="oxboMKB4TR_dblSpeedNumbersP1_SC" node="0>0|0|2"/>
+		<i3dMapping id="oxboMKB4TR_dblGearDriveP1_SC" node="0>0|0|3"/>
+		<i3dMapping id="oxboMKB4TR_dblGearNeutralP1_SC" node="0>0|0|4"/>
+		<i3dMapping id="oxboMKB4TR_dblGearReversP1_SC" node="0>0|0|5"/>
+		<i3dMapping id="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" node="0>0|0|6"/>
+		<i3dMapping id="oxboMKB4TR_dblAdBlueSliderP1_SC" node="0>0|0|7"/>
+		<i3dMapping id="oxboMKB4TR_dblAdblueWarningP1_SC" node="0>0|0|8"/>
+		<i3dMapping id="oxboMKB4TR_dblAdBluePercNumbersP1_SC" node="0>0|0|9"/>
+		<i3dMapping id="oxboMKB4TR_dblFuelSliderP1_SC" node="0>0|0|10"/>
+		<i3dMapping id="oxboMKB4TR_dblFuelWarningP1_SC" node="0>0|0|11"/>
+		<i3dMapping id="oxboMKB4TR_dblFuelPercNumbersP1_SC" node="0>0|0|12"/>
+		<i3dMapping id="oxboMKB4TR_dblOilTempSliderP1_SC" node="0>0|0|13"/>
+		<i3dMapping id="oxboMKB4TR_dblOilTempNumbersP1_SC" node="0>0|0|14"/>
+		<i3dMapping id="oxboMKB4TR_dblEngineTempSliderP1_SC" node="0>0|0|15"/>
+		<i3dMapping id="oxboMKB4TR_dblEngineTempWarningP1_SC" node="0>0|0|16"/>
+		<i3dMapping id="oxboMKB4TR_dblEngineTempNumbersP1_SC" node="0>0|0|17"/>
+		<i3dMapping id="oxboMKB4TR_dblPrecFarmTonPerHectarP1_SC" node="0>0|0|18"/>
+		<i3dMapping id="oxboMKB4TR_dblPrecFarmHectarDailyP1_SC" node="0>0|0|19"/>
+		<i3dMapping id="oxboMKB4TR_dblPrecFarmHectarAllP1_SC" node="0>0|0|20"/>
+		<i3dMapping id="oxboMKB4TR_dblOperatingTimeP1_SC" node="0>0|0|21"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFoldedP1_SC" node="0>0|0|22"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFoldingStateP1_SC" node="0>0|0|23"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" node="0>0|0|24"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerUnfoldingP1_SC" node="0>0|0|25"/>
+		<i3dMapping id="oxboMKB4TR_dblLadderCloseP1_SC" node="0>0|0|26"/>
+		<i3dMapping id="oxboMKB4TR_dblLadderOpenP1_SC" node="0>0|0|27"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelP1_SC" node="0>0|0|28"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelNumbersP1_SC" node="0>0|0|29"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelPrecNumbersP1_SC" node="0>0|0|30"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerOverlodingP1_SC" node="0>0|0|31"/>
+		<i3dMapping id="oxboMKB4TR_dblBunkerFillLevelTonNumbersP1_SC" node="0>0|0|32"/>
+		<i3dMapping id="oxboMKB4TR_dblFillLevelTonSliderP1_SC" node="0>0|0|33"/>
+		<i3dMapping id="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" node="0>0|0|34"/>
+		<i3dMapping id="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" node="0>0|0|35"/>
+		<i3dMapping id="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" node="0>0|0|36"/>
+		<i3dMapping id="oxboMKB4TR_dblHeaderLoweredP1_SC" node="0>0|0|37"/>
+		<i3dMapping id="oxboMKB4TR_dblHeaderLiftedP1_SC" node="0>0|0|38"/>
+		<i3dMapping id="oxboMKB4TR_dblGPSsatellitP1_SC" node="0>0|0|39"/>
+		<i3dMapping id="oxboMKB4TR_dblFieldNumbersP1_SC" node="0>0|0|40"/>
+		<i3dMapping id="oxboMKB4TR_dblGPSactiveP1_SC" node="0>0|0|41"/>
+		<i3dMapping id="oxboMKB4TR_dblParkBreakP1_SC" node="0>0|0|42"/>
+		<i3dMapping id="oxboMKB4TR_dblRealClockP1_SC" node="0>0|0|43"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherSunP1_SC" node="0>0|0|44"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherCloudP1_SC" node="0>0|0|45"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherRainP1_SC" node="0>0|0|46"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherHailP1_SC" node="0>0|0|47"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherSnowP1_SC" node="0>0|0|48"/>
+		<i3dMapping id="oxboMKB4TR_dblWeatherTwisterP1_SC" node="0>0|0|49"/>
+		<i3dMapping id="oxboMKB4TR_dblOutsideTempP1_SC" node="0>0|0|50"/>
+		<i3dMapping id="oxboMKB4TR_dblHLMonP1_SC" node="0>0|0|51"/>
+		<i3dMapping id="oxboMKB4TR_dblHLMfieldP1_SC" node="0>0|0|52"/>
+		<i3dMapping id="oxboMKB4TR_dblHLMheadlandP1_SC" node="0>0|0|53"/>
+		<i3dMapping id="oxboMKB4TR_dblTurnLightLeftP1_SC" node="0>0|0|54"/>
+		<i3dMapping id="oxboMKB4TR_dblTurnLightRightP1_SC" node="0>0|0|55"/>
+		<i3dMapping id="oxboMKB4TR_dblDefaultLightP1_SC" node="0>0|0|56"/>
+		<i3dMapping id="oxboMKB4TR_dblWorkLightP1_SC" node="0>0|0|57"/>
+		<i3dMapping id="oxboMKB4TR_dblBeaconLightP1_SC" node="0>0|0|58"/>
+		<i3dMapping id="mainScreen" node="0>0|1"/>
+		<i3dMapping id="oxboMKB4TR_mainDisplay" node="0>0|1|0"/>
+		<i3dMapping id="oxboMKB4TR_mainDecal" node="0>0|1|1"/>
+		<i3dMapping id="oxboMKB4TR_dblNaviMapP1_CC" node="1>"/>
+		<i3dMapping id="oxboMKB4TR_dblNaviiMapPosP1_CC" node="1>0"/>
+		<i3dMapping id="oxboMKB4TR_RadioDisplay" node="2>"/>
+		<i3dMapping id="radioIcon" node="2>0"/>
+		<i3dMapping id="oxboMKB4TR_dblRadioChannel" node="2>0|0"/>
+		<i3dMapping id="oxboMKB4TR_dblRadioVolume" node="2>0|1"/>
+		<i3dMapping id="radioScreen" node="2>1"/>
+		<i3dMapping id="oxboMKB4TR_dblRadioDisplay_decal" node="2>1|0"/>
+	</i3dMappings>
+</dashboardCompounds>

@@ -955,6 +955,11 @@
 			<!-- MiniMap -->
 			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="oxboBP_dblNaviMapP1_CC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="oxboBP_dblNaviMapPosP1_CC" groups="MOTOR_ACTIVE"/>
+			<!-- Radio -->
+			<dashboard displayType="EMITTER" node="oxboBP_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="base" cmd="radio" node="oxboBP_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="radio" option="station" node="oxboBP_dblRadioChannel" textColor="0 0 0" textMask=".............." textSize="0.009" textScaleX="1.4" textScaleY="0.8" font="DIGIT" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="radio" option="volume" node="oxboBP_dblRadioVolume" textColor="0 0 0" textMask="0.0" textSize="0.009" textScaleX="0.4" textScaleY="0.8" font="DIGIT" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
 		</dashboardLive>
     </dashboard>
 
@@ -1256,6 +1261,12 @@
 		
 		<i3dMapping id="oxbobBP_mainDisplay" node="0>0|6|1|0|1|0|1|0"/>
 		<i3dMapping id="oxboBP_mainDecals" node="0>0|6|1|0|1|0|1|1"/>
+		<i3dMapping id="oxboBP_RadioDisplay" node="0>0|6|4|8"/>
+		<i3dMapping id="radioIcon" node="0>0|6|4|8|0"/>
+		<i3dMapping id="oxboBP_dblRadioChannel" node="0>0|6|4|8|0|0"/>
+		<i3dMapping id="oxboBP_dblRadioVolume" node="0>0|6|4|8|0|1"/>
+		<i3dMapping id="radioScreen" node="0>0|6|4|8|1"/>
+		<i3dMapping id="oxboBP_dblRadioDisplay_decal" node="0>0|6|4|8|1|0"/>
 		
         <i3dMapping id="playerSkinRotNode" node="0>0|6|1|1|0|0" />
         <i3dMapping id="playerSkin" node="0>0|6|1|1|0|0|0" />

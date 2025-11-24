@@ -1,0 +1,95 @@
+dbl.<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+	<!-- Implements -->
+			<!-- <group name="DBL_SHOVEL" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="wheelLoaderTool"/> -->
+			<!-- <group name="DBL_SHOVEL" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="spec_shovel"/> -->
+			<!-- <group name="DBL_FORKLIFTER" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="spec_dynamicMountAttacher"/> -->
+			<!-- <group name="DBL_BIGBAGLIFTER" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="spec_tensionBeltObject"/> -->
+			<!-- <group name="DBL_SILAGESHOVEL" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="spec_dynamicMountAttacherShovelLeveler"/> -->
+			
+			<!-- <group name="DBL_SHOVEL" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="shovelLeveler"/>
+			<group name="DBL_FORKLIFTER" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="implementDynamicMountAttacher"/>
+			<group name="DBL_BIGBAGLIFTER" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="implement"/>
+			<group name="DBL_SILAGESHOVEL" attacherJointIndices="1" dbl="base_hasTypeDesc" dblOption="dynamicMountAttacherShovelLeveler"/> -->
+
+    <dashboardCompound name="CO_PILOT_DASHBOARD" filename="data/vehicles/volvo/shared/coPilotMainDisplay.i3d" node="coPilotDashboard">
+		
+		<!-- DBL -->
+			<dashboard displayType="VISIBILITY" node="volvoCoPilotStarting_decals" idleValue="0" groups="MOTOR_STARTING"/>
+			<dashboard displayType="EMITTER" node="volvoCoPilotStarting_decals" idleValue="0" intensity="0.2" groups="MOTOR_STARTING"/>
+			
+			<dashboard displayType="EMITTER" node="volvoCoPilot_mainDisplay_decals" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+			
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblShovelFillTypeIconP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblForwardArrowP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblBackwardArrowP1_SC" idleValue="0" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="volvoCoPilot_dblForwardArrowP1_SC" idleValue="0" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="volvoCoPilot_dblBackwardArrowP1_SC" idleValue="0" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" groups="MOTOR_RUNNING"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblWeatherSunP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblWeatherCloudP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblWeatherRainP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblWeatherHailP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblWeatherSnowP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblWeatherTwisterP1_CC" groups="MOTOR_RUNNING"/>
+			
+			<!-- motorized -->
+			<dashboard displayType="VISIBILITY"  valueType="motorized.directionForward" node="volvoCoPilot_dblForwardArrowP1_SC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY"  valueType="motorized.directionBackward" node="volvoCoPilot_dblBackwardArrowP1_SC" groups="MOTOR_RUNNING"/>
+			
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="volvoCoPilot_dblRealClockP1_SC" textColor="1 1 1 1" textMask="........." textSize="0.004" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- Shovel -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="filltype" option="icon" joints="1" jointType="wheelLoader" trailer="1" partition="1" node="volvoCoPilot_dblShovelFillTypeIconP1_SC" intensity="0.75" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="filltype" option="name" joints="1" jointType="wheelLoader" trailer="1" partition="1" node="volvoCoPilot_dblShovelFillTypeP1_SC" textColor="1 1 1 1" textSize="0.0045" textMask="............." font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="fillLevel" option="abskg" joints="1" jointType="wheelLoader" trailer="1" partition="1" node="volvoCoPilot_dblShovelFillLevelP1_SC" factor="0.001" textColor="1 1 1 1" textSize="0.03" font="GENERIC" textMask="00.00" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="dbl.frontLoader" cmd="toolrotation" joints="0" jointType="wheelLoader" option="2" stateText="world" node="volvoCoPilot_dblFrontToolRotDegreeP1_SC" factor="1" textColor="1 1 1 1" textSize="0.01" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="SLIDER" valueType="dbl.base" cmd="fillLevel" option="percent" joints="1" jointType="wheelLoader" trailer="1" partition="1" node="volvoCoPilot_dblTrailerFillLevelSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.001" groups="MOTOR_RUNNING"/>
+			
+			<!-- Implements -->
+			<!-- <dashboard displayType="VISIBILITY" node="volvoCoPilot_dblShovelIconP1_SC" groups="MOTOR_RUNNING DBL_SHOVEL"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblForkLifterIconP1_SC" groups="MOTOR_RUNNING DBL_FORKLIFTER"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblBigBagLifterIconP1_SC" groups="MOTOR_RUNNING DBL_BIGBAGLIFTER"/>
+			<dashboard displayType="VISIBILITY" node="volvoCoPilot_dblSilageForkIconP1_SC" groups="MOTOR_RUNNING DBL_SILAGESHOVEL"/> -->
+    </dashboardCompound>
+	
+	<dashboardCompound name="CO_PILOT_RADIO" filename="data/vehicles/volvo/shared/coPilotMainDisplay.i3d" node="coPilotRadioDisplay">
+		
+		<dashboard displayType="EMITTER" node="volvoCoPilot_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+		
+		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="radio" node="volvoCoPilot_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="radio" option="station" node="volvoCoPilot_dblRadioChannel" textColor="0 0 0" textMask=".............." textSize="0.009" textScaleX="1.4" textScaleY="0.8" font="DIGIT" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="radio" option="volume" node="volvoCoPilot_dblRadioVolume" textColor="0 0 0" textMask="0.0" textSize="0.009" textScaleX="0.4" textScaleY="0.8" font="DIGIT" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+		
+	</dashboardCompound>
+
+    <i3dMappings>
+		<i3dMapping id="coPilotDashboard" node="0>"/>
+		<i3dMapping id="volvoCoPilotStarting_decals" node="0>0|0"/>
+		<i3dMapping id="volvoCoPilot_dblRealClockP1_SC" node="0>1|0|0"/>
+		<i3dMapping id="volvoCoPilot_dblFrontToolRotDegreeP1_SC" node="0>1|0|1"/>
+		<i3dMapping id="volvoCoPilot_dblShovelFillLevelP1_SC" node="0>1|0|2"/>
+		<i3dMapping id="volvoCoPilot_dblShovelFillTypeIconP1_SC" node="0>1|0|3"/>
+		<i3dMapping id="volvoCoPilot_dblShovelFillTypeP1_SC" node="0>1|0|4"/>
+		<i3dMapping id="volvoCoPilot_dblForwardArrowP1_SC" node="0>1|0|5"/>
+		<i3dMapping id="volvoCoPilot_dblBackwardArrowP1_SC" node="0>1|0|6"/>
+		<i3dMapping id="volvoCoPilot_dblTrailerFillLevelSliderP1_SC" node="0>1|0|7"/>
+		<i3dMapping id="volvoCoPilot_dblWeatherSunP1_CC" node="0>1|0|8"/>
+		<i3dMapping id="volvoCoPilot_dblWeatherCloudP1_CC" node="0>1|0|9"/>
+		<i3dMapping id="volvoCoPilot_dblWeatherRainP1_CC" node="0>1|0|10"/>
+		<i3dMapping id="volvoCoPilot_dblWeatherHailP1_CC" node="0>1|0|11"/>
+		<i3dMapping id="volvoCoPilot_dblWeatherSnowP1_CC" node="0>1|0|12"/>
+		<i3dMapping id="volvoCoPilot_dblWeatherTwisterP1_CC" node="0>1|0|13"/>
+		<i3dMapping id="volvoCoPilot_dblSOutsideTempP1_SC" node="0>1|0|14"/>
+		<i3dMapping id="volvoCoPilot_dblShovelIconP1_SC" node="0>1|0|15"/>
+		<i3dMapping id="volvoCoPilot_dblForkLifterIconP1_SC" node="0>1|0|16"/>
+		<i3dMapping id="volvoCoPilot_dblBigBagLifterIconP1_SC" node="0>1|0|17"/>
+		<i3dMapping id="volvoCoPilot_dblSilageForkIconP1_SC" node="0>1|0|18"/>
+		<i3dMapping id="volvoCoPilot_mainDisplay_decals" node="0>1|1|0"/>
+		<i3dMapping id="coPilotRadioDisplay" node="1>"/>
+		<i3dMapping id="volvoCoPilot_dblRadioChannel" node="1>0|0"/>
+		<i3dMapping id="volvoCoPilot_dblRadioVolume" node="1>0|1"/>
+		<i3dMapping id="volvoCoPilot_dblRadioDisplay_decal" node="1>1|0"/>
+	</i3dMappings>
+</dashboardCompounds>

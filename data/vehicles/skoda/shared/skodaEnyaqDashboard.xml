@@ -1,0 +1,24 @@
+﻿dbl.<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+
+<!-- Page -->
+	<group name="PAGE1" dbl="page" page="1"/>
+	<group name="PAGE2" dbl="page" page="2"/>
+    
+	<dashboardCompound name="SKODA_ENYAQ_DASHBOARD" filename="data/vehicles/skoda/shared/skodaEnyaqDashboard.i3d" node="skodaEnyaqDashboard">
+		<dashboard displayType="EMITTER" node="skodaEnyaq_dblMainScreenP1" idleValue="-1" intensity="1" groups="MOTOR_RUNNING PAGE1"/>
+		<dashboard displayType="EMITTER" node="skodaEnyaq_dblNaviMapP2" idleValue="-1" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
+		<dashboard displayType="EMITTER" node="skodaEnyaq_dblNaviMapPosP2" emitColor="STARA_ORANGE" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
+<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="skodaEnyaq_dblNaviMapP2" groups="MOTOR_RUNNING PAGE2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="skodaEnyaq_dblNaviMapPosP2" groups="MOTOR_RUNNING PAGE2"/>
+    </dashboardCompound>
+	
+	<i3dMappings>
+		<i3dMapping id="skodaEnyaqDashboard" node="0>"/>
+		<i3dMapping id="skodaEnyaq_dblMainScreenP1" node="0>0"/>
+		<i3dMapping id="skodaEnyaq_dblNaviMapP2" node="0>1"/>
+		<i3dMapping id="skodaEnyaq_dblNaviMapPosP2" node="0>1|0"/>
+	</i3dMappings>
+</dashboardCompounds>

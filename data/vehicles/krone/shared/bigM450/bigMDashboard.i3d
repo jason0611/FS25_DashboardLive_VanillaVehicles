@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="bigMDashboard.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.10"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="6" filename="$data/shared/default_specular.png"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="1" filename="../bigM450/textures/kroneBigMMainDisplay.png"/>
+    <File fileId="7" filename="../bigM450/textures/kroneBigMMainDisplayDM.dds"/>
+    <File fileId="5" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="bigMDisplay_mat" materialId="5" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="bigMDisplay_mat" materialId="7" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="bigMDisplay_mat" materialId="8" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="9" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="5"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="6"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="bigMDashboard.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="bigMDashboard" clipDistance="50" nodeId="40">
+      <TransformGroup name="bigM_MainDisplay" clipDistance="50" nodeId="41">
+        <TransformGroup name="alwaysOn" clipDistance="50" nodeId="42">
+          <TransformGroup name="bigM_dblRealClockNumbersAO" translation="-0.104 -1.07854e-08 0.0773244" rotation="90 -1.86693e-05 180" clipDistance="20" nodeId="43"/>
+          <Shape name="bigM_dblSystemWarningAO" translation="-0.077322 0 0.07037" shapeId="1" visibility="false" clipDistance="30" nodeId="44" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <TransformGroup name="bigM_dblOutsideTempAO" translation="-0.0395296 -1.07679e-08 0.0655544" rotation="90 0 180" clipDistance="20" nodeId="45"/>
+          <Shape name="bigM_dblWeatherSunAO" translation="-0.041 0 0.073" rotation="0 180 0" scale="1.4 1 1.4" shapeId="2" clipDistance="20" nodeId="46" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9" weatherRequiredMask="0x1"/>
+          <Shape name="bigM_dblWeatherCloudAO" translation="-0.041 0 0.073" rotation="0 180 0" scale="1.4 1 1.4" shapeId="3" clipDistance="20" nodeId="47" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9" weatherRequiredMask="0x10"/>
+          <Shape name="bigM_dblWeatherRainAO" translation="-0.041 0 0.073" rotation="0 180 0" scale="1.4 1 1.4" shapeId="4" clipDistance="20" nodeId="48" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9" weatherRequiredMask="0x2"/>
+          <Shape name="bigM_dblWeatherHailAO" translation="-0.041 0 0.073" rotation="0 180 0" scale="1.4 1 1.4" shapeId="5" clipDistance="20" nodeId="49" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9" weatherRequiredMask="0x4"/>
+          <Shape name="bigM_dblWeatherSnowAO" translation="-0.041 0 0.073" rotation="0 180 0" scale="1.4 1 1.4" shapeId="6" clipDistance="20" nodeId="50" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9" weatherRequiredMask="0x8"/>
+          <Shape name="bigM_dblWeatherTwisterAO" translation="-0.041 0 0.073" rotation="0 180 0" scale="1.4 1 1.4" shapeId="7" clipDistance="20" nodeId="51" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9" weatherPreventMask="0x1f"/>
+        </TransformGroup>
+        <TransformGroup name="basicIcon" clipDistance="50" nodeId="52">
+          <TransformGroup name="bigM_dblRpmNumbersP1_SC" translation="-0.06 -1.08081e-08 0.035" rotation="-90 180 0" clipDistance="20" nodeId="53"/>
+          <TransformGroup name="bigM_dblSpeedNumbersP1_SC" translation="0.022 0 0.035" rotation="-90 180 0" clipDistance="20" nodeId="54"/>
+          <Shape name="bigM_dblEngineTempDecalP1_SC" translation="0.099807 0 0.020754" shapeId="8" clipDistance="30" nodeId="55" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <TransformGroup name="bigM_dblEngineTempNumbersP1_SC" translation="0.079 0 0.018" rotation="-90 180 0" clipDistance="20" nodeId="56"/>
+          <Shape name="bigM_dblFuelDecalP1_SC" translation="0.099474 0 -0.00927" shapeId="9" clipDistance="30" nodeId="58" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <TransformGroup name="bigM_dblFuelLevelPercentNumbersP1_SC" translation="0.079 0 -0.012" rotation="-90 180 0" clipDistance="20" nodeId="59"/>
+          <Shape name="bigM_dblAdBlueDecalP1_SC" translation="0.099659 0 -0.038674" shapeId="10" clipDistance="30" nodeId="60" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <TransformGroup name="bigM_dblAdBlueLevelPercentNumbersP1_SC" translation="0.079 0 -0.042" rotation="-90 180 0" clipDistance="20" nodeId="61"/>
+          <Shape name="bigM_dblCVTDriveLevel00P1_SC" translation="0.048138 0 -0.038623" shapeId="11" clipDistance="30" nodeId="62" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblCVTDriveLevel01P1_SC" translation="0.045096 0 -0.038623" shapeId="12" clipDistance="30" nodeId="63" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblCVTDriveLevel02P1_SC" translation="0.042039 0 -0.038623" shapeId="13" clipDistance="30" nodeId="64" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblCVTDriveLevel03P1_SC" translation="0.038987 0 -0.038623" shapeId="14" clipDistance="30" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblParkBreakOnP1_SC" translation="0.021003 0 -0.035941" shapeId="15" clipDistance="30" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblParkBreakOffP1_SC" translation="0.021003 0 -0.035941" shapeId="16" clipDistance="30" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          <Shape name="bigM_dblCruiseControlP1_SC" translation="-0.023985 0 -0.036226" shapeId="17" clipDistance="30" nodeId="68" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <TransformGroup name="bigM_dblCruiseControlNumbersP1_SC" translation="-0.045 0 -0.04" rotation="-90 180 0" clipDistance="20" nodeId="69"/>
+          <Shape name="bigM_dblMowerSwathLeftP1_SC" translation="0.077581 0 -0.049073" shapeId="18" clipDistance="30" nodeId="70" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblRpmSliderMowerLeftP1_SC" translation="0.065265 0 -0.058084" shapeId="19" clipDistance="30" nodeId="71" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="5"/>
+          <TransformGroup name="bigM_dblRpmMowerLeftNumbersP1_SC" translation="0.05 0 -0.053" rotation="-90 180 0" clipDistance="20" nodeId="72"/>
+          <Shape name="bigM_dblMowerSwathMiddleP1_SC" translation="0.034619 0 -0.049073" shapeId="20" clipDistance="30" nodeId="73" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblRpmSliderMowerMiddleP1_SC" translation="0.022252 0 -0.058084" shapeId="21" clipDistance="30" nodeId="74" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="5"/>
+          <TransformGroup name="bigM_dblRpmMowerMiddleNumbersP1_SC" translation="0.007 0 -0.053" rotation="-90 180 0" clipDistance="20" nodeId="75"/>
+          <Shape name="bigM_dblMowerSwathRightP1_SC" translation="-0.007583 0 -0.049073" shapeId="22" clipDistance="30" nodeId="76" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="bigM_dblRpmSliderMowerRightP1_SC" translation="-0.01993 0 -0.058084" shapeId="21" clipDistance="30" nodeId="77" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="5"/>
+          <TransformGroup name="bigM_dblRpmMowerRightNumbersP1_SC" translation="-0.035 0 -0.053" rotation="-90 180 0" clipDistance="20" nodeId="78"/>
+          <TransformGroup name="bigM_dblFuelUsageNumbersP1_SC" translation="0.058 0 -0.078" rotation="-90 180 0" clipDistance="20" nodeId="79"/>
+          <TransformGroup name="bigM_dblHeaderLiftStateNumbersP1_SC" translation="0.005 0 -0.078" rotation="-90 180 0" clipDistance="20" nodeId="80"/>
+          <TransformGroup name="bigM_dblHeaderFoldingStateNumbersP1_SC" translation="-0.049 0 -0.078" rotation="-90 180 0" clipDistance="20" nodeId="81"/>
+          <TransformGroup name="bigM_dblOperatingTimeNumbersP1_SC" translation="-0.102 0 -0.078" rotation="-90 180 0" clipDistance="20" nodeId="82"/>
+          <TransformGroup name="bigM_dblVehicleLiftStateNumbersP1_SC" translation="-0.074 0 -0.057" rotation="-90 180 0" clipDistance="20" nodeId="83"/>
+          <TransformGroup name="bigM_dblMowerLeftLiftStateNumbersP1_SC" translation="-0.0708443 0 -0.021" rotation="-90 180 0" clipDistance="20" nodeId="84"/>
+          <TransformGroup name="bigM_dblMowerMiddleLiftStateNumbersP1_SC" translation="-0.0843127 0 -0.021" rotation="-90 180 0" clipDistance="20" nodeId="85"/>
+          <TransformGroup name="bigM_dblMowerRightLiftStateNumbersP1_SC" translation="-0.0976838 0 -0.021" rotation="-90 180 0" clipDistance="20" nodeId="86"/>
+          <TransformGroup name="bigM_dblMowerCutHeightLeftNumbersP1_SC" translation="-0.0708443 0 0.024" rotation="-90 180 0" clipDistance="20" nodeId="87"/>
+          <TransformGroup name="bigM_dblMowerCutHeightMiddleNumbersP1_SC" translation="-0.0843127 0 0.024" rotation="-90 180 0" clipDistance="20" nodeId="88"/>
+          <TransformGroup name="bigM_dblMowerCutHeightRightNumbersP1_SC" translation="-0.098 0 0.024" rotation="-90 180 0" clipDistance="20" nodeId="89"/>
+          <Shape name="bigM_dblHLMonP1_SC" translation="0 0 0.037" rotation="0 180 0" shapeId="23" clipDistance="20" nodeId="90" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="9"/>
+          <Shape name="bigM_dblHLMfieldP1_SC" translation="0 0 0.037" rotation="0 180 0" scale="2 1 2" shapeId="24" clipDistance="20" nodeId="91" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+          <Shape name="bigM_dblHLMheadlandP1_SC" translation="0 0 0.037" rotation="0 180 0" scale="2 1 2" shapeId="25" clipDistance="20" nodeId="92" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="9"/>
+          <Shape name="bigM_dblGPSsatellitP1_SC" translation="0.016 0 0.037" rotation="0 180 0" scale="1.6 1 1.6" shapeId="26" clipDistance="20" nodeId="93" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+          <Shape name="bigM_dblGPSactiveP1_SC" translation="-0.016 0 0.037" rotation="0 180 0" scale="1.6 1 1.6" shapeId="27" clipDistance="20" nodeId="94" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+          <TransformGroup name="bigM_dblGPScompassP1_SC" translation="-0.001 0 0.026" rotation="90 -1.867e-05 180" clipDistance="20" nodeId="95"/>
+          <TransformGroup name="bigM_dblGPScompassNumbersP1_SC" translation="0.001 0 0.026" rotation="90 -1.867e-05 180" clipDistance="20" nodeId="96"/>
+        </TransformGroup>
+        <TransformGroup name="basicScreen" clipDistance="50" nodeId="97">
+          <Shape name="bigM_dblBasicDisplay_Decal" translation="-0.000341 0 0.000113" shapeId="28" clipDistance="30" nodeId="98" castsShadows="false" receiveShadows="true" materialIds="7"/>
+          <Shape name="bigM_dblBasicDisplay_DecalDM" translation="-0.000341 0 0.000113" shapeId="28" clipDistance="30" nodeId="99" castsShadows="false" receiveShadows="true" materialIds="8"/>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

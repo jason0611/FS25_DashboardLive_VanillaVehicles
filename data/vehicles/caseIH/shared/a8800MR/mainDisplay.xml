@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+
+<!-- Display Mode -->
+		
+		
+	<dashboardCompound name="MAIN_DISPLAY" filename="data/vehicles/caseIH/shared/a8800MR/mainDisplay.i3d" node="mainDisplay">
+	<!-- </enterable> -->		
+			<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="a8800_dblOperatingTimeNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="000000.0" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="TEXT" valueType="enterable.outsideTemperature" node="a8800_dblOutsideTempNumbersP1_CC" textColor="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+	<!-- <drivable> -->		
+			<dashboard displayType="TEXT"  valueType="drivable.cruiseControl" node="a8800_dblCruiseControlNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="00.0" font="GENERIC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="a8800_dblForwardArrowP1_CC" doInterpolation="true" groups="MOTOR_RUNNING">
+                <state value="-1" visibility="false"/>
+                <state value="0" visibility="false"/>
+                <state value="1" visibility="true"/>
+            </dashboard>
+			<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="a8800_dblNeutralGearP1_CC" doInterpolation="true" groups="MOTOR_RUNNING">
+                <state value="-1" visibility="false"/>
+                <state value="0" visibility="true"/>
+                <state value="1" visibility="false"/>
+            </dashboard>
+			<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="a8800_dblBackwardArrowP1_CC" doInterpolation="true" groups="MOTOR_RUNNING">
+                <state value="-1" visibility="true"/>
+                <state value="0" visibility="false"/>
+                <state value="1" visibility="false"/>
+            </dashboard>
+	<!-- <fillUnit> -->	
+			<dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" node="a8800_dblFuelSliderP1_CC" fillTypes="diesel" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="a8800_dblFuelPercNumbersP1_CC" fillTypes="diesel" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="a8800_dblFuelIconP1_CC" fillTypes="diesel" baseColor="0.033 0.033 0.033 1" emitColor="AMAZONE_ORANGE1" intensity="1" warningThresholdMax="40" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" node="a8800_dblAdBlueSliderP1_CC" fillTypes="def" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="a8800_dblAdBluePercNumbersP1_CC" fillTypes="def" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="a8800_dblAdBlueIconP1_CC" fillTypes="def" baseColor="0.033 0.033 0.033 1" emitColor="ALPEGO_BLUE" intensity="1" warningThresholdMax="10" groups="MOTOR_RUNNING"/>
+	<!-- </motorized> -->
+			<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="a8800_dblEngineTempNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="000" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="TEXT" valueType="motorized.rpm" node="a8800_dblEgnineLoadNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="0000" font="GENERIC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="TEXT" valueType="motorized.speed" node="a8800_dblEgnineSpeedNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.007" textMask="00.0" font="GENERIC" groups="MOTOR_RUNNING"/>
+	<!-- </combine> -->	
+			<dashboard displayType="TEXT" valueType="combine.workedHectars" node="a8800_dblWorkHectareNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0065" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+	<!-- DBL -->
+		<dashboard displayType="EMITTER" node="a8800StartScreen" idleValue="-1" intensity="0.3" groups="MOTOR_STARTING"/>
+            <dashboard displayType="EMITTER" node="a8800MainScreen" intensity="0.01" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800MainScreen" groups="MOTOR_RUNNING"/>
+			
+            <dashboard displayType="VISIBILITY" node="a8800_dblGPSsatellitP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblGPSactiveP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblAdBlueScalaDecalP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblAdBlueSliderP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblFuelScalaDecalP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblFuelSliderP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblAdBlueIconP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblFuelIconP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblForwardArrowP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblNeutralGearP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblBackwardArrowP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblCompassDecalP1_CC" groups="MOTOR_RUNNING"/>
+            <dashboard displayType="VISIBILITY" node="a8800_dblCompassNeedleP1_CC" groups="MOTOR_RUNNING"/>
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherSunP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherCloudP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherRainP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherHailP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherSnowP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="VISIBILITY" node="a8800_dblWeatherTwisterP1_CC" groups="MOTOR_RUNNING"/>
+			
+			<dashboard displayType="EMITTER" node="a8800_dblAdBlueScalaDecalP1_CC" intensity="0.01" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblAdBlueSliderP1_CC" intensity="0.1" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblFuelScalaDecalP1_CC" intensity="0.01" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblFuelSliderP1_CC" intensity="0.1" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" node="a8800_dblNeutralGearP1_CC" baseColor="0.033 0.033 0.033 1" groups="MOTOR_RUNNING"/>
+	<!-- <dashboardLive> -->
+		<!-- Player Name -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="playerName" node="a8800_dblPlayerNameP1_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+			<!-- Fieldnumber -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="a8800_dblFieldNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- GPS -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingText2" node="a8800_dblCompassP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="a8800_dblCompassNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="a8800_dblRealClockNumbersP1_CC" textColor="0.033 0.033 0.033 1" textMask="ssssssss" textSize="0.0045" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>
+			<!-- MiniMap -->
+			<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="a8800_dblNaviMapP1_CC" groups="MOTOR_RUNNING"/>
+			<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="a8800_dblNaviMapPosP1_CC" groups="MOTOR_RUNNING"/>
+	<!-- <ai> -->
+			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="a8800_dblGPSsatellitP1_CC" baseColor="0.033 0.033 0.033 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="a8800_dblGPSactiveP1_CC" baseColor="0.033 0.033 0.033 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="ROT" valueType="ai.automaticSteering.heading" node="a8800_dblCompassNeedleP1_CC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="0.3" groups="MOTOR_RUNNING"/>
+    </dashboardCompound>
+	
+	<i3dMappings>
+		<i3dMapping id="mainDisplay" node="0>"/>
+		<i3dMapping id="basicDisplay" node="0>0"/>
+		<i3dMapping id="startScreen" node="0>0|0"/>
+		<i3dMapping id="a8800StartScreen" node="0>0|0|0"/>
+		<i3dMapping id="basicIcon" node="0>0|1"/>
+		<i3dMapping id="a8800_dblPlayerNameP1_CC" node="0>0|1|0"/>
+		<i3dMapping id="a8800_dblGPSsatellitP1_CC" node="0>0|1|1"/>
+		<i3dMapping id="a8800_dblGPSactiveP1_CC" node="0>0|1|2"/>
+		<i3dMapping id="a8800_dblFieldNumbersP1_CC" node="0>0|1|3"/>
+		<i3dMapping id="a8800_dblCompassP1_CC" node="0>0|1|4"/>
+		<i3dMapping id="a8800_dblCompassNumbersP1_CC" node="0>0|1|5"/>
+		<i3dMapping id="a8800_dblAdBlueScalaDecalP1_CC" node="0>0|1|6"/>
+		<i3dMapping id="a8800_dblAdBlueSliderP1_CC" node="0>0|1|7"/>
+		<i3dMapping id="a8800_dblAdBlueIconP1_CC" node="0>0|1|8"/>
+		<i3dMapping id="a8800_dblAdBluePercNumbersP1_CC" node="0>0|1|9"/>
+		<i3dMapping id="a8800_dblFuelScalaDecalP1_CC" node="0>0|1|10"/>
+		<i3dMapping id="a8800_dblFuelSliderP1_CC" node="0>0|1|11"/>
+		<i3dMapping id="a8800_dblFuelIconP1_CC" node="0>0|1|12"/>
+		<i3dMapping id="a8800_dblFuelPercNumbersP1_CC" node="0>0|1|13"/>
+		<i3dMapping id="a8800_dblForwardArrowP1_CC" node="0>0|1|14"/>
+		<i3dMapping id="a8800_dblNeutralGearP1_CC" node="0>0|1|15"/>
+		<i3dMapping id="a8800_dblBackwardArrowP1_CC" node="0>0|1|16"/>
+		<i3dMapping id="a8800_dblRealClockNumbersP1_CC" node="0>0|1|17"/>
+		<i3dMapping id="a8800_dblOperatingTimeNumbersP1_CC" node="0>0|1|18"/>
+		<i3dMapping id="a8800_dblEngineTempNumbersP1_CC" node="0>0|1|19"/>
+		<i3dMapping id="a8800_dblWorkHectareNumbersP1_CC" node="0>0|1|20"/>
+		<i3dMapping id="a8800_dblEgnineLoadNumbersP1_CC" node="0>0|1|21"/>
+		<i3dMapping id="a8800_dblEgnineSpeedNumbersP1_CC" node="0>0|1|22"/>
+		<i3dMapping id="a8800_dblCruiseControlNumbersP1_CC" node="0>0|1|23"/>
+		<i3dMapping id="a8800_dblCompassDecalP1_CC" node="0>0|1|24"/>
+		<i3dMapping id="a8800_dblCompassNeedleP1_CC" node="0>0|1|25"/>
+		<i3dMapping id="a8800_dblWeatherSunP1_CC" node="0>0|1|26"/>
+		<i3dMapping id="a8800_dblWeatherCloudP1_CC" node="0>0|1|27"/>
+		<i3dMapping id="a8800_dblWeatherRainP1_CC" node="0>0|1|28"/>
+		<i3dMapping id="a8800_dblWeatherHailP1_CC" node="0>0|1|29"/>
+		<i3dMapping id="a8800_dblWeatherSnowP1_CC" node="0>0|1|30"/>
+		<i3dMapping id="a8800_dblWeatherTwisterP1_CC" node="0>0|1|31"/>
+		<i3dMapping id="a8800_dblOutsideTempNumbersP1_CC" node="0>0|1|32"/>
+		<i3dMapping id="naviMap" node="0>0|2"/>
+		<i3dMapping id="a8800_dblNaviMapP1_CC" node="0>0|2|0"/>
+		<i3dMapping id="a8800_dblNaviMapPosP1_CC" node="0>0|2|0|0"/>
+		<i3dMapping id="basicScreen" node="0>0|3"/>
+		<i3dMapping id="a8800MainScreen" node="0>0|3|0"/>
+	</i3dMappings>
+</dashboardCompounds>

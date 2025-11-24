@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="100">
-	<author>Mister_mojo_AT, SbSh, Glowins Modschmiede</author>
-	<version>1.0.0.3</version>
+<modDesc descVersion="104">
+	<author>mister_mojo_AT, SbSh, Glowins Modschmiede, Finanzamt31er</author>
+	<version>1.0.0.4</version>
 	<contributors>AgrarPlay und LUWZ</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
@@ -102,6 +102,10 @@ Volvo
 	L120H Electric
 	L180H
 	VNX 300
+	
+V1.0.1.0: 
+- All displays now have a compound function added for mods.
+- Various minor fixes
 
 GitHub: https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles
 Further ideas or requests are welcome
@@ -194,6 +198,13 @@ Volvo
 	L120H Electric
 	L180H
 	VNX 300
+	
+Changelog:
+
+V1.0.1.0: 
+- Alle Displays jetzt als Compound Funktion hinzugefügt für Mod's
+- Diverse kleine Fixes
+
 
 GitHub: https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles
 Weitere Ideen oder Wünsche werden gerne entgegengenommen

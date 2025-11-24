@@ -2,18 +2,10 @@
 
 <i3D name="katana.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.10"/>
   </Asset>
 
   <Files>
-    <File fileId="73" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
-    <File fileId="74" filename="textures/fendtKatanaNavi.dds"/>
-    <File fileId="63" filename="textures/fendtKatanaVariotronicBootScreen_diffuse.png"/>
-    <File fileId="68" filename="textures/fendtKatanaVariotronicChopperScreen0_diffuse.png"/>
-    <File fileId="75" filename="textures/fendtKatanaVariotronicChopperScreen1_diffuse.png"/>
-    <File fileId="76" filename="textures/fendtKatanaVariotronicGPSScreen_diffuse.png"/>
-    <File fileId="64" filename="textures/fendtKatanaVariotronicMainScreen_diffuse.png"/>
-    <File fileId="65" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
     <File fileId="52" filename="$data/shaders/glowShader.xml"/>
     <File fileId="54" filename="$data/shaders/mirrorShader.xml"/>
     <File fileId="11" filename="$data/shaders/vehicleShader.xml"/>
@@ -22,7 +14,7 @@
     <File fileId="36" filename="$data/shared/assets/assetLibraryStickers_diffuse.png"/>
     <File fileId="23" filename="$data/shared/assets/beaconLights/lizard/beaconLight03.i3d"/>
     <File fileId="67" filename="$data/shared/assets/dashboardSymbols_diffuse.png"/>
-    <File fileId="89" filename="$data/shared/assets/extinguisher.i3d"/>
+    <File fileId="86" filename="$data/shared/assets/extinguisher.i3d"/>
     <File fileId="7" filename="$data/shared/assets/lights/hella/hellaWorkingLight02.i3d"/>
     <File fileId="6" filename="$data/shared/assets/lights/lizard/plateNumberLight03.i3d"/>
     <File fileId="5" filename="$data/shared/assets/lights/lizard/sideMarker04.i3d"/>
@@ -36,43 +28,43 @@
     <File fileId="35" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_diffuse.png"/>
     <File fileId="34" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_normal.png"/>
     <File fileId="33" filename="$data/shared/detailLibrary/calibrated/calibratedPaint_specular.png"/>
-    <File fileId="88" filename="$data/shared/detailLibrary/calibrated/grainSmall_specular.png"/>
+    <File fileId="85" filename="$data/shared/detailLibrary/calibrated/grainSmall_specular.png"/>
     <File fileId="13" filename="$data/shared/detailLibrary/flat_normal.png"/>
     <File fileId="14" filename="$data/shared/detailLibrary/metallic/clear_diffuse.png"/>
     <File fileId="12" filename="$data/shared/detailLibrary/metallic/clear_specular.png"/>
-    <File fileId="103" filename="$data/shared/detailLibrary/metallic/rough_specular.png"/>
-    <File fileId="79" filename="$data/shared/detailLibrary/metallic/scratched_diffuse.png"/>
-    <File fileId="78" filename="$data/shared/detailLibrary/metallic/scratched_specular.png"/>
+    <File fileId="100" filename="$data/shared/detailLibrary/metallic/rough_specular.png"/>
+    <File fileId="76" filename="$data/shared/detailLibrary/metallic/scratched_diffuse.png"/>
+    <File fileId="75" filename="$data/shared/detailLibrary/metallic/scratched_specular.png"/>
     <File fileId="27" filename="$data/shared/detailLibrary/metallic/silverScratched_diffuse.png"/>
     <File fileId="26" filename="$data/shared/detailLibrary/metallic/silverScratched_specular.png"/>
-    <File fileId="106" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_diffuse.png"/>
-    <File fileId="105" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_normal.png"/>
-    <File fileId="104" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_specular.png"/>
-    <File fileId="96" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric4_diffuse.png"/>
-    <File fileId="95" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric4_normal.png"/>
-    <File fileId="94" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric4_specular.png"/>
-    <File fileId="99" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_diffuse.png"/>
-    <File fileId="98" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_normal.png"/>
-    <File fileId="97" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_specular.png"/>
-    <File fileId="102" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_diffuse.png"/>
-    <File fileId="101" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_normal.png"/>
-    <File fileId="100" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_specular.png"/>
+    <File fileId="103" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_diffuse.png"/>
+    <File fileId="102" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_normal.png"/>
+    <File fileId="101" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric2_specular.png"/>
+    <File fileId="93" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric4_diffuse.png"/>
+    <File fileId="92" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric4_normal.png"/>
+    <File fileId="91" filename="$data/shared/detailLibrary/nonMetallic/fabric/fabric4_specular.png"/>
+    <File fileId="96" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_diffuse.png"/>
+    <File fileId="95" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_normal.png"/>
+    <File fileId="94" filename="$data/shared/detailLibrary/nonMetallic/leather/leather1_specular.png"/>
+    <File fileId="99" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_diffuse.png"/>
+    <File fileId="98" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_normal.png"/>
+    <File fileId="97" filename="$data/shared/detailLibrary/nonMetallic/leather/perforatedSynthetic2_specular.png"/>
     <File fileId="38" filename="$data/shared/detailLibrary/nonMetallic/metal/metalPainted_diffuse.png"/>
     <File fileId="37" filename="$data/shared/detailLibrary/nonMetallic/metal/metalPainted_specular.png"/>
     <File fileId="47" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticGraniteGrainSmall_diffuse.png"/>
     <File fileId="46" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticGraniteGrainSmall_specular.png"/>
     <File fileId="21" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_diffuse.png"/>
     <File fileId="20" filename="$data/shared/detailLibrary/nonMetallic/plastic/plasticPainted_specular.png"/>
-    <File fileId="93" filename="$data/shared/detailLibrary/nonMetallic/reflector/reflector_diffuse.png"/>
-    <File fileId="92" filename="$data/shared/detailLibrary/nonMetallic/reflector/reflector_specular.png"/>
+    <File fileId="90" filename="$data/shared/detailLibrary/nonMetallic/reflector/reflector_diffuse.png"/>
+    <File fileId="89" filename="$data/shared/detailLibrary/nonMetallic/reflector/reflector_specular.png"/>
     <File fileId="50" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubberBlack_diffuse.png"/>
     <File fileId="62" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_diffuse.png"/>
     <File fileId="49" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_normal.png"/>
     <File fileId="48" filename="$data/shared/detailLibrary/nonMetallic/rubber/rubber_specular.png"/>
-    <File fileId="83" filename="$data/shared/rasterPattern_diffuse.png"/>
+    <File fileId="80" filename="$data/shared/rasterPattern_diffuse.png"/>
     <File fileId="8" filename="$data/shared/white_diffuse.png"/>
-    <File fileId="86" filename="$data/shared/window_diffuse.png"/>
-    <File fileId="87" filename="$data/shared/window_vmask.png"/>
+    <File fileId="83" filename="$data/shared/window_diffuse.png"/>
+    <File fileId="84" filename="$data/shared/window_vmask.png"/>
     <File fileId="57" filename="$data/vehicles/fendt/katana/katana65Sstitches_diffuse.png"/>
     <File fileId="58" filename="$data/vehicles/fendt/katana/katana65Sstitches_normal.png"/>
     <File fileId="44" filename="$data/vehicles/fendt/katana/katana850_normal.png"/>
@@ -81,11 +73,11 @@
     <File fileId="25" filename="$data/vehicles/fendt/katana/katanaAnimated_vmask.png"/>
     <File fileId="30" filename="$data/vehicles/fendt/katana/katanaDecal_diffuse.png"/>
     <File fileId="43" filename="$data/vehicles/fendt/katana/katanaGridSpring_vmask.png"/>
-    <File fileId="84" filename="$data/vehicles/fendt/katana/katanaGrid_diffuse.png"/>
-    <File fileId="85" filename="$data/vehicles/fendt/katana/katanaGrid_normal.png"/>
+    <File fileId="81" filename="$data/vehicles/fendt/katana/katanaGrid_diffuse.png"/>
+    <File fileId="82" filename="$data/vehicles/fendt/katana/katanaGrid_normal.png"/>
     <File fileId="51" filename="$data/vehicles/fendt/katana/katanaInteriorDecal_diffuse.png"/>
-    <File fileId="80" filename="$data/vehicles/fendt/katana/katanaInteriorGrid_diffuse.png"/>
-    <File fileId="81" filename="$data/vehicles/fendt/katana/katanaInteriorGrid_normal.png"/>
+    <File fileId="77" filename="$data/vehicles/fendt/katana/katanaInteriorGrid_diffuse.png"/>
+    <File fileId="78" filename="$data/vehicles/fendt/katana/katanaInteriorGrid_normal.png"/>
     <File fileId="59" filename="$data/vehicles/fendt/katana/katanaInteriorMesh_diffuse.png"/>
     <File fileId="60" filename="$data/vehicles/fendt/katana/katanaInteriorMesh_normal.png"/>
     <File fileId="55" filename="$data/vehicles/fendt/katana/katanaInterior_normal.png"/>
@@ -93,13 +85,21 @@
     <File fileId="19" filename="$data/vehicles/fendt/katana/katanaLight_emissive.png"/>
     <File fileId="9" filename="$data/vehicles/fendt/katana/katanaLight_normal.png"/>
     <File fileId="10" filename="$data/vehicles/fendt/katana/katanaLight_vmask.png"/>
-    <File fileId="90" filename="$data/vehicles/fendt/katana/katanaSpeaker_diffuse.png"/>
-    <File fileId="91" filename="$data/vehicles/fendt/katana/katanaSpeaker_normal.png"/>
+    <File fileId="87" filename="$data/vehicles/fendt/katana/katanaSpeaker_diffuse.png"/>
+    <File fileId="88" filename="$data/vehicles/fendt/katana/katanaSpeaker_normal.png"/>
     <File fileId="41" filename="$data/vehicles/fendt/katana/katanaSpring_diffuse.png"/>
     <File fileId="42" filename="$data/vehicles/fendt/katana/katanaSpring_normal.png"/>
-    <File fileId="77" filename="$data/vehicles/fendt/katana/katanaTachometer_diffuse.png"/>
-    <File fileId="82" filename="$data/vehicles/fendt/katana/katana_normal.png"/>
+    <File fileId="74" filename="$data/vehicles/fendt/katana/katanaTachometer_diffuse.png"/>
+    <File fileId="79" filename="$data/vehicles/fendt/katana/katana_normal.png"/>
     <File fileId="32" filename="$data/vehicles/fendt/katana/katana_vmask.png"/>
+    <File fileId="70" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="71" filename="textures/fendtKatanaNavi.dds"/>
+    <File fileId="63" filename="textures/fendtKatanaVariotronicBootScreen_diffuse.png"/>
+    <File fileId="68" filename="textures/fendtKatanaVariotronicChopperScreen0_diffuse.png"/>
+    <File fileId="72" filename="textures/fendtKatanaVariotronicChopperScreen1_diffuse.png"/>
+    <File fileId="73" filename="textures/fendtKatanaVariotronicGPSScreen_diffuse.png"/>
+    <File fileId="64" filename="textures/fendtKatanaVariotronicMainScreen_diffuse.png"/>
+    <File fileId="65" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
   </Files>
 
 
@@ -128,9 +128,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="44"/>
       <Glossmap fileId="45"/>
-      <Custommap name="detailSpecular" fileId="78"/>
+      <Custommap name="detailSpecular" fileId="75"/>
       <Custommap name="detailNormal" fileId="13"/>
-      <Custommap name="detailDiffuse" fileId="79"/>
+      <Custommap name="detailDiffuse" fileId="76"/>
       <CustomParameter name="colorScale" value="0.7379 0.6105 0.3864"/>
     </Material>
     <Material name="katana850_plasticGraniteGrainSmallBlack_mat" materialId="9" customShaderId="11">
@@ -188,12 +188,12 @@
       <Glossmap fileId="61"/>
     </Material>
     <Material name="katana850Tachometer_mat" materialId="16" customShaderId="52" customShaderVariation="staticLight">
-      <Texture fileId="75"/>
+      <Texture fileId="72"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
     </Material>
     <Material name="katana850Tachometer_mat" materialId="17" customShaderId="52" customShaderVariation="staticLight">
-      <Texture fileId="76"/>
+      <Texture fileId="73"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
     </Material>
@@ -209,7 +209,7 @@
     </Material>
     <Material name="katana_calibratedGlossPaint_FENDT_NEWGREEN1_mat" materialId="20" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="33"/>
       <Custommap name="detailNormal" fileId="34"/>
@@ -221,7 +221,7 @@
     </Material>
     <Material name="katana_calibratedGlossPaint_FENDT_WHITE1_mat" materialId="21" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="33"/>
       <Custommap name="detailNormal" fileId="34"/>
@@ -233,7 +233,7 @@
     </Material>
     <Material name="katana_chrome_mat" materialId="22" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="12"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -241,7 +241,7 @@
     </Material>
     <Material name="katana_FENDT_BLUE2_mat" materialId="23" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="46"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -250,7 +250,7 @@
     </Material>
     <Material name="katana_FENDT_GREY2_mat" materialId="24" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="33"/>
       <Custommap name="detailNormal" fileId="34"/>
@@ -262,7 +262,7 @@
     </Material>
     <Material name="katana_metalPainted_01_mat" materialId="25" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="37"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -291,7 +291,7 @@
     </Material>
     <Material name="katana_metalPaintedBlack_mat" materialId="28" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="37"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -300,7 +300,7 @@
     </Material>
     <Material name="katana_plasticGraniteGrainSmall_FENDT_GREY2_mat" materialId="29" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="46"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -309,7 +309,7 @@
     </Material>
     <Material name="katana_plasticGraniteGrainSmallBlack_mat" materialId="30" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="46"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -318,7 +318,7 @@
     </Material>
     <Material name="katana_plasticPainted_mat" materialId="31" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="20"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -336,29 +336,29 @@
     </Material>
     <Material name="katana_reflectorRed_mat" materialId="33" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
-      <Custommap name="detailSpecular" fileId="92"/>
+      <Custommap name="detailSpecular" fileId="89"/>
       <Custommap name="detailNormal" fileId="13"/>
-      <Custommap name="detailDiffuse" fileId="93"/>
+      <Custommap name="detailDiffuse" fileId="90"/>
       <CustomParameter name="colorScale" value="0.634 0 0"/>
       <CustomParameter name="clearCoatIntensity" value="0.25"/>
       <CustomParameter name="clearCoatSmoothness" value="1"/>
     </Material>
     <Material name="katana_reflectorWhite_mat" materialId="34" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
-      <Custommap name="detailSpecular" fileId="92"/>
+      <Custommap name="detailSpecular" fileId="89"/>
       <Custommap name="detailNormal" fileId="13"/>
-      <Custommap name="detailDiffuse" fileId="93"/>
+      <Custommap name="detailDiffuse" fileId="90"/>
       <CustomParameter name="colorScale" value="0.752 0.752 0.752"/>
       <CustomParameter name="clearCoatIntensity" value="0.25"/>
       <CustomParameter name="clearCoatSmoothness" value="1"/>
     </Material>
     <Material name="katana_rubberBlackHoses_mat" materialId="35" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="48"/>
       <Custommap name="detailNormal" fileId="49"/>
@@ -368,7 +368,7 @@
     </Material>
     <Material name="katana_silverScratched_mat" materialId="36" customShaderId="11">
       <Texture fileId="8"/>
-      <Normalmap fileId="82"/>
+      <Normalmap fileId="79"/>
       <Glossmap fileId="32"/>
       <Custommap name="detailSpecular" fileId="26"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -455,9 +455,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="24"/>
       <Glossmap fileId="25"/>
-      <Custommap name="detailSpecular" fileId="92"/>
+      <Custommap name="detailSpecular" fileId="89"/>
       <Custommap name="detailNormal" fileId="13"/>
-      <Custommap name="detailDiffuse" fileId="93"/>
+      <Custommap name="detailDiffuse" fileId="90"/>
       <CustomParameter name="colorScale" value="0.634 0 0"/>
       <CustomParameter name="clearCoatIntensity" value="0.25"/>
       <CustomParameter name="clearCoatSmoothness" value="1"/>
@@ -466,9 +466,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="24"/>
       <Glossmap fileId="25"/>
-      <Custommap name="detailSpecular" fileId="92"/>
+      <Custommap name="detailSpecular" fileId="89"/>
       <Custommap name="detailNormal" fileId="13"/>
-      <Custommap name="detailDiffuse" fileId="93"/>
+      <Custommap name="detailDiffuse" fileId="90"/>
       <CustomParameter name="colorScale" value="0.752 0.752 0.752"/>
       <CustomParameter name="clearCoatIntensity" value="0.25"/>
       <CustomParameter name="clearCoatSmoothness" value="1"/>
@@ -539,8 +539,8 @@
       <Custommap name="detailDiffuse" fileId="38"/>
     </Material>
     <Material name="katanaGrid_FENDT_GREY1_mat" materialId="54" alphaBlending="true" customShaderId="11" customShaderVariation="vmaskUV2">
-      <Texture fileId="84"/>
-      <Normalmap fileId="85"/>
+      <Texture fileId="81"/>
+      <Normalmap fileId="82"/>
       <Glossmap fileId="43"/>
       <Custommap name="detailSpecular" fileId="33"/>
       <Custommap name="detailNormal" fileId="34"/>
@@ -555,9 +555,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="55"/>
       <Glossmap fileId="56"/>
-      <Custommap name="detailSpecular" fileId="94"/>
-      <Custommap name="detailNormal" fileId="95"/>
-      <Custommap name="detailDiffuse" fileId="96"/>
+      <Custommap name="detailSpecular" fileId="91"/>
+      <Custommap name="detailNormal" fileId="92"/>
+      <Custommap name="detailDiffuse" fileId="93"/>
       <CustomParameter name="colorScale" value="0.546 0.44 0.309"/>
       <CustomParameter name="porosity" value="1"/>
     </Material>
@@ -586,9 +586,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="55"/>
       <Glossmap fileId="56"/>
-      <Custommap name="detailSpecular" fileId="97"/>
-      <Custommap name="detailNormal" fileId="98"/>
-      <Custommap name="detailDiffuse" fileId="99"/>
+      <Custommap name="detailSpecular" fileId="94"/>
+      <Custommap name="detailNormal" fileId="95"/>
+      <Custommap name="detailDiffuse" fileId="96"/>
       <CustomParameter name="colorScale" value="0.03 0.03 0.03"/>
     </Material>
     <Material name="katanaInterior_metalPainted_mat" materialId="59" customShaderId="11">
@@ -631,9 +631,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="55"/>
       <Glossmap fileId="56"/>
-      <Custommap name="detailSpecular" fileId="100"/>
-      <Custommap name="detailNormal" fileId="101"/>
-      <Custommap name="detailDiffuse" fileId="102"/>
+      <Custommap name="detailSpecular" fileId="97"/>
+      <Custommap name="detailNormal" fileId="98"/>
+      <Custommap name="detailDiffuse" fileId="99"/>
       <CustomParameter name="colorScale" value="0.05 0.05 0.05"/>
     </Material>
     <Material name="katanaInterior_plasticGraniteGrainSmall_FENDT_GREY1_mat" materialId="64" customShaderId="11">
@@ -704,7 +704,7 @@
       <Texture fileId="8"/>
       <Normalmap fileId="55"/>
       <Glossmap fileId="56"/>
-      <Custommap name="detailSpecular" fileId="103"/>
+      <Custommap name="detailSpecular" fileId="100"/>
       <Custommap name="detailNormal" fileId="13"/>
       <Custommap name="detailDiffuse" fileId="14"/>
       <CustomParameter name="colorScale" value="0.7379 0.7454 0.7529"/>
@@ -734,8 +734,8 @@
       <Normalmap fileId="31"/>
     </Material>
     <Material name="katanaInteriorGrid_plasticPainted_mat" materialId="76" customShaderId="11">
-      <Texture fileId="80"/>
-      <Normalmap fileId="81"/>
+      <Texture fileId="77"/>
+      <Normalmap fileId="78"/>
       <Glossmap fileId="61"/>
       <Custommap name="detailSpecular" fileId="20"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -805,8 +805,8 @@
       <CustomParameter name="smoothnessScale" value="1.52"/>
     </Material>
     <Material name="katanaSpeaker_plasticGraniteGrainSmall_FENDT_BIEGE1_mat" materialId="83" customShaderId="11" customShaderVariation="vmaskUV2_normalUV3">
-      <Texture fileId="90"/>
-      <Normalmap fileId="91"/>
+      <Texture fileId="87"/>
+      <Normalmap fileId="88"/>
       <Glossmap fileId="56"/>
       <Custommap name="detailSpecular" fileId="46"/>
       <Custommap name="detailNormal" fileId="13"/>
@@ -822,24 +822,14 @@
       <Custommap name="detailDiffuse" fileId="27"/>
     </Material>
     <Material name="katanaTachometer_01_mat" materialId="85" specularColor="0.501961 1 0.501961" customShaderId="52" customShaderVariation="staticLight_specularUV2">
-      <Texture fileId="77"/>
+      <Texture fileId="74"/>
       <Normalmap fileId="31"/>
     </Material>
-    <Material name="lambert1" materialId="86" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="11">
+    <Material name="lambert1" materialId="948" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="52" customShaderVariation="staticLight">
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
     </Material>
     <Material name="lambert1" materialId="87" diffuseColor="0.501961 0.501961 0.501961 1">
-    </Material>
-    <Material name="mat_16x16_emitter" materialId="88" customShaderId="52" customShaderVariation="staticLight">
-      <Texture fileId="65"/>
-      <Normalmap fileId="31"/>
-      <Glossmap fileId="66"/>
-    </Material>
-    <Material name="mat_16x16_emitter" materialId="89" alphaBlending="true" customShaderId="52" customShaderVariation="staticLight">
-      <Texture fileId="65"/>
-      <Normalmap fileId="31"/>
-      <Glossmap fileId="66"/>
     </Material>
     <Material name="mat_16x16_emitter" materialId="90" customShaderId="52" customShaderVariation="staticLight">
       <Texture fileId="67"/>
@@ -851,10 +841,20 @@
       <Normalmap fileId="31"/>
       <Glossmap fileId="66"/>
     </Material>
-    <Material name="miniMap" materialId="92" customShaderId="73">
+    <Material name="mat_16x16_emitter" materialId="88" customShaderId="52" customShaderVariation="staticLight">
+      <Texture fileId="65"/>
+      <Normalmap fileId="31"/>
+      <Glossmap fileId="66"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="89" alphaBlending="true" customShaderId="52" customShaderVariation="staticLight">
+      <Texture fileId="65"/>
+      <Normalmap fileId="31"/>
+      <Glossmap fileId="66"/>
+    </Material>
+    <Material name="miniMap" materialId="92" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="70">
     </Material>
     <Material name="miniMap_marker" materialId="93" customShaderId="52">
-      <Texture fileId="74"/>
+      <Texture fileId="71"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
     </Material>
@@ -862,7 +862,7 @@
       <Reflectionmap lodDistanceScaling="0.5" viewDistanceScaling="0.5" type="planar" scaling="1" refractiveIndex="10" bumpScale="0.1" shapesObjectMask="4294967295" lightsObjectMask="4294967295"/>
     </Material>
     <Material name="rasterPattern_metalPainted_mat" materialId="95" customShaderId="11">
-      <Texture fileId="83"/>
+      <Texture fileId="80"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
       <Custommap name="detailSpecular" fileId="37"/>
@@ -873,9 +873,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
-      <Custommap name="detailSpecular" fileId="104"/>
-      <Custommap name="detailNormal" fileId="105"/>
-      <Custommap name="detailDiffuse" fileId="106"/>
+      <Custommap name="detailSpecular" fileId="101"/>
+      <Custommap name="detailNormal" fileId="102"/>
+      <Custommap name="detailDiffuse" fileId="103"/>
       <CustomParameter name="colorScale" value="0.0369 0.0356 0.0423"/>
       <CustomParameter name="porosity" value="1"/>
     </Material>
@@ -883,9 +883,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
-      <Custommap name="detailSpecular" fileId="104"/>
-      <Custommap name="detailNormal" fileId="105"/>
-      <Custommap name="detailDiffuse" fileId="106"/>
+      <Custommap name="detailSpecular" fileId="101"/>
+      <Custommap name="detailNormal" fileId="102"/>
+      <Custommap name="detailDiffuse" fileId="103"/>
       <CustomParameter name="colorScale" value="0.0437 0.0561 0.0612"/>
       <CustomParameter name="porosity" value="1"/>
     </Material>
@@ -893,9 +893,9 @@
       <Texture fileId="8"/>
       <Normalmap fileId="31"/>
       <Glossmap fileId="61"/>
-      <Custommap name="detailSpecular" fileId="104"/>
-      <Custommap name="detailNormal" fileId="105"/>
-      <Custommap name="detailDiffuse" fileId="106"/>
+      <Custommap name="detailSpecular" fileId="101"/>
+      <Custommap name="detailNormal" fileId="102"/>
+      <Custommap name="detailDiffuse" fileId="103"/>
       <CustomParameter name="colorScale" value="0.4735 0.4397 0.3663"/>
       <CustomParameter name="porosity" value="1"/>
     </Material>
@@ -971,10 +971,10 @@
       <Custommap name="detailDiffuse" fileId="27"/>
     </Material>
     <Material name="window_metalPainted_mat" materialId="107" alphaBlending="true" customShaderId="11">
-      <Texture fileId="86"/>
+      <Texture fileId="83"/>
       <Normalmap fileId="31"/>
-      <Glossmap fileId="87"/>
-      <Custommap name="detailSpecular" fileId="88"/>
+      <Glossmap fileId="84"/>
+      <Custommap name="detailSpecular" fileId="85"/>
       <Custommap name="detailNormal" fileId="13"/>
       <Custommap name="detailDiffuse" fileId="14"/>
       <CustomParameter name="alphaBlendingClipThreshold" value="0"/>
@@ -1287,16 +1287,16 @@
               <Shape name="seatmesh1" translation="0.031868 -2.70413 -2.24032" shapeId="55" clipDistance="75" nodeId="583" castsShadows="true" receiveShadows="true" materialIds="77"/>
               <Shape name="screwInterior_decal2" translation="0.031868 -2.70413 -2.24032" shapeId="56" clipDistance="30" nodeId="584" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="61,73"/>
             </TransformGroup>
-            <TransformGroup name="varioTronic" translation="-0.519311 0.473484 0.270704" rotation="-45.707 10.6 -84.23" clipDistance="50" nodeId="585">
+            <TransformGroup name="varioTronic" translation="-0.519 0.473 0.271" rotation="-45.707 10.6 -84.23" clipDistance="50" nodeId="585">
               <TransformGroup name="bootscreen" clipDistance="50" nodeId="586">
                 <Shape name="dbl_bootScreen" shapeId="57" clipDistance="50" nodeId="587" castsShadows="false" receiveShadows="true" materialIds="14"/>
               </TransformGroup>
               <TransformGroup name="defaultDisplay" clipDistance="50" nodeId="588">
                 <TransformGroup name="dbl_Icon" clipDistance="50" nodeId="589">
                   <TransformGroup name="dbl_realClockP1_SC" translation="-0.0693155 0.002 0.002" rotation="-90 90 0" clipDistance="50" nodeId="590"/>
-                  <Shape name="dbl_speedNeedleP1_SC" translation="-0.0138834 0.002 0.0527402" rotation="0 61 6.00734e-06" shapeId="58" clipDistance="50" nodeId="591" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
+                  <Shape name="dbl_speedNeedleP1_SC" translation="-0.014 0.002 0.053" rotation="0 61 6.00734e-06" shapeId="58" clipDistance="50" nodeId="591" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
                   <TransformGroup name="dbl_speedNumbersP1_SC" translation="-0.0581054 0.002 0.0874922" rotation="-90 90 0" clipDistance="50" nodeId="592"/>
-                  <Shape name="dbl_rpmNeedleP1_SC" translation="-0.0138834 0.002 0.0527402" rotation="0 -61 6.00734e-06" shapeId="58" clipDistance="50" nodeId="593" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
+                  <Shape name="dbl_rpmNeedleP1_SC" translation="-0.014 0.002 0.053" rotation="0 -61 6.00734e-06" shapeId="58" clipDistance="50" nodeId="593" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
                   <TransformGroup name="dbl_rpmNumbersP1_SC" translation="-0.0581054 0.002 0.012405" rotation="-90 90 0" clipDistance="50" nodeId="594"/>
                   <Shape name="dbl_gpsSatellitP1_SC" translation="-0.023 0.002 0.094" rotation="0 90 0" scale="2.8 1 2.8" shapeId="59" clipDistance="50" nodeId="595" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
                   <Shape name="dbl_gpsActiveP1_SC" translation="-0.0233718 0.002 0.077206" rotation="1e-06 90 6e-06" scale="2.8 1 2.8" shapeId="60" clipDistance="50" nodeId="596" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="88"/>
@@ -1332,10 +1332,10 @@
               <TransformGroup name="chopperDisplay0" clipDistance="50" nodeId="623">
                 <TransformGroup name="dbl_Icon" clipDistance="50" nodeId="624">
                   <TransformGroup name="dbl_realClockP2_SC" translation="-0.0691554 0.00200021 0.00199997" rotation="-90 90 0" clipDistance="50" nodeId="625"/>
-                  <Shape name="dbl_engineLoadNeedleP2_SC" translation="-0.0138834 0.002 0.0527402" rotation="0 60 6.00734e-06" shapeId="58" clipDistance="50" nodeId="626" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
+                  <Shape name="dbl_engineLoadNeedleP2_SC" translation="-0.014 0.002 0.053" rotation="0 60 6.00734e-06" shapeId="58" clipDistance="50" nodeId="626" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
                   <TransformGroup name="dbl_tonPerHourNumbersP2_SC" translation="-0.0411521 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="627"/>
                   <TransformGroup name="dbl_yieldNumbersP2_SC" translation="-0.0331601 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="628"/>
-                  <Shape name="dbl_gpsSatellitP2_SC" translation="-0.0230005 0.00199983 0.094" rotation="6.09838e-07 90 0" scale="2.8 1 2.8" shapeId="59" clipDistance="50" nodeId="629" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
+                  <Shape name="dbl_gpsSatellitP2_SC" translation="-0.0230005 0.00199983 0.094" rotation="6.09838e-07 90 0" scale="2.8 1 2.8" shapeId="59" clipDistance="50" nodeId="629" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="88"/>
                   <Shape name="dbl_gpsActiveP2_SC" translation="-0.0233719 0.002 0.077206" rotation="-4.26887e-06 90 0" scale="2.8 1 2.8" shapeId="60" clipDistance="50" nodeId="630" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="88"/>
                   <Shape name="dbl_diffAutoP2_SC" translation="-0.0233967 0.00200003 0.0436324" rotation="-2.04906e-06 90 0" scale="2.5 1 2.5" shapeId="61" clipDistance="50" nodeId="631" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="88"/>
                   <Shape name="dbl_backDiffLockP2_SC" translation="-0.00260267 0.002 0.0606425" rotation="1e-06 90 6e-06" scale="0.6 1 0.6" shapeId="62" clipDistance="50" nodeId="632" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="90"/>
@@ -1343,9 +1343,9 @@
                   <Shape name="dbl_frontDiffP2_SC" translation="-0.0111631 0.002 0.0270434" rotation="1e-06 90 6e-06" scale="0.6 1 0.6" shapeId="62" clipDistance="50" nodeId="634" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="90"/>
                   <Shape name="dbl_parkbreakP2_SC" translation="-0.00687702 0.002 0.0101433" rotation="1e-06 90 6e-06" scale="3 1 3" shapeId="63" clipDistance="50" nodeId="635" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="90"/>
                   <Shape name="dbl_gpsONP2_SC" translation="0.0119697 0.002 0.00680778" shapeId="76" clipDistance="50" nodeId="636" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
-                  <Shape name="dbl_gpsOFFP2_SC" translation="0.012 0.002 0.00675701" shapeId="77" clipDistance="50" nodeId="637" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
-                  <Shape name="dbl_gpsLaneLeftP2_SC" translation="0.00782026 0.002 0.0523439" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="638" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="86"/>
-                  <Shape name="dbl_gpsLaneRightP2_SC" translation="0.00782013 0.002 0.0260602" rotation="0 180 5.55842e-07" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="639" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="86"/>
+                  <Shape name="dbl_gpsOFFP2_SC" translation="0.012 0.002 0.007" shapeId="77" clipDistance="50" nodeId="637" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
+                  <Shape name="dbl_gpsLaneLeftP2_SC" translation="0.00782026 0.002 0.0523439" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="638" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="948"/>
+                  <Shape name="dbl_gpsLaneRightP2_SC" translation="0.00782013 0.002 0.0260602" rotation="0 180 5.55842e-07" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="639" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="948"/>
                   <TransformGroup name="dbl_gpsWorkWidthP2_SC" translation="0.0231725 0.00199998 0.0390892" rotation="-90 90 0" clipDistance="50" nodeId="640"/>
                   <TransformGroup name="dbl_gpsCompassP2_SC" translation="0.0231278 0.00199986 0.100176" rotation="-90 90 0" clipDistance="50" nodeId="641"/>
                   <TransformGroup name="dbl_gpsCompassNumberP2_SC" translation="0.0231278 0.00199988 0.0911206" rotation="-90 90 0" clipDistance="50" nodeId="642"/>
@@ -1380,7 +1380,7 @@
               <TransformGroup name="chopperDisplay1" clipDistance="50" nodeId="667">
                 <TransformGroup name="dbl_Icon" clipDistance="50" nodeId="668">
                   <TransformGroup name="dbl_realClockP3_SC" translation="-0.0693187 0.00200024 0.00199997" rotation="-90 90 0" clipDistance="50" nodeId="669"/>
-                  <Shape name="dbl_engineLoadNeedleP3_SC" translation="-0.0138834 0.002 0.0527402" rotation="0 60 6.00734e-06" shapeId="58" clipDistance="50" nodeId="670" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
+                  <Shape name="dbl_engineLoadNeedleP3_SC" translation="-0.014 0.002 0.053" rotation="0 60 6.00734e-06" shapeId="58" clipDistance="50" nodeId="670" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="19"/>
                   <TransformGroup name="dbl_tonPerHourNumbersP3_SC" translation="-0.0411521 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="671"/>
                   <TransformGroup name="dbl_yieldNumbersP3_SC" translation="-0.0331601 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="672"/>
                   <Shape name="dbl_gpsSatellitP3_SC" translation="-0.023001 0.00199971 0.0940001" rotation="1.21968e-06 90 0" scale="2.8 1 2.8" shapeId="59" clipDistance="50" nodeId="673" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
@@ -1392,8 +1392,8 @@
                   <Shape name="dbl_parkbreakP3_SC" translation="-0.00687702 0.002 0.0101433" rotation="1e-06 90 6e-06" scale="3 1 3" shapeId="63" clipDistance="50" nodeId="679" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="90"/>
                   <Shape name="dbl_gpsONP3_SC" translation="0.011 0.002 -0.055" shapeId="76" clipDistance="50" nodeId="680" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
                   <Shape name="dbl_gpsOFFP3_SC" translation="0.011 0.002 -0.055" shapeId="77" clipDistance="50" nodeId="681" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
-                  <Shape name="dbl_gpsLaneLeftP3_SC" translation="0.00782026 0.002 0.03" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="682" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="86"/>
-                  <Shape name="dbl_gpsLaneRightP3_SC" translation="0.00782013 0.002 -0.002" rotation="0 180 5.55842e-07" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="683" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="86"/>
+                  <Shape name="dbl_gpsLaneLeftP3_SC" translation="0.00782026 0.002 0.03" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="682" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="948"/>
+                  <Shape name="dbl_gpsLaneRightP3_SC" translation="0.00782013 0.002 -0.002" rotation="0 180 5.55842e-07" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="683" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="948"/>
                   <TransformGroup name="dbl_gpsWorkWidthP3_SC" translation="0.0231725 0.00199998 0.0135662" rotation="-90 90 0" clipDistance="50" nodeId="684"/>
                   <TransformGroup name="dbl_gpsCompassP3_SC" translation="0.022 0.00199983 -0.02" rotation="-90 90 0" clipDistance="50" nodeId="685"/>
                   <TransformGroup name="dbl_gpsCompassNumberP3_SC" translation="0.022 0.00199986 -0.028" rotation="-90 90 0" clipDistance="50" nodeId="686"/>
@@ -1429,8 +1429,8 @@
                 <TransformGroup name="dbl_Icon" clipDistance="50" nodeId="712">
                   <Shape name="dbl_gpsONP4_SC" translation="-0.067 0.002 -0.055" shapeId="76" clipDistance="50" nodeId="713" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
                   <Shape name="dbl_gpsOFFP4_SC" translation="-0.067 0.002 -0.055" shapeId="77" clipDistance="50" nodeId="714" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
-                  <Shape name="dbl_gpsLaneLeftP4_SC" translation="-0.07 0.002 0.03" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="715" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="86"/>
-                  <Shape name="dbl_gpsLaneRightP4_SC" translation="-0.07 0.002 -0.002" rotation="0 180 5.55842e-07" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="716" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="86"/>
+                  <Shape name="dbl_gpsLaneLeftP4_SC" translation="-0.07 0.002 0.03" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="715" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="948"/>
+                  <Shape name="dbl_gpsLaneRightP4_SC" translation="-0.07 0.002 -0.002" rotation="0 180 5.55842e-07" scale="0.003 1 0.003" shapeId="78" clipDistance="50" nodeId="716" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="948"/>
                   <TransformGroup name="dbl_gpsWorkWidthP4_SC" translation="-0.056 0.00199997 0.0135662" rotation="-90 90 0" clipDistance="50" nodeId="717"/>
                   <Shape name="dbl_bigMapPlaneP4_SC" translation="0.0130141 0.002 0.0132923" rotation="0 90 0" shapeId="93" clipDistance="50" nodeId="718" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="92">
                     <Shape name="dbl_bigNaviPositionP4_SC" translation="0.00029254 0.00100011 0" rotation="0 -1.36604e-05 2.27673e-06" scale="2.5 1 2.5" shapeId="83" clipDistance="50" nodeId="719" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="93"/>
@@ -1539,7 +1539,7 @@
           <Shape name="Interior2" shapeId="127" clipDistance="20" nodeId="796" castsShadows="true" receiveShadows="true" materialIds="67"/>
           <Shape name="cabinlightDecals1" shapeId="128" clipDistance="30" nodeId="797" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="74"/>
           <Shape name="stickers_decal3" shapeId="129" clipDistance="30" nodeId="798" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="53"/>
-          <ReferenceNode name="extinguisher" translation="0.808221 0.678419 0.56903" rotation="90 70 90" referenceId="89" nodeId="805"/>
+          <ReferenceNode name="extinguisher" translation="0.808221 0.678419 0.56903" rotation="90 70 90" referenceId="86" nodeId="805"/>
           <Shape name="Interior5" shapeId="130" clipDistance="80" nodeId="806" castsShadows="true" receiveShadows="true" materialIds="83"/>
           <TransformGroup name="lod01" lodDistance="0 50" nodeId="807">
             <Shape name="katana_vis_lod0" shapeId="131" clipDistance="300" nodeId="808" castsShadows="true" receiveShadows="true" skinBindNodeIds="808 743 745 748 749 750 751 752 753 766 820" materialIds="30,29,35,36,24,34,33,31,20,21,28,23,22,25"/>

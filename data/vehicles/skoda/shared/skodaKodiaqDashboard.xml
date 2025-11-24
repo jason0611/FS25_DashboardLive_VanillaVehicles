@@ -1,0 +1,26 @@
+﻿dbl.<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+
+<!-- Page -->
+	<group name="PAGE1" dbl="page" page="1"/>
+	<group name="PAGE2" dbl="page" page="2"/>
+    
+	<dashboardCompound name="SKODA_KODIAQ_DASHBOARD" filename="data/vehicles/skoda/shared/skodaKodiaqDashboard.i3d" node="skodaKodiaqDashboard">
+		<dashboard displayType="VISIBILITY" node="skodaKodiaq_dblMainScreenP1" groups="MOTOR_ACTIVE PAGE1"/>
+		<dashboard displayType="EMITTER" node="skodaKodiaq_dblMainScreenP1" intensity="0.5" groups="MOTOR_ACTIVE PAGE1"/>
+		<dashboard displayType="VISIBILITY" node="skodaKodiaq_dblNaviMapP2" groups="MOTOR_ACTIVE PAGE2"/>
+		<dashboard displayType="EMITTER" node="skodaKodiaq_dblNaviMapP2" intensity="0.5" groups="MOTOR_ACTIVE PAGE2"/>
+		<dashboard displayType="EMITTER" node="skodaKodiaq_dblNaviMapPosP2" emitColor="SKODA_ENERGY_BLUE" intensity="0.7" groups="MOTOR_ACTIVE PAGE2"/>
+<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="skodaKodiaq_dblNaviMapP2" groups="MOTOR_ACTIVE PAGE2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="skodaKodiaq_dblNaviMapPosP2" groups="MOTOR_ACTIVE PAGE2"/>
+    </dashboardCompound>
+	
+	<i3dMappings>
+		<i3dMapping id="skodaKodiaqDashboard" node="0>"/>
+		<i3dMapping id="skodaKodiaq_dblMainScreenP1" node="0>0"/>
+		<i3dMapping id="skodaKodiaq_dblNaviMapP2" node="0>1"/>
+		<i3dMapping id="skodaKodiaq_dblNaviMapPosP2" node="0>1|0"/>
+	</i3dMappings>
+</dashboardCompounds>
