@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="dd24073Display.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.4"/>
+  </Asset>
+
+  <Files>
+    <File fileId="1" filename="../textures/fendtOneBrantnerDDTrailerUTIB_diffuse.dds"/>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="5" filename="$data/shared/assets/dashboardSymbols_diffuse.dds"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="6" filename="$data/shared/default_specular.dds"/>
+    <File fileId="3" filename="$data/shared/default_vmask.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="fendtOneBrantnerDDTrailer_mat" materialId="5" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtOneBrantnerDDTrailer_mat" materialId="6" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="7" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="5"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="6"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="dd24073Display.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="brantnerDDTrailer" rotation="0 -0 90" nodeId="22">
+      <TransformGroup name="brantnerDDIconSet" nodeId="23">
+        <TransformGroup name="dbl_trailer1Set" nodeId="24">
+          <Shape name="dbl_trailer1IconUT8_SC" translation="0.003 -0.0751083 0.0283298" rotation="-180 4.26887e-07 90" shapeId="1" nodeId="25" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer1FillLevelSliderUT8_SC" translation="0.003 -0.0684478 0.0363758" rotation="-180 4.26887e-07 90" shapeId="2" nodeId="26" castsShadows="true" receiveShadows="true" materialIds="5"/>
+          <Shape name="dbl_trailer1TipSideLeftUT8_SC" translation="0.003 -0.00282153 0.0178983" rotation="-180 4.26887e-07 90" shapeId="3" nodeId="27" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer1TipSideBackUT8_SC" translation="0.003 0.0159121 0.0177007" rotation="-180 4.26887e-07 90" shapeId="4" nodeId="28" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer1TipSideGrainDoorUT8_SC" translation="0.003 0.0156481 0.0176044" rotation="-180 4.26887e-07 90" shapeId="5" nodeId="29" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer1TipSideRightUT8_SC" translation="0.003 0.0343475 0.0175405" rotation="-180 4.26887e-07 90" shapeId="6" nodeId="30" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer1FillTypeIconUT8_SC" translation="0.003 0.0391571 0.0647571" rotation="-180 4.26887e-07 90" shapeId="7" nodeId="31" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <TransformGroup name="dbl_trailer1FillTypeUT8_SC" translation="0.003 -0.01 0.062" rotation="90 -0 90" nodeId="32"/>
+          <Shape name="dbl_trailer1FillLevelStatusIconUT8_SC" translation="0.003 0.0379109 0.053586" rotation="-180 4.26887e-07 90" shapeId="8" nodeId="33" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer1FillLevelBarStatusIconUT8_SC" translation="0.003 0.0379999 0.0536065" rotation="-180 4.26887e-07 90" shapeId="9" nodeId="34" castsShadows="true" receiveShadows="true" materialIds="5"/>
+          <TransformGroup name="dbl_trailer1FillLevelNumberUT8_SC" translation="0.003 -0.01 0.047" rotation="90 -0 90" nodeId="35"/>
+          <Shape name="dbl_trailer1TipSideStatusUT8_SC" translation="0.003 0.0390731 0.0412219" rotation="-180 4.26887e-07 90" scale="2 1 2" shapeId="10" clipDistance="20" nodeId="36" castsShadows="true" receiveShadows="true" materialIds="7"/>
+          <TransformGroup name="dbl_trailer1TipSideUT8_SC" translation="0.003 -0.01 0.038" rotation="90 4.26887e-07 90" nodeId="37"/>
+          <Shape name="dbl_trailer1FillLevelSpringUT8_SC" translation="0.003 -0.0707586 0.00105375" rotation="180 0 90" shapeId="11" nodeId="38" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <TransformGroup name="dbl_trailer1FillLevelPercUT8_SC" translation="0.003 -0.089 0.00242564" rotation="90 4.26887e-07 90" nodeId="39"/>
+          <Shape name="dbl_trailer1TippingStatusUT8_SC" translation="0.003 -0.125 0.006" rotation="-180 4.26887e-07 90" scale="3 1 3" shapeId="10" clipDistance="20" nodeId="40" castsShadows="true" receiveShadows="true" materialIds="7"/>
+        </TransformGroup>
+        <TransformGroup name="dbl_trailer2Set" nodeId="41">
+          <Shape name="dbl_trailer2IconUT8_SC" translation="0.003 -0.0751083 -0.0427477" rotation="-180 4.26887e-07 90" shapeId="1" nodeId="42" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer2FillLevelSliderUT8_SC" translation="0.003 -0.0684478 -0.0344959" rotation="-180 4.26887e-07 90" shapeId="2" nodeId="43" castsShadows="true" receiveShadows="true" materialIds="5"/>
+          <Shape name="dbl_trailer2TipSideLeftUT8_SC" translation="0.003 -0.00282156 -0.0533871" rotation="-180 4.26887e-07 90" shapeId="3" nodeId="44" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer2TipSideBackUT8_SC" translation="0.003 0.0156355 -0.0532071" rotation="-180 4.26887e-07 90" shapeId="4" nodeId="45" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer2TipSideGrainDoorUT8_SC" translation="0.003 0.0152331 -0.0530292" rotation="-180 4.26887e-07 90" shapeId="5" nodeId="46" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer2TipSideRightUT8_SC" translation="0.003 0.0343475 -0.0534898" rotation="-180 4.26887e-07 90" shapeId="6" nodeId="47" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer2FillTypeIconUT8_SC" translation="0.003 0.0391571 -0.00580567" rotation="-180 4.26887e-07 90" shapeId="7" nodeId="48" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <TransformGroup name="dbl_trailer2FillTypeUT8_SC" translation="0.003 -0.0100001 -0.009" rotation="90 4.26887e-07 90" nodeId="49"/>
+          <Shape name="dbl_trailer2FillLevelStatusIconUT8_SC" translation="0.003 0.0379109 -0.0169637" rotation="-180 4.26887e-07 90" shapeId="8" nodeId="50" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <Shape name="dbl_trailer2FillLevelBarStatusIconUT8_SC" translation="0.003 0.0379999 -0.017168" rotation="-180 4.26887e-07 90" shapeId="9" nodeId="51" castsShadows="true" receiveShadows="true" materialIds="5"/>
+          <TransformGroup name="dbl_trailer2FillLevelNumberUT8_SC" translation="0.003 -0.01 -0.024" rotation="90 4.26887e-07 90" nodeId="52"/>
+          <Shape name="dbl_trailer2TipSideStatusUT8_SC" translation="0.003 0.039073 -0.0296119" rotation="-180 1.28066e-06 90" scale="2 1 2" shapeId="10" clipDistance="20" nodeId="53" castsShadows="true" receiveShadows="true" materialIds="7"/>
+          <TransformGroup name="dbl_trailer2TipSideUT8_SC" translation="0.003 -0.01 -0.033" rotation="90 4.26887e-07 90" nodeId="54"/>
+          <Shape name="dbl_trailer2FillLevelSpringUT8_SC" translation="0.003 -0.0707586 -0.0699191" rotation="-180 4.26887e-07 90" shapeId="11" nodeId="55" castsShadows="true" receiveShadows="true" materialIds="6"/>
+          <TransformGroup name="dbl_trailer2FillLevelPercUT8_SC" translation="0.003 -0.089 -0.0688051" rotation="90 4.26887e-07 90" nodeId="56"/>
+          <Shape name="dbl_trailer2TippingStatusUT8_SC" translation="0.003 -0.125 -0.065" rotation="-180 1.28066e-06 90" scale="3 1 3" shapeId="10" clipDistance="20" nodeId="57" castsShadows="true" receiveShadows="true" materialIds="7"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="brantnerDDScreen" nodeId="58">
+        <Shape name="dbl_brantnerDDTrailerScreenUT8_SC" translation="0.002 -0.047 0.0030009" rotation="180 -0 90" shapeId="12" nodeId="59" castsShadows="true" receiveShadows="true" materialIds="6"/>
+        <Shape name="dbl_brantnerDDTrailerScreenDMUT8_SC" translation="0.002 -0.047 0.003" rotation="180 0 90" shapeId="13" nodeId="60" castsShadows="true" receiveShadows="true" materialIds="6"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="36">
+      <Attribute name="MaxHandle" type="integer" value="68"/>
+    </UserAttribute>
+    <UserAttribute nodeId="40">
+      <Attribute name="MaxHandle" type="integer" value="68"/>
+    </UserAttribute>
+    <UserAttribute nodeId="53">
+      <Attribute name="MaxHandle" type="integer" value="68"/>
+    </UserAttribute>
+    <UserAttribute nodeId="57">
+      <Attribute name="MaxHandle" type="integer" value="68"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

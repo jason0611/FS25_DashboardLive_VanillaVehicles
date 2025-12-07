@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/dashboardCompounds.xsd">
+	
+	<group name="DARKMODE" dbl="darkmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/>
+	
+	<!-- Brantner DD Trailer IsoBus -->
+    <dashboardCompound name="ISOBUS" filename="isobus/dd24073Display.i3d" node="brantnerDDTrailer">
+	
+		<dashboard displayType="VISIBILITY" node="dbl_brantnerDDTrailerScreenUT8_SC" groups="MOTOR_ACTIVE LIGHTMODE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_brantnerDDTrailerScreenDMUT8_SC" groups="MOTOR_ACTIVE DARKMODE"/>
+		<dashboard displayType="EMITTER" node="dbl_brantnerDDTrailerScreenUT8_SC" intensity="0.2" groups="MOTOR_ACTIVE LIGHTMODE"/>
+		<dashboard displayType="EMITTER" node="dbl_brantnerDDTrailerScreenDMUT8_SC" intensity="0.3" groups="MOTOR_ACTIVE DARKMODE"/>
+		
+		<dashboard displayType="VISIBILITY" node="dbl_trailer1FillLevelSliderUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer1FillTypeIconUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer1TipSideStatusUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer1FillLevelStatusIconUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer1FillLevelSpringUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer2FillLevelSliderUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer2FillTypeIconUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer2TipSideStatusUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer2FillLevelStatusIconUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="dbl_trailer2FillLevelSpringUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="dbl_trailer1FillLevelStatusIconUT8_SC" baseColor="AGCO_GREY1" emitColor="0.3 0.3 0.3 1" baseColorDarkMode="1 1 1 1" intensity="0.1" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="dbl_trailer1FillLevelSpringUT8_SC" baseColor="AGCO_GREY1" emitColor="0.3 0.3 0.3 1" baseColorDarkMode="1 1 1 1" intensity="0.1" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="dbl_trailer2FillLevelStatusIconUT8_SC" baseColor="AGCO_GREY1" emitColor="0.3 0.3 0.3 1" baseColorDarkMode="1 1 1 1" intensity="0.1" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="dbl_trailer2FillLevelSpringUT8_SC" baseColor="AGCO_GREY1" emitColor="0.3 0.3 0.3 1" baseColorDarkMode="1 1 1 1" intensity="0.1" groups="MOTOR_ACTIVE"/>
+		
+	<!-- Brantner DD Trailer IsoBus -->
+		<!-- Selection Part -->
+		<dashboard valueType="dbl.selection" selection="-1" displayType="EMITTER" node="dbl_trailer1FillTypeIconUT8_SC"  baseColor="0.3 0.3 0.3 1" emitColor="KUHN_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="-1" displayType="EMITTER" node="dbl_trailer1TipSideStatusUT8_SC" baseColor="0.3 0.3 0.3 1" emitColor="KUHN_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="-2" displayType="EMITTER" node="dbl_trailer2FillTypeIconUT8_SC"  baseColor="0.3 0.3 0.3 1" emitColor="KUHN_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="-2" displayType="EMITTER" node="dbl_trailer2TipSideStatusUT8_SC" baseColor="0.3 0.3 0.3 1" emitColor="KUHN_BLUE1" intensity="0.8" groups="MOTOR_ACTIVE"/>
+		<!-- Connected -->
+		<dashboard valueType="dbl.base" cmd="connected" joints="2 3" displayType="VISIBILITY" node="dbl_trailer1IconUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="connected" joints="2 3" displayType="VISIBILITY" node="dbl_trailer2IconUT8_SC" groups="MOTOR_ACTIVE"/>
+		<!-- FillType -->
+		<dashboard valueType="dbl.base"	cmd="fillType" option="name" joints="2 3" trailer="1" displayType="TEXT" node="dbl_trailer1FillTypeUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textSize="0.005" font="GENERIC" textMask=".............." textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillType" option="name" joints="2 3" trailer="2" displayType="TEXT" node="dbl_trailer2FillTypeUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textSize="0.005" font="GENERIC" textMask=".............." textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<!-- FillLevel -->
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="percent" trailer="1" displayType="SLIDER" node="dbl_trailer1FillLevelSliderUT8_SC" factor="100" minValueSlider="1" maxValueSlider="100" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="percent" trailer="1" displayType="SLIDER" node="dbl_trailer1FillLevelBarStatusIconUT8_SC" factor="100" minValueSlider="1" maxValueSlider="100" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="percent" trailer="2" displayType="SLIDER" node="dbl_trailer2FillLevelSliderUT8_SC" factor="100" minValueSlider="1" maxValueSlider="100" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="percent" trailer="2" displayType="SLIDER" node="dbl_trailer2FillLevelBarStatusIconUT8_SC" factor="100" minValueSlider="1" maxValueSlider="100" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard valueType="dbl.base" cmd="fillLevel" joints="2 3" option="percent" trailer="1" displayType="ANIMATION" animName="trailer1SpringAnimUT8_SC" minValueAnim="1" maxValueAnim="100" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="fillLevel" joints="2 3" option="percent" trailer="2" displayType="ANIMATION" animName="trailer2SpringAnimUT8_SC" minValueAnim="1" maxValueAnim="100" groups="MOTOR_ACTIVE"/> -->
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="abs" trailer="1" displayType="TEXT" node="dbl_trailer1FillLevelNumberUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.006" font="GENERIC" textMask="00000l" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="percent" trailer="1" factor="100" displayType="TEXT" node="dbl_trailer1FillLevelPercUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.004" font="GENERIC" textMask="000%" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="abs" trailer="2" displayType="TEXT" node="dbl_trailer2FillLevelNumberUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.006" font="GENERIC" textMask="00000l" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="fillLevel" joints="2 3" option="percent" trailer="2" factor="100" displayType="TEXT" node="dbl_trailer2FillLevelPercUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.004" font="GENERIC" textMask="000%" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard valueType="dbl.base" cmd="fillLevel" joints="2 3" trailer="1" partition="1" cond="moreequal" factor="100" condValue="90" option="percent" displayType="AUDIO" audioName="FLW_TRAILERUT8_SC" loop="1" audioFile="sounds/claasBeep.ogg" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="fillLevel" joints="2 3" trailer="1" partition="1" cond="moreequal" factor="100" condValue="100" option="percent" displayType="AUDIO" audioName="FLW_TRAILERUT8_SC" loop="2" audioFile="sounds/claasBeep.ogg" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="fillLevel" joints="2 3" trailer="2" partition="1" cond="moreequal" factor="100" condValue="90" option="percent" displayType="AUDIO" audioName="FLW_TRAILERUT8_SC" loop="1" audioFile="sounds/claasBeep.ogg" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="fillLevel" joints="2 3" trailer="2" partition="1" cond="moreequal" factor="100" condValue="100" option="percent" displayType="AUDIO" audioName="FLW_TRAILERUT8_SC" loop="2" audioFile="sounds/claasBeep.ogg" groups="MOTOR_RUNNING"/> -->
+		<!-- TipSide -->
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="1" stateText="Left" displayType="VISIBILITY" node="dbl_trailer1TipSideLeftUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="1" stateText="Back" displayType="VISIBILITY" node="dbl_trailer1TipSideBackUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="1" stateText="BackGrainDoor" displayType="VISIBILITY" node="dbl_trailer1TipSideGrainDoorUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="1" stateText="Right" displayType="VISIBILITY" node="dbl_trailer1TipSideRightUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="2" stateText="Left" displayType="VISIBILITY" node="dbl_trailer2TipSideLeftUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="2" stateText="Back" displayType="VISIBILITY" node="dbl_trailer2TipSideBackUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="2" stateText="BackGrainDoor" displayType="VISIBILITY" node="dbl_trailer2TipSideGrainDoorUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipSide" joints="2 3" trailer="2" stateText="Right" displayType="VISIBILITY" node="dbl_trailer2TipSideRightUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="tipSideText" joints="2 3" trailer="1" displayType="TEXT" node="dbl_trailer1TipSideUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.0045" font="GENERIC" textMask="000000000000" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base"	cmd="tipSideText" joints="2 3" trailer="2" displayType="TEXT" node="dbl_trailer2TipSideUT8_SC" intensity="0.8" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.0045" font="GENERIC" textMask="000000000000" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+		<!-- Tipping -->
+		<dashboard valueType="dbl.base" cmd="tipping" joints="2 3" trailer="1" displayType="VISIBILITY" node="dbl_trailer1TippingStatusUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipping" joints="2 3" trailer="1" displayType="EMITTER" node="dbl_trailer1TippingStatusUT8_SC" emitColor="AMAZONE_GREEN1" intensity="1" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipping" joints="2 3" trailer="2" displayType="VISIBILITY" node="dbl_trailer2TippingStatusUT8_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="tipping" joints="2 3" trailer="2" displayType="EMITTER" node="dbl_trailer2TippingStatusUT8_SC" emitColor="AMAZONE_GREEN1" intensity="1" groups="MOTOR_ACTIVE"/>
+    
+    </dashboardCompound>
+
+
+    <i3dMappings>
+		<i3dMapping id="brantnerDDTrailer" node="0>"/>
+		
+		<i3dMapping id="dbl_trailer1IconUT8_SC" node="0>0|0|0"/>
+		<i3dMapping id="dbl_trailer1FillLevelSliderUT8_SC" node="0>0|0|1"/>
+		<i3dMapping id="dbl_trailer1TipSideLeftUT8_SC" node="0>0|0|2"/>
+		<i3dMapping id="dbl_trailer1TipSideBackUT8_SC" node="0>0|0|3"/>
+		<i3dMapping id="dbl_trailer1TipSideGrainDoorUT8_SC" node="0>0|0|4"/>
+		<i3dMapping id="dbl_trailer1TipSideRightUT8_SC" node="0>0|0|5"/>
+		<i3dMapping id="dbl_trailer1FillTypeIconUT8_SC" node="0>0|0|6"/>
+		<i3dMapping id="dbl_trailer1FillTypeUT8_SC" node="0>0|0|7"/>
+		<i3dMapping id="dbl_trailer1FillLevelStatusIconUT8_SC" node="0>0|0|8"/>
+		<i3dMapping id="dbl_trailer1FillLevelBarStatusIconUT8_SC" node="0>0|0|9"/>
+		<i3dMapping id="dbl_trailer1FillLevelNumberUT8_SC" node="0>0|0|10"/>
+		<i3dMapping id="dbl_trailer1TipSideStatusUT8_SC" node="0>0|0|11"/>
+		<i3dMapping id="dbl_trailer1TipSideUT8_SC" node="0>0|0|12"/>
+		<i3dMapping id="dbl_trailer1FillLevelSpringUT8_SC" node="0>0|0|13"/>
+		<i3dMapping id="dbl_trailer1FillLevelPercUT8_SC" node="0>0|0|14"/>
+		<i3dMapping id="dbl_trailer1TippingStatusUT8_SC" node="0>0|0|15"/>
+		
+		<i3dMapping id="dbl_trailer2IconUT8_SC" node="0>0|1|0"/>
+		<i3dMapping id="dbl_trailer2FillLevelSliderUT8_SC" node="0>0|1|1"/>
+		<i3dMapping id="dbl_trailer2TipSideLeftUT8_SC" node="0>0|1|2"/>
+		<i3dMapping id="dbl_trailer2TipSideBackUT8_SC" node="0>0|1|3"/>
+		<i3dMapping id="dbl_trailer2TipSideGrainDoorUT8_SC" node="0>0|1|4"/>
+		<i3dMapping id="dbl_trailer2TipSideRightUT8_SC" node="0>0|1|5"/>
+		<i3dMapping id="dbl_trailer2FillTypeIconUT8_SC" node="0>0|1|6"/>
+		<i3dMapping id="dbl_trailer2FillTypeUT8_SC" node="0>0|1|7"/>
+		<i3dMapping id="dbl_trailer2FillLevelStatusIconUT8_SC" node="0>0|1|8"/>
+		<i3dMapping id="dbl_trailer2FillLevelBarStatusIconUT8_SC" node="0>0|1|9"/>
+		<i3dMapping id="dbl_trailer2FillLevelNumberUT8_SC" node="0>0|1|10"/>
+		<i3dMapping id="dbl_trailer2TipSideStatusUT8_SC" node="0>0|1|11"/>
+		<i3dMapping id="dbl_trailer2TipSideUT8_SC" node="0>0|1|12"/>
+		<i3dMapping id="dbl_trailer2FillLevelSpringUT8_SC" node="0>0|1|13"/>
+		<i3dMapping id="dbl_trailer2FillLevelPercUT8_SC" node="0>0|1|14"/>
+		<i3dMapping id="dbl_trailer2TippingStatusUT8_SC" node="0>0|1|15"/>
+		
+		<i3dMapping id="dbl_brantnerDDTrailerScreenUT8_SC" node="0>1|0"/>
+		<i3dMapping id="dbl_brantnerDDTrailerScreenDMUT8_SC" node="0>1|1"/>
+    </i3dMappings>
+</dashboardCompounds>

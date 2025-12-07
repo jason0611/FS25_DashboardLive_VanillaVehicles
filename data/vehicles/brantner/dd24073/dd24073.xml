@@ -1,7 +1,0 @@
-<vehicle type="trailer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
-	<dashboard>
-    	<dashboardLive>
-    		<isobus isobusTerminal="shared/display/displays.xml" />
-    	</dashboardLive>
-	</dashboard>
-</vehicle>
