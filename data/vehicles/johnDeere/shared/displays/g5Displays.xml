@@ -454,8 +454,8 @@
 		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlActiveP1_GPS" valueType="drivable.cruiseControlActive" groups="MOTOR_RUNNING"/>
 	
-		<dashboard displayType="VISIBILITY" node="g5seedTypeBgCountsP1_GPS" valueType="dbl.base" cmd="seedType" option="any" jointSide="back" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblseedTypeLettersP1_GPS" valueType="dbl.base" cmd="seedType" option="any" jointSide="back" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5seedTypeBgCountsP1_GPS" valueType="dbl.base" cmd="" option="any" jointSide="back" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblseedTypeLettersP1_GPS" valueType="dbl.base" cmd="" option="any" jointSide="back" groups="MOTOR_RUNNING"/>
 		<!-- back 1 -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fillLevel" option="abskg" jointSide="back"    						maxActiveValue="8" 		partition="1" node="g5Display_dblSeedFilllevelGrammP1_GPS" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fillLevel" option="abskg" jointSide="back"    minActiveValue="8" 		maxActiveValue="2000"	partition="1" node="g5Display_dblSeedFilllevelKgP1_GPS" groups="MOTOR_RUNNING"/>	
