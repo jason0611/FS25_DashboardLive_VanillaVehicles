@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/vehicle.xsd">
     
 	<group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
-	<group name="PAGE4GPS1" dbl="page" group="1" page="1"/>
-	<group name="PAGE4GPS2" dbl="page" group="1" page="2"/>
+
+	<group name="JD4_TRAC_PAGEAP1" 	dbl="page" group="1" page="1"/>
+
+	<group name="JD4_TRAC_PAGESC1" 	dbl="page" group="2" page="1"/>
+	<group name="JD4_TRAC_PAGESC2" 	dbl="page" group="2" page="2"/>
+	
+	<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="5" page="1"/>
+	<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="5" page="2"/>
+
+	<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="4" page="1"/>
+	<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="4" page="2"/>
+	<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="4" page="3"/>
+	<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="4" page="4"/>
+	<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="4" page="5"/>
+	<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="4" page="6"/>
+
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
 	<group name="DBL_F_TRAILER1" dbl="base_connected" dblTrailer="1" dblJointSide="back"/>
-	<!-- <group name="DBL_F_TRAILER1" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="1" dblJointSide="back"/> -->
 	<group name="DBL_F_TRAILER2" dbl="base_connected" dblTrailer="2" dblJointSide="back"/>
+	<!-- <group name="DBL_F_TRAILER1" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="1" dblJointSide="back"/> -->
 	<!-- <group name="DBL_F_TRAILER2" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="2" dblJointSide="back"/> -->
 	<!-- <group name="FL_ATTACHED" dblJointSide="front" dblJointType="attachabl dblTrailer="2" dblJointSide="back"/> -->
 	<!-- <group name="DBL_F_TRAILER2" dbl="base_hasSpec" dblOption="spec_attachable" dblTrailer="2" dblJointSide="back"/> -->
@@ -46,8 +60,11 @@
         <dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="aPillarDisplay_iconGPSActive_decal" baseColor="2 0.25 0.20 1" emitColor="GREEN" intensity="1.0" intensityDarkMode="0.6" groups="MOTOR_RUNNING"/>
 
 		<!-- HLM -->
-		<dashboard displayType="VISIBILITY"	valueType="hlm" option="" 		node="aPillarDisplay_dblHlmActiveIcon" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="EMITTER" 	valueType="hlm" option="field"	node="aPillarDisplay_dblHlmActiveIcon" emitColor="GREEN" baseColor="0.09 0.09 0.07 1" intensity="0.6" hideInactive="true" intensityDarkMode="0.4" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY"	valueType="dbl.hlm" 		   option="" 				node="aPillarDisplay_dblHlmTG" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY"	valueType="dbl.hlm" cmd="mode" option="field"			node="aPillarDisplay_dblHlmActiveIcon" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY"	valueType="dbl.hlm" cmd="mode" option="headland" 		node="aPillarDisplay_dblHlmHeadlandIcon" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	valueType="dbl.hlm" cmd="mode" option="field"			node="aPillarDisplay_dblHlmActiveIcon" emitColor="GREEN" baseColor="0 0 0 1" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="EMITTER" 	valueType="dbl.hlm" cmd="mode" option="headland"		node="aPillarDisplay_dblHlmHeadlandIcon" emitColor="1 .3 .1 1" baseColor="0 0 0 1" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_ACTIVE"/>
 
         <dashboard displayType="EMITTER" node="aPillarDisplay_iconStarting01_decals" baseColor="0 0 0" emitColor="0.680 0.716 1.000 1" intensity="0.5" intensityDarkMode="0.4" hideInactive="true" groups="MOTOR_STARTING"/>
         <dashboard displayType="EMITTER" node="aPillarDisplay_iconStarting02_decals" baseColor="0 0 0" emitColor="JOHNDEERE_ORANGE1" intensity="0.5" intensityDarkMode="0.4" hideInactive="true" groups="MOTOR_STARTING"/>
@@ -405,17 +422,16 @@
 		<dashboard displayType="EMITTER" node="g4Display_dblWheelSlipBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" groups="MOTOR_RUNNING"/>
 
 		<!-- HLM -->
-		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHlmActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="hlm" option="" 		 displayType="VISIBILITY" node="g4Display_dblHLMActiveSecondP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="hlm" option="headland" displayType="VISIBILITY" node="g4Display_dblHlmIconP1_SC"  groups="MOTOR_RUNNING"/>
-		<dashboard 									 displayType="VISIBILITY" node="g4Display_dblHlmBlinkP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="hlm" option="contour"  displayType="VISIBILITY" node="g4Display_dblHlmConourActiveRotBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.hlm" option="" 		 			displayType="VISIBILITY" node="g4Display_dblHlmActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.hlm" 			  option="" 		displayType="VISIBILITY" node="g4Display_dblHLMActiveSecondP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.hlm" cmd="mode" option="headland" displayType="VISIBILITY" node="g4Display_dblHlmIconP1_SC"  groups="MOTOR_RUNNING"/>
+		<dashboard 									 				displayType="VISIBILITY" node="g4Display_dblHlmBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.hlm" cmd="mode" option="contour"  displayType="VISIBILITY" node="g4Display_dblHlmConourActiveRotBlinkP1_SC" groups="MOTOR_RUNNING"/>
 
-		<dashboard valueType="hlm" option="field" 	 displayType="EMITTER"    node="g4Display_dblHlmBlinkP1_SC" 	baseColor="0.05 0.05 0.04 1" emitColor="GREEN" intensity="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="hlm" option="headland" displayType="EMITTER"    node="g4Display_dblHlmIconP1_SC" 								 emitColor="JOHNDEERE_ORANGE1" intensity="0.4" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="hlm" option="contour"  displayType="EMITTER"    node="g4Display_dblHlmConourActiveRotBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.9 0.04 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="hlm" option=""		 displayType="EMITTER"    node="g4Display_dblHLMActiveSecondP1_SC" baseColor="0 0 0" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-
+		<dashboard valueType="dbl.hlm" 			  option=""		 	displayType="EMITTER"    node="g4Display_dblHLMActiveSecondP1_SC" baseColor="0 0 0" intensity="0.6" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.hlm" cmd="mode" option="field" 	displayType="EMITTER"    node="g4Display_dblHlmBlinkP1_SC" 	baseColor="0.05 0.05 0.04 1" emitColor="GREEN" intensity="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.hlm" cmd="mode" option="headland" displayType="EMITTER"    node="g4Display_dblHlmIconP1_SC" 								 emitColor="JOHNDEERE_ORANGE1" intensity="0.4" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.hlm" option="contour"  			displayType="EMITTER"    node="g4Display_dblHlmConourActiveRotBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.9 0.04 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
     </dashboardCompound>
 
  <!-- GPS -->
@@ -448,7 +464,7 @@
             <state value="2" visibility="false"/>
 		</dashboard>
 
-		<dashboard displayType="VISIBILITY" node="g4Display_dblCultivatorDephP1_GPS" valueType="dbl.base" cmd="cultivator" state="shallowmode" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="VISIBILITY" node="g4Display_dblCultivatorDephP1_GPS" valueType="dbl.base" cmd="cultivator" state="shallowmode" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblCultivatorDephP1_GPS" emitColor="GREEN" intensity="0.6" groups="MOTOR_ACTIVE"/>
 		
 		<dashboard displayType="VISIBILITY" node="g4Display_dblLanesLoaded3mP1_GPS"  valueType="dbl.gpsWidth" maxActiveValue="3.9" groups="MOTOR_RUNNING"/>
@@ -476,8 +492,8 @@
 		<dashboard displayType="VISIBILITY" node="g4Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblCruiseControlActiveP1_GPS" valueType="drivable.cruiseControlActive" groups="MOTOR_RUNNING"/>
 	
-		<dashboard displayType="VISIBILITY" node="g4seedTypeBgCountsP1_GPS" valueType="dbl.base" cmd="seedType" option="any" jointSide="back" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g4Display_dblseedTypeLettersP1_GPS" valueType="dbl.base" cmd="seedType" option="any" jointSide="back" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g4seedTypeBgCountsP1_GPS" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g4Display_dblseedTypeLettersP1_GPS"  groups="MOTOR_RUNNING"/>
 		<!-- back 1 -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fillLevel" option="abskg" jointSide="back"    						maxActiveValue="8" 		partition="1" node="g4Display_dblSeedFilllevelGrammP1_GPS" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fillLevel" option="abskg" jointSide="back"    minActiveValue="8" 		maxActiveValue="2000"	partition="1" node="g4Display_dblSeedFilllevelKgP1_GPS" groups="MOTOR_RUNNING"/>	
@@ -527,13 +543,13 @@
 		<dashboard displayType="EMITTER" node="g4Display_dblLaneActiveLeft24mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblLaneActiveRight24mP1_GPS" emitColor="BLUE" intensity="0.9" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl1ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="1" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGE4GPS1"/>
-		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl2ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="2" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGE4GPS1"/>
-		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl1ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="1" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
+		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl2ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="2" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
+		<dashboard displayType="EMITTER" node="g4Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
 		
-		<dashboard displayType="EMITTER" node="g4seedTypeBg1_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGE4GPS1"/>
-		<dashboard displayType="EMITTER" node="g4seedTypeBg2_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGE4GPS1"/>
-		<dashboard displayType="EMITTER" node="g4seedTypeBg3_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING PAGE4GPS1"/>
+		<dashboard displayType="EMITTER" node="g4seedTypeBg1_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
+		<dashboard displayType="EMITTER" node="g4seedTypeBg2_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
+		<dashboard displayType="EMITTER" node="g4seedTypeBg3_P1_GPS" emitColor="0.09 0.09 0.09 0.1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
 		
 		<dashboard displayType="EMITTER" node="g4Display_dblSeedFilllevelWarnBlinkP1_GPS" emitColor="0.9 0.09 0.09 0.1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblFertilizerFilllevelWarnBlinkP1_GPS" emitColor="0.9 0.09 0.09 0.1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING"/>
@@ -579,35 +595,152 @@
 		<dashboard valueType="hlm" option="contour"  displayType="EMITTER"    node="g4Display_dblHlmConourActiveRotBlinkP1_GPS" baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.5 0.04 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
 
 		<!-- MiniMap -->
-			<!-- P1 -->
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP1_GPS" groups="MOTOR_RUNNING PAGE4GPS1"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP1_GPS" groups="MOTOR_RUNNING PAGE4GPS1"/>
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP1_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE PAGE4GPS1"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP1_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE PAGE4GPS1"/>
-			<!-- P2 -->
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP2_GPS" groups="MOTOR_RUNNING PAGE4GPS2"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP2_GPS" groups="MOTOR_RUNNING PAGE4GPS2"/>
-		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP2_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE PAGE4GPS2"/>
-		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP2_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE PAGE4GPS2"/>
+		<!-- P1 -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP1_GPS" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP1_GPS" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP1_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP1_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS1"/>
+		<!-- RGPS -->
+        <realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+            <controls allow="true" allowRotation="true" allowZoom="true" />
+            <map mapNode="g4Display_dblNaviMapP1_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
+                <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+            </map>
+
+            <hideNodes>
+                <hideNode node="g4Display_dblNaviMapPosP1_GPS" isDashboard="true" />
+            </hideNodes>
+        </realGPS>
+		<!-- P2 -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP2_GPS" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP2_GPS" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP2_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS2"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP2_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS2"/>
+		<!-- P6 -->
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g4Display_dblNaviMapP6_GPS" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS6"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g4Display_dblNaviMapPosP6_GPS" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS6"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g4Display_dblNaviMapP6_GPS" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS6"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g4Display_dblNaviMapPosP6_GPS" emitColor="ORANGE" intensity="0.5" groups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS6"/>
+
+
+		<!-- RGPS -->
+        <realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+            <controls allow="true" allowRotation="true" allowZoom="true" />
+            <map mapNode="g4Display_dblNaviMapP2_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
+                <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+            </map>
+			<map mapNode="g4Display_dblNaviMapP6_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
+                <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+            </map>
+
+            <hideNodes>
+                <hideNode node="g4Display_dblNaviMapPosP6_GPS" isDashboard="true" />
+            </hideNodes>
+        </realGPS>
+		<!-- P3 -->
+		<dashboard displayType="VISIBILITY" node="g4cams1P3_GPS_PageVis" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS3"/>
+		<dashboard displayType="VISIBILITY" node="g4cams1P4_GPS_PageVis" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS4"/>
+		<dashboard displayType="VISIBILITY" node="g4cams1P5_GPS_PageVis" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS5"/>
+		<dashboard displayType="VISIBILITY" node="g4cams1P6_GPS_PageVis" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS6"/>
+        <realWorkCameras>
+            <workCameraDisplays>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P3_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
+				<workCameraDisplay isAttachableCamDisplay="true" linkNode="g4cams1P4_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P5_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P5_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P6_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
+            </workCameraDisplays>
+            <!-- <hideNodes>
+                <hideNode node="g5Display_naviMapTractorP1_SC" isDashboard="true" />
+            </hideNodes> -->
+        </realWorkCameras>
 		
 		<!-- gps -->
 		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g4Display_dblGPSActiveP12_GPS" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g4Display_dblGPSActiveP12_GPS" baseColor="0 0 0" emitColor="0.9 0.9 0.9 1" emitColorDarkMode="0.005 0.7 0.004 1" intensity="1.0" intensityDarkMode="0.5" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="g4Display_dblGPSSatellitP12_GPS" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="g4Display_dblGPSSatellitP12_GPS" baseColor="0 0.1 0 1" emitColor="0.9 0.9 0.9 1" intensity="1.0" intensityDarkMode="0.5" groups="MOTOR_ACTIVE"/>
-		
-		<!-- Camera -->
-		
     </dashboardCompound>
 
 <!-- RADIO -->
     <dashboardCompound name="JOHNDEERE_RADIODISPLAY" filename="data/vehicles/johnDeere/shared/displays/g4Displays.i3d" node="g4RadioScreen">
         <!-- display -->
-        <dashboard displayType="VISIBILITY" node="radioDisplay_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
+        <dashboard displayType="VISIBILITY" node="radioDisplay_startScreen_decal" 																				idleValue="0" 			groups="MOTOR_STARTING"/>
         <dashboard displayType="VISIBILITY" node="4gRadio_TimeNumbersP1_FM"/>
-        <dashboard displayType="EMITTER" node="radioDisplay_startScreen_decal" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_STARTING"/>
-        <dashboard displayType="EMITTER" node="radioDisplay_decal" idleValue="-1" intensity="0.3" intensityDarkMode="0.1" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realClock" node="4gRadio_TimeNumbersP1_FM" textColor="0.6 0.6 0.7 1" textColorDarkMode="0.4 0.4 0.32 1" textSize="0.01" textMask="........." emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD"/>
+        <dashboard displayType="VISIBILITY" node="4gRadio_RadioGameTimeNumbersP1_FM" 																									groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="johnDeere_dblRadioVolumeSliderP1_RC" 	valueType="dbl.base" cmd="radio"																groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="radioDisplay_decal" 																													groups="MOTOR_ACTIVE"/>
+        <!-- <dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPresetIconP1_RC" valueType="dbl.base" cmd="radio" 	option="volume" 	cond="equal" 	condValue="20" factor="100"	groups="MOTOR_RUNNING"/> -->
+		<!-- string cond needed -->
+
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumbersP1_FM" 		valueType="dbl.base" cmd="radio" 	option="station" 					textColor="0.06 0.06 0.07 1" 	textColorDarkMode="0.04 0.04 0.03 1" 	textSize="0.011" textMask="......................" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioStationShortP1_FM" 		valueType="dbl.base" cmd="radio" 	option="station" 					textColor="1 1 1 1" 			textColorDarkMode="0.04 0.04 0.03 1" 	textSize="0.004" textMask="SS" 						emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC_BOLD" 	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameOffP1_FM" 			valueType="dbl.base" cmd="radio" 	option="station" 					textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.010" textMask="Standby" 				emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioVolumeNumbersP1_FM" 		valueType="dbl.base" cmd="radio" 	option="volume"  	factor="100"	textColor="1 1 1 1" 			textColorDarkMode="0.4 0.4 0.32 1" 		textSize="0.003" textMask="000%" 					emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset1_P1_RC"   valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Kjpf" 		groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+        <dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber1_P1_FM"   	valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Kjpf" 		groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber1_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="1" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset1_P1_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset2_P1_RC" valueType="dbl.base" cmd="radio" 		option="station" 	cond="contains" condValue="Truc" 	groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber2_P1_FM" valueType="dbl.base" cmd="radio" 		option="station" 	cond="contains" condValue="Truc" 	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber2_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="2" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset2_P1_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPresetIconP1_RC" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="club" 		groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber3_P1_FM" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="club" 		groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber3_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="3" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPresetIconP1_RC" 				intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset4_P1_RC"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Main" 		groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber4_P1_FM"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Main" 		groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber4_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="4" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset4_P1_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset5_P1_RC"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="char" 	groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber5_P1_FM"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="char" 	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber5_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="5" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset5_P1_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset6_P1_RC"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Simu"	groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber6_P1_FM"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Simu"	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber6_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="6" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset6_P1_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC1"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset7_P2_RC"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="hive" 	groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber7_P1_FM"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="hive" 	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber7_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="7" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset7_P2_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset8_P2_RC"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="coun" groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber8_P1_FM"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="coun" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber8_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="8" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset8_P2_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset9_P2_RC"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="clas" 		groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber9_P1_FM"  valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="clas" 		groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber9_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="9" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset9_P2_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset10_P2_RC" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Lamu"		groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber10_P1_FM" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Lamu"		groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber10_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="10" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset10_P2_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset11_P2_RC" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Dase"	groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber11_P1_FM" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Dase"	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber11_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="11" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset11_P2_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPreset12_P2_RC" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Pixe" 	groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="4gRadio_RadioNameNumber12_P1_FM" valueType="dbl.base" cmd="radio" 	option="station" 	cond="contains" condValue="Pixe" 	groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioNameNumber12_P1_FM" 		 																		textColor="0.18 0.18 0.19 1" 	textColorDarkMode="0.16 0.16 0.15 1" 	textSize="0.004" textMask="12" 	emissiveScale="0.6" textAlignment="LEFT"  font="GENERIC" 		groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPreset12_P2_RC" 					intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPresetListP2_RC" 																						 		groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPresetListP2_RC" 				intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+		<dashboard displayType="VISIBILITY" node="johnDeere_dblRadioDabPresetsP2_RC" 																						 			groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioDabPresetsP2_RC" 					intensity="0.3" intensityDarkMode="0.1" 											groups="MOTOR_RUNNING JD4_TRAC_PAGERC2"/>
+
+
+        <dashboard displayType="VISIBILITY" node="johnDeere_dblRadioIconDabP1_RC" 		valueType="dbl.base" cmd="radio" 																	groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="4gRadio_RadioNameOffP1_FM" 			valueType="dbl.base" cmd="radio" 						cond="not" 									groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="johnDeere_dblRadioBatteryP1_RC" 		valueType="time" 										cond="equal" 	condValue="10" 				groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="radioDisplay_startScreen_decal" 							intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_STARTING"/>
+        <dashboard displayType="EMITTER" 	node="radioDisplay_decal" 				 						intensity="0.3" intensityDarkMode="0.1" 			idleValue="-1" 				groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioIconDabP1_RC" 							intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING"/>
+        <dashboard displayType="EMITTER" 	node="johnDeere_dblRadioBatteryP1_RC" 							intensity="0.3" intensityDarkMode="0.1" 										groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER"		node="johnDeere_dblRadioVolumeSliderP1_RC" 	valueType="dbl.base" cmd="radio"	option="volume" intensity="0.5" intensityDarkMode="0.1" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="false" 				groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_TimeNumbersP1_FM" 			valueType="dbl.base" cmd="realClock" 									textColor="0.12 0.12 0.13 1" 	textColorDarkMode="0.06 0.06 0.07 1" 	textSize="0.01"  textMask="........." 				emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD"/>
+		<dashboard displayType="TEXT" 		node="4gRadio_RadioGameTimeNumbersP1_FM" 	valueType="time" 														textColor="1 1 1 1" 			textColorDarkMode="0.6 0.6 0.5 1" 		textSize="0.003" textMask="00:00" 					emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC" 		groups="MOTOR_RUNNING"/>
     </dashboardCompound>
 
     <i3dMappings>
@@ -644,7 +777,11 @@
 		<i3dMapping id="g4Display_aPillarDisplay_decal" node="0>0|1|0"/>
 		<i3dMapping id="aPillarDisplay_iconTurnLightTrailer1_decal" node="0>0|0|24"/>
 		<i3dMapping id="aPillarDisplay_iconTurnLightTrailer2_decal" node="0>0|0|25"/>
-		<i3dMapping id="aPillarDisplay_dblHlmActiveIcon" node="0>0|0|26"/>
+		<i3dMapping id="aPillarDisplay_dblHlmTG" node="0>0|0|26"/>
+		<i3dMapping id="aPillarDisplay_dblHlmActiveIcon" node="0>0|0|26|0"/>
+		<i3dMapping id="aPillarDisplay_dblHlmHeadlandIcon" node="0>0|0|26|1"/>
+		<!-- <i3dMapping id="aPillarDisplay_dblHlmActiveIcon" node="0>0|0|26"/>
+		<i3dMapping id="aPillarDisplay_dblHlmHeadlandIcon" node="0>0|0|27"/> -->
 
 		
 	 <!-- RADIO SCREEN -->
@@ -652,6 +789,40 @@
 		<i3dMapping id="radioDisplay_decal" node="0>3|0"/>
 		<i3dMapping id="radioDisplay_startScreen_decal" node="0>3|0|0"/>
 		<i3dMapping id="4gRadio_TimeNumbersP1_FM" node="0>3|1|0"/>
+		<i3dMapping id="4gRadio_RadioNameNumbersP1_FM" node="0>3|1|1"/>
+		<i3dMapping id="4gRadio_RadioVolumeNumbersP1_FM" node="0>3|1|2"/>
+		<i3dMapping id="4gRadio_RadioNameOffP1_FM" node="0>3|1|3"/>
+		<i3dMapping id="4gRadio_RadioGameTimeNumbersP1_FM" node="0>3|1|4"/>
+		<i3dMapping id="johnDeere_dblRadioIconDabP1_RC" node="0>3|2|0"/>
+		<i3dMapping id="johnDeere_dblRadioBatteryP1_RC" node="0>3|2|1"/>
+		<i3dMapping id="johnDeere_dblRadioVolumeSliderP1_RC" node="0>3|2|2"/>
+		<i3dMapping id="4gRadio_RadioStationShortP1_FM" node="0>3|1|5"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset8_P2_RC" node="0>3|2|10"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset9_P2_RC" node="0>3|2|11"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset10_P2_RC" node="0>3|2|12"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset11_P2_RC" node="0>3|2|13"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset12_P2_RC" node="0>3|2|14"/>
+		<i3dMapping id="johnDeere_dblRadioDabPresetsP2_RC" node="0>3|2|15"/>
+		<i3dMapping id="johnDeere_dblRadioDabPresetListP2_RC" node="0>3|2|16"/>
+		<i3dMapping id="johnDeere_dblRadioDabPresetIconP1_RC" node="0>3|2|3"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset1_P1_RC" node="0>3|2|4"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset2_P1_RC" node="0>3|2|5"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset4_P1_RC" node="0>3|2|6"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset5_P1_RC" node="0>3|2|7"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset6_P1_RC" node="0>3|2|8"/>
+		<i3dMapping id="johnDeere_dblRadioDabPreset7_P2_RC" node="0>3|2|9"/>
+		<i3dMapping id="4gRadio_RadioNameNumber1_P1_FM" node="0>3|1|6"/>
+		<i3dMapping id="4gRadio_RadioNameNumber2_P1_FM" node="0>3|1|7"/>
+		<i3dMapping id="4gRadio_RadioNameNumber5_P1_FM" node="0>3|1|10"/>
+		<i3dMapping id="4gRadio_RadioNameNumber6_P1_FM" node="0>3|1|11"/>
+		<i3dMapping id="4gRadio_RadioNameNumber7_P1_FM" node="0>3|1|12"/>
+		<i3dMapping id="4gRadio_RadioNameNumber8_P1_FM" node="0>3|1|13"/>
+		<i3dMapping id="4gRadio_RadioNameNumber9_P1_FM" node="0>3|1|14"/>
+		<i3dMapping id="4gRadio_RadioNameNumber10_P1_FM" node="0>3|1|15"/>
+		<i3dMapping id="4gRadio_RadioNameNumber11_P1_FM" node="0>3|1|16"/>
+		<i3dMapping id="4gRadio_RadioNameNumber12_P1_FM" node="0>3|1|17"/>
+		<i3dMapping id="4gRadio_RadioNameNumber3_P1_FM" node="0>3|1|8"/>
+		<i3dMapping id="4gRadio_RadioNameNumber4_P1_FM" node="0>3|1|9"/>
 	
 	 <!-- BASIC -->
 		<i3dMapping id="g4BasicScreen" node="0>1"/>
@@ -895,6 +1066,23 @@
 		<i3dMapping id="g4Display_dblRidgeMarkerLeftP1_GPS" node="0>2|2|1|2"/>
 		<i3dMapping id="g4Display_dblRidgeMarkerRightP1_GPS" node="0>2|2|1|3"/>
 		<i3dMapping id="g4Display_dblCultivatorDephP1_GPS" node="0>2|1|13"/>
+
+		<!-- realCam -->
+		<i3dMapping id="g4cams1P3_GPS_PageVis" node="0>2|5"/>
+		<i3dMapping id="g4cams1P3_GPS" node="0>2|5|0"/>
+		<i3dMapping id="g4Display_realCamP3_GPS" node="0>2|5|0|0"/>
+		<i3dMapping id="g4cams1P4_GPS_PageVis" node="0>2|6"/>
+		<i3dMapping id="g4cams1P4_GPS" node="0>2|6|0"/>
+		<i3dMapping id="g4Display_realCamP4_GPS" node="0>2|6|0|0"/>
+		<i3dMapping id="g4cams1P5_GPS_PageVis" node="0>2|7"/>
+		<i3dMapping id="g4cams1P5_GPS" node="0>2|7|0"/>
+		<i3dMapping id="g4cams2P5_GPS" node="0>2|7|1"/>
+		<!-- <i3dMapping id="g4Display_realCam1P5_GPS" node="0>2|7|0|0"/>
+		<i3dMapping id="g4Display_realCam2P5_GPS" node="0>2|7|1|0"/> -->
+		<i3dMapping id="g4Display_dblNaviMapP6_GPS" node="0>2|8|0"/>
+		<i3dMapping id="g4Display_dblNaviMapPosP6_GPS" node="0>2|8|0|0"/>
+		<i3dMapping id="g4cams1P6_GPS_PageVis" node="0>2|9"/>
+		<i3dMapping id="g4cams1P6_GPS" node="0>2|9|0"/>
 
 		<!-- HLM -->
 		<i3dMapping id="g4Display_dblHlmActiveP1_GPS" node="0>2|1|10"/>
