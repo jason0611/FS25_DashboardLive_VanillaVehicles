@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/vehicle.xsd">
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/dashboardCompounds.xsd">
     <group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
     <!-- combines -->
-	<group name="JD_COMB_PAGEAP1"  dbl="page" group="1" page="1"/>
-	<group name="JD_COMB_PAGEAP12" dbl="page" group="1" page="1 2"/>
-	<group name="JD_COMB_PAGEAP2"  dbl="page" group="1" page="2"/>
-	<group name="JD_COMB_PAGEAP3"  dbl="page" group="1" page="3"/>
+	<group name="JD_COMB_PAGEAP1"  dbl="page" group="1" page="1"/>      <!-- group soll 1 -->
+	<group name="JD_COMB_PAGEAP12" dbl="page" group="1" page="1 2"/>    <!-- group soll 1 -->
+	<group name="JD_COMB_PAGEAP2"  dbl="page" group="1" page="2"/>      <!-- group soll 1 -->
+	<group name="JD_COMB_PAGEAP3"  dbl="page" group="1" page="3"/>      <!-- group soll 1 -->
 	<!-- <group name="JD_COMB_PAGEAP4" dbl="page" group="1" page="4"/> -->
 	
     <!-- <group name="JD_COMB_PAGESC1" dbl="page" group="2" page="1"/> -->
     <!-- <group name="JD_COMB_PAGESC2" dbl="page" group="2" page="2"/> -->
     
-	<group name="JD_COMB_PAGECC1" dbl="page" group="3" page="1"/>
-	<group name="JD_COMB_PAGECC2" dbl="page" group="3" page="2"/>
+	<group name="JD_COMB_PAGECC1" dbl="page" group="3" page="1"/>       <!-- group soll 2, 3 wenn JD_COMB_PAGESC1 irgendwann aktiv mit 2-->
+	<group name="JD_COMB_PAGECC2" dbl="page" group="3" page="2"/>       <!-- group soll 2 -->
     
     <!-- tractors -->
-	<group name="JD_TRAC_PAGEAP1" dbl="page" group="1" page="1"/>
-	<group name="JD_TRAC_PAGEAP2" dbl="page" group="1" page="2"/>
-	<group name="JD_TRAC_PAGEAP3" dbl="page" group="1" page="3"/>
+	<group name="JD_TRAC_PAGEAP1" dbl="page" group="1" page="1"/>       <!-- group soll 1, kollidiert mit den comb ap groups, siehe oben -->
+	<group name="JD_TRAC_PAGEAP2" dbl="page" group="1" page="2"/>       <!-- group soll 1 -->
+	<group name="JD_TRAC_PAGEAP3" dbl="page" group="1" page="3"/>       <!-- group soll 1 -->
 	<!-- <group name="JD_TRAC_PAGEAP4" dbl="page" group="1" page="4"/> -->
 
-	<group name="JD_TRAC_PAGESC1" dbl="page" group="2" page="1"/>
-	<group name="JD_TRAC_PAGESC2" dbl="page" group="2" page="2"/>
-	<group name="JD_TRAC_PAGESC3" dbl="page" group="2" page="3"/>
+	<group name="JD_TRAC_PAGESC1" dbl="page" group="2" page="1"/>       <!-- group soll 2 kollidiert mit JD_COMB_PAGECC1 und 2-->
+	<group name="JD_TRAC_PAGESC2" dbl="page" group="2" page="2"/>       <!-- group soll 2 -->
+	<group name="JD_TRAC_PAGESC3" dbl="page" group="2" page="3"/>       <!-- group soll 2 -->
 	
-	<group name="JD_TR_PAGEGPS1"  dbl="page" group="3" page="1"/>
-	<group name="JD_TR_PAGEGPS2"  dbl="page" group="3" page="2"/>
-	<group name="JD_TR_PAGEGPS3"  dbl="page" group="3" page="3"/>
-	<group name="JD_TR_PAGEGPS4"  dbl="page" group="3" page="4"/>
-	<group name="JD_TR_PAGEGPS24" dbl="page" group="3" page="2 4"/>
+	<group name="JD_TR_PAGEGPS1"  dbl="page" group="3" page="1"/>       <!-- group soll 3 -->
+	<group name="JD_TR_PAGEGPS2"  dbl="page" group="3" page="2"/>       <!-- group soll 3 -->
+	<group name="JD_TR_PAGEGPS3"  dbl="page" group="3" page="3"/>       <!-- group soll 3 -->
+	<group name="JD_TR_PAGEGPS4"  dbl="page" group="3" page="4"/>       <!-- group soll 3 -->
+	<group name="JD_TR_PAGEGPS24" dbl="page" group="3" page="2 4"/>     <!-- group soll 3 -->
 
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
@@ -60,7 +60,7 @@
         <dashboard displayType="TEXT" valueType="enterable.operatingTime" node="g5Display_aPillarTractor_numbersOperating" textColor="1 1 1 1" textSize="0.004" textMask="00000.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="motorized.fuelUsage"   node="g5Display_aPillarTractor_numbersLiterPerHour"      textColor="1 1 1 1" textSize="0.004" textMask="000.0" font="GENERIC" groups="MOTOR_ACTIVE"/>
         <!-- <dashboard displayType="TEXT"                                   node="g5Display_aPillarTractor_numbersLiterPerHourSlash" textColor="1 1 1 1" textSize="0.004" textMask="/" font="GENERIC" groups="MOTOR_ACTIVE"/> -->
-        <dashboard displayType="TEXT" valueType="motorized.gear" node="g5Display_aPillarTractor_numbersGear" textColor="JOHNDEERE_ORANGE1" textSize="0.008" textMask="00" emissiveScale="0.5" textAlignment="RIGHT" textScaleY="1.2" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.gear" node="g5Display_aPillarTractor_numbersGear" textColor="JOHNDEERE_ORANGE1" textSize="0.008" textMask="000" emissiveScale="0.5" textAlignment="RIGHT" textScaleY="1.2" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
         
         <!-- CruiseControl -->
         <!-- <dashboard displayType="VISIBILITY" valueType="dbl.cc" cmd="active" cond="not" node="g5Display_aPillarTractor_numbersSpeedCC" groups="MOTOR_ACTIVE"/> -->
@@ -95,13 +95,13 @@
         
 
         <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preglowing" node="g5Display_aPillarDisplayTractor_dblCvtPreglowActiveP1_AP" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="glowingstate" state="1" node="g5Display_aPillarDisplayTractor_dblCvtPreglowReadyP1_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="glowingstate"  cond="notequal" conValue=" " state="1" node="g5Display_aPillarDisplayTractor_dblCvtPreglowReadyP1_AP" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warnheat" state="1" node="g5Display_aPillarDisplayTractor_dblCvtHeatWarnIconP1_AP" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critheat" state="1" node="g5Display_aPillarDisplayTractor_dblCvtHeatCritBlinkP1_AP" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warndamage" state="1" node="g5Display_aPillarDisplayTractor_dblCvtDamageWarnIconP1_AP" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critdamage" state="1" node="g5Display_aPillarDisplayTractor_dblCvtDamageCritBlinkP1_AP" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="highpressure" state="1" node="g5Display_aPillarDisplayTractor_dblCvtHighPressureBlinkP1_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warnheat"      cond="notequal" conValue=" " state="1" node="g5Display_aPillarDisplayTractor_dblCvtHeatWarnIconP1_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critheat"      cond="notequal" conValue=" " state="1" node="g5Display_aPillarDisplayTractor_dblCvtHeatCritBlinkP1_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warndamage"    cond="notequal" conValue=" " state="1" node="g5Display_aPillarDisplayTractor_dblCvtDamageWarnIconP1_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critdamage"    cond="notequal" conValue=" " state="1" node="g5Display_aPillarDisplayTractor_dblCvtDamageCritBlinkP1_AP" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="highpressure"  cond="notequal" conValue=" " state="1" node="g5Display_aPillarDisplayTractor_dblCvtHighPressureBlinkP1_AP" groups="MOTOR_RUNNING"/>
         <dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="preglowing" node="g5Display_aPillarDisplayTractor_dblCvtPreglowActiveP1_AP" emitColor="0.9 0.45 0.004 1" intensity="0.6" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="glowingstate" node="g5Display_aPillarDisplayTractor_dblCvtPreglowReadyP1_AP" baseColor="0.8 0.35 0.004 1" emitColor="0.9 0.45 0.004 1" intensity="0.6" groups="MOTOR_RUNNING"/>
         <dashboard displayType="VISIBILITY" node="g5Display_aPillarDisplayTractor_dblCvtGearWearPercentIconP1_AP" groups="MOTOR_RUNNING"/>
@@ -169,7 +169,7 @@
         <dashboard displayType="EMITTER" 	valueType="dbl.hlm" cmd="mode" option="headland"		node="g5Display_aPillarDisplayTractor_dblHlmInactiveIcon_AP" emitColor="1 .3 .1 1" baseColor="0 0 0 1" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_ACTIVE"/>
 
         <!-- CVTa -->
-        <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autoreverseworklight" state="2" node="g5Display_aPillarTractor_numbersCVTautoLightActive" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autoreverseworklight" cond="notequal" conValue=" " state="2" node="g5Display_aPillarTractor_numbersCVTautoLightActive" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
         <dashboard displayType="TEXT" valueType="dbl.cvt" cmd="autoreverseworklightseconds" node="g5Display_aPillarTractor_numbersCVTautoLightActive" textColor="JOHNDEERE_YELLOW1" textSize="0.006" textMask="00" textAlignment="LEFT" emissiveScale="1.0" font="GENERIC" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
         <dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autoreverselight"  node="g5Display_aPillarDisplayTractor_IconWorklightBackAuto_AP" baseColor="0 0 0"  emitColor="0.5 0.5 0" hideInactive="true" intensity="0.7" groups="MOTOR_ACTIVE"/>
         
@@ -180,7 +180,7 @@
         
         <dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="cvtclutch" node="g5Display_aPillarDisplayTractor_CvtClutch_AP" baseColor="0 0 0" emitColor="0.6 0.5 0"                        maxActiveValue="0.7" intensity="0.9" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="cvtclutch" node="g5Display_aPillarDisplayTractor_CvtClutch_AP" baseColor="0 0 0" emitColor="1.0 0.1 0" minActiveValue="0.9"                        intensity="0.7" groups="MOTOR_ACTIVE"/>
-        <configuration id="CONFIG_9RX830">
+        <!-- <configuration id="CONFIG_9RX830"> -->
             <!-- <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="g5Display_aPillarTractorConfig9RX830_sliderFuel_decal" intensity="0.5" groups="MOTOR_RUNNING"/>
             <dashboard displayType="TRANS" valueType="motorized.motorTemperature" node="g5Display_aPillarTractorConfig9RX830_loadBarTemp_decal" minTrans="0 0 0" maxTrans="0 0 0.035" groups="MOTOR_RUNNING"/>
             <dashboard displayType="VISIBILITY" valueType="fillUnit.fillLevelWarning" node="g5Display_aPillarTractorConfig9RX830_iconFuelWarning_decal" fillType="DIESEL" intensity="0.5" warningThresholdMax="200" groups="MOTOR_RUNNING"/>
@@ -190,15 +190,15 @@
             <dashboard displayType="EMITTER" node="g5Display_aPillarTractorConfig9RX830_loadBarTemp_decal" intensity="0.5" hideInactive="true" groups="MOTOR_RUNNING" />
             <dashboard displayType="EMITTER" node="g5Display_aPillarTractorConfig9RX830_decal" idleValue="-1" intensity="0.5" groups="MOTOR_RUNNING" />
             <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="g5Display_aPillarTractorConfig9RX830_numbersCruiseControl" textColor="JOHNDEERE_ORANGE1" textSize="0.009" textMask="00.0" emissiveScale="0.5" textScaleY="1.3" textAlignment="LEFT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/> -->
-            <objectChange node="g5Display_aPillarTractor_CvtDLnumbersP1_AP"         visibilityActive="false" visibilityInactive="true"/>
-            <objectChange node="g5Display_aPillarTractor_CvtAccRampsNumbersP1_AP"   visibilityActive="false" visibilityInactive="true"/>
+            <!-- <objectChange node="g5Display_aPillarTractor_CvtDLnumbersP1_AP"         visibilityActive="false" visibilityInactive="true"/> -->
+            <!-- <objectChange node="g5Display_aPillarTractor_CvtAccRampsNumbersP1_AP"   visibilityActive="false" visibilityInactive="true"/> -->
             <!-- <objectChange node="g5Display_aPillarTractorConfig9RX830_decal" visibilityActive="true" visibilityInactive="false"/> -->
-        </configuration>
-        <configuration id="CONFIG_9RX830_PTO">
+        <!-- </configuration> -->
+        <!-- <configuration id="CONFIG_9RX830_PTO">
             <dashboard displayType="VISIBILITY" valueType="powerTakeOffs.state" node="g5Display_aPillarDisplayTractor_iconPTOFront_AP" intensity="0.5" powerTakeOffIndex="1" groups="MOTOR_RUNNING"/>
 
             <objectChange node="g5Display_aPillarDisplayTractor_iconPTOFront_AP" visibilityActive="false" visibilityInactive="true"/>
-        </configuration>
+        </configuration> -->
         
         <!-- <configuration id="TRANSMISSION_POWERSHIFT"> -->
             <!-- <dashboard displayType="TEXT" valueType="motorized.gear" node="g5Display_aPillarTractorConfigPowerShift_numbersGears" textColor="JOHNDEERE_ORANGE1" textSize="0.01" textMask="000" emissiveScale="0.5" textAlignment="LEFT" textScaleY="1" font="GENERIC_BOLD" groups="MOTOR_ACTIVE"/> -->
@@ -324,10 +324,10 @@
 		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="1" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="100" outside="false" distance="1.0" loop="2" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="100" outside="false" distance="1.0" loop="4" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g5Display_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs" state="1" node="g5Display_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g5Display_dblCvtPreAutoDiffP1_SC" baseColor="JOHNDEERE_ORANGE1" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autodiffs" state="1" node="g5Display_dblCvtAutoDiffActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" 							   intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs"  cond="notequal" conValue=" " state="1" node="g5Display_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs"     cond="notequal" conValue=" " state="1" node="g5Display_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt"    cmd="preautodiffs"  state="1" node="g5Display_dblCvtPreAutoDiffP1_SC" baseColor="JOHNDEERE_ORANGE1" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt"    cmd="autodiffs"     state="1" node="g5Display_dblCvtAutoDiffActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" 							   intensity="0.7" groups="MOTOR_RUNNING"/>
 		
 		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipIconP1_SC" factor="100" maxActiveValue="40" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipBlinkP1_SC" factor="100" minActiveValue="40.1" groups="MOTOR_RUNNING"/>
@@ -535,15 +535,15 @@
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critdamage" state="1" node="g5Display_dblCvtDamageCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="highpressure" state="1" node="g5Display_dblCvtHighPressureBlinkP1_SC" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="drivinglevel" state="1" node="g5Display_dblCvtDrivinglevelOneP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="drivinglevel" state="2" node="g5Display_dblCvtDrivinglevelTwoP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="drivinglevel" state="3" node="g5Display_dblCvtDrivinglevelThreeP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="drivinglevel" cond="notequal" conValue=" " state="1" node="g5Display_dblCvtDrivinglevelOneP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="drivinglevel" cond="notequal" conValue=" " state="2" node="g5Display_dblCvtDrivinglevelTwoP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="drivinglevel" cond="notequal" conValue=" " state="3" node="g5Display_dblCvtDrivinglevelThreeP1_SC" groups="MOTOR_RUNNING"/>
 		<!-- <dashboard displayType="VISIBILITY" node="0>1|1|20|30" groups="MOTOR_ACTIVE"/> -->
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4 5" 	node="g5Display_dblCvtAccRampOneP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="2 3 4" 	node="g5Display_dblCvtAccRampTwoP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="3 4 5" 		node="g5Display_dblCvtAccRampThreeP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="4" 		node="g5Display_dblCvtAccRampFourP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" cond="notequal" conValue=" " state="1 2 3 4 5" 	node="g5Display_dblCvtAccRampOneP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" cond="notequal" conValue=" " state="2 3 4" 	node="g5Display_dblCvtAccRampTwoP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" cond="notequal" conValue=" " state="3 4 5" 		node="g5Display_dblCvtAccRampThreeP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" cond="notequal" conValue=" " state="4" 		node="g5Display_dblCvtAccRampFourP1_SC" groups="MOTOR_RUNNING"/>
 
 					<!-- :( can't use pitch command  -->
 		<dashboard displayType="AUDIO" valueType="dbl.cvt" cmd="critheat" state="1" outside="false" distance="1.0" loop="3" volume="0.5" audioName="heatCrit" audioFile="utils/sounds/warning.ogg" groups="MOTOR_ACTIVE" />
@@ -693,7 +693,7 @@
 		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControl1ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="1" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControl2ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="2" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControl3ActiveP1_GPS" valueType="dbl.cc" cmd="active" state="3" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlActiveP1_GPS" valueType="drivable.cruiseControlActive" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlActiveP1_GPS"  valueType="drivable.cruiseControlActive" groups="MOTOR_RUNNING"/>
 	
 		<dashboard displayType="VISIBILITY" node="g5seedTypeBgCountsP1_GPS" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblseedTypeLettersP1_GPS" groups="MOTOR_RUNNING"/>
@@ -1170,29 +1170,29 @@
 
         <dashboard displayType="TEXT" valueType="dbl.cvt" cmd="cvtwear" node="g5HarvestingPageBasic_dblCvtGearWearPercentNumbersP1_SC" textColor="0.05 0.05 0.04 1" textSize="0.003" textMask="000%" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
 
-        <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4"   node="g5HarvestingPageBasic_dblCvtAccRampOneP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampTwoP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampThreeP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampFourP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4"   node="g5HarvestingPageBasic_dblCvtAccRampOneP1_SC" cond="notequal" conValue=" " groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampTwoP1_SC" cond="notequal" conValue=" " groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampThreeP1_SC" cond="notequal" conValue=" " groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accramp" state="1 2 3 4" 	node="g5HarvestingPageBasic_dblCvtAccRampFourP1_SC" cond="notequal" conValue=" " groups="MOTOR_RUNNING"/>
 
         <dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="1"            node="g5HarvestingPageBasic_dblCvtAccRampOneP1_SC"   baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="2"            node="g5HarvestingPageBasic_dblCvtAccRampTwoP1_SC"   baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="3"            node="g5HarvestingPageBasic_dblCvtAccRampThreeP1_SC" baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="accramp" state="4"            node="g5HarvestingPageBasic_dblCvtAccRampFourP1_SC"  baseColor="0.9 0.9 0.9" emitColor="0.05 0.5 0.04" intensity="0.7" groups="MOTOR_RUNNING"/>
 
-        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" valueType="dbl.cvt" cmd="drivinglevel" state="2" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC"  valueType="dbl.cvt" cmd="drivinglevel" state="1" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" valueType="dbl.cvt" cmd="drivinglevel" cond="notequal" conValue=" " state="2" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC"  valueType="dbl.cvt" cmd="drivinglevel" cond="notequal" conValue=" " state="1" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblCvtStreetModeNumberP1_SC" valueType="dbl.cvt" cmd="drivinglevel" state="2" textColor="1 1 1 1" textSize="0.006" textMask="Strassenfahrt" textScaleX="0.8" emissiveScale="0.7" textAlignment="LEFT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblCvtFieldModeNumberP1_SC"  valueType="dbl.cvt" cmd="drivinglevel" state="1" textColor="1 1 1 1" textSize="0.006" textMask="Feldmodus"     textScaleX="0.8" emissiveScale="0.7" textAlignment="LEFT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 
         <dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preglowing"             node="g5HarvestingPageBasic_dblCvtPreglowActiveP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="glowingstate" state="1" node="g5HarvestingPageBasic_dblCvtPreglowReadyP1_SC" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warnheat" state="1"     node="g5HarvestingPageBasic_dblCvtHeatWarnIconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critheat" state="1"     node="g5HarvestingPageBasic_dblCvtHeatCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warndamage" state="1"   node="g5HarvestingPageBasic_dblCvtDamageWarnIconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critdamage" state="1"   node="g5HarvestingPageBasic_dblCvtDamageCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="highpressure" state="1" node="g5HarvestingPageBasic_dblCvtHighPressureBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warnheat" state="1"     cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtHeatWarnIconP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critheat" state="1"     cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtHeatCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warndamage" state="1"   cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtDamageWarnIconP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critdamage" state="1"   cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtDamageCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="highpressure" state="1" cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtHighPressureBlinkP1_SC" groups="MOTOR_RUNNING"/>
 
         <dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtHeatWarnIconP1_SC" 	 valueType="dbl.cvt" cmd="critheat" state="0"   baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblCvtHeatCritBlinkP1_SC"   valueType="dbl.cvt" cmd="critheat" state="1"   emitColor="0.9 0.45 0.04 1" intensity="0.7" groups="MOTOR_RUNNING"/>
@@ -1234,8 +1234,8 @@
         <dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="30" factor="100" outside="false" distance="1.0" loop="1" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="100" outside="false" distance="1.0" loop="2" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="100" outside="false" distance="1.0" loop="4" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs" state="1"    node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs" state="1" cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs" state="1"    cond="notequal" conValue=" " node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="preautodiffs" state="1"    node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" baseColor="JOHNDEERE_ORANGE1" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autodiffs" state="1"       node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" 							 intensity="0.7" groups="MOTOR_RUNNING"/>
 		

@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/vehicle.xsd">
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/dashboardCompounds.xsd">
     
 	<group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
 
-	<group name="JD4_TRAC_PAGEAP1" 	dbl="page" group="1" page="1"/>
+	<group name="JD4_TRAC_PAGEAP1" 	dbl="page" group="1" page="1"/> <!-- group soll 1 -->
 
-	<group name="JD4_TRAC_PAGESC1" 	dbl="page" group="2" page="1"/>
-	<group name="JD4_TRAC_PAGESC2" 	dbl="page" group="2" page="2"/>
+	<group name="JD4_TRAC_PAGESC1" 	dbl="page" group="2" page="1"/> <!-- group soll 2 -->
+	<group name="JD4_TRAC_PAGESC2" 	dbl="page" group="2" page="2"/> <!-- group soll 2 -->
 	
-	<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="5" page="1"/>
-	<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="5" page="2"/>
+	<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="5" page="1"/> <!-- group soll 4 -->
+	<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="5" page="2"/> <!-- group soll 4 -->
 
-	<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="4" page="1"/>
-	<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="4" page="2"/>
-	<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="4" page="3"/>
-	<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="4" page="4"/>
-	<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="4" page="5"/>
-	<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="4" page="6"/>
+	<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="4" page="1"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="4" page="2"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="4" page="3"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="4" page="4"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="4" page="5"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="4" page="6"/> <!-- group soll 3 -->
+	<!-- <group name="JD4_TRAC_PAGEGPS56" dbl="page" group="4" page="56"/> -->
 
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
@@ -648,7 +649,7 @@
 				<workCameraDisplay isAttachableCamDisplay="true" linkNode="g4cams1P4_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P5_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P5_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P6_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/>
+				<!-- <workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P6_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"/> -->
             </workCameraDisplays>
             <!-- <hideNodes>
                 <hideNode node="g5Display_naviMapTractorP1_SC" isDashboard="true" />
@@ -1077,6 +1078,7 @@
 		<i3dMapping id="g4cams1P5_GPS_PageVis" node="0>2|7"/>
 		<i3dMapping id="g4cams1P5_GPS" node="0>2|7|0"/>
 		<i3dMapping id="g4cams2P5_GPS" node="0>2|7|1"/>
+		<!-- <i3dMapping id="g4cams1P6_GPS" node="0>2|9|0"/> -->
 		<!-- <i3dMapping id="g4Display_realCam1P5_GPS" node="0>2|7|0|0"/>
 		<i3dMapping id="g4Display_realCam2P5_GPS" node="0>2|7|1|0"/> -->
 		<i3dMapping id="g4Display_dblNaviMapP6_GPS" node="0>2|8|0"/>
