@@ -13,7 +13,7 @@
     <File fileId="12" filename="$data/shared/windowDark_diffuse.dds"/>
     <File fileId="1" filename="$data/vehicles/johnDeere/shared/displays/g4Displays_diffuse.png"/>
     <File fileId="14" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
-    <File fileId="16" filename="textures/jd_DAB_diffuse.dds"/>
+    <File fileId="17" filename="textures/jd_DAB_diffuse.dds"/>
     <File fileId="10" filename="textures/johnDeereDisplayDecal_diffuse.dds"/>
     <File fileId="9" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
     <File fileId="11" filename="textures/johnDeereG4DisplayGPS_diffuse.png"/>
@@ -24,7 +24,7 @@
 
   <Materials>
     <Material name="button_1" materialId="5" customShaderId="4">
-      <Texture fileId="16"/>
+      <Texture fileId="17"/>
     </Material>
     <Material name="dblSliderLine_mat" materialId="6" customShaderId="4" customShaderVariation="slider">
       <Texture fileId="7"/>
@@ -57,12 +57,12 @@
       <Glossmap fileId="8"/>
     </Material>
     <Material name="g4DisplayRadio_mat" materialId="12" customShaderId="4">
-      <Texture fileId="16"/>
+      <Texture fileId="17"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="8"/>
     </Material>
     <Material name="g4DisplayRadio_mat" materialId="13" customShaderId="4" customShaderVariation="slider">
-      <Texture fileId="16"/>
+      <Texture fileId="17"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="8"/>
     </Material>
@@ -176,6 +176,8 @@
     <Material name="realCam_mat" materialId="33" diffuseColor="0.501961 0.501961 0.501961 1">
     </Material>
     <Material name="realCam_mat" materialId="34" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="14">
+    </Material>
+    <Material name="UnnamedMaterial" materialId="568" diffuseColor="1 0 0.501961 1">
     </Material>
     <Material name="UnnamedMaterial" materialId="35" diffuseColor="1 1 1 1">
     </Material>
@@ -569,7 +571,7 @@
         </TransformGroup>
         <TransformGroup name="g4cams1P6_GPS_PageVis" translation="0.4 0 0" nodeId="475">
           <TransformGroup name="g4cams1P6_GPS" translation="-0.4 0 -0.0221214" rotation="-180 -5.00896e-06 -180" visibility="false" nodeId="476">
-            <Shape name="g4Display_realCam1P6_GPS" translation="-0.0536073 3.59559e-18 -0.025136" rotation="0 180 0" shapeId="98" nodeId="477" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="33"/>
+            <Shape name="g4Display_realCam1P6_GPS" translation="-0.0536073 3.59559e-18 -0.025136" rotation="0 180 0" shapeId="98" nodeId="477" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="568"/>
           </TransformGroup>
         </TransformGroup>
       </TransformGroup>

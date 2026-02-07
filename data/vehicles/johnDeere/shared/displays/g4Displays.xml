@@ -9,15 +9,15 @@
 	<group name="JD4_TRAC_PAGESC1" 	dbl="page" group="2" page="1"/> <!-- group soll 2 -->
 	<group name="JD4_TRAC_PAGESC2" 	dbl="page" group="2" page="2"/> <!-- group soll 2 -->
 	
-	<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="5" page="1"/> <!-- group soll 4 -->
-	<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="5" page="2"/> <!-- group soll 4 -->
+	<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="4" page="1"/> <!-- group soll 4 -->
+	<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="4" page="2"/> <!-- group soll 4 -->
 
-	<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="4" page="1"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="4" page="2"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="4" page="3"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="4" page="4"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="4" page="5"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="4" page="6"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="3" page="1"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="3" page="2"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="3" page="3"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="3" page="4"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="3" page="5"/> <!-- group soll 3 -->
+	<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="3" page="6"/> <!-- group soll 3 -->
 	<!-- <group name="JD4_TRAC_PAGEGPS56" dbl="page" group="4" page="56"/> -->
 
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
