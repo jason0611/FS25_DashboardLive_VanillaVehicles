@@ -170,7 +170,7 @@
 		<dashboard displayType="EMITTER" node="g4isoBUSnodeLM_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_STARTING JD4_TRAC_PAGESC2"/>
 		<dashboard displayType="EMITTER" node="g4isoBUSnodeDM_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC3"/>
 		<dashboard displayType="EMITTER" node="g4Display_vtPage_LoadingCircle_decal" intensity="0.8" intensityDarkMode="0.05" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC3 NOISOBUS"/>
-
+		
 
 		<dashboard displayType="MULTI_STATE" node="4gVTrtkSliderLeft_P2_SC" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING JD4_TRAC_PAGESC2" >
 			<state value="0" visibility="false"/>

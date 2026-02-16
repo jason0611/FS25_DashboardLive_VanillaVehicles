@@ -1,42 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <dashboardCompounds>
-    <group name="MOTOR_RUNNING" dbl="darkmode"/>
+    <!-- <group name="MOTOR_RUNNING" dbl="darkmode"/> -->
+    <!-- <group name="MOTOR_STARTING" electronicsStarting="true"/> -->
+    <!-- <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/> -->
+    <!-- <group name="MOTOR_RUNNING" electronicsRunning="true"/> -->
 
     <group name="DARKMODE" dbl="darkmode"/>
-	<group name="LIGHTMODE" dbl="lightmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/> <!--hell-->
     <!-- combines -->
 	<group name="JD_COMB_PAGEAP1"  dbl="page" group="1" page="1"/>      <!-- group soll 1 -->
 	<group name="JD_COMB_PAGEAP12" dbl="page" group="1" page="1 2"/>    <!-- group soll 1 -->
 	<group name="JD_COMB_PAGEAP2"  dbl="page" group="1" page="2"/>      <!-- group soll 1 -->
 	<group name="JD_COMB_PAGEAP3"  dbl="page" group="1" page="3"/>      <!-- group soll 1 -->
 	<!-- <group name="JD_COMB_PAGEAP4" dbl="page" group="1" page="4"/> -->
-	
     <!-- <group name="JD_COMB_PAGESC1" dbl="page" group="2" page="1"/> -->
     <!-- <group name="JD_COMB_PAGESC2" dbl="page" group="2" page="2"/> -->
     
-	<group name="JD_COMB_PAGECC1" dbl="page" group="3" page="1"/>       <!-- group soll 2, 3 wenn JD_COMB_PAGESC1 irgendwann aktiv mit 2-->
-	<group name="JD_COMB_PAGECC2" dbl="page" group="3" page="2"/>       <!-- group soll 2 -->
+	<group name="JD_COMB_PAGECC1" dbl="page" group="3" page="1"/>       <!-- ! group soll 2, 3 wenn JD_COMB_PAGESC1 irgendwann aktiv mit 2-->
+	<group name="JD_COMB_PAGECC2" dbl="page" group="3" page="2"/>
     
     <!-- tractors -->
-	<group name="JD_TRAC_PAGEAP1" dbl="page" group="1" page="1 3"/>       <!-- group soll 1, kollidiert mit den comb ap groups, siehe oben -->
-	<group name="JD_TRAC_PAGEAP2" dbl="page" group="1" page="2"/>       <!-- group soll 1 -->
-	<group name="JD_TRAC_PAGEAP3" dbl="page" group="1" page="3"/>       <!-- group soll 1 -->
+	<group name="JD_TRAC_PAGEAP1" dbl="page" group="1" page="1 3"/>       <!-- ! group soll 1, kollidiert mit den comb ap groups, siehe oben -->
+	<group name="JD_TRAC_PAGEAP2" dbl="page" group="1" page="2" />
+	<group name="JD_TRAC_PAGEAP3" dbl="page" group="1" page="3" />
 	<!-- <group name="JD_TRAC_PAGEAP4" dbl="page" group="1" page="4"/> -->
 
-	<group name="JD_TRAC_PAGESC1" dbl="page" group="2" page="1"/>       <!-- group soll 2 kollidiert mit JD_COMB_PAGECC1 und 2-->
-	<group name="JD_TRAC_PAGESC2" dbl="page" group="2" page="2"/>       <!-- group soll 2 -->
-	<group name="JD_TRAC_PAGESC3" dbl="page" group="2" page="3"/>       <!-- group soll 2 -->
+	<group name="JD_TRAC_PAGESC1" dbl="page" group="2" page="1"/>       <!-- ! group soll 2 kollidiert mit JD_COMB_PAGECC1 und 2-->
+	<group name="JD_TRAC_PAGESC123" dbl="page" group="2" page="1 2 3"/>       <!-- group soll 2 kollidiert mit JD_COMB_PAGECC1 und 2-->
+	<group name="JD_TRAC_PAGESC2" dbl="page" group="2" page="2"/>
+	<group name="JD_TRAC_PAGESC3" dbl="page" group="2" page="3"/>
+	<group name="JD_TRAC_PAGESC4" dbl="page" group="2" page="4"/>
+	<group name="JD_TRAC_PAGESC5" dbl="page" group="2" page="4 5"/>       <!-- group soll 2 page 4-->
+	<group name="JD_TRAC_PAGESC5only" dbl="page" group="2" page="5"/>       <!-- group soll 2 page 4-->
 	
-	<group name="JD_TR_PAGEGPS1"  dbl="page" group="3" page="1"/>       <!-- group soll 3 -->
-	<group name="JD_TR_PAGEGPS2"  dbl="page" group="3" page="2"/>       <!-- group soll 3 -->
-	<group name="JD_TR_PAGEGPS3"  dbl="page" group="3" page="3"/>       <!-- group soll 3 -->
-	<group name="JD_TR_PAGEGPS4"  dbl="page" group="3" page="4"/>       <!-- group soll 3 -->
-	<group name="JD_TR_PAGEGPS24" dbl="page" group="3" page="2 4"/>     <!-- group soll 3 -->
+	<group name="JD_TR_PAGEGPS1"  dbl="page" group="3" page="1"/> <!-- ! streitet sicih mit den g4 groups! -->
+	<group name="JD_TR_PAGEGPS2"  dbl="page" group="3" page="2"/>
+	<group name="JD_TR_PAGEGPS3"  dbl="page" group="3" page="3"/>
+	<group name="JD_TR_PAGEGPS4"  dbl="page" group="3" page="4"/>
+	<group name="JD_TR_PAGEGPS24" dbl="page" group="3" page="2 4"/>
 
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
     <group name="DBL_F_TRAILER1" dbl="base_connected" dblTrailer="1" dblJointSide="back"/>
 	<group name="DBL_F_TRAILER2" dbl="base_connected" dblTrailer="2" dblJointSide="back"/>
+    <group name="NOISOBUS" dbl="noisobus"/>
+	<group name="ISOBUS" dbl="isobus"/>
 	<!-- <group name="FL_ATTACHED" dblJointSide="front" dblJointType="attachableFrontloader" /> -->
     <!-- <group name="MOTOR_OFF" electronicsStarting="false" electronicsRunning="false"/> -->
     <!-- need to set a cond motor off -->
@@ -228,7 +236,7 @@
         <dashboard displayType="VISIBILITY" node="g5TractorCamsP3_AP" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
         <realWorkCameras>
             <workCameraDisplays>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsAP" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsAP" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
             </workCameraDisplays>
 
             <!-- <hideNodes>
@@ -241,35 +249,43 @@
     <dashboardCompound name="JOHNDEERE_G5_MAINPAGE" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="basicScreen">
         
         <!-- numbers -->
-        <!-- <dashboard displayType="TEXT" valueType="enterable.time" node="g5Display_defaultPageTractor_numbersTime" textColor="1 1 1 0" textSize="0.004" textMask="00:00" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/> -->
-        <dashboard displayType="TEXT" valueType="dbl.base" cmd="playerName" node="g5Display_dblUserNameNumbersP1_SC" textColor="0.9 0.5 0.1 1" textSize="0.015" textMask="ssssssssssssssssssssss" font="GENERIC" textAlignment="CENTER" emissiveScale="0.5" groups="MOTOR_STARTING"/>
+        <dashboard displayType="TEXT" valueType="dbl.base" cmd="playerName" node="g5Display_dblUserNameNumbersP1_SC" textColor="0.9 0.9 0.89 1" textColorDarkMode="0 0 0 1" textSize="0.0035" fontThickness="2" textSpacing="0.6" textScaleX="1.4" textMask="ssssssssssssssssssssss" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
         <!-- <dashboard displayType="VISIBILITY" node="g5Display_dblDayTimeNumbersP1_SC" groups="MOTOR_OFF"/> -->
         <!-- <dashboard displayType="TEXT" valueType="dbl.base" cmd="realClock" node="g5Display_dblDayTimeNumbersP1_SC" textColor="0.6 0.6 0.7 1" textColorDarkMode="0.2 0.2 0.22 1" textSize="0.01" textMask="ssssssss" emissiveScale="0.6" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_OFF"/> -->
 
-        <dashboard displayType="TEXT" valueType="time" node="g5Display_dblDayTimeNumbersP1_SC" textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1" textSize="0.004" textMask="00:00" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC_BOLD"/>
+        <dashboard displayType="TEXT" valueType="time" node="g5Display_dblDayTimeNumbersP1_SC" textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.89 1" textSize="0.0025" textMask="00:00" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC_BOLD"/>
         
         <!-- motorload -->
+		<dashboard displayType="VISIBILITY" node="g5Display_dblEngineLoadPercentNumbersP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="motorized.load" node="g5Display_dblEngineLoadPercentNumbersP1_SC" textColor="0.005 0.005 0.004 1"  doInterpolation="true" interpolationSpeed="0.35" textSize="0.005" textMask="000" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING" maxActiveValue="79.99"/>
         <dashboard displayType="TEXT" valueType="motorized.load" node="g5Display_dblEngineLoadPercentNumbersP1_SC" textColor="JOHNDEERE_ORANGE1"    doInterpolation="true" interpolationSpeed="0.15" textSize="0.005" textMask="000" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING" minActiveValue="80" maxActiveValue="94.99"/>
         <dashboard displayType="TEXT" valueType="motorized.load" node="g5Display_dblEngineLoadPercentNumbersP1_SC" textColor="0.8 0.00 0.00 1"      doInterpolation="true" interpolationSpeed="0.15" textSize="0.005" textMask="000" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING" minActiveValue="95"/>
-        <dashboard displayType="TEXT" valueType="motorized.battery" node="g5Display_dblBatteryPowerNumbersP1_SC" textColor="0.005 0.005 0.004 1" textSize="0.003" textMask="00.0V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="motorized.speedDir" node="g5Display_dblSpeedNumbersP1_SC" textColor="0.005 0.005 0.004 1" textSize="0.006" textMask="000.00" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.speedDir" node="g5Display_dblSpeedNumbersP1_SC" textColor="0.005 0.005 0.004 1" textSize="0.006" textMask="000.00" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <!-- <dashboard displayType="VISIBILITY" node="g5Display_dblBatteryPowerNumbersP1_SC"        groups="MOTOR_ACTIVE"/> -->
+        <!-- <dashboard displayType="VISIBILITY" node="g5Display_dblBatteryStartingNumbersP1_SCx"     groups="MOTOR_RUNNING"/> -->
+        <!-- <dashboard displayType="VISIBILITY" node="g5Display_dblBatteryRunningNumbersP1_SC"      groups="MOTOR_RUNNING"/> -->
+        <!-- <dashboard displayType="TEXT"                               node="g5Display_dblBatteryPowerNumbersP1_SC"    textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="12.2V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_ACTIVE"/> -->
+        <!-- <dashboard displayType="TEXT"                               node="g5Display_dblBatteryStartingNumbersP1_SC" textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="4.3V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC"  groups="MOTOR_STARTING"/> -->
+        <dashboard displayType="TEXT"                               node="g5Display_dblBatteryRunningNumbersP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="14.7V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <!-- <dashboard displayType="TEXT" valueType="motorized.battery" node="g5Display_dblBatteryRunningNumbersP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="04.0V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/> -->
 		
         <dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g5Display_dblFuelUsageNumbersP1_SC" textColor="0 0 0 0" textSize="0.006" textMask="00.0" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g5Display_dblCountFuelUsageNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.00001" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g5Display_dblLiterHaNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.000001" factor="11" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="fillLevelPct" fillType="DEF" node="g5Display_dblFuelHourNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.005" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.0%" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="g5Display_dblCruiseControlSpeed1NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="dbl.cc" cmd="speed" state="2" node="g5Display_dblCruiseControlSpeed2NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textScaleX="0.8" fontThickness="2" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="dbl.cc" cmd="speed" state="1" node="g5Display_dblCruiseControlSpeed3NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textScaleX="0.8" fontThickness="2" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="enterable.operatingTime" node="g5Display_dblOperatingTimeNumbersP1_SC" textColor="0 0 0 0" textSize="0.005" textMask="00000.0" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="g5Display_dblCruiseControlSpeed1NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="TEXT" valueType="dbl.cc" cmd="speed" state="2" node="g5Display_dblCruiseControlSpeed2NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textScaleX="0.8" fontThickness="2" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="TEXT" valueType="dbl.cc" cmd="speed" state="1" node="g5Display_dblCruiseControlSpeed3NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textScaleX="0.8" fontThickness="2" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="TEXT" valueType="enterable.operatingTime" node="g5Display_dblOperatingTimeNumbersP1_SC" textColor="0 0 0 0" textSize="0.005" textMask="00000.0" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
         <dashboard displayType="TEXT" valueType="fillLevelPct" node="g5Display_dblFuelPercentNumbersP1_SC" fillType="DIESEL" textColor="0 0 0 0" textSize="0.006" textMask="000" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
         <!-- <dashboard displayType="TEXT" valueType="combine.workedHectars" node="g5Display_dblworkedHectarNumbersP1_SC" textColor="0 0 0 0" textSize="0.007" textMask="000.0" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/> -->
-        <dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" option="percent" displayType="TEXT" node="g5Display_dblFrontHitchPercentNumbersP1_SC" factor="100" default="0" textColor="0.005 0.005 0.004 1" textSize="0.005" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back"  jointType="implement" option="percent" displayType="TEXT" node="g5Display_dblRearHitchPercentNumbersP1_SC" factor="100" default="0" textColor="0.005 0.005 0.004 1" textSize="0.005" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="outsideTemperature" node="g5Display_dblOutsideTempO_P1_SC" textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1" textSize="0.003" textMask="00 C" font="GENERIC" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" option="percent" displayType="TEXT" node="g5Display_dblFrontHitchPercentNumbersP1_SC" factor="100" default="0" textColor="0.005 0.005 0.004 1" textSize="0.005"  textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back"  jointType="implement" option="percent" displayType="TEXT" node="g5Display_dblRearHitchPercentNumbersP1_SC"  factor="100" default="0" textColor="0.005 0.005 0.004 1" textSize="0.005"  textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" option="percent" displayType="TEXT" node="g5Display_dblFrontHitchPercentNumbersP5_SC" factor="100" default="0" textColor="0.005 0.005 0.004 1" textSize="0.003"  textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING JD_TRAC_PAGESC5"/>
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back"  jointType="implement" option="percent" displayType="TEXT" node="g5Display_dblRearHitchPercentNumbersP5_SC"  factor="100" default="0" textColor="0.005 0.005 0.004 1" textSize="0.003"  textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING JD_TRAC_PAGESC5"/>
+        <dashboard displayType="TEXT" valueType="outsideTemperature" node="g5Display_dblOutsideTempO_P1_SC" textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1" textSpacing="3" textSize="0.003" textMask="00C" font="GENERIC" textAlignment="CENTER" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
         <dashboard displayType="VISIBILITY" node="g5Display_dblTempOP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" node="g5Display_dblTempOP1_SC" textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1" textSize="0.002" textMask="o" font="GENERIC" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" node="g5Display_dblTempOP1_SC" textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1" textSize="0.0015" textMask="o" font="GENERIC" textAlignment="RIGHT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
 
         <dashboard displayType="TEXT" valueType="ai.automaticSteering.headingLetter" node="g5Display_dblHeadingNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" node="g5Display_dblHeadingAngleNumbersP1_SC" textColor="0.9 0.9 0.8 1" emissiveScale="1" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>	
@@ -278,36 +294,36 @@
 		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" node="g5Display_dblWorkWidthNumbersP1_SC" textColor="0.05 0.05 0.04 1" textColorDarkMode="0 0 0 1" textSize="0.006" textMask="00.00m" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>	
 
         <!-- weather -->
-		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherSunP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Klar" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherCloudyP1_SC"  textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Bedeckt" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherRainP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Regen" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherHailP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Hagel" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherSnowP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Schnee" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherTwisterP1_SC" textColorDarkMode="0.5 0.1 0.0 1" textColor="0.9 0.4 0.1 1" textSize="0.003" textMask="Unwetter!" textAlignment="RIGHT" emissiveScale="0.7" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherSunP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="KLAR"    textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherCloudyP1_SC"  textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Bedeckt" textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherRainP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Regen"   textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherHailP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="HAGEL"   textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherSnowP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Schnee"  textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherTwisterP1_SC" textColorDarkMode="0.5 0.1 0.0 1" textColor="0.9 0.4 0.1 1" textSize="0.003" textMask="Unwetter!" textSpacing="4" textAlignment="LEFT" emissiveScale="0.7" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="outsideTemperature" cond="less" condValue="3" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="5" volume="0.5" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard displayType="VISIBILITY" valueType="outsideTemperature" maxActiveValue="4" node="g5Display_dblSnowIconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblSnowIconP1_SC" emitColor="0.9 0.25 0.004 1" intensity="0.7" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" valueType="outsideTemperature" maxActiveValue="4" node="g5Display_dblSnowIconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER" node="g5Display_dblSnowIconP1_SC" emitColor="0.9 0.25 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
     
         <!-- cruise control -->
-		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlSpeed1IconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" valueType="dbl.cc" cmd="active" state="1" node="g5Display_dblCruiseControlSpeed1IconP1_SC" baseColor="0.2 0.2 0.1 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlSpeed2IconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" valueType="dbl.cc" cmd="active" state="2" node="g5Display_dblCruiseControlSpeed2IconP1_SC" baseColor="0.2 0.2 0.1 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cc" cmd="active" state="3" node="g5Display_dblCruiseControlSpeed3IconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" valueType="dbl.cc" cmd="active" state="3" node="g5Display_dblCruiseControlSpeed3IconP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlSpeed1IconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cc" cmd="active" state="1" node="g5Display_dblCruiseControlSpeed1IconP1_SC" baseColor="0.2 0.2 0.1 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControlSpeed2IconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cc" cmd="active" state="2" node="g5Display_dblCruiseControlSpeed2IconP1_SC" baseColor="0.2 0.2 0.1 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cc" cmd="active" state="3" node="g5Display_dblCruiseControlSpeed3IconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cc" cmd="active" state="3" node="g5Display_dblCruiseControlSpeed3IconP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 
-		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControl00P1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="g5Display_dblCruiseControl00P1_SC" baseColor="0.2 0.2 0.1 1" emitColor="0.005 0.5 0.004 1" intensity="0.8" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblCruiseControl00P1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="g5Display_dblCruiseControl00P1_SC" baseColor="0.2 0.2 0.1 1" emitColor="0.005 0.5 0.004 1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 
-        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="found"  jointSide="back"             node="g5Display_dblSteeringAxleLock1IconP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="locked" jointSide="back" trailer="1" node="g5Display_dblSteeringAxleLock1ActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock1ActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock1IconP1_SC" baseColor="0.005 0.005 0.004 1" emitColor="0.005 0.005 0.004 1" intensity="0.8" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="found"  jointSide="back"             node="g5Display_dblSteeringAxleLock1IconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="locked" jointSide="back" trailer="1" node="g5Display_dblSteeringAxleLock1ActiveP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock1ActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock1IconP1_SC" baseColor="0.005 0.005 0.004 1" emitColor="0.005 0.005 0.004 1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
         
-        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="found"  jointSide="back" trailer="2" node="g5Display_dblSteeringAxleLock2IconP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="locked" jointSide="back" trailer="2" node="g5Display_dblSteeringAxleLock2ActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock2ActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock2IconP1_SC" baseColor="0.005 0.005 0.004 1" emitColor="0.005 0.005 0.004 1" intensity="0.8" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="found"  jointSide="back" trailer="2" node="g5Display_dblSteeringAxleLock2IconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.lockSteeringAxle" cmd="locked" jointSide="back" trailer="2" node="g5Display_dblSteeringAxleLock2ActiveP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock2ActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="EMITTER"                                                                               node="g5Display_dblSteeringAxleLock2IconP1_SC" baseColor="0.005 0.005 0.004 1" emitColor="0.005 0.005 0.004 1" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 
 
         <!-- diffs + cvt-->
@@ -360,32 +376,38 @@
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="g5Display_dblGPSActiveP1_SC" intensity="0.4" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblGPSActiveSatelliteP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="g5Display_dblGPSActiveSatelliteP1_SC" baseColor="0.8 0.6 0.6 1" emitColor="0.0 0.1 0.0 1" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="pto" jointSide="front" displayType="VISIBILITY" node="g5Display_dblFrontPTOP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="pto" jointSide="back" displayType="VISIBILITY" node="g5Display_dblBackPTOP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="front" cond="more" condValue="1000" displayType="VISIBILITY" doInterpolation="true" interpolationSpeed="0.0002" node="g5Display_dblFrontPTOArrowP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="back" cond="more" condValue="1000" displayType="VISIBILITY" doInterpolation="true" interpolationSpeed="0.0002" node="g5Display_dblBackPTOArrowP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="pto" jointSide="front" displayType="EMITTER" node="g5Display_dblFrontPTOP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="pto" jointSide="front" displayType="VISIBILITY" node="g5Display_dblFrontPTOP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="pto" jointSide="back" displayType="VISIBILITY" node="g5Display_dblBackPTOP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="front" cond="more" condValue="1000" displayType="VISIBILITY" doInterpolation="true" interpolationSpeed="0.0002" node="g5Display_dblFrontPTOArrowP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="back" cond="more" condValue="1000" displayType="VISIBILITY" doInterpolation="true" interpolationSpeed="0.0002" node="g5Display_dblBackPTOArrowP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="pto" jointSide="front" displayType="EMITTER" node="g5Display_dblFrontPTOP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
 		<dashboard valueType="dbl.base" cmd="pto" jointSide="back" displayType="EMITTER" node="g5Display_dblBackPTOP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.base" cmd="pto" jointSide="front" displayType="EMITTER" node="g5Display_dblFrontPTOArrowP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.base" cmd="pto" jointSide="back" displayType="EMITTER" node="g5Display_dblBackPTOArrowP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblFrontPtoRpmNumbersP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="front" displayType="TEXT" node="g5Display_dblFrontPtoRpmNumbersP1_SC" options="any" max="1001" doInterpolation="true" interpolationSpeed="0.22" textColor="0.07 0.07 0.04 1" textSize="0.006" textMask="0000" fontThickness="1.2" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
-		<dashboard jointSide="back" displayType="VISIBILITY" node="g5Display_dblRearPtoRpmNumbersP1_SC" options="any" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="back" displayType="TEXT" node="g5Display_dblRearPtoRpmNumbersP1_SC" options="any" max="1002" doInterpolation="true" interpolationSpeed="0.22" textColor="0.07 0.07 0.04 1" textSize="0.006" textMask="0000" fontThickness="1.2" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="pto" jointSide="front" displayType="EMITTER" node="g5Display_dblFrontPTOArrowP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="pto" jointSide="back" displayType="EMITTER" node="g5Display_dblBackPTOArrowP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
+		
+        <dashboard displayType="VISIBILITY" node="g5Display_dblFrontPtoRpmNumbersP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="front" displayType="TEXT" node="g5Display_dblFrontPtoRpmNumbersP1_SC" options="any" max="1001" doInterpolation="true" interpolationSpeed="0.22" textColor="0.07 0.07 0.04 1" hiddenColor="0.57 0.57 0.54 0.5" textSize="0.006" textMask="0000" fontThickness="1.2" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
+		<dashboard jointSide="back" displayType="VISIBILITY" node="g5Display_dblRearPtoRpmNumbersP1_SC" options="any" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="back" displayType="TEXT" node="g5Display_dblRearPtoRpmNumbersP1_SC" options="any" max="1002" doInterpolation="true" interpolationSpeed="0.22" textColor="0.07 0.07 0.04 1" hiddenColor="0.57 0.57 0.54 0.5" textSize="0.006" textMask="0000" fontThickness="1.2" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
+		
+        <dashboard displayType="VISIBILITY" node="g5Display_dblFrontPtoRpmNumbersP5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5"/>
+        <dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="front" displayType="TEXT" node="g5Display_dblFrontPtoRpmNumbersP5_SC" options="any" max="1001" doInterpolation="true" interpolationSpeed="0.22" textColor="0.07 0.07 0.04 1" hiddenColor="0.57 0.57 0.54 0.5" textSize="0.005" textMask="0000" fontThickness="1.2" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+		<dashboard jointSide="back" displayType="VISIBILITY" node="g5Display_dblRearPtoRpmNumbersP5_SC" options="any" groups="MOTOR_RUNNING JD_TRAC_PAGESC5"/>
+		<dashboard valueType="dbl.base" cmd="ptoRpm" jointSide="back" displayType="TEXT" node="g5Display_dblRearPtoRpmNumbersP5_SC" options="any" max="1002" doInterpolation="true" interpolationSpeed="0.22" textColor="0.07 0.07 0.04 1" hiddenColor="0.57 0.57 0.54 0.5" textSize="0.005" textMask="0000" fontThickness="1.2" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
 		
         
-        <dashboard valueType="dbl.vca" cmd="park" displayType="VISIBILITY" node="g5Display_dblParkIconP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.vca" cmd="park" displayType="VISIBILITY" node="g5Display_dblParkIconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<dashboard valueType="dbl.vca" cmd="park" displayType="EMITTER" node="g5Display_dblParkIconP1_SC" emitColor="RED" intensity="0.8" idleValue="-1" groups="MOTOR_ACTIVE"/>
 
-        <dashboard displayType="VISIBILITY" node="g5Display_dblCvtHandThrottleSliderP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_dblCvtHandThrottleSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<!-- <dashboard valueType="dbl.cvt" displayType="EMITTER" node="g5Display_dblCvtHandThrottleSliderP1_SC" intensity="0.5" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
 		<dashboard valueType="dbl.cvt" cmd="handthrottle" displayType="SLIDER" node="g5Display_dblCvtHandThrottleSliderP1_SC" intensity="0.5" intensityDarkMode="0.05" default="0" factor="100" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_dblKeepSpeedActiveIconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_dblVcaKeepSpeedActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_dblKeepSpeedNumbersP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_dblKeepSpeedActiveIconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_dblVcaKeepSpeedActiveP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_dblKeepSpeedNumbersP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblKeepSpeedActiveIconP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblVcaKeepSpeedActiveP1_SC" emitColor="GREEN" intensity="0.6" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="ksvalue" node="g5Display_dblKeepSpeedNumbersP1_SC" textColor="0.04 0.04 0.02 1" textSize="0.0045" doInterpolation="false" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="ksvalue" node="g5Display_dblKeepSpeedNumbersP1_SC" textColor="0.04 0.04 0.02 1" textSize="0.0045" doInterpolation="false" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="50" node="g5Display_dblFuelP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblFuelP1_SC" emitColor="1 0.3 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="AUDIO" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="50" outside="false" distance="1.0" loop="1" volume="0.4" audioName="fuelWarning" audioFile="$data/sounds/vehicles/reverse_beep/vehTerraVariant435ReverseBeepPlay_01.ogg" groups="MOTOR_ACTIVE"/>
@@ -398,43 +420,47 @@
         <dashboard displayType="EMITTER" node="g5Display_dblRidgeMarkerRightP1_SC" emitColor="1 0 0.5 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
 
 		<!-- static icons -->
-		<dashboard displayType="EMITTER" node="g5Display_dblMotorTempIconP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.7" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="g5Display_dblMotorTempIconP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.7" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblFuelIconP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.7" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblMotorFanBlinkP1_SC" intensity="0.8" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="g5Display_dblMotorFanBlinkP1_SC" intensity="0.8" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
 		<!-- <dashboard displayType="ROT" rotAxis="2" minRot="-180" maxRot="160" loop="1" doInterpolation="true" interpolationSpeed="0.001" node="g5Display_dblMotorFanBlinkP1_SC" groups="MOTOR_ACTIVE"/> -->
 		
 		<!-- groups -->
 		<dashboard displayType="VISIBILITY" node="g5Display_dblGroupTractorP1_SC" groups="MOTOR_RUNNING"/>
         <!-- frontloader groups doesn't work -->
-		<dashboard displayType="VISIBILITY" node="g5Display_dblGroupFrontloaderArm2P1_SC" jointType="attachableFrontloader" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblGroupFrontloaderShovel2P1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblGroupFrontloaderArm2P1_SC" jointType="attachableFrontloader"     groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblGroupFrontloaderShovel2P1_SC" jointType="attachableFrontloader"  groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblGroupFront1P1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblGroupFront2P1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="back" option="any" displayType="VISIBILITY" node="g5Display_dblGroupRear1P1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" cmd="connected" jointSide="back" trailer="2" displayType="VISIBILITY" node="g5Display_dblGroupRear2P1_SC" groups="MOTOR_RUNNING"/>
 		
-		<dashboard valueType="dbl.selection" selection="0"  displayType="EMITTER" node="g5Display_dblGroupTractorP1_SC" 			baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.selection" selection="1" displayType="EMITTER" node="g5Display_dblGroupFront1P1_SC"  			baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5"      intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.selection" selection="2"  displayType="EMITTER" node="g5Display_dblGroupFront2P1_SC"  			baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-        <dashboard valueType="dbl.selection" selection="1" jointType="attachableFrontloader" displayType="EMITTER" node="g5Display_dblGroupFrontloaderArm2P1_SC"  	baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.selection" selection="2" displayType="EMITTER" node="g5Display_dblGroupFrontloaderShovel2P1_SC"  baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5"   intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.selection" selection="-1" displayType="EMITTER" node="g5Display_dblGroupRear1P1_SC"   			baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.selection" selection="-2" displayType="EMITTER" node="g5Display_dblGroupRear2P1_SC"   			baseColor="0.2 0.2 0.2 1" emitColor="0.02 0.8 0.02 1" intensity="0.5"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="0"  displayType="EMITTER" node="g5Display_dblGroupTractorP1_SC" 			                                baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="1" displayType="EMITTER" node="g5Display_dblGroupFront1P1_SC"  			                                    baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9"      intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="2"  displayType="EMITTER" node="g5Display_dblGroupFront2P1_SC"  			                                baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+        <dashboard valueType="dbl.selection" selection="1" jointType="attachableFrontloader" displayType="EMITTER" node="g5Display_dblGroupFrontloaderArm2P1_SC"  	baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="2" displayType="EMITTER" node="g5Display_dblGroupFrontloaderShovel2P1_SC"                                   baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9"   intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="-1" displayType="EMITTER" node="g5Display_dblGroupRear1P1_SC"   			                                baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.selection" selection="-2" displayType="EMITTER" node="g5Display_dblGroupRear2P1_SC"   			                                baseColor="0.9 0.9 0.9 1" emitColor="0.02 0.7 0.02 1" intensity="0.9"  intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
 
 
         <!-- folding back -->
 		<!-- <dashboard valueType="dbl.base" cmd="folded" jointSide="back" displayType="VISIBILITY" node="g5Display_dblFoldingStateLockedP1_SC" groups="MOTOR_ACTIVE"/> -->
-		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblRearHitchSliderP5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 LIGHTMODE"/>
+		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblRearHitchSliderDM_P5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 DARKMODE"/>
 		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblFoldingSliderP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblBackLiftImplementSliderP1_SC" groups="MOTOR_RUNNING"/>
 		
-		<!-- <dashboard valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" factor="100" minValueSlider="0" maxValueSlider="100" displayType="SLIDER" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_ACTIVE"/> -->
-		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" displayType="SLIDER" factor="100" intensity="0.5" intensityDarkMode="0.05" minValueSlider="0" maxValueSlider="100" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_ACTIVE" />
-		<!-- <dashboard valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_ACTIVE" /> -->
-		<!-- <dashboard valueType="dbl.base" cmd="liftState" joints="2" option="percent" factor="100" minValueSlider="0" maxValueSlider="100" displayType="SLIDER" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_ACTIVE"/> -->
+		<dashboard                                                                            displayType="EMITTER"              intensity="0.3" intensityDarkMode="0.05"                                          node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" displayType="SLIDER" factor="100" intensity="0.3" intensityDarkMode="0.05" minValueSlider="0" maxValueSlider="100" node="g5Display_dblRearHitchSliderP1_SC" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" displayType="SLIDER" factor="100" intensity="0.3" intensityDarkMode="0.05" minValueSlider="0" maxValueSlider="100" node="g5Display_dblRearHitchSliderP5_SC" groups="MOTOR_ACTIVE LIGHTMODE" />
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="back" jointType="implement" displayType="SLIDER" factor="100" intensity="0" intensityDarkMode="0.05" minValueSlider="0" maxValueSlider="100" node="g5Display_dblRearHitchSliderDM_P5_SC" groups="MOTOR_ACTIVE DARKMODE" />
 
-		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="back" factor="100" minValueSlider="0" maxValueSlider="75" intensity="0.5" intensityDarkMode="0.05" displayType="SLIDER" node="g5Display_dblFoldingSliderP1_SC" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="back" factor="100" minValueSlider="75" maxValueSlider="100" intensity="0.5" intensityDarkMode="0.05" displayType="SLIDER" node="g5Display_dblBackLiftImplementSliderP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard intensity="0.3" intensityDarkMode="0.05" displayType="EMITTER" node="g5Display_dblFoldingSliderP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard intensity="0.3" intensityDarkMode="0.05" displayType="EMITTER" node="g5Display_dblBackLiftImplementSliderP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="back" factor="100" minValueSlider="0"  maxValueSlider="75"  intensity="0.3" intensityDarkMode="0.05" displayType="SLIDER" node="g5Display_dblFoldingSliderP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="back" factor="100" minValueSlider="75" maxValueSlider="100" intensity="0.3" intensityDarkMode="0.05" displayType="SLIDER" node="g5Display_dblBackLiftImplementSliderP1_SC" groups="MOTOR_ACTIVE"/>
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblRearHitchSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFoldingSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblBackLiftImplementSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
@@ -444,92 +470,99 @@
 		<dashboard valueType="dbl.base" cmd="folded" jointSide="back" displayType="EMITTER" node="g5Display_dblFoldingStateClosedP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.4" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="back" displayType="EMITTER" node="g5Display_dblFoldingStateClosingP1_SC" emitColor="0.07 0.07 0.04 1" intensity="1" groups="MOTOR_ACTIVE"/>
 		
-		<dashboard valueType="base" cmd="fillLevel" option="percent" jointSide="back" trailer="1" max="200" factor="100" displayType="TEXT" node="g5Display_dblRearFilllevelPercentNumbersP1_SC"  textColor="0.4 0.4 0.2 1" textSize="0.0025" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="base" cmd="fillLevel" option="percent" jointSide="back" trailer="2" max="200" factor="100" displayType="TEXT" node="g5Display_dblRear2FilllevelPercentNumbersP1_SC" textColor="0.4 0.4 0.2 1" textSize="0.0025" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard valueType="base" cmd="fillLevel" option="percent" jointSide="back" trailer="1" max="200" factor="100" displayType="TEXT" node="g5Display_dblRearFilllevelPercentNumbersP1_SC"  textColor="0.4 0.4 0.2 1" textSize="0.0025" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/> -->
+		<!-- <dashboard valueType="base" cmd="fillLevel" option="percent" jointSide="back" trailer="2" max="200" factor="100" displayType="TEXT" node="g5Display_dblRear2FilllevelPercentNumbersP1_SC" textColor="0.4 0.4 0.2 1" textSize="0.0025" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/> -->
 		
 		<dashboard displayType="VISIBILITY" node="g5Display_dblBackCoverStateSliderP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblBack2CoverStateSliderP1_SC" groups="MOTOR_RUNNING"/>
 		<!-- <dashboard valueType="dbl.base" displayType="EMITTER" node="g5Display_dblBackCoverStateSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
 		<!-- <dashboard valueType="dbl.base" displayType="EMITTER" node="g5Display_dblBack2CoverStateSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
-		<dashboard valueType="dbl.base" cmd="coveropen" jointSide="back" trailer="1" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblBackCoverStateSliderP1_SC" default="1" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.0013" groups="MOTOR_ACTIVE"/>
-		<dashboard valueType="dbl.base" cmd="coveropen" jointSide="back" trailer="2" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblBack2CoverStateSliderP1_SC" default="1" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.0015" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" intensity="0.3" intensityDarkMode="0.05" node="g5Display_dblBackCoverStateSliderP1_SC"  groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" intensity="0.3" intensityDarkMode="0.05" node="g5Display_dblBack2CoverStateSliderP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="coveropen" jointSide="back" trailer="1" displayType="SLIDER" intensity="0.3" intensityDarkMode="0.05" node="g5Display_dblBackCoverStateSliderP1_SC" default="1" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.0013" groups="MOTOR_ACTIVE"/>
+		<dashboard valueType="dbl.base" cmd="coveropen" jointSide="back" trailer="2" displayType="SLIDER" intensity="0.3" intensityDarkMode="0.05" node="g5Display_dblBack2CoverStateSliderP1_SC" default="1" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.0015" groups="MOTOR_ACTIVE"/>
 	
         <!-- folding front -->
-        <dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" displayType="VISIBILITY" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		
-		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontHitchPercentNumbersP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontHitchSliderP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontHitchPercentNumbersP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontHitchSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontHitchSliderP5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 LIGHTMODE"/>
+		<dashboard valueType="dbl.base" cmd="connected" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFrontHitchSliderDM_P5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 DARKMODE"/>
 		
-		<dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontHitchSliderP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard                                                                              displayType="EMITTER"                                                     intensity="0.3" intensityDarkMode="0.05" node="g5Display_dblFrontHitchSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" intensityDarkMode="0.05" node="g5Display_dblFrontHitchSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.3" intensityDarkMode="0" node="g5Display_dblFrontHitchSliderP5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 LIGHTMODE"/>
+		<dashboard valueType="dbl.base" cmd="liftState" jointSide="front" jointType="implement" displayType="SLIDER" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0" intensityDarkMode="0" node="g5Display_dblFrontHitchSliderDM_P5_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 DARKMODE"/>
 		
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFrontFoldingSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
-		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="0" maxValueSlider="80" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="0" maxValueSlider="80" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<!-- <dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="0" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontFoldingSliderP1_SC" groups="MOTOR_RUNNING"/> -->
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFrontLiftImplementSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
-		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="80" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="unfoldingState" jointSide="front" option="any" factor="100" minValueSlider="80" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<!-- <dashboard valueType="dbl.base" cmd="liftState" jointSide="front" trailer="1" option="any" factor="100" minValueSlider="0" maxValueSlider="100" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontLiftImplementSliderP1_SC" groups="MOTOR_RUNNING"/> -->
 		
-        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowered" jointSide="front" node="g5Display_dblCutterLoweredP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="EMITTER"                                                         node="g5Display_dblCutterLoweredP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifted" jointSide="front"  node="g5Display_dblCutterLiftedP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="EMITTER"                                                         node="g5Display_dblCutterLiftedP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowered" jointSide="front" node="g5Display_dblCutterLoweredP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="EMITTER"                                                         node="g5Display_dblCutterLoweredP1_SC" baseColor="1 1 1 1" emitColor="RED" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifted" jointSide="front"  node="g5Display_dblCutterLiftedP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="EMITTER"                                                         node="g5Display_dblCutterLiftedP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 
-		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFoldingStateFrontClosingP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFoldingStateFrontClosedP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="EMITTER" node="g5Display_dblFoldingStateFrontClosedP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.4" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="front" option="any" displayType="EMITTER" node="g5Display_dblFoldingStateFrontClosingP1_SC" emitColor="0.07 0.07 0.04 1" intensity="1" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFoldingStateFrontClosingP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="VISIBILITY" node="g5Display_dblFoldingStateFrontClosedP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="folded" jointSide="front" option="any" displayType="EMITTER" node="g5Display_dblFoldingStateFrontClosedP1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.4" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard valueType="dbl.base" cmd="folding unfolding" jointSide="front" option="any" displayType="EMITTER" node="g5Display_dblFoldingStateFrontClosingP1_SC" emitColor="0.07 0.07 0.04 1" intensity="1" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		
-		<dashboard displayType="VISIBILITY" node="g5Display_dblFrontCoverStateSliderP1_SC" 		jointSide="front" 											groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideTrailer1P1_SC" 			jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideIcon1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSide2Icon1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideGrain1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideBack1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideLeft1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideRight1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblFilllevelTrailer1SliderP1_SC" 	jointSide="back" trailer="1"								groups="MOTOR_RUNNING AT_TRAILER1"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblFrontCoverStateSliderP1_SC" 		jointSide="front" 											groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideTrailer1P1_SC" 			jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideIcon1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSide2Icon1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideGrain1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideBack1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideLeft1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideRight1P1_SC" 				jointSide="back" trailer="1" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblFilllevelTrailer1SliderP1_SC" 	jointSide="back" trailer="1"								groups="MOTOR_RUNNING AT_TRAILER1"/> -->
 
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideTrailer2P1_SC" 			jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideIcon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSide2Icon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideGrain2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideBack2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideLeft2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTipSideRight2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblFilllevelTrailer2SliderP1_SC" 	jointSide="back" trailer="2"							 														  roups="MOTOR_RUNNING AT_TRAILER2"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblTippingSliderP1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 AT_TRAILER2"/>
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideTrailer2P1_SC" 			jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideIcon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSide2Icon2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideGrain2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideBack2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideLeft2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblTipSideRight2P1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblFilllevelTrailer2SliderP1_SC" 	jointSide="back" trailer="2"							 														  roups="MOTOR_RUNNING AT_TRAILER2JD_TRAC_PAGESC123"/> -->
+		<dashboard displayType="VISIBILITY" node="g5Display_dblTippingSliderP1_SC" 				jointSide="back" trailer="2" jointType="trailer trailerLow semitrailer trailerSaddled semitrailerCar trailerCar" groups="MOTOR_RUNNING AT_TRAILER1 AT_TRAILER2 JD_TRAC_PAGESC123"/>
 		
-		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFrontCoverStateSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
+		<dashboard displayType="EMITTER" node="g5Display_dblFrontCoverStateSliderP1_SC" intensity="0.2" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideIcon1P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSide2Icon1P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideGrain1P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="BackGrainDoor" valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideBack1P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Back" 		  valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideLeft1P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Left" 		  valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideRight1P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Right" 		  valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/>
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideIcon1P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSide2Icon1P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_RUNNING"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideGrain1P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="BackGrainDoor" valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideBack1P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Back" 		  valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideLeft1P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Left" 		  valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideRight1P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Right" 		  valueType="base" cmd="tipside" jointSide="back" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/> -->
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFilllevelTrailer1SliderP1_SC" intensity="0.4" intensityDarkMode="0.25" groups="MOTOR_RUNNING"/> -->
-		<dashboard valueType="dbl.base" cmd="fillLevel" option="percent" jointSide="back" trailer="1" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFilllevelTrailer1SliderP1_SC" default="0" max="200" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.035" groups="MOTOR_RUNNING"/>
+		<!-- <dashboard valueType="dbl.base" cmd="fillLevel" option="percent" jointSide="back" trailer="1" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFilllevelTrailer1SliderP1_SC" default="0" max="200" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.035" groups="MOTOR_RUNNING"/> -->
 		<dashboard valueType="dbl.base" cmd="tippingState" option="any" jointSide="back" trailer="1" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblTippingSliderP1_SC" default="0" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.035" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideIcon2P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSide2Icon2P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideGrain2P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="BackGrainDoor" valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideBack2P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Back" 		  valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideLeft2P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Left" 		  valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="g5Display_dblTipSideRight2P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Right" 		  valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideIcon2P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSide2Icon2P1_SC" emitColor="0.07 0.07 0.04 1" intensity="0.6" intensityDarkMode="0.05" groups="MOTOR_ACTIVE"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideGrain2P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="BackGrainDoor" valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideBack2P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Back" 		  valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideLeft2P1_SC"  baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Left" 		  valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/> -->
+		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTipSideRight2P1_SC" baseColor="0.27 0.27 0.24 1" emitColor="GREEN" state="Right" 		  valueType="base" cmd="tipside" jointSide="back" trailer="2" intensity="0.5" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/> -->
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblFilllevelTrailer2SliderP1_SC" intensity="0.4" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/> -->
-		<!-- <dashboard displayType="EMITTER" node="g5Display_dblTippingSliderP1_SC" intensity="0.4" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/> -->
-		<dashboard valueType="dbl.base" cmd="fillLevel" option="percent" jointSide="back" trailer="2" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFilllevelTrailer2SliderP1_SC" default="0" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.035" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="g5Display_dblTippingSliderP1_SC" intensity="0.4" intensityDarkMode="0.25" groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard valueType="dbl.base" cmd="fillLevel" option="percent" jointSide="back" trailer="2" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFilllevelTrailer2SliderP1_SC" default="0" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.035" groups="MOTOR_ACTIVE"/> -->
 		<dashboard valueType="dbl.base" cmd="tippingState" option="any" jointSide="back" trailer="2" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblTippingSliderP1_SC" default="0" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.035" groups="MOTOR_ACTIVE"/>
 		
 		<dashboard valueType="dbl.base" cmd="coveropen" jointSide="front" option="any" displayType="SLIDER" intensity="0.5" intensityDarkMode="0.05" node="g5Display_dblFrontCoverStateSliderP1_SC" default="1" factor="1" minValueSlider="0" maxValueSlider="1" doInterpolation="true" interpolationSpeed="0.0013" groups="MOTOR_ACTIVE"/>
 
         <!-- cvta -->
 		<dashboard displayType="VISIBILITY" node="g5Display_dblCvtGearWearPercentIconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="ipmactive" state="1" node="g5Display_dblCvtIpmActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preglowing" node="g5Display_dblCvtPreglowActiveP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="glowingstate" state="1" node="g5Display_dblCvtPreglowReadyP1_SC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="ipmactive" state="1" node="g5Display_dblCvtIpmActiveP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preglowing" node="g5Display_dblCvtPreglowActiveP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="glowingstate" state="1" node="g5Display_dblCvtPreglowReadyP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="warnheat" state="1" node="g5Display_dblCvtHeatWarnIconP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="critheat" state="1" node="g5Display_dblCvtHeatCritBlinkP1_SC" groups="MOTOR_RUNNING"/>
@@ -576,7 +609,7 @@
 							<!-- :( slip don't work with EV, base game has it but not as dashboard -->
 		<dashboard displayType="VISIBILITY" node="g5Display_dblWheelSlipPercentNumbersP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipPercentNumbersP1_SC" factor="100" textColor="0.05 0.05 0.04 1" textSize="0.0035" doInterpolation="true" interpolationSpeed="0.08" textMask="000%" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="g5Display_dblMotorTempNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="g5Display_dblMotorTempNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g5Display_naviMapTractorP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="g5Display_naviMapPositionTractorP1_SC" groups="MOTOR_RUNNING"/>
@@ -596,11 +629,13 @@
 
         <dashboard displayType="VISIBILITY" node="g5TractorCamsP2_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC2"/>
         <dashboard displayType="VISIBILITY" node="g5TractorCamsP3_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC3"/>
+        <dashboard displayType="VISIBILITY" node="g5AttachCamsP4_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC4"/>
         <realWorkCameras>
             <workCameraDisplays>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC2" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
-                <workCameraDisplay isAttachableCamDisplay="true" linkNode="cams2SC" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC3"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC"  nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC2" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
+                <workCameraDisplay isAttachableCamDisplay="false"  linkNode="cams2SC" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC3"/>
+                <workCameraDisplay isAttachableCamDisplay="true"  linkNode="cams4SC" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC4"/>
             </workCameraDisplays>
 
             <!-- <hideNodes>
@@ -612,16 +647,119 @@
         <dashboard displayType="VISIBILITY" node="g5Display_defaultPageTractor_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
         <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_startScreen_decal" intensity="0.3" groups="MOTOR_STARTING"/>
         <!-- <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_iconGPSActive_decal" intensity="0.3" groups="MOTOR_STARTING"/> -->
-        <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_decal" idleValue="-1" intensity="0.2" intensityDarkMode="0.01" groups="MOTOR_ACTIVE"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_defaultPageTractor_decal" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
+        <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_decal" idleValue="-1" intensity="0.2" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC123"/>
+        
+        <dashboard displayType="VISIBILITY" node="g5Display_defaultPageTractor_darken" groups="MOTOR_RUNNING DARKMODE"/>
+        <dashboard displayType="EMITTER" node="g5Display_defaultPageTractor_darken" intensity="0.2" intensityDarkMode="0.01" groups="MOTOR_RUNNING DARKMODE"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_VTpageObjectPool_ON_P4" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE"/>
+        <dashboard displayType="MULTI_STATE" node="g5Display_VTpageObjectPool_ON_P4" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE" >
+            <state value="0" visibility="false"/>
+            <state value="1" visibility="true"/>
+            <state value="2" visibility="true"/>
+		</dashboard>
+        <!-- <dashboard displayType="MULTI_STATE" node="g5Display_VTpageObjectPool_OFF_P4" valueType="ai.automaticSteering.steeringState" state="1" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 DARKMODE" /> -->
+        <dashboard displayType="MULTI_STATE" node="g5Display_VTpageObjectPool_OFF_P4" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE" >
+            <state value="0" visibility="true"/>
+            <state value="1" visibility="false"/>
+            <state value="2" visibility="false"/>
+		</dashboard>
+        <dashboard displayType="EMITTER" node="g5Display_VTpageObjectPool_ON_P4"  intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING DARKMODE"/>
+        <dashboard displayType="EMITTER" node="g5Display_VTpageObjectPool_OFF_P4" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_RUNNING DARKMODE"/>
+
+        
+        <dashboard displayType="VISIBILITY" node="_g5Display_TitelPageTractor_P1" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC1"/>
+        <dashboard displayType="VISIBILITY" node="_g5Display_TitelPageTractor_P2" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC2"/>
+        <dashboard displayType="VISIBILITY" node="_g5Display_TitelPageTractor_P3" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC3"/>
+        <dashboard displayType="VISIBILITY" node="_g5Display_TitelPageTractor_P4" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC4"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_TitelPageTractor_P5" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5only"/>
+        
+        <dashboard displayType="EMITTER" node="_g5Display_TitelPageTractor_P1" emitColor="0.8 0.8 0.8 1" intensity="0.5" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC1"/>
+        <dashboard displayType="EMITTER" node="_g5Display_TitelPageTractor_P2" emitColor="0.8 0.8 0.8 1" intensity="0.5" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC2"/>
+        <dashboard displayType="EMITTER" node="_g5Display_TitelPageTractor_P3" emitColor="0.8 0.8 0.8 1" intensity="0.5" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC3"/>
+        <dashboard displayType="EMITTER" node="_g5Display_TitelPageTractor_P4" emitColor="0.8 0.8 0.8 1" intensity="0.5" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC4"/>
+        <dashboard displayType="EMITTER" node="g5Display_TitelPageTractor_P5" emitColor="0.8 0.8 0.8 1" intensity="0.5" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5only"/>
+        
+        <!-- VT -->
+        <dashboard displayType="VISIBILITY" node="5g_isoBUS_LoadNode_SC" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+        
+        <dashboard displayType="VISIBILITY" node="g5Display_isobusPageTractor_VTtitel" groups="MOTOR_RUNNING JD_TRAC_PAGESC5"/>
+        <dashboard displayType="EMITTER" node="g5Display_isobusPageTractor_VTtitel" emitColor="0.1 0.1 0.1 1" intensity="0.2" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5 LIGHTMODE"/>
+        <dashboard displayType="EMITTER" node="g5Display_isobusPageTractor_VTtitel" emitColor="0.8 0.8 0.8 1" intensity="0.2" intensityDarkMode="0.2" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5 DARKMODE"/>
+
+        <dashboard displayType="VISIBILITY" node="g5Display_isoBUS_TractorVT_decal" idleValue="-1" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+        <dashboard displayType="VISIBILITY" node="5g_isoBUS_HgNode_SC" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+        <dashboard displayType="EMITTER" node="g5Display_isoBUS_TractorVT_decal" idleValue="-1" intensity="0.2" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+        <dashboard displayType="EMITTER" node="5g_isoBUS_HgNode_SC" idleValue="-1" intensity="0.08" intensityDarkMode="0.01" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+
+        <!-- sf-rtk -->
+        <dashboard displayType="MULTI_STATE" node="g5VTrtkSliderLeft_P2_SC" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE" >
+			<state value="0" visibility="false"/>
+            <state value="1" visibility="true"/>
+            <state value="2" visibility="true"/>
+		</dashboard>
+		<dashboard displayType="VISIBILITY" node="g5VTrtkSliderRight_P2_SC"  	valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="MULTI_STATE" node="g5VTrtkSliderRight_P2_SC" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE" >
+			<state value="0" visibility="false"/>
+            <state value="1" visibility="true"/>
+            <state value="2" visibility="true"/>
+		</dashboard>
+		<dashboard displayType="SLIDER" valueType="steeringAngle"  factor="1"  node="g5VTrtkSliderLeft_P2_SC"  minValueSlider="0"  maxValueSlider="1" intensity="0.2" doInterpolation="true" groups="MOTOR_ACTIVE DARKMODE"/>
+		<dashboard displayType="SLIDER" valueType="steeringAngle"  factor="1"  node="g5VTrtkSliderRight_P2_SC" minValueSlider="-1" maxValueSlider="0" intensity="0.2" doInterpolation="true" groups="MOTOR_ACTIVE DARKMODE"/>
+		
+		<dashboard displayType="MULTI_STATE" node="g5Display_dblVTisobusRTKRichtungOffP2_SC" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING DARKMODE" >
+			<state value="0" visibility="true"/>
+            <state value="1" visibility="false"/>
+            <state value="2" visibility="false"/>
+		</dashboard>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblVTisobusRTKyawAngleP2_SC"  	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblVTisobusRTKRichtungP2_SC"  	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblVTisobusRTKRichtungP2_SC"  	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblRtkVTaccuracySliderP2_SC"  	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblRtkVTgpsSignalSliderP2_SC" 	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblRtkVTrtkSignalSliderP2_SC" 	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblVTisobusRTKcourseP2_SC" 		valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>	
+		<dashboard displayType="VISIBILITY"	node="g5Display_dblVTisobusRTKspeedKphP2_SC" 	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>	
+		<dashboard displayType="VISIBILITY"	node="g5Display_dblVTisobusRTKFieldP2_SC" 	    valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING DARKMODE"/>	
+		
+		<dashboard displayType="TEXT" valueType="steeringAngle" 				node="g5Display_dblVTisobusRTKyawAngleP2_SC" 		textSpacing="10"                    textColor="0.6 0.6 0.6 1" emissiveScale="0.2" textSize="0.004" textMask="00.00000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingtext3" 	node="g5Display_dblVTisobusRTKRichtungP2_SC" 		fontThickness="1" textSpacing="6"   textColor="0.6 0.6 0.6 1" emissiveScale="0.2" textSize="0.006" textMask="zzz"  		font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingtext1" 	node="g5Display_dblVTisobusRTKRichtungOffP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale="0.2" textSize="0.006" textMask="s" 		font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" 	node="g5Display_dblVTisobusRTKFieldP2_SC" 			                                    textColor="0.6 0.6 0.6 1" emissiveScale="0.2" textSize="0.005" textMask="000" 		font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="decelerationAxis" 				node="g5Display_dblVTisobusRTKrollAngleP2_SC" 		                                    textColor="0.6 0.6 0.6 1" emissiveScale="0.2" textSize="0.004" textSpacing="10" textMask="00.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.000013" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="accelerationAxis" 				node="g5Display_dblVTisobusRTKpitchAngleP2_SC" 		                                    textColor="0.6 0.6 0.6 1" emissiveScale="0.2" textSize="0.004" textSpacing="10" textMask="00.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.000013" groups="MOTOR_ACTIVE DARKMODE"/>	
+
+		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" 	node="g5Display_dblVTisobusRTKcourseP2_SC" 		                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.004" textMask="000.0000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" 	node="g5Display_dblVTisobusRTKcourseOffP2_SC" 	                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.004" textMask="000" 	  font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="motorized.speedDir" 			node="g5Display_dblVTisobusRTKspeedKphP2_SC" 	                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.004" textMask="000.00" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE DARKMODE"/>	
+		
+        <dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" 	node="g5Display_dblVTisobusRTKcourseP2_SC" 		                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.004" textMask="000.0000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" 	node="g5Display_dblVTisobusRTKcourseOffP2_SC" 	                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.004" textMask="000" 	  font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE DARKMODE"/>	
+		<dashboard displayType="TEXT" valueType="motorized.speedDir" 			node="g5Display_dblVTisobusRTKspeedKphP2_SC" 	                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.004" textMask="000.00" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE DARKMODE"/>	
+		
+        <!-- <dashboard displayType="TEXT" valueType="directionForwardExclusive" 	node="g5Display_dblVTisobusRTKgpsSignalPercentP2_SC" 		textColor="0.4 0.4 0.4 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" 	textMask="000.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="false" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE DARKMODE"/>	 -->
+		<!-- <dashboard displayType="TEXT" valueType="ac_decelerationAxis" 			node="g5Display_dblVTisobusRTKaccPerccentP2_SC" 		textColor="0.4 0.4 0.4 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" 		textMask="000.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="false" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE DARKMODE"/>	 -->
+		<!-- <dashboard displayType="TEXT" valueType="ac_decelerationAxis" 			node="g5Display_dblVTisobusRTKgpsSignalDecibelP2_SC" 		textColor="0.4 0.4 0.4 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" 		textMask="000.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="false" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE DARKMODE"/>	 -->
+
+		<dashboard displayType="SLIDER" valueType="motorized.battery"  node="g5Display_dblRtkVTrtkSignalSliderP2_SC"  factor="2.3" minValueSlider="0" maxValueSlider="15"  intensity="0.6"  groups="MOTOR_ACTIVE DARKMODE"/>
+		<dashboard displayType="SLIDER" valueType="fillLevel" fillType="AIR"    node="g5Display_dblRtkVTgpsSignalSliderP2_SC" factor="0.1" minValueSlider="0" maxValueSlider="3500" intensity="0.6"  groups="MOTOR_ACTIVE DARKMODE"/>
+		<dashboard displayType="SLIDER" valueType="motorized.motorTemperature"           node="g5Display_dblRtkVTaccuracySliderP2_SC" factor="8.75" minValueSlider="20" maxValueSlider="95" intensity="0.6"  groups="MOTOR_ACTIVE DARKMODE"/>
+
+        <!-- isoBUS -->
+		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="5g_isoBUS_LoadNode_SC" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5"/>
+
+		<dashboard displayType="VISIBILITY" node="g5Display_isobusPageTractor_noVT_decal" groups="MOTOR_RUNNING JD_TRAC_PAGESC5 NOISOBUS"/>
+		<dashboard displayType="EMITTER" node="g5Display_isobusPageTractor_noVT_decal" intensity="0.8" intensityDarkMode="0.05" groups="MOTOR_ACTIVE JD_TRAC_PAGESC5 NOISOBUS"/>
+		
 
         <dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="1" node="g5Display_ScreenWarningFuel" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_ScreenWarningFuel" emitColor="1 0.1 0 1" intensity="0.6" groups="MOTOR_ACTIVE"/>
 
-        <dashboard displayType="VISIBILITY" node="g5Display_dblMotorTempIconP1_SC" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="VISIBILITY" node="g5Display_dblSpeedIconP1_SC" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_dblMotorTempIconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+        <dashboard displayType="VISIBILITY" node="g5Display_dblSpeedIconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
         <dashboard displayType="EMITTER" node="g5Display_dblSpeedIconP1_SC" emitColor="0.09 0.09 0.07 1" intensity="0.4" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblFuelIconP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" node="g5Display_dblMotorFanBlinkP1_SC" valueType="dbl.base" cmd="motorFan" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="g5Display_dblMotorFanBlinkP1_SC" valueType="dbl.base" cmd="motorFan" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
     </dashboardCompound>
     
     <!-- GPS CC -->
@@ -873,9 +1011,9 @@
         <dashboard displayType="VISIBILITY" node="g5TractorCamsP4_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS4"/>
         <realWorkCameras>
             <workCameraDisplays>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsCC"  nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS24"/>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS3"/>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="cams3CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS4"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="camsCC"  nightReflectionScale="10" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS24"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS3"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="cams3CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS4"/>
             </workCameraDisplays>
 
             <!-- <hideNodes>
@@ -938,7 +1076,7 @@
 
 
 
-   <!-- COMBINE -->
+    <!-- COMBINE -->
     <dashboardCompound name="JOHNDEERE_G5_APILLAR_COMBINE_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="aPillarScreenCombine">
         <!-- numbers -->
         <dashboard displayType="TEXT" valueType="motorized.rpm" node="g5Display_aPillarHarvester_numbersRPM" textColor="1 1 1 1" textSize="0.009" textMask="0000" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE"/>
@@ -1027,7 +1165,7 @@
         <realWorkCameras>
             <workCameraDisplays>
                 <!-- <workCameraDisplay isAttachableCamDisplay="true" linkNode="g5CombineCamP3_AP" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGEAP2"/> -->
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g5CombineCamP3_AP" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_COMB_PAGEAP2"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g5CombineCamP3_AP" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_COMB_PAGEAP2"/>
             </workCameraDisplays>
 
             <!-- <hideNodes>
@@ -1462,9 +1600,9 @@
         <dashboard displayType="VISIBILITY" node="g5harvester_camMap_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
         <realWorkCameras>
             <workCameraDisplays>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams1Combine_CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams2Combine_CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"  dblGroups="JD_COMB_PAGECC2"/>
-                <workCameraDisplay isAttachableCamDisplay="true" linkNode="g5realCams3Combine_CC"  nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams1Combine_CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams2Combine_CC" nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true"  dblGroups="JD_COMB_PAGECC2"/>
+                <workCameraDisplay isAttachableCamDisplay="true" linkNode="g5realCams3Combine_CC"  nightReflectionScale="10" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
             </workCameraDisplays>
             <!-- <hideNodes>
                 <hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
@@ -1628,7 +1766,7 @@
         <i3dMapping id="g5Display_aPillarTractor_CvtAccRampsNumbersP1_AP" node="0>0|0|0|2|10"/>
         <i3dMapping id="g5Display_aPillarTractor_CvtDLnumbersP1_AP" node="0>0|0|0|2|11"/>
 
-        <!-- tractor base SC -->
+        <!-- TRACTOR base SC -->
         <i3dMapping id="g5Display_aPillarHarvester_cutHeight_decalRot" node="0>1|0|0|0|1|5"/>
         <i3dMapping id="g5Display_aPillarHarvester_cutHeightPin_decalRot" node="0>1|0|0|0|1|5|0"/>
 
@@ -1638,6 +1776,53 @@
         <i3dMapping id="g5Display_dblGPSActiveP1_SC" node="0>0|1|1|5"/>
         <i3dMapping id="g5Display_dblGPSActiveONP1_SC" node="0>0|1|1|6"/>
         <i3dMapping id="g5Display_naviMapTractorP1_SC" node="0>0|1|2|0"/>
+
+
+        <!-- isoBus -->
+        <i3dMapping id="g5Display_isoBUS_TractorVT_decal" node="0>0|1|3|2"/>
+        <i3dMapping id="5g_isoBUS_HgNode_SC" node="0>0|1|6|0"/>
+        <i3dMapping id="5g_isoBUS_LoadNode_SC" node="0>0|1|6|1"/>
+        <i3dMapping id="g5isoBUSnodeLM_SC" node="0>0|1|6|2"/>
+        <i3dMapping id="g5Display_isobusPageTractor_noVT_decal" node="0>0|1|6|3"/>
+        <i3dMapping id="g5Display_dblRearHitchSliderP5_SC" node="0>0|1|1|1|13"/>
+        <i3dMapping id="g5Display_dblFrontHitchSliderP5_SC" node="0>0|1|1|1|14"/>
+        <i3dMapping id="g5Display_dblRearHitchSliderDM_P5_SC" node="0>0|1|1|1|15"/>
+        <i3dMapping id="g5Display_dblFrontHitchSliderDM_P5_SC" node="0>0|1|1|1|16"/>
+        <i3dMapping id="g5Display_dblRearPtoRpmNumbersP5_SC" node="0>0|1|1|0|40"/>
+        <i3dMapping id="g5Display_dblFrontPtoRpmNumbersP5_SC" node="0>0|1|1|0|41"/>
+        <i3dMapping id="g5Display_dblRearHitchPercentNumbersP5_SC" node="0>0|1|1|0|42"/>
+        <i3dMapping id="g5Display_dblFrontHitchPercentNumbersP5_SC" node="0>0|1|1|0|43"/>
+        <i3dMapping id="g5Display_isobusPageTractor_VTtitel" node="0>0|1|6|4"/>
+        <i3dMapping id="_g5Display_TitelPageTractor_P1" node="0>0|1|3|3"/>
+        <i3dMapping id="_g5Display_TitelPageTractor_P2" node="0>0|1|3|4"/>
+        <i3dMapping id="_g5Display_TitelPageTractor_P3" node="0>0|1|3|5"/>
+        <i3dMapping id="_g5Display_TitelPageTractor_P4" node="0>0|1|3|6"/>
+        <i3dMapping id="g5Display_TitelPageTractor_P5" node="0>0|1|3|8"/>
+        <i3dMapping id="g5AttachCamsP4_SC" node="0>0|1|7"/>
+        <i3dMapping id="cams4SC" node="0>0|1|7|0"/>
+        <i3dMapping id="g5Display_Cam4AttachP4_SC" node="0>0|1|7|0|0"/>
+
+        <i3dMapping id="g5Display_defaultPageTractor_darken" node="0>0|1|3|7"/>
+        <i3dMapping id="g5Display_VTpageObjectPool_ON_P4" node="0>0|1|6|5"/>
+        <i3dMapping id="g5Display_VTpageObjectPool_OFF_P4" node="0>0|1|6|6"/>
+
+        <i3dMapping id="g5Display_dblRtkVTgpsSignalSliderP2_SC" node="0>0|1|6|10"/>
+        <i3dMapping id="g5Display_dblRtkVTaccuracySliderP2_SC" node="0>0|1|6|11"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKcourseOffP2_SC" node="0>0|1|6|12"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKspeedKphP2_SC" node="0>0|1|6|13"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKFieldP2_SC" node="0>0|1|6|14"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKRichtungP2_SC" node="0>0|1|6|15"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKaccPerccentP2_SC" node="0>0|1|6|16"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKgpsSignalPercentP2_SC" node="0>0|1|6|17"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKgpsSignalDecibelP2_SC" node="0>0|1|6|18"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKRichtungOffP2_SC" node="0>0|1|6|19"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKyawAngleP2_SC" node="0>0|1|6|20"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKpitchAngleP2_SC" node="0>0|1|6|21"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKrollAngleP2_SC" node="0>0|1|6|22"/>
+        <i3dMapping id="g5Display_dblVTisobusRTKcourseP2_SC" node="0>0|1|6|23"/>
+        <i3dMapping id="g5VTrtkSliderLeft_P2_SC" node="0>0|1|6|7"/>
+        <i3dMapping id="g5VTrtkSliderRight_P2_SC" node="0>0|1|6|8"/>
+        <i3dMapping id="g5Display_dblRtkVTrtkSignalSliderP2_SC" node="0>0|1|6|9"/>
 
         <!-- lights -->
         <i3dMapping id="g5Display_aPillarHarvester_IconWorklightFront_AP" node="0>1|0|0|0|15"/>
@@ -1650,7 +1835,7 @@
         <i3dMapping id="g5Display_defaultPageTractor_decal" node="0>0|1|3|0"/>
 
         <i3dMapping id="g5Display_defaultPageTractor_startScreen_decal" node="0>0|1|0|0"/>
-        <i3dMapping id="g5Display_dblUserNameNumbersP1_SC" node="0>0|1|0|0|1"/>
+        <i3dMapping id="g5Display_dblUserNameNumbersP1_SC" node="0>0|1|1|0|37"/>
 
         <i3dMapping id="g5Display_dblRearHitchPercentNumbersP1_SC" node="0>0|1|1|0|0"/>
         <i3dMapping id="g5Display_dblFrontHitchPercentNumbersP1_SC" node="0>0|1|1|0|1"/>
@@ -1677,6 +1862,8 @@
         <i3dMapping id="g5Display_dblFuelHourNumbersP1_SC" node="0>0|1|1|0|28"/>
         <i3dMapping id="g5Display_dblDayTimeNumbersP1_SC" node="0>0|1|1|0|29"/>
         <i3dMapping id="g5Display_dblBatteryPowerNumbersP1_SC" node="0>0|1|1|0|3"/>
+        <i3dMapping id="g5Display_dblBatteryRunningNumbersP1_SC" node="0>0|1|1|0|38"/>
+        <i3dMapping id="g5Display_dblBatteryStartingNumbersP1_SC" node="0>0|1|1|0|39"/>
         <i3dMapping id="g5Display_dblCvtIpmActiveP1_SC" node="0>0|1|1|0|4"/>
         <i3dMapping id="g5Display_dblOperatingTimeNumbersP1_SC" node="0>0|1|1|0|5"/>
         <i3dMapping id="g5Display_dblRearPtoRpmNumbersP1_SC" node="0>0|1|1|0|6"/>
