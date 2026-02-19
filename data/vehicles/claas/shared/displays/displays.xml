@@ -9,6 +9,16 @@
 	<group name="TRACTOR_PAGESC2" dbl="page" group="1" page="2"/>
 	<!-- Tractor Pages CC -->
 	<!-- <group name="TRACTOR_PAGECC1" dbl="page" group="2" page="1"/> -->
+	
+	<!-- Page -->
+			<group name="PAGESC1" dbl="page" page="1"/>
+			<group name="PAGESC2" dbl="page" page="2"/>
+			
+			<group name="DARKMODE" dbl="darkmode"/>
+			<group name="LIGHTMODE" dbl="lightmode"/>
+			<!-- Guidance Steering -->
+			<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
+			<group name="DBL_AWD" isMotorStarting="true" op="" dbl="vca_diff_awd"/>
 
     <!-- Xerion 12 -->
     <dashboardCompound name="CEBIS_XERION12_MAINPAGE" filename="data/vehicles/claas/shared/displays/claasDisplays.i3d" node="cebisXerion12">

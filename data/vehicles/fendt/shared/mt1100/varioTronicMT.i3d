@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="varioTronicMT.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.10"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="7" filename="$data/shared/default_specular.dds"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="10" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="11" filename="../../mt1100/textures/fendtMTvarioTronicMainDisplayDM_diffuse.dds"/>
+    <File fileId="8" filename="../../mt1100/textures/fendtMTvarioTronicMainDisplay_diffuse.png"/>
+    <File fileId="13" filename="../../mt1100/textures/fendtMTvarioTronicSecondDisplayDM_diffuse.dds"/>
+    <File fileId="12" filename="../../mt1100/textures/fendtMTvarioTronicSecondDisplay_diffuse.png"/>
+    <File fileId="1" filename="../../mt1100/textures/fendtMTvarioTronicStartScreen_diffuse.dds"/>
+    <File fileId="15" filename="../../mt1100/textures/fendtMTvarioTronicThirdDisplayDM_diffuse.dds"/>
+    <File fileId="14" filename="../../mt1100/textures/fendtMTvarioTronicThirdDisplay_diffuse.png"/>
+    <File fileId="6" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="5" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="10">
+    </Material>
+    <Material name="dblSliderLine_mat" materialId="6" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="5"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="7" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="8"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="8" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="11"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="9" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="12"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="10" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="13"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="11" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="12" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="14"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="fendtVarioTronicDisplay_mat" materialId="13" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="15"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="14" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="6"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="15" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="6"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="7"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="varioTronicMT.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="varioTronicMT" clipDistance="30" nodeId="34">
+      <TransformGroup name="startScreen" clipDistance="30" nodeId="35">
+        <Shape name="varioTronicMT_startScreen" shapeId="1" clipDistance="30" nodeId="36" castsShadows="false" receiveShadows="true" materialIds="11"/>
+      </TransformGroup>
+      <TransformGroup name="mainDisplay" translation="0 0.001 0" clipDistance="30" nodeId="37">
+        <TransformGroup name="mainIcon" clipDistance="30" nodeId="38">
+          <TransformGroup name="varioTronicMT_dblFuelLevelNumbersP1_SC" translation="0.044 0 0.0494" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="39"/>
+          <TransformGroup name="varioTronicMT_dblAdBlueLevelNumbersP1_SC" translation="0.019 0 0.0494" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="40"/>
+          <TransformGroup name="varioTronicMT_dblFuelUsageLevelNumbersP1_SC" translation="0.044 0 0.0382" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="41"/>
+          <TransformGroup name="varioTronicMT_dblEngineTempNumbersP1_SC" translation="0.023 0 0.0382" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="42"/>
+          <TransformGroup name="varioTronicMT_dblOperatingTimeP1_SC" translation="0.045 0 0.0273" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="43"/>
+          <TransformGroup name="varioTronicMT_dblVoltNumbersP1_SC" translation="0.022 0 0.027" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="44"/>
+          <TransformGroup name="varioTronicMT_dblWorkWidthP1_SC" translation="0.03 0 0.004" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="45"/>
+          <Shape name="varioTronicMT_dblBackPLifterSliderP1_SC" translation="-0.0738366 0 0.0503641" shapeId="2" clipDistance="30" nodeId="46" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="varioTronicMT_dblBackPLifterPercP1_SC" translation="-0.068 0 0.048" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="47"/>
+          <Shape name="varioTronicMT_dblBackPtoP1_SC" translation="-0.026 5.2e-05 0.031" rotation="-180 -1.86693e-05 -180" scale="1.6 1 1.6" shapeId="3" clipDistance="20" nodeId="48" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+          <TransformGroup name="varioTronicMT_dblBackRpmP1_SC" translation="-0.052 0 0.0275" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="49"/>
+          <TransformGroup name="varioTronicMT_dblCruiseControlC1P1_SC" translation="-0.018 0 -0.007" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="50"/>
+          <TransformGroup name="varioTronicMT_dblCruiseControlC2P1_SC" translation="-0.037 0 -0.007" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="51"/>
+          <TransformGroup name="varioTronicMT_dblCCfrontMemoP1_SC" translation="-0.056 0 -0.007" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="52"/>
+          <TransformGroup name="varioTronicMT_dblCCBackMemoP1_SC" translation="-0.075 0 -0.007" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="53"/>
+          <Shape name="varioTronicMT_dblGPSsatellitP1_SC" translation="0.0847622 0 -0.00826631" shapeId="4" clipDistance="30" nodeId="54" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronicMT_dblGPSsteeringWheelInactiveP1_SC" translation="0.00706 0 -0.008106" shapeId="5" clipDistance="30" nodeId="55" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronicMT_dblGPSsteeringWheelActiveP1_SC" translation="0.00706 0 -0.008106" shapeId="6" clipDistance="30" nodeId="56" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronic_dblHLMonP1_SC" translation="0.06 0 -0.008" rotation="0 180 0" shapeId="7" clipDistance="20" nodeId="57" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+          <Shape name="varioTronic_dblHLMfieldP1_SC" translation="0.06 0 -0.008" rotation="0 180 0" scale="1.9 1 1.9" shapeId="8" clipDistance="20" nodeId="58" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="14"/>
+          <Shape name="varioTronic_dblHLMheadlandP1_SC" translation="0.06 0 -0.008" rotation="0 180 0" scale="1.9 1 1.9" shapeId="9" clipDistance="20" nodeId="59" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="14"/>
+          <Shape name="varioTronicMT_dblNaviMapP1_SC" translation="0.0402684 -1.55866e-05 -0.0501826" rotation="4.26887e-07 3.07358e-05 0.000189538" shapeId="10" clipDistance="30" nodeId="60" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="5">
+            <Shape name="varioTronicMT_dblNaviMapPosP1_SC" translation="-1.37091e-06 1.55866e-05 0.000105619" rotation="-4.26887e-07 -3.11627e-05 -0.000186123" shapeId="11" clipDistance="30" nodeId="61" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          </Shape>
+          <TransformGroup name="varioTronicMT_dblCompassP1_SC" translation="0.041 0 -0.02" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="62"/>
+          <TransformGroup name="varioTronicMT_dblCompassNumbersP1_SC" translation="0.04 0 -0.02" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="63"/>
+          <TransformGroup name="varioTronicMT_dblFieldNumbersP1_SC" translation="0.078 0 -0.077" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="64"/>
+          <Shape name="varioTronicMT_dblBackFoldedP1_SC" translation="-0.07 0 0.031" rotation="0 180 0" scale="2 1 2" shapeId="12" clipDistance="20" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+          <Shape name="varioTronicMT_dblBackFoldingStateP1_SC" translation="-0.07 0 0.031" rotation="0 180 0" scale="2 1 2" shapeId="13" clipDistance="20" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="15"/>
+          <Shape name="varioTronicMT_dblBackUnfoldingStateP1_SC" translation="-0.07 0 0.031" rotation="0 180 0" scale="2 1 2" shapeId="14" clipDistance="20" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="14"/>
+          <Shape name="varioTronicMT_dblBackUnfoldingP1_SC" translation="-0.07 0 0.031" rotation="0 180 0" scale="2 1 2" shapeId="15" clipDistance="20" nodeId="68" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+          <TransformGroup name="varioTronicMT_dblTimeNumbersP1_SC" translation="0.003 0 0.074" rotation="90 1.70789e-05 -180" clipDistance="30" nodeId="69"/>
+        </TransformGroup>
+        <TransformGroup name="mainScreen" translation="0 0.0001 0" clipDistance="30" nodeId="70">
+          <Shape name="varioTronicMT_mainScreenP1_SC" shapeId="1" clipDistance="30" nodeId="71" castsShadows="false" receiveShadows="true" materialIds="7"/>
+          <Shape name="varioTronicMT_mainScreenDMP1_SC" shapeId="1" clipDistance="30" nodeId="72" castsShadows="false" receiveShadows="true" materialIds="8"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="secondDisplay" translation="0 0.001 0" clipDistance="30" nodeId="73">
+        <TransformGroup name="secondIcon" clipDistance="30" nodeId="74">
+          <TransformGroup name="varioTronicMT_dblFuelLevelNumbersP2_SC" translation="0.044 0 0.0494" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="75"/>
+          <TransformGroup name="varioTronicMT_dblAdBlueLevelNumbersP2_SC" translation="0.019 0 0.0494" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="76"/>
+          <TransformGroup name="varioTronicMT_dblFuelUsageLevelNumbersP2_SC" translation="0.044 0 0.0382" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="77"/>
+          <TransformGroup name="varioTronicMT_dblEngineTempNumbersP2_SC" translation="0.023 0 0.0382" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="78"/>
+          <TransformGroup name="varioTronicMT_dblOperatingTimeP2_SC" translation="0.045 0 0.0273" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="79"/>
+          <TransformGroup name="varioTronicMT_dblVoltNumbersP2_SC" translation="0.022 0 0.027" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="80"/>
+          <TransformGroup name="varioTronicMT_dblWorkWidth00P2_SC" translation="0.03 0 0.004" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="81"/>
+          <TransformGroup name="varioTronicMT_dblWorkWidth01P2_SC" translation="-0.039 0 0.06" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="82"/>
+          <TransformGroup name="varioTronicMT_dblFieldNumbersP2_SC" translation="-0.039 0 0.039" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="83"/>
+          <Shape name="varioTronicMT_dblGPSsatellitP2_SC" translation="0.066 0 -0.01" scale="1.5 1 1.5" shapeId="4" clipDistance="30" nodeId="84" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronicMT_dblGPSsteeringWheelInactiveP2_SC" translation="-0.054 0 -0.008106" shapeId="5" clipDistance="30" nodeId="85" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronicMT_dblGPSsteeringWheelActiveP2_SC" translation="-0.054 0 -0.008106" shapeId="6" clipDistance="30" nodeId="86" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronic_dblHLMonP2_SC" translation="0.035 0 -0.007" rotation="180 -1.86693e-05 180" shapeId="7" clipDistance="20" nodeId="87" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+          <Shape name="varioTronic_dblHLMfieldP2_SC" translation="0.035 0 -0.007" rotation="180 -1.86693e-05 180" scale="1.9 1 1.9" shapeId="8" clipDistance="20" nodeId="88" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="14"/>
+          <Shape name="varioTronic_dblHLMheadlandP2_SC" translation="0.035 0 -0.007" rotation="180 -1.86693e-05 180" scale="1.9 1 1.9" shapeId="9" clipDistance="20" nodeId="89" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="14"/>
+          <TransformGroup name="varioTronicMT_dblCompassP2_SC" translation="0.014 0 -0.019" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="90"/>
+          <TransformGroup name="varioTronicMT_dblCompassNumbersP2_SC" translation="0.013 0 -0.019" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="91"/>
+          <Shape name="varioTronicMT_dblNaviMapP2_SC" translation="0.0127943 -1.5676e-05 -0.0494475" rotation="4.26887e-07 3.07358e-05 0.000189538" shapeId="16" clipDistance="30" nodeId="92" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="5">
+            <Shape name="varioTronicMT_dblNaviMapPosP2_SC" translation="-1.3411e-06 1.57654e-05 0.000105619" rotation="-4.26887e-07 -3.11627e-05 -0.000186123" shapeId="11" clipDistance="30" nodeId="93" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          </Shape>
+          <TransformGroup name="varioTronicMT_dblTimeNumbersP2_SC" translation="0.00300002 0 0.074" rotation="90 1.70755e-05 180" clipDistance="30" nodeId="94"/>
+        </TransformGroup>
+        <TransformGroup name="secondScreen" clipDistance="30" nodeId="95">
+          <Shape name="varioTronicMT_secondScreenP2_SC" shapeId="1" clipDistance="30" nodeId="96" castsShadows="false" receiveShadows="true" materialIds="9"/>
+          <Shape name="varioTronicMT_secondScreenDMP2_SC" shapeId="1" clipDistance="30" nodeId="97" castsShadows="false" receiveShadows="true" materialIds="10"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="thirdDisplay" translation="0 0.001 0" clipDistance="30" nodeId="98">
+        <TransformGroup name="thirdIcon" clipDistance="30" nodeId="99">
+          <Shape name="varioTronicMT_dblGPSsatellitP3_SC" translation="0.066 0 0.07" scale="1.5 1 1.5" shapeId="4" clipDistance="30" nodeId="100" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronicMT_dblGPSsteeringWheelInactiveP3_SC" translation="-0.054 0 0.072" shapeId="5" clipDistance="30" nodeId="101" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronicMT_dblGPSsteeringWheelActiveP3_SC" translation="-0.054 0 0.072" shapeId="6" clipDistance="30" nodeId="102" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="varioTronic_dblHLMonP3_SC" translation="0.033 0 0.073" rotation="-180 -1.86693e-05 -180" shapeId="7" clipDistance="20" nodeId="103" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="14"/>
+          <Shape name="varioTronic_dblHLMfieldP3_SC" translation="0.033 0 0.073" rotation="-180 -1.86693e-05 -180" scale="1.9 1 1.9" shapeId="8" clipDistance="20" nodeId="104" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="14"/>
+          <Shape name="varioTronic_dblHLMheadlandP3_SC" translation="0.033 0 0.073" rotation="-180 -1.86693e-05 -180" scale="1.9 1 1.9" shapeId="9" clipDistance="20" nodeId="105" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="14"/>
+          <TransformGroup name="varioTronicMT_dblCompassP3_SC" translation="0.014 0 0.06" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="106"/>
+          <TransformGroup name="varioTronicMT_dblCompassNumbersP3_SC" translation="0.013 0 0.06" rotation="90 1.70789e-05 180" clipDistance="30" nodeId="107"/>
+          <Shape name="varioTronicMT_dblNaviMapP3_SC" translation="0.0127943 -1.5676e-05 -0.0097518" rotation="4.26887e-07 3.07358e-05 0.000189538" shapeId="17" clipDistance="30" nodeId="108" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="5">
+            <Shape name="varioTronicMT_dblNaviMapPosP3_SC" translation="-1.3411e-06 1.57356e-05 0.000105858" rotation="-4.26887e-07 -3.11627e-05 -0.000186123" shapeId="11" clipDistance="30" nodeId="109" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          </Shape>
+          <TransformGroup name="varioTronicMT_dblFieldNumbersP3_SC" translation="0.098 -2.98023e-08 -0.075" rotation="90 1.75024e-05 180" clipDistance="30" nodeId="110"/>
+        </TransformGroup>
+        <TransformGroup name="thirdScreen" clipDistance="30" nodeId="111">
+          <Shape name="varioTronicMT_thirdScreenP3_SC" shapeId="1" clipDistance="30" nodeId="112" castsShadows="false" receiveShadows="true" materialIds="12"/>
+          <Shape name="varioTronicMT_thirdScreenDMP3_SC" shapeId="1" clipDistance="30" nodeId="113" castsShadows="false" receiveShadows="true" materialIds="13"/>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="57">
+      <Attribute name="MaxHandle" type="integer" value="94"/>
+    </UserAttribute>
+    <UserAttribute nodeId="58">
+      <Attribute name="MaxHandle" type="integer" value="95"/>
+    </UserAttribute>
+    <UserAttribute nodeId="59">
+      <Attribute name="MaxHandle" type="integer" value="95"/>
+    </UserAttribute>
+    <UserAttribute nodeId="87">
+      <Attribute name="MaxHandle" type="integer" value="94"/>
+    </UserAttribute>
+    <UserAttribute nodeId="88">
+      <Attribute name="MaxHandle" type="integer" value="95"/>
+    </UserAttribute>
+    <UserAttribute nodeId="89">
+      <Attribute name="MaxHandle" type="integer" value="95"/>
+    </UserAttribute>
+    <UserAttribute nodeId="103">
+      <Attribute name="MaxHandle" type="integer" value="94"/>
+    </UserAttribute>
+    <UserAttribute nodeId="104">
+      <Attribute name="MaxHandle" type="integer" value="95"/>
+    </UserAttribute>
+    <UserAttribute nodeId="105">
+      <Attribute name="MaxHandle" type="integer" value="95"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

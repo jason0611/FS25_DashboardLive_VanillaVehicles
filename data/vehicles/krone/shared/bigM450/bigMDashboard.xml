@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+
+<!-- Display Mode -->
+			<group name="DARKMODE" dbl="darkmode"/>
+			<group name="LIGHTMODE" dbl="lightmode"/>
+			<!-- Guidance Steering -->
+			<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
+    
+	<dashboardCompound name="BIGM_DASHBOARD" filename="data/vehicles/krone/shared/bigMDashboard.i3d" node="bigMDashboard">
+	<!-- </enterable> -->		
+			<dashboard displayType="TEXT" valueType="enterable.outsideTemperature" node="bigM_dblOutsideTempAO" textColor="1 1 1 1" emissiveScale="0.4" textMask="00.0" textSize="0.0035" font="GENERIC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="bigM_dblOperatingTimeNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+	<!-- <fillUnit> -->	
+			<dashboard displayType="ANIMATION" valueType="fillUnit.fillLevel" animName="fuelNeedleAnim" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="bigM_dblFuelDecalP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.8" warningThresholdMax="20" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="bigM_dblFuelLevelPercentNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="ANIMATION" valueType="fillUnit.fillLevel" animName="defNeedleAnim" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="fillUnit.fillLevelWarning" node="bigM_dblAdBlueDecalP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="ALBUTT_BLUE1" intensity="0.8" warningThresholdMax="20" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="bigM_dblAdBlueLevelPercentNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+	<!-- <drivable>	 -->
+			<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="bigM_dblCruiseControlP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="0.6" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="bigM_dblCruiseControlNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+	<!-- </motorized> -->
+			<dashboard displayType="ANIMATION" valueType="motorized.rpm" animName="rpmNeedleAnim" minValueAnim="800" maxValueAnim="2200" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ANIMATION" valueType="motorized.speed" animName="speedNeedleAnim" minValueAnim="0" maxValueAnim="50" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="ANIMATION" valueType="motorized.motorTemperature" animName="temperatureNeedleAnim" minValueAnim="20" maxValueAnim="120" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorized.rpm" node="bigM_dblRpmNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.007" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorized.speed" node="bigM_dblSpeedNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.007" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="bigM_dblEngineTempNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="bigM_dblFuelUsageNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000.00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+	<!-- DBL -->
+		<!-- always on -->
+			<!-- weather -->
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherSunAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherCloudAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherRainAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherHailAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherSnowAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblWeatherTwisterAO" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblBasicDisplay_Decal" intensity="0.2" groups="MOTOR_ACTIVE LIGHTMODE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblBasicDisplay_DecalDM" intensity="0.2" groups="MOTOR_ACTIVE DARKMODE"/>
+            <dashboard displayType="VISIBILITY" node="bigM_dblBasicDisplay_Decal" groups="MOTOR_ACTIVE LIGHTMODE"/>
+            <dashboard displayType="VISIBILITY" node="bigM_dblBasicDisplay_DecalDM" groups="MOTOR_ACTIVE DARKMODE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblAdBlueDecalP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblFuelDecalP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblEngineTempDecalP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblCruiseControlP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblParkBreakOnP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblGPSsatellitP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblGPSactiveP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblHLMonP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblMowerSwathMiddleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmSliderMowerLeftP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmSliderMowerMiddleP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="bigM_dblRpmSliderMowerRightP1_SC" groups="MOTOR_ACTIVE"/>
+			
+			<dashboard displayType="EMITTER" node="bigM_dblParkBreakOnP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblParkBreakOffP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblMowerSwathLeftP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblMowerSwathMiddleP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" node="bigM_dblMowerSwathRightP1_SC" intensity="0.2" groups="MOTOR_ACTIVE"/>
+		<!-- Real Clock -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="bigM_dblRealClockNumbersAO" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" textMask="ssssssss" textSize="0.003" font="GENERIC_BOLD" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- CVT -->
+			<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="motorcoldlamp" node="bigM_dblEngineTempDecalP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="CARUELLENICOLAS_BLUE1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="1 2 3 4" node="bigM_dblCVTDriveLevel00P1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="2 3 4" node="bigM_dblCVTDriveLevel01P1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="3 4" node="bigM_dblCVTDriveLevel02P1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="accRamp" state="4" node="bigM_dblCVTDriveLevel03P1_SC" groups="MOTOR_ACTIVE"/>
+			<!-- VCA -->
+			<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="park" node="bigM_dblParkBreakOffP1_SC" intensity="0.2" idleValue="-1" groups="MOTOR_ACTIVE DBL_PARK"/>
+			<!-- HLM -->
+			<dashboard valueType="dbl.hlm" option="headland" displayType="VISIBILITY" node="bigM_dblHLMheadlandP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.hlm" option="field" 	 displayType="VISIBILITY" node="bigM_dblHLMfieldP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.hlm" option="" 		 displayType="EMITTER" node="bigM_dblHLMonP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="AMAZONE_ORANGE1" intensity="0.3" emissiveScale="0.8" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.hlm" option="field" 	 displayType="EMITTER" node="bigM_dblHLMfieldP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.hlm" option="headland" displayType="EMITTER" node="bigM_dblHLMheadlandP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_ACTIVE"/>
+			<!-- Compass -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingText2" node="bigM_dblGPScompassP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="heading" node="bigM_dblGPScompassNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- Mower Swath -->
+			<dashboard valueType="dbl.base" cmd="swath" stateText="2" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathLeftP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.base" cmd="swath" stateText="2" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathRightP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.base" cmd="swath" stateText="3" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathLeftP1_SC" groups="MOTOR_ACTIVE"/>
+			<dashboard valueType="dbl.base" cmd="swath" stateText="4" joints="0" displayType="VISIBILITY" node="bigM_dblMowerSwathRightP1_SC" groups="MOTOR_ACTIVE"/>
+			<!-- Mower PTO -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="bigM_dblRpmMowerLeftNumbersP1_SC" factor="0.46" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="bigM_dblRpmMowerMiddleNumbersP1_SC" factor="0.61" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="bigM_dblRpmMowerRightNumbersP1_SC" factor="0.46" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.base" cmd="ptoRpm" joints="0" node="bigM_dblRpmSliderMowerLeftP1_SC" factor="0.46" minValueSlider="0" maxValueSlider="1000" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.base" cmd="ptoRpm" joints="0" node="bigM_dblRpmSliderMowerMiddleP1_SC" factor="0.61" minValueSlider="0" maxValueSlider="1000" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.base" cmd="ptoRpm" joints="0" node="bigM_dblRpmSliderMowerRightP1_SC" factor="0.46" minValueSlider="0" maxValueSlider="1000" intensity="0.3" groups="MOTOR_ACTIVE"/>
+			<!-- Mower Lift State -->
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="unfoldingState" joints="0" node="bigM_dblHeaderLiftStateNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<!-- <dashboard displayType="TEXT" valueType="dbl.base" cmd="unfoldingState" joints="0" node="bigM_dblHeaderFoldingStateNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/> -->
+			<!-- Mower cut height -->
+			<!-- <dashboard displayType="TEXT" valueType="dbl.combine" cmd="cutHeight" node="bigM_dblMowerCutHeightLeftNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.combine" cmd="cutHeight" node="bigM_dblMowerCutHeightMiddleNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.combine" cmd="cutHeight" node="bigM_dblMowerCutHeightRightNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/> -->
+	<!-- <ai> -->	
+			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="bigM_dblGPSsatellitP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="bigM_dblGPSactiveP1_SC" baseColor="0.15 0.15 0.15 1" baseColorDarkMode="1 1 1 1" emitColor="BAUER_GREEN1" intensity="0.6" groups="MOTOR_ACTIVE"/>
+    </dashboardCompound>
+	
+	<i3dMappings>
+		<i3dMapping id="bigMDashboard" node="0>"/>
+		<i3dMapping id="bigM_MainDisplay" node="0>0"/>
+		<i3dMapping id="alwaysOn" node="0>0|0"/>
+		<i3dMapping id="bigM_dblRealClockNumbersAO" node="0>0|0|0"/>
+		<i3dMapping id="bigM_dblSystemWarningAO" node="0>0|0|1"/>
+		<i3dMapping id="bigM_dblOutsideTempAO" node="0>0|0|2"/>
+		<i3dMapping id="bigM_dblWeatherSunAO" node="0>0|0|3"/>
+		<i3dMapping id="bigM_dblWeatherCloudAO" node="0>0|0|4"/>
+		<i3dMapping id="bigM_dblWeatherRainAO" node="0>0|0|5"/>
+		<i3dMapping id="bigM_dblWeatherHailAO" node="0>0|0|6"/>
+		<i3dMapping id="bigM_dblWeatherSnowAO" node="0>0|0|7"/>
+		<i3dMapping id="bigM_dblWeatherTwisterAO" node="0>0|0|8"/>
+		<i3dMapping id="basicIcon" node="0>0|1"/>
+		<i3dMapping id="bigM_dblRpmNumbersP1_SC" node="0>0|1|0"/>
+		<i3dMapping id="bigM_dblSpeedNumbersP1_SC" node="0>0|1|1"/>
+		<i3dMapping id="bigM_dblEngineTempDecalP1_SC" node="0>0|1|2"/>
+		<i3dMapping id="bigM_dblEngineTempNumbersP1_SC" node="0>0|1|3"/>
+		<i3dMapping id="bigM_dblFuelDecalP1_SC" node="0>0|1|4"/>
+		<i3dMapping id="bigM_dblFuelLevelPercentNumbersP1_SC" node="0>0|1|5"/>
+		<i3dMapping id="bigM_dblAdBlueDecalP1_SC" node="0>0|1|6"/>
+		<i3dMapping id="bigM_dblAdBlueLevelPercentNumbersP1_SC" node="0>0|1|7"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel00P1_SC" node="0>0|1|8"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel01P1_SC" node="0>0|1|9"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel02P1_SC" node="0>0|1|10"/>
+		<i3dMapping id="bigM_dblCVTDriveLevel03P1_SC" node="0>0|1|11"/>
+		<i3dMapping id="bigM_dblParkBreakOnP1_SC" node="0>0|1|12"/>
+		<i3dMapping id="bigM_dblParkBreakOffP1_SC" node="0>0|1|13"/>
+		<i3dMapping id="bigM_dblCruiseControlP1_SC" node="0>0|1|14"/>
+		<i3dMapping id="bigM_dblCruiseControlNumbersP1_SC" node="0>0|1|15"/>
+		<i3dMapping id="bigM_dblMowerSwathLeftP1_SC" node="0>0|1|16"/>
+		<i3dMapping id="bigM_dblRpmSliderMowerLeftP1_SC" node="0>0|1|17"/>
+		<i3dMapping id="bigM_dblRpmMowerLeftNumbersP1_SC" node="0>0|1|18"/>
+		<i3dMapping id="bigM_dblMowerSwathMiddleP1_SC" node="0>0|1|19"/>
+		<i3dMapping id="bigM_dblRpmSliderMowerMiddleP1_SC" node="0>0|1|20"/>
+		<i3dMapping id="bigM_dblRpmMowerMiddleNumbersP1_SC" node="0>0|1|21"/>
+		<i3dMapping id="bigM_dblMowerSwathRightP1_SC" node="0>0|1|22"/>
+		<i3dMapping id="bigM_dblRpmSliderMowerRightP1_SC" node="0>0|1|23"/>
+		<i3dMapping id="bigM_dblRpmMowerRightNumbersP1_SC" node="0>0|1|24"/>
+		<i3dMapping id="bigM_dblFuelUsageNumbersP1_SC" node="0>0|1|25"/>
+		<i3dMapping id="bigM_dblHeaderLiftStateNumbersP1_SC" node="0>0|1|26"/>
+		<i3dMapping id="bigM_dblHeaderFoldingStateNumbersP1_SC" node="0>0|1|27"/>
+		<i3dMapping id="bigM_dblOperatingTimeNumbersP1_SC" node="0>0|1|28"/>
+		<i3dMapping id="bigM_dblVehicleLiftStateNumbersP1_SC" node="0>0|1|29"/>
+		<i3dMapping id="bigM_dblMowerLeftLiftStateNumbersP1_SC" node="0>0|1|30"/>
+		<i3dMapping id="bigM_dblMowerMiddleLiftStateNumbersP1_SC" node="0>0|1|31"/>
+		<i3dMapping id="bigM_dblMowerRightLiftStateNumbersP1_SC" node="0>0|1|32"/>
+		<i3dMapping id="bigM_dblMowerCutHeightLeftNumbersP1_SC" node="0>0|1|33"/>
+		<i3dMapping id="bigM_dblMowerCutHeightMiddleNumbersP1_SC" node="0>0|1|34"/>
+		<i3dMapping id="bigM_dblMowerCutHeightRightNumbersP1_SC" node="0>0|1|35"/>
+		<i3dMapping id="bigM_dblHLMonP1_SC" node="0>0|1|36"/>
+		<i3dMapping id="bigM_dblHLMfieldP1_SC" node="0>0|1|37"/>
+		<i3dMapping id="bigM_dblHLMheadlandP1_SC" node="0>0|1|38"/>
+		<i3dMapping id="bigM_dblGPSsatellitP1_SC" node="0>0|1|39"/>
+		<i3dMapping id="bigM_dblGPSactiveP1_SC" node="0>0|1|40"/>
+		<i3dMapping id="bigM_dblGPScompassP1_SC" node="0>0|1|41"/>
+		<i3dMapping id="bigM_dblGPScompassNumbersP1_SC" node="0>0|1|42"/>
+		<i3dMapping id="basicScreen" node="0>0|2"/>
+		<i3dMapping id="bigM_dblBasicDisplay_Decal" node="0>0|2|0"/>
+		<i3dMapping id="bigM_dblBasicDisplay_DecalDM" node="0>0|2|1"/>
+	</i3dMappings>
+</dashboardCompounds>

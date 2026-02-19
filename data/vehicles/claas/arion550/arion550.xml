@@ -110,6 +110,24 @@
                     <wheel configId="weight3"/>
                     <wheel configId="weight3"/>
                 </wheels>
+			</wheelConfiguration>
+            <wheelConfiguration name="$l10n_configuration_valueWheelNarrow1500mm" price="1000" saveId="NARROW_1500" numDynamicConfigurations="1">
+                <wheels baseConfig="DEFAULT" isCareWheelConfiguration="true" ackermannSteeringIndex="4">
+                    <wheel dimensions="320_85R34" rimOffset="-0.2015">
+                        <innerRim filename="$data/shared/wheels/rims/rim001.i3d" node="6|1" offset="0.02"/>
+                    </wheel>
+                    <wheel dimensions="320_85R34" rimOffset="-0.2015">
+                        <innerRim filename="$data/shared/wheels/rims/rim001.i3d" node="6|0" offset="0.02"/>
+                    </wheel>
+                    <wheel dimensions="320_90R50_rc" rimOffset="-0.174">
+                        <innerRim filename="$data/shared/wheels/rims/rim001.i3d" node="6|1" offset="0.01"/>
+                    </wheel>
+                    <wheel dimensions="320_90R50_rc" rimOffset="-0.174">
+                        <innerRim filename="$data/shared/wheels/rims/rim001.i3d" node="6|0" offset="0.01"/>
+                    </wheel>
+                </wheels>
+                <objectChange node="wheelFrontLeftFender" visibilityActive="false" visibilityInactive="true"/>
+                <objectChange node="wheelFrontRightFender" visibilityActive="false" visibilityInactive="true"/>																						   
             </wheelConfiguration>
 
             <wheelConfiguration name="$l10n_configuration_valueWheelNarrow" price="1000" saveId="NARROW" numDynamicConfigurations="1">
@@ -518,6 +536,11 @@
                 <consumer fillUnitIndex="2" usage="4.2" fillType="def"/>
                 <consumer fillUnitIndex="3" usage="250" fillType="air" permanentConsumption="false" refillLitersPerSecond="350" refillCapacityPercentage="0.5"/>
             </consumerConfiguration>
+			<consumerConfiguration>
+                <consumer fillUnitIndex="1" usage="72" fillType="diesel"/>
+                <consumer fillUnitIndex="2" usage="4.6" fillType="def"/>
+                <consumer fillUnitIndex="3" usage="250" fillType="air" permanentConsumption="false" refillLitersPerSecond="350" refillCapacityPercentage="0.5"/>
+            </consumerConfiguration>					
         </consumerConfigurations>
 
         <differentialConfigurations>

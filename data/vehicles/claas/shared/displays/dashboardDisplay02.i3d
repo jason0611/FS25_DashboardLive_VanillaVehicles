@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="dashboardDisplay02.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.10"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="1" filename="$data/vehicles/claas/arion550/axion800LCD_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="axion800LCD_01_mat" materialId="59" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="dashboardDisplay02.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <Shape name="dashboardDisplay02" translation="0 0.330896 -0.0435481" rotation="-48.9181 0 0" shapeId="1" clipDistance="30" nodeId="432" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="59"/>
+  </Scene>
+
+</i3D>

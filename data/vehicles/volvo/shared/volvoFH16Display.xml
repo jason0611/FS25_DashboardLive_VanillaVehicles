@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
+
+
+<!-- Page -->
+	<group name="PAGE1" dbl="page" page="1"/>
+	<group name="PAGE2" dbl="page" page="2"/>
+    
+	<dashboardCompound name="VOLVO_FH16_DASHBOARD" filename="data/vehicles/volvo/shared/volvoFH16Display.i3d" node="volvoFH16Dashboard">
+		<dashboard displayType="VISIBILITY" node="volvoFH16_dblStartScreen" groups="MOTOR_STARTING"/>
+		<dashboard displayType="EMITTER" node="volvoFH16_dblStartScreen" idleValue="-1" intensity="0.2" groups="MOTOR_STARTING"/>
+		<dashboard displayType="EMITTER" node="volvoFH16_dblMainScreenP1" idleValue="-1" intensity="0.2" groups="MOTOR_RUNNING PAGE1"/>
+		<dashboard displayType="EMITTER" node="volvoFH16_dblNaviMapP2" idleValue="-1" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
+		<dashboard displayType="EMITTER" node="volvoFH16_dblNaviMapPosP2" emitColor="VOLVO_YELLOW1" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
+<!-- MiniMap -->
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="volvoFH16_dblNaviMapP2" groups="MOTOR_RUNNING PAGE2"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="volvoFH16_dblNaviMapPosP2" groups="MOTOR_RUNNING PAGE2"/>
+    </dashboardCompound>
+	
+	<i3dMappings>
+		<i3dMapping id="decal3" node="0>"/>
+		<i3dMapping id="volvoFH16Dashboard" node="1>"/>
+		<i3dMapping id="volvoFH16_dblStartScreen" node="1>0"/>
+		<i3dMapping id="volvoLogo_decal" node="1>0|0"/>
+		<i3dMapping id="volvoFH16_dblMainScreenP1" node="1>1"/>
+		<i3dMapping id="volvoFH16_dblNaviMapP2" node="1>2"/>
+		<i3dMapping id="volvoFH16_dblNaviMapPosP2" node="1>2|0"/>
+	</i3dMappings>
+</dashboardCompounds>

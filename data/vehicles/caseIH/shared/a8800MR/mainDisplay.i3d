@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="mainDisplay.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.10"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="8" filename="$data/shared/default_specular.png"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="10" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="5" filename="../../a8800MR/textures/a8800mrMainDisplay.png"/>
+    <File fileId="1" filename="../../a8800MR/textures/a8800mrStartScreen.png"/>
+    <File fileId="7" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="6" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="a8800Display_mat" materialId="5" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="5"/>
+    </Material>
+    <Material name="a8800Display_mat" materialId="6" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="5"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="dblNaviMap_mat" materialId="7" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="10">
+    </Material>
+    <Material name="dblSliderLine_mat" materialId="8" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="6"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="9" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="8"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="10" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="7"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="8"/>
+    </Material>
+    <Material name="startScreen_mat" materialId="11" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="mainDisplay.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="mainDisplay" clipDistance="30" nodeId="36">
+      <TransformGroup name="basicDisplay" clipDistance="30" nodeId="37">
+        <TransformGroup name="startScreen" clipDistance="30" nodeId="38">
+          <Shape name="a8800StartScreen" translation="0 -0.0001 0" scale="1.015 1 1.015" shapeId="1" clipDistance="30" nodeId="39" castsShadows="false" receiveShadows="true" materialIds="11"/>
+        </TransformGroup>
+        <TransformGroup name="basicIcon" clipDistance="30" nodeId="40">
+          <TransformGroup name="a8800_dblPlayerNameP1_CC" translation="0.0380955 3.91321e-08 0.073" rotation="90 0 180" clipDistance="30" nodeId="41"/>
+          <Shape name="a8800_dblGPSsatellitP1_CC" translation="0.09803 0 0.055049" shapeId="2" clipDistance="30" nodeId="42" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <Shape name="a8800_dblGPSactiveP1_CC" translation="0.047817 0 0.054714" shapeId="3" clipDistance="30" nodeId="43" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="a8800_dblFieldNumbersP1_CC" translation="0.073 0 0.056" rotation="90 0 180" clipDistance="30" nodeId="44"/>
+          <TransformGroup name="a8800_dblCompassP1_CC" translation="0.074 0 0.048" rotation="90 0 180" clipDistance="30" nodeId="45"/>
+          <TransformGroup name="a8800_dblCompassNumbersP1_CC" translation="0.073 0 0.048" rotation="90 0 180" clipDistance="30" nodeId="46"/>
+          <Shape name="a8800_dblAdBlueScalaDecalP1_CC" translation="0.102148 0 0.02281" shapeId="4" clipDistance="30" nodeId="47" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="6"/>
+          <Shape name="a8800_dblAdBlueSliderP1_CC" translation="0.102148 0 0.02281" shapeId="5" clipDistance="30" nodeId="48" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="a8800_dblAdBlueIconP1_CC" translation="0.102108 0 -0.005303" shapeId="6" clipDistance="30" nodeId="49" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="a8800_dblAdBluePercNumbersP1_CC" translation="0.09 0 -0.017" rotation="90 0 180" clipDistance="30" nodeId="50"/>
+          <Shape name="a8800_dblFuelScalaDecalP1_CC" translation="0.044 0 0.02281" shapeId="7" clipDistance="30" nodeId="51" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="6"/>
+          <Shape name="a8800_dblFuelSliderP1_CC" translation="0.044 0 0.02281" shapeId="8" clipDistance="30" nodeId="52" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="a8800_dblFuelIconP1_CC" translation="0.044 0 -0.005303" shapeId="9" clipDistance="30" nodeId="53" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="a8800_dblFuelPercNumbersP1_CC" translation="0.048 -2.50948e-08 -0.017" rotation="90 0 180" clipDistance="30" nodeId="54"/>
+          <Shape name="a8800_dblForwardArrowP1_CC" translation="0.089921 0 -0.001026" shapeId="10" visibility="false" clipDistance="30" nodeId="55" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <Shape name="a8800_dblNeutralGearP1_CC" translation="0.0731922 5.19266e-05 -0.000959488" rotation="2.56132e-06 180 6.83019e-06" scale="2 1 2" shapeId="11" visibility="false" clipDistance="20" nodeId="56" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+          <Shape name="a8800_dblBackwardArrowP1_CC" translation="0.056585 0 -0.001026" shapeId="12" visibility="false" clipDistance="30" nodeId="57" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="a8800_dblRealClockNumbersP1_CC" translation="0.0730904 5.05349e-08 -0.024" rotation="90 0 180" clipDistance="30" nodeId="58"/>
+          <TransformGroup name="a8800_dblOperatingTimeNumbersP1_CC" translation="-0.007 0 0.051" rotation="90 0 180" clipDistance="30" nodeId="59"/>
+          <TransformGroup name="a8800_dblEngineTempNumbersP1_CC" translation="-0.003 0 0.03" rotation="90 0 180" clipDistance="30" nodeId="60"/>
+          <TransformGroup name="a8800_dblWorkHectareNumbersP1_CC" translation="-0.005 0 0.007" rotation="90 0 180" clipDistance="30" nodeId="61"/>
+          <TransformGroup name="a8800_dblEgnineLoadNumbersP1_CC" translation="-0.082 0 0.051" rotation="90 0 180" clipDistance="30" nodeId="62"/>
+          <TransformGroup name="a8800_dblEgnineSpeedNumbersP1_CC" translation="-0.082 0 0.03" rotation="90 0 180" clipDistance="30" nodeId="63"/>
+          <TransformGroup name="a8800_dblCruiseControlNumbersP1_CC" translation="-0.082 0 0.007" rotation="90 0 180" clipDistance="30" nodeId="64"/>
+          <Shape name="a8800_dblCompassDecalP1_CC" translation="0.031135 0 -0.004714" shapeId="13" clipDistance="30" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="6"/>
+          <Shape name="a8800_dblCompassNeedleP1_CC" translation="0.031127 0 -0.004676" shapeId="14" clipDistance="30" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="6"/>
+          <Shape name="a8800_dblWeatherSunP1_CC" translation="-0.082 0 0.076" rotation="1e-06 180 6e-06" shapeId="15" clipDistance="20" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherRequiredMask="0x1"/>
+          <Shape name="a8800_dblWeatherCloudP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="16" clipDistance="20" nodeId="68" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherRequiredMask="0x10"/>
+          <Shape name="a8800_dblWeatherRainP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="17" clipDistance="20" nodeId="69" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherRequiredMask="0x2"/>
+          <Shape name="a8800_dblWeatherHailP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="18" clipDistance="20" nodeId="70" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherRequiredMask="0x4"/>
+          <Shape name="a8800_dblWeatherSnowP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="19" clipDistance="20" nodeId="71" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherRequiredMask="0x8"/>
+          <Shape name="a8800_dblWeatherTwisterP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="20" clipDistance="20" nodeId="72" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherPreventMask="0x1f"/>
+          <TransformGroup name="a8800_dblOutsideTempNumbersP1_CC" translation="-0.071 3.91321e-08 0.074" rotation="90 0 180" clipDistance="30" nodeId="73"/>
+        </TransformGroup>
+        <TransformGroup name="naviMap" clipDistance="30" nodeId="74">
+          <Shape name="a8800_dblNaviMapP1_CC" translation="0.033209 0 0.030585" shapeId="21" clipDistance="30" nodeId="75" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7">
+            <Shape name="a8800_dblNaviMapPosP1_CC" shapeId="22" clipDistance="30" nodeId="76" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="5"/>
+          </Shape>
+        </TransformGroup>
+        <TransformGroup name="basicScreen" clipDistance="30" nodeId="77">
+          <Shape name="a8800MainScreen" shapeId="23" clipDistance="30" nodeId="78" castsShadows="false" receiveShadows="true" materialIds="6"/>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

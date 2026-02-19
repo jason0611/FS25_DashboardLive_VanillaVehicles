@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="oxboMKB4TRDashboard.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.8"/>
+  </Asset>
+
+  <Files>
+    <File fileId="8" filename="$data/fillPlanes/spinach_diffuse.dds"/>
+    <File fileId="9" filename="$data/fillPlanes/spinach_normal.dds"/>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="7" filename="$data/shared/default_specular.dds"/>
+    <File fileId="3" filename="$data/shared/default_vmask.png"/>
+    <File fileId="12" filename="$data/vehicles/oxbo/mkb4TR/mkb4TRDecals_diffuse.dds"/>
+    <File fileId="11" filename="../../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="1" filename="../mkb4TR/textures/oxboMKB4TRMainDisplay_diffuse.png"/>
+    <File fileId="6" filename="../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
+    <File fileId="5" filename="../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dblNaviMap_mat" materialId="5" diffuseColor="0.501961 0.501961 0.501961 1" customShaderId="11">
+    </Material>
+    <Material name="dblSliderLine_mat" materialId="6" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="5"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="7" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="6"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="8" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="6"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="oxboMKB4TRDisplay_mat" materialId="9" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="12"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="7"/>
+      <CustomParameter name="lightControl" value="2"/>
+    </Material>
+    <Material name="oxboMKB4TRDisplay_mat" materialId="10" customShaderId="4" customShaderVariation="slider">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="oxboMKB4TRDisplay_mat" materialId="11" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="spinach_mat" materialId="12" customShaderId="4" customShaderVariation="loadingBar">
+      <Texture fileId="8"/>
+      <Normalmap fileId="9"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="scrollSpeed" value="0.5 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="oxboMKB4TRDashboard.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="oxboMKB4TRDashboard" clipDistance="30" nodeId="56">
+      <TransformGroup name="mainDisplay" clipDistance="30" nodeId="57">
+        <TransformGroup name="mainIcon" clipDistance="30" nodeId="58">
+          <Shape name="oxboMKB4TR_dblRpmSliderP1_SC" translation="0.097425 0 0.059796" shapeId="1" clipDistance="30" nodeId="59" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <Shape name="oxboMKB4TR_dblSpeedrSliderP1_SC" translation="0.09002 0 0.02873" shapeId="2" clipDistance="30" nodeId="60" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="oxboMKB4TR_dblSpeedNumbersP1_SC" translation="0.083 0 0.003" rotation="90 -1.86693e-05 180" clipDistance="30" nodeId="61"/>
+          <Shape name="oxboMKB4TR_dblGearDriveP1_SC" translation="0.124 0 0.017" rotation="180 -5.00896e-06 180" shapeId="3" clipDistance="20" nodeId="62" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblGearNeutralP1_SC" translation="0.124 5.2e-05 0.011" rotation="180 -5.00896e-06 180" shapeId="4" clipDistance="20" nodeId="63" castsShadows="true" receiveShadows="true" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblGearReversP1_SC" translation="0.124 5.2e-05 0.005" rotation="180 -5.00896e-06 180" shapeId="5" clipDistance="20" nodeId="64" castsShadows="true" receiveShadows="true" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblCruiseControlArrowRotP1_SC" translation="0.109065 0 0.009683" shapeId="6" clipDistance="30" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="11"/>
+          <Shape name="oxboMKB4TR_dblAdBlueSliderP1_SC" translation="0.112035 0 -0.016068" shapeId="7" clipDistance="30" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <Shape name="oxboMKB4TR_dblAdblueWarningP1_SC" translation="0.111811 0 -0.016322" shapeId="8" clipDistance="30" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <TransformGroup name="oxboMKB4TR_dblAdBluePercNumbersP1_SC" translation="0.105 0 -0.032" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="68"/>
+          <Shape name="oxboMKB4TR_dblFuelSliderP1_SC" translation="0.111981 0 -0.048033" shapeId="7" clipDistance="30" nodeId="69" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <Shape name="oxboMKB4TR_dblFuelWarningP1_SC" translation="0.111531 0 -0.049412" shapeId="9" clipDistance="30" nodeId="70" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <TransformGroup name="oxboMKB4TR_dblFuelPercNumbersP1_SC" translation="0.105 0 -0.064" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="71"/>
+          <Shape name="oxboMKB4TR_dblOilTempSliderP1_SC" translation="0.080663 0 -0.016068" shapeId="7" clipDistance="30" nodeId="72" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="oxboMKB4TR_dblOilTempNumbersP1_SC" translation="0.075 0 -0.032" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="73"/>
+          <Shape name="oxboMKB4TR_dblEngineTempSliderP1_SC" translation="0.080593 0 -0.048011" shapeId="7" clipDistance="30" nodeId="74" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <Shape name="oxboMKB4TR_dblEngineTempWarningP1_SC" translation="0.081066 0 -0.049342" shapeId="10" clipDistance="30" nodeId="75" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <TransformGroup name="oxboMKB4TR_dblEngineTempNumbersP1_SC" translation="0.075 0 -0.064" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="76"/>
+          <TransformGroup name="oxboMKB4TR_dblPrecFarmTonPerHectarP1_SC" translation="0.035 0 -0.016" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="77"/>
+          <TransformGroup name="oxboMKB4TR_dblPrecFarmHectarDailyP1_SC" translation="0.035 0 -0.03" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="78"/>
+          <TransformGroup name="oxboMKB4TR_dblPrecFarmHectarAllP1_SC" translation="0.035 0 -0.045" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="79"/>
+          <TransformGroup name="oxboMKB4TR_dblOperatingTimeP1_SC" translation="0.035 0 -0.064" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="80"/>
+          <Shape name="oxboMKB4TR_dblBunkerFoldedP1_SC" translation="0.024 0 -0.007" rotation="0 180 0" scale="1.8 1 1.8" shapeId="11" clipDistance="20" nodeId="81" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          <Shape name="oxboMKB4TR_dblBunkerFoldingStateP1_SC" translation="0.024 0 -0.007" rotation="0 180 0" scale="1.8 1 1.8" shapeId="12" clipDistance="20" nodeId="82" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblBunkerUnfoldingStateP1_SC" translation="0.024 0 -0.007" rotation="0 180 0" scale="1.8 1 1.8" shapeId="13" clipDistance="20" nodeId="83" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="oxboMKB4TR_dblBunkerUnfoldingP1_SC" translation="0.024 0 -0.007" rotation="0 180 0" scale="1.8 1 1.8" shapeId="14" clipDistance="20" nodeId="84" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          <Shape name="oxboMKB4TR_dblLadderCloseP1_SC" translation="0.026715 0 -0.059694" shapeId="15" clipDistance="30" nodeId="85" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <Shape name="oxboMKB4TR_dblLadderOpenP1_SC" translation="0.026715 0 -0.059694" shapeId="16" clipDistance="30" nodeId="86" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <Shape name="oxboMKB4TR_dblBunkerFillLevelP1_SC" translation="-0.000304 0 -0.031819" shapeId="17" clipDistance="30" nodeId="87" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+          <TransformGroup name="oxboMKB4TR_dblBunkerFillLevelNumbersP1_SC" translation="-0.026 1.3919e-09 -0.012" rotation="90 -1.86693e-05 180" clipDistance="30" nodeId="88"/>
+          <TransformGroup name="oxboMKB4TR_dblBunkerFillLevelPrecNumbersP1_SC" translation="-0.026 1.3919e-09 -0.0635" rotation="90 -1.86693e-05 180" clipDistance="30" nodeId="89"/>
+          <Shape name="oxboMKB4TR_dblBunkerOverlodingP1_SC" translation="-0.000383 0 -0.049912" shapeId="18" clipDistance="30" nodeId="90" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12"/>
+          <TransformGroup name="oxboMKB4TR_dblBunkerFillLevelTonNumbersP1_SC" translation="-0.128 1.30801e-09 0.004" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="91"/>
+          <Shape name="oxboMKB4TR_dblFillLevelTonSliderP1_SC" translation="-0.104202 0 0.039547" shapeId="19" clipDistance="30" nodeId="92" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+          <TransformGroup name="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" translation="-0.093 0 0.057" rotation="90 -1.8783e-05 180" clipDistance="30" nodeId="93"/>
+          <TransformGroup name="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" translation="-0.062 1.2e-07 0.057" rotation="90 -1.8783e-05 180" clipDistance="30" nodeId="94"/>
+          <TransformGroup name="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" translation="-0.03 1.2e-07 0.057" rotation="90 -1.8783e-05 180" clipDistance="30" nodeId="95"/>
+          <Shape name="oxboMKB4TR_dblHeaderLoweredP1_SC" translation="-0.042141 0 -0.058138" shapeId="20" clipDistance="30" nodeId="96" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <Shape name="oxboMKB4TR_dblHeaderLiftedP1_SC" translation="-0.042032 0 -0.018057" shapeId="21" clipDistance="30" nodeId="97" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <Shape name="oxboMKB4TR_dblGPSsatellitP1_SC" translation="-0.124595 0 0.078205" shapeId="22" clipDistance="30" nodeId="98" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <TransformGroup name="oxboMKB4TR_dblFieldNumbersP1_SC" translation="-0.116917 1.31978e-07 0.0704816" rotation="90 -1.8783e-05 180" clipDistance="30" nodeId="99"/>
+          <Shape name="oxboMKB4TR_dblGPSactiveP1_SC" translation="0 0 0.076615" shapeId="23" clipDistance="30" nodeId="100" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <Shape name="oxboMKB4TR_dblParkBreakP1_SC" translation="0.108656 0 0.076392" shapeId="24" clipDistance="30" nodeId="101" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+          <TransformGroup name="oxboMKB4TR_dblRealClockP1_SC" translation="0.102 0 -0.081" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="102"/>
+          <Shape name="oxboMKB4TR_dblWeatherSunP1_SC" translation="-0.109 0 0.075" rotation="180 -5.00896e-06 -180" scale="1.5 1 1.5" shapeId="25" clipDistance="20" nodeId="103" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8" weatherRequiredMask="0x1"/>
+          <Shape name="oxboMKB4TR_dblWeatherCloudP1_SC" translation="-0.109 0 0.075" rotation="180 -5.00896e-06 -180" scale="1.5 1 1.5" shapeId="26" clipDistance="20" nodeId="104" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8" weatherRequiredMask="0x10"/>
+          <Shape name="oxboMKB4TR_dblWeatherRainP1_SC" translation="-0.109 0 0.075" rotation="180 -5.00896e-06 -180" scale="1.5 1 1.5" shapeId="27" clipDistance="20" nodeId="105" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8" weatherRequiredMask="0x2"/>
+          <Shape name="oxboMKB4TR_dblWeatherHailP1_SC" translation="-0.109 0 0.075" rotation="180 -5.00896e-06 -180" scale="1.5 1 1.5" shapeId="28" clipDistance="20" nodeId="106" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8" weatherRequiredMask="0x4"/>
+          <Shape name="oxboMKB4TR_dblWeatherSnowP1_SC" translation="-0.109 0 0.075" rotation="180 -5.00896e-06 -180" scale="1.5 1 1.5" shapeId="29" clipDistance="20" nodeId="107" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8" weatherRequiredMask="0x8"/>
+          <Shape name="oxboMKB4TR_dblWeatherTwisterP1_SC" translation="-0.109 0 0.075" rotation="180 -5.00896e-06 -180" scale="1.5 1 1.5" shapeId="30" clipDistance="20" nodeId="108" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8" weatherPreventMask="0x1f"/>
+          <TransformGroup name="oxboMKB4TR_dblOutsideTempP1_SC" translation="-0.098 0 0.072" rotation="90 -1.86693e-05 -180" clipDistance="30" nodeId="109"/>
+          <Shape name="oxboMKB4TR_dblHLMonP1_SC" translation="0.0009 0 -0.0752" rotation="-180 -5.00896e-06 -180" scale="1.2 1 1.2" shapeId="31" clipDistance="20" nodeId="110" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7"/>
+          <Shape name="oxboMKB4TR_dblHLMfieldP1_SC" translation="0.0009 0 -0.0752" rotation="-180 -5.00896e-06 -180" scale="2.2 1 2.2" shapeId="32" clipDistance="20" nodeId="111" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="7"/>
+          <Shape name="oxboMKB4TR_dblHLMheadlandP1_SC" translation="0.0009 0 -0.0752" rotation="-180 -5.00896e-06 -180" scale="2.2 1 2.2" shapeId="33" clipDistance="20" nodeId="112" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="7"/>
+          <Shape name="oxboMKB4TR_dblTurnLightLeftP1_SC" translation="0.02 0 0.076" rotation="1e-06 0 6e-06" scale="2 1 1.5" shapeId="34" clipDistance="20" nodeId="113" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblTurnLightRightP1_SC" translation="-0.02 0 0.076" rotation="1e-06 180 6e-06" scale="2 1 1.5" shapeId="34" clipDistance="20" nodeId="114" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblDefaultLightP1_SC" translation="0.096 0 0.075" rotation="1e-06 180 6e-06" scale="2.5 1 2.5" shapeId="35" clipDistance="20" nodeId="115" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblWorkLightP1_SC" translation="0.085 0 0.075" rotation="180 -1.96368e-05 -180" scale="2 1 2" shapeId="36" clipDistance="20" nodeId="116" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <Shape name="oxboMKB4TR_dblBeaconLightP1_SC" translation="0.074 0 0.076" rotation="1e-06 180 0" scale="1.6 1 1.6" shapeId="37" clipDistance="20" nodeId="117" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        </TransformGroup>
+        <TransformGroup name="mainScreen" clipDistance="30" nodeId="118">
+          <Shape name="oxboMKB4TR_mainDisplay" shapeId="38" clipDistance="30" nodeId="119" castsShadows="false" receiveShadows="true" materialIds="11"/>
+          <Shape name="oxboMKB4TR_mainDecal" translation="-0.104202 0 0.039547" shapeId="39" clipDistance="30" nodeId="120" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="11"/>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+    <Shape name="oxboMKB4TR_dblNaviMapP1_CC" shapeId="40" clipDistance="30" nodeId="121" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="5">
+      <Shape name="oxboMKB4TR_dblNaviiMapPosP1_CC" translation="-7.27596e-12 0.000177569 -1.81899e-12" scale="1.4 1 1.4" shapeId="41" clipDistance="20" nodeId="122" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+    </Shape>
+    <TransformGroup name="oxboMKB4TR_RadioDisplay" translation="0 0 0.2" rotation="-90 -0 0" clipDistance="50" nodeId="123">
+      <TransformGroup name="radioIcon" translation="0 0.0081457 7.1212e-10" rotation="90 -0 0" clipDistance="50" nodeId="124">
+        <TransformGroup name="oxboMKB4TR_dblRadioChannel" translation="-0.004 2.70447e-10 -0.004" rotation="-90 -90 0" clipDistance="30" nodeId="125"/>
+        <TransformGroup name="oxboMKB4TR_dblRadioVolume" translation="-0.004 2.70447e-10 0.031" rotation="-90 -90 0" clipDistance="30" nodeId="126"/>
+      </TransformGroup>
+      <TransformGroup name="radioScreen" rotation="90 -0 0" clipDistance="50" nodeId="127">
+        <Shape name="oxboMKB4TR_dblRadioDisplay_decal" translation="0 1.74846e-08 0" rotation="90 -90 0" shapeId="42" nodeId="128" castsShadows="true" receiveShadows="true" materialIds="9"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="63">
+      <Attribute name="MaxHandle" type="integer" value="199"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64">
+      <Attribute name="MaxHandle" type="integer" value="200"/>
+    </UserAttribute>
+    <UserAttribute nodeId="115">
+      <Attribute name="MaxHandle" type="integer" value="50"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>
