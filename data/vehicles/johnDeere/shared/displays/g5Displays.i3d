@@ -675,7 +675,7 @@
           </TransformGroup>
           <TransformGroup name="g5isoBusVT" translation="0 -0.001 0" nodeId="506">
             <Shape name="5g_isoBUS_HgNode_SC" translation="-0.0545933 0.002 0.00555945" rotation="180 0 180" scale="0.910326 1 0.85836" shapeId="99" visibility="false" nodeId="507" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="75"/>
-            <TransformGroup name="5g_isoBUS_LoadNode_SC" translation="-0.0982314 0.007 0.00375606" scale="0.935 1 0.885" nodeId="508"/>
+            <TransformGroup name="5g_isoBUS_LoadNode_SC" translation="-0.0982314 0.0085 0.00375606" scale="0.935 1 0.885" nodeId="508"/>
             <TransformGroup name="g5isoBUSnodeLM_SC" translation="-0.129154 0.0140158 -0.00167248" rotation="0 0.35 0" scale="0.885 1 0.81" nodeId="509"/>
             <Shape name="g5Display_isobusPageTractor_noVT_decal" translation="-0.0530551 0.00480775 0.00161417" rotation="5.00896e-06 -4.07111e-12 -5.00896e-06" scale="1.1 1 1.1" shapeId="45" visibility="false" clipDistance="160" nodeId="510" castsShadows="false" receiveShadows="true" nonRenderable="true" decalLayer="2" materialIds="29"/>
             <Shape name="g5Display_isobusPageTractor_VTtitel" translation="-0.0310012 0.002 0.069178" scale="0.7 1 0.7" shapeId="100" clipDistance="15" nodeId="511" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="71"/>
