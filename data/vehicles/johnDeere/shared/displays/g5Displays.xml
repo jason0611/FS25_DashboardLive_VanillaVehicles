@@ -223,14 +223,16 @@
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g5Display_naviMapTractorP2_AP" intensity="0.3" intensityDarkMode="0.05" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g5TractorPageAP_dblNaviPosition" intensity="1.0" intensityDarkMode="0.6" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP2"/>
 
-		<dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneRightP2_AP"  valueType="realGPS.distanceToGPSCourse" factor="1" minActiveValue="0.001"     minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP2"/>
-		<dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneLeftP2_AP"   valueType="realGPS.distanceToGPSCourse" factor="-1" minActiveValue="-0.001"   minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP2"/>
 		<!-- RGPS -->
 		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
 			<controls allow="true" allowRotation="true" allowZoom="true" />
 			<map mapNode="g5Display_naviMapTractorP2_AP" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP2">
 				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
 			</map>
+            <dashboards>
+                <dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneRightP2_AP"  valueType="realGPS.distanceToGPSCourse" factor="1" minActiveValue="0.001"     minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP2"/>
+                <dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneLeftP2_AP"   valueType="realGPS.distanceToGPSCourse" factor="-1" minActiveValue="-0.001"   minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP2"/>
+            </dashboards>
 			<hideNodes>
 				<hideNode node="g5TractorPageAP_dblNaviPosition" isDashboard="true" />
 			</hideNodes>
@@ -619,15 +621,23 @@
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="EMITTER" node="g5Display_naviMapTractorP1_SC" intensity="0.5" intensityDarkMode="0.2" groups="MOTOR_ACTIVE"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" idleValue="-1" displayType="EMITTER" node="g5Display_naviMapPositionTractorP1_SC" intensity="1.0" intensityDarkMode="0.6" groups="MOTOR_ACTIVE"/>
 		
-		<dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneRightP1_SC"  valueType="realGPS.distanceToGPSCourse" factor="1" minActiveValue="0.001"     minValueSlider="0" maxValueSlider="10" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneLeftP1_SC"   valueType="realGPS.distanceToGPSCourse" factor="-1" minActiveValue="-0.001"   minValueSlider="0" maxValueSlider="10" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
+		
+		
 		<!-- RGPS -->
 		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
 			<controls allow="true" allowRotation="true" allowZoom="true" />
 			<map mapNode="g5Display_naviMapTractorP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
 				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
 			</map>
-			
+            <dashboards>
+                <dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneRightP1_SC"  valueType="realGPS.distanceToGPSCourse" factor="1" minActiveValue="0.001"     minValueSlider="0" maxValueSlider="10" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
+                <dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneLeftP1_SC"   valueType="realGPS.distanceToGPSCourse" factor="-1" minActiveValue="-0.001"   minValueSlider="0" maxValueSlider="10" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
+                <dashboard displayType="TEXT" valueType="realGPS.playerRotation" 		node="g5Display_dblVTisobusRTKCoordinateRP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="000.000" font="GENERIC"     textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
+                <dashboard displayType="TEXT" valueType="realGPS.playerPositionX" 		node="g5Display_dblVTisobusRTKCoordinateXP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.000000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
+                <dashboard displayType="TEXT" valueType="realGPS.playerPositionZ" 		node="g5Display_dblVTisobusRTKCoordinateZP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.000000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
+                <dashboard displayType="TEXT" valueType="realGPS.playerPositionX" 		node="g5Display_dblVTisobusRTKCoordinateLatP2_SC" 	         factor="0.33"              textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
+                <dashboard displayType="TEXT" valueType="realGPS.playerPositionZ" 		node="g5Display_dblVTisobusRTKCoordinateLonP2_SC" 	         factor="0.33"              textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
+            </dashboards>
 			<hideNodes>
 				<hideNode node="g5Display_naviMapPositionTractorP1_SC" isDashboard="true" />
 			</hideNodes>
@@ -768,11 +778,6 @@
 		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" 	node="g5Display_dblVTisobusRTKcourseP2_SC" 		                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="000.000" font="GENERIC"    textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
 		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" 	node="g5Display_dblVTisobusRTKcourseOffP2_SC" 	                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="000" 	  font="GENERIC"    textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
 		<dashboard displayType="TEXT" valueType="motorized.speedDir" 			node="g5Display_dblVTisobusRTKspeedKphP2_SC" 	                                        textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="000.00" font="GENERIC"      textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
-		<dashboard displayType="TEXT" valueType="realGPS.playerRotation" 		node="g5Display_dblVTisobusRTKCoordinateRP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="000.000" font="GENERIC"     textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
-		<dashboard displayType="TEXT" valueType="realGPS.playerPositionX" 		node="g5Display_dblVTisobusRTKCoordinateXP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.000000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
-		<dashboard displayType="TEXT" valueType="realGPS.playerPositionZ" 		node="g5Display_dblVTisobusRTKCoordinateZP2_SC" 	                                    textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.000000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
-		<dashboard displayType="TEXT" valueType="realGPS.playerPositionX" 		node="g5Display_dblVTisobusRTKCoordinateLatP2_SC" 	         factor="0.33"              textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
-		<dashboard displayType="TEXT" valueType="realGPS.playerPositionZ" 		node="g5Display_dblVTisobusRTKCoordinateLonP2_SC" 	         factor="0.33"              textColor="0.6 0.6 0.6 1" emissiveScale=".2" textSize="0.003" textMask="0000.0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING DARKMODE"/>	
 		
 		<!-- <dashboard displayType="TEXT" valueType="directionForwardExclusive" 	node="g5Display_dblVTisobusRTKgpsSignalPercentP2_SC" 		textColor="0.4 0.4 0.4 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" 	textMask="000.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="false" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE DARKMODE"/>	 -->
 		<!-- <dashboard displayType="TEXT" valueType="ac_decelerationAxis" 			node="g5Display_dblVTisobusRTKaccPerccentP2_SC" 		textColor="0.4 0.4 0.4 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" 		textMask="000.0000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="false" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE DARKMODE"/>	 -->
@@ -876,9 +881,6 @@
 	
 		<dashboard displayType="VISIBILITY" node="g5seedTypeBgCountsP1_GPS" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" node="g5Display_dblseedTypeLettersP1_GPS" groups="MOTOR_RUNNING"/>
-
-		<dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneRightP1_CC"  valueType="realGPS.distanceToGPSCourse" factor="1" minActiveValue="0.001"     minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneLeftP1_CC"   valueType="realGPS.distanceToGPSCourse" factor="-1" minActiveValue="-0.001"   minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
 
 		<!-- back 1 -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fillLevel" option="abskg" jointSide="back"    						maxActiveValue="8" 		partition="1" node="g5Display_dblSeedFilllevelGrammP1_GPS" groups="MOTOR_RUNNING"/>	
@@ -1037,11 +1039,13 @@
 			<!-- <map mapNode="g5Display_naviMapTractorP2_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE JD_TR_PAGEGPS2"> -->
 				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
 			</map>
-
+            <dashboards>
+                <dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneRightP1_CC"  valueType="realGPS.distanceToGPSCourse" factor="1" minActiveValue="0.001"     minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
+                <dashboard displayType="SLIDER" node="g5Display_dblRGpsLaneLeftP1_CC"   valueType="realGPS.distanceToGPSCourse" factor="-1" minActiveValue="-0.001"   minValueSlider="0" maxValueSlider="5" doInterpolation="false" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE"/>
+            </dashboards>
 			<hideNodes>
 				<hideNode node="g5Display_naviMapPositionTractorP1_CC1" isDashboard="true" />
 				<hideNode node="g5Display_naviMapPositionTractorP2_CC" isDashboard="true" />
-
 			</hideNodes>
 		</realGPS>
 
