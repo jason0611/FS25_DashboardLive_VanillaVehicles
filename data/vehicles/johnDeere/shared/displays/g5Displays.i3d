@@ -6,28 +6,28 @@
   </Asset>
 
   <Files>
-    <File fileId="32" filename="$data/fillPlanes/maize_diffuse.dds"/>
+    <File fileId="34" filename="$data/fillPlanes/maize_diffuse.dds"/>
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
-    <File fileId="23" filename="$data/shared/defaultPlastic_vmask.dds"/>
+    <File fileId="25" filename="$data/shared/defaultPlastic_vmask.dds"/>
     <File fileId="2" filename="$data/shared/default_normal.dds"/>
     <File fileId="7" filename="$data/shared/default_specular.png"/>
     <File fileId="10" filename="$data/shared/default_vmask.dds"/>
-    <File fileId="15" filename="$data/shared/white_diffuse.dds"/>
-    <File fileId="26" filename="$data/shared/windowDark_diffuse.dds"/>
-    <File fileId="22" filename="$data/shared/windowExtraDark_diffuse.dds"/>
+    <File fileId="16" filename="$data/shared/white_diffuse.dds"/>
+    <File fileId="28" filename="$data/shared/windowDark_diffuse.dds"/>
+    <File fileId="24" filename="$data/shared/windowExtraDark_diffuse.dds"/>
     <File fileId="8" filename="$data/vehicles/johnDeere/shared/displays/g4Displays_diffuse.png"/>
     <File fileId="5" filename="$data/vehicles/johnDeere/shared/displays/g5Displays_diffuse.png"/>
     <File fileId="12" filename="../../../../../../FS25_DashboardLive/shader/minimap.xml"/>
     <File fileId="1" filename="g5Displays_diffuse.dds"/>
-    <File fileId="29" filename="textures/filling_diffuse.dds"/>
-    <File fileId="16" filename="textures/johnDeereDisplayDecal_diffuse.dds"/>
-    <File fileId="25" filename="textures/johnDeereG4DisplayBasicVT1_diffuse.png"/>
-    <File fileId="21" filename="textures/johnDeereG4DisplayBasicVT2_diffuse.png"/>
-    <File fileId="27" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
-    <File fileId="31" filename="textures/johnDeereG5DisplayHarvestingBasic_diffuse.png"/>
-    <File fileId="17" filename="textures/johnDeereTractorG5Display_diffuse.png"/>
-    <File fileId="20" filename="textures/johnDeereTractorG5isoBUS_VT_diffuse.dds"/>
-    <File fileId="18" filename="textures/warnings_diffuse.dds"/>
+    <File fileId="31" filename="textures/filling_diffuse.dds"/>
+    <File fileId="18" filename="textures/johnDeereDisplayDecal_diffuse.dds"/>
+    <File fileId="27" filename="textures/johnDeereG4DisplayBasicVT1_diffuse.png"/>
+    <File fileId="23" filename="textures/johnDeereG4DisplayBasicVT2_diffuse.png"/>
+    <File fileId="29" filename="textures/johnDeereG4DisplayBasic_diffuse.png"/>
+    <File fileId="33" filename="textures/johnDeereG5DisplayHarvestingBasic_diffuse.png"/>
+    <File fileId="19" filename="textures/johnDeereTractorG5Display_diffuse.png"/>
+    <File fileId="22" filename="textures/johnDeereTractorG5isoBUS_VT_diffuse.dds"/>
+    <File fileId="20" filename="textures/warnings_diffuse.dds"/>
     <File fileId="6" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
     <File fileId="13" filename="../../../../../utils/DBL_MeshLibary/dblSliderLine_diffuse.png"/>
   </Files>
@@ -35,7 +35,7 @@
 
   <Materials>
     <Material name="combineGrp_map" materialId="5" specularColor="0.501961 1 0" customShaderId="4">
-      <Texture fileId="16"/>
+      <Texture fileId="18"/>
     </Material>
     <Material name="dblNaviMap_mat" materialId="6" diffuseColor="0.101961 0.8 0.462745 1" customShaderId="12">
     </Material>
@@ -53,12 +53,6 @@
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
-    <Material name="dblSliderLine_mat" materialId="11" customShaderId="4" customShaderVariation="slider_customEmissiveMap">
-      <Texture fileId="13"/>
-      <Normalmap fileId="2"/>
-      <Glossmap fileId="10"/>
-      <Custommap name="mEmissiveMap" fileId="15"/>
-    </Material>
     <Material name="dblSliderLine_mat" materialId="12" diffuseColor="0.0196078 0.247059 0.0156863 1" customShaderId="4" customShaderVariation="slider">
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
@@ -67,8 +61,18 @@
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
+    <Material name="dblSliderLine_mat" materialId="1274" diffuseColor="0.333333 0.32549 0.137255 1" customShaderId="4" customShaderVariation="slider_customEmissiveMap">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="10"/>
+      <Custommap name="mEmissiveMap" fileId="16"/>
+    </Material>
+    <Material name="dblSliderLine_mat" materialId="1155" diffuseColor="1 0 1 1" customShaderId="4" customShaderVariation="slider_customEmissiveMap">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="10"/>
+      <Custommap name="mEmissiveMap" fileId="16"/>
+    </Material>
     <Material name="Filling_mat" materialId="14" alphaBlending="true" customShaderId="4" customShaderVariation="loadingBar">
-      <Texture fileId="29"/>
+      <Texture fileId="31"/>
       <CustomParameter name="scrollSpeed" value="1 0.25"/>
     </Material>
     <Material name="fruiType_dblMat" materialId="15" diffuseColor="0 0 0 1" customShaderId="4">
@@ -80,37 +84,37 @@
       <Normalmap fileId="2"/>
     </Material>
     <Material name="g4DisplayVT2_mat" materialId="18" customShaderId="4" customShaderVariation="slider">
-      <Texture fileId="21"/>
+      <Texture fileId="23"/>
     </Material>
     <Material name="g5Display_mat" materialId="19" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="22"/>
+      <Texture fileId="24"/>
       <Normalmap fileId="2"/>
-      <Glossmap fileId="23"/>
+      <Glossmap fileId="25"/>
     </Material>
     <Material name="g5Display_mat" materialId="20" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="27"/>
+      <Texture fileId="29"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
       <CustomParameter name="blinkSimple" value="3.4 2.7"/>
     </Material>
     <Material name="g5Display_mat" materialId="21" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="31"/>
+      <Texture fileId="33"/>
     </Material>
     <Material name="g5Display_mat" materialId="22" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="31"/>
+      <Texture fileId="33"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
     <Material name="g5Display_mat" materialId="23" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="17"/>
+      <Texture fileId="19"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
     <Material name="g5DisplayDecal_mat" materialId="24" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="16"/>
+      <Texture fileId="18"/>
     </Material>
     <Material name="g5DisplayDecal_mat" materialId="25" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="16"/>
+      <Texture fileId="18"/>
       <CustomParameter name="blinkSimple" value="2 0"/>
     </Material>
     <Material name="g5Displays_01_mat" materialId="26" specularColor="0.501961 1 0.501961" customShaderId="4" customShaderVariation="staticLight">
@@ -131,17 +135,17 @@
       <CustomParameter name="uvCenterSize" value="0.7845 0.9375 1 1"/>
     </Material>
     <Material name="g5DisplayVT_mat" materialId="30" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="20"/>
+      <Texture fileId="22"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
     <Material name="johnDeereDisplayDecal_mat" materialId="31" customShaderId="4" customShaderVariation="loadingCircle">
-      <Texture fileId="16"/>
+      <Texture fileId="18"/>
       <CustomParameter name="rotateSpeedSteps" value="0.5 48"/>
       <CustomParameter name="uvCenterSize" value="0.247 0.027 1 1"/>
     </Material>
     <Material name="johnDeereDisplayDecal_mat" materialId="32" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="16"/>
+      <Texture fileId="18"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
@@ -349,39 +353,44 @@
       <CustomParameter name="emitColor" value="1 0 1 0"/>
     </Material>
     <Material name="mat_16x16_visible2" materialId="67" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="26"/>
+      <Texture fileId="28"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="mat_16x16_visible2" materialId="1106" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="24"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="7"/>
     </Material>
     <Material name="Material.001" materialId="68" specularColor="0.501961 1 0" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="16"/>
+      <Texture fileId="18"/>
     </Material>
     <Material name="noVTwarn_mat" materialId="69" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="25"/>
+      <Texture fileId="27"/>
       <Normalmap fileId="2"/>
-      <Glossmap fileId="23"/>
+      <Glossmap fileId="25"/>
     </Material>
     <Material name="ObjekctPoolVTon_mat" materialId="70" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="20"/>
+      <Texture fileId="22"/>
     </Material>
     <Material name="PageTitel1_mat" materialId="71" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="21"/>
+      <Texture fileId="23"/>
     </Material>
     <Material name="realCam_mat" materialId="72" diffuseColor="0.501961 0.501961 0.501961 1">
     </Material>
     <Material name="UnnamedMaterial" materialId="73" customShaderId="4" customShaderVariation="loadingBar">
-      <Texture fileId="32"/>
+      <Texture fileId="34"/>
       <CustomParameter name="scrollSpeed" value="1 0.25"/>
     </Material>
     <Material name="UnnamedMaterial" materialId="74" diffuseColor="1 1 1 1">
     </Material>
     <Material name="VT_LM_mat" materialId="75" customShaderId="4" customShaderVariation="staticLight">
-      <Texture fileId="15"/>
+      <Texture fileId="16"/>
       <Normalmap fileId="2"/>
       <Glossmap fileId="10"/>
     </Material>
     <Material name="warningFuel_mat" materialId="76" specularColor="0.501961 1 0" customShaderId="4">
-      <Texture fileId="18"/>
+      <Texture fileId="20"/>
     </Material>
   </Materials>
 
@@ -540,14 +549,14 @@
               <Shape name="g5Display_dblCvtHandThrottleSliderP1_SC" translation="-0.119713 -2.831e-17 -0.0583852" rotation="0 90 0" scale="0.7 1 1.25" shapeId="47" clipDistance="50" nodeId="387" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="12"/>
               <Shape name="g5Display_dblTippingSliderP1_SC" translation="-0.00518165 -6.50608e-18 0.0409825" scale="0.5 1 0.93" shapeId="47" clipDistance="50" nodeId="388" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
               <Shape name="g5Display_dblBackLiftImplementSliderP1_SC" translation="-0.00300831 -6.50608e-18 0.0409825" scale="0.5 1 0.93" shapeId="47" clipDistance="50" nodeId="389" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
-              <Shape name="g5Display_dblSteeringIndex1SliderP1_SC" translation="0.131496 -2.037e-15 0.0066896" rotation="0 90 1.25082e-11" scale="1 1 0.69" shapeId="47" clipDistance="50" nodeId="390" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
-              <Shape name="g5Display_dblSteeringIndex2SliderP1_SC" translation="0.0881737 -1.12823e-14 0.00668959" rotation="0 -90 1.25082e-11" scale="1 1 0.69" shapeId="47" clipDistance="50" nodeId="391" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+              <Shape name="g5Display_dblSteeringIndex1SliderP1_SC" translation="0.131496 -2.037e-15 0.0066896" rotation="0 90 1.25082e-11" scale="1 1 0.69" shapeId="47" clipDistance="50" nodeId="390" castsShadows="false" receiveShadows="true" nonRenderable="true" decalLayer="1" materialIds="1155"/>
+              <Shape name="g5Display_dblSteeringIndex2SliderP1_SC" translation="0.109726 -6.69352e-15 0.00795106" rotation="0 90 1.25082e-11" scale="0.5 1 2" shapeId="47" clipDistance="50" nodeId="391" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="1274"/>
               <Shape name="g5Display_dblRearHitchSliderP5_SC" translation="0.0577949 -1.28171e-16 0.0394757" scale="0.5 1 1.07" shapeId="46" clipDistance="50" nodeId="392" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="10"/>
               <Shape name="g5Display_dblFrontHitchSliderP5_SC" translation="0.035578 1.41031e-17 0.0390861" scale="0.5 1 1.05" shapeId="46" clipDistance="50" nodeId="393" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
               <Shape name="g5Display_dblRearHitchSliderDM_P5_SC" translation="0.0577949 -1.28171e-16 0.0394757" scale="0.5 1 1.07" shapeId="46" clipDistance="50" nodeId="394" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
               <Shape name="g5Display_dblFrontHitchSliderDM_P5_SC" translation="0.035578 1.41031e-17 0.0390861" scale="0.5 1 1.05" shapeId="46" clipDistance="50" nodeId="395" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
-              <Shape name="g5Display_dblRGpsLaneLeftP1_SC" translation="0.131356 0.001 0.0041901" rotation="0 90 0" scale="1.4 1 0.43" shapeId="46" clipDistance="50" nodeId="396" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="10"/>
-              <Shape name="g5Display_dblRGpsLaneRightP1_SC" translation="0.0880282 0.001 0.0041901" rotation="0 -90 0" scale="1.4 1 0.43" shapeId="46" clipDistance="50" nodeId="397" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="10"/>
+              <Shape name="g5Display_dblRGpsLaneLeftP1_SC" translation="0.131356 0.001 0.00342514" rotation="0 90 0" scale="1.2 1 0.43" shapeId="46" clipDistance="50" nodeId="396" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="10"/>
+              <Shape name="g5Display_dblRGpsLaneRightP1_SC" translation="0.0880282 0.001 0.00342514" rotation="0 -90 0" scale="1.2 1 0.43" shapeId="46" clipDistance="50" nodeId="397" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="10"/>
             </TransformGroup>
             <Shape name="g5Display_dblFrontPTOP1_SC" translation="0.106758 0.002 0.002746" scale="0.007 1 0.005" shapeId="48" clipDistance="50" nodeId="398" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="32"/>
             <Shape name="g5Display_dblFrontPTOArrowP1_SC" translation="0.106758 0.002 0.005997" scale="0.004 1 0.002" shapeId="49" clipDistance="50" nodeId="399" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="32"/>
@@ -700,7 +709,7 @@
             <TransformGroup name="g5Display_dblVTisobusRTKcourseP2_SC" translation="0.0364919 0.012 -0.014" rotation="90 -4.35775e-05 180" nodeId="530"/>
             <TransformGroup name="g5Display_dblVTisobusRTKCoordinateXP2_SC" translation="0.0590234 0.012 0.00599365" rotation="90 -4.35775e-05 180" nodeId="531"/>
             <TransformGroup name="g5Display_dblVTisobusRTKCoordinateZP2_SC" translation="0.0590234 0.012 -0.00106076" rotation="90 -4.35775e-05 180" nodeId="532"/>
-            <TransformGroup name="g5Display_dblVTisobusRTKCoordinateRP2_SC" translation="0.0214399 0.012 -0.014" rotation="90 -4.35775e-05 180" nodeId="533"/>
+            <TransformGroup name="g5Display_dblVTisobusRTKCoordinateRP2_SC" translation="0.0189579 0.012 -0.014" rotation="90 -4.35775e-05 180" nodeId="533"/>
             <TransformGroup name="g5Display_dblVTisobusRTKCoordinateLatP2_SC" translation="0.0590234 0.012 0.00599365" rotation="90 -4.35775e-05 180" nodeId="534"/>
             <TransformGroup name="g5Display_dblVTisobusRTKCoordinateLonP2_SC" translation="0.0590234 0.012 -0.00106076" rotation="90 -4.35775e-05 180" nodeId="535"/>
             <Shape name="g5Display_isobusPageTractor_noVT_hinweis" translation="-0.053252 0.001 0.001561" shapeId="106" clipDistance="30" nodeId="536" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="69"/>
@@ -725,10 +734,10 @@
               <TransformGroup name="g5Display_dblSpeedCCNumbersP1_GPS" translation="0.135695 0.0586541 1.58177e-07" rotation="0 -4.35775e-05 0" nodeId="549"/>
               <TransformGroup name="g5Display_dblHeadingNumbersP1_GPS" translation="-0.0223157 0.0727619 3.79988e-08" rotation="0 -4.35775e-05 0" nodeId="550"/>
               <TransformGroup name="g5Display_dblHeadingAngleNumbersP1_GPS" translation="-0.022314 0.0658195 3.80001e-08" rotation="0 -4.35775e-05 0" nodeId="551"/>
-              <TransformGroup name="g5Display_dblLaneDistanceNumbersP1_GPS" translation="-0.0215355 0.0565113 0.003" rotation="0 -4.35775e-05 0" nodeId="552"/>
-              <TransformGroup name="g5Display_dblWorkWidthNumbersP1_GPS" translation="0.13642 0.0315498 1.58728e-07" rotation="0 -4.35775e-05 0" nodeId="553"/>
-              <TransformGroup name="g5Display_dblHeadingDegreesSignNumbersP1_GPS" translation="-0.0115506 0.0693639 4.61864e-08" rotation="0 -4.35775e-05 0" nodeId="554"/>
-              <TransformGroup name="g5Display_dblLaneNumbersP1_GPS" translation="-0.0224995 0.0445047 0.003" rotation="0 -4.35775e-05 0" nodeId="555"/>
+              <TransformGroup name="g5Display_dblLaneDistanceNumbersP1_GPS" translation="-0.0215355 0.0565113 0.002" rotation="0 -4.35775e-05 0" nodeId="552"/>
+              <TransformGroup name="g5Display_dblWorkWidthNumbersP1_GPS" translation="0.13642 0.0295072 1.58728e-07" rotation="0 -4.35775e-05 0" nodeId="553"/>
+              <TransformGroup name="g5Display_dblHeadingDegreesSignNumbersP1_GPS" translation="-0.00862302 0.0693639 4.8413e-08" rotation="0 -4.35775e-05 0" nodeId="554"/>
+              <TransformGroup name="g5Display_dblLaneNumbersP1_GPS" translation="-0.0221483 0.0456315 0.005" rotation="0 -4.35775e-05 0" nodeId="555"/>
               <TransformGroup name="g5Display_dblseedTypeLettersP1_GPS" translation="-0.133644 0.0442663 0.002" rotation="0 1.45667e-13 -3.25689e-12" nodeId="556"/>
               <TransformGroup name="g5Display_dblSeedFilllevelKgP1_GPS" translation="0.137216 -0.000558997 0.001" rotation="0 1.3218e-05 0" nodeId="557"/>
               <TransformGroup name="g5Display_dblSeedFilllevelLiterP1_GPS" translation="0.134904 -0.00424361 0.001" rotation="0 1.45667e-13 -3.25689e-12" nodeId="558"/>
@@ -777,6 +786,9 @@
               <TransformGroup name="g5Display_dblTrailerAllFilllevelPercentP1_GPS" translation="0.115937 -0.0468091 0.001" rotation="0 1.45667e-13 -3.25689e-12" nodeId="601"/>
               <TransformGroup name="g5Display_dblTrailerAllFilllevelGrammP1_GPS" translation="0.137216 -0.0445354 0.001" rotation="0 1.45667e-13 -3.25689e-12" nodeId="602"/>
               <TransformGroup name="g5Display_dblTrailerAllFilllevelTonnsP1_GPS" translation="0.137216 -0.0445354 0.001" rotation="0 1.45667e-13 -3.25689e-12" nodeId="603"/>
+              <TransformGroup name="g5Display_dblWorkWidthGPSNumbersP1_GPS" translation="0.13642 0.0412882 0.0013773" rotation="0 -4.35775e-05 0" nodeId="1108"/>
+              <TransformGroup name="g5Display_dblWorkWidthGPSNameP1_GPS" translation="0.10044 0.0482943 0.00137727" rotation="0 -4.35775e-05 0" nodeId="1111"/>
+              <TransformGroup name="g5Display_dblWorkWidthNameP1_GPS" translation="0.10044 0.0365987 0.00137727" rotation="0 -4.35775e-05 0" nodeId="1112"/>
             </TransformGroup>
             <TransformGroup name="g5Display_dblCruiseControlActiveP1_GPS" translation="0.131416 0.001 0.0718787" nodeId="604">
               <Shape name="g5Display_dblCruiseControl1ActiveP1_GPS" rotation="-180 -1.86693e-05 -180" scale="2.5 1 2.5" shapeId="109" clipDistance="20" nodeId="605" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="47"/>
@@ -787,7 +799,7 @@
               <Shape name="g5seedTypeBg1_P1_GPS" translation="-0.0132566 -1.60405e-16 0.000170369" rotation="0 0 2.16973e-13" scale="1 1 1.5" shapeId="108" clipDistance="20" nodeId="609" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="67"/>
               <Shape name="g5seedTypeBg2_P1_GPS" translation="0.00874586 2.26964e-16 0.000170369" rotation="0 0 2.16973e-13" scale="6.5 1 1.5" shapeId="108" clipDistance="20" nodeId="610" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="67"/>
               <Shape name="g5seedTypeBg3_P1_GPS" translation="0.030685 5.18421e-16 0.000170369" rotation="0 0 2.16973e-13" scale="1 1 1.5" shapeId="108" clipDistance="20" nodeId="611" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="67"/>
-              <Shape name="g5degreeseBg3_P1_GPS" translation="0.100342 1.49236e-15 0.000170369" rotation="0 0 2.16973e-13" scale="2 1 1.5" shapeId="108" clipDistance="20" nodeId="612" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="67"/>
+              <Shape name="g5degreeseBg3_P1_GPS" translation="0.100342 -0.00121878 0.000170369" rotation="0 0 2.16973e-13" scale="4 1 1.5" shapeId="108" clipDistance="20" nodeId="612" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1106"/>
               <Shape name="g5tempBg3_P1_GPS" translation="0.212132 3.13741e-15 0.00206043" rotation="0 0 2.16973e-13" scale="2.4 1 1.2" shapeId="108" clipDistance="20" nodeId="613" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="67"/>
             </TransformGroup>
             <Shape name="g5Display_dblHlmConourActiveRotBlinkP1_GPS" translation="-0.0823318 0 -0.0623735" rotation="1e-06 -0 3e-06" scale="6.5 1 6.5" shapeId="83" clipDistance="20" nodeId="614" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="39"/>
