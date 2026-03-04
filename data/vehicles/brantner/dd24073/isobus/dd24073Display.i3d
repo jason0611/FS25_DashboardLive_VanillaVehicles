@@ -12,7 +12,7 @@
     <File fileId="6" filename="$data/shared/default_specular.dds"/>
     <File fileId="3" filename="$data/shared/default_vmask.dds"/>
     <File fileId="1" filename="../textures/fendtOneBrantnerDDTrailerUTIB_diffuse.dds"/>
-    <File fileId="7" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
+    <File fileId="7" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.dds"/>
   </Files>
 
 
