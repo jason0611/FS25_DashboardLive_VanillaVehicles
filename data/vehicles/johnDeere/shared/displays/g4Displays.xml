@@ -6,24 +6,6 @@
 
 	<group name="JD4_TRAC_PAGEAP1" 	dbl="page" group="1" page="1"/> <!-- group soll 1 -->
 
-	<group name="JD4_TRAC_PAGESC1" 	dbl="page" group="2" page="1"/> <!-- group soll 2 -->
-	<group name="JD4_TRAC_PAGESC2" 	dbl="page" group="2" page="2"/> <!-- group soll 2 -->
-	<group name="JD4_TRAC_PAGESC3" 	dbl="page" group="2" page="3"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGESC12" dbl="page" group="2" page="1 2"/> <!-- group soll 1+2  eruegt aber eine leere page die da nicht hingehört! -->
-	<group name="JD4_TRAC_PAGESC13" dbl="page" group="2" page="1 3"/> <!-- group soll 1+3  eruegt aber eine leere page die da nicht hingehört! -->
-	
-	<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="4" page="1"/> <!-- group soll 4 -->
-	<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="4" page="2"/> <!-- group soll 4 -->
-
-	<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="3" page="1"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="3" page="2"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="3" page="3"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="3" page="4"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="3" page="5"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="3" page="6"/> <!-- group soll 3 -->
-	<group name="JD4_TRAC_PAGEGPSnot1" dbl="page" group="3" page="2 4 5 6"/> <!-- group soll 3 -->
-	<!-- <group name="JD4_TRAC_PAGEGPS56" dbl="page" group="4" page="56"/> -->
-
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
 	<group name="DBL_F_TRAILER1" dbl="base_connected" dblTrailer="1" dblJointSide="back"/>
@@ -136,6 +118,25 @@
 
 	<!-- BASE -->
     <dashboardCompound name="JOHNDEERE_G4_MAINPAGE" filename="data/vehicles/johnDeere/shared/displays/g4Displays.i3d" node="g4BasicScreen">
+	
+		<group name="JD4_TRAC_PAGESC1" 	dbl="page" group="2" page="1"/> <!-- group soll 2 -->
+		<group name="JD4_TRAC_PAGESC2" 	dbl="page" group="2" page="2"/> <!-- group soll 2 -->
+		<group name="JD4_TRAC_PAGESC3" 	dbl="page" group="2" page="3"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGESC12" dbl="page" group="2" page="1 2"/> <!-- group soll 1+2  eruegt aber eine leere page die da nicht hingehört! -->
+		<group name="JD4_TRAC_PAGESC13" dbl="page" group="2" page="1 3"/> <!-- group soll 1+3  eruegt aber eine leere page die da nicht hingehört! -->
+		
+		<group name="JD4_TRAC_PAGERC1" 	dbl="page" group="4" page="1"/> <!-- group soll 4 -->
+		<group name="JD4_TRAC_PAGERC2" 	dbl="page" group="4" page="2"/> <!-- group soll 4 -->
+	
+		<group name="JD4_TRAC_PAGEGPS1" dbl="page" group="3" page="1"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGEGPS2" dbl="page" group="3" page="2"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGEGPS3" dbl="page" group="3" page="3"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGEGPS4" dbl="page" group="3" page="4"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGEGPS5" dbl="page" group="3" page="5"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGEGPS6" dbl="page" group="3" page="6"/> <!-- group soll 3 -->
+		<group name="JD4_TRAC_PAGEGPSnot1" dbl="page" group="3" page="2 4 5 6"/> <!-- group soll 3 -->
+		<!-- <group name="JD4_TRAC_PAGEGPS56" dbl="page" group="4" page="56"/> -->
+	
 	<!-- BASE -->
 	    <!-- Displays -->
 		<dashboard displayType="VISIBILITY" node="g4Display_basicScreen" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
