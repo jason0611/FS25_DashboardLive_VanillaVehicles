@@ -712,7 +712,7 @@
 		<!-- RGPS -->
         <realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
             <controls allow="true" allowRotation="true" allowZoom="true" />
-            <map mapNode="g4Display_dblNaviMapP1_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
+            <map mapNode="g4Display_dblNaviMapP1_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS1">
                 <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
             </map>
 			<dashboards>
@@ -782,10 +782,10 @@
 		<!-- RGPS -->
         <realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
             <controls allow="true" allowRotation="true" allowZoom="true" />
-            <map mapNode="g4Display_dblNaviMapP2_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
+            <map mapNode="g4Display_dblNaviMapP2_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS2">
                 <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
             </map>
-			<map mapNode="g4Display_dblNaviMapP6_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1">
+			<map mapNode="g4Display_dblNaviMapP6_GPS" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE JD4_TRAC_PAGEGPS6">
                 <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
             </map>
 
