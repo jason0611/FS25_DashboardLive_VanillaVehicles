@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <dashboardCompounds>
-	<!-- <group name="MOTOR_RUNNING" dbl="darkmode"/> -->
-	<!-- <group name="MOTOR_STARTING" electronicsStarting="true"/> -->
-	<!-- <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/> -->
-	<!-- <group name="MOTOR_RUNNING" electronicsRunning="true"/> -->
-
 	<group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/> <!--hell-->
-	<!-- combines -->
-	<group name="JD_COMB_PAGEAP1"  dbl="page" group="1" page="1"/>      <!-- group soll 1 -->
-	<group name="JD_COMB_PAGEAP12" dbl="page" group="1" page="1 2"/>    <!-- group soll 1 -->
-	<group name="JD_COMB_PAGEAP2"  dbl="page" group="1" page="2"/>      <!-- group soll 1 -->
-	<group name="JD_COMB_PAGEAP3"  dbl="page" group="1" page="3"/>      <!-- group soll 1 -->
-	<!-- <group name="JD_COMB_PAGEAP4" dbl="page" group="1" page="4"/> -->
-	<!-- <group name="JD_COMB_PAGESC1" dbl="page" group="2" page="1"/> -->
-	<!-- <group name="JD_COMB_PAGESC2" dbl="page" group="2" page="2"/> -->
-	
-	<group name="JD_COMB_PAGECC1" dbl="page" group="3" page="1"/>       <!-- ! group soll 2, 3 wenn JD_COMB_PAGESC1 irgendwann aktiv mit 2 -->
-	<group name="JD_COMB_PAGECC2" dbl="page" group="3" page="2"/>
-	
-	<!-- tractors -->
-	<group name="JD_TRAC_PAGEAP1" dbl="page" group="1" page="1 3"/>       <!-- ! group soll 1, kollidiert mit den comb ap groups, siehe oben -->
-	<group name="JD_TRAC_PAGEAP2" dbl="page" group="1" page="2" />
-	<group name="JD_TRAC_PAGEAP3" dbl="page" group="1" page="3" />
-	<!-- <group name="JD_TRAC_PAGEAP4" dbl="page" group="1" page="4"/> -->
-
-	<group name="JD_TRAC_PAGESC1" dbl="page" group="2" page="1"/>       <!-- ! group soll 2 kollidiert mit JD_COMB_PAGECC1 und 2 -->
-	<group name="JD_TRAC_PAGESC123" dbl="page" group="2" page="1 2 3"/>       <!-- group soll 2 kollidiert mit JD_COMB_PAGECC1 und 2-->
-	<group name="JD_TRAC_PAGESC2" dbl="page" group="2" page="2"/>
-	<group name="JD_TRAC_PAGESC3" dbl="page" group="2" page="3"/>
-	<group name="JD_TRAC_PAGESC4" dbl="page" group="2" page="4"/>
-	<group name="JD_TRAC_PAGESC5" dbl="page" group="2" page="4 5"/>       <!-- group soll 2 page 4-->
-	<group name="JD_TRAC_PAGESCex4" dbl="page" group="2" page="1 2 3 5"/>       <!-- group soll 2 page 4-->
-	<group name="JD_TRAC_PAGESC5only" dbl="page" group="2" page="5"/>       <!-- group soll 2 page 4-->
-	
-	<group name="JD_TR_PAGEGPS1"  dbl="page" group="3" page="1"/> <!-- ! streitet sicih mit den g4 groups! -->
-	<group name="JD_TR_PAGEGPS2"  dbl="page" group="3" page="2"/>
-	<group name="JD_TR_PAGEGPS3"  dbl="page" group="3" page="3"/>
-	<group name="JD_TR_PAGEGPS4"  dbl="page" group="3" page="4"/>
-	<group name="JD_TR_PAGEGPS24" dbl="page" group="3" page="2 4"/>
-
 	<group name="AT_TRAILER1" dblTrailer="1" dblJointSide="back"/>
 	<group name="AT_TRAILER2" dblTrailer="2" dblJointSide="back"/>
 	<group name="DBL_F_TRAILER1" dbl="base_connected" dblTrailer="1" dblJointSide="back"/>
@@ -52,6 +14,10 @@
 
 	<!-- aPillar Tractor AP -->
 	<dashboardCompound name="JOHNDEERE_G5_APILLAR_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="aPillarScreenTractor">
+		<group name="JD_TRAC_PAGEAP1" dbl="page" group="1" page="1 3"/>
+		<group name="JD_TRAC_PAGEAP2" dbl="page" group="1" page="2" />
+		<group name="JD_TRAC_PAGEAP3" dbl="page" group="1" page="3" />
+		<!-- <group name="JD_TRAC_PAGEAP4" dbl="page" group="1" page="4"/> -->
 		<!-- display -->
 		<dashboard displayType="EMITTER" node="g5Display_aPillarTractor_decal" idleValue="-1" hideInactiveChildren="true" intensity="0.4" intensityDarkMode="0.05" groups="MOTOR_ACTIVE" />
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_IconStop_AP" baseColor=".3 .3 .3" emitColor="1 1 1" intensity="0.2" groups="MOTOR_ACTIVE"/>
@@ -239,6 +205,8 @@
 		</realGPS>
 
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP3_AP" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal1_P3_AP" groups="MOTOR_RUNNING JD_TRAC_PAGEAP3"/>
+		<dashboard displayType="EMITTER" node="g5t_cameraNoSignal1_P3_AP" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGEAP3"/>
 		<realWorkCameras>
 			<workCameraDisplays>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsAP" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
@@ -252,6 +220,15 @@
 
 	<!-- BASE SC -->
 	<dashboardCompound name="JOHNDEERE_G5_MAINPAGE" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="basicScreen">
+		<group name="JD_TRAC_PAGESC1" dbl="page" group="2" page="1"/>
+		<group name="JD_TRAC_PAGESC123" dbl="page" group="2" page="1 2 3"/>
+		<group name="JD_TRAC_PAGESC2" dbl="page" group="2" page="2"/>
+		<group name="JD_TRAC_PAGESC24" dbl="page" group="2" page="2 4"/>
+		<group name="JD_TRAC_PAGESC3" dbl="page" group="2" page="3"/>
+		<group name="JD_TRAC_PAGESC4" dbl="page" group="2" page="4"/>
+		<group name="JD_TRAC_PAGESC5" dbl="page" group="2" page="4 5"/>
+		<group name="JD_TRAC_PAGESCex4" dbl="page" group="2" page="1 2 3 5"/>
+		<group name="JD_TRAC_PAGESC5only" dbl="page" group="2" page="5"/>
 		
 		<!-- numbers -->
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="playerName" node="g5Display_dblUserNameNumbersP1_SC" textColor="0.9 0.9 0.89 1" textColorDarkMode="0 0 0 1" textSize="0.0035" fontThickness="2" textSpacing="0.6" textScaleX="1.4" textMask="ssssssssssssssssssssss" font="GENERIC_BOLD" textAlignment="LEFT" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
@@ -643,6 +620,14 @@
 			</hideNodes>
 		</realGPS>
 
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal1_P24_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC24"/>
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal2_P2_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC2"/>
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal_P3_SC"  groups="MOTOR_RUNNING JD_TRAC_PAGESC3"/>
+		
+		<dashboard displayType="EMITTER" node="g5t_cameraNoSignal1_P24_SC" intensity="0.3" groups="MOTOR_RUNNING JD_TRAC_PAGESC24"/>
+		<dashboard displayType="EMITTER" node="g5t_cameraNoSignal2_P2_SC"  intensity="0.3" groups="MOTOR_RUNNING JD_TRAC_PAGESC2"/>
+		<dashboard displayType="EMITTER" node="g5t_cameraNoSignal2_P3_SC"  intensity="0.3" groups="MOTOR_RUNNING JD_TRAC_PAGESC3"/>
+		
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP2_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC2"/>
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP3_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC3"/>
 		<dashboard displayType="VISIBILITY" node="g5AttachCamsP4_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC4"/>
@@ -812,6 +797,11 @@
 	
 	<!-- GPS CC -->
 	<dashboardCompound name="JOHNDEERE_G5_GPSPAGE" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="gpsScreen">
+		<group name="JD_TR_PAGEGPS1"  dbl="page" group="3" page="1"/>
+		<group name="JD_TR_PAGEGPS2"  dbl="page" group="3" page="2"/>
+		<group name="JD_TR_PAGEGPS3"  dbl="page" group="3" page="3"/>
+		<group name="JD_TR_PAGEGPS4"  dbl="page" group="3" page="4"/>
+		<group name="JD_TR_PAGEGPS24" dbl="page" group="3" page="2 4"/>
 		
 		<!-- numbers -->
 		<dashboard valueType="ai.automaticSteering.steeringState" displayType="VISIBILITY" node="g5Display_dblSpeedNumbersP1_GPS" groups="MOTOR_RUNNING"/>
@@ -1075,6 +1065,13 @@
 			</hideNodes>
 		</realGPS>
 
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal1_P2_CC" groups="MOTOR_RUNNING JD_TR_PAGEGPS24"/>
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal1_P3_CC" groups="MOTOR_RUNNING JD_TR_PAGEGPS3"/>
+		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal1_P4_CC" groups="MOTOR_RUNNING JD_TR_PAGEGPS4"/>
+		<dashboard displayType="EMITTER" 	node="g5t_cameraNoSignal1_P2_CC" emitColor="0.8 0.05 0.05 1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD_TR_PAGEGPS24"/>
+		<dashboard displayType="EMITTER" 	node="g5t_cameraNoSignal1_P3_CC" emitColor="0.8 0.05 0.05 1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD_TR_PAGEGPS3"/>
+		<dashboard displayType="EMITTER" 	node="g5t_cameraNoSignal1_P4_CC" emitColor="0.8 0.05 0.05 1" intensity="0.7" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD_TR_PAGEGPS4"/>
+
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP2_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS24"/>
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP3_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS3"/>
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP4_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS4"/>
@@ -1147,6 +1144,14 @@
 
 	<!-- COMBINE -->
 	<dashboardCompound name="JOHNDEERE_G5_APILLAR_COMBINE_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="aPillarScreenCombine">
+		<group name="JD_COMB_PAGEAP1"  dbl="page" group="1" page="1"/>      <!-- group soll 1 -->
+		<group name="JD_COMB_PAGEAP12" dbl="page" group="1" page="1 2"/>    <!-- group soll 1 -->
+		<group name="JD_COMB_PAGEAP2"  dbl="page" group="1" page="2"/>      <!-- group soll 1 -->
+		<group name="JD_COMB_PAGEAP3"  dbl="page" group="1" page="3"/>      <!-- group soll 1 -->
+		<!-- <group name="JD_COMB_PAGEAP4" dbl="page" group="1" page="4"/> -->
+		<!-- <group name="JD_COMB_PAGESC1" dbl="page" group="2" page="1"/> -->
+		<!-- <group name="JD_COMB_PAGESC2" dbl="page" group="2" page="2"/> -->
+
 		<!-- numbers -->
 		<dashboard displayType="TEXT" valueType="motorized.rpm" node="g5Display_aPillarHarvester_numbersRPM" textColor="1 1 1 1" textSize="0.009" textMask="0000" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="motorized.speed" node="g5Display_aPillarHarvester_numbersSpeed" textColor="1 1 1 1" textSize="0.009" textMask="0.00" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE" maxActiveValue="9.99"/>
@@ -1230,6 +1235,8 @@
 		</realGPS>
 
 		<!-- aP P2 -->
+		<dashboard displayType="VISIBILITY" node="g5h_cameraNoSignal1_P3_AP" groups="MOTOR_RUNNING JD_COMB_PAGEAP2"/>
+		<dashboard displayType="EMITTER" node="g5h_cameraNoSignal1_P3_AP" intensity="0.4" groups="MOTOR_RUNNING JD_COMB_PAGEAP2" />
 		<dashboard displayType="VISIBILITY" node="g5harvesterCams1P3_AP" groups="MOTOR_RUNNING JD_COMB_PAGEAP2"/>
 		<realWorkCameras>
 			<workCameraDisplays>
@@ -1566,6 +1573,8 @@
 	
 	<!-- Disp CC -->
 	<dashboardCompound name="JOHNDEERE_G5_HARVESTAUTOMATIONPAGE" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="gpsScreenCombine">
+		<group name="JD_COMB_PAGECC1" dbl="page" group="3" page="1"/>       <!-- ! group soll 2, 3 wenn JD_COMB_PAGESC1 irgendwann aktiv mit 2 -->
+		<group name="JD_COMB_PAGECC2" dbl="page" group="3" page="2"/>
 		<!-- numbers -->
 		<!-- <dashboard displayType="TEXT" valueType="enterable.time" node="g5Display_harvestAutomationPage_numbersTime" textColor="1 1 1 1" textSize="0.0035" textMask="00:00" textScaleX="0.8" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/> -->
 		<!-- <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="g5Display_harvestAutomationPage_numbersFillLevelPct" fillUnitIndex="1" textColor="0 0 0 0" textSize="0.005" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/> -->
@@ -1689,6 +1698,13 @@
 				<hideNode node="g5HarvestingPageGPS_dblNaviPositionP2" isDashboard="true" />
 			</hideNodes>
 		</realGPS>
+
+		<dashboard displayType="VISIBILITY" node="g5h_cameraNoSignal1_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
+		<dashboard displayType="VISIBILITY" node="g5h_cameraNoSignal2_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
+		<dashboard displayType="VISIBILITY" node="g5h_cameraNoSignal3_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
+		<dashboard displayType="EMITTER" 	node="g5h_cameraNoSignal1_P2_GPS" emitColor="0 0.1 0.3" 	intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
+		<dashboard displayType="EMITTER" 	node="g5h_cameraNoSignal2_P2_GPS" emitColor="1 0 0" 		intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
+		<dashboard displayType="EMITTER" 	node="g5h_cameraNoSignal3_P2_GPS" emitColor="0.8 0 0" 		intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
 
 		<dashboard displayType="VISIBILITY" node="g5harvester_camMap_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
 		<realWorkCameras>
@@ -1837,6 +1853,7 @@
 		<i3dMapping id="g5TractorCamsP3_AP" node="0>0|0|0|4"/>
 		<i3dMapping id="camsAP" node="0>0|0|0|4|0"/>
 		<i3dMapping id="g5Display_Cam1TractorP3_AP" node="0>0|0|0|4|0|0"/>
+		<i3dMapping id="g5t_cameraNoSignal1_P3_AP" node="0>0|0|0|4|1"/>
 
 		<!-- slider -->
 		<i3dMapping id="g5Display_aPillarTractor_sliderFuel_decal" node="0>0|0|0|1|0"/>
@@ -2100,6 +2117,10 @@
 		<i3dMapping id="cams2SC" node="0>0|1|5|0"/>
 		<i3dMapping id="g5Display_Cam1TractorP3_SC" node="0>0|1|5|0|0"/>
 
+		<i3dMapping id="g5t_cameraNoSignal2_P2_SC" node="0>0|1|3|10"/>
+		<i3dMapping id="g5t_cameraNoSignal_P3_SC" node="0>0|1|3|11"/>
+		<i3dMapping id="g5t_cameraNoSignal1_P24_SC" node="0>0|1|3|9"/>
+
 
 		<i3dMapping id="gpsIcon" node="0>0|2|1"/>
 
@@ -2183,6 +2204,9 @@
 		<i3dMapping id="cams2CC" node="0>0|2|5|0"/>
 		<i3dMapping id="g5TractorCamsP4_CC" node="0>0|2|6"/>
 		<i3dMapping id="cams3CC" node="0>0|2|6|0"/>
+		<i3dMapping id="g5t_cameraNoSignal1_P2_CC" node="0>0|2|3|1"/>
+		<i3dMapping id="g5t_cameraNoSignal1_P3_CC" node="0>0|2|3|2"/>
+		<i3dMapping id="g5t_cameraNoSignal1_P4_CC" node="0>0|2|3|3"/>
 
 		<i3dMapping id="g5Display_gpsPageTractor_decal" node="0>0|2|3|0"/>
 		<i3dMapping id="g5Display_dblCourseSatLoadedP1_GPS" node="0>0|2|1|11"/>
@@ -2288,6 +2312,7 @@
 		<i3dMapping id="g5Display_aPillarHarvester_IconFoldingPipe_AP" node="0>1|0|0|0|14"/>
 		<i3dMapping id="g5harvesterCams1P3_AP"  node="0>1|0|0|2"/>
 		<i3dMapping id="g5CombineCamP3_AP"      node="0>1|0|0|2|0"/>
+		<i3dMapping id="g5h_cameraNoSignal1_P3_AP" node="0>1|0|0|0|19"/>
 
 		<!-- slider -->
 		<i3dMapping id="g5Display_aPillarHarvester_sliderFuel_decal" node="0>1|0|0|0|1|0"/>
@@ -2529,5 +2554,10 @@
 		<i3dMapping id="g5realCams1Combine_CC" node="0>1|2|4|0"/>
 		<i3dMapping id="g5realCams2Combine_CC" node="0>1|2|4|1"/>
 		<i3dMapping id="g5realCams3Combine_CC" node="0>1|2|4|2"/>
+		<i3dMapping id="g5h_cameraNoSignal1_P2_GPS" node="0>1|2|3|1"/>
+		<i3dMapping id="g5h_cameraNoSignal2_P2_GPS" node="0>1|2|3|2"/>
+		<i3dMapping id="g5h_cameraNoSignal3_P2_GPS" node="0>1|2|3|3"/>
+
+		
 	</i3dMappings>
 </dashboardCompounds>
