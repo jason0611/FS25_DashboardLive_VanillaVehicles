@@ -1253,7 +1253,7 @@
 		<i3dMapping id="g4Display_dblRGpsLaneRightOrangeP1_CC" node="0>2|1|19"/>
 		<i3dMapping id="g4Display_dblRGpsLaneLeftRedP1_CC" node="0>2|1|20"/>
 		<i3dMapping id="g4Display_dblRGpsLaneRightRedP1_CC" node="0>2|1|21"/>
-		<i3dMappings id="g4Display_dblLaneDistanceNumbersP1_GPS" node="0>2|1|2|7"/>
+		<i3dMapping id="g4Display_dblLaneDistanceNumbersP1_GPS" node="0>2|1|2|7"/>
 
 		<i3dMapping id="g4Display_dblRGpsLaneLeftPall_CC" node="0>2|1|22"/>
 		<i3dMapping id="g4Display_dblRGpsLaneRightPall_CC" node="0>2|1|23"/>
