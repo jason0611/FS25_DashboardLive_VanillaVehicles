@@ -172,8 +172,8 @@
             <state value="1" visibility="true"/>
             <state value="2" visibility="true"/>
 		</dashboard>
-		<dashboard displayType="SLIDER" valueType="steeringAngle"  factor="1"  node="4gVTrtkSliderLeft_P2_SC"  minValueSlider="0"  maxValueSlider="1" intensity="0.2" doInterpolation="true" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>
-		<dashboard displayType="SLIDER" valueType="steeringAngle"  factor="1"  node="4gVTrtkSliderRight_P2_SC" minValueSlider="-1" maxValueSlider="0" intensity="0.2" doInterpolation="true" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>
+		<dashboard displayType="SLIDER" valueType="drivable.steeringAngle"  factor="1"  node="4gVTrtkSliderLeft_P2_SC"  minValueSlider="0"  maxValueSlider="1" intensity="0.2" doInterpolation="true" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>
+		<dashboard displayType="SLIDER" valueType="drivable.steeringAngle"  factor="1"  node="4gVTrtkSliderRight_P2_SC" minValueSlider="-1" maxValueSlider="0" intensity="0.2" doInterpolation="true" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>
 		
 		<dashboard displayType="MULTI_STATE" node="g4Display_dblVTisobusRTKRichtungOffP2_SC" valueType="ai.automaticSteering.steeringState" groups="MOTOR_RUNNING JD4_TRAC_PAGESC2" >
 			<state value="0" visibility="true"/>
@@ -189,7 +189,7 @@
 		<dashboard displayType="VISIBILITY" node="g4Display_dblVTisobusRTKcourseP2_SC" 		valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING JD4_TRAC_PAGESC2"/>	
 		<dashboard displayType="VISIBILITY"	node="g4Display_dblVTisobusRTKspeedKphP2_SC" 	valueType="ai.automaticSteering.steeringState" 		groups="MOTOR_RUNNING JD4_TRAC_PAGESC2"/>	
 		
-		<dashboard displayType="TEXT" valueType="steeringAngle" 				node="g4Display_dblVTisobusRTKyawAngleP2_SC" 		textSpacing="10" textColor="0.6 0.6 0.6 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="00.00000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>	
+		<dashboard displayType="TEXT" valueType="drivable.steeringAngle" 				node="g4Display_dblVTisobusRTKyawAngleP2_SC" 		textSpacing="10" textColor="0.6 0.6 0.6 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.004" textMask="00.00000"  font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.00053" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>	
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingtext3" 	node="g4Display_dblVTisobusRTKRichtungP2_SC" 		fontThickness="1" textSpacing="6" textColor="0.6 0.6 0.6 1"  emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.006" textMask="zzz"  		font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>	
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingtext1" 	node="g4Display_dblVTisobusRTKRichtungOffP2_SC" 	textColor="0.6 0.6 0.6 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.006" textMask="s" 		font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>	
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" 	node="g4Display_dblVTisobusRTKFieldP2_SC" 			textColor="0.6 0.6 0.6 1" emissiveScale="0.3" textColorDarkMode="0 0 0 1" textSize="0.005" textMask="000" 		font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC2"/>	
