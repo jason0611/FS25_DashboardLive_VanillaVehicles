@@ -810,18 +810,18 @@
 		<dashboard displayType="EMITTER" node="cameraNoSignal_P4" baseColor="0 0 0" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS4"/>
 		<dashboard displayType="EMITTER" node="cameraNoSignal1_P5" baseColor="0 0 0" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS56"/>
 		<dashboard displayType="EMITTER" node="cameraNoSignal2_P5" baseColor="0 0 0" emitColor="0.9 0.9 0.9 1" intensity="0.6" intensityDarkMode="0.5" groups="MOTOR_RUNNING JD4_TRAC_PAGEGPS5"/>
-        <realWorkCameras>
+        <workCameras>
             <workCameraDisplays>
-                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P3_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS3"/>
-				<workCameraDisplay isAttachableCamDisplay="true" linkNode="g4cams1P4_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS4"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P5_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS5"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P5_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS5"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P6_GPS" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS6"/>
+                <workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P3_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS3"/>
+				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="g4cams1P4_GPS" nightReflectionScale="2" aspectRatio="1.5" reflectionScale="1 2 3 4" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS4"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P5_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS5"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P5_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS5"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P6_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS6"/>
             </workCameraDisplays>
             <!-- <hideNodes>
                 <hideNode node="g5Display_naviMapTractorP1_SC" isDashboard="true" />
             </hideNodes> -->
-        </realWorkCameras>
+        </workCameras>
 		
 		<!-- gps -->
 		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringEngaged" node="g4Display_dblGPSActiveP12_GPS" groups="MOTOR_ACTIVE"/>

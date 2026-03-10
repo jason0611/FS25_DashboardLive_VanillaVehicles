@@ -105,15 +105,15 @@
 		<dashboard displayType="SLIDER" valueType="motorized.load" node="g5Display_aPillarTractor_sliderLoad_decal" factor="1" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.3" intensity="0.2" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="connected" jointSide="back" node="g5Display_aPillarTractor_sliderHitchBack_decal"            groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="SLIDER" valueType="dbl.base" node="g5Display_aPillarTractor_sliderHitchBack_decal" cmd="liftState" jointSide="back" jointType="implement" factor="100" intensity="0.4" intensityDarkMode="0.05" minValueSlider="0" maxValueSlider="100" groups="MOTOR_ACTIVE" />
-
-		<dashboard displayType="EMITTER" valueType="motorized.load" node="g5Display_aPillarDisplayTractor_staticLoad_AP" emitColor="1 1 1 1" maxActiveValue="90.9" intensity="0.3" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
-		<dashboard displayType="EMITTER" valueType="motorized.load" node="g5Display_aPillarDisplayTractor_staticLoad_AP" emitColor="1 0 0 1" minActiveValue="91" intensity="0.3" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
+																								<!-- MÜLL -->
+		<dashboard displayType="VISIBILITY" node="g5Display_aPillarDisplayTractor_staticLoad_AP" groups="MOTOR_RUNNING JD_TRAC_PAGEAP1"/>
+		<dashboard displayType="EMITTER" valueType="motorized.load" node="g5Display_aPillarDisplayTractor_staticLoad_AP" baseColor="1 1 1" emitColor="1 0 0 1" minActiveValue="91" intensity="0.3" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
+		<dashboard displayType="EMITTER" valueType="motorized.load" node="g5Display_aPillarDisplayTractor_staticLoad_AP" baseColor="1 1 1" emitColor="1 1 1 1" max="150" minActiveValue="-100" maxActiveValue="90.999" doInterpolation="true" interpolationSpeed="0.003" intensity="0.3" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 
 		<dashboard displayType="TRANS"  valueType="fillLevel" fillType="AIR" node="g5Display_aPillarTractor_loadBarAir_decal" minTrans="0.0303 0 -0.08" maxTrans="0.0303 0 -0.038" doInterpolation="false" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 		<dashboard displayType="TRANS" valueType="motorized.motorTemperature" node="g5Display_aPillarTractor_loadBarTemperature_decal" minTrans="0.01 0 -0.08" maxTrans="0.01 0 -0.038" doInterpolation="true" interpolationSpeed="0.3" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 
 		<dashboard displayType="EMITTER" valueType="motorized.motorTemperature" node="g5Display_aPillarTractor_loadBarTemperature_decal" emitColor="1 1.0 1" intensity="0.4" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
-		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_staticLoad_AP" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 
 		<!-- worklights --> 
 		<dashboard displayType="EMITTER" valueType="lights.lightState"  node="g5Display_aPillarDisplayTractor_IconWorklightFront_AP"  lightTypes="2" baseColor="0 0 0"  emitColor="1 0.5 0" hideInactive="true" intensity="0.5" groups="MOTOR_ACTIVE"/>
@@ -149,14 +149,14 @@
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autoreverseworklight" state="2" node="g5Display_aPillarTractor_numbersCVTautoLightActive" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 		<dashboard displayType="TEXT" valueType="dbl.cvt" cmd="autoreverseworklightseconds" node="g5Display_aPillarTractor_numbersCVTautoLightActive" textColor="JOHNDEERE_YELLOW1" textSize="0.006" textMask="00" textAlignment="LEFT" emissiveScale="1.0" font="GENERIC" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP1"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autoreverselight"  node="g5Display_aPillarDisplayTractor_IconWorklightBackAuto_AP" baseColor="0 0 0"  emitColor="0.5 0.5 0" hideInactive="true" intensity="0.7" groups="MOTOR_ACTIVE"/>
-		
-		<dashboard displayType="VISIBILITY" node="g5Display_aPillarTractor_CvtDLnumbersP1_AP"       valueType="dbl.cvt" cmd="drivinglevel"  cond="notequal" condValue="n"    groups="MOTOR_ACTIVE"/> <!-- need to only vis4 cvts, not manual transmission like: not <configuration id="TRANSMISSION_POWERSHIFT"> <configuration id="TRANSMISSION_...""> -->
+																																	<!-- MÜLL -->
+		<dashboard displayType="VISIBILITY" node="g5Display_aPillarTractor_CvtDLnumbersP1_AP"       valueType="dbl.cvt" cmd="drivinglevel"  cond="not" condValue="n"    groups="MOTOR_ACTIVE"/> <!-- need to only vis4 cvts, not manual transmission like: not <configuration id="TRANSMISSION_POWERSHIFT"> <configuration id="TRANSMISSION_...""> -->
 		<dashboard displayType="VISIBILITY" node="g5Display_aPillarTractor_CvtAccRampsNumbersP1_AP" valueType="dbl.cvt" cmd="accramp"       cond="notequal" condValue="n"    groups="MOTOR_ACTIVE"/> <!-- need 2 only vis4 cvts, not manual transmission -->
 		<dashboard displayType="TEXT" valueType="dbl.cvt" cmd="drivinglevel" node="g5Display_aPillarTractor_CvtDLnumbersP1_AP" textColor="JOHNDEERE_YELLOW1" textSize="0.009" textMask="0" textAlignment="LEFT" emissiveScale="1.0" font="DIGIT" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="dbl.cvt" cmd="accramp" node="g5Display_aPillarTractor_CvtAccRampsNumbersP1_AP" textColor="JOHNDEERE_YELLOW1" textSize="0.009" textMask="0" textAlignment="LEFT" emissiveScale="1.0" font="DIGIT" groups="MOTOR_ACTIVE"/>
 		
-		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="cvtclutch" node="g5Display_aPillarDisplayTractor_CvtClutch_AP" baseColor="0 0 0" emitColor="0.6 0.5 0"                        maxActiveValue="0.7" intensity="0.9" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="cvtclutch" node="g5Display_aPillarDisplayTractor_CvtClutch_AP" baseColor="0 0 0" emitColor="1.0 0.1 0" minActiveValue="0.9"                        intensity="0.7" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="cvtclutch" node="g5Display_aPillarDisplayTractor_CvtClutch_AP" baseColor="0 0 0" emitColor="0.8 0.1 0" minActiveValue="0.2" maxActiveValue="0.8999" intensity="0.9" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="cvtclutch" node="g5Display_aPillarDisplayTractor_CvtClutch_AP" baseColor="0 0 0" emitColor="0.2 1.0 0" minActiveValue="0.9"                        intensity="0.7" groups="MOTOR_ACTIVE"/>
 		<!-- <configuration id="CONFIG_9RX830"> -->
 			<!-- <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="g5Display_aPillarTractorConfig9RX830_sliderFuel_decal" intensity="0.5" groups="MOTOR_RUNNING"/>
 			<dashboard displayType="TRANS" valueType="motorized.motorTemperature" node="g5Display_aPillarTractorConfig9RX830_loadBarTemp_decal" minTrans="0 0 0" maxTrans="0 0 0.035" groups="MOTOR_RUNNING"/>
@@ -207,7 +207,7 @@
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP3_AP" groups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
 		<dashboard displayType="VISIBILITY" node="g5t_cameraNoSignal1_P3_AP" groups="MOTOR_RUNNING JD_TRAC_PAGEAP3"/>
 		<dashboard displayType="EMITTER" node="g5t_cameraNoSignal1_P3_AP" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGEAP3"/>
-		<realWorkCameras>
+		<workCameras>
 			<workCameraDisplays>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsAP" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
 			</workCameraDisplays>
@@ -215,7 +215,7 @@
 			<!-- <hideNodes>
 				<hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
 			</hideNodes> -->
-		</realWorkCameras>
+		</workCameras>
 	</dashboardCompound>
 
 	<!-- BASE SC -->
@@ -631,7 +631,7 @@
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP2_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC2"/>
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP3_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC3"/>
 		<dashboard displayType="VISIBILITY" node="g5AttachCamsP4_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC4"/>
-		<realWorkCameras>
+		<workCameras>
 			<workCameraDisplays>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC2" nightReflectionScale="20" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
@@ -642,7 +642,7 @@
 			<!-- <hideNodes>
 				<hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
 			</hideNodes> -->
-		</realWorkCameras>
+		</workCameras>
 
 		<!-- displays -->
 		<dashboard displayType="VISIBILITY" node="g5Display_defaultPageTractor_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
@@ -708,6 +708,7 @@
 		<dashboard displayType="SLIDER" valueType="drivable.steeringAngle" factor="1"  node="g5VTrtkSliderLeft_P2_SC"  minValueSlider="0"  maxValueSlider="1" intensity="0.15" doInterpolation="true" groups="MOTOR_ACTIVE DARKMODE"/>
 		<dashboard displayType="SLIDER" valueType="drivable.steeringAngle" factor="1"  node="g5VTrtkSliderRight_P2_SC" minValueSlider="-1" maxValueSlider="0" intensity="0.15" doInterpolation="true" groups="MOTOR_ACTIVE DARKMODE"/>
 		<!-- <dashboard displayType="EMITTER" node="g5Display_dblSteeringIndex1SliderP1_SC" intensity="0.1" groups="MOTOR_RUNNING"/> -->
+		<dashboard displayType="VISIBILITY" node="g5Display_dblSteeringIndex2SliderP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblSteeringIndex2SliderP1_SC" intensity="0.1" groups="MOTOR_RUNNING"/>
 		<!-- <dashboard displayType="SLIDER" valueType="steeringAngle" factor="1"  node="g5Display_dblSteeringIndex1SliderP1_SC"  minValueSlider="0"  maxValueSlider="1" doInterpolation="true" groups="MOTOR_RUNNING"/> -->
 		<dashboard displayType="SLIDER" valueType="drivable.steeringAngle" factor="-1" node="g5Display_dblSteeringIndex2SliderP1_SC"  minValueSlider="-1" maxValueSlider="1" doInterpolation="true" groups="MOTOR_RUNNING"/>
@@ -1075,7 +1076,7 @@
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP2_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS24"/>
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP3_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS3"/>
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP4_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS4"/>
-		<realWorkCameras>
+		<workCameras>
 			<workCameraDisplays>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsCC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS24"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2CC" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS3"/>
@@ -1085,7 +1086,7 @@
 			<!-- <hideNodes>
 				<hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
 			</hideNodes> -->
-		</realWorkCameras>
+		</workCameras>
 		
 		<!-- gps -->
 		<dashboard displayType="VISIBILITY" valueType="ai.automaticSteering.steeringState" node="g5Display_dblCourseSatLoadedP1_GPS" groups="MOTOR_RUNNING"/>
@@ -1238,7 +1239,7 @@
 		<dashboard displayType="VISIBILITY" node="g5h_cameraNoSignal1_P3_AP" groups="MOTOR_RUNNING JD_COMB_PAGEAP2"/>
 		<dashboard displayType="EMITTER" node="g5h_cameraNoSignal1_P3_AP" intensity="0.4" groups="MOTOR_RUNNING JD_COMB_PAGEAP2" />
 		<dashboard displayType="VISIBILITY" node="g5harvesterCams1P3_AP" groups="MOTOR_RUNNING JD_COMB_PAGEAP2"/>
-		<realWorkCameras>
+		<workCameras>
 			<workCameraDisplays>
 				<!-- <workCameraDisplay isAttachableCamDisplay="true" linkNode="g5CombineCamP3_AP" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGEAP2"/> -->
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5CombineCamP3_AP" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_COMB_PAGEAP2"/>
@@ -1247,7 +1248,7 @@
 			<!-- <hideNodes>
 				<hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
 			</hideNodes> -->
-		</realWorkCameras>
+		</workCameras>
 		<!-- display -->
 		<dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_decal" idleValue="-1" hideInactiveChildren="true" intensity="0.4" intensityDarkMode="0.05" groups="MOTOR_ACTIVE" />
 	</dashboardCompound>
@@ -1707,7 +1708,7 @@
 		<dashboard displayType="EMITTER" 	node="g5h_cameraNoSignal3_P2_GPS" emitColor="0.8 0 0" 		intensity="0.6" intensityDarkMode="0.4" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
 
 		<dashboard displayType="VISIBILITY" node="g5harvester_camMap_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
-		<realWorkCameras>
+		<workCameras>
 			<workCameraDisplays>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams1Combine_CC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams2Combine_CC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true"                        dblGroups="JD_COMB_PAGECC2"/>
@@ -1716,7 +1717,7 @@
 			<!-- <hideNodes>
 				<hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
 			</hideNodes> -->
-		</realWorkCameras>
+		</workCameras>
 
 
 
