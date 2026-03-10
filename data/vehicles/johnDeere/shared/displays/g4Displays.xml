@@ -813,7 +813,7 @@
         <workCameras>
             <workCameraDisplays>
                 <workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P3_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS3"/>
-				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="g4cams1P4_GPS" nightReflectionScale="2" aspectRatio="1.5" reflectionScale="1 2 3 4" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS4"/>
+				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="g4cams1P4_GPS" nightReflectionScale="2" aspectRatio="1.5" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS4"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P5_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS5"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams2P5_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS5"/>
 				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g4cams1P6_GPS" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD4_TRAC_PAGEGPS6"/>

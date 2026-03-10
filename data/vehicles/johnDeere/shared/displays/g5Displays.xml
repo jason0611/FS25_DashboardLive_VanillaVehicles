@@ -209,7 +209,7 @@
 		<dashboard displayType="EMITTER" node="g5t_cameraNoSignal1_P3_AP" intensity="0.8" groups="MOTOR_RUNNING JD_TRAC_PAGEAP3"/>
 		<workCameras>
 			<workCameraDisplays>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsAP" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsAP" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="MOTOR_ACTIVE JD_TRAC_PAGEAP3"/>
 			</workCameraDisplays>
 
 			<!-- <hideNodes>
@@ -633,10 +633,10 @@
 		<dashboard displayType="VISIBILITY" node="g5AttachCamsP4_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC4"/>
 		<workCameras>
 			<workCameraDisplays>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC2" nightReflectionScale="20" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2SC" nightReflectionScale="20" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC3"/>
-				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="cams4SC" nightReflectionScale="20" aspectRatio="1" reflectionScale="3" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC4"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC"  nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsSC2" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC2"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2SC" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC3"/>
+				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="cams4SC" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TRAC_PAGESC4"/>
 			</workCameraDisplays>
 
 			<!-- <hideNodes>
@@ -1078,9 +1078,9 @@
 		<dashboard displayType="VISIBILITY" node="g5TractorCamsP4_CC" groups="MOTOR_ACTIVE JD_TR_PAGEGPS4"/>
 		<workCameras>
 			<workCameraDisplays>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsCC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS24"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2CC" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS3"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams3CC" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS4"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="camsCC"  nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS24"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams2CC" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS3"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="cams3CC" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_TR_PAGEGPS4"/>
 			</workCameraDisplays>
 
 			<!-- <hideNodes>
@@ -1241,8 +1241,8 @@
 		<dashboard displayType="VISIBILITY" node="g5harvesterCams1P3_AP" groups="MOTOR_RUNNING JD_COMB_PAGEAP2"/>
 		<workCameras>
 			<workCameraDisplays>
-				<!-- <workCameraDisplay isAttachableCamDisplay="true" linkNode="g5CombineCamP3_AP" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGEAP2"/> -->
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5CombineCamP3_AP" nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" dblGroups="JD_COMB_PAGEAP2"/>
+				<!-- <workCameraDisplay isAttachableCamDisplay="true" linkNode="g5CombineCamP3_AP" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGEAP2"/> -->
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5CombineCamP3_AP" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" dblGroups="JD_COMB_PAGEAP2"/>
 			</workCameraDisplays>
 
 			<!-- <hideNodes>
@@ -1710,9 +1710,9 @@
 		<dashboard displayType="VISIBILITY" node="g5harvester_camMap_P2_GPS" groups="MOTOR_RUNNING JD_COMB_PAGECC2"/>
 		<workCameras>
 			<workCameraDisplays>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams1Combine_CC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
-				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams2Combine_CC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true"                        dblGroups="JD_COMB_PAGECC2"/>
-				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="g5realCams3Combine_CC"  nightReflectionScale="20" aspectRatio="1" reflectionScale="2" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams1Combine_CC"  nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
+				<workCameraDisplay isAttachableCamDisplay="false" linkNode="g5realCams2Combine_CC"  nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true"                        dblGroups="JD_COMB_PAGECC2"/>
+				<workCameraDisplay isAttachableCamDisplay="true"  linkNode="g5realCams3Combine_CC"  nightReflectionScale="2" aspectRatio="1" reflectionScale="1" containsCustomPlane="true" displayMirrored="true" dblGroups="JD_COMB_PAGECC2"/>
 			</workCameraDisplays>
 			<!-- <hideNodes>
 				<hideNode node="g5Display_gpsPageTractor_static" isDashboard="true" />
