@@ -185,6 +185,17 @@
 		<!-- MiniMap -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="cemisXerion12_dblNaviMapP1_CC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="cemisXerion12_dblNaviPositionP1_CC" groups="MOTOR_RUNNING"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="cemisXerion12_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cemisXerion12_dblNaviPositionP1_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 
     <dashboardCompound name="CEBIS_JAGUAR_MAINPAGE" filename="data/vehicles/claas/shared/displays/claasDisplays.i3d" node="cebisJaguar">
@@ -424,6 +435,17 @@
         <!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="cemisLexion_dblNaviMapP1_CC" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="cemisLexion_dblNaviPositionP1_CC" groups="MOTOR_RUNNING"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="cemisLexion_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cemisLexion_dblNaviPositionP1_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 	
 	<!-- Tractor -->
@@ -508,6 +530,18 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="cebisAxion_dblNaviMapP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="cebisAxion_dblNaviMapPosP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="cebisAxion_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE TRACTOR_PAGESC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cebisAxion_dblNaviMapPosP1_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
+
 	<!-- Page2 -->
 		<!-- displays -->
 		<dashboard displayType="EMITTER" node="cebisFieldScreenP2_SC" intensity="0.15" groups="MOTOR_ACTIVE"/>

@@ -152,6 +152,17 @@
 		<!-- MiniMap -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="cnh_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="cnh_dblNaviPosP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="cnh_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cnh_dblNaviPosP2_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 		
 	<!-- Page3 Display -->
 		<dashboard displayType="VISIBILITY" node="cnh_dblSystemScreen_decal_SC" groups="MOTOR_RUNNING PAGESC3"/>
@@ -266,6 +277,17 @@
 		<!-- MiniMap -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="cnh_dblNaviMapP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="cnh_dblNaviPosP1_CC" groups="MOTOR_RUNNING PAGECC1"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="cnh_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGECC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cnh_dblNaviPosP1_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 		
 	<!-- Page2 Display -->
 		<dashboard displayType="VISIBILITY" node="cnh_dblSystemScreen_decal_CC" groups="MOTOR_RUNNING PAGECC2"/>

@@ -974,6 +974,7 @@
 			<!-- MiniMap -->
 			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="cebisAxion_dblNaviMapP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="cebisAxion_dblNaviMapPosP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+            
 		<!-- Page2 -->
 			<!-- CVT -->
 			<dashboard displayType="EMITTER" valueType="cvt" cmd="critdamage" node="cebisAxion_dblGearWarningIconP2_SC" baseColor="CLAAS_DARKGREY1" baseColorDarkMode="1 1 1 1" emitColor="BOURGAULT_YELLOW1" intensity="0.4" groups="MOTOR_RUNNING PAGESC2"/>
@@ -1008,6 +1009,25 @@
 			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="cebisAxion_dblNaviMapPosCC" groups="MOTOR_RUNNING"/>
 		</dashboardLive>
     </dashboard>
+
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="cebisAxion_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC1">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+        <map mapNode="cebisAxion_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC2">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+        <map mapNode="axionGps_dblNaviMapCC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="cebisAxion_dblNaviMapPosP1_SC" isDashboard="true" />
+            <hideNode node="cebisAxion_dblNaviMapPosP2_SC" isDashboard="true" />
+            <hideNode node="cebisAxion_dblNaviMapPosCC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
 
     <ai>
         <agent frontWheelNodes="wheelFrontLeftPhys wheelFrontRightPhys"/>
