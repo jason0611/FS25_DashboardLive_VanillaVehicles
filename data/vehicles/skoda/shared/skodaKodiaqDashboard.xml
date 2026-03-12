@@ -15,6 +15,17 @@
 <!-- MiniMap -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="skodaKodiaq_dblNaviMapP2" groups="MOTOR_ACTIVE PAGE2"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="skodaKodiaq_dblNaviMapPosP2" groups="MOTOR_ACTIVE PAGE2"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="skodaKodiaq_dblNaviMapP2" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGE2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="skodaKodiaq_dblNaviMapPosP2" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 	
 	<i3dMappings>
