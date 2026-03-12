@@ -893,6 +893,26 @@
         </hideNodes>
     </realGPS>
 
+    <workCameras>
+        <cameraGroups>
+            <cameraGroup name="CAMS_DEFAULT" title="$l10n_cameraGroup_DEFAULT" ignitionDependent="true" isAttachableCamGroup="true">
+                <attachableCamDisplay prio="1" displayNode="0>6|7|8|4" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" />
+            </cameraGroup>
+        </cameraGroups>
+
+        <workCameras>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="true" isPipeCam="false" displayNode="0>6|7|8|0" cameraNode="0>10|0|11" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" configurationName="vehicleType" configurationIndex="1"/>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="false" displayNode="0>6|7|8|1" cameraNode="0>10|0|0|0|0|7" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" configurationName="vehicleType" configurationIndex="1"/>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="true" isPipeCam="false" displayNode="0>6|7|8|2" cameraNode="0>10|2|21" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" configurationName="vehicleType" configurationIndex="2"/>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="false" displayNode="0>6|7|8|3" cameraNode="0>10|2|9|0|12|0|1" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" configurationName="vehicleType" configurationIndex="2"/>
+        </workCameras>
+
+        <hideNodes>
+            <hideNode node="dashboardDisplay02" isDashboard="true" />
+        </hideNodes>
+    </workCameras>
+
+
     <ai>
         <aiConfigurations>
             <aiConfiguration/>

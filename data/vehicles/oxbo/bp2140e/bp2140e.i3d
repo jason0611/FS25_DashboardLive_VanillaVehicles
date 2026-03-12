@@ -13,14 +13,14 @@
     <File fileId="74" filename="$data/fillPlanes/greenbean_diffuse.dds"/>
     <File fileId="75" filename="$data/fillPlanes/greenbean_normal.dds"/>
     <File fileId="68" filename="$data/shaders/glowShader.xml"/>
-    <File fileId="81" filename="$data/shaders/mirrorShader.xml"/>
+    <File fileId="82" filename="$data/shaders/mirrorShader.xml"/>
     <File fileId="5" filename="$data/shaders/vehicleShader.xml"/>
     <File fileId="59" filename="$data/shared/assets/beaconLights/lizard/beaconLight07.i3d"/>
     <File fileId="66" filename="$data/shared/assets/camera_03.i3d"/>
-    <File fileId="82" filename="$data/shared/assets/extinguisher.i3d"/>
-    <File fileId="83" filename="$data/shared/assets/gpsReceiver/gpsReceiver01.i3d"/>
-    <File fileId="84" filename="$data/shared/assets/grid_diffuse.png"/>
-    <File fileId="85" filename="$data/shared/assets/grid_normal.png"/>
+    <File fileId="83" filename="$data/shared/assets/extinguisher.i3d"/>
+    <File fileId="84" filename="$data/shared/assets/gpsReceiver/gpsReceiver01.i3d"/>
+    <File fileId="85" filename="$data/shared/assets/grid_diffuse.png"/>
+    <File fileId="86" filename="$data/shared/assets/grid_normal.png"/>
     <File fileId="45" filename="$data/shared/assets/lights/lizard/rearLight26.i3d"/>
     <File fileId="46" filename="$data/shared/assets/lights/lizard/sideMarker29.i3d"/>
     <File fileId="47" filename="$data/shared/assets/reflectors/lizard/redRound_01.i3d"/>
@@ -75,8 +75,8 @@
     <File fileId="60" filename="$data/vehicles/oxbo/bp2140e/bp2140eGears_diffuse.png"/>
     <File fileId="61" filename="$data/vehicles/oxbo/bp2140e/bp2140eGears_normal.png"/>
     <File fileId="62" filename="$data/vehicles/oxbo/bp2140e/bp2140eGears_vmask.png"/>
-    <File fileId="86" filename="$data/vehicles/oxbo/bp2140e/bp2140eGrid_vmask.png"/>
-    <File fileId="87" filename="$data/vehicles/oxbo/bp2140e/bp2140eHoses_vmask.png"/>
+    <File fileId="87" filename="$data/vehicles/oxbo/bp2140e/bp2140eGrid_vmask.png"/>
+    <File fileId="88" filename="$data/vehicles/oxbo/bp2140e/bp2140eHoses_vmask.png"/>
     <File fileId="48" filename="$data/vehicles/oxbo/bp2140e/bp2140eLights_emissive.png"/>
     <File fileId="56" filename="$data/vehicles/oxbo/bp2140e/bp2140eUvScroll_diffuse.png"/>
     <File fileId="57" filename="$data/vehicles/oxbo/bp2140e/bp2140eUvScroll_normal.png"/>
@@ -395,9 +395,9 @@
       <CustomParameter name="clearCoatSmoothness" value="0.2"/>
     </Material>
     <Material name="bp2140eGrid_OXBO_GREEN1_mat" materialId="39" customShaderId="5" customShaderVariation="vmaskUV2">
-      <Texture fileId="84"/>
-      <Normalmap fileId="85"/>
-      <Glossmap fileId="86"/>
+      <Texture fileId="85"/>
+      <Normalmap fileId="86"/>
+      <Glossmap fileId="87"/>
       <Custommap name="detailSpecular" fileId="6"/>
       <Custommap name="detailNormal" fileId="7"/>
       <Custommap name="detailDiffuse" fileId="8"/>
@@ -407,9 +407,9 @@
       <CustomParameter name="clearCoatSmoothness" value="0.2"/>
     </Material>
     <Material name="bp2140eGrid_OXBO_YELLOW1_mat" materialId="40" customShaderId="5" customShaderVariation="vmaskUV2">
-      <Texture fileId="84"/>
-      <Normalmap fileId="85"/>
-      <Glossmap fileId="86"/>
+      <Texture fileId="85"/>
+      <Normalmap fileId="86"/>
+      <Glossmap fileId="87"/>
       <Custommap name="detailSpecular" fileId="6"/>
       <Custommap name="detailNormal" fileId="7"/>
       <Custommap name="detailDiffuse" fileId="8"/>
@@ -421,7 +421,7 @@
     <Material name="bp2140eHoses_rubberBlackHoses_mat" materialId="41" customShaderId="5" customShaderVariation="vmaskUV2">
       <Texture fileId="2"/>
       <Normalmap fileId="64"/>
-      <Glossmap fileId="87"/>
+      <Glossmap fileId="88"/>
       <Custommap name="detailSpecular" fileId="18"/>
       <Custommap name="detailNormal" fileId="19"/>
       <Custommap name="detailDiffuse" fileId="20"/>
@@ -488,7 +488,7 @@
       <Normalmap fileId="64"/>
       <Glossmap fileId="65"/>
     </Material>
-    <Material name="mirror_mat" materialId="52" diffuseColor="0 0 0 1" specularColor="0.501961 1 0.501961" customShaderId="81">
+    <Material name="mirror_mat" materialId="52" diffuseColor="0 0 0 1" specularColor="0.501961 1 0.501961" customShaderId="82">
       <Reflectionmap lodDistanceScaling="0.5" viewDistanceScaling="0.5" type="planar" scaling="1" refractiveIndex="10" bumpScale="0.1" shapesObjectMask="4294967295" lightsObjectMask="4294967295"/>
     </Material>
     <Material name="oxboBP2410Display_mat" materialId="53" customShaderId="68" customShaderVariation="slider">
@@ -509,6 +509,8 @@
       <Custommap name="detailNormal" fileId="14"/>
       <Custommap name="detailDiffuse" fileId="37"/>
       <CustomParameter name="colorScale" value="0.012 0.012 0.012"/>
+    </Material>
+    <Material name="UnnamedMaterial" materialId="933" diffuseColor="1 1 1 1">
     </Material>
     <Material name="window_glassWindow_mat" materialId="56" alphaBlending="true" customShaderId="5">
       <Texture fileId="77"/>
@@ -802,6 +804,7 @@
                         </TransformGroup>
                         <TransformGroup name="bp2140e_decals" translation="0.74293 1.34625 -0.044467" rotation="0 0 -90" clipDistance="30" nodeId="489"/>
                         <TransformGroup name="bunkerSideFlap_joint" nodeId="490"/>
+                        <Camera name="workCamera4" translation="1.699 0.093 -1.542" rotation="-178.204 -4.667 179.927" nodeId="966" fov="90" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
                       </TransformGroup>
                     </TransformGroup>
                     <TransformGroup name="bunkerSideFlapHydraulicRefFrame" translation="0 1.75742 -0.547487" rotation="-140.457 0 180" nodeId="491">
@@ -844,9 +847,11 @@
                     <ReferenceNode name="camera_03_03" translation="-1.58438 1.58261 0.213589" rotation="-90 -79.4854 -90" referenceId="66" nodeId="531"/>
                     <Shape name="bp2140e_decals1" translation="-1.51847 0.91014 0.078405" rotation="90 79.4854 90" shapeId="24" clipDistance="80" nodeId="534" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="35"/>
                     <TransformGroup name="bp2140e_decals" translation="-0.043442 0.900195 0.064285" rotation="174.69 0 180" clipDistance="30" nodeId="535"/>
+                    <Camera name="workCamera2" translation="1.33 1.643 1.33" rotation="-27.069 53.649 14.607" nodeId="954" fov="90" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
                   </TransformGroup>
                   <TransformGroup name="bunker_joint" rotation="0.368007 0.082081 -0.144549" nodeId="536"/>
                   <TransformGroup name="bunkerAnimJoint" translation="-0.01446 0.450962 -1.38086" nodeId="537"/>
+                  <Camera name="workCamera1" translation="-1.626 1.543 0.206" rotation="35 79.485 90" nodeId="948" fov="90" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
                 </TransformGroup>
               </TransformGroup>
             </TransformGroup>
@@ -1153,6 +1158,23 @@
                 <Shape name="oxboBP_dblRadioDisplay_decal" translation="0 1.74846e-08 0" rotation="90 -90 0" shapeId="90" clipDistance="30" nodeId="789" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="34"/>
               </TransformGroup>
             </TransformGroup>
+            <TransformGroup name="workCams" translation="0 -2.19497 -3.82797" nodeId="920">
+              <TransformGroup name="oxboBP_workCam1P2_CC" nodeId="934">
+                <Shape name="oxboBP_workCamDisplay1P2_CC" translation="-0.467 3.56297 4.17297" rotation="-100.368 36.163 166.191" shapeId="91" visibility="false" clipDistance="30" nodeId="968" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="933"/>
+              </TransformGroup>
+              <TransformGroup name="oxboBP_workCam1P2_CC" nodeId="935">
+                <Shape name="oxboBP_workCamDisplay1P2_CC" translation="-0.467 3.56297 4.17297" rotation="-100.368 36.163 166.191" shapeId="91" visibility="false" clipDistance="30" nodeId="969" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="933"/>
+              </TransformGroup>
+              <TransformGroup name="oxboBP_workCam1P2_CC" nodeId="937">
+                <Shape name="oxboBP_workCamDisplay1P2_CC" translation="-0.467 3.56297 4.17297" rotation="-100.368 36.163 166.191" shapeId="91" visibility="false" clipDistance="30" nodeId="970" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="933"/>
+              </TransformGroup>
+              <TransformGroup name="oxboBP_workCam1P2_CC" nodeId="939">
+                <Shape name="oxboBP_workCamDisplay1P2_CC" translation="-0.467 3.56297 4.17297" rotation="-100.368 36.163 166.191" shapeId="91" visibility="false" clipDistance="30" nodeId="940" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="933"/>
+              </TransformGroup>
+              <TransformGroup name="oxboBP_attachableWorkCam1P2_CC" nodeId="971">
+                <Shape name="oxboBP_workCamDisplay1P2_CC" translation="-0.467 3.56297 4.17297" rotation="-100.368 36.163 166.191" shapeId="91" visibility="false" clipDistance="30" nodeId="972" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="933"/>
+              </TransformGroup>
+            </TransformGroup>
           </TransformGroup>
           <TransformGroup name="characterTargets" nodeId="790">
             <TransformGroup name="playerRightFootTarget" translation="-0.218291 0.121729 -0.256984" rotation="0 -10 0" nodeId="791"/>
@@ -1170,12 +1192,12 @@
               <Shape name="rasterization04" translation="0 0.786873 0.398407" shapeId="98" clipDistance="300" nodeId="801" castsShadows="true" receiveShadows="true" materialIds="55"/>
             </TransformGroup>
             <TransformGroup name="references" nodeId="802">
-              <ReferenceNode name="extinguisher" translation="0.801775 0.213963 -0.857253" rotation="0 104.934 0" referenceId="82" nodeId="809"/>
+              <ReferenceNode name="extinguisher" translation="0.801775 0.213963 -0.857253" rotation="0 104.934 0" referenceId="83" nodeId="809"/>
               <TransformGroup name="licensePlateFront" translation="-1.33809 0.92058 0.090441" rotation="13.3055 5.47956 0.862031" nodeId="810"/>
             </TransformGroup>
             <TransformGroup name="bp2140e_decals" translation="0 0.924313 -0.085902" clipDistance="30" nodeId="811"/>
             <Shape name="bp2140e_decals1" translation="0.02845 0.730261 0.645974" shapeId="99" clipDistance="80" nodeId="812" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="35"/>
-            <ReferenceNode name="gpsReceiver01" translation="0 1.7168 0.86815" rotation="2.25206 0 0" referenceId="83" nodeId="822"/>
+            <ReferenceNode name="gpsReceiver01" translation="0 1.7168 0.86815" rotation="2.25206 0 0" referenceId="84" nodeId="822"/>
           </TransformGroup>
           <TransformGroup name="cabin_joint" nodeId="824"/>
         </TransformGroup>
@@ -1220,6 +1242,7 @@
           <TransformGroup name="references" nodeId="856">
             <ReferenceNode name="camera_03_01" translation="-1.40539 0.99622 2.80605" rotation="127.835 26.4501 150.166" referenceId="66" nodeId="857"/>
             <TransformGroup name="licensePlateBack" translation="0.000866 1.82382 -5.6112" rotation="11.2 180 1e-06" nodeId="860"/>
+            <Camera name="workCamera3" translation="-1.381 1.046 2.813" rotation="52.165 -26.45 -29.834" nodeId="960" fov="90" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
           </TransformGroup>
           <Shape name="bp2140e_decals" translation="-0.002207 2.12931 -0.956658" shapeId="102" clipDistance="30" nodeId="861" castsShadows="false" receiveShadows="true" decalLayer="1" skinBindNodeIds="861 185 187 193 195 367 368 376 379 478 489 535 543 551 557 559 563 567 573 575 579 587 588 592 600 601 608 619 628 699 740 747 762 763 811 886 888 894 897 904" materialIds="32,37,36"/>
           <Shape name="bp2140e_decals1" translation="0.000961 2.56454 -0.021421" shapeId="103" clipDistance="80" nodeId="862" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="35"/>

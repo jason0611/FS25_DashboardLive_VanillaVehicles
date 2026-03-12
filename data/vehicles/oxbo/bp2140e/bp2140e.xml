@@ -869,6 +869,9 @@
             <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
             <group name="MOTOR_RUNNING" electronicsRunning="true"/>
             <group name="LIGHT_ENABLED" lightTypes="0"/>
+
+            <group name="PAGE_CAMS1" dbl="page" page="1"/>
+			<group name="PAGE_CAMS2" dbl="page" page="2"/>
         </groups>
 
         <default>
@@ -953,8 +956,11 @@
 			<!-- Real Clock -->
 			<dashboard displayType="TEXT" valueType="base" cmd="realclock" node="oxboBP_dblRealClockP1_SC" textColor="1 1 1 1" textMask="........." textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
 			<!-- MiniMap -->
-			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="oxboBP_dblNaviMapP1_CC" groups="MOTOR_ACTIVE"/>
-			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="oxboBP_dblNaviMapPosP1_CC" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="map" node="oxboBP_dblNaviMapP1_CC" groups="MOTOR_ACTIVE PAGE_CAMS1"/>
+			<dashboard displayType="VISIBILITY" valueType="miniMap" cmd="posMarker" node="oxboBP_dblNaviMapPosP1_CC" groups="MOTOR_ACTIVE PAGE_CAMS1"/>
+
+            <dashboard displayType="VISIBILITY" node="workCams" groups="MOTOR_ACTIVE PAGE_CAMS2" />
+
 			<!-- Radio -->
 			<dashboard displayType="EMITTER" node="oxboBP_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
 			<dashboard displayType="EMITTER" valueType="base" cmd="radio" node="oxboBP_dblRadioDisplay_decal" idleValue="-1" intensity="0.3" groups="MOTOR_RUNNING"/>
@@ -973,6 +979,19 @@
             <hideNode node="oxboBP_dblNaviMapPosP1_CC" isDashboard="true" />
         </hideNodes>
     </realGPS>
+
+    <workCameras>
+        <cameraGroups>
+            <cameraGroup name="CAMS_DEFAULT" title="$l10n_FS25_workCamerasVanillaVehicles.cameraGroup_DEFAULT" ignitionDependent="true" dblGroups="MOTOR_ACTIVE PAGE_CAMS2"/>
+        </cameraGroups>
+
+        <workCameras>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="true" isPipeCam="false" displayNode="0>0|6|4|9|0" containsCustomPlane="true" displayMirrored="true" cameraNode="0>0|5|2|0|0|0|7" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1"/>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="false" displayNode="0>0|6|4|9|1" containsCustomPlane="true" cameraNode="0>0|5|2|0|0|0|4|4" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" />
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="false" displayNode="0>0|6|4|9|2" displayMirrored="false" containsCustomPlane="true" cameraNode="0>0|11|0|2" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" />
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="true" displayNode="0>0|6|4|9|3" displayMirrored="false" containsCustomPlane="true" cameraNode="0>0|5|2|0|0|0|1|2|0|6" cameraFovY="90" nightReflectionScale="2" aspectRatio="1" reflectionScale="1" />
+        </workCameras>
+    </workCameras>
 
     <turnOnVehicle>
         <turnedAnimation name="turnOnAnimation" />
@@ -1209,6 +1228,8 @@
 		
 		<i3dMapping id="oxboBP_dblNaviMapP1_CC" node="0>0|6|4|7|0"/>
         <i3dMapping id="oxboBP_dblNaviMapPosP1_CC" node="0>0|6|4|7|0|0"/>
+
+        <i3dMapping id="workCams" node="0>0|6|4|9"/>
 		
 		<i3dMapping id="oxboBP_dblRpmSliderP1_SC" node="0>0|6|1|0|1|0|0|0"/>
 		<i3dMapping id="oxboBP_dblSpeedrSliderP1_SC" node="0>0|6|1|0|1|0|0|1"/>
