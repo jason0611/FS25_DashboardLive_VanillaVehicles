@@ -93,6 +93,17 @@
 	<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="valtraST_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="valtraST_dblNaviMapPositionP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="valtraST_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGE2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="valtraST_dblNaviMapPositionP2_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 		
 	<!-- Page 3 -->
 	<!-- dashboards -->
@@ -179,6 +190,17 @@
 	<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="valtraTP_dblNaviMapP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="valtraTP_dblNaviMapPositionP2_CC" groups="MOTOR_RUNNING PAGECC2"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="valtraTP_dblNaviMapP2_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGE2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="valtraTP_dblNaviMapPositionP2_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 		
 	<!-- Page 3 -->
 	<!-- dashboards -->

@@ -737,6 +737,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="volvoFH16_dblNaviMapP2" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGE2">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="volvoFH16_dblNaviMapPosP2" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <foliageBending>
         <bendingNode minX="-1.35" maxX="1.35" minZ="-3.2" maxZ="4.55" yOffset="0.4"/>
     </foliageBending>
