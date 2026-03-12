@@ -963,6 +963,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="oxboBP_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="oxboBP_dblNaviMapPosP1_CC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <turnOnVehicle>
         <turnedAnimation name="turnOnAnimation" />
     </turnOnVehicle>
@@ -1196,8 +1207,8 @@
         <i3dMapping id="playerRightHandTarget" node="0>0|6|1|0|0|0|0" />
         <i3dMapping id="interiorGlow03_decals" node="0>0|6|1|0|0|0|1" />
 		
-		<i3dMapping id="oxboBP_dblNaviMapP1_CC" node="0>0|6|4|7"/>
-		<i3dMapping id="oxboBP_dblNaviMapPosP1_CC" node="0>0|6|4|7|0"/>
+		<i3dMapping id="oxboBP_dblNaviMapP1_CC" node="0>0|6|4|7|0"/>
+        <i3dMapping id="oxboBP_dblNaviMapPosP1_CC" node="0>0|6|4|7|0|0"/>
 		
 		<i3dMapping id="oxboBP_dblRpmSliderP1_SC" node="0>0|6|1|0|1|0|0|0"/>
 		<i3dMapping id="oxboBP_dblSpeedrSliderP1_SC" node="0>0|6|1|0|1|0|0|1"/>

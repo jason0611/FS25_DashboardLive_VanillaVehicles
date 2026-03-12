@@ -2,7 +2,7 @@
 
 <i3D name="mkb4TR.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
   <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.5"/>
+    <Export program="GIANTS Editor 64bit" version="10.0.11"/>
   </Asset>
 
   <Files>
@@ -1207,9 +1207,11 @@
             </TransformGroup>
             <Shape name="interiorGlow01_decals" translation="-0.252502 0.999309 0.036945" rotation="-4e-06 0 0" shapeId="61" clipDistance="20" nodeId="710" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="47"/>
             <Shape name="display01_decals" translation="-0.302312 1.4 0.432125" shapeId="62" clipDistance="30" nodeId="711" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="46"/>
-            <Shape name="oxboMKB4TR_dblNaviMapP1_CC" translation="-0.451388 1.34219 0.56772" rotation="-79.709 -34.7298 -13.2627" shapeId="63" clipDistance="30" nodeId="712" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="5">
-              <Shape name="oxboMKB4TR_dblNaviiMapPosP1_CC" translation="-7.27596e-12 0.000177569 -1.81899e-12" scale="1.4 1 1.4" shapeId="64" clipDistance="20" nodeId="713" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
-            </Shape>
+            <TransformGroup name="dblNaviMap" translation="6e-06 -2.22329 -2.79252" nodeId="1068">
+              <Shape name="oxboMKB4TR_dblNaviMapP1_CC" translation="-0.451394 3.56548 3.36024" rotation="-79.709 -34.7298 -13.2627" shapeId="63" clipDistance="30" nodeId="712" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="5">
+                <Shape name="oxboMKB4TR_dblNaviiMapPosP1_CC" translation="-7.27596e-12 0.000177569 -1.81899e-12" scale="1.4 1 1.4" shapeId="64" clipDistance="20" nodeId="713" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+              </Shape>
+            </TransformGroup>
           </TransformGroup>
           <TransformGroup name="characterTargets" nodeId="714">
             <TransformGroup name="playerLeftFootTarget" translation="0.141421 0.087488 0.015754" rotation="0 19.4486 -1.21456" nodeId="715"/>

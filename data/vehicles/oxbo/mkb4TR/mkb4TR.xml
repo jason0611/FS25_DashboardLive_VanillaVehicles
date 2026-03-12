@@ -1214,6 +1214,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="oxboMKB4TR_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="oxboMKB4TR_dblNaviiMapPosP1_CC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <tipOccluder>
         <occlusionArea start="tipOcclusionAreaStartFront" width="tipOcclusionAreaWidthFront" height="tipOcclusionAreaHeightFront" />
         <occlusionArea start="tipOcclusionAreaStartBack" width="tipOcclusionAreaWidthBack" height="tipOcclusionAreaHeightBack" />
@@ -1419,8 +1430,8 @@
         <i3dMapping id="playerLeftHandTarget" node="0>0|5|0|0|0|0" />
         <i3dMapping id="seat" node="0>0|5|1" />
 		
-		<i3dMapping id="oxboMKB4TR_dblNaviMapP1_CC" node="0>0|5|4|6"/>
-		<i3dMapping id="oxboMKB4TR_dblNaviiMapPosP1_CC" node="0>0|5|4|6|0"/>
+		<i3dMapping id="oxboMKB4TR_dblNaviMapP1_CC" node="0>0|5|4|6|0"/>
+        <i3dMapping id="oxboMKB4TR_dblNaviiMapPosP1_CC" node="0>0|5|4|6|0|0"/>
         
 		<i3dMapping id="oxboMKB4TR_dblRpmSliderP1_SC" node="0>0|5|1|0|0|0|0|0"/>
 		<i3dMapping id="oxboMKB4TR_dblSpeedrSliderP1_SC" node="0>0|5|1|0|0|0|0|1"/>

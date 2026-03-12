@@ -882,6 +882,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="oxboCCI1200_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="oxboCCI1200_dblNaviMapPosP1_CC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <ai>
         <aiConfigurations>
             <aiConfiguration/>
