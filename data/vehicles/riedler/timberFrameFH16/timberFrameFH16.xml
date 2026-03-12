@@ -1141,6 +1141,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="volvoFH16_dblNaviMapP2" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGE2">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="volvoFH16_dblNaviMapPosP2" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <foliageBending>
         <bendingNode minX="-1.32" maxX="1.32" minZ="-5" maxZ="4.5" yOffset="0.5"/>
     </foliageBending>
@@ -1296,8 +1307,8 @@
 		
 		<i3dMapping id="volvoFH16_dblStartScreen" node="0>0|6|4|28|0"/>
 		<i3dMapping id="volvoFH16_dblMainScreenP1" node="0>0|6|4|28|1"/>
-		<i3dMapping id="volvoFH16_dblNaviMapP2" node="0>0|6|4|28|2"/>
-		<i3dMapping id="volvoFH16_dblNaviMapPosP2" node="0>0|6|4|28|2|0"/>
+		<i3dMapping id="volvoFH16_dblNaviMapP2" node="0>0|6|4|28|2|0"/>
+        <i3dMapping id="volvoFH16_dblNaviMapPosP2" node="0>0|6|4|28|2|0|0"/>
 		
         <i3dMapping id="playerLeftFootTarget" node="0>0|6|5|0" />
         <i3dMapping id="playerRightFootTarget" node="0>0|6|5|1" />
