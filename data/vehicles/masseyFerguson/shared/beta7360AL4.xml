@@ -224,6 +224,25 @@
 				<state value="0" visibility="true"/>
 				<state value="1" visibility="false"/>
 			</dashboard>
+
+			<realGPS>
+				<controls allow="true" allowRotation="true" allowZoom="true" />
+				<map mapNode="varioTronic_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESC1">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+				<map mapNode="varioTronic_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESC2">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+				<map mapNode="varioTronic_dblNaviMapP3_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESC3">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+
+				<hideNodes>
+					<hideNode node="varioTronic_dblNaviMapPosP1_SC" isDashboard="true" />
+					<hideNode node="varioTronic_dblNaviMapPosP2_SC" isDashboard="true" />
+					<hideNode node="varioTronic_dblNaviMapPosP3_SC" isDashboard="true" />
+				</hideNodes>
+			</realGPS>
     </dashboardCompound>
 	
 	<dashboardCompound name="BETA7360AL4_NAVI" filename="data/vehicles/masseyFerguson/shared/beta7360AL4.i3d" node="terminalDisplayDecal2_DBL">
@@ -232,7 +251,13 @@
 			<dashboard displayType="EMITTER" node="terminalDisplayDecal2_DBL" idleValue="-1" intensity="0.4" groups="MOTOR_ACTIVE"/>
 			<!-- Cab MiniMap -->
 			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="terminalDisplayDecal2_DBL" groups="MOTOR_ACTIVE"/>
-	
+
+			<realGPS>
+				<controls allow="true" allowRotation="true" allowZoom="true" />
+				<map mapNode="terminalDisplayDecal2" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+			</realGPS>
     </dashboardCompound>
 	
 	<i3dMappings>
