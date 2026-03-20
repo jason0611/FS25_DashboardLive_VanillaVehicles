@@ -732,7 +732,7 @@
             <Shape name="_g5Display_TitelPageTractor_P4" translation="0.0835394 0.001 0.078628" shapeId="95" visibility="false" clipDistance="15" nodeId="514" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="85"/>
             <Shape name="g5Display_defaultPageTractor_darken" translation="0 0.006 0" rotation="0 180 0" shapeId="90" visibility="false" clipDistance="50" nodeId="515" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="28"/>
             <Shape name="g5Display_TitelPageTractor_P5" translation="-0.0282507 -0.001 -0.0155881" shapeId="96" visibility="false" clipDistance="15" nodeId="516" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="85"/>
-            <Shape name="g5t_cameraNoSignal1_P24_SC" translation="0.108645 -0.001 0.0387032" shapeId="44" visibility="false" clipDistance="15" nodeId="517" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="82">
+            <Shape name="g5t_cameraNoSignal1_P24_SC" translation="0.108645 -0.001 0.0387032" shapeId="44" clipDistance="15" nodeId="517" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="82">
               <Shape name="g5Display_noSignal1TractorP24_SC" translation="0.000753284 1.33878e-08 0.00360789" rotation="-180 0 -180" shapeId="97" nodeId="518" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="79"/>
             </Shape>
             <Shape name="g5t_cameraNoSignal2_P2_SC" translation="0.108645 -0.001 -0.0278273" shapeId="44" visibility="false" clipDistance="15" nodeId="519" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="82">
@@ -744,7 +744,7 @@
           </TransformGroup>
           <TransformGroup name="g5TractorCamsP2_SC" rotation="180 -5.00896e-06 180" visibility="false" nodeId="523">
             <TransformGroup name="camsSC" visibility="false" nodeId="524">
-              <Shape name="g5Display_Cam1TractorP2_SC" translation="-0.109398 -0.001 -0.0423111" shapeId="97" nodeId="525" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="90"/>
+              <Shape name="g5Display_Cam1TractorP2_SC" translation="-0.109398 0 -0.0423111" shapeId="97" nodeId="525" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="90"/>
             </TransformGroup>
             <TransformGroup name="camsSC2" visibility="false" nodeId="526">
               <Shape name="g5Display_Cam2TractorP2_SC" translation="-0.109266 0.001 0.0304098" shapeId="98" nodeId="527" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="90"/>
