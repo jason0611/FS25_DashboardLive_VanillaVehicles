@@ -920,6 +920,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <workCameras>
+        <cameraGroups>
+            <cameraGroup name="CAMS_DEFAULT" title="$l10n_cameraGroup_driveCams" ignitionDependent="true" stateDelay="1000" realGPSHideMapIndices="1" />
+        </cameraGroups>
+
+        <workCameras>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="true" isPipeCam="false" displayNode="0>0|5|3|7" displayMirrored="true" containsCustomPlane="false" cameraNode="0>0|15" cameraFovY="90" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" />
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="true" displayNode="0>0|5|3|8" displayMirrored="false" containsCustomPlane="false" cameraNode="0>0|16" cameraFovY="90" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" />
+        </workCameras>
+    </workCameras>
+
     <realGPS>
         <controls allow="true" allowRotation="true" allowZoom="true" />
         <map mapNode="oxboEPD_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">

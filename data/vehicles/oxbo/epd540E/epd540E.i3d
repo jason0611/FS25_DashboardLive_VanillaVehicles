@@ -1281,6 +1281,8 @@
                 <Shape name="oxboEPD_dblNaviiMapPosP1_CC" translation="-7.27596e-12 0.000177569 -1.81899e-12" scale="1.4 1 1.4" shapeId="54" clipDistance="20" nodeId="723" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="73"/>
               </Shape>
             </TransformGroup>
+            <TransformGroup name="workCameraDisplay1" translation="-0.444 1.376 0.305" rotation="-100.792 35.285 166.067" scale="0.155 1 0.088" nodeId="914"/>
+            <TransformGroup name="workCameraDisplay2" translation="-0.444 1.376 0.305" rotation="-100.792 35.285 166.067" scale="0.155 1 0.088" nodeId="920"/>
           </TransformGroup>
           <TransformGroup name="movingParts" nodeId="724">
             <TransformGroup name="doorLeftRot" translation="0.798488 0.806965 0.345201" rotation="15.1477 0 3.97681" nodeId="725">
@@ -1394,6 +1396,8 @@
         </TransformGroup>
         <TransformGroup name="componentJointAxleBack" translation="0 0.443495 -3.79305" nodeId="849"/>
         <TransformGroup name="mainRootJoint" nodeId="850"/>
+        <Camera name="workCamera1" translation="0 2.279 -6.82" rotation="-50 0 0" nodeId="915" fov="90" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+        <Camera name="workCamera2" translation="1.194 3.456 2.096" rotation="10 -90 0" nodeId="921" fov="90" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
       </Shape>
       <TransformGroup name="skinnedMeshes" nodeId="851">
         <Shape name="hoses" shapeId="89" clipDistance="300" nodeId="852" castsShadows="true" receiveShadows="true" skinBindNodeIds="850 483 491 514 406 415 427 425 423 419 517" materialIds="69,68"/>
