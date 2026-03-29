@@ -480,7 +480,7 @@
 
     <workCameras>
         <cameraGroups>
-            <cameraGroup name="CAMS_DRIVE" title="$l10n_cameraGroup_driveCams" ignitionDependent="true" stateDelay="1000" realGPSHideMapIndices="1" dblGroups="MOTOR_ACTIVE PAGE2" />
+            <cameraGroup name="CAMS_DRIVE" title="$l10n_FS25_workCamerasVanillaVehicles.cameraGroup_driveCams" ignitionDependent="true" stateDelay="1000" realGPSHideMapIndices="1" dblGroups="MOTOR_ACTIVE PAGE2" />
         </cameraGroups>
 
         <workCameras>
