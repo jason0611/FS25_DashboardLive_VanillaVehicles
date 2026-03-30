@@ -83,6 +83,18 @@
 			<!-- MiniMap -->
 			<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="a8800_dblNaviMapP1_CC" groups="MOTOR_RUNNING"/>
 			<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="a8800_dblNaviMapPosP1_CC" groups="MOTOR_RUNNING"/>
+
+			<realGPS>
+				<controls allow="true" allowRotation="true" allowZoom="true" />
+				<map mapNode="a8800_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1.667"/>
+				</map>
+
+				<hideNodes>
+					<hideNode node="a8800_dblNaviMapPosP1_CC" isDashboard="true" />
+				</hideNodes>
+			</realGPS>
+
 	<!-- <ai> -->
 			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="a8800_dblGPSsatellitP1_CC" baseColor="0.033 0.033 0.033 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
 			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="a8800_dblGPSactiveP1_CC" baseColor="0.033 0.033 0.033 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING"/>

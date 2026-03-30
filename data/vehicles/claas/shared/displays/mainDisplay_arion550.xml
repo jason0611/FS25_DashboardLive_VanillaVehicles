@@ -177,6 +177,21 @@
 			<!-- Page2 -->
 			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="cebisAxion_dblGPSactiveP2_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.7" groups="MOTOR_RUNNING PAGESC2"/>
 			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="cebisAxion_dblGPSsatellitP2_SC" baseColor="0.2 0.2 0.2 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="0.7" groups="MOTOR_RUNNING PAGESC2"/>
+
+			<realGPS>
+				<controls allow="true" allowRotation="true" allowZoom="true" />
+				<map mapNode="cebisAxion_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC1">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+				<map mapNode="cebisAxion_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC2">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+
+				<hideNodes>
+					<hideNode node="cebisAxion_dblNaviMapPosP1_SC" isDashboard="true" />
+					<hideNode node="cebisAxion_dblNaviMapPosP2_SC" isDashboard="true" />
+				</hideNodes>
+			</realGPS>
 	</dashboardCompound>
 	
 	<dashboardCompound name="CLAAS_GPS_PILOT" filename="data/vehicles/claas/shared/displays/mainDisplay_arion550.i3d" node="claasGpsPilot">
@@ -219,6 +234,17 @@
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="axionGps_dblGPSactiveCC" baseColor="1 1 1 1" emitColor="0 1 0.051 1" intensity="0.4" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="axionGps_dblGPSsatellitCC" baseColor="1 1 1 1" emitColor="0 1 0.051 1" intensity="0.4" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="ROT" valueType="ai.automaticSteering.heading" node="axionGps_dblCompassNeedleRotCC" rotAxis="2" minRot="0" maxRot="360" minValueRot="0" maxValueRot="360" intensity="1" groups="MOTOR_RUNNING"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="axionGps_dblNaviMapCC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cebisAxion_dblNaviMapPosCC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 
     <i3dMappings>

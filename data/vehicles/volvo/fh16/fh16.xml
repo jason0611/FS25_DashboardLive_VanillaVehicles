@@ -1124,6 +1124,29 @@
 		</dashboardLive>
     </dashboard>
 
+    <workCameras>
+        <cameraGroups>
+            <cameraGroup name="CAMS_DRIVE" title="$l10n_FS25_workCamerasVanillaVehicles.cameraGroup_driveCams" ignitionDependent="true" stateDelay="1000" realGPSHideMapIndices="1" dblGroups="MOTOR_RUNNING PAGE2">
+                <attachableCamDisplay prio="1" displayNode="0>0|6|4|20" nightReflectionScale="2" aspectRatio="1" reflectionScale="1"/>
+            </cameraGroup>
+        </cameraGroups>
+
+        <workCameras>
+            <workCamera prio="1" group="CAMS_DRIVE" isReverseCam="true" isPipeCam="false" displayNode="0>0|6|4|19" displayMirrored="true" containsCustomPlane="false" cameraNode="0>0|6|12|8" cameraFovY="90" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" />
+        </workCameras>
+    </workCameras>
+
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="volvoFH16_dblNaviMapP2" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGE2">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="volvoFH16_dblNaviMapPosP2" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <foliageBending>
         <bendingNode minX="-1.32" maxX="1.32" minZ="-1.6" maxZ="4.5" yOffset="0.65"/>
     </foliageBending>
@@ -1260,8 +1283,8 @@
 		
 		<i3dMapping id="volvoFH16_dblStartScreen" node="0>0|6|4|18|0"/>
 		<i3dMapping id="volvoFH16_dblMainScreenP1" node="0>0|6|4|18|1"/>
-		<i3dMapping id="volvoFH16_dblNaviMapP2" node="0>0|6|4|18|2"/>
-		<i3dMapping id="volvoFH16_dblNaviMapPosP2" node="0>0|6|4|18|2|0"/>
+		<i3dMapping id="volvoFH16_dblNaviMapP2" node="0>0|6|4|18|2|0"/>
+		<i3dMapping id="volvoFH16_dblNaviMapPosP2" node="0>0|6|4|18|2|0|0"/>
 		
         <i3dMapping id="playerLeftFootTarget" node="0>0|6|5|0" />
         <i3dMapping id="playerRightFootTarget" node="0>0|6|5|1" />

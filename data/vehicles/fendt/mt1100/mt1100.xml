@@ -658,6 +658,25 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="varioTronicMT_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC1">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+        <map mapNode="varioTronicMT_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC2">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+        <map mapNode="varioTronicMT_dblNaviMapP3_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC3">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="varioTronicMT_dblNaviMapPosP1_SC" isDashboard="true" />
+            <hideNode node="varioTronicMT_dblNaviMapPosP2_SC" isDashboard="true" />
+            <hideNode node="varioTronicMT_dblNaviMapPosP3_SC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <designConfigurations isYesNoOption="true">
         <designConfiguration name="EU">
             <objectChange node="configEU" visibilityActive="true" visibilityInactive="false"/>

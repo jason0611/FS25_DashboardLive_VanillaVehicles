@@ -920,6 +920,32 @@
 		</dashboardLive>
     </dashboard>
 
+    <workCameras>
+        <cameraGroups>
+            <cameraGroup name="CAMS_DEFAULT" title="$l10n_FS25_workCamerasVanillaVehicles.cameraGroup_driveCams" ignitionDependent="true" stateDelay="1000" realGPSHideMapIndices="1" />
+        </cameraGroups>
+
+        <workCameras>
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="true" isPipeCam="false" displayNode="0>0|5|3|7" displayMirrored="true" containsCustomPlane="false" cameraNode="0>0|15" cameraFovY="90" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" />
+            <workCamera prio="1" group="CAMS_DEFAULT" isReverseCam="false" isPipeCam="true" displayNode="0>0|5|3|8" displayMirrored="false" containsCustomPlane="false" cameraNode="0>0|16" cameraFovY="90" nightReflectionScale="10" aspectRatio="1" reflectionScale="1" />
+        </workCameras>
+    </workCameras>
+
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="oxboEPD_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+        <map mapNode="oxboEPD_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="oxboEPD_dblNaviMapPosP1_SC" isDashboard="true" />
+            <hideNode node="oxboEPD_dblNaviiMapPosP1_CC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <tipOccluder>
         <occlusionArea start="tipOcclusionAreaStart" width="tipOcclusionAreaWidth" height="tipOcclusionAreaHeight"/>
     </tipOccluder>
@@ -1117,8 +1143,8 @@
         <i3dMapping id="playerLeftHandTarget" node="0>0|5|0|0|0|0" />
         <i3dMapping id="seat" node="0>0|5|1" />
 		
-		<i3dMapping id="oxboEPD_dblNaviMapP1_CC" node="0>0|5|3|6"/>
-		<i3dMapping id="oxboEPD_dblNaviiMapPosP1_CC" node="0>0|5|3|6|0"/>
+		<i3dMapping id="oxboEPD_dblNaviMapP1_CC" node="0>0|5|3|6|0"/>
+        <i3dMapping id="oxboEPD_dblNaviiMapPosP1_CC" node="0>0|5|3|6|0|0"/>
         
 		<i3dMapping id="oxboEPD_dblRpmSliderP1_SC" node="0>0|5|1|0|0|0|0|0"/>
 		<i3dMapping id="oxboEPD_dblSpeedrSliderP1_SC" node="0>0|5|1|0|0|0|0|1"/>

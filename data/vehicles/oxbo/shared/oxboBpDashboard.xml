@@ -121,6 +121,17 @@
 	<!-- MiniMap -->
 			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="oxboBP_dblNaviMapP1_CC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="oxboBP_dblNaviMapPosP1_CC" groups="MOTOR_ACTIVE"/>
+
+			<realGPS>
+				<controls allow="true" allowRotation="true" allowZoom="true" />
+				<map mapNode="oxboBP_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+
+				<hideNodes>
+					<hideNode node="oxboBP_dblNaviMapPosP1_CC" isDashboard="true" />
+				</hideNodes>
+			</realGPS>
     </dashboardCompound>
 	
 	<dashboardCompound name="OXBOBP_RADIO" filename="data/vehicles/oxbo/shared/oxboBpDashboard.i3d" node="oxboBP_RadioDisplay">

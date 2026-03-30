@@ -724,6 +724,17 @@
 		</dashboardLive>
     </dashboard>
 
+    <realGPS>
+        <controls allow="true" allowRotation="true" allowZoom="true" />
+        <map mapNode="a8800_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING">
+            <projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1.667"/>
+        </map>
+
+        <hideNodes>
+            <hideNode node="a8800_dblNaviMapPosP1_CC" isDashboard="true" />
+        </hideNodes>
+    </realGPS>
+
     <ai>
         <agent width="3.25" length="13.2" height="6.7" lengthOffset="-1.1" frontOffset="1.48" />
         <collisionTrigger node="aiCollisionNode" width="3.4" height="6.8"/>

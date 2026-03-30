@@ -99,6 +99,21 @@
 		<!-- MiniMap -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicP_dblNaviMapP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicP_dblNaviMapPosP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="varioTronicP_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+			<map mapNode="varioTronicP_dblNaviMapP3_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC3">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="varioTronicP_dblNaviMapPosP2_SC" isDashboard="true" />
+				<hideNode node="varioTronicP_dblNaviMapPosP3_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 	
 	<compound linkNode="oneDisplayArmrest" filename="../FS25_DashboardLive_VanillaVehicles/data/vehicles/fendt/shared/varioTronicDisplays.xml" name="FENDT_VARIO_TRONIC_POWER_PLUS_MAIN"/>
@@ -221,6 +236,25 @@
 		<!-- MiniMap -->
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronicPP_dblNaviMapP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="posMarker" node="varioTronicPP_dblNaviMapPosP3_SC" groups="MOTOR_RUNNING PAGESC3"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="varioTronicPP_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+			<map mapNode="varioTronicPP_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+			<map mapNode="varioTronicPP_dblNaviMapP3_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC3">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="varioTronicPP_dblNaviMapPosP1_SC" isDashboard="true" />
+				<hideNode node="varioTronicPP_dblNaviMapPosP2_SC" isDashboard="true" />
+				<hideNode node="varioTronicPP_dblNaviMapPosP3_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 	</dashboardCompound>
 
     <i3dMappings>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="107">
 	<author>Mister_mojo_AT, SbSh, Glowins Modschmiede, Finanzamt31er</author>
-	<version>1.1.0.B-00</version>
-	<devStatus>BETA</devStatus>
+	<version>1.1.0.R–09</version>
+	<devStatus>ALPHA</devStatus>
+	<contributors>AgrarPlay und LUWZ</contributors>
 	<dependencies>
 		<dependency>FS25_DashboardLive</dependency>
 	</dependencies>

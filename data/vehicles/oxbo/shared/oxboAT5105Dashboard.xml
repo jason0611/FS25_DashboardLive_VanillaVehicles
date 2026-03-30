@@ -143,6 +143,17 @@
 		<!-- <ai> -->	
 			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="oxboCCI1200_dblGPSactiveP1_CC" emitColor="GREEN" intensity="0.4" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringState" node="oxboCCI1200_dblGPSsatellitP1_CC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.4" groups="MOTOR_ACTIVE"/>
+
+			<realGPS>
+				<controls allow="true" allowRotation="true" allowZoom="true" />
+				<map mapNode="oxboCCI1200_dblNaviMapP1_CC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE">
+					<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+				</map>
+
+				<hideNodes>
+					<hideNode node="oxboCCI1200_dblNaviMapPosP1_CC" isDashboard="true" />
+				</hideNodes>
+			</realGPS>
     </dashboardCompound>
 	
 	<dashboardCompound name="OXBO_AT_RADIO" filename="data/vehicles/oxbo/shared/oxboAT5105Dashboard.i3d" node="oxboAT_RadioDisplay">

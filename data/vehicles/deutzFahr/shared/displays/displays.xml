@@ -112,6 +112,7 @@
 		<dashboard displayType="EMITTER" valueType="hlm" option="headland" node="iMonitor_dblHlmHeadlandP1_SC" baseColor="1 1 1 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_RUNNING PAGESC1"/>
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="iMonitor_dblNaviMapP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="iMonitor_dblNaviMapPositionP1_SC" groups="MOTOR_RUNNING PAGESC1"/>
 		
 		<!-- Real Clock -->
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="realclock" node="iMonitor_dblClockNumbersP1_SC" textMask="ssssssss" textColor="1 1 1 1" textSize="0.003" fontThickness="1" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING PAGESC1"/>
@@ -166,6 +167,22 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="iMonitor_dblNaviMapP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="iMonitor_dblNaviMapPositionP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
+		
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="iMonitor_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+			<map mapNode="iMonitor_dblNaviMapP2_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_RUNNING PAGESC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5" aspectRatio="1"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="iMonitor_dblNaviMapPositionP1_SC" isDashboard="true" />
+				<hideNode node="iMonitor_dblNaviMapPositionP2_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
+
 		<!-- weather -->
 		<dashboard displayType="VISIBILITY" node="iMonitor_dblWeatherSunP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
 		<dashboard displayType="VISIBILITY" node="iMonitor_dblWeatherCloudP2_SC" groups="MOTOR_RUNNING PAGESC2"/>
@@ -275,6 +292,7 @@
 		<i3dMapping id="iMonitor_dblFrontPTOP1_SC" node="0>0|0|1|34"/>
 		<i3dMapping id="iMonitor_dblFrontPTONumbersP1_SC" node="0>0|0|1|35"/>
 		<i3dMapping id="iMonitor_dblNaviMapP1_SC" node="0>0|0|1|36"/>
+		<i3dMapping id="iMonitor_dblNaviMapPositionP1_SC" node="0>0|0|1|36|0"/>
 		<i3dMapping id="iMonitor_dblCruiseControl00P1_SC" node="0>0|0|1|37"/>
 		<i3dMapping id="iMonitor_dblCruiseControlNumbers00P1_SC" node="0>0|0|1|38"/>
 		<i3dMapping id="iMonitor_dblCruiseControl01P1_SC" node="0>0|0|1|39"/>
