@@ -458,8 +458,7 @@
 		<dashboard displayType="VISIBILITY" node="cebisAxion_dblForwardArrowAO_SC" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="cebisAxion_dblNeutralGearAO_SC" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackwardArrowAO_SC" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackDiffLockAO_SC" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontDiffLockAO_SC" groups="MOTOR_ACTIVE"/>
+		
 		<!-- displays -->
 		<dashboard displayType="EMITTER" node="cebisMainScreenP1_SC" intensity="0.15" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="EMITTER" node="cebisMainScreenDMP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
@@ -475,8 +474,10 @@
 		
 		
 		<dashboard displayType="EMITTER" node="cebisAxion_dblNaviMapPosP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="cebisAxion_dblBackDiffLockP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="EMITTER" node="cebisAxion_dblFrontDiffLockP1_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblBackDiffLockP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="VISIBILITY" node="cebisAxion_dblFrontDiffLockP1_SC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="cebisAxion_dblBackDiffLockP1_SC" idleValue="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="EMITTER" node="cebisAxion_dblFrontDiffLockP1_SC" idleValue="0" intensity="0.3" groups="MOTOR_ACTIVE"/>
 		<!-- always on -->
 		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisAxion_dblForwardArrowAO_SC" doInterpolation="true" groups="MOTOR_ACTIVE">
 			<state value="-1" visibility="false"/>
@@ -527,21 +528,11 @@
 		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="cebisAxion_dblFuelUsageNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000,0" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
 		<!-- VCA -->
 		<dashboard valueType="vca" cmd="slip" displayType="TEXT" node="cebisAxion_dblSlipNumbersP1_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="dbl.vca" cmd="diff_front" node="cebisAxion_dblFrontDiffLockP1_SC" baseColor="BERGMANN_GREY02" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
+		<dashboard displayType="EMITTER" valueType="dbl.vca" cmd="diff_back" node="cebisAxion_dblBackDiffLockP1_SC" baseColor="BERGMANN_GREY02" emitColor="AMAZONE_ORANGE1" intensity="0.8" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="cebisAxion_dblNaviMapP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="cebisAxion_dblNaviMapPosP1_SC" groups="MOTOR_ACTIVE TRACTOR_PAGESC1"/>
-
-		<realGPS>
-			<controls allow="true" allowRotation="true" allowZoom="true" />
-			<map mapNode="cebisAxion_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE TRACTOR_PAGESC1">
-				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
-			</map>
-
-			<hideNodes>
-				<hideNode node="cebisAxion_dblNaviMapPosP1_SC" isDashboard="true" />
-			</hideNodes>
-		</realGPS>
-
 	<!-- Page2 -->
 		<!-- displays -->
 		<dashboard displayType="EMITTER" node="cebisFieldScreenP2_SC" intensity="0.15" groups="MOTOR_ACTIVE"/>
@@ -586,6 +577,17 @@
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="1 3 4" node="cebisAxion_dblBackPtoRpmNumbersP2_SC" factor="0.5322" doInterpolation="true" interpolationSpeed="0.3" options="any" max="1002" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textMask="0000" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
 		<!-- VCA -->
 		<dashboard displayType="TEXT" valueType="vca" cmd="slip" node="cebisAxion_dblSlipNumbersP2_SC" textColor="CLAAS_DARKGREY1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="000%" fontThickness="1.2" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE TRACTOR_PAGESC2"/>
+
+		<realGPS>
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="cebisAxion_dblNaviMapP1_SC" intensity="0.9" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE TRACTOR_PAGESC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+
+			<hideNodes>
+				<hideNode node="cebisAxion_dblNaviMapPosP1_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 	</dashboardCompound>
 
     <i3dMappings>
@@ -790,8 +792,6 @@
 		<i3dMapping id="cebisAxion_dblSpeed1NumbersAO_SC" node="5>1|0|3"/>
 		<i3dMapping id="cebisAxion_dblAWDautoIconAO_SC" node="5>1|0|4"/>
 		<i3dMapping id="cebisAxion_dblAWDIconAO__SC" node="5>1|0|5"/>
-		<i3dMapping id="cebisAxion_dblBackDiffLockAO_SC" node="5>1|0|6"/>
-		<i3dMapping id="cebisAxion_dblFrontDiffLockAO_SC" node="5>1|0|7"/>
 		
 		<i3dMapping id="cebisAxion_dblSpeedSliderP1_SC" node="5>1|1|0"/>
 		<i3dMapping id="cebisAxion_dblSpeedNumbersP1_SC" node="5>1|1|1"/>
@@ -809,6 +809,8 @@
 		<i3dMapping id="cebisAxion_dblSlipNumbersP1_SC" node="5>1|1|13"/>
 		<i3dMapping id="cebisAxion_dblFuelUsageNumbersP1_SC" node="5>1|1|14"/>
 		<i3dMapping id="cebisAxion_dblOperatingTimeNumbersP1_SC" node="5>1|1|15"/>
+		<i3dMapping id="cebisAxion_dblBackDiffLockP1_SC" node="5>1|1|16"/>
+		<i3dMapping id="cebisAxion_dblFrontDiffLockP1_SC" node="5>1|1|17"/>
 		
 		<i3dMapping id="cebisAxion_dblNaviMapP1_SC" node="5>1|2|0"/>
 		<i3dMapping id="cebisAxion_dblNaviMapPosP1_SC" node="5>1|2|0|0"/>
