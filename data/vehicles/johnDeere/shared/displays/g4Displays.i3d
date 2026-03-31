@@ -7,6 +7,7 @@
 
   <Files>
     <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="28" filename="$data/shared/black_diffuse.dds"/>
     <File fileId="11" filename="$data/shared/defaultPlastic_vmask.dds"/>
     <File fileId="2" filename="$data/shared/default_normal.dds"/>
     <File fileId="6" filename="$data/shared/default_specular.png"/>
@@ -94,6 +95,12 @@
     </Material>
     <Material name="g4DisplayDecal_mat" materialId="17" customShaderId="4" customShaderVariation="staticLight">
       <Texture fileId="9"/>
+    </Material>
+    <Material name="g4DisplayRadio_mat" materialId="640" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="28"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="11"/>
+      <CustomParameter name="lightControl" value="0.001"/>
     </Material>
     <Material name="g4DisplayRadio_mat" materialId="18" customShaderId="4">
       <Texture fileId="27"/>
@@ -782,6 +789,7 @@
           <Shape name="johnDeere_dblRadioDabPresetsP2_RC" translation="-0.0618941 0 -0.0255452" scale="0.317585 1 0.317585" shapeId="126" visibility="false" nodeId="612" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="5"/>
           <Shape name="johnDeere_dblRadioDabPresetListP2_RC" translation="0.00853186 0 -0.0303982" scale="6.23555 1 0.933021" shapeId="127" visibility="false" nodeId="613" castsShadows="true" receiveShadows="true" decalLayer="2" materialIds="5"/>
         </TransformGroup>
+        <Shape name="radioDisplayOffBG_decal" translation="0 0.0005 0" shapeId="109" clipDistance="30" nodeId="619" castsShadows="false" receiveShadows="true" materialIds="640"/>
       </TransformGroup>
     </TransformGroup>
   </Scene>
