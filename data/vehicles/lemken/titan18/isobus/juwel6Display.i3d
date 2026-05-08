@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="juwel6Display.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.11"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="1" filename="../../juwel6/textures/isoBUS_Lemken_Juwel_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lemken_IB_mat" materialId="43" customShaderId="2" customShaderVariation="slider">
+      <Texture fileId="1"/>
+    </Material>
+    <Material name="lemken_IB_mat" materialId="44" customShaderId="2" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="juwel6Display.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="lemkenJuwelPlough" rotation="0 -0 90" nodeId="56">
+      <TransformGroup name="Icons" nodeId="57">
+        <Shape name="dbl_isoBUS_smiley" translation="0.001 -0.118726 0.0445323" rotation="0 -0 -90" shapeId="1" clipDistance="15" nodeId="58" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_ploughState_Dn" translation="0.000999993 -0.082933 0.0449699" rotation="0 -0 -90" shapeId="2" clipDistance="15" nodeId="59" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_ploughState_Up" translation="0.000999993 -0.079549 0.0449699" rotation="0 -0 -90" shapeId="3" visibility="false" clipDistance="15" nodeId="60" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_folding_Park" translation="0.00099999 -0.113221 -0.0432827" rotation="0 -0 -90" shapeId="4" visibility="false" clipDistance="15" nodeId="61" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_folding_Street" translation="0.00099999 -0.113219 -0.0431811" rotation="0 -0 -90" shapeId="5" clipDistance="15" nodeId="62" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_Preset_2" translation="0.002 -0.0864523 -0.0434642" rotation="0 -0 -90" shapeId="6" clipDistance="75" nodeId="63" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_rotate_L" translation="0.00199999 -0.121928 0.0266913" rotation="0 -0 -90" shapeId="7" clipDistance="15" nodeId="64" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_rotate_R" translation="0.00199999 -0.060551 0.0266913" rotation="0 -0 -90" shapeId="7" clipDistance="15" nodeId="65" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="44"/>
+        <Shape name="dbl_isoBUS_slider_L" translation="0.00206899 -0.0891254 0.0258533" rotation="0 -0 -90" shapeId="8" clipDistance="15" nodeId="66" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="43"/>
+        <Shape name="dbl_isoBUS_slider_R" translation="0.00206899 -0.0891254 0.0258533" rotation="0 -0 -90" shapeId="9" clipDistance="15" nodeId="67" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="43"/>
+      </TransformGroup>
+      <TransformGroup name="lemkenJuwelScreen" nodeId="68">
+        <Shape name="dbl_basePlane_isoBUS" translation="0.002 -0.047 0.003493" rotation="0 -0 -90" shapeId="10" clipDistance="15" nodeId="69" castsShadows="false" receiveShadows="true" materialIds="44"/>
+      </TransformGroup>
+      <TransformGroup name="Numbers" rotation="0 -0 -90" nodeId="70">
+        <TransformGroup name="dblIsobusRotateDegrees_txt" translation="0.0887689 0.002 0.0218697" rotation="90 -0 180" nodeId="71"/>
+        <TransformGroup name="dblIsobusRotateAngleLeft_txt" translation="0.107427 0.002 0.0289996" rotation="90 -0 180" nodeId="72"/>
+        <TransformGroup name="dblIsobusRotateAngleRight_txt" translation="0.0696219 0.002 0.0289996" rotation="90 -0 180" nodeId="73"/>
+        <TransformGroup name="dblIsobusPlowDistance_txt" translation="0.095 0.002 0.0123143" rotation="90 -0 180" nodeId="74"/>
+        <TransformGroup name="dblIsobusPlowWorkWidth_txt" translation="0.095 0.002 0.0048693" rotation="90 -0 180" nodeId="75"/>
+        <TransformGroup name="dblIsobusPlowWorkDepth_txt" translation="0.0881221 0.002 -0.0124646" rotation="90 -0 180" nodeId="76"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

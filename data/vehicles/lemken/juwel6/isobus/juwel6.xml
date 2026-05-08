@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/1.16.0.0//dashboardCompounds.xsd">
+	
+	<group name="DARKMODE" dbl="darkmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/>
+	
+	<!-- Brantner DD Trailer IsoBus -->
+    <dashboardCompound name="ISOBUS" filename="isobus/juwel6Display.i3d" 								node="lemkenJuwelPlough">
+		<dashboard 													displayType="EMITTER" 				node="dbl_basePlane_isoBUS" idleValue="-1" intensity="0.2" groups="MOTOR_RUNNING"/>
+
+		<!-- <dashboard valueType="dbl.base" cmd="foldingState"	factor="10"	jointSide="back"			displayType="TEXT" node="dblIsobusRotateDegrees_txt" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.0035" textMask="000.00" groups="MOTOR_RUNNING"/> -->
+
+		<dashboard valueType="dbl.gpsWidth" 	factor="12.3"		jointSide="back" 		displayType="TEXT" node="dblIsobusPlowDistance_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="00.0 cm" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.gpsWidth" 	factor="1"			jointSide="back" 		displayType="TEXT" node="dblIsobusPlowWorkWidth_txt" textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="00.00 m" groups="MOTOR_RUNNING"/>
+		
+		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" 	jointSide="back"	factor="1" jointType="implement" 	displayType="TEXT" node="dblIsobusRotateDegrees_txt" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.005" textMask="000.00" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" 	jointSide="back"	factor="1" jointType="implement" 	displayType="SLIDER" node="dbl_isoBUS_slider_L" minValueSlider="0" maxValueSlider="100" groups="MOTOR_RUNNING"/>
+
+		<!-- <dashboard factor="1"	jointSide="back"		animName="rotatePlow"	conditionalAnimationName="rotatePlow"	minValueAnim="0"	maxValueAnim="1"			displayType="TEXT" node="dblIsobusRotateDegrees_txt" textColor="1 1 1" textAlignment="CENTER" textSize="0.004" textMask="000.00" groups="MOTOR_RUNNING"/> -->
+		<dashboard factor="-34"	jointSide="back" jointType="implement"	valueType="dbl.base" cmd="liftState" cond="not"	displayType="TEXT" node="dblIsobusPlowWorkDepth_txt" font="GENERIC" textColor="0 0 0" textAlignment="LEFT" textSize="0.005" textMask="000.00" groups="MOTOR_RUNNING"/>
+
+
+		<dashboard valueType="ai.automaticSteering.steeringState" 			displayType="VISIBILITY" 	node="dbl_isoBUS_smiley" 									groups="MOTOR_RUNNING"/>
+		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_smiley" 			intensity="0.2" 		groups="MOTOR_RUNNING"/>
+    	<dashboard valueType="dbl.base" cmd="lowered" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_ploughState_Dn" 							groups="MOTOR_RUNNING"/>
+		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_ploughState_Dn" 	intensity="0.2" 		groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="lifted" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_ploughState_Up" 							groups="MOTOR_RUNNING"/>
+		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_ploughState_Up" 	intensity="0.2" 		groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="unfolded" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_Preset_2" 									groups="MOTOR_RUNNING"/>
+		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_Preset_2" 			intensity="0.2" 		groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.base" cmd="folded" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_folding_Street" 							groups="MOTOR_RUNNING"/>
+		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_folding_Street" 	intensity="0.2" 		groups="MOTOR_RUNNING"/>
+		
+
+	</dashboardCompound>
+
+
+    <i3dMappings>
+		<i3dMapping id="lemkenJuwelPlough" 				node="0>"/>
+		<i3dMapping id="dbl_basePlane_isoBUS" 			node="0>1|0"/>
+
+		<i3dMapping id="dbl_isoBUS_smiley" 				node="0>0|0"/>
+		<i3dMapping id="dbl_isoBUS_ploughState_Dn" 		node="0>0|1"/>
+		<i3dMapping id="dbl_isoBUS_ploughState_Up" 		node="0>0|2"/>
+		<i3dMapping id="dbl_isoBUS_folding_Park" 		node="0>0|3"/>
+		<i3dMapping id="dbl_isoBUS_folding_Street" 		node="0>0|4"/>
+		<i3dMapping id="dbl_isoBUS_Preset_2" 			node="0>0|5"/>
+		<i3dMapping id="dbl_isoBUS_rotate_L" 			node="0>0|6"/>
+		<i3dMapping id="dbl_isoBUS_rotate_R" 			node="0>0|7"/>
+		<i3dMapping id="dbl_isoBUS_slider_L" 			node="0>0|8"/>
+		<i3dMapping id="dbl_isoBUS_slider_R" 			node="0>0|9"/>
+		<i3dMapping id="dblIsobusRotateDegrees_txt" 	node="0>2|0"/>
+		<i3dMapping id="dblIsobusRotateAngleLeft_txt"	node="0>2|1"/>
+		<i3dMapping id="dblIsobusRotateAngleRight_txt" 	node="0>2|2"/>
+		<i3dMapping id="dblIsobusPlowDistance_txt" 		node="0>2|3"/>
+		<i3dMapping id="dblIsobusPlowWorkWidth_txt" 	node="0>2|4"/>
+		<i3dMapping id="dblIsobusPlowWorkDepth_txt" 	node="0>2|5"/>
+
+    </i3dMappings>
+</dashboardCompounds>
