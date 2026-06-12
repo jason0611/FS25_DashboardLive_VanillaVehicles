@@ -10,14 +10,15 @@
 
 		<!-- <dashboard valueType="dbl.base" cmd="foldingState"	factor="10"	jointSide="back"			displayType="TEXT" node="dblIsobusRotateDegrees_txt" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.0035" textMask="000.00" groups="MOTOR_RUNNING"/> -->
 
-		<dashboard valueType="dbl.animation" 	cmd="workingWidthSettingAnim" 	jointSide="back"	factor="0.9" 	toStack="LEMworkWidthAnim"	jointType="implement" 	displayType="TEXT" node="dblIsobusPlowDistance_txt" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.0045" textMask="000.0" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.animation" 	cmd="workingWidthSettingAnim" 	jointSide="back"	factor="12.6" 	toStack="dblIsobusMathDummy_ww1"	jointType="implement" 	displayType="TEXT" node="dblIsobusMathDummy_ww1" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.0045" textMask="000.0" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" 				jointSide="back"	factor="-179" 	jointType="implement" 	displayType="TEXT" node="dblIsobusRotateDegrees_txt" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.0045" textMask="000" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.print" option="1" toStack="LEMworkWidthAnim" 	toLog="always"  node="dblIsobusMathDummy_cp"/>
+		<dashboard valueType="dbl.animation" 	cmd="workingWidthSettingAnim" 	jointSide="back"	toLog="always"	factor="10" 	calculate="sub1" fromStack="LEMworkWidthAnim"	jointType="implement" displayType="TEXT" node="dblIsobusPlowDistance_txt" textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="000 %" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.animation" 	cmd="workingWidthSettingAnim" 	jointSide="back"	factor="1.1" 	toStack="dblIsobusMathDummy_ww1"	jointType="implement" 	displayType="TEXT" node="dblIsobusMathDummy_ww1" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.0045" textMask="000.0" groups="MOTOR_RUNNING"/>
 
-		<dashboard valueType="dbl.gpsWidth" 	factor="13.3"	calculate="sub2" fromStack="dblIsobusMathDummy_ww1"	jointSide="back" 		displayType="TEXT" node="dblIsobusPlowShar_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="00.0cm" groups="MOTOR_RUNNING"/>
-		<!-- <dashboard valueType="dbl.base" cmd="workWidth"	factor="1"			jointSide="back" 	calculate="sub1" fromStack="LEMworkWidthAnim" 	displayType="TEXT" node="dblIsobusPlowWorkWidth_txt" textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="00.00m" groups="MOTOR_RUNNING"/> -->
-		<dashboard valueType="dbl.gpsWidth" 	factor="1"			jointSide="back" 	calculate="sub1" fromStack="LEMworkWidthAnim" 	displayType="TEXT" node="dblIsobusPlowWorkWidth_txt" textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="00.00m" groups="MOTOR_RUNNING"/>
-		
+		<dashboard valueType="dbl.gpsWidth" 	factor="13.9"	calculate="sub1" fromStack="dblIsobusMathDummy_ww1"	jointSide="back" 		displayType="TEXT" node="dblIsobusPlowShar_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.0035" textMask="00.0 cm" groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.gpsWidth" 	factor="1"			jointSide="back" 	displayType="TEXT" node="dblIsobusGPSWorkWidth_txt" textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.003" textMask="00.00m" groups="MOTOR_RUNNING"/>
+
+		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" factor="0.73" toStack="m_dblIsobusMathDummy_ww2" node="dblIsobusMathDummy_ww2"/>
+		<dashboard valueType="dbl.animation" 	cmd="workingWidthSettingAnim" factor="1"			jointSide="back" 	calculate="sub2" fromStack="m_dblIsobusMathDummy_ww2" 	displayType="TEXT" node="dblIsobusPlowWorkWidth_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.003" textMask="00.00m" groups="MOTOR_RUNNING"/>
 		
 		<dashboard valueType="dbl.base" cmd="unfolded" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_slider_L" 									groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" cmd="unfolded" 	jointSide="back"												 			displayType="VISIBILITY" 	node="_dbl_isoBUS_wider_L" 										groups="MOTOR_RUNNING"/>
@@ -42,8 +43,10 @@
 		<dashboard factor="-3.2"	jointSide="back" jointType="implement"	valueType="dbl.base" cmd="liftState" cond="not"	displayType="TEXT" node="dblIsobusPlowWorkDepth_txt" font="GENERIC" textColor="0 0 0" textAlignment="LEFT" textSize="0.005" textMask="000.00" groups="MOTOR_RUNNING"/>
 
 
-		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" jointSide="back" factor="-0.8"			displayType="VISIBILITY" 	node="dbl_isoBUS_folding_Park" 								groups="MOTOR_ACTIVE"/>
+		<!-- <dashboard displayType="TEXT" valueType="dbl.print" option="1" toStack="dblIsobusMathDummy_cp" node="dblIsobusMathDummy_cp"/> -->
+		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" jointSide="back" cond="lessequal" condValue="0.2" factor="1" displayType="VISIBILITY" 	node="dbl_isoBUS_folding_Park" 				groups="MOTOR_RUNNING"/>
 		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_folding_Park" 		intensity="0.2" 		groups="MOTOR_RUNNING"/>
+
 		<dashboard valueType="ai.automaticSteering.steeringState" 			displayType="VISIBILITY" 	node="dbl_isoBUS_smiley" 									groups="MOTOR_RUNNING"/>
 		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_smiley" 			intensity="0.2" 		groups="MOTOR_RUNNING"/>
     	<dashboard valueType="dbl.base" cmd="lowered" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_ploughState_Dn" 							groups="MOTOR_RUNNING"/>
@@ -54,14 +57,18 @@
 		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_Preset_2" 			intensity="0.2" 		groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.base" cmd="folded" 	jointSide="back" 	displayType="VISIBILITY" 	node="dbl_isoBUS_folding_Street" 							groups="MOTOR_RUNNING"/>
 		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_folding_Street" 	intensity="0.2" 		groups="MOTOR_RUNNING"/>
+		
 
-		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" minActiveValue="70" jointSide="back" factor="100"	displayType="VISIBILITY" 	node="dbl_isoBUS_rotate_R" 				groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" 				jointSide="back"	factor="13.45" 	jointType="implement" 	displayType="TEXT" node="dblIsobusRotateDegrees_txt" textColor="0 0 0" font="GENERIC" textAlignment="CENTER" textSize="0.004" textMask="000" groups="MOTOR_RUNNING"/>
+
+		<dashboard valueType="dbl.animation" 	cmd="rotatePlow" minActiveValue="70" jointSide="back" factor="10"	displayType="VISIBILITY" 				node="dbl_isoBUS_rotate_R" 				groups="MOTOR_RUNNING"/>
 		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_rotate_R" 	intensity="0.3" 		groups="MOTOR_RUNNING"/>
 
-		<dashboard valueType="dbl.animation" cmd="rotatePlow" factor="100" jointSide="back" cond="equal" condValue="0"	displayType="VISIBILITY" 	node="dbl_isoBUS_rotate_L" 				groups="MOTOR_RUNNING"/>
+		<dashboard valueType="dbl.animation" cmd="rotatePlow" factor="1" jointSide="back" cond="lessequal" condValue="0.3"	displayType="VISIBILITY" 	node="dbl_isoBUS_rotate_L" 				groups="MOTOR_RUNNING"/>
+		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_rotate_L" 	intensity="0.3" 		groups="MOTOR_RUNNING"/>
+
 		<!-- <dashboard valueType="dbl.animation" 	cmd="rotatePlow" maxActiveValue="30" jointSide="back" factor="100" 	displayType="VISIBILITY" 	node="dbl_isoBUS_rotate_L" 				groups="MOTOR_RUNNING"/> -->
 		<!-- <dashboard valueType="dbl.animation" 	cmd="rotatePlow" maxActiveValue="30" jointSide="back" factor="100" 	displayType="EMITTER" 	node="dbl_isoBUS_rotate_L" 				groups="MOTOR_RUNNING"/> -->
-		<dashboard 															displayType="EMITTER" 		node="dbl_isoBUS_rotate_L" 	intensity="0.3" 		groups="MOTOR_RUNNING"/>
 		
 
 	</dashboardCompound>
@@ -89,10 +96,13 @@
 		<i3dMapping id="dblIsobusPlowWorkWidth_txt" 	node="0>2|4"/>
 		<i3dMapping id="dblIsobusPlowWorkDepth_txt" 	node="0>2|5"/>
 		<i3dMapping id="dblIsobusPlowShar_txt" 			node="0>2|6"/>
+		<i3dMapping id="dblIsobusGPSWorkWidth_txt" 		node="0>2|8"/>
 		<i3dMapping id="dbl_isoBUS_Arrow" 				node="0>0|10|0"/>
 		<i3dMapping id="dbl_iB_rotationArrow" 			node="0>0|10"/>
 		<i3dMapping id="_dbl_isoBUS_wider_L" 			node="0>0|12"/>
 		<i3dMapping id="_dbl_isoBUS_wider_R" 			node="0>0|13"/>
 		<i3dMapping id="dblIsobusMathDummy_ww1" 		node="0>2|7"/>
+		<i3dMapping id="dblIsobusMathDummy_ww2" 		node="0>2|9"/>
+		<i3dMapping id="dblIsobusMathDummy_cp" 			node="0>2|10"/>
     </i3dMappings>
 </dashboardCompounds>
