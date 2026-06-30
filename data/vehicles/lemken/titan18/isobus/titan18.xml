@@ -42,8 +42,8 @@
 
 
 		<!-- <dashboard displayType="TEXT" valueType="dbl.gpsWidth" option="workWidth" toStack="LEMworkWidthAnim" 	 node="dblIsobusMathDummy_cp"/> -->
-		<dashboard displayType="TEXT" valueType="dbl.print" option="3.9" toStack="LEMworkWidthAnim2" 				 node="dblIsobusMathDummy_cp"/>
-		<dashboard valueType="dbl.animation" 	cmd="workingWidth" factor="-1"			jointSide="back" calculate="sub1" fromStack="LEMworkWidthAnim2" 	displayType="TEXT" node="dblIsobusPlowWorkWidth_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.003" textMask="00.00m" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.print" option="2.7" toStack="LEMworkWidthAnim2" 				 node="dblIsobusMathDummy_cp"/>
+		<dashboard valueType="dbl.animation" 	cmd="workingWidth" factor="-1.244"			jointSide="back" calculate="sub1" fromStack="LEMworkWidthAnim2" 	displayType="TEXT" node="dblIsobusPlowWorkWidth_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.003" textMask="00.00m" groups="MOTOR_RUNNING"/>
 		<!-- <dashboard valueType="dbl.animation" 	cmd="workingWidth" factor="1"			jointSide="back" 	calculate="sub2" fromStack="m_dblIsobusMathDummy_ww2" 	displayType="TEXT" node="dblIsobusPlowWorkWidth_txt"  textColor="0 0 0" font="GENERIC" textAlignment="RIGHT" textSize="0.003" textMask="00.00m" groups="MOTOR_RUNNING"/> -->
 		
 		<dashboard valueType="dbl.base" 		cmd="unfolded" 					jointSide="back" 											displayType="VISIBILITY" 	node="dbl_isoBUS_slider_L" 										groups="MOTOR_RUNNING"/>
