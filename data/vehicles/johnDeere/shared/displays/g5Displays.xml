@@ -464,12 +464,13 @@
 		<!-- <dashboard displayType="VISIBILITY" node="g5Display_dblBatteryRunningNumbersP1_SC"      groups="MOTOR_RUNNING"/> -->
 		<!-- <dashboard displayType="TEXT"                               node="g5Display_dblBatteryPowerNumbersP1_SC"    textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="12.2V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_ACTIVE"/> -->
 		<!-- <dashboard displayType="TEXT"                               node="g5Display_dblBatteryStartingNumbersP1_SC" textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="4.3V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC"  groups="MOTOR_STARTING"/> -->
-		<dashboard displayType="TEXT"                               node="g5Display_dblBatteryRunningNumbersP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="14.7V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<!-- <dashboard displayType="TEXT"                               node="g5Display_dblBatteryRunningNumbersP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="14.7V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/> -->
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="battery" option="12v"  doInterpolation="true" interpolationSpeed="0.02" 	node="g5Display_dblBatteryRunningNumbersP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="000.0V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<!-- <dashboard displayType="TEXT" valueType="motorized.battery" node="g5Display_dblBatteryRunningNumbersP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="04.0V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/> -->
 		
 		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g5Display_dblFuelUsageNumbersP1_SC" textColor="0 0 0 0" textSize="0.006" textMask="000.0" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g5Display_dblCountFuelUsageNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.00001" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESCex4"/>
-		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g5Display_dblLiterHaNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.000001" factor="11" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESCex4"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="litersperha" node="g5Display_dblLiterHaNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.0009" factor="1.1" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESCex4"/>
 		<dashboard displayType="TEXT" valueType="fillLevelPct" fillType="DEF" node="g5Display_dblFuelHourNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.005" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.0%" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESCex4"/>
 		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="g5Display_dblCruiseControlSpeed1NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<dashboard displayType="TEXT" valueType="dbl.cc" cmd="speed" state="2" node="g5Display_dblCruiseControlSpeed2NumbersP1_SC" textColor="0 0 0 0" textSize="0.0045" textMask="00.0" textScaleX="0.8" fontThickness="2" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
@@ -1216,7 +1217,10 @@
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fillLevel" option="abskg"             jointType="implement"              jointSide="front" 			       			        node="g5Display_dblSeedFrontFilllevelKgP1_GPS"          textColor="0.09 0.09 0.08 1" textColorDarkMode="0 0 0 1" emissiveScale="0.5" textSize="0.003" textMask="00000.00kg"     font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fillLevel" option="abskg"             jointType="implement"              jointSide="front" factor="0.001"  			        node="g5Display_dblSeedFrontFilllevelTonnsP1_GPS"       textColor="0.09 0.09 0.08 1" textColorDarkMode="0 0 0 1" emissiveScale="0.5" textSize="0.003" textMask="00.00t"         font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fillLevel" option="abs"               jointType="implement"              jointSide="front"     		    			        node="g5Display_dblSeedFrontFilllevelLiterP1_GPS"       textColor="0.09 0.09 0.08 1" textColorDarkMode="0 0 0 1" emissiveScale="0.5" textSize="0.003" textMask="00000L"         font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>	
-		
+
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="haperhour" node="g5Display_dblFuelUsagePerHectareNumbersP1_GPS" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" textSize="0.005" textMask="000.0 ha h" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.0009" groups="MOTOR_RUNNING"/>	
+<!-- <dashboard displayType="TEXT" valueType="dbl.base" cmd="haperhour" node="g5Display_dblCruiseControlSpeed3NumbersP1_SC" textColor="1 0 1 1" textSize="0.0045" textMask="00.0 ha/h" textScaleX="0.8" fontThickness="2" textAlignment="CENTER" font="GENERIC_BOLD" doInterpolation="true" interpolationSpeed="0.0001" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/> -->
+
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="headingtext3de" node="g5Display_dblHeadingNumbersP1_GPS" textColor="0.9 0.9 0.8 1" textColorDarkMode="0.4 0.4 0.4 1" textSize="0.005" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>	
 		<!-- <dashboard displayType="TEXT" valueType="ai.automaticSteering.headingLetter" node="g5Display_dblHeadingNumbersP1_GPS" textColor="0.9 0.9 0.8 1" textColorDarkMode="0.4 0.4 0.4 1" textSize="0.005" textMask="000" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>	 -->
 		<dashboard displayType="TEXT" valueType="ai.automaticSteering.heading" node="g5Display_dblHeadingAngleNumbersP1_GPS" textColor="0.9 0.9 0.8 1" textColorDarkMode="0.4 0.4 0.4 1" textSize="0.005" textMask="000.00" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE"/>	
@@ -1491,7 +1495,10 @@
 		<dashboard displayType="TEXT" valueType="enterable.time"                node="g5HarvestingPageBasic_dblGemeTimeNumberP1_SC" textColor="1 1 1 1" textSize="0.0035" textMask="00:00" textScaleX="0.8" textAlignment="LEFT" emissiveScale="0.8" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="playerName"     node="g5HarvestingPageBasic_dblUserNameNumberP1_SC" textColor="1 1 1 1" textSize="0.0035" textMask="sssssssssssssssss" textScaleX="0.8" textAlignment="LEFT" emissiveScale="0.8" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
 
-		<dashboard displayType="TEXT" valueType="combine.workedHectars"         node="g5HarvestingPageBasic_dblHectarCounterNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="000.000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="combine.workedHectars"         node="g5HarvestingPageBasic_dblHectarCounterNumberP1_SC" textColor="0.4 0.4 0.4 1" 										textSize="0.004" textMask="000.000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="battery" option="24v"  doInterpolation="true" interpolationSpeed="0.02" 	node="g5HarvestingPageBasic_dblBatteryVoltageNumberP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="000.0V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="haperhour" 		node="g5HarvestingPageBasic_dblHectarPerHourNumberP1_SC" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" 	textSize="0.0035" textMask="000.0hh" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.0009" groups="MOTOR_RUNNING"/>	
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="litersperha" 		node="g5HarvestingPageBasic_dblLiterPerHectarNumberP1_SC" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" 	textSize="0.0035" textMask="000.0Lha" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.009" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct"         node="g5HarvestingPageBasic_dblFilllevelPercentNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="000%" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel"            node="g5HarvestingPageBasic_dblFilllevelLiterNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.0055" textMask="00000.0" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.gpsWidth" option="workWidth" node="g5HarvestingPageBasic_dblSpreadWidthNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.003" textMask="00" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
@@ -2425,6 +2432,7 @@
 		<i3dMapping id="g5Display_dblSeedFrontFilllevelTonnsP1_GPS" node="0>0|2|1|0|25"/>
 		<i3dMapping id="g5Display_dblSpeedCCNumbersP1_GPS" node="0>0|2|1|0|3"/>
 		<i3dMapping id="g5Display_dblHeadingNumbersP1_GPS" node="0>0|2|1|0|4"/>
+		<i3dMapping id="g5Display_dblFuelUsagePerHectareNumbersP1_GPS" node="0>0|2|1|0|61"/>
 		<i3dMapping id="g5Display_dblHeadingAngleNumbersP1_GPS" node="0>0|2|1|0|5"/>
 		<i3dMapping id="g5Display_dblLaneDistanceNumbersP1_GPS" node="0>0|2|1|0|6"/>
 		<i3dMapping id="g5Display_dblWorkWidthNumbersP1_GPS" node="0>0|2|1|0|7"/>
@@ -2677,6 +2685,9 @@
 		<i3dMapping id="g5HarvestingPageBasic_dblCutHeightNumberP1_SC" node="0>1|1|1|0|11"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblSpreadWidthNumberP1_SC" node="0>1|1|1|0|2"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblHectarCounterNumberP1_SC" node="0>1|1|1|0|3"/>
+		<i3dMapping id="g5HarvestingPageBasic_dblBatteryVoltageNumberP1_SC" node="0>1|1|1|0|42"/>
+		<i3dMapping id="g5HarvestingPageBasic_dblHectarPerHourNumberP1_SC" node="0>1|1|1|0|40"/>
+		<i3dMapping id="g5HarvestingPageBasic_dblLiterPerHectarNumberP1_SC" node="0>1|1|1|0|41"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblFieldNumberP1_SC" node="0>1|1|1|0|4"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblDieselLiterNumberP1_SC" node="0>1|1|1|0|5"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblDieselUsageNumberP1_SC" node="0>1|1|1|0|6"/>
