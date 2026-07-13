@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="juwel6Display.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.13"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="4" filename="$data/shared/default_normal.png"/>
+    <File fileId="5" filename="$data/shared/default_specular.png"/>
+    <File fileId="1" filename="../textures/isoBUS_Lemken_Juwel_diffuse.png"/>
+    <File fileId="3" filename="../../../../../utils/DBL_MeshLibary/dashboardSymbolsAdd_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lemken_IB_mat" materialId="5" customShaderId="2" customShaderVariation="slider">
+      <Texture fileId="1"/>
+      <CustomParameter name="sliderPos" value="0 0"/>
+    </Material>
+    <Material name="lemken_IB_mat" materialId="7" customShaderId="2" customShaderVariation="slider">
+      <Texture fileId="1"/>
+      <CustomParameter name="sliderPos" value="0.42 0"/>
+    </Material>
+    <Material name="lemken_IB_mat" materialId="6" customShaderId="2" customShaderVariation="slider">
+      <Texture fileId="1"/>
+    </Material>
+    <Material name="lemken_IB_mat" materialId="8" customShaderId="2" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="9" alphaBlending="true" customShaderId="2" customShaderVariation="staticLight">
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="10" alphaBlending="true" customShaderId="2" customShaderVariation="staticLight">
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+      <CustomParameter name="blinkSimple" value="1.5 0.3"/>
+    </Material>
+    <Material name="mat_16x16_emitter" materialId="11" alphaBlending="true" customShaderId="2" customShaderVariation="staticLight">
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+      <CustomParameter name="blinkSimple" value="2 0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="juwel6Display.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="lemkenJuwelPlough" rotation="0 -0 90" nodeId="26">
+      <TransformGroup name="Icons" nodeId="27">
+        <Shape name="dbl_isoBUS_smiley" translation="0.001 -0.118726 0.0445323" rotation="0 -0 -90" shapeId="1" clipDistance="15" nodeId="28" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_ploughState_Dn" translation="0.000999993 -0.082933 0.0449699" rotation="0 -0 -90" shapeId="2" clipDistance="15" nodeId="29" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_ploughState_Up" translation="0.000999993 -0.079549 0.0449699" rotation="0 -0 -90" shapeId="3" visibility="false" clipDistance="15" nodeId="30" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_folding_Park" translation="0.000999996 -0.0424989 0.044362" rotation="0 -0 -90" shapeId="4" clipDistance="15" nodeId="31" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_folding_Street" translation="0.00099999 -0.113219 -0.0431811" rotation="0 -0 -90" shapeId="5" clipDistance="15" nodeId="32" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_Preset_2" translation="0.002 -0.0864523 -0.0434642" rotation="0 -0 -90" shapeId="6" clipDistance="75" nodeId="33" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_rotate_L" translation="0.00199999 -0.121928 0.0266913" rotation="0 -0 -90" shapeId="7" clipDistance="15" nodeId="34" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="dbl_isoBUS_rotate_R" translation="0.00199999 -0.060551 0.0266913" rotation="0 -0 -90" shapeId="7" clipDistance="15" nodeId="35" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        <Shape name="_dbl_isoBUS_slider_L" translation="0.00206899 -0.089017 0.025592" rotation="0 -0 -90" shapeId="8" clipDistance="15" nodeId="36" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="5"/>
+        <Shape name="_dbl_isoBUS_slider_R" translation="0.00206899 -0.0893377 0.0255688" rotation="0 -0 -90" shapeId="9" clipDistance="15" nodeId="37" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="6"/>
+        <TransformGroup name="dbl_iB_rotationArrow" translation="-7.81169e-09 -0.0893553 0.0170241" rotation="0 -0 -90" nodeId="38">
+          <Shape name="dbl_isoBUS_Arrow" translation="0.000107579 0.00200001 0.0171574" rotation="-1.36604e-05 -90 0" scale="0.2 0.2 0.2" shapeId="6" clipDistance="75" nodeId="39" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+        </TransformGroup>
+        <Shape name="_dbl_isoBUS_sliderFake_L" translation="0.00206899 -0.089017 0.025592" rotation="0 -0 -90" shapeId="10" clipDistance="15" nodeId="40" castsShadows="false" receiveShadows="true" materialIds="7"/>
+        <Shape name="_dbl_isoBUS_wider_L" translation="0.00196044 -0.115519 0.0130051" rotation="1e-06 0 -90" scale="0.5 1 1.6" shapeId="11" clipDistance="20" nodeId="41" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="11"/>
+        <Shape name="_dbl_isoBUS_wider_R" translation="0.00196044 -0.102229 0.0137461" rotation="1e-06 0 -90" scale="0.5 1 1.4" shapeId="11" clipDistance="20" nodeId="42" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10"/>
+        <Shape name="_dbl_isoBUS_workWidthChanged" translation="0.002 0.0321021 0.0310677" rotation="0 -0 -90" scale="5.42867 1 4.10395" shapeId="12" clipDistance="20" nodeId="43" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+        <Shape name="_dbl_isoBUS_lifting" translation="0.002 0.0321021 -0.00738518" rotation="0 -0 -90" scale="5.42867 1 4.10395" shapeId="12" clipDistance="20" nodeId="44" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+        <Shape name="_dbl_isoBUS_lowering" translation="0.002 0.0321021 -0.0265609" rotation="0 -0 -90" scale="5.42867 1 4.10395" shapeId="12" clipDistance="20" nodeId="45" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+        <Shape name="_dbl_isoBUS_turning" translation="0.00199999 0.00717704 0.0118243" rotation="0 -0 -90" scale="5.42867 1 4.10395" shapeId="12" clipDistance="20" nodeId="46" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="9"/>
+      </TransformGroup>
+      <TransformGroup name="lemkenJuwelScreen" nodeId="47">
+        <Shape name="dbl_basePlane_isoBUS" translation="0.002 -0.047 0.003493" rotation="0 -0 -90" shapeId="13" clipDistance="15" nodeId="48" castsShadows="false" receiveShadows="true" materialIds="8"/>
+      </TransformGroup>
+      <TransformGroup name="Numbers" rotation="0 -0 -90" nodeId="49">
+        <TransformGroup name="dblIsobusRotateDegrees_txt" translation="0.0896331 0.002 0.0210463" rotation="90 -0 180" nodeId="50"/>
+        <TransformGroup name="dblIsobusRotateAngleLeft_txt" translation="0.106116 0.002 0.0289996" rotation="90 -0 180" nodeId="51"/>
+        <TransformGroup name="dblIsobusRotateAngleRight_txt" translation="0.0665263 0.002 0.0289996" rotation="90 -0 180" nodeId="52"/>
+        <TransformGroup name="dblIsobusPlowDistance_txt" translation="0.0801872 0.002 0.00401401" rotation="90 -0 180" nodeId="53"/>
+        <TransformGroup name="dblIsobusPlowWorkWidth_txt" translation="0.0333581 0.002 0.00256405" rotation="90 -0 180" nodeId="54"/>
+        <TransformGroup name="dblIsobusPlowWorkDepth_txt" translation="0.0850673 0.002 -0.00950428" rotation="90 -0 180" nodeId="55"/>
+        <TransformGroup name="dblIsobusPlowShar_txt" translation="0.0778549 0.002 0.0111399" rotation="90 -0 180" nodeId="56"/>
+        <TransformGroup name="dblIsobusMathDummy_ww1" translation="0.0670394 -0.01 -0.0309644" rotation="90 -0 180" visibility="false" nodeId="57"/>
+        <TransformGroup name="dblIsobusGPSWorkWidth_txt" translation="0.0333581 0.00199999 0.0115266" rotation="90 -0 180" nodeId="58"/>
+        <TransformGroup name="dblIsobusMathDummy_ww2" translation="0.034582 -0.00222351 0.00643892" rotation="90 -0 180" visibility="false" nodeId="59"/>
+        <TransformGroup name="dblIsobusMathDummy_cp" translation="0.034582 -0.00222351 0.00643892" rotation="90 -0 180" visibility="false" nodeId="60"/>
+        <TransformGroup name="dblIsobusCutWide_txt" translation="0.081 0.002 -0.0257566" rotation="90 -0 180" nodeId="61"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="41">
+      <Attribute name="MaxHandle" type="integer" value="169"/>
+    </UserAttribute>
+    <UserAttribute nodeId="42">
+      <Attribute name="MaxHandle" type="integer" value="169"/>
+    </UserAttribute>
+    <UserAttribute nodeId="43">
+      <Attribute name="MaxHandle" type="integer" value="188"/>
+    </UserAttribute>
+    <UserAttribute nodeId="44">
+      <Attribute name="MaxHandle" type="integer" value="188"/>
+    </UserAttribute>
+    <UserAttribute nodeId="45">
+      <Attribute name="MaxHandle" type="integer" value="188"/>
+    </UserAttribute>
+    <UserAttribute nodeId="46">
+      <Attribute name="MaxHandle" type="integer" value="188"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>
