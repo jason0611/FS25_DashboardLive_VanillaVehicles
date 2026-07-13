@@ -196,6 +196,20 @@ Volvo
 	L180H
 	VNX 300
 
+Changelog:
+ V1.1.0.0:
+ - realGPS Unterstützung und integration
+ - - MiniMaps werden durch realGPS ersetzt.
+ - MB DLC Arbeitskameras Für Alle Fahrzeuge Unterstützung und integration
+ - - Kameras sind in den Seiten G4 und G5 integriert und umschaltbar.
+ - JD Displays erweitert
+ - - isoBUS und RTK Seiten ebenfalls mit Kamera für Geräte
+ - Anzeigefehler und Parameter von dieversen Displays korregiert
+ - isoBus-Screen für Brantner DD 24073/2 XXL
+ - isoBus-Screen für Lemken Juwel6 und titan18
+ - ...
+			
+
 GitHub: https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles
 Weitere Ideen oder Wünsche werden gerne entgegengenommen
 ]]>
