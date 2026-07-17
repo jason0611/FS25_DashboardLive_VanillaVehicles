@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="109">
-	<author>Mister_mojo_AT, SbSh, Glowins Modschmiede, Finanzamt31er</author>
+<modDesc descVersion="110">
+	<author>Mister_mojo_AT, SbSh, Glowins Modschmiede, Finanzamt31er, BayernGamers</author>
 	<version>1.1.0.0</version>
 	<devStatus>RC</devStatus>
 	<contributors>AgrarPlay und LUWZ</contributors>
@@ -103,6 +103,29 @@ Volvo
 	L120H Electric
 	L180H
 	VNX 300
+	
+Changelog:
+
+V1.1.0.0:
+ - “realGPS” support and integration: Use of realGPS as a mini-map.
+ - “MB DLC Work Cameras for All Vehicles” support and integration: 
+ - realGPS and cameras for vehicles including Oxbo, Claas, Deutz, MF, Valtra, Volvo, Skoda, and many more. 
+ - JD displays expanded:
+ - - isoBUS and RTK pages now also include a camera for implements
+ - - 6M added
+ - - New G5 Apillar display for the 9Rx, among others
+ - - Cameras are integrated into the pages of the G4 and G5 terminals and can be switched between.
+ - - New functions: output per hectare/hour, fuel consumption in liters/hectare, and actual on-board voltage (12 V/24 V) implemented
+ - Display errors and parameters for various displays corrected
+ - isoBus screen for Brantner DD 24073/2 XXL
+ - isoBus screen for Lemken Juwel6 and Titan18
+ - Fendt Variotronic can be used separately.
+ - All previously hard-coded displays are now also included separately as compounds
+ - Page layouts revised
+ - Missing radio backgrounds fixed via Patch 1.16
+ - Faulty startup screens fixed via Patch 1.19
+ - Flickering fixed after Patch 1.20
+ - CEBIS missing nodes in the log fixed
 
 GitHub: https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles
 Further ideas or requests are welcome
@@ -196,6 +219,29 @@ Volvo
 	L180H
 	VNX 300
 
+Changelog:
+
+V1.1.0.0:
+ - "realGPS" Unterstützung und Integration: Nutzung von realGPS als MiniMap.
+ - "MB DLC Arbeitskameras Für Alle Fahrzeuge" Unterstützung und Integration: 
+ - realGPS und Kameras für Fahrzeuge u.a. Oxbo, Claas, Deutz, MF, Valtra, Volvo, Skoda, uvm. 
+ - JD Displays erweitert:
+ - - isoBUS und RTK Seiten ebenfalls mit Kamera für Geräte
+ - - 6M hinzugefügt
+ - - Neues G5 Apillar Display u.a. für 9Rx
+ - - Kameras sind in den Seiten der G4- und G5-Terminals integriert und umschaltbar.
+ - - Neue Funktionen Hektarleistung/Std., Verbrauch Liter/Hektar, echte Bordspannung 12v/24v verbaut
+ - Anzeigefehler und Parameter von dieversen Displays korrigiert
+ - isoBus-Screen für Brantner DD 24073/2 XXL
+ - isoBus-Screen für Lemken Juwel6 und titan18
+ - Fendt Variotronic seperat nutzbar.
+ - Alle bisher fest verbauten Displays jetzt auch seperat als Compound enthalten
+ - Seiten Strukturen überarbeitet
+ - Fehlende Radiohintergründe durch Patch 1.16 gefixed
+ - Fehlerhafte Startscreenss durch Patch 1.19 gefixed
+ - Flackern nach Patch 1.20 gefixed
+ - CEBIS missing nodes in der log gefixed
+			
 GitHub: https://github.com/jason0611/FS25_DashboardLive_VanillaVehicles
 Weitere Ideen oder Wünsche werden gerne entgegengenommen
 ]]>
