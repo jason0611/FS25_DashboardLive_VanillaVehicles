@@ -291,6 +291,17 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="dbl_miniMapP2_SW" groups="MOTOR_ACTIVE PAGESW2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_SW" groups="MOTOR_ACTIVE PAGESW2"/>
+
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_miniMapP2_SW" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESW2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP2_SW" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 
     <dashboardCompound name="FENDT_ONE_MAIN" filename="data/vehicles/fendt/shared/oneDisplays.i3d" node="fendtOneDisplaySide">
@@ -521,11 +532,20 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="dbl_naviMapP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_naviMapP2_SC" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP2_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 	
 	<!-- SeatConsole PAGE3 -->
 		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE PAGESC3"/>
 		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE PAGESC3"/>
-<!-- 	<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="fendtOneDisplaySide"/> -->
 
 		<dashboard displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE LIGHTMODE PAGESC3"/>
 		<dashboard displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE DARKMODE PAGESC3"/>
@@ -604,6 +624,16 @@
 		<!-- MiniMap -->
 		<dashboard valueType="miniMap" cmd="map" displayType="VISIBILITY" node="dbl_naviMapPlaneP1_CC" groups="MOTOR_ACTIVE PAGECC1"/>
 		<dashboard valueType="miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP1_CC" groups="MOTOR_ACTIVE PAGECC1"/>
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_naviMapPlaneP1_CC" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGECC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP1_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 		
 	<!-- CabConsole PAGE2 -->
         <dashboard displayType="VISIBILITY" node="dashboardDisplayGPS_CC" groups="MOTOR_ACTIVE LIGHTMODE PAGECC2"/>
@@ -676,6 +706,16 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="dbl_naviMapP2_CC" groups="MOTOR_ACTIVE PAGECC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_CC" groups="MOTOR_ACTIVE PAGECC2"/>
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_naviMapP2_CC" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGECC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP2_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 
     <i3dMappings>
