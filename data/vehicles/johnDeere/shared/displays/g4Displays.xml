@@ -408,7 +408,7 @@
 		<dashboard displayType="TEXT" node="g4Display_dblEnvWeatherHailP1_SC" 	 textColor="0.9 0.9 0.9 1" 	textSize="0.002" textMask="Hagel" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC13"/>
 		<dashboard displayType="TEXT" node="g4Display_dblEnvWeatherSnowP1_SC" 	 textColor="0.9 0.9 0.9 1" 	textSize="0.002" textMask="Schnee" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC13"/>
 		<dashboard displayType="TEXT" node="g4Display_dblEnvWeatherTwisterP1_SC" textColor="0.9 0.2 0.0 1" 	textSize="0.002" textMask="Unwetter!" textAlignment="RIGHT" emissiveScale="0.7" textScaleY="1.2" font="GENERIC" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC13"/>
-		<dashboard valueType="outsideTemperature" cond="less" condValue="3" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="5" volume="0.5" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1" />
+		<dashboard valueType="outsideTemperature" cond="less" condValue="3" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="5" volume="0.5" audioName="tempoutta" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1" />
 				<!-- :( negative value will disable the visibility -->
 		<!-- <dashboard displayType="VISIBILITY" valueType="outsideTemperature" comp="less" compValue="4" node="g4Display_dblSnowIconP1_SC" groups="MOTOR_ACTIVE"/> -->
 		<dashboard displayType="VISIBILITY" valueType="outsideTemperature" maxActiveValue="4" node="g4Display_dblSnowIconP1_SC" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
@@ -476,7 +476,7 @@
 		<dashboard displayType="TEXT" valueType="motorized.speedDir" node="g4Display_dblSpeedNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.007" doInterpolation="true" interpolationSpeed="0.25" textMask="00000.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 							<!-- :( slip don't work with EV, base game has it but not as dashboard -->
 		<dashboard displayType="VISIBILITY" node="g4Display_dblWheelSlipPercentNumbersP1_SC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
-		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g4Display_dblWheelSlipPercentNumbersP1_SC" factor="100" textColor="0.05 0.05 0.04 1" textSize="0.0055" doInterpolation="true" interpolationSpeed="0.15" textMask="000%" emissiveScale="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g4Display_dblWheelSlipPercentNumbersP1_SC" factor="1" textColor="0.05 0.05 0.04 1" textSize="0.0055" doInterpolation="true" interpolationSpeed="0.15" textMask="000%" emissiveScale="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="g4Display_dblMotorTempNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="TEXT" valueType="motorized.fuelUsage" node="g4Display_dblFuelUsageNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.0055" textMask="000.00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC12"/>
 		<dashboard displayType="TEXT" valueType="fillLevel" fillType="DIESEL" node="g4Display_dblFuelPercentNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.004" textMask="0000.00L" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC12"/>
@@ -509,16 +509,16 @@
 		<dashboard valueType="dbl.vca" cmd="diff_back" displayType="EMITTER" node="g4Display_dblDiffLockBackP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		<dashboard valueType="dbl.vca" cmd="diff_awdF" displayType="EMITTER" node="g4Display_dblFrontAxleVoreilungActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="1" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="100" outside="false" distance="1.0" loop="2" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="100" outside="false" distance="1.0" loop="4" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="45" factor="1" outside="false" distance="1.0" loop="1" volume="0.05" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="1" outside="false" distance="1.0" loop="2" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="1" outside="false" distance="1.0" loop="4" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g4Display_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs" state="1" node="g4Display_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g4Display_dblCvtPreAutoDiffP1_SC" baseColor="JOHNDEERE_ORANGE1" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autodiffs" state="1" node="g4Display_dblCvtAutoDiffActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" 							   intensity="0.7" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g4Display_dblWheelSlipIconP1_SC" factor="100" cond="less" condValue="40" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g4Display_dblWheelSlipBlinkP1_SC" factor="100" cond="moreequal" condValue="40" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g4Display_dblWheelSlipIconP1_SC" factor="1" cond="less" condValue="40" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g4Display_dblWheelSlipBlinkP1_SC" factor="1" cond="moreequal" condValue="40" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblWheelSlipIconP1_SC"  baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.05 0.04 1" intensity="0.8" groups="MOTOR_ACTIVE JD4_TRAC_PAGESC1"/>
 		<dashboard displayType="EMITTER" node="g4Display_dblWheelSlipBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" groups="MOTOR_RUNNING JD4_TRAC_PAGESC1"/>
 

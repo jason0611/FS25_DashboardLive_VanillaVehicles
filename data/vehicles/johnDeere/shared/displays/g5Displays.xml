@@ -91,7 +91,7 @@
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblCvtDamageWarnIconP1_AP"  valueType="dbl.cvt" cmd="critdamage" state="0" baseColor="0.5 0.5 0.4 1" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblCvtDamageCritBlinkP1_AP" valueType="dbl.cvt" cmd="critdamage" state="1" emitColor="0.9 0.45 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblCvtHighPressureBlinkP1_AP" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_aPillarDisplayTractor_dblWheelSlipBlinkP1_AP" factor="100" minActiveValue="20" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_aPillarDisplayTractor_dblWheelSlipBlinkP1_AP" factor="1" minActiveValue="20" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblWheelSlipBlinkP1_AP" baseColor="0 0 0 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_aPillarDisplayTractor_dblVcaKeepSpeedP1_AP" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblVcaKeepSpeedP1_AP" emitColor="JOHNDEERE_ORANGE1" intensity="0.6" groups="MOTOR_ACTIVE"/>
@@ -301,7 +301,7 @@
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblCvtDamageWarnIconP1_AP"  valueType="dbl.cvt" cmd="critdamage" state="0" baseColor="0.5 0.5 0.4 1" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblCvtDamageCritBlinkP1_AP" valueType="dbl.cvt" cmd="critdamage" state="1" emitColor="0.9 0.45 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblCvtHighPressureBlinkP1_AP" emitColor="0.05 0.05 0.04 1" intensity="0.6" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_aPillarDisplayTractor_dblWheelSlipBlinkP1_AP" factor="100" minActiveValue="20" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_aPillarDisplayTractor_dblWheelSlipBlinkP1_AP" factor="1" minActiveValue="20" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblWheelSlipBlinkP1_AP" baseColor="0 0 0 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="ks" node="g5Display_aPillarDisplayTractor_dblVcaKeepSpeedP1_AP" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarDisplayTractor_dblVcaKeepSpeedP1_AP" emitColor="JOHNDEERE_ORANGE1" intensity="0.6" groups="MOTOR_ACTIVE"/>
@@ -499,7 +499,7 @@
 		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherHailP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="HAGEL"   textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherSnowP1_SC" 	 textColorDarkMode="0 0 0 1" textColor="0.9 0.9 0.8 1"	textSize="0.003" textMask="Schnee"  textSpacing="2" textAlignment="LEFT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" node="g5Display_dblEnvWeatherTwisterP1_SC" textColorDarkMode="0.5 0.1 0.0 1" textColor="0.9 0.4 0.1 1" textSize="0.003" textMask="Unwetter!" textSpacing="4" textAlignment="LEFT" emissiveScale="0.7" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard valueType="outsideTemperature" cond="less" condValue="3" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="5" volume="0.5" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="outsideTemperature" cond="less" condValue="3" displayType="AUDIO" minActiveValue="45" factor="100" outside="false" distance="1.0" loop="5" volume="0.5" audioName="tempout" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard displayType="VISIBILITY" valueType="outsideTemperature" maxActiveValue="4" node="g5Display_dblSnowIconP1_SC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblSnowIconP1_SC" emitColor="0.9 0.25 0.004 1" intensity="0.7" groups="MOTOR_RUNNING"/>
 	
@@ -538,16 +538,16 @@
 		<dashboard valueType="dbl.vca" cmd="diff_back" displayType="EMITTER" node="g5Display_dblDiffLockBackP1_SC" emitColor="JOHNDEERE_YELLOW1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
 		<dashboard valueType="dbl.vca" cmd="diff_awdF" displayType="EMITTER" node="g5Display_dblFrontAxleVoreilungActiveP1_SC" emitColor="1 0.5 0" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
 		
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="21" factor="100" outside="false" distance="1.0" loop="1" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="40" factor="100" outside="false" distance="1.0" loop="2" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="100" outside="false" distance="1.0" loop="4" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="21" factor="1" outside="false" distance="1.0" loop="1" volume="0.05" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="40" factor="1" outside="false" distance="1.0" loop="2" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="1" outside="false" distance="1.0" loop="4" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs"  state="1" node="g5Display_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs"     state="1" node="g5Display_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt"    cmd="preautodiffs"  state="1" node="g5Display_dblCvtPreAutoDiffP1_SC" baseColor="0 0 0" emitColor="JOHNDEERE_YELLOW1" intensity="0.7" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt"    cmd="autodiffs"     state="1" node="g5Display_dblCvtAutoDiffActiveP1_SC" emitColor="0 0.8 0 1" 							   intensity="0.7" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipIconP1_SC" factor="100" maxActiveValue="30" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipBlinkP1_SC" factor="100" minActiveValue="30.1" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipIconP1_SC" factor="1" maxActiveValue="30" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipBlinkP1_SC" factor="1" minActiveValue="30.1" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblWheelSlipIconP1_SC"  baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.05 0.04 1" intensity="0.8" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5Display_dblWheelSlipBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
 
@@ -807,7 +807,7 @@
 		
 							<!-- :( slip don't work with EV, base game has it but not as dashboard -->
 		<dashboard displayType="VISIBILITY" node="g5Display_dblWheelSlipPercentNumbersP1_SC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipPercentNumbersP1_SC" factor="100" textColor="0.05 0.05 0.04 1" textSize="0.0035" doInterpolation="true" interpolationSpeed="0.08" textMask="000%" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g5Display_dblWheelSlipPercentNumbersP1_SC" factor="1" textColor="0.05 0.05 0.04 1" textSize="0.0035" doInterpolation="true" interpolationSpeed="0.08" textMask="000%" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="motorized.motorTemperature" node="g5Display_dblMotorTempNumbersP1_SC" textColor="0.07 0.07 0.04 1" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
 		
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="g5Display_naviMapTractorP1_SC" groups="MOTOR_RUNNING"/>
@@ -1373,9 +1373,6 @@
 		<dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="EMITTER" node="g5Display_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" baseColor="0 0 0" emitColor="0.3 0.7 0.3" intensityDarkMode="0.05" default="0" groups="MOTOR_ACTIVE"/>
 	</dashboardCompound>
 
-
-
-
 	<!-- COMBINE -->
 	<dashboardCompound name="JOHNDEERE_G5_APILLAR_COMBINE_DISPLAY" filename="data/vehicles/johnDeere/shared/displays/g5Displays.i3d" node="aPillarScreenCombine">
 		<group name="JD_COMB_PAGEAP1"  dbl="page" group="1" page="1"/>      <!-- group soll 1 -->
@@ -1730,19 +1727,19 @@
 		<dashboard valueType="dbl.vca" cmd="diff_back" displayType="EMITTER"        node="g5HarvestingPageBasic_dblDiffLockBackP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/>
 		<!-- <dashboard valueType="dbl.vca" cmd="diff_awdF" displayType="EMITTER"        node="g5HarvestingPageBasic_dblFrontAxleVoreilungActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" idleValue="-1" groups="MOTOR_RUNNING"/> -->
 
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="30" factor="100" outside="false" distance="1.0" loop="1" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="100" outside="false" distance="1.0" loop="2" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
-		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="100" outside="false" distance="1.0" loop="4" volume="0.2" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="30" factor="1" outside="false" distance="1.0" loop="1" volume="0.05" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="70" factor="1" outside="false" distance="1.0" loop="2" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
+		<dashboard valueType="dbl.vca" cmd="slip" displayType="AUDIO" minActiveValue="95" factor="1" outside="false" distance="1.0" loop="4" volume="0.1" audioName="Slip" audioFile="$data/sounds/vehicles/horn/fh16_horn.ogg" groups="MOTOR_ACTIVE" />
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="preautodiffs" state="1" node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="VISIBILITY" valueType="dbl.cvt" cmd="autodiffs" state="1"    node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="preautodiffs" state="1"    node="g5HarvestingPageBasic_dblCvtPreAutoDiffP1_SC" baseColor="JOHNDEERE_ORANGE1" emitColor="JOHNDEERE_ORANGE1" intensity="0.7" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" valueType="dbl.cvt" cmd="autodiffs" state="1"       node="g5HarvestingPageBasic_dblCvtAutoDiffActiveP1_SC" emitColor="JOHNDEERE_ORANGE1" 							 intensity="0.7" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipIconP1_SC" factor="100" cond="less" condValue="40" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipBlinkP1_SC" factor="100" cond="moreequal" condValue="40" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipIconP1_SC" factor="1" cond="less" condValue="40" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipBlinkP1_SC" factor="1" cond="moreequal" condValue="40" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblWheelSlipIconP1_SC"  baseColor="0.05 0.05 0.04 1" emitColor="0.05 0.05 0.04 1" intensity="0.8" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="EMITTER" node="g5HarvestingPageBasic_dblWheelSlipBlinkP1_SC" baseColor="0.05 0.05 0.04 1" emitColor="JOHNDEERE_ORANGE1" intensity="0.9" intensityDarkMode="0.2" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipPercentNumbersP1_SC" factor="100" textColor="0.05 0.05 0.04 1" textSize="0.0035" doInterpolation="true" interpolationSpeed="0.08" textMask="000%" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.vca" cmd="slip" node="g5HarvestingPageBasic_dblWheelSlipPercentNumbersP1_SC" factor="1" textColor="0.05 0.05 0.04 1" textSize="0.0035" doInterpolation="true" interpolationSpeed="0.08" textMask="000%" emissiveScale="0.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		
 
 		<dashboard displayType="VISIBILITY" valueType="fillLevelWarning" fillType="DIESEL" warningThresholdMax="100" node="g5HarvestingPageBasic_dblFuelWarningP1_CC1" groups="MOTOR_RUNNING"/>
@@ -2827,6 +2824,10 @@
 		<i3dMapping id="g5h_cameraNoSignal2_P2_GPS" node="0>1|2|3|2"/>
 		<i3dMapping id="g5h_cameraNoSignal3_P2_GPS" node="0>1|2|3|3"/>
 
-		
+		<!-- isoBUS single -->
+		<i3dMapping id="isobusScreen" node="0>0|3"/>
+		<i3dMapping id="g5isoBusVTsingle" node="0>0|3|0"/>
+		<i3dMapping id="single_isoBUS_LoadNode_SC" node="0>0|3|0|0"/>
+		<i3dMapping id="single_isobusPageTractor_noVT_hinweis" node="0>0|3|0|1"/>
 	</i3dMappings>
 </dashboardCompounds>
