@@ -10,7 +10,9 @@
 		<group name="PAGECC1" dbl="page" group="2" page="1"/>
 		<group name="PAGECC2" dbl="page" group="2" page="2"/>
 		<group name="PAGECC3" dbl="page" group="2" page="3"/>
-		<group name="PAGECC4" dbl="page" group="2" page="4"/>
+		<!-- <group name="PAGECC4" dbl="page" group="2" page="4"/> -->
+		<group name="DARKMODE" dbl="darkmode"/>
+		<group name="LIGHTMODE" dbl="lightmode"/>
 
     <dashboardCompound name="VALTRA_APILLAR" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="valtraAPillarDisplayDirect_decal">
     <!-- lights -->
@@ -151,6 +153,8 @@
 	<!-- dashboards -->
 		<dashboard displayType="VISIBILITY" node="valtraSmartTouchISOBusScreenP4_SC" groups="MOTOR_RUNNING PAGESC4"/>
         <dashboard displayType="EMITTER" node="valtraSmartTouchISOBusScreenP4_SC" intensity="0.3" groups="MOTOR_RUNNING PAGESC4"/>
+		<dashboard displayType="VISIBILITY" node="isobusJointP4_SC" groups="MOTOR_ACTIVE PAGESC4"/>
+		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="isobusJointP4_SC" groups="MOTOR_ACTIVE PAGESC4"/>
     </dashboardCompound>
 
     <dashboardCompound name="VALTRA_TECHNOLOGYPRO_SCREEN01" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="valtraTechnologyProDisplays">
@@ -246,8 +250,10 @@
 	
 	<!-- Page 4 -->
 	<!-- dashboards -->
-		<dashboard displayType="VISIBILITY" node="valtraTechnologyProISOBusScreenP4_CC" groups="MOTOR_RUNNING PAGECC4"/>
-        <dashboard displayType="EMITTER" node="valtraTechnologyProISOBusScreenP4_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC4"/>
+		<!-- <dashboard displayType="VISIBILITY" node="valtraTechnologyProISOBusScreenP4_CC" groups="MOTOR_RUNNING PAGECC4"/> -->
+  <!--       <dashboard displayType="EMITTER" node="valtraTechnologyProISOBusScreenP4_CC" intensity="0.3" groups="MOTOR_RUNNING PAGECC4"/> -->
+		<!-- <dashboard displayType="VISIBILITY" node="isobusJointP4_SC" groups="MOTOR_ACTIVE PAGECC4"/> -->
+		<!-- <dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="isobusJointP4_CC" groups="MOTOR_ACTIVE PAGECC4"/> -->
     </dashboardCompound>
 
     <dashboardCompound name="VALTRA_REVERSEDRIVING_SCREEN01" filename="data/vehicles/valtra/shared/displayDecals/valtraDisplays.i3d" node="reverseDrivingDisplay_decal">
