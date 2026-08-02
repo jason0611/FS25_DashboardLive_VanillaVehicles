@@ -2823,11 +2823,5 @@
 		<i3dMapping id="g5h_cameraNoSignal1_P2_GPS" node="0>1|2|3|1"/>
 		<i3dMapping id="g5h_cameraNoSignal2_P2_GPS" node="0>1|2|3|2"/>
 		<i3dMapping id="g5h_cameraNoSignal3_P2_GPS" node="0>1|2|3|3"/>
-
-		<!-- isoBUS single -->
-		<i3dMapping id="isobusScreen" node="0>0|3"/>
-		<i3dMapping id="g5isoBusVTsingle" node="0>0|3|0"/>
-		<i3dMapping id="single_isoBUS_LoadNode_SC" node="0>0|3|0|0"/>
-		<i3dMapping id="single_isobusPageTractor_noVT_hinweis" node="0>0|3|0|1"/>
 	</i3dMappings>
 </dashboardCompounds>
