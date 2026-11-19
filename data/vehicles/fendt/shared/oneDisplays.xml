@@ -3,6 +3,9 @@
 	
 	<group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
+	
+	<group name="NOISOBUS" dbl="noisobus"/>
+	
 <!-- Pages SW -->
 	<group name="PAGESW1" dbl="page" group="1" page="1"/>
 	<group name="PAGESW2" dbl="page" group="1" page="2"/>
@@ -288,6 +291,17 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="dbl_miniMapP2_SW" groups="MOTOR_ACTIVE PAGESW2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_SW" groups="MOTOR_ACTIVE PAGESW2"/>
+
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_miniMapP2_SW" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESW2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP2_SW" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 
     <dashboardCompound name="FENDT_ONE_MAIN" filename="data/vehicles/fendt/shared/oneDisplays.i3d" node="fendtOneDisplaySide">
@@ -369,9 +383,9 @@
 		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="dbl_cruiseControl00BP1_SC" intensity="0.4" baseColor="0.4 0.4 0.4 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" groups="MOTOR_ACTIVE PAGESC1"/>
 		<dashboard displayType="EMITTER" valueType="cc" cmd="active" state="2" node="dbl_cruiseControl01BP1_SC" intensity="0.4" baseColor="1 1 1 1" baseColorDarkMode="1 1 1 1" emitColor="GREEN" groups="MOTOR_ACTIVE PAGESC1"/>
 		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="dbl_cruiseControlNumbers00P1_SC" textColor="0.4 0.4 0.4 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE PAGESC1"/>
-		<dashboard displayType="TEXT" valueType="cc" cmd="active" state="2" node="dbl_cruiseControlNumbers01P1_SC" textColor="0.4 0.4 0.4 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="cc" cmd="speed" state="2" node="dbl_cruiseControlNumbers01P1_SC" textColor="0.4 0.4 0.4 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00" textAlignment="CENTER" font="GENERIC" groups="MOTOR_ACTIVE PAGESC1"/>
 		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="dbl_cruiseControlNumbers00BP1_SC" textColor="0.4 0.4 0.4 1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_ACTIVE PAGESC1"/>
-		<dashboard displayType="TEXT" valueType="cc" cmd="active" state="2" node="dbl_cruiseControlNumbers01BP1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_ACTIVE PAGESC1"/>
+		<dashboard displayType="TEXT" valueType="cc" cmd="speed" state="2" node="dbl_cruiseControlNumbers01BP1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_ACTIVE PAGESC1"/>
 		<dashboard displayType="ROT" valueType="drivable.cruiseControl" node="dbl_cruiseControlRotP1_SC" minRot="0 0 0" maxRot="-268 0 0" minValueRot="0" maxValueRot="63" groups="MOTOR_ACTIVE"/>
 		
 		<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="dbl_workTimeNumbersP1_SC" textMask="0000" textColor="FENDT_WHITE2" textColorDarkMode="1 1 1 1" textSize="0.004" fontThickness="1.5" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE PAGESC1"/>
@@ -518,8 +532,21 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="dbl_naviMapP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_naviMapP2_SC" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGESC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP2_SC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 	
 	<!-- SeatConsole PAGE3 -->
+		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE PAGESC3"/>
+		<dashboard valueType="dbl.isobus" displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE PAGESC3"/>
+
 		<dashboard displayType="VISIBILITY" node="dashboardDisplayUT_SC" groups="MOTOR_ACTIVE LIGHTMODE PAGESC3"/>
 		<dashboard displayType="VISIBILITY" node="dashboardDisplayUTDM_SC" groups="MOTOR_ACTIVE DARKMODE PAGESC3"/>
 		<dashboard displayType="EMITTER" node="dashboardDisplayUT_SC" intensity="0.2" groups="MOTOR_ACTIVE LIGHTMODE PAGESC3"/>
@@ -597,6 +624,16 @@
 		<!-- MiniMap -->
 		<dashboard valueType="miniMap" cmd="map" displayType="VISIBILITY" node="dbl_naviMapPlaneP1_CC" groups="MOTOR_ACTIVE PAGECC1"/>
 		<dashboard valueType="miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP1_CC" groups="MOTOR_ACTIVE PAGECC1"/>
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_naviMapPlaneP1_CC" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGECC1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP1_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
 		
 	<!-- CabConsole PAGE2 -->
         <dashboard displayType="VISIBILITY" node="dashboardDisplayGPS_CC" groups="MOTOR_ACTIVE LIGHTMODE PAGECC2"/>
@@ -669,6 +706,16 @@
 		<!-- MiniMap -->
 		<dashboard valueType="dbl.miniMap" cmd="map" displayType="VISIBILITY" node="dbl_naviMapP2_CC" groups="MOTOR_ACTIVE PAGECC2"/>
 		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" node="dbl_naviPositionP2_CC" groups="MOTOR_ACTIVE PAGECC2"/>
+		<!-- RGPS -->
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_naviMapP2_CC" intensity="1.0" intensityDarkMode="0.6" idleValue="-1" dblGroups="MOTOR_ACTIVE PAGECC2">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="1" backgroundZoomMax="20" backgroundZoomMin="2.5"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_naviPositionP2_CC" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
     </dashboardCompound>
 
     <i3dMappings>
@@ -911,6 +958,7 @@
 		<i3dMapping id="dashboardDisplayGPSButton_SC" node="1>1|1|2"/>
 		<i3dMapping id="dashboardDisplayGPSButtonDM_SC" node="1>1|1|3"/>
 		<!-- SeatConsole Page3 -->
+		<i3dMapping id="isobusUTJoint" node="1>2|0"/>
 		<i3dMapping id="dbl_frontPLifterP3_SC" node="1>2|1|0"/>
 		<i3dMapping id="dbl_frontPLifterSliderP3_SC" node="1>2|1|1"/>
 		<i3dMapping id="dbl_frontPLifterSliderDMP3_SC" node="1>2|1|2"/>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dashboardCompounds>
+	<group name="DARKMODE" 	dbl="darkmode"/>
+	<group name="LIGHTMODE" dbl="lightmode"/>
+	<group name="NOISOBUS" 	dbl="noisobus"/>
+	<group name="ISOBUS" 	dbl="isobus"/>
+	<group name="iB_Pg1" 	dbl="page" group="1" page="1"/>
+	<group name="iB_Pg2" 	dbl="page" group="1" page="2"/>
+
+	<dashboardCompound name="HINWEIS_ISOBUS" filename="data/vehicles/isoBUS/isobus.i3d" 	node="isobus_hinweis">
+		<dashboard 										displayType="VISIBILITY" 			node="DBL_iB_hw_isoBUS_LoadNode"/>
+		<dashboard valueType="dbl.isobus" 				displayType="VISIBILITY" 			node="DBL_iB_hw_isoBUS_LoadNode"/>
+		<dashboard 										displayType="VISIBILITY" 			node="DBL_iB_hw_isobusPage_noIB_hinweis" 											groups="NOISOBUS"/>
+		<dashboard 										displayType="EMITTER" 				node="DBL_iB_hw_isobusPage_noIB_hinweis" intensity="0.2" intensityDarkMode="0.05" 	groups="NOISOBUS"/>
+	</dashboardCompound>
+
+	<dashboardCompound name="SINGLE_ISOBUS" filename="data/vehicles/isoBUS/isobus.i3d" 		node="isobus_only">
+		<dashboard 										displayType="VISIBILITY" 			node="DBL_iB_single_isoBUS_LoadNode"/>
+		<dashboard valueType="dbl.isobus" 				displayType="VISIBILITY" 			node="DBL_iB_single_isoBUS_LoadNode"/>
+	</dashboardCompound>
+
+	<dashboardCompound name="MAP_ISOBUS" filename="data/vehicles/isoBUS/isobus.i3d" 		node="isobus_map">
+		<dashboard valueType="dbl.isobus" 				displayType="VISIBILITY" 			node="DBL_iB_map_isoBUS_LoadNode" 													groups="iB_Pg2"/>
+		<dashboard 										displayType="VISIBILITY" 			node="DBL_iB_map_isoBUS_LoadNode" 													groups="iB_Pg2"/>
+
+		<dashboard valueType="dbl.miniMap" cmd="map" 	displayType="VISIBILITY" 			node="dbl_iB_miniMap_realGPS_1" 													groups="iB_Pg1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" 		node="dbl_iB_position" 																groups="iB_Pg1"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" 	displayType="EMITTER" 				node="dbl_iB_miniMap_realGPS_1" intensity="0.4" intensityDarkMode="0.005" 			groups="iB_Pg1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="EMITTER" 			node="dbl_iB_position" idleValue="-1" intensity="1.0" intensityDarkMode="0.6" 		groups="iB_Pg1"/>
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_iB_miniMap_realGPS_1" intensity="1.0" intensityDarkMode="0.01" idleValue="-1" 																 dblGroups="iB_Pg1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="100" backgroundZoomMax="20" backgroundZoomMin="100"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_iB_position" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
+	</dashboardCompound>
+
+	<dashboardCompound name="MAP_HINWEIS_ISOBUS" filename="data/vehicles/isoBUS/isobus.i3d" node="isobus_map_hinweis">
+		<dashboard 										displayType="VISIBILITY" 			node="DBL_iB_mapHW_isoBUS_LoadNode" 												groups="iB_Pg2"/>
+		<dashboard valueType="dbl.isobus" 				displayType="VISIBILITY" 			node="DBL_iB_mapHW_isoBUS_LoadNode" 												groups="iB_Pg2"/>
+		<dashboard 										displayType="VISIBILITY" 			node="DBL_iB_hw_isobusPage_noIB_hinweis" 											groups="iB_Pg2 NOISOBUS"/>
+		<dashboard 										displayType="EMITTER" 				node="DBL_iB_hw_isobusPage_noIB_hinweis" intensity="0.2" intensityDarkMode="0.05" 	groups="iB_Pg2 NOISOBUS"/>
+
+		<dashboard valueType="dbl.miniMap" cmd="map" 	displayType="VISIBILITY" 			node="dbl_iB_mapHW_miniMap_realGPS_1" 												groups="iB_Pg1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="VISIBILITY" 		node="dbl_iB_mapHW_position" 														groups="iB_Pg1"/>
+		<dashboard valueType="dbl.miniMap" cmd="map" 	displayType="EMITTER" 				node="dbl_iB_mapHW_miniMap_realGPS_1" intensity="0.4" intensityDarkMode="0.005" 	groups="iB_Pg1"/>
+		<dashboard valueType="dbl.miniMap" cmd="posMarker" displayType="EMITTER" 			node="dbl_iB_mapHW_position" idleValue="-1" intensity="1.0" intensityDarkMode="0.6" groups="iB_Pg1"/>
+		<realGPS isMotorActiveDependent="false" isIgnitionDependent="true">
+			<controls allow="true" allowRotation="true" allowZoom="true" />
+			<map mapNode="dbl_iB_mapHW_miniMap_realGPS_1" intensity="1.0" intensityDarkMode="0.01" idleValue="-1" 																 dblGroups="iB_Pg1">
+				<projection mode="PLAYER" playerSize="0.045" playerSizeMin="0.015" playerSizeMax="0.045" backgroundZoom="100" backgroundZoomMax="20" backgroundZoomMin="100"/>
+			</map>
+			<hideNodes>
+				<hideNode node="dbl_iB_mapHW_position" isDashboard="true" />
+			</hideNodes>
+		</realGPS>
+	</dashboardCompound>
+	
+
+	<i3dMappings>
+		<i3dMapping id="isobus_hinweis" 													node="0>0|0|0"/>
+		<i3dMapping id="DBL_iB_hw_isoBUS_LoadNode" 											node="0>0|0|0|0"/>
+		<i3dMapping id="DBL_iB_hw_isobusPage_noIB_hinweis" 									node="0>0|0|0|1"/>
+
+		<i3dMapping id="isobus_only" 														node="0>0|0|1"/>
+		<i3dMapping id="DBL_iB_single_isoBUS_LoadNode" 										node="0>0|0|1|0"/>
+
+		<i3dMapping id="isobus_map" 														node="0>0|0|2"/>
+		<i3dMapping id="DBL_iB_map_isoBUS_LoadNode" 										node="0>0|0|2|0"/>
+		<i3dMapping id="dbl_iB_miniMap_realGPS_1" 											node="0>0|0|2|1"/>
+		<i3dMapping id="dbl_iB_position" 													node="0>0|0|2|1|0"/>
+
+		<i3dMapping id="isobus_map_hinweis" 												node="0>0|0|3"/>
+		<i3dMapping id="DBL_iB_mapHW_isoBUS_LoadNode" 										node="0>0|0|3|0"/>
+		<i3dMapping id="DBL_iB_mapHW_isobusPage_noIB_hinweis" 								node="0>0|0|3|1"/>
+		<i3dMapping id="dbl_iB_mapHW_miniMap_realGPS_1" 									node="0>0|0|3|2"/>
+		<i3dMapping id="dbl_iB_mapHW_position" 												node="0>0|0|3|2|0"/>
+	</i3dMappings>
+</dashboardCompounds>

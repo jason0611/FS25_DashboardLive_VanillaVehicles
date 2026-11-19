@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="isobus.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.13"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="3" filename="$data/shared/defaultPlastic_vmask.dds"/>
+    <File fileId="2" filename="$data/shared/default_normal.dds"/>
+    <File fileId="6" filename="../../../../FS25_DashboardLive/shader/minimap.xml"/>
+    <File fileId="1" filename="../johnDeere/shared/displays/textures/johnDeereG4DisplayBasicVT1_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="miniMap" materialId="5" diffuseColor="0 0.0392157 0 1" customShaderId="6">
+      <CustomParameter name="lightControl" value="0.5"/>
+    </Material>
+    <Material name="noVTwarn_mat" materialId="6" customShaderId="4" customShaderVariation="staticLight">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+    <Material name="UnnamedMaterial" materialId="7" diffuseColor="1 0 0 1" customShaderId="4" customShaderVariation="staticLight">
+      <CustomParameter name="lightControl" value="0.75"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="isobus.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="iB_Screens" clipDistance="5" nodeId="12">
+      <TransformGroup name="compoundDisplays" nodeId="13">
+        <TransformGroup name="isobusScreen" translation="0 0.001 0" nodeId="14">
+          <TransformGroup name="isobus_hinweis" nodeId="15">
+            <TransformGroup name="DBL_iB_hw_isoBUS_LoadNode" translation="-0.0457073 0.00517821 -0.0024489" scale="0.935 1 0.885" nodeId="16"/>
+            <Shape name="DBL_iB_hw_isobusPage_noIB_hinweis" translation="0 0.00417821 -0.000887907" shapeId="1" clipDistance="30" nodeId="17" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="6"/>
+          </TransformGroup>
+          <TransformGroup name="isobus_only" nodeId="18">
+            <TransformGroup name="DBL_iB_single_isoBUS_LoadNode" translation="-0.0457073 0.00517821 -0.0024489" scale="0.935 1 0.885" nodeId="19"/>
+          </TransformGroup>
+          <TransformGroup name="isobus_map" nodeId="20">
+            <TransformGroup name="DBL_iB_map_isoBUS_LoadNode" translation="-0.0457073 0.00517821 -0.0024489" scale="0.935 1 0.885" nodeId="21"/>
+            <Shape name="dbl_iB_miniMap_realGPS_1" translation="0 0.00417821 -0.00244891" rotation="180 -5.00896e-06 -180" shapeId="2" nodeId="22" castsShadows="false" receiveShadows="true" distanceBlending="false" decalLayer="2" materialIds="5">
+              <Shape name="dbl_iB_position" translation="0 0.001 0" shapeId="3" nodeId="23" castsShadows="false" receiveShadows="false" distanceBlending="false" decalLayer="3" materialIds="7"/>
+            </Shape>
+          </TransformGroup>
+          <TransformGroup name="isobus_map_hinweis" nodeId="24">
+            <TransformGroup name="DBL_iB_mapHW_isoBUS_LoadNode" translation="-0.0457073 0.00517821 -0.0024489" scale="0.935 1 0.885" nodeId="25"/>
+            <Shape name="DBL_iB_mapHW_isobusPage_noIB_hinweis" translation="0 0.00417821 -0.000887907" shapeId="1" clipDistance="30" nodeId="26" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="6"/>
+            <Shape name="dbl_iB_mapHW_miniMap_realGPS_1" translation="0 0.00417821 -0.00244891" rotation="180 -5.00896e-06 -180" shapeId="2" nodeId="27" castsShadows="false" receiveShadows="true" distanceBlending="false" decalLayer="2" materialIds="5">
+              <Shape name="dbl_iB_mapHW_position" translation="0 0.001 0" shapeId="3" nodeId="28" castsShadows="false" receiveShadows="false" distanceBlending="false" decalLayer="3" materialIds="7"/>
+            </Shape>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>
