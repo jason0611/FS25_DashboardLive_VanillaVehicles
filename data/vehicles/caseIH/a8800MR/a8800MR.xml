@@ -383,7 +383,7 @@
         </animationNodes>
 		
 		<dashboards>
-			<dashboard displayType="TEXT" valueType="workedHectars" node="a8800_dblWorkHectareNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0065" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+			<dashboard displayType="TEXT" valueType="workedHectars" node="a8800_dblWorkHectareNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0065" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
         </dashboards>
     </combine>
 
@@ -675,6 +675,8 @@
             <group name="MOTOR_STARTING" electronicsStarting="true"/>
             <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
 			<group name="MOTOR_RUNNING" electronicsRunning="true"/>
+            <group name="RHM_ACTIVE" dbl="rhm_active"/>
+            <group name="RHM_INACTIVE" dbl="rhm_inactive"/>
         </groups>
         <default>
             <dashboard displayType="EMITTER" node="a8800StartScreen" idleValue="-1" intensity="0.3" groups="MOTOR_STARTING"/>
@@ -713,6 +715,15 @@
 			<dashboard displayType="TEXT" valueType="base" cmd="playerName" node="a8800_dblPlayerNameP1_CC" textColor="1 1 1 1" textSize="0.0035" textScaleX="1.2" textMask="ssssssssssssss" textAlignment="LEFT" font="GENERIC" emissiveScale="0.5" groups="MOTOR_RUNNING"/>
 			<!-- Fieldnumber -->
 			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="a8800_dblFieldNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
+			<!-- Realistic Harvesting (RHM) -->
+			<dashboard displayType="TEXT" valueType="combine" cmd="hectars" node="a8800_dblWorkHectareNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0065" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tripAreaHa" node="a8800_dblWorkHectareNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0065" textMask="0000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="a8800_dblRhmLoadP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0038" textMask="000%" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="a8800_dblRhmTonPerHourP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0038" textMask="00.0 t/h" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="a8800_dblRhmYieldP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0038" textMask="00.0 t/ha" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="a8800_dblRhmMoistureP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0038" textMask="00.0%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.15" node="a8800_dblRhmRotorRpmP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0038" textMask="000 rpm" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" doInterpolation="true" interpolationSpeed="0.2" node="a8800_dblRhmFanRpmP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.0038" textMask="000 rpm" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 			<!-- GPS -->
 			<dashboard displayType="TEXT" valueType="base" cmd="headingText2" node="a8800_dblCompassP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
 			<dashboard displayType="TEXT" valueType="base" cmd="heading" node="a8800_dblCompassNumbersP1_CC" textColor="0.033 0.033 0.033 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
@@ -859,6 +870,12 @@
 		<i3dMapping id="a8800_dblWeatherSnowP1_CC" node="0>4|4|0|1|30"/>
 		<i3dMapping id="a8800_dblWeatherTwisterP1_CC" node="0>4|4|0|1|31"/>
 		<i3dMapping id="a8800_dblOutsideTempNumbersP1_CC" node="0>4|4|0|1|32"/>
+		<i3dMapping id="a8800_dblRhmLoadP1_CC" node="0>4|4|0|1|33"/>
+		<i3dMapping id="a8800_dblRhmTonPerHourP1_CC" node="0>4|4|0|1|34"/>
+		<i3dMapping id="a8800_dblRhmYieldP1_CC" node="0>4|4|0|1|35"/>
+		<i3dMapping id="a8800_dblRhmMoistureP1_CC" node="0>4|4|0|1|36"/>
+		<i3dMapping id="a8800_dblRhmRotorRpmP1_CC" node="0>4|4|0|1|37"/>
+		<i3dMapping id="a8800_dblRhmFanRpmP1_CC" node="0>4|4|0|1|38"/>
 		
 		<i3dMapping id="a8800_dblNaviMapP1_CC" node="0>4|4|0|2|0"/>
 		<i3dMapping id="a8800_dblNaviMapPosP1_CC" node="0>4|4|0|2|0|0"/>

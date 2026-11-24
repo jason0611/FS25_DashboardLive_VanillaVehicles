@@ -842,6 +842,8 @@
             <group name="MOTOR_ACTIVE" electronicsStarting="true" electronicsRunning="true"/>
             <group name="MOTOR_RUNNING" electronicsRunning="true"/>
             <group name="LIGHT_ENABLED" lightTypes="0"/>
+            <group name="RHM_ACTIVE" dbl="rhm_active"/>
+            <group name="RHM_INACTIVE" dbl="rhm_inactive"/>
         </groups>
 
         <default>
@@ -900,8 +902,17 @@
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lowered" joints="0" node="oxboEPD_dblHeaderLoweredP1_SC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="0" node="oxboEPD_dblHeaderLiftedP1_SC" groups="MOTOR_ACTIVE"/>
 			<!-- PTO -->
-			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboEPD_dblPtoRpmNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
-			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboEPD_dblBunkerRpmNumbersP1_SC" factor="0.5" doInterpolation="true" interpolationSpeed="0.25" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboEPD_dblPtoRpmNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboEPD_dblBunkerRpmNumbersP1_SC" factor="0.5" doInterpolation="true" interpolationSpeed="0.25" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<!-- Realistic Harvesting (RHM) -->
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.2" node="oxboEPD_dblPtoRpmNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" node="oxboEPD_dblBunkerRpmNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.25" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="oxboEPD_dblPrecFarmTonPerHectarP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tripAreaHa" node="oxboEPD_dblPrecFarmHectarDailyP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="oxboEPD_dblRhmLoadP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="000%" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="oxboEPD_dblRhmTonPerHourP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="00.0 t/h" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="oxboEPD_dblRhmMoistureP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="00.0%" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="feederRpmLive" doInterpolation="true" interpolationSpeed="0.15" node="oxboEPD_dblRhmFeederRpmP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="000 rpm" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
 			<!-- Field -->
 			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="oxboEPD_dblFieldNumbersP1_SC" textColor="0 0 0 0" textSize="0.0025" textMask="000" font="GENERIC_BOLD" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
 			<!-- HLM -->
@@ -1200,6 +1211,10 @@
 		<i3dMapping id="oxboEPD_dblDefaultLightP1_SC" node="0>0|5|1|0|0|0|0|50"/>
 		<i3dMapping id="oxboEPD_dblWorkLightP1_SC" node="0>0|5|1|0|0|0|0|51"/>
 		<i3dMapping id="oxboEPD_dblBeaconLightP1_SC" node="0>0|5|1|0|0|0|0|52"/>
+		<i3dMapping id="oxboEPD_dblRhmLoadP1_SC" node="0>0|5|1|0|0|0|0|53"/>
+		<i3dMapping id="oxboEPD_dblRhmTonPerHourP1_SC" node="0>0|5|1|0|0|0|0|54"/>
+		<i3dMapping id="oxboEPD_dblRhmMoistureP1_SC" node="0>0|5|1|0|0|0|0|55"/>
+		<i3dMapping id="oxboEPD_dblRhmFeederRpmP1_SC" node="0>0|5|1|0|0|0|0|56"/>
 		
 		 <i3dMapping id="oxboEPD_mainDisplay" node="0>0|5|1|0|0|0|1|0"/>
 		

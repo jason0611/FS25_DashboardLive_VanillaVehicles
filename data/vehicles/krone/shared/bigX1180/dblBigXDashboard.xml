@@ -7,6 +7,8 @@
 			<group name="LIGHTMODE" dbl="lightmode"/>
 			<!-- Guidance Steering -->
 			<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
+			<group name="RHM_ACTIVE" dbl="rhm_active"/>
+			<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
 		
     
 	<dashboardCompound name="BIGX_DASHBOARD" filename="data/vehicles/krone/shared/bigX1180/dblBigXDashboard.i3d" node="dblBigXDashboard">
@@ -70,7 +72,16 @@
 			<!-- Pipe Status -->
 			<dashboard displayType="TEXT" valueType="dbl.combine" cmd="pipeFoldingState" joints="0" node="bigX_dblPipeStatusPercentNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
 			<!-- Header -->
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="1" jointSide="front" node="bigX_dblPtoRpmNumbersP1_SC" factor="0.56" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="1" jointSide="front" node="bigX_dblPtoRpmNumbersP1_SC" factor="0.56" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.2" node="bigX_dblPtoRpmNumbersP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" valueType="dbl.rhm" cmd="overload" node="bigX_dblSystemWarningP1_SC" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="EMITTER" valueType="dbl.rhm" cmd="overload" node="bigX_dblSystemWarningP1_SC" baseColor="0.15 0.15 0.15 1" emitColor="RED" intensity="0.8" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="bigX_dblRhmLoadP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.0042" textMask="000%" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="bigX_dblRhmTonPerHourP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.0042" textMask="000.0 t/h" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="bigX_dblRhmYieldP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.0042" textMask="00.0 t/ha" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="feederRpmLive" doInterpolation="true" interpolationSpeed="0.15" node="bigX_dblRhmFeedRpmP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.0042" textMask="000 rpm" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" doInterpolation="true" interpolationSpeed="0.2" node="bigX_dblRhmFanRpmP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.0042" textMask="0000 rpm" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="bigX_dblRhmMoistureP1_SC" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.0042" textMask="00.0%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
 			<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" joints="1" jointSide="front" node="bigX_dblHeaderLiftStatusPercentNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="TEXT" valueType="dbl.base" cmd="unfoldingState" joints="1" jointSide="front" node="bigX_dblHeaderFoldingStatusPercentNumbersP1_SC" default="0" factor="100" textColor="0.15 0.15 0.15 1" textColorDarkMode="1 1 1 1" textSize="0.006" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
 			<!-- Real Clock -->
@@ -125,6 +136,12 @@
 		<i3dMapping id="bigX_dblGPSactiveP1_SC" node="0>0|0|29"/>
 		<i3dMapping id="bigX_dblGPScompassP1_SC" node="0>0|0|30"/>
 		<i3dMapping id="bigX_dblGPScompassNumbersP1_SC" node="0>0|0|31"/>
+		<i3dMapping id="bigX_dblRhmLoadP1_SC" node="0>0|0|32"/>
+		<i3dMapping id="bigX_dblRhmTonPerHourP1_SC" node="0>0|0|33"/>
+		<i3dMapping id="bigX_dblRhmYieldP1_SC" node="0>0|0|34"/>
+		<i3dMapping id="bigX_dblRhmFeedRpmP1_SC" node="0>0|0|35"/>
+		<i3dMapping id="bigX_dblRhmFanRpmP1_SC" node="0>0|0|36"/>
+		<i3dMapping id="bigX_dblRhmMoistureP1_SC" node="0>0|0|37"/>
 		<i3dMapping id="alwaysOnDecals" node="0>0|1"/>
 		<i3dMapping id="bigX_dblWeatherSunAO" node="0>0|1|0"/>
 		<i3dMapping id="bigX_dblWeatherCloudAO" node="0>0|1|1"/>

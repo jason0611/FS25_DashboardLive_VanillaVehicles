@@ -8,6 +8,8 @@
 		<group name="PAGESC3" dbl="page" group="1" page="3"/>
 		<!-- Guidance Steering -->
 		<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park"/>
+		<group name="RHM_ACTIVE" dbl="rhm_active"/>
+		<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
     
 	<dashboardCompound name="BETA7360AL4_DASHBOARD" filename="data/vehicles/masseyFerguson/shared/beta7360AL4.i3d" node="beta7360AL4Dashboard">
 	<!-- <fillUnit> -->	
@@ -110,6 +112,9 @@
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblPtoStopP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblPipeUnfoldingP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="VISIBILITY" node="varioTronic_dblHLMonP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblVibratingSieveOneSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblVibratingSieveTwoSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="VISIBILITY" node="varioTronic_dblGrainTankSliderP2_SC" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
 			<dashboard displayType="EMITTER" node="varioTronic_dblGPSsteeringWheelInactiveP2_SC" intensity="0.3" groups="MOTOR_ACTIVE"/>
 		<!-- PAGESC3 -->	
 			<dashboard displayType="EMITTER" node="varioTronic_thirdScreenP3_SC" idleValue="-1" intensity="0.3" groups="MOTOR_ACTIVE"/>
@@ -158,8 +163,10 @@
 			<!-- Bunker -->
 			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="unfolded" joints="0" node="varioTronic_dblBunkerFoldingStateP2_SC" groups="MOTOR_ACTIVE PAGESC2"/>
 			<!-- System RPM -->
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="varioTronic_dblCutterDrumRpmNumbersP2_SC" factor="0.4255" doInterpolation="true" interpolationSpeed="0.2" options="any" max="802" textColor="0.15 0.15 0.15 1" textMask="0000" textSize="0.0045" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2"/>
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="varioTronic_dblConveyorBlowerRpmNumbersP2_SC" factor="0.3195" doInterpolation="true" interpolationSpeed="0.2" options="any" max="601" textColor="0.15 0.15 0.15 1" textMask="0000" textSize="0.0045" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="varioTronic_dblCutterDrumRpmNumbersP2_SC" factor="0.4255" doInterpolation="true" interpolationSpeed="0.2" options="any" max="802" textColor="0.15 0.15 0.15 1" textMask="0000" textSize="0.0045" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" node="varioTronic_dblConveyorBlowerRpmNumbersP2_SC" factor="0.3195" doInterpolation="true" interpolationSpeed="0.2" options="any" max="601" textColor="0.15 0.15 0.15 1" textMask="0000" textSize="0.0045" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" node="varioTronic_dblCutterDrumRpmNumbersP2_SC" doInterpolation="true" interpolationSpeed="0.2" textColor="0.15 0.15 0.15 1" textMask="0000" textSize="0.0045" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" node="varioTronic_dblConveyorBlowerRpmNumbersP2_SC" doInterpolation="true" interpolationSpeed="0.2" textColor="0.15 0.15 0.15 1" textMask="0000" textSize="0.0045" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
 			<!-- Chopper -->
 			<dashboard displayType="EMITTER" valueType="dbl.combine" cmd="chopper" stateText="enabled" node="varioTronic_dblChopperP2_SC" intensity="0.5" emitColor="BIGBUD_GREEN1" groups="MOTOR_ACTIVE PAGESC2"/>
 			<!-- Header -->
@@ -184,10 +191,22 @@
 			<dashboard displayType="EMITTER" valueType="dbl.hlm" option="field" node="varioTronic_dblHLMfieldP2_SC" baseColor="0.15 0.15 0.15 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_ACTIVE PAGESC2"/>
 			<dashboard displayType="EMITTER" valueType="dbl.hlm" option="headland" node="varioTronic_dblHLMheadlandP2_SC" baseColor="0.15 0.15 0.15 1" emitColor="GREEN" intensity="0.2" emissiveScale="0.5" groups="MOTOR_ACTIVE PAGESC2"/>
 			<!-- PrecisionFarming -->
-			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="harvestRate" node="varioTronic_dblPrecFarmHarvestRateNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="000" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2"/>
-			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="tonsPerHectar" node="varioTronic_dblPrecFarmTonsPerHectarNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="00.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2"/>
-			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="hectarCounter" node="varioTronic_dblPrecFarmHectarCounterNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="000.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2"/>
+			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="harvestRate" node="varioTronic_dblPrecFarmHarvestRateNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="000" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="tonsPerHectar" node="varioTronic_dblPrecFarmTonsPerHectarNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="00.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="hectarCounter" node="varioTronic_dblPrecFarmHectarCounterNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="000.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_INACTIVE"/>
 			<dashboard displayType="TEXT" valueType="dbl.precfarming" cmd="hectarCounterAll" node="varioTronic_dblPrecFarmHectarCounterTotalNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="000.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2"/>
+			<!-- Realistic Harvesting -->
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="varioTronic_dblPrecFarmHarvestRateNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="00.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="varioTronic_dblPrecFarmTonsPerHectarNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="00.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tripAreaHa" node="varioTronic_dblPrecFarmHectarCounterNumbersP2_SC" textColor="0.15 0.15 0.15 1" textMask="000.0" textSize="0.004" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="cropLoss" node="varioTronic_dblVibratingSieveOneSliderP2_SC" minValueSlider="0" maxValueSlider="10" intensity="0.4" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="load" node="varioTronic_dblVibratingSieveTwoSliderP2_SC" minValueSlider="0" maxValueSlider="100" intensity="0.4" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="tonPerHour" node="varioTronic_dblGrainTankSliderP2_SC" minValueSlider="0" maxValueSlider="60" intensity="0.4" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="varioTronic_dblRhmTonPerHourP2_SC" textColor="0.05 0.05 0.05 1" textSize="0.0035" textMask="00.0 t/h" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="varioTronic_dblRhmLoadPctP2_SC" textColor="0.05 0.05 0.05 1" textSize="0.0035" textMask="000%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="concaveMm" node="varioTronic_dblRhmConcaveMmP2_SC" textColor="0.15 0.15 0.15 1" textSize="0.0032" textMask="00mm" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="upperSieveMm" node="varioTronic_dblRhmUpperSieveMmP2_SC" textColor="0.15 0.15 0.15 1" textSize="0.0032" textMask="00mm" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="lowerSieveMm" node="varioTronic_dblRhmLowerSieveMmP2_SC" textColor="0.15 0.15 0.15 1" textSize="0.0032" textMask="00mm" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE PAGESC2 RHM_ACTIVE"/>
 		<!-- PAGESC3 -->	
 			<!-- MiniMap -->
 			<dashboard displayType="VISIBILITY" valueType="dbl.miniMap" cmd="map" node="varioTronic_dblNaviMapP3_SC" groups="MOTOR_ACTIVE PAGESC3"/>
@@ -341,6 +360,11 @@
 		<i3dMapping id="varioTronic_dblPrecFarmTonsPerHectarNumbersP2_SC" node="0>2|0|35"/>
 		<i3dMapping id="varioTronic_dblPrecFarmHectarCounterNumbersP2_SC" node="0>2|0|36"/>
 		<i3dMapping id="varioTronic_dblPrecFarmHectarCounterTotalNumbersP2_SC" node="0>2|0|37"/>
+		<i3dMapping id="varioTronic_dblRhmTonPerHourP2_SC" node="0>2|0|38"/>
+		<i3dMapping id="varioTronic_dblRhmLoadPctP2_SC" node="0>2|0|39"/>
+		<i3dMapping id="varioTronic_dblRhmConcaveMmP2_SC" node="0>2|0|40"/>
+		<i3dMapping id="varioTronic_dblRhmUpperSieveMmP2_SC" node="0>2|0|41"/>
+		<i3dMapping id="varioTronic_dblRhmLowerSieveMmP2_SC" node="0>2|0|42"/>
 		<i3dMapping id="navieMap_duplicateName_01" node="0>2|1"/>
 		<i3dMapping id="varioTronic_dblNaviMapP2_SC" node="0>2|1|0"/>
 		<i3dMapping id="varioTronic_dblNaviMapPosP2_SC" node="0>2|1|0|0"/>

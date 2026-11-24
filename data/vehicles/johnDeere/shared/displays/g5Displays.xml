@@ -8,6 +8,8 @@
 	<group name="DBL_F_TRAILER2" dbl="base_connected" dblTrailer="2" dblJointSide="back"/>
 	<group name="NOISOBUS" dbl="noisobus"/>
 	<group name="ISOBUS" dbl="isobus"/>
+	<group name="RHM_ACTIVE" dbl="rhm_active"/>
+	<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
 	<!-- <group name="FL_ATTACHED" dblJointSide="front" dblJointType="attachableFrontloader" /> -->
 	<!-- <group name="MOTOR_OFF" electronicsStarting="false" electronicsRunning="false"/> -->
 	<!-- need to set a cond motor off -->
@@ -1391,7 +1393,8 @@
 		<dashboard displayType="TEXT" valueType="motorized.speed" node="g5Display_aPillarHarvester_numbersSpeed" textColor="1 1 1 1" textSize="0.009" textMask="0.00" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE" maxActiveValue="9.99"/>
 		<dashboard displayType="TEXT" valueType="motorized.speed" node="g5Display_aPillarHarvester_numbersSpeed" textColor="1 1 1 1" textSize="0.009" textMask="00.0" textAlignment="LEFT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE" minActiveValue="10"/>
 		<dashboard displayType="TEXT" valueType="enterable.operatingTime" node="g5Display_aPillarHarvester_numbersOperatingTime" textColor="1 1 1 1" textSize="0.004" textMask="000.0 h" font="GENERIC" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="TEXT" valueType="motorized.load" node="g5Display_aPillarHarvester_numbersLoad" textColor="1 1 1 1" textSize="0.0035" textMask="000%" textAlignment="RIGHT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="motorized.load" node="g5Display_aPillarHarvester_numbersLoad" textColor="1 1 1 1" textSize="0.0035" textMask="000%" textAlignment="RIGHT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="g5Display_aPillarHarvester_numbersLoad" textColor="1 1 1 1" textSize="0.0035" textMask="000%" textAlignment="RIGHT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="liftState" jointSide="front" factor="432" minActiveValue="0" maxActiveValue="380" node="g5Display_aPillarHarvester_numbersCutHeight" textColor="1 1 1 1" textSize="0.004" textMask="000.0" textAlignment="RIGHT" emissiveScale="0.5" font="GENERIC" groups="MOTOR_ACTIVE JD_COMB_PAGEAP12"/>
 
 		<!-- icons -->
@@ -1444,7 +1447,7 @@
 		<dashboard displayType="EMITTER" valueType="motorized.motorTemperature" maxActiveValue="56"   node="g5Display_aPillarHarvester_loadBarTemperature_decal" emitColor="0 0 1" intensity="0.4" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="EMITTER" valueType="motorized.motorTemperature" minActiveValue="56.1" node="g5Display_aPillarHarvester_loadBarTemperature_decal" emitColor="1 1 1" intensity="0.4" groups="MOTOR_ACTIVE"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_loadBarLoad_decal" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
-		<dashboard displayType="TRANS" valueType="motorized.load" node="g5Display_aPillarHarvester_loadBarLoad_decal" minTrans="0 0 0" maxTrans="0 0 0.035" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE"/>
+		<dashboard displayType="TRANS" valueType="dbl.rhm" cmd="load" option="fallbackMotorLoad" minValueTrans="0" maxValueTrans="100" node="g5Display_aPillarHarvester_loadBarLoad_decal" minTrans="0 0 0" maxTrans="0 0 0.035" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE"/>
 
 		<dashboard displayType="VISIBILITY" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" groups="MOTOR_RUNNING JD_COMB_PAGEAP12"/>
 		<dashboard displayType="EMITTER" node="g5Display_aPillarHarvester_cutHeightPin_decalRot" baseColor="0 0 0" emitColor="1 1 1" intensity="0.9" groups="MOTOR_ACTIVE"/>
@@ -1494,7 +1497,8 @@
 
 		<dashboard displayType="TEXT" valueType="combine.workedHectars"         node="g5HarvestingPageBasic_dblHectarCounterNumberP1_SC" textColor="0.4 0.4 0.4 1" 										textSize="0.004" textMask="000.000" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="battery" option="24v"  doInterpolation="true" interpolationSpeed="0.02" 	node="g5HarvestingPageBasic_dblBatteryVoltageNumberP1_SC"  textColor="0.005 0.005 0.004 1" factor="1" textSize="0.003" textMask="000.0V" textAlignment="RIGHT" emissiveScale="0.5" textScaleY="1.2" font="GENERIC" groups="MOTOR_RUNNING JD_TRAC_PAGESC123"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="haperhour" 		node="g5HarvestingPageBasic_dblHectarPerHourNumberP1_SC" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" 	textSize="0.0035" textMask="000.0hh" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.0009" groups="MOTOR_RUNNING"/>	
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="haperhour" 		node="g5HarvestingPageBasic_dblHectarPerHourNumberP1_SC" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" 	textSize="0.0035" textMask="000.0hh" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.0009" groups="MOTOR_RUNNING RHM_INACTIVE"/>	
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="hectaresPerHour" node="g5HarvestingPageBasic_dblHectarPerHourNumberP1_SC" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" textSize="0.0035" textMask="000.0hh" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.0009" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="litersperha" 		node="g5HarvestingPageBasic_dblLiterPerHectarNumberP1_SC" textColor="0.4 0.4 0.3 1" textColorDarkMode="0.2 0.2 0.1 1" 	textSize="0.0035" textMask="000.0Lha" font="GENERIC" textAlignment="RIGHT" doInterpolation="true" interpolationSpeed="0.009" groups="MOTOR_RUNNING"/>	
 		<dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct"         node="g5HarvestingPageBasic_dblFilllevelPercentNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="000%" textScaleX="0.8" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel"            node="g5HarvestingPageBasic_dblFilllevelLiterNumberP1_SC" fillUnitIndex="1" textColor="0.4 0.4 0.4 1" textSize="0.0055" textMask="00000.0" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
@@ -1509,8 +1513,15 @@
 		<dashboard displayType="TEXT" valueType="enterable.operatingTime"       node="g5HarvestingPageBasic_dblOperatingHoursNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00000.0" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.005" doInterpolation="true" interpolationSpeed="0.04" node="g5HarvestingPageBasic_dblRpmReelP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.02" doInterpolation="true" interpolationSpeed="0.05" node="g5HarvestingPageBasic_dblRpmReelPullInP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.18" doInterpolation="true" interpolationSpeed="0.2" node="g5HarvestingPageBasic_dblRpmHarvestingP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="1.13" doInterpolation="true" interpolationSpeed="0.4" node="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="0.18" doInterpolation="true" interpolationSpeed="0.2" node="g5HarvestingPageBasic_dblRpmHarvestingP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpm" doInterpolation="true" interpolationSpeed="0.2" node="g5HarvestingPageBasic_dblRpmHarvestingP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" jointSide="front" factor="1.13" doInterpolation="true" interpolationSpeed="0.4" node="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpm" doInterpolation="true" interpolationSpeed="0.4" node="g5HarvestingPageBasic_dblRpmGrainFanP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="0000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblConcaveMmP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="8" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="concaveMm" node="g5HarvestingPageBasic_dblConcaveMmP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" node="g5HarvestingPageBasic_dblUpperSieveMmP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="13" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="upperSieveMm" node="g5HarvestingPageBasic_dblUpperSieveMmP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="lowerSieveMm" node="g5HarvestingPageBasic_dblLowerSieveMmP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.005" textMask="00" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		
 		<dashboard displayType="VISIBILITY" valueType="fillLevel" fillUnitIndex="1" joints="0" cond="equal" condValue="0"   node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT"       valueType="dbl.base" cmd="filltype" joints="0" partition="1" option="name"      node="g5HarvestingPageBasic_dblFruitTypeNumberP1_SC" textColor="0.4 0.4 0.4 1" textSize="0.004" textMask="..................." textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING"/>
@@ -1524,7 +1535,7 @@
 		<dashboard displayType="TEXT" valueType="dbl.gpsWidth"  node="g5HarvestingPageBasic_dblWorkWidthNumberP1_SC" textColor="0.05 0.05 0.04 1" textColorDarkMode="0 0 0 1" textSize="0.007" textMask="00.00m" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>	
 
 		<!-- cutHeight doesn't func -->
-		<dashboard displayType="TEXT" valueType="combine" cmd="cutHeight" node="g5HarvestingPageBasic_dblCutHeightNumberP1_SC" textColor="0.4 0.4 0.7 1" textSize="0.005" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="combine" cmd="cutHeight" node="g5HarvestingPageBasic_dblCutHeightNumberP1_SC" textColor="0.4 0.4 0.7 1" textSize="0.005" textMask="000" textScaleX="0.8" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING RHM_INACTIVE"/>
 
 		<!-- displays -->
 		<dashboard displayType="VISIBILITY" node="g5Display_harvestingPage_startScreen_decal" idleValue="0" groups="MOTOR_STARTING"/>
@@ -1800,9 +1811,14 @@
 		<!-- <dashboard valueType="dbl.precfarming" cmd="sprayAmountAutoMode" displayType="SLIDER" node="g5HarvestingPageBasic_dblSprayAmountAutoModeSliderP1_CC" intensity="0.4" intensityDarkMode="0.05" default="0" factor="100" minValueSlider="0" maxValueSlider="100" doInterpolation="true" interpolationSpeed="0.03" groups="MOTOR_ACTIVE"/> -->
 
 		<!-- combineXP -->
-		<dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="tonPerHour"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0065" textMask="00.00 th"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="yield"         node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1"      textSize="0.0065" textMask="00.00tHa"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="engineLoad" node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0070" textMask="000.00%"    font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="tonPerHour"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0065" textMask="00.00 th"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="yield"         node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1"      textSize="0.0065" textMask="00.00tHa"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.combineXP" cmd="engineLoad" node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0070" textMask="000.00%"    font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+
+		<!-- Realistic Harvesting (RHM) -->
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour"        node="g5HarvestingPageBasic_dblPf_PHactual_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0065" textMask="00.00 th"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield"             node="g5HarvestingPageBasic_dblPf_NitrogenActual_P1_GPS" textColor="0.9 0.9 0.9 1"      textSize="0.0065" textMask="00.00tHa"   font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load"              node="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" textColor="0.9 0.9 0.9 1"        textSize="0.0070" textMask="000.0%"     font="GENERIC_BOLD" textAlignment="RIGHT" emissiveScale="0.8" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 
 
 		<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="fieldNumber" cond="not" condValue="0" node="g5HarvestingPageBasic_dblPrecisionFarmingBg1_P1_GPS" groups="MOTOR_RUNNING"/>
@@ -2727,6 +2743,9 @@
 		<i3dMapping id="g5HarvestingPageBasic_dblPf_NitrogenChanged_P1_GPS" node="0>1|1|1|0|39|6"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblPf_ApplicationRate_P1_GPS" node="0>1|1|1|0|39|7"/>
 		<i3dMapping id="g5HarvestingPageBasic_dblPf_SoilType_P1_GPS" node="0>1|1|1|0|39|8"/>
+		<i3dMapping id="g5HarvestingPageBasic_dblConcaveMmP1_SC" node="0>1|1|1|0|43"/>
+		<i3dMapping id="g5HarvestingPageBasic_dblUpperSieveMmP1_SC" node="0>1|1|1|0|44"/>
+		<i3dMapping id="g5HarvestingPageBasic_dblLowerSieveMmP1_SC" node="0>1|1|1|0|45"/>
 
 		<!-- cc gps -->
 		<i3dMapping id="gpsScreenCombine" node="0>1|2"/>

@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <dashboardCompounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../shared/xml/schema/dashboardCompounds.xsd">
 
+	<group name="RHM_ACTIVE" dbl="rhm_active"/>
+	<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
+
     
 	<dashboardCompound name="OXBO_MKB4TR_DASHBOARD" filename="data/vehicles/oxbo/shared/oxboMKB4TRDashboard.i3d" node="oxboMKB4TRDashboard">
 	<!-- </lights> -->
@@ -99,9 +102,17 @@
 			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lowered" joints="0" node="oxboMKB4TR_dblHeaderLoweredP1_SC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" valueType="dbl.base" cmd="lifted" joints="0" node="oxboMKB4TR_dblHeaderLiftedP1_SC" groups="MOTOR_ACTIVE"/>
 			<!-- PTO -->
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0"  node="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" factor="0.4525" doInterpolation="true" interpolationSpeed="0.16" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" factor="0.451895" doInterpolation="true" interpolationSpeed="0.2" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
-			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" factor="0.0642" doInterpolation="true" interpolationSpeed="0.06" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0"  node="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" factor="0.4525" doInterpolation="true" interpolationSpeed="0.16" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" factor="0.451895" doInterpolation="true" interpolationSpeed="0.2" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" factor="0.0642" doInterpolation="true" interpolationSpeed="0.06" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" node="oxboMKB4TR_dblPtoRpmOneNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.16" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" node="oxboMKB4TR_dblPtoRpmTwoNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.2" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="feederRpmLive" node="oxboMKB4TR_dblPtoRpmThreeNumbersP1_SC" doInterpolation="true" interpolationSpeed="0.06" textColor="0.2 0.2 0.2 1" textSize="0.0045" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="oxboMKB4TR_dblPrecFarmTonPerHectarP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tripAreaHa" node="oxboMKB4TR_dblPrecFarmHectarDailyP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="oxboMKB4TR_dblRhmLoadP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0038" textMask="000%" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="oxboMKB4TR_dblRhmTonPerHourP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0038" textMask="00.0 t/h" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="oxboMKB4TR_dblRhmMoistureP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0038" textMask="00.0%" font="GENERIC" textAlignment="LEFT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
 			<!-- Field -->
 			<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="oxboMKB4TR_dblFieldNumbersP1_SC" textColor="0 0 0 0" textSize="0.0025" textMask="000" font="GENERIC_BOLD" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
 			<!-- HLM -->
@@ -207,6 +218,9 @@
 		<i3dMapping id="oxboMKB4TR_dblDefaultLightP1_SC" node="0>0|0|56"/>
 		<i3dMapping id="oxboMKB4TR_dblWorkLightP1_SC" node="0>0|0|57"/>
 		<i3dMapping id="oxboMKB4TR_dblBeaconLightP1_SC" node="0>0|0|58"/>
+		<i3dMapping id="oxboMKB4TR_dblRhmLoadP1_SC" node="0>0|0|59"/>
+		<i3dMapping id="oxboMKB4TR_dblRhmTonPerHourP1_SC" node="0>0|0|60"/>
+		<i3dMapping id="oxboMKB4TR_dblRhmMoistureP1_SC" node="0>0|0|61"/>
 		<i3dMapping id="mainScreen" node="0>0|1"/>
 		<i3dMapping id="oxboMKB4TR_mainDisplay" node="0>0|1|0"/>
 		<i3dMapping id="oxboMKB4TR_mainDecal" node="0>0|1|1"/>

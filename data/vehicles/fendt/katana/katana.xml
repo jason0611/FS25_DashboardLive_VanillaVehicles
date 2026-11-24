@@ -355,12 +355,12 @@
 			<dashboard displayType="TEXT" valueType="rpm" node="dbl_rpmNumbersP1_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE1"/>
 			<dashboard displayType="SLIDER" valueType="motorTemperature" node="dbl_tempSliderBarP1_SC" minValueSlider="40" maxValueSlider="120" groups="MOTOR_RUNNING PAGE1"/>
 			<!-- Page 2 -->
-			<dashboard displayType="ROT" valueType="load" node="dbl_engineLoadNeedleP2_SC" rotAxis="2" minRot="60" maxRot="-60" groups="MOTOR_RUNNING PAGE2"/>
+			<dashboard displayType="ROT" valueType="load" node="dbl_engineLoadNeedleP2_SC" rotAxis="2" minRot="60" maxRot="-60" groups="MOTOR_RUNNING PAGE2 RHM_INACTIVE"/>
 			<dashboard displayType="TEXT" valueType="speed" node="dbl_speedNumbersP2_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE2"/>
 			<dashboard displayType="TEXT" valueType="rpm" node="dbl_rpmNumbersP2_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE2"/>
 			<dashboard displayType="TEXT" valueType="fuelUsage" node="dbl_fuelNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="0000" textScaleX="0.9" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2"/>
 			<!-- Page 3 -->
-			<dashboard displayType="ROT" valueType="load" node="dbl_engineLoadNeedleP3_SC" rotAxis="2" minRot="60" maxRot="-60" groups="MOTOR_RUNNING PAGE3"/>
+			<dashboard displayType="ROT" valueType="load" node="dbl_engineLoadNeedleP3_SC" rotAxis="2" minRot="60" maxRot="-60" groups="MOTOR_RUNNING PAGE3 RHM_INACTIVE"/>
 			<dashboard displayType="TEXT" valueType="speed" node="dbl_speedNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="00.0" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE3"/>
 			<dashboard displayType="TEXT" valueType="rpm" node="dbl_rpmNumbersP3_SC" textColor="0.05 0.05 0.05 1" textSize="0.007" textMask="0000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE3"/>
 			<dashboard displayType="TEXT" valueType="fuelUsage" node="dbl_fuelNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="0000" textScaleX="0.9" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3"/>
@@ -683,6 +683,8 @@
 			<!-- Guidance Steering -->
 			<group name="DBL_GPS_ON" op="and" dbl="gps_on" />
 			<group name="DBL_PARK" isMotorStarting="true" op="or" dbl="vca_park" />
+			<group name="RHM_ACTIVE" dbl="rhm_active"/>
+			<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
         </groups>
 		
         <default>
@@ -777,6 +779,7 @@
 			<dashboard valueType="cvt" cmd="autodiffs" displayType="EMITTER" node="dbl_diffAutoP1_SC" baseColor="0.3 0.3 0.3 1" emitColor="AMAZONE_ORANGE1" intensity="0.5" groups="MOTOR_RUNNING PAGE1"/>
 			<dashboard valueType="cvt" cmd="motorcoldlamp" displayType="EMITTER" node="dbl_tempIconP1_SC" baseColor="0.3 0.3 0.3 1" emitColor="CARUELLENICOLAS_BLUE1" intensity="0.4" groups="MOTOR_RUNNING PAGE1"/>
 			<dashboard valueType="cvt" cmd="critdamage" displayType="VISIBILITY" node="dbl_warningP1_SC" groups="MOTOR_RUNNING PAGE1"/>
+			<dashboard valueType="dbl.rhm" cmd="overload" displayType="VISIBILITY" node="dbl_warningP1_SC" groups="MOTOR_RUNNING PAGE1 RHM_ACTIVE"/>
 			<dashboard valueType="cvt" cmd="tmspedalVmax" displayType="TEXT" node="dbl_tmsVMaxNumbersP1_SC" textColor="0.3 0.3 0.3 1" textSize="0.005" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGE1"/>
 			<dashboard valueType="cvt" cmd="accramp" displayType="TEXT" node="dbl_accRampNumbersP1_SC" textColor="0.3 0.3 0.3 1" textSize="0.005" textMask="0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGE1"/>
 			<dashboard valueType="cvt" cmd="drivingLevel" displayType="TEXT" node="dbl_driveLevelNumbersP1_SC" textColor="0.3 0.3 0.3 1" textSize="0.005" textMask="0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGE1"/>
@@ -799,8 +802,18 @@
 			<dashboard valueType="base" cmd="fieldNumber" displayType="TEXT" node="dbl_gpsFieldNumberP2_SC" textMask="Feld000" textColor="0.9 0.9 0.9 1" textSize="0.004" fontThickness="1" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGE2"/>
 			<!-- combineXP -->
 			<!-- <dashboard valueType="combineXP" cmd="engineLoad" displayType="ANIMATION" animName="combineXPEngineLoadAnimP2_SC" minValueAnim="1" maxValueAnim="160" groups="MOTOR_RUNNING PAGE2"/> -->
-			<dashboard valueType="combineXP" cmd="tonPerHour" displayType="TEXT" node="dbl_tonPerHourNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2"/>
-			<dashboard valueType="combineXP" cmd="yield" displayType="TEXT" node="dbl_yieldNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2"/>
+			<dashboard valueType="combineXP" cmd="tonPerHour" displayType="TEXT" node="dbl_tonPerHourNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_INACTIVE"/>
+			<dashboard valueType="combineXP" cmd="yield" displayType="TEXT" node="dbl_yieldNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_INACTIVE"/>
+			<!-- Realistic Harvesting (RHM) -->
+			<dashboard valueType="dbl.rhm" cmd="tonPerHour" displayType="TEXT" node="dbl_tonPerHourNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="000.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="tripMassT" displayType="TEXT" node="dbl_yieldNumbersP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="000.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="load" displayType="ROT" node="dbl_engineLoadNeedleP2_SC" rotAxis="2" minRot="60" maxRot="-60" minValueRot="0" maxValueRot="100" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="load" displayType="TEXT" node="dbl_rhmLoadPctP2_SC" textColor="0.15 0.15 0.15 1" textSize="0.005" textMask="000%" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="yield" displayType="TEXT" node="dbl_rhmYieldThaP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.0038" textMask="00.0 t/ha" textScaleX="0.7" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="moisture" displayType="TEXT" node="dbl_rhmMoistureP2_SC" textColor="0.3 0.3 0.3 1" textSize="0.0038" textMask="00.0%" textScaleX="0.7" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.15" displayType="TEXT" node="dbl_rhmDrumRpmP2_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000 rpm" textScaleX="0.7" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="feederRpmLive" doInterpolation="true" interpolationSpeed="0.15" displayType="TEXT" node="dbl_rhmFeedRpmP2_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="000 rpm" textScaleX="0.7" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="fanRpmLive" doInterpolation="true" interpolationSpeed="0.2" displayType="TEXT" node="dbl_rhmFanRpmP2_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000 rpm" textScaleX="0.7" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE2 RHM_ACTIVE"/>
 			<!-- Cruise Control -->
 			<!-- <dashboard valueType="cc" cmd="active" state="1" displayType="EMITTER" node="dbl_cruiseControl01P2_SC" baseColor="0.3 0.3 0.3 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/> -->
 			<dashboard valueType="cc" cmd="active" state="2" displayType="EMITTER" node="dbl_cruiseControl02P2_SC" baseColor="0.3 0.3 0.3 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING PAGE2"/>
@@ -871,8 +884,18 @@
 			<dashboard valueType="base" cmd="fieldNumber" displayType="TEXT" node="dbl_gpsFieldNumberP3_SC" textMask="Feld000" textColor="0.9 0.9 0.9 1" textSize="0.004" fontThickness="1" font="GENERIC" textAlignment="CENTER" groups="MOTOR_RUNNING PAGE3"/>
 			<!-- combineXP -->
 			<!-- <dashboard valueType="combineXP" cmd="engineLoad" displayType="ANIMATION" animName="combineXPEngineLoadAnimP3_SC" minValueAnim="1" maxValueAnim="160" groups="MOTOR_RUNNING PAGE3"/> -->
-			<dashboard valueType="combineXP" cmd="tonPerHour" displayType="TEXT" node="dbl_tonPerHourNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3"/>
-			<dashboard valueType="combineXP" cmd="yield" displayType="TEXT" node="dbl_yieldNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3"/>
+			<dashboard valueType="combineXP" cmd="tonPerHour" displayType="TEXT" node="dbl_tonPerHourNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_INACTIVE"/>
+			<dashboard valueType="combineXP" cmd="yield" displayType="TEXT" node="dbl_yieldNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="00.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_INACTIVE"/>
+			<!-- Realistic Harvesting (RHM) -->
+			<dashboard valueType="dbl.rhm" cmd="tonPerHour" displayType="TEXT" node="dbl_tonPerHourNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="000.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="tripMassT" displayType="TEXT" node="dbl_yieldNumbersP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.004" textMask="000.0" textScaleX="0.6" fontThickness="1.5" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="load" displayType="ROT" node="dbl_engineLoadNeedleP3_SC" rotAxis="2" minRot="60" maxRot="-60" minValueRot="0" maxValueRot="100" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="load" displayType="TEXT" node="dbl_rhmLoadPctP3_SC" textColor="0.15 0.15 0.15 1" textSize="0.005" textMask="000%" textAlignment="CENTER" font="GENERIC_BOLD" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="yield" displayType="TEXT" node="dbl_rhmYieldThaP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.0038" textMask="00.0 t/ha" textScaleX="0.7" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="moisture" displayType="TEXT" node="dbl_rhmMoistureP3_SC" textColor="0.3 0.3 0.3 1" textSize="0.0038" textMask="00.0%" textScaleX="0.7" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.15" displayType="TEXT" node="dbl_rhmDrumRpmP3_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000 rpm" textScaleX="0.7" textAlignment="LEFT" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="feederRpmLive" doInterpolation="true" interpolationSpeed="0.15" displayType="TEXT" node="dbl_rhmFeedRpmP3_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="000 rpm" textScaleX="0.7" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
+			<dashboard valueType="dbl.rhm" cmd="fanRpmLive" doInterpolation="true" interpolationSpeed="0.2" displayType="TEXT" node="dbl_rhmFanRpmP3_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000 rpm" textScaleX="0.7" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING PAGE3 RHM_ACTIVE"/>
 			<!-- Cruise Control -->
 			<!-- <dashboard valueType="cc" cmd="active" state="1" displayType="EMITTER" node="dbl_cruiseControl01P3_SC" baseColor="0.3 0.3 0.3 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING PAGE3"/> -->
 			<dashboard valueType="cc" cmd="active" state="2" displayType="EMITTER" node="dbl_cruiseControl02P3_SC" baseColor="0.3 0.3 0.3 1" emitColor="BIGBUD_GREEN1" intensity="0.5" groups="MOTOR_RUNNING PAGE3"/>
@@ -1246,6 +1269,12 @@
 		<i3dMapping id="dbl_headerFoldingStateP2_SC" node="0>0|7|2|3|2|0|36"/>
 		<i3dMapping id="dbl_headerUnfoldingP2_SC" node="0>0|7|2|3|2|0|37"/>
 		<i3dMapping id="dbl_headerUnfoldingStateP2_SC" node="0>0|7|2|3|2|0|38"/>
+		<i3dMapping id="dbl_rhmLoadPctP2_SC" node="0>0|7|2|3|2|0|39"/>
+		<i3dMapping id="dbl_rhmYieldThaP2_SC" node="0>0|7|2|3|2|0|40"/>
+		<i3dMapping id="dbl_rhmMoistureP2_SC" node="0>0|7|2|3|2|0|41"/>
+		<i3dMapping id="dbl_rhmDrumRpmP2_SC" node="0>0|7|2|3|2|0|42"/>
+		<i3dMapping id="dbl_rhmFeedRpmP2_SC" node="0>0|7|2|3|2|0|43"/>
+		<i3dMapping id="dbl_rhmFanRpmP2_SC" node="0>0|7|2|3|2|0|44"/>
 		<i3dMapping id="dbl_chopperScreenP2_SC" node="0>0|7|2|3|2|1|0"/>
 		<!-- SeatConsole Page3 -->
 		<i3dMapping id="dbl_realClockP3_SC" node="0>0|7|2|3|3|0|0"/>
@@ -1288,6 +1317,12 @@
 		<i3dMapping id="dbl_headerFoldingStateP3_SC" node="0>0|7|2|3|3|0|36"/>
 		<i3dMapping id="dbl_headerUnfoldingP3_SC" node="0>0|7|2|3|3|0|37"/>
 		<i3dMapping id="dbl_headerUnfoldingStateP3_SC" node="0>0|7|2|3|3|0|38"/>
+		<i3dMapping id="dbl_rhmLoadPctP3_SC" node="0>0|7|2|3|3|0|39"/>
+		<i3dMapping id="dbl_rhmYieldThaP3_SC" node="0>0|7|2|3|3|0|40"/>
+		<i3dMapping id="dbl_rhmMoistureP3_SC" node="0>0|7|2|3|3|0|41"/>
+		<i3dMapping id="dbl_rhmDrumRpmP3_SC" node="0>0|7|2|3|3|0|42"/>
+		<i3dMapping id="dbl_rhmFeedRpmP3_SC" node="0>0|7|2|3|3|0|43"/>
+		<i3dMapping id="dbl_rhmFanRpmP3_SC" node="0>0|7|2|3|3|0|44"/>
 		<i3dMapping id="dbl_chopperScreenP3_SC" node="0>0|7|2|3|3|1|0"/>
 		<!-- SeatConsole Page4 -->
 		<i3dMapping id="dbl_gpsONP4_SC" node="0>0|7|2|3|4|0|0"/>

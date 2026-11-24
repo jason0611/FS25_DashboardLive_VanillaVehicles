@@ -1299,6 +1299,9 @@
               <TransformGroup name="g5HarvestingPageBasic_dblHectarPerHourNumberP1_SC" translation="0.124041 -0.000353091 0.482723" rotation="90 -4.35775e-05 -180" nodeId="965"/>
               <TransformGroup name="g5HarvestingPageBasic_dblLiterPerHectarNumberP1_SC" translation="0.120324 -0.000353093 0.449967" rotation="90 -4.35775e-05 -180" nodeId="966"/>
               <TransformGroup name="g5HarvestingPageBasic_dblBatteryVoltageNumberP1_SC" translation="-0.0283274 -0.000353084 0.42439" rotation="90 -4.35775e-05 -180" nodeId="1178"/>
+              <TransformGroup name="g5HarvestingPageBasic_dblConcaveMmP1_SC" translation="-0.00815794 -0.000353081 0.488936" rotation="90 -4.35775e-05 -180" nodeId="1179"/>
+              <TransformGroup name="g5HarvestingPageBasic_dblUpperSieveMmP1_SC" translation="-0.00815794 -0.000353082 0.452618" rotation="90 -4.35775e-05 -180" nodeId="1180"/>
+              <TransformGroup name="g5HarvestingPageBasic_dblLowerSieveMmP1_SC" translation="-0.00815794 -0.000353084 0.440531" rotation="90 -4.35775e-05 -180" nodeId="1181"/>
             </TransformGroup>
             <Shape name="g5HarvestingPageBasic_dblGrainTankFoldingP1_SC" translation="0.033079 0.0017 -0.05" shapeId="149" clipDistance="30" nodeId="967" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="44"/>
             <Shape name="g5HarvestingPageBasic_dblGrainTankUnfoldingP1_SC1" translation="0.033 0.0017 -0.05" shapeId="150" clipDistance="30" nodeId="968" castsShadows="false" receiveShadows="true" decalLayer="2" materialIds="44"/>

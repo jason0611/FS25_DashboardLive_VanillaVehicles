@@ -367,6 +367,12 @@
           <TransformGroup name="cebisJaguar_dblCompassNumbersP1_SC" translation="0.045 -5.17096e-10 -0.074" rotation="-90 180 0" clipDistance="50" nodeId="801"/>
           <TransformGroup name="cebisJaguar_dblCutterHeightNumbersP1_SC" translation="-0.053 -5.17096e-10 0.032" rotation="-90 180 0" clipDistance="50" nodeId="802"/>
           <TransformGroup name="cebisJaguar_dblWorkWidthNumbersP1_SC" translation="0.102409 1.27348e-09 0.0115689" rotation="-90 180 0" clipDistance="50" nodeId="803"/>
+          <TransformGroup name="cebisJaguar_dblYieldNumbersP1_SC" translation="-0.05 -3.60313e-09 -0.039018" rotation="-90 180 0" clipDistance="50" nodeId="1739"/>
+          <TransformGroup name="cebisJaguar_dblTonPerHourNumbersP1_SC" translation="-0.05 -3.60313e-09 -0.044943" rotation="-90 180 0" clipDistance="50" nodeId="1740"/>
+          <TransformGroup name="cebisJaguar_dblChoppingDrumRpmP1_SC" translation="0.060 -3.60313e-09 0.056" rotation="-90 180 0" clipDistance="50" nodeId="1747"/>
+          <TransformGroup name="cebisJaguar_dblFeedRollsRpmP1_SC" translation="0.105 -3.60313e-09 0.042" rotation="-90 180 0" clipDistance="50" nodeId="1748"/>
+          <TransformGroup name="cebisJaguar_dblBlowerRpmP1_SC" translation="0.006 -3.60313e-09 0.056" rotation="-90 180 0" clipDistance="50" nodeId="1749"/>
+          <TransformGroup name="cebisJaguar_dblMoistureNumbersP1_SC" translation="-0.008 -3.60313e-09 0.016" rotation="-90 180 0" clipDistance="50" nodeId="1750"/>
         </TransformGroup>
         <TransformGroup name="basicScreen" nodeId="804">
           <Shape name="cebisJaguar_basicScreenP1_SC" translation="0 0.001 0" shapeId="71" clipDistance="50" nodeId="805" castsShadows="false" receiveShadows="true" materialIds="12"/>
@@ -436,6 +442,12 @@
           <TransformGroup name="cebisLexion_dblBlowerRpmP1_SC" translation="0.043 -3.50764e-09 0.001" rotation="-90 180 0" clipDistance="50" nodeId="864"/>
           <TransformGroup name="cebisLexion_dblAugerConveyorRpmP1_SC" translation="-0.013 -3.50764e-09 0.048" rotation="-90 180 0" clipDistance="50" nodeId="865"/>
           <TransformGroup name="cebisLexion_dblCutterHeightNumbersP1_SC" translation="-0.054 -3.50764e-09 0.03" rotation="-90 180 0" clipDistance="50" nodeId="866"/>
+          <TransformGroup name="cebisLexion_dblConcaveMmP1_SC" translation="0.106765 -3.50764e-09 0.032181" rotation="-90 180 0" clipDistance="50" nodeId="1741"/>
+          <TransformGroup name="cebisLexion_dblUpperSieveMmP1_SC" translation="-0.012968 -3.50764e-09 0.006947" rotation="-90 180 0" clipDistance="50" nodeId="1742"/>
+          <TransformGroup name="cebisLexion_dblLowerSieveMmP1_SC" translation="-0.012968 -3.50764e-09 0.001510" rotation="-90 180 0" clipDistance="50" nodeId="1743"/>
+          <TransformGroup name="cebisLexion_dblYieldNumbersP1_SC" translation="-0.049 -9.70692e-10 -0.036784" rotation="-90 180 0" clipDistance="50" nodeId="1744"/>
+          <TransformGroup name="cebisLexion_dblTonPerHourNumbersP1_SC" translation="-0.049 -9.70692e-10 -0.042457" rotation="-90 180 0" clipDistance="50" nodeId="1745"/>
+          <TransformGroup name="cebisLexion_dblSlopeNumbersP1_SC" translation="-0.088238 -9.70692e-10 -0.066834" rotation="-90 180 0" clipDistance="50" nodeId="1746"/>
         </TransformGroup>
         <TransformGroup name="configurations" clipDistance="50" nodeId="867">
           <TransformGroup name="cebisLexion_dblHeaderWidthP1_SC" translation="-0.04 -9.70692e-10 0.009" rotation="90 -5.00896e-06 -180" clipDistance="50" nodeId="868"/>
