@@ -12,7 +12,10 @@
 <!-- Headland Management -->
 	<group name="DBL_HLM_ON" op="and" dbl="hlm_on"/>
 	<group name="DBL_HLM_FIELD" op="and" dbl="hlm_active_field"/>
-	<group name="DBL_HLM_HEADLAND" op="and" dbl="hlm_active_headland"/>	
+	<group name="DBL_HLM_HEADLAND" op="and" dbl="hlm_active_headland"/>
+<!-- Realistic Harvesting -->
+	<group name="RHM_ACTIVE" dbl="rhm_active"/>
+	<group name="RHM_INACTIVE" dbl="rhm_inactive"/>	
 	
 	
 <!-- GENERAL -->
@@ -311,13 +314,15 @@
         <!-- numbers -->
         <dashboard displayType="TEXT" valueType="enterable.time" node="combineScreenCNH_numbersTime" textColor="1 1 1 1" textSize="0.006" textMask="00:00" font="GENERIC" textAlignment="CENTER" emissiveScale="0.4" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="motorized.speed" node="combineScreenCNH_numbersSpeed" textColor="NEWHOLLAND_BLUE1" textSize="0.006" textScaleX="0.9" textMask="000.0" font="GENERIC_BOLD" fontThickness="0.65" groups="MOTOR_RUNNING"/>
-        <dashboard displayType="TEXT" valueType="motorized.load" node="combineScreenCNH_numbersLoad" textColor="NEWHOLLAND_BLUE1" textSize="0.005" textScaleX="0.9" textMask="000%" textAlignment="LEFT" font="GENERIC_BOLD" fontThickness="0.65" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="TEXT" valueType="motorized.load" node="combineScreenCNH_numbersLoad" textColor="NEWHOLLAND_BLUE1" textSize="0.005" textScaleX="0.9" textMask="000%" textAlignment="LEFT" font="GENERIC_BOLD" fontThickness="0.65" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+        <dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="combineScreenCNH_numbersLoad" textColor="NEWHOLLAND_BLUE1" textSize="0.005" textScaleX="0.9" textMask="000%" textAlignment="LEFT" font="GENERIC_BOLD" fontThickness="0.65" groups="MOTOR_RUNNING RHM_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="fillUnit.fillLevelPct" node="combineScreenCNH_numbersFillLevel" fillUnitIndex="1" textColor="0 0 0 1" textSize="0.003" textScaleX="0.9" textMask="000%" font="GENERIC_BOLD" textAlignment="CENTER" fontThickness="0.65" groups="MOTOR_RUNNING"/>
         <dashboard displayType="TEXT" valueType="motorized.rpm" node="combineScreenCNH_numbersRPM" textColor="0 0 0 1" textSize="0.004" textMask="0000" font="GENERIC_BOLD" textScaleX="0.7" emissiveScale="0.4" groups="MOTOR_ACTIVE"/>
         <dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="combineScreenCNH_numbersCruiseControl" textColor="0 0 0 1" textSize="0.004" textMask="00.0" textAlignment="CENTER" font="GENERIC_BOLD" fontThickness="0.8" textScaleX="0.7" groups="MOTOR_RUNNING"/>
 
         <!-- sliders -->
-        <dashboard displayType="SLIDER" valueType="motorized.load" node="combineScreenCNH_sliderLoad_decal" intensity="0.3" groups="MOTOR_RUNNING"/>
+        <dashboard displayType="SLIDER" valueType="motorized.load" node="combineScreenCNH_sliderLoad_decal" intensity="0.3" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+        <dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="load" minValueSlider="0" maxValueSlider="100" node="combineScreenCNH_sliderLoad_decal" intensity="0.3" groups="MOTOR_RUNNING RHM_ACTIVE"/>
         <dashboard displayType="SLIDER" valueType="fillUnit.fillLevel" node="combineScreenCNH_sliderGrain_decal" fillUnitIndex="1" intensity="0.2" groups="MOTOR_RUNNING"/>
         <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DIESEL" node="combineScreenCNH_sliderFuel_decal" groups="MOTOR_RUNNING"/>
         <dashboard displayType="SLIDER" valueType="fillLevel" fillType="DEF" node="combineScreenCNH_sliderDef_decal" groups="MOTOR_RUNNING"/>

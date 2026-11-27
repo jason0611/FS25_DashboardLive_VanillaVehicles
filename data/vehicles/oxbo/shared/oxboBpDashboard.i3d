@@ -128,6 +128,10 @@
           <Shape name="oxboBP_dblDefaultLightP1_SC" translation="0.096 5.2e-05 0.075" rotation="0 180 0" scale="2.5 1 2.5" shapeId="38" clipDistance="20" nodeId="113" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
           <Shape name="oxboBP_dblWorkLightP1_SC" translation="0.085 -6e-08 0.075" rotation="0 180 0" scale="2 1 2" shapeId="39" clipDistance="20" nodeId="114" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
           <Shape name="oxboBP_dblBeaconLightP1_SC" translation="0.074 0 0.076" rotation="0 180 0" scale="1.6 1 1.6" shapeId="40" clipDistance="20" nodeId="115" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="8"/>
+          <TransformGroup name="oxboBP_dblRhmLoadP1_SC" translation="-0.030 0 0.065" rotation="90 -1.86693e-05 180" clipDistance="300" nodeId="193"/>
+          <TransformGroup name="oxboBP_dblRhmTonPerHourP1_SC" translation="-0.052 0 0.065" rotation="90 -1.86693e-05 180" clipDistance="300" nodeId="194"/>
+          <TransformGroup name="oxboBP_dblRhmMoistureP1_SC" translation="-0.072 0 0.065" rotation="90 -1.86693e-05 180" clipDistance="300" nodeId="195"/>
+          <TransformGroup name="oxboBP_dblRhmFeederRpmP1_SC" translation="-0.092 0 0.065" rotation="90 -1.86693e-05 180" clipDistance="300" nodeId="196"/>
         </TransformGroup>
         <TransformGroup name="mainScreen" clipDistance="30" nodeId="116">
           <Shape name="oxbobBP_mainDisplay" shapeId="41" clipDistance="30" nodeId="117" castsShadows="false" receiveShadows="true" materialIds="10"/>

@@ -1372,6 +1372,12 @@
                   <Shape name="dbl_headerFoldingStateP2_SC" translation="-0.023 0.002 -0.016" rotation="0 90 0" scale="2 1 2" shapeId="89" clipDistance="20" nodeId="662" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
                   <Shape name="dbl_headerUnfoldingP2_SC" translation="-0.023 0.002 -0.016" rotation="0 90 0" scale="2 1 2" shapeId="90" clipDistance="20" nodeId="663" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
                   <Shape name="dbl_headerUnfoldingStateP2_SC" translation="-0.023 0.002 -0.016" rotation="0 90 0" scale="2 1 2" shapeId="91" clipDistance="20" nodeId="664" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
+                  <TransformGroup name="dbl_rhmLoadPctP2_SC" translation="-0.049 0.002 0.053" rotation="-90 90 0" clipDistance="50" nodeId="844"/>
+                  <TransformGroup name="dbl_rhmYieldThaP2_SC" translation="-0.025 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="845"/>
+                  <TransformGroup name="dbl_rhmMoistureP2_SC" translation="-0.018 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="846"/>
+                  <TransformGroup name="dbl_rhmDrumRpmP2_SC" translation="-0.061 0.002 -0.010" rotation="-90 90 0" clipDistance="50" nodeId="847"/>
+                  <TransformGroup name="dbl_rhmFeedRpmP2_SC" translation="-0.061 0.002 -0.036" rotation="-90 90 0" clipDistance="50" nodeId="848"/>
+                  <TransformGroup name="dbl_rhmFanRpmP2_SC" translation="-0.019 0.002 -0.036" rotation="-90 90 0" clipDistance="50" nodeId="849"/>
                 </TransformGroup>
                 <TransformGroup name="screen" clipDistance="50" nodeId="665">
                   <Shape name="dbl_chopperScreenP2_SC" shapeId="57" clipDistance="50" nodeId="666" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="15"/>
@@ -1420,6 +1426,12 @@
                   <Shape name="dbl_headerFoldingStateP3_SC" translation="-0.023 0.002 -0.016" rotation="0 90 0" scale="2 1 2" shapeId="89" clipDistance="20" nodeId="706" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
                   <Shape name="dbl_headerUnfoldingP3_SC" translation="-0.023 0.002 -0.016" rotation="0 90 0" scale="2 1 2" shapeId="90" clipDistance="20" nodeId="707" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
                   <Shape name="dbl_headerUnfoldingStateP3_SC" translation="-0.023 0.002 -0.016" rotation="0 90 0" scale="2 1 2" shapeId="91" clipDistance="20" nodeId="708" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="89"/>
+                  <TransformGroup name="dbl_rhmLoadPctP3_SC" translation="-0.049 0.002 0.053" rotation="-90 90 0" clipDistance="50" nodeId="850"/>
+                  <TransformGroup name="dbl_rhmYieldThaP3_SC" translation="-0.025 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="851"/>
+                  <TransformGroup name="dbl_rhmMoistureP3_SC" translation="-0.018 0.002 0.033862" rotation="-90 90 0" clipDistance="50" nodeId="852"/>
+                  <TransformGroup name="dbl_rhmDrumRpmP3_SC" translation="-0.061 0.002 -0.010" rotation="-90 90 0" clipDistance="50" nodeId="853"/>
+                  <TransformGroup name="dbl_rhmFeedRpmP3_SC" translation="-0.061 0.002 -0.036" rotation="-90 90 0" clipDistance="50" nodeId="854"/>
+                  <TransformGroup name="dbl_rhmFanRpmP3_SC" translation="-0.019 0.002 -0.036" rotation="-90 90 0" clipDistance="50" nodeId="855"/>
                 </TransformGroup>
                 <TransformGroup name="screen" clipDistance="50" nodeId="709">
                   <Shape name="dbl_chopperScreenP3_SC" shapeId="57" clipDistance="50" nodeId="710" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="16"/>

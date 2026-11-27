@@ -872,6 +872,8 @@
 
             <group name="PAGE_CAMS1" dbl="page" page="1"/>
 			<group name="PAGE_CAMS2" dbl="page" page="2"/>
+			<group name="RHM_ACTIVE" dbl="rhm_active"/>
+			<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
         </groups>
 
         <default>
@@ -941,9 +943,18 @@
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lowered" joints="0" node="oxboBP_dblHeaderLoweredP1_SC" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="VISIBILITY" valueType="base" cmd="lifted" joints="0" node="oxboBP_dblHeaderLiftedP1_SC" groups="MOTOR_ACTIVE"/>
 			<!-- PTO -->
-			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxxboBP_dblPtoRpmSliderP1_SC" doInterpolation="true" interpolationSpeed="0.2" minValueSlider="700" maxValueSlider="1500" offsetValue="300" intensity="0.45" groups="MOTOR_ACTIVE"/>
-			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxxboBP_dblBlowerRpmSliderP1_SC" doInterpolation="true" interpolationSpeed="0.25" minValueSlider="700" maxValueSlider="1500" offsetValue="500" intensity="0.45" groups="MOTOR_ACTIVE"/>
-			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboBP_dblPtoRpmNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxxboBP_dblPtoRpmSliderP1_SC" doInterpolation="true" interpolationSpeed="0.2" minValueSlider="700" maxValueSlider="1500" offsetValue="300" intensity="0.45" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxxboBP_dblBlowerRpmSliderP1_SC" doInterpolation="true" interpolationSpeed="0.25" minValueSlider="700" maxValueSlider="1500" offsetValue="500" intensity="0.45" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="rotorRpmLive" node="oxxboBP_dblPtoRpmSliderP1_SC" doInterpolation="true" interpolationSpeed="0.2" minValueSlider="0" maxValueSlider="350" intensity="0.45" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="fanRpmLive" node="oxxboBP_dblBlowerRpmSliderP1_SC" doInterpolation="true" interpolationSpeed="0.25" minValueSlider="0" maxValueSlider="1000" intensity="0.45" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboBP_dblPtoRpmNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_INACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.2" node="oxboBP_dblPtoRpmNumbersP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0035" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="oxboBP_dblPrecFarmTonPerHectarP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tripAreaHa" node="oxboBP_dblPrecFarmHectarDailyP1_SC" textColor="0.5 0.5 0.5 1" textSize="0.005" textMask="000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="oxboBP_dblRhmLoadP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="000%" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="oxboBP_dblRhmTonPerHourP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="00.0 t/h" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="oxboBP_dblRhmMoistureP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="00.0%" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
+			<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="feederRpmLive" doInterpolation="true" interpolationSpeed="0.15" node="oxboBP_dblRhmFeederRpmP1_SC" textColor="0.2 0.2 0.2 1" textSize="0.0033" textMask="000 rpm" font="GENERIC" textAlignment="CENTER" groups="MOTOR_ACTIVE RHM_ACTIVE"/>
 			<dashboard displayType="EMITTER" valueType="base" cmd="ptoRpm" joints="0" precision="0" node="oxboBP_dblHarvesterOnP1_SC" baseColor="1 1 1 1" emitColor="OXBO_YELLOW1" intensity="0.5" groups="MOTOR_ACTIVE"/>
 			<!-- Field -->
 			<dashboard displayType="TEXT" valueType="base" cmd="fieldNumber" node="oxboBP_dblFieldNumbersP1_SC" textColor="0 0 0 0" textSize="0.0025" textMask="000" font="GENERIC_BOLD" textAlignment="LEFT" groups="MOTOR_ACTIVE"/>
@@ -1290,6 +1301,10 @@
 		<i3dMapping id="oxboBP_dblDefaultLightP1_SC" node="0>0|6|1|0|1|0|0|56"/>
 		<i3dMapping id="oxboBP_dblWorkLightP1_SC" node="0>0|6|1|0|1|0|0|57"/>
 		<i3dMapping id="oxboBP_dblBeaconLightP1_SC" node="0>0|6|1|0|1|0|0|58"/>
+		<i3dMapping id="oxboBP_dblRhmLoadP1_SC" node="0>0|6|1|0|1|0|0|59"/>
+		<i3dMapping id="oxboBP_dblRhmTonPerHourP1_SC" node="0>0|6|1|0|1|0|0|60"/>
+		<i3dMapping id="oxboBP_dblRhmMoistureP1_SC" node="0>0|6|1|0|1|0|0|61"/>
+		<i3dMapping id="oxboBP_dblRhmFeederRpmP1_SC" node="0>0|6|1|0|1|0|0|62"/>
 		
 		<i3dMapping id="oxbobBP_mainDisplay" node="0>0|6|1|0|1|0|1|0"/>
 		<i3dMapping id="oxboBP_mainDecals" node="0>0|6|1|0|1|0|1|1"/>

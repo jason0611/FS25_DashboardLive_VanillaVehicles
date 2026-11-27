@@ -3,6 +3,8 @@
 
 	<group name="DARKMODE" dbl="darkmode"/>
 	<group name="LIGHTMODE" dbl="lightmode"/>
+	<group name="RHM_ACTIVE" dbl="rhm_active"/>
+	<group name="RHM_INACTIVE" dbl="rhm_inactive"/>
 	
 	<!-- Tractor Pages SC -->
 	<group name="TRACTOR_PAGESC1" dbl="page" group="1" page="1"/>
@@ -241,9 +243,12 @@
 		
 		<dashboard displayType="SLIDER" valueType="motorized.speed" node="cebisJaguar_dblSpeedSliderP1_SC" minValueSlider="0" maxValueSlider="50" intensity="0.4" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="SLIDER" valueType="motorized.rpm" node="cebisJaguar_dblRpmSliderP1_SC" minValueSlider="500" maxValueSlider="2200" intensity="0.4" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="SLIDER" valueType="motorized.load" node="cebisJaguar_dblLoadSlider01P1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="load" option="fallbackMotorLoad" node="cebisJaguar_dblLoadSlider01P1_SC" minValueSlider="0" maxValueSlider="100" intensity="0.4" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="VISIBILITY" node="cebisJaguar_dblLoadSlider00P1_SC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="tonPerHour" node="cebisJaguar_dblLoadSlider00P1_SC" minValueSlider="0" maxValueSlider="150" intensity="0.4" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		
-		<dashboard displayType="TEXT" valueType="motorized.load" option="percent" node="cebisJaguar_dblLoadNumbersP1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="motorized.load" option="percent" node="cebisJaguar_dblLoadNumbersP1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="cebisJaguar_dblLoadNumbersP1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="motorized.rpm" node="cebisJaguar_dblRpmNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="0000" font="GENERIC" groups="MOTOR_RUNNING"/>
 		
 		<dashboard displayType="EMITTER" valueType="drivable.cruiseControlActive" node="cebisJaguar_dblCruiseControl00P1_SC" intensity="0.5" baseColor="1 1 1 1" baseColorDarkMode="1 1 1 1" emissiveScale="0.5" emitColor="CLAAS_GREEN1" groups="MOTOR_RUNNING"/>
@@ -280,7 +285,14 @@
 		<dashboard displayType="TEXT" valueType="fillLevelPct" fillType="DIESEL" node="cebisJaguar_dblFuelNumbersP1_SC" textColor="0 0 0 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="fillLevel" fillType="SILAGE_ADDITIVE" node="cebisJaguar_dblSilageAdditivesNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" textAlignment="RIGHT" font="GENERIC" groups="MOTOR_RUNNING"/>
 		
-		<dashboard displayType="TEXT" valueType="combine.workedHectars" node="cebisJaguar_dblHectaresPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="combine.workedHectars" node="cebisJaguar_dblHectaresPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="hectaresPerHour" node="cebisJaguar_dblHectaresPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="cebisJaguar_dblYieldNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="cebisJaguar_dblTonPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" doInterpolation="true" interpolationSpeed="0.15" node="cebisJaguar_dblChoppingDrumRpmP1_SC" textColor="0.238 0.238 0.238 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="0000 rpm" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="feederRpmLive" doInterpolation="true" interpolationSpeed="0.15" node="cebisJaguar_dblFeedRollsRpmP1_SC" textColor="0.238 0.238 0.238 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000 rpm" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" doInterpolation="true" interpolationSpeed="0.2" node="cebisJaguar_dblBlowerRpmP1_SC" textColor="0.238 0.238 0.238 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="0000 rpm" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="moisture" node="cebisJaguar_dblMoistureNumbersP1_SC" textColor="0.238 0.238 0.238 1" textColorDarkMode="1 1 1 1" textSize="0.0035" textMask="00.0%" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<!-- GPS -->
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="cebisJaguar_dblGPSAvtiveP1_SC" baseColor="1 1 1 1" baseColorDarkMode="1 1 1 1" emissiveScale="0.5" emitColor="CLAAS_GREEN1" intensity="1" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="cebisJaguar_dblFieldNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
@@ -340,9 +352,10 @@
 		<dashboard displayType="TEXT" valueType="drivable.cruiseControl" node="cebisLexion_dblCruiseControlNumbers01P1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emitColor="GREEN" textSize="0.004" textAlignment="CENTER" font="GENERIC" intensity="1" groups="MOTOR_RUNNING"/>
 		
 		<dashboard displayType="SLIDER" valueType="motorized.speed" node="cebisLexion_dblSpeedSliderP1_SC" minValueSlider="0" maxValueSlider="40" intensity="0.4" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="SLIDER" valueType="motorized.load" node="cebisLexion_dblLoadSliderP1_SC1" minValueSlider="30" maxValueSlider="135" intensity="0.3" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="SLIDER" valueType="motorized.load" node="cebisLexion_dblYieldUtilizationSliderP1_SC" minValueSlider="20" maxValueSlider="100" intensity="0.3" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="motorized.load" option="percent" node="cebisLexion_dblLoadNumbers01P1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="load" option="fallbackMotorLoad" node="cebisLexion_dblLoadSliderP1_SC1" minValueSlider="30" maxValueSlider="135" intensity="0.3" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="SLIDER" valueType="dbl.rhm" cmd="tonPerHour" option="fallbackMotorLoad80" node="cebisLexion_dblYieldUtilizationSliderP1_SC" minValueSlider="0" maxValueSlider="80" intensity="0.3" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="motorized.load" option="percent" node="cebisLexion_dblLoadNumbers01P1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="load" node="cebisLexion_dblLoadNumbers01P1_SC" textColor="1 1 1 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="000" textAlignment="CENTER" font="GENERIC" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="motorized.rpm" node="cebisLexion_dblRpmNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" emissiveScale="0.4" textSize="0.004" textMask="0000" font="GENERIC" groups="MOTOR_RUNNING"/>
         
 		<dashboard displayType="MULTI_STATE" valueType="drivable.movingDirection" node="cebisLexion_dblArrowForwardP1_SC" doInterpolation="true" groups="MOTOR_RUNNING">
@@ -374,7 +387,12 @@
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="filltype" option="name" joints="0" partition="1" node="cebisLexion_dblGrainFilltypeP1_SC" intensity="0.26" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="............" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="fillUnit.fillLevel" node="cebisLexion_dblGainFillLevelNumbersP1_SC" fillUnitIndex="1" intensity="0.3" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fillLevel" option="percent" factor="100" joints="0" partition="1" node="cebisLexion_dblGainFillLevelPercentP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" intensity="1" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="combine.workedHectars" node="cebisLexion_dblHectaresPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="combine.workedHectars" node="cebisLexion_dblHectaresPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="hectaresPerHour" node="cebisLexion_dblHectaresPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="yield" node="cebisLexion_dblYieldNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="tonPerHour" node="cebisLexion_dblTonPerHourNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="00.0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" node="cebisLexion_dblSlopeNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="0" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="slopeAngle" node="cebisLexion_dblSlopeNumbersP1_SC" textColor="0.027 0.027 0.027 1" textColorDarkMode="1 1 1 1" textSize="0.005" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<!-- GPS -->
 		<dashboard displayType="EMITTER" valueType="ai.automaticSteering.steeringEngaged" node="cebisLexion_dblGPSAvtiveP1_SC" baseColor="0.027 0.027 0.027 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="1" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="fieldNumber" node="cebisLexion_dblFieldNumbersP1_SC" textColor="0.238 0.238 0.238 0" textColorDarkMode="1 1 1 1" textSize="0.004" textMask="000" font="GENERIC" textAlignment="LEFT" groups="MOTOR_RUNNING"/>
@@ -399,9 +417,17 @@
 		<!-- PTO -->
 		<dashboard displayType="EMITTER" valueType="dbl.base" cmd="pto" joints="1" node="cebisLexion_dblHeaderPtoP1_SC" baseColor="0.027 0.027 0.027 1" baseColorDarkMode="1 1 1 1" emitColor="CLAAS_GREEN1" intensity="1" groups="MOTOR_RUNNING"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="cebisLexion_dblHeaderPtoRpmP1_SC" doInterpolation="true" interpolationSpeed="0.25" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="cebisLexion_dblThreshingRollerRpmP1_SC" factor="0.345" doInterpolation="true" interpolationSpeed="0.1" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
-		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="cebisLexion_dblBlowerRpmP1_SC" factor="0.448" doInterpolation="true" interpolationSpeed="0.3" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="cebisLexion_dblThreshingRollerRpmP1_SC" factor="0.345" doInterpolation="true" interpolationSpeed="0.1" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="rotorRpmLive" precision="0" node="cebisLexion_dblThreshingRollerRpmP1_SC" doInterpolation="true" interpolationSpeed="0.1" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="cebisLexion_dblBlowerRpmP1_SC" factor="0.448" doInterpolation="true" interpolationSpeed="0.3" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="fanRpmLive" precision="0" node="cebisLexion_dblBlowerRpmP1_SC" doInterpolation="true" interpolationSpeed="0.3" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="0000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<dashboard displayType="TEXT" valueType="dbl.base" cmd="ptoRpm" joints="0" precision="0" node="cebisLexion_dblAugerConveyorRpmP1_SC" factor="0.398" doInterpolation="true" interpolationSpeed="0.25" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="000" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING"/>
+		<dashboard displayType="TEXT" node="cebisLexion_dblConcaveMmP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="23" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="concaveMm" node="cebisLexion_dblConcaveMmP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" node="cebisLexion_dblUpperSieveMmP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="15" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="upperSieveMm" node="cebisLexion_dblUpperSieveMmP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
+		<dashboard displayType="TEXT" node="cebisLexion_dblLowerSieveMmP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="7" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_INACTIVE"/>
+		<dashboard displayType="TEXT" valueType="dbl.rhm" cmd="lowerSieveMm" node="cebisLexion_dblLowerSieveMmP1_SC" textColor="0.3 0.3 0.3 1" textColorDarkMode="1 1 1 1" textSize="0.003" textMask="00" font="GENERIC" textAlignment="RIGHT" groups="MOTOR_RUNNING RHM_ACTIVE"/>
 		<!-- Pipe -->
 		<dashboard displayType="VISIBILITY" valueType="combine" cmd="overloading" state="1" node="cebisLexion_dblPipeOverlodingP1_SC" groups="MOTOR_RUNNING"/>
         <dashboard displayType="SLIDER" valueType="combine" cmd="pipeFoldingState" node="cebisLexion_dblPipeFoldingStateSliderP1_SC" factor="100" minValueSlider="0" maxValueSlider="100" intensity="0.5" groups="MOTOR_RUNNING"/>
@@ -708,6 +734,12 @@
 		<i3dMapping id="cebisJaguar_dblCompassNumbersP1_SC" node="2>0|1|40"/>
 		<i3dMapping id="cebisJaguar_dblCutterHeightNumbersP1_SC" node="2>0|1|41"/>
 		<i3dMapping id="cebisJaguar_dblWorkWidthNumbersP1_SC" node="2>0|1|42"/>
+		<i3dMapping id="cebisJaguar_dblYieldNumbersP1_SC" node="2>0|1|43"/>
+		<i3dMapping id="cebisJaguar_dblTonPerHourNumbersP1_SC" node="2>0|1|44"/>
+		<i3dMapping id="cebisJaguar_dblChoppingDrumRpmP1_SC" node="2>0|1|45"/>
+		<i3dMapping id="cebisJaguar_dblFeedRollsRpmP1_SC" node="2>0|1|46"/>
+		<i3dMapping id="cebisJaguar_dblBlowerRpmP1_SC" node="2>0|1|47"/>
+		<i3dMapping id="cebisJaguar_dblMoistureNumbersP1_SC" node="2>0|1|48"/>
 		<i3dMapping id="cebisJaguar_basicScreenP1_SC" node="2>0|2|0"/>
 		<i3dMapping id="cebisJaguar_basicScreenDMP1_SC" node="2>0|2|1"/>
 		<i3dMapping id="cebisJaguar_vehicleIcon" node="2>0|2|2"/>
@@ -765,6 +797,12 @@
 		<i3dMapping id="cebisLexion_dblBlowerRpmP1_SC" node="3>0|1|44"/>
 		<i3dMapping id="cebisLexion_dblAugerConveyorRpmP1_SC" node="3>0|1|45"/>
 		<i3dMapping id="cebisLexion_dblCutterHeightNumbersP1_SC" node="3>0|1|46"/>
+		<i3dMapping id="cebisLexion_dblConcaveMmP1_SC" node="3>0|1|47"/>
+		<i3dMapping id="cebisLexion_dblUpperSieveMmP1_SC" node="3>0|1|48"/>
+		<i3dMapping id="cebisLexion_dblLowerSieveMmP1_SC" node="3>0|1|49"/>
+		<i3dMapping id="cebisLexion_dblYieldNumbersP1_SC" node="3>0|1|50"/>
+		<i3dMapping id="cebisLexion_dblTonPerHourNumbersP1_SC" node="3>0|1|51"/>
+		<i3dMapping id="cebisLexion_dblSlopeNumbersP1_SC" node="3>0|1|52"/>
 		<i3dMapping id="cebisLexion_dblHeaderWidthP1_SC" node="3>0|2|0"/>
 		<i3dMapping id="cebisLexion_basicScreenP1_SC" node="3>0|3|0"/>
 		<i3dMapping id="cebisLexion_basicScreenDMP1_SC" node="3>0|3|1"/>

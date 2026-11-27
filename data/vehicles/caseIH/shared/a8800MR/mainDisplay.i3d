@@ -95,6 +95,12 @@
           <Shape name="a8800_dblWeatherSnowP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="19" clipDistance="20" nodeId="71" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherRequiredMask="0x8"/>
           <Shape name="a8800_dblWeatherTwisterP1_CC" translation="-0.082 5.2e-05 0.076" rotation="1e-06 180 6e-06" shapeId="20" clipDistance="20" nodeId="72" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="10" weatherPreventMask="0x1f"/>
           <TransformGroup name="a8800_dblOutsideTempNumbersP1_CC" translation="-0.071 3.91321e-08 0.074" rotation="90 0 180" clipDistance="30" nodeId="73"/>
+          <TransformGroup name="a8800_dblRhmLoadP1_CC" translation="0.096 0 -0.037" rotation="90 0 180" clipDistance="300" nodeId="79"/>
+          <TransformGroup name="a8800_dblRhmTonPerHourP1_CC" translation="0.042 0 -0.037" rotation="90 0 180" clipDistance="300" nodeId="80"/>
+          <TransformGroup name="a8800_dblRhmYieldP1_CC" translation="0.096 0 -0.050" rotation="90 0 180" clipDistance="300" nodeId="81"/>
+          <TransformGroup name="a8800_dblRhmMoistureP1_CC" translation="0.042 0 -0.050" rotation="90 0 180" clipDistance="300" nodeId="82"/>
+          <TransformGroup name="a8800_dblRhmRotorRpmP1_CC" translation="0.096 0 -0.063" rotation="90 0 180" clipDistance="300" nodeId="83"/>
+          <TransformGroup name="a8800_dblRhmFanRpmP1_CC" translation="0.042 0 -0.063" rotation="90 0 180" clipDistance="300" nodeId="84"/>
         </TransformGroup>
         <TransformGroup name="naviMap" clipDistance="30" nodeId="74">
           <Shape name="a8800_dblNaviMapP1_CC" translation="0.033209 0 0.030585" shapeId="21" clipDistance="30" nodeId="75" castsShadows="false" receiveShadows="true" decalLayer="1" materialIds="7">
